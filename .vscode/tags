@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+allDirs	../euler11.py	/^allDirs = horizontals + verticals + diags +otherdiags$/;"	kind:variable	line:102
+b10length	../helpme.py	/^def b10length(n):$/;"	kind:function	line:6
+cash	../euler12.py	/^cash = {}$/;"	kind:variable	line:15
+cash	../euler25.py	/^cash = [0] * 1000$/;"	kind:variable	line:23
+curTriangleNum	../euler12.py	/^    curTriangleNum = curTriangleNum + i$/;"	kind:variable	line:33
+curTriangleNum	../euler12.py	/^curTriangleNum = 1$/;"	kind:variable	line:26
+diag	../euler11.py	/^def diag(r, c):$/;"	kind:function	line:70
+diags	../euler11.py	/^diags = []$/;"	kind:variable	line:78
+digitsList	../helpme.py	/^def digitsList(n):$/;"	kind:function	line:15
+divList	../euler12.py	/^def divList(x):$/;"	kind:function	line:6
+euler11.py	../euler11.py	1;"	kind:file	line:1
+euler12.py	../euler12.py	1;"	kind:file	line:1
+euler13.py	../euler13.py	1;"	kind:file	line:1
+euler17.py	../euler17.py	1;"	kind:file	line:1
+euler25.py	../euler25.py	1;"	kind:file	line:1
+euler29.py	../euler29.py	1;"	kind:file	line:1
+euler41.py	../euler41.py	1;"	kind:file	line:1
+euler44.py	../euler44.py	1;"	kind:file	line:1
+fib	../euler25.py	/^def fib(n):$/;"	kind:function	line:26
+grid	../euler11.py	/^grid = numpy.asarray(lististNums)$/;"	kind:variable	line:62
+helpme.py	../helpme.py	1;"	kind:file	line:1
+hm	../euler41.py	/^import helpme as hm$/;"	kind:namespace	line:5
+horizontal	../euler11.py	/^def horizontal(r, c):$/;"	kind:function	line:64
+horizontals	../euler11.py	/^horizontals = []$/;"	kind:variable	line:76
+i	../euler12.py	/^i = 1$/;"	kind:variable	line:30
+isPanDigit	../helpme.py	/^def isPanDigit(n):$/;"	kind:function	line:1
+isPanDigitPrime	../euler41.py	/^def isPanDigitPrime(number):$/;"	kind:function	line:15
+lengthList	../euler12.py	/^    lengthList = numDivs(curTriangleNum)$/;"	kind:variable	line:35
+lineInts	../euler11.py	/^    lineInts = []$/;"	kind:variable	line:57
+lines	../euler11.py	/^lines = grid.split("\\n")$/;"	kind:variable	line:51
+lististNums	../euler11.py	/^lististNums = []$/;"	kind:variable	line:53
+math	../euler12.py	/^import math$/;"	kind:namespace	line:3
+maxDivs	../euler12.py	/^        maxDivs = lengthList$/;"	kind:variable	line:40
+maxDivs	../euler12.py	/^maxDivs = 1$/;"	kind:variable	line:27
+notDoneYet	../euler12.py	/^            notDoneYet = False$/;"	kind:variable	line:50
+notDoneYet	../euler12.py	/^notDoneYet = True$/;"	kind:variable	line:28
+numDivs	../euler12.py	/^def numDivs(x):$/;"	kind:function	line:18
+numStrings	../euler13.py	/^numStrings = numbers.split('\\n')$/;"	kind:variable	line:106
+numpy	../euler11.py	/^import numpy$/;"	kind:namespace	line:28
+one_nine	../euler17.py	/^def one_nine(n):$/;"	kind:function	line:9
+one_ninenine	../euler17.py	/^def one_ninenine(n):$/;"	kind:function	line:49
+otherdiag	../euler11.py	/^def otherdiag(r, c):$/;"	kind:function	line:73
+otherdiags	../euler11.py	/^otherdiags =[]$/;"	kind:variable	line:79
+p	../euler44.py	/^def p(n):$/;"	kind:function	line:1
+pCash	../euler44.py	/^pCash = {}$/;"	kind:variable	line:6
+panDigits	../euler41.py	/^panDigits = []$/;"	kind:variable	line:7
+powersThingy	../euler29.py	/^def powersThingy(max_a, max_b):$/;"	kind:function	line:15
+seq	../euler29.py	/^seq = (powersThingy(100, 100))$/;"	kind:variable	line:31
+strNums	../euler11.py	/^    strNums = string.split(" ")$/;"	kind:variable	line:56
+tens_place	../euler17.py	/^def tens_place(n):$/;"	kind:function	line:31
+total	../euler13.py	/^    total = total + int(strNum)$/;"	kind:variable	line:113
+total	../euler13.py	/^total = n0$/;"	kind:variable	line:110
+vertical	../euler11.py	/^def vertical(r, c):$/;"	kind:function	line:67
+verticals	../euler11.py	/^verticals = []$/;"	kind:variable	line:77
+write_num_as_string	../euler17.py	/^def write_num_as_string(n):$/;"	kind:function	line:70
