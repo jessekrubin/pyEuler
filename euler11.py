@@ -1,3 +1,7 @@
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Jesse Rubin - project Euler
+
 # In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 
 # 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -56,29 +60,34 @@ for string in lines:
     strNums = string.split(" ")
     lineInts = []
     for s in strNums:
-        lineInts.append(int (s))
+        lineInts.append(int(s))
     lististNums.append(lineInts)
 
 grid = numpy.asarray(lististNums)
 
+
 def horizontal(r, c):
-    return grid[r,c] * grid[r,c+1] * grid[r,c+2] * grid[r,c+3]
+    return grid[r, c] * grid[r, c + 1] * grid[r, c + 2] * grid[r, c + 3]
+
 
 def vertical(r, c):
     return grid[r, c] * grid[r + 1, c] * grid[r + 2, c] * grid[r + 3, c]
 
+
 def diag(r, c):
     return grid[r, c] * grid[r + 1, c + 1] * grid[r + 2, c + 2] * grid[r + 3, c + 3]
+
 
 def otherdiag(r, c):
     return grid[r, c] * grid[r - 1, c + 1] * grid[r - 2, c + 2] * grid[r - 3, c + 3]
 
+
 horizontals = []
 verticals = []
 diags = []
-otherdiags =[]
+otherdiags = []
 for j in range(20):
-    for i in range (20):
+    for i in range(20):
         try:
             horizontals.append(horizontal(i, j))
         except:
@@ -99,7 +108,7 @@ for j in range(20):
         except:
             pass
 
-allDirs = horizontals + verticals + diags +otherdiags
+allDirs = horizontals + verticals + diags + otherdiags
 
 print(grid)
 print("Max product: {}".format(max(allDirs)))
