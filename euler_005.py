@@ -1,6 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN
+
 def getsum(number):
     (number)
-
 
 big_ass_string = """37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
@@ -104,4 +107,4 @@ big_ass_string = """37107287533902102798797998220837590246510135740250
 53503534226472524250874054075591789781264330331690"""
 list_o_strings = (big_ass_string.split('\n'))
 list_o_nums = list(map(int, list_o_strings))
-print (sum(list_o_nums))
+print("sum: {}".format(sum(list_o_nums)))
