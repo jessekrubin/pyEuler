@@ -10,26 +10,30 @@
 
 
 import helpme as hm
+from functools import lru_cache
 
+
+@lru_cache(maxsize=None)
 def funnn(d, n):
-    return ((d+n)/d)
+    return (d + (n / d))
+
 
 def divisors_thing(number):
-    divs = hm.factors_list(number)
-    new_nums = [(i + number) // i for i in divs]
-    print(number)
-    print(divs)
-    print(new_nums)
-    for num in new_nums:
-        print(num)
-        print(hm.is_prime(num))
-    l = [hm.is_prime(j) for j in new_nums]
-    print(l)
-    print(all(l))
+    # divs = hm.factors_list(number)
+    # new_nums = [funnn(i, number) for i in divs]
+    # print(number)
+    # print(divs)
+    # print(new_nums)
+    # # for num in new_nums:
+    #     print(num)
+    #     print(hm.is_prime(num))
+    # l = [hm.is_prime(j) for j in new_nums]
+    # print("aLLLL")
+    # print(all(l))
 
     for i in hm.divisors_gen(number):
-        print("___")
-        print(i)
+        # print("___")
+        # print(i)
         fun_num = (funnn(i, number))
 
         if not funnn(i, number).is_integer():
@@ -41,4 +45,8 @@ def divisors_thing(number):
     return True
 
 
-print(divisors_thing(30))
+total = 0
+for i in range(1, 100000000):
+    if (divisors_thing(i)):
+        # print(i)
+        total += i
