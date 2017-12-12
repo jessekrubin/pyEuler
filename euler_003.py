@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# phil and samantha
+# phil and samantha and jesse
 
 # Largest prime factor
 # Problem 3
@@ -16,7 +16,7 @@ def get_prime_factors(number):
     letmewin = filter(hm.is_prime, factors)
     print(letmewin)
     for primefacks in (letmewin):
-        print (primefacks)
+        print(primefacks)
 
 
 get_prime_factors(600851475143)

@@ -69,6 +69,18 @@ def num_divisors(x):
     return n
 
 
+def proper_divisors_gen(n):
+    large_divisors = []
+    for i in range(1, int(math.sqrt(n) + 1)):
+        if n % i == 0:
+            yield i
+            if i * i != n:
+                large_divisors.append(n // i)
+    for divisor in reversed(large_divisors):
+        if divisor != n:
+            yield divisor
+
+
 def divisors_gen(n):
     large_divisors = []
     for i in range(1, int(math.sqrt(n) + 1)):
@@ -80,6 +92,7 @@ def divisors_gen(n):
         yield divisor
 
 
+@functools.lru_cache(maxsize=None)
 def is_prime(n):
     """is_prime(n) returns True if n is prime
 
