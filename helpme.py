@@ -60,6 +60,14 @@ def divisors_list(x):
     return [i for i in divisors_gen(x)]
 
 
+def string_score(name):
+    # print(name)
+    name = name.lower()
+    score = 0
+    for character in name:
+        score += (ord(character)-96)
+    return (score)
+
 def num_divisors(x):
     n = 0
     for i in range(int((1 + x) / 2), 0, -1):
