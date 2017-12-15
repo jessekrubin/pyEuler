@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 # Jesse Rubin ~ Project Euler
+=======
+# Jesse Rubin - project Euler
+>>>>>>> 44fe9893c4ecb44e1ee58d9d6dfc13d5786055f7
 
 # Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
 

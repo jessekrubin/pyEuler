@@ -62,6 +62,14 @@ def divisors_list(x):
     return [i for i in divisors_gen(x)]
 
 
+def string_score(name):
+    # print(name)
+    name = name.lower()
+    score = 0
+    for character in name:
+        score += (ord(character)-96)
+    return (score)
+
 def num_divisors(x):
     n = 0
     for i in range(int((1 + x) / 2), 0, -1):
@@ -71,8 +79,19 @@ def num_divisors(x):
     return n
 
 
+def proper_divisors_gen(n):
+    large_divisors = []
+    for i in range(1, int(math.sqrt(n) + 1)):
+        if n % i == 0:
+            yield i
+            if i * i != n:
+                large_divisors.append(n // i)
+    for divisor in reversed(large_divisors):
+        if divisor != n:
+            yield divisor
+
+
 def divisors_gen(n):
-    import math
     large_divisors = []
     for i in range(1, int(math.sqrt(n) + 1)):
         if n % i == 0:
