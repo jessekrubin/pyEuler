@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin
+# Jesse Rubin ~ Project Euler
+
 """
 Even Fibonacci numbers
 Problem 2 

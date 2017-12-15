@@ -1,5 +1,7 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
+# Done
 
 # Lexicographic permutations
 # Problem 24

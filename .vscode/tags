@@ -4,58 +4,159 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-allDirs	../euler11.py	/^allDirs = horizontals + verticals + diags +otherdiags$/;"	kind:variable	line:102
-b10length	../helpme.py	/^def b10length(n):$/;"	kind:function	line:6
-cash	../euler12.py	/^cash = {}$/;"	kind:variable	line:15
-cash	../euler25.py	/^cash = [0] * 1000$/;"	kind:variable	line:23
-curTriangleNum	../euler12.py	/^    curTriangleNum = curTriangleNum + i$/;"	kind:variable	line:33
-curTriangleNum	../euler12.py	/^curTriangleNum = 1$/;"	kind:variable	line:26
-diag	../euler11.py	/^def diag(r, c):$/;"	kind:function	line:70
-diags	../euler11.py	/^diags = []$/;"	kind:variable	line:78
-digitsList	../helpme.py	/^def digitsList(n):$/;"	kind:function	line:15
-divList	../euler12.py	/^def divList(x):$/;"	kind:function	line:6
-euler11.py	../euler11.py	1;"	kind:file	line:1
-euler12.py	../euler12.py	1;"	kind:file	line:1
-euler13.py	../euler13.py	1;"	kind:file	line:1
-euler17.py	../euler17.py	1;"	kind:file	line:1
-euler25.py	../euler25.py	1;"	kind:file	line:1
-euler29.py	../euler29.py	1;"	kind:file	line:1
-euler41.py	../euler41.py	1;"	kind:file	line:1
-euler44.py	../euler44.py	1;"	kind:file	line:1
-fib	../euler25.py	/^def fib(n):$/;"	kind:function	line:26
-grid	../euler11.py	/^grid = numpy.asarray(lististNums)$/;"	kind:variable	line:62
+DiceGame	../euler_205.py	/^class DiceGame(object):$/;"	kind:class	line:16
+__init__	../euler_205.py	/^    def __init__(self):$/;"	kind:member	line:17
+allDirs	../euler_011.py	/^allDirs = horizontals + verticals + diags + otherdiags$/;"	kind:variable	line:111
+allits	../euler_035.py	/^allits =num_rotations_gen(one_nine_seven)$/;"	kind:variable	line:33
+almost_first_10	../euler_002.py	/^almost_first_10 = hm.fib(10)$/;"	kind:variable	line:21
+b10_num_length	../helpme.py	/^def b10_num_length(n):$/;"	kind:function	line:15
+cash	../euler_012.py	/^cash = {}$/;"	kind:variable	line:7
+cash	../euler_025.py	/^cash = [0] * 1000$/;"	kind:variable	line:23
+characters	../euler_017.py	/^characters = 0$/;"	kind:variable	line:94
+count	../euler_092.py	/^count = 0$/;"	kind:variable	line:50
+curTriangleNum	../euler_012.py	/^    curTriangleNum = curTriangleNum + i$/;"	kind:variable	line:34
+curTriangleNum	../euler_012.py	/^curTriangleNum = 1$/;"	kind:variable	line:27
+cur_triangle_number	../euler_012.py	/^cur_triangle_number = 0$/;"	kind:variable	line:109
+cycle	../euler_028.py	/^    from itertools import cycle$/;"	kind:namespace	line:42
+cycle	../euler_028.py	/^from itertools import cycle$/;"	kind:namespace	line:19
+diag	../euler_011.py	/^def diag(r, c):$/;"	kind:function	line:77
+diags	../euler_011.py	/^diags = []$/;"	kind:variable	line:87
+digitsList	../euler_092.py	/^def digitsList(n):$/;"	kind:function	line:21
+digits_list	../helpme.py	/^def digits_list(n):$/;"	kind:function	line:24
+dirs	../euler_028.py	/^dirs = [east, south, west, north]$/;"	kind:variable	line:38
+divList	../euler_012.py	/^def divList(x):$/;"	kind:function	line:10
+divisors	../euler_012.py	/^def divisors(n):$/;"	kind:function	line:86
+divisors_gen	../helpme.py	/^def divisors_gen(n):$/;"	kind:function	line:74
+divisors_list	../helpme.py	/^def divisors_list(x):$/;"	kind:function	line:56
+divisors_thing	../euler_357.py	/^def divisors_thing(number):$/;"	kind:function	line:17
+doctest	../helpme.py	/^    import doctest$/;"	kind:namespace	line:136
+done	../update_readme.py	/^done = [int(f[6:9]) for f in listdir(done_path) if isfile(join(done_path, f))]$/;"	kind:variable	line:14
+done_path	../update_readme.py	/^done_path = r'.\/done'$/;"	kind:variable	line:11
+east	../euler_028.py	/^def east(x, y):$/;"	kind:function	line:22
+euler_001.py	../euler_001.py	1;"	kind:file	line:1
+euler_002.py	../euler_002.py	1;"	kind:file	line:1
+euler_003.py	../euler_003.py	1;"	kind:file	line:1
+euler_005.py	../euler_005.py	1;"	kind:file	line:1
+euler_011.py	../euler_011.py	1;"	kind:file	line:1
+euler_012.py	../euler_012.py	1;"	kind:file	line:1
+euler_013.py	../euler_013.py	1;"	kind:file	line:1
+euler_017.py	../euler_017.py	1;"	kind:file	line:1
+euler_018.py	../euler_018.py	1;"	kind:file	line:1
+euler_022.py	../euler_022.py	1;"	kind:file	line:1
+euler_024.py	../euler_024.py	1;"	kind:file	line:1
+euler_025.py	../euler_025.py	1;"	kind:file	line:1
+euler_028.py	../euler_028.py	1;"	kind:file	line:1
+euler_029.py	../euler_029.py	1;"	kind:file	line:1
+euler_035.py	../euler_035.py	1;"	kind:file	line:1
+euler_036.py	../euler_036.py	1;"	kind:file	line:1
+euler_041.py	../euler_041.py	1;"	kind:file	line:1
+euler_044.py	../euler_044.py	1;"	kind:file	line:1
+euler_047.py	../euler_047.py	1;"	kind:file	line:1
+euler_092.py	../euler_092.py	1;"	kind:file	line:1
+euler_205.py	../euler_205.py	1;"	kind:file	line:1
+euler_357.py	../euler_357.py	1;"	kind:file	line:1
+factors_list	../helpme.py	/^def factors_list(x):$/;"	kind:function	line:39
+fib	../euler_025.py	/^def fib(n):$/;"	kind:function	line:26
+functools	../euler_092.py	/^import functools$/;"	kind:namespace	line:18
+functools	../helpme.py	/^import functools$/;"	kind:namespace	line:6
+funnn	../euler_357.py	/^def funnn(d, n):$/;"	kind:function	line:14
+g	../euler_205.py	/^g = DiceGame()$/;"	kind:variable	line:61
+get_names	../euler_022.py	/^def get_names():$/;"	kind:function	line:11
+get_prime_factors	../euler_003.py	/^def get_prime_factors(number):$/;"	kind:function	line:14
+get_stats	../euler_205.py	/^    def get_stats(self):$/;"	kind:member	line:37
+getsum	../euler_005.py	/^def getsum(number):$/;"	kind:function	line:5
+goes2_89	../euler_092.py	/^def goes2_89(n):$/;"	kind:function	line:39
+grid	../euler_011.py	/^grid = numpy.asarray(lististNums)$/;"	kind:variable	line:66
 helpme.py	../helpme.py	1;"	kind:file	line:1
-hm	../euler41.py	/^import helpme as hm$/;"	kind:namespace	line:5
-horizontal	../euler11.py	/^def horizontal(r, c):$/;"	kind:function	line:64
-horizontals	../euler11.py	/^horizontals = []$/;"	kind:variable	line:76
-i	../euler12.py	/^i = 1$/;"	kind:variable	line:30
-isPanDigit	../helpme.py	/^def isPanDigit(n):$/;"	kind:function	line:1
-isPanDigitPrime	../euler41.py	/^def isPanDigitPrime(number):$/;"	kind:function	line:15
-lengthList	../euler12.py	/^    lengthList = numDivs(curTriangleNum)$/;"	kind:variable	line:35
-lineInts	../euler11.py	/^    lineInts = []$/;"	kind:variable	line:57
-lines	../euler11.py	/^lines = grid.split("\\n")$/;"	kind:variable	line:51
-lististNums	../euler11.py	/^lististNums = []$/;"	kind:variable	line:53
-math	../euler12.py	/^import math$/;"	kind:namespace	line:3
-maxDivs	../euler12.py	/^        maxDivs = lengthList$/;"	kind:variable	line:40
-maxDivs	../euler12.py	/^maxDivs = 1$/;"	kind:variable	line:27
-notDoneYet	../euler12.py	/^            notDoneYet = False$/;"	kind:variable	line:50
-notDoneYet	../euler12.py	/^notDoneYet = True$/;"	kind:variable	line:28
-numDivs	../euler12.py	/^def numDivs(x):$/;"	kind:function	line:18
-numStrings	../euler13.py	/^numStrings = numbers.split('\\n')$/;"	kind:variable	line:106
-numpy	../euler11.py	/^import numpy$/;"	kind:namespace	line:28
-one_nine	../euler17.py	/^def one_nine(n):$/;"	kind:function	line:9
-one_ninenine	../euler17.py	/^def one_ninenine(n):$/;"	kind:function	line:49
-otherdiag	../euler11.py	/^def otherdiag(r, c):$/;"	kind:function	line:73
-otherdiags	../euler11.py	/^otherdiags =[]$/;"	kind:variable	line:79
-p	../euler44.py	/^def p(n):$/;"	kind:function	line:1
-pCash	../euler44.py	/^pCash = {}$/;"	kind:variable	line:6
-panDigits	../euler41.py	/^panDigits = []$/;"	kind:variable	line:7
-powersThingy	../euler29.py	/^def powersThingy(max_a, max_b):$/;"	kind:function	line:15
-seq	../euler29.py	/^seq = (powersThingy(100, 100))$/;"	kind:variable	line:31
-strNums	../euler11.py	/^    strNums = string.split(" ")$/;"	kind:variable	line:56
-tens_place	../euler17.py	/^def tens_place(n):$/;"	kind:function	line:31
-total	../euler13.py	/^    total = total + int(strNum)$/;"	kind:variable	line:113
-total	../euler13.py	/^total = n0$/;"	kind:variable	line:110
-vertical	../euler11.py	/^def vertical(r, c):$/;"	kind:function	line:67
-verticals	../euler11.py	/^verticals = []$/;"	kind:variable	line:77
-write_num_as_string	../euler17.py	/^def write_num_as_string(n):$/;"	kind:function	line:70
+hm	../euler_002.py	/^import helpme as hm$/;"	kind:namespace	line:17
+hm	../euler_003.py	/^import helpme as hm$/;"	kind:namespace	line:11
+hm	../euler_035.py	/^import helpme as hm$/;"	kind:namespace	line:13
+hm	../euler_036.py	/^import helpme as hm$/;"	kind:namespace	line:15
+hm	../euler_357.py	/^import helpme as hm$/;"	kind:namespace	line:12
+horizontal	../euler_011.py	/^def horizontal(r, c):$/;"	kind:function	line:69
+horizontals	../euler_011.py	/^horizontals = []$/;"	kind:variable	line:85
+i	../euler_012.py	/^i = 1$/;"	kind:variable	line:31
+int_2_binary_str	../helpme.py	/^def int_2_binary_str(n):$/;"	kind:function	line:120
+is_circ_prime	../euler_035.py	/^def is_circ_prime(n):$/;"	kind:function	line:36
+is_pan_digit	../helpme.py	/^def is_pan_digit(n):$/;"	kind:function	line:10
+is_prime	../helpme.py	/^def is_prime(n):$/;"	kind:function	line:86
+isfile	../update_readme.py	/^from os.path import isfile, join$/;"	kind:namespace	line:7
+join	../update_readme.py	/^from os.path import isfile, join$/;"	kind:namespace	line:7
+l	../euler_002.py	/^l = sum([pood for pood in [hm.fib(i) for i in range(50)] if pood%2==0 and pood<=4000000])$/;"	kind:variable	line:25
+l	../euler_041.py	/^    l = []$/;"	kind:variable	line:14
+lineInts	../euler_011.py	/^    lineInts = []$/;"	kind:variable	line:61
+lines	../euler_011.py	/^lines = grid.split("\\n")$/;"	kind:variable	line:55
+lines	../euler_018.py	/^lines = lil_triangle.split("\\n")$/;"	kind:variable	line:53
+listODivs	../euler_012.py	/^    listODivs = divList(curTriangleNum)$/;"	kind:variable	line:36
+list_o_nums	../euler_005.py	/^list_o_nums = list(map(int, list_o_strings))$/;"	kind:variable	line:109
+list_o_strings	../euler_005.py	/^list_o_strings = (big_ass_string.split('\\n'))$/;"	kind:variable	line:108
+listdir	../update_readme.py	/^from os import listdir$/;"	kind:namespace	line:6
+lististNums	../euler_011.py	/^lististNums = []$/;"	kind:variable	line:57
+listlist	../euler_018.py	/^listlist = [line.split(" ") for line in lines]$/;"	kind:variable	line:55
+lists	../euler_018.py	/^lists = []$/;"	kind:variable	line:57
+lru_cache	../euler_012.py	/^from functools import lru_cache$/;"	kind:namespace	line:82
+main	../euler_028.py	/^def main():$/;"	kind:function	line:70
+math	../euler_012.py	/^import math$/;"	kind:namespace	line:5
+math	../euler_012.py	/^import math$/;"	kind:namespace	line:81
+math	../helpme.py	/^    import math$/;"	kind:namespace	line:75
+math	../helpme.py	/^    import math$/;"	kind:namespace	line:95
+math	../helpme.py	/^import math$/;"	kind:namespace	line:5
+maxDivs	../euler_012.py	/^        maxDivs = lengthList$/;"	kind:variable	line:40
+maxDivs	../euler_012.py	/^maxDivs = 1$/;"	kind:variable	line:28
+maxmax	../euler_012.py	/^        maxmax = numDivs$/;"	kind:variable	line:115
+maxmax	../euler_012.py	/^maxmax = 1$/;"	kind:variable	line:110
+nDivisors	../euler_012.py	/^def nDivisors(n):$/;"	kind:function	line:98
+name_score	../euler_022.py	/^def name_score(name):$/;"	kind:function	line:15
+names	../euler_022.py	/^names = get_names()$/;"	kind:variable	line:27
+nextNum	../euler_092.py	/^def nextNum(n):$/;"	kind:function	line:27
+north	../euler_028.py	/^def north(x, y):$/;"	kind:function	line:34
+notDoneYet	../euler_012.py	/^            notDoneYet = False$/;"	kind:variable	line:50
+notDoneYet	../euler_012.py	/^notDoneYet = True$/;"	kind:variable	line:29
+not_done	../update_readme.py	/^not_done = [int(f[6:9]) for f in listdir('.') if isfile(join('.', f)) and f.startswith("euler")]$/;"	kind:variable	line:15
+not_done_path	../update_readme.py	/^not_done_path = r'.\/not_done'$/;"	kind:variable	line:12
+np	../euler_028.py	/^import numpy as np$/;"	kind:namespace	line:18
+numDivs	../euler_012.py	/^    numDivs = nDivisors(cur_triangle_number)$/;"	kind:variable	line:113
+numDivs	../euler_012.py	/^def numDivs(x):$/;"	kind:function	line:18
+numStrings	../euler_013.py	/^numStrings = numbers.split('\\n')$/;"	kind:variable	line:107
+num_divisors	../helpme.py	/^def num_divisors(x):$/;"	kind:function	line:65
+num_rotations_gen	../euler_035.py	/^def num_rotations_gen(l):$/;"	kind:function	line:28
+numbers	../euler_024.py	/^numbers = []$/;"	kind:variable	line:24
+numpy	../euler_011.py	/^import numpy$/;"	kind:namespace	line:32
+nums	../euler_041.py	/^nums = {}$/;"	kind:variable	line:11
+numslists	../euler_041.py	/^numslists = []$/;"	kind:variable	line:7
+one_nine	../euler_017.py	/^def one_nine(n):$/;"	kind:function	line:15
+one_nine_seven	../euler_035.py	/^one_nine_seven = hm.digits_list(197)$/;"	kind:variable	line:24
+one_ninenine	../euler_017.py	/^def one_ninenine(n):$/;"	kind:function	line:55
+otherdiag	../euler_011.py	/^def otherdiag(r, c):$/;"	kind:function	line:81
+otherdiags	../euler_011.py	/^otherdiags = []$/;"	kind:variable	line:88
+p	../euler_044.py	/^def p(n):$/;"	kind:function	line:1
+pCash	../euler_044.py	/^pCash = {}$/;"	kind:variable	line:6
+permutations	../euler_024.py	/^from itertools import permutations$/;"	kind:namespace	line:17
+permutations	../euler_035.py	/^from itertools import permutations$/;"	kind:namespace	line:14
+permutations	../euler_041.py	/^from itertools import permutations$/;"	kind:namespace	line:5
+playGame	../euler_205.py	/^    def playGame(self):$/;"	kind:member	line:47
+powersThingy	../euler_029.py	/^def powersThingy(max_a, max_b):$/;"	kind:function	line:15
+prime_factors_set	../euler_047.py	/^def prime_factors_set(n):$/;"	kind:function	line:1
+random	../euler_205.py	/^import random$/;"	kind:namespace	line:10
+re	../euler_017.py	/^import re$/;"	kind:namespace	line:93
+roll1	../euler_205.py	/^    def roll1(self):$/;"	kind:member	line:23
+roll2	../euler_205.py	/^    def roll2(self):$/;"	kind:member	line:30
+rotate_list	../euler_035.py	/^def rotate_list(l, n):$/;"	kind:function	line:17
+seq	../euler_029.py	/^seq = (powersThingy(100, 100))$/;"	kind:variable	line:31
+south	../euler_028.py	/^def south(x, y):$/;"	kind:function	line:26
+spiral_coords	../euler_028.py	/^def spiral_coords(end):$/;"	kind:function	line:41
+strNums	../euler_011.py	/^    strNums = string.split(" ")$/;"	kind:variable	line:60
+str_is_pal	../helpme.py	/^def str_is_pal(s):$/;"	kind:function	line:103
+strangs	../euler_024.py	/^strangs = []$/;"	kind:variable	line:30
+sum	../euler_036.py	/^sum = 0$/;"	kind:variable	line:17
+tens_place	../euler_017.py	/^def tens_place(n):$/;"	kind:function	line:37
+totaNumGames	../euler_205.py	/^    def totaNumGames(self):$/;"	kind:member	line:34
+total	../euler_013.py	/^    total = total + int(strNum)$/;"	kind:variable	line:114
+total	../euler_013.py	/^total = n0$/;"	kind:variable	line:111
+totalScore	../euler_022.py	/^totalScore = 0$/;"	kind:variable	line:38
+tuple2string	../euler_024.py	/^def tuple2string(t):$/;"	kind:function	line:20
+update_readme.py	../update_readme.py	1;"	kind:file	line:1
+vertical	../euler_011.py	/^def vertical(r, c):$/;"	kind:function	line:73
+verticals	../euler_011.py	/^verticals = []$/;"	kind:variable	line:86
+west	../euler_028.py	/^def west(x, y):$/;"	kind:function	line:30
+write_num_as_string	../euler_017.py	/^def write_num_as_string(n):$/;"	kind:function	line:78

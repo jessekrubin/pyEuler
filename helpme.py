@@ -6,15 +6,16 @@ import math
 import functools
 
 
+@functools.lru_cache(maxsize=None)
 def is_pan_digit(n):
     nset = set(digitsList(n))
-    return(nset == set([(i + 1) for i in range(b10length(n))]))
+    return (nset == set([(i + 1) for i in range(b10length(n))]))
 
 
 def b10_num_length(n):
     l = 0
     cur = n
-    while(cur > 0):
+    while (cur > 0):
         l += 1
         cur = cur // 10
     return l
@@ -27,10 +28,11 @@ def digits_list(n):
 
     digits = []
     cur = n
-    while(cur > 10):
+    while (cur > 10):
         digits.append(cur % 10)
         cur = cur // 10
     digits.append(cur)
+    digits.reverse()
     return digits
 
 
@@ -81,6 +83,7 @@ def divisors_gen(n):
         yield divisor
 
 
+@functools.lru_cache(maxsize=None)
 def is_prime(n):
     """is_prime(n) returns True if n is prime
 

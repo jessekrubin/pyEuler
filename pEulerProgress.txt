@@ -1,13 +1,7 @@
-#pEuler
-
-AHA, you have found my project Euler repo. 
-The file I keep lost of helper functions in is called 'helpme.py.'
-
-##Problems table
-
 | Problem # | Solved?  |
 | --------- | -------- |
-| 002       | DONE     |
+| 001       | DONE     |
+| 002       | in prog  |
 | 003       | in prog  |
 | 004       | in prog  |
 | 005       | in prog  |

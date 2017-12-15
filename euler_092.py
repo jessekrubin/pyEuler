@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# Jesse Rubin - project Euler
+# -*- coding: utf-8 -*-
+# Jesse Rubin ~ Project Euler
 
 # Square digit chains
 # Problem 92
