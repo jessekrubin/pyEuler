@@ -1,61 +1,62 @@
 #pEuler
 
 AHA, you have found my project Euler repo. 
-The file I keep lost of helper functions in is called 'helpme.py.'
+So far I have done 22 problems, and am currently working on 17. 
 
 ##Problems table
 
 | Problem # | Solved?  |
 | --------- | -------- |
+| 001       | DONE     |
 | 002       | DONE     |
-| 003       | in prog  |
+| 003       | DONE     |
 | 004       | in prog  |
 | 005       | in prog  |
 | 006       | ???      |
-| 007       | ???      |
-| 008       | ???      |
+| 007       | DONE     |
+| 008       | DONE     |
 | 009       | ???      |
 | 010       | ???      |
-| 011       | in prog  |
-| 012       | in prog  |
-| 013       | in prog  |
+| 011       | DONE     |
+| 012       | DONE     |
+| 013       | DONE     |
 | 014       | ???      |
 | 015       | ???      |
 | 016       | ???      |
-| 017       | in prog  |
-| 018       | in prog  |
+| 017       | DONE     |
+| 018       | DONE     |
 | 019       | ???      |
 | 020       | ???      |
 | 021       | ???      |
-| 022       | in prog  |
-| 023       | ???      |
+| 022       | DONE     |
+| 023       | in prog  |
 | 024       | in prog  |
 | 025       | in prog  |
 | 026       | ???      |
 | 027       | ???      |
 | 028       | in prog  |
-| 029       | in prog  |
+| 029       | DONE     |
 | 030       | ???      |
-| 031       | ???      |
+| 031       | DONE     |
 | 032       | ???      |
 | 033       | ???      |
 | 034       | ???      |
-| 035       | in prog  |
-| 036       | in prog  |
+| 035       | DONE     |
+| 036       | DONE     |
 | 037       | ???      |
 | 038       | ???      |
 | 039       | ???      |
-| 040       | ???      |
-| 041       | in prog  |
-| 042       | ???      |
+| 040       | DONE     |
+| 041       | DONE     |
+| 042       | DONE     |
 | 043       | ???      |
 | 044       | in prog  |
-| 045       | ???      |
+| 045       | DONE     |
 | 046       | ???      |
 | 047       | in prog  |
 | 048       | ???      |
-| 049       | ???      |
-| 050       | ???      |
+| 049       | in prog  |
+| 050       | in prog  |
 | 051       | ???      |
 | 052       | ???      |
 | 053       | ???      |
@@ -72,19 +73,19 @@ The file I keep lost of helper functions in is called 'helpme.py.'
 | 064       | ???      |
 | 065       | ???      |
 | 066       | ???      |
-| 067       | ???      |
+| 067       | in prog  |
 | 068       | ???      |
 | 069       | ???      |
 | 070       | ???      |
 | 071       | ???      |
 | 072       | ???      |
 | 073       | ???      |
-| 074       | ???      |
+| 074       | in prog  |
 | 075       | ???      |
-| 076       | ???      |
+| 076       | in prog  |
 | 077       | ???      |
 | 078       | ???      |
-| 079       | ???      |
+| 079       | DONE     |
 | 080       | ???      |
 | 081       | ???      |
 | 082       | ???      |
@@ -97,7 +98,7 @@ The file I keep lost of helper functions in is called 'helpme.py.'
 | 089       | ???      |
 | 090       | ???      |
 | 091       | ???      |
-| 092       | in prog  |
+| 092       | DONE     |
 | 093       | ???      |
 | 094       | ???      |
 | 095       | ???      |
@@ -107,7 +108,7 @@ The file I keep lost of helper functions in is called 'helpme.py.'
 | 099       | ???      |
 | 100       | ???      |
 | 101       | ???      |
-| 102       | ???      |
+| 102       | DONE     |
 | 103       | ???      |
 | 104       | ???      |
 | 105       | ???      |

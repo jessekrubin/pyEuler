@@ -53,6 +53,7 @@ def tens_place(n):
 
 
 def one_ninenine(n):
+    "returns strings for numbers 1 - 99"
     if n < 10:
         return one_nine(n)
     else:
@@ -75,6 +76,7 @@ def one_ninenine(n):
             a, b = divmod(n, 10)
             return tens_place(a) + " " + one_nine(b)
 
+
 def write_num_as_string(n):
     if n == 1000:
         return "one thousand"
@@ -83,7 +85,7 @@ def write_num_as_string(n):
         a, b = divmod(n, 100)
         if a == 0:
             return one_ninenine(n)
-        elif (n%100 == 0):
+        elif (n % 100 == 0):
             return one_nine(a) + " hundred "
 
         else:

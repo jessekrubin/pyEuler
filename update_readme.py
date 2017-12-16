@@ -5,36 +5,36 @@
 from os import listdir
 from os.path import isfile, join
 
-done_path = r'./done'
+DONE_PATH = r'./done'
 
-done = [int(f[6:9]) for f in listdir(done_path) if isfile(join(done_path, f))]
-not_done = [
+DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
+NOT_DONE = [
     int(f[6:9]) for f in listdir('.')
     if isfile(join('.', f)) and f.startswith("euler")
 ]
 
-print(done)
-print(not_done)
+print(DONE)
+print(NOT_DONE)
 
-numEulerProbs = 600
+N_EULER_PROBS = 615
 rm_text = """#pEuler
 
 AHA, you have found my project Euler repo. 
-The file I keep lost of helper functions in is called 'helpme.py.'
+So far I have done {} problems, and am currently working on {}. 
 
 ##Problems table
 
-"""
+""".format(len(DONE), len(NOT_DONE))
 
 with open('README.md', 'w') as f:
     f.write(rm_text)
     f.write("| Problem # | Solved?  |\n")
     f.write("| --------- | -------- |\n")
-    for i in range(1, numEulerProbs):
+    for i in range(1, N_EULER_PROBS):
         status = "???     "
-        if i in done:
+        if i in DONE:
             status = "DONE    "
-        elif i in not_done:
+        elif i in NOT_DONE:
             status = "in prog "
 
         this_line = "| {}       | {} |\n".format(str(i).zfill(3), status)

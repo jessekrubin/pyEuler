@@ -1,19 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin ~ Project Euler
+"""
+Square digit chains
+Problem 92
+A number chain is created by continuously adding the square of the digits in a 
+number to form a new number until it has been seen before.
 
-# Square digit chains
-# Problem 92
-# A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+For example,
 
-# For example,
+44 → 32 → 13 → 10 → 1 → 1
+85 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89
 
-# 44 → 32 → 13 → 10 → 1 → 1
-# 85 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89
+Therefore any chain that arrives at 1 or 89 will become stuck in an endless 
+loop. What is most amazing is that EVERY starting number will eventually arrive
+at 1 or 89.
 
-# Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
-
-# How many starting numbers below ten million will arrive at 89?
+How many starting numbers below ten million will arrive at 89?
+"""
 
 import functools
 
@@ -21,6 +25,8 @@ import functools
 def digitsList(n):
     d = [int(x) for x in str(n)]
     return d
+
+
 # digitsList(123) returns [1, 2, 3]
 
 
@@ -32,12 +38,14 @@ def nextNum(n):
         m += p * p
     # print(m)
     return m
+
+
 # nextNum(123) returns 14
 
 
 @functools.lru_cache(maxsize=None)
 def goes2_89(n):
-    while(True):
+    while (True):
         # print("current: {}".format(n))
         if n == 89:
             return True

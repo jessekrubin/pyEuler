@@ -1,3 +1,8 @@
 {
-    "terminal.integrated.shell.windows": "cmd.exe"
+  "terminal.integrated.shell.windows": "cmd.exe",
+  "editor.rulers": [80, 120],
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "yapf",
+  "python.formatting.autopep8Path": "yapf",
+  "python.pythonPath": "/Users/jesserubin/anaconda3/envs/python3/bin/python"
 }

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# phil and samantha and jesse
-
+# JESSE RUBIN - project Euler
 """
 Largest prime factor
 Problem 3
@@ -12,6 +11,7 @@ What is the largest prime factor of the number 600851475143 ?
 
 import math
 
+
 def is_prime(n):
     """is_prime(n) returns True if n is prime
 
@@ -21,11 +21,11 @@ def is_prime(n):
     >>> is_prime(17)
     True
     """
-    import math
 
     if n % 2 == 0 and n > 2:
         return False
     return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
+
 
 def divisors_gen(n):
     large_divisors = []
@@ -39,4 +39,4 @@ def divisors_gen(n):
 
 
 answer = max(filter(is_prime, divisors_gen(600851475143)))
-euler_003.pyprint("largest prime factor of 600851475143 is: {}".format(answer))
+print("largest prime factor of 600851475143 is: {}".format(answer))

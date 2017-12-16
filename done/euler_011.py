@@ -75,11 +75,13 @@ def vertical(r, c):
 
 
 def diag(r, c):
-    return grid[r, c] * grid[r + 1, c + 1] * grid[r + 2, c + 2] * grid[r + 3, c + 3]
+    return grid[r, c] * grid[r + 1, c + 1] * grid[r + 2, c + 2] * grid[r + 3,
+                                                                       c + 3]
 
 
 def otherdiag(r, c):
-    return grid[r, c] * grid[r - 1, c + 1] * grid[r - 2, c + 2] * grid[r - 3, c + 3]
+    return grid[r, c] * grid[r - 1, c + 1] * grid[r - 2, c + 2] * grid[r - 3,
+                                                                       c + 3]
 
 
 horizontals = []
@@ -90,7 +92,7 @@ for j in range(20):
     for i in range(20):
         try:
             horizontals.append(horizontal(i, j))
-        except:
+        except Exception:
             pass
 
         try:
