@@ -1,7 +1,7 @@
 #pEuler
 
 AHA, you have found my project Euler repo. 
-So far I have done 22 problems, and am currently working on 17. 
+So far I have done 23 problems, and am currently working on 17. 
 
 ##Problems table
 
@@ -12,7 +12,7 @@ So far I have done 22 problems, and am currently working on 17.
 | 003       | DONE     |
 | 004       | in prog  |
 | 005       | in prog  |
-| 006       | ???      |
+| 006       | DONE     |
 | 007       | DONE     |
 | 008       | DONE     |
 | 009       | ???      |
@@ -606,3 +606,18 @@ So far I have done 22 problems, and am currently working on 17.
 | 597       | ???      |
 | 598       | ???      |
 | 599       | ???      |
+| 600       | ???      |
+| 601       | ???      |
+| 602       | ???      |
+| 603       | ???      |
+| 604       | ???      |
+| 605       | ???      |
+| 606       | ???      |
+| 607       | ???      |
+| 608       | ???      |
+| 609       | ???      |
+| 610       | ???      |
+| 611       | ???      |
+| 612       | ???      |
+| 613       | in prog  |
+| 614       | ???      |
