@@ -2,29 +2,31 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - update README.md
 
+import datetime
 from os import listdir
 from os.path import isfile, join
 
 DONE_PATH = r'./done'
-
+NOT_DONE_PATH = r'./not_done'
+LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
 DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
 NOT_DONE = [
-    int(f[6:9]) for f in listdir('.')
-    if isfile(join('.', f)) and f.startswith("euler")
+    int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
+    if isfile(join(NOT_DONE_PATH, f)) and f.startswith("euler")
 ]
 
-print(DONE)
-print(NOT_DONE)
+print("DONE: {}".format(DONE))
+print("NOT_DONE: {}".format(NOT_DONE))
 
 N_EULER_PROBS = 615
-rm_text = """#pEuler
+rm_text = """# pEuler
 
 AHA, you have found my project Euler repo. 
-So far I have done {} problems, and am currently working on {}. 
+Last I heard ({}) i've done {} problems, and am currently working on {}. 
 
-##Problems table
+## Problems table
 
-""".format(len(DONE), len(NOT_DONE))
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE))
 
 with open('README.md', 'w') as f:
     f.write(rm_text)

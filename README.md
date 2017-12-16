@@ -1,9 +1,9 @@
-#pEuler
+# pEuler
 
 AHA, you have found my project Euler repo. 
-So far I have done 23 problems, and am currently working on 17. 
+Last I heard (2017-12-16) i've done 23 problems, and am currently working on 17. 
 
-##Problems table
+## Problems table
 
 | Problem # | Solved?  |
 | --------- | -------- |
@@ -15,7 +15,7 @@ So far I have done 23 problems, and am currently working on 17.
 | 006       | DONE     |
 | 007       | DONE     |
 | 008       | DONE     |
-| 009       | ???      |
+| 009       | in prog  |
 | 010       | ???      |
 | 011       | DONE     |
 | 012       | DONE     |
