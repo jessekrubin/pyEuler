@@ -19,14 +19,24 @@ Find the maximum total from top to bottom in triangle.txt (right click and 'Save
 NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 299 altogether! If you could check one trillion (1012) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
 """
 
+lil_string_triangle = """3
+7 4
+2 4 6
+8 5 9 3"""
 
 def main():
     print("main")
     huge_tri = huge_triangle()
     # print(huge_tri)
     huge_tri_lists = triangle_lists(huge_tri)
+    lil_triangle = triangle_lists(lil_string_triangle)
+    print(lil_triangle)
     # print(huge_tri_lists)
-    answer = triangle_max_sum_path(huge_tri_lists)
+    # answer = triangle_max_sum_path(lil_triangle)
+    # answer2 = triangle_max_sum_path_maybe_faster(lil_triangle, 0, 0)
+    # print("sum: {}".format(answer))
+    # print("sum: {}".format(answer2))
+    answer= triangle_max_sum_path_maybe_faster(huge_tri_lists, 0, 0)
     print("sum: {}".format(answer))
 
 
@@ -56,6 +66,15 @@ def triangle_max_sum_path(l):
         # print(left)
         # print(right)
         return max((triangle_max_sum_path(left) + top, triangle_max_sum_path(right) + top))
+
+def triangle_max_sum_path_maybe_faster(l, r, i):
+    if len(l) == r + 1:
+        return (l[r][i])
+    else:
+        top = (l[r][i])
+        # left = l[r+1][i+0]
+        # right = l[r+1][i+1]
+        return max((triangle_max_sum_path_maybe_faster(l, r+1, i) + top, triangle_max_sum_path_maybe_faster(l, r+1, i +1) + top))
 
 
 def huge_triangle():
