@@ -1,7 +1,7 @@
 # pEuler
 
 AHA, you have found my project Euler repo. 
-Last I heard (2017-12-18) i've done 26 problems, and am currently working on 15. 
+Last I heard (2017-12-24) i've done 29 problems, and am currently working on 13. 
 
 ## Problems table
 
@@ -12,11 +12,11 @@ Last I heard (2017-12-18) i've done 26 problems, and am currently working on 15.
 | 009 | DONE | 010 | DONE | 011 | DONE | 012 | DONE |
 | 013 | DONE | 014 | DONE | 015 | DONE | 016 | DONE |
 | 017 | DONE | 018 | DONE | 019 | DONE | 020 | DONE |
-| 021 | ??? | 022 | DONE | 023 | .... | 024 | .... |
-| 025 | .... | 026 | .... | 027 | .... | 028 | .... |
+| 021 | ??? | 022 | DONE | 023 | .... | 024 | DONE |
+| 025 | DONE | 026 | DONE | 027 | DONE | 028 | .... |
 | 029 | DONE | 030 | DONE | 031 | DONE | 032 | DONE |
 | 033 | ??? | 034 | ??? | 035 | DONE | 036 | DONE |
-| 037 | ??? | 038 | ??? | 039 | ??? | 040 | DONE |
+| 037 | ??? | 038 | DONE | 039 | DONE | 040 | DONE |
 | 041 | DONE | 042 | DONE | 043 | DONE | 044 | .... |
 | 045 | DONE | 046 | DONE | 047 | .... | 048 | .... |
 | 049 | .... | 050 | .... | 051 | .... | 052 | .... |

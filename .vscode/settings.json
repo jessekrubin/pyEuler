@@ -4,5 +4,5 @@
   "editor.formatOnSave": true,
   "python.formatting.provider": "yapf",
   "python.formatting.autopep8Path": "yapf",
-  "python.pythonPath": "/Users/jesserubin/anaconda3/envs/python3/bin/python"
+  "python.pythonPath": "/Users/jesserubin/miniconda3/bin/python"
 }
