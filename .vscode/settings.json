@@ -1,8 +1,10 @@
 {
   "terminal.integrated.shell.windows": "cmd.exe",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.formatOnSave": true,
   "python.formatting.provider": "yapf",
-  "python.formatting.autopep8Path": "yapf",
-  "python.pythonPath": "/Users/jesserubin/miniconda3/bin/python"
+  "python.formatting.autopep8Path": "yapf"
 }
