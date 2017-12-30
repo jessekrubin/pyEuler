@@ -36,7 +36,7 @@ Last I heard ({}) i've done {} problems, and am currently working on {}.
 
 print(rm_text)
 
-NUM_COLUMNS = 4
+NUM_COLUMNS = 6
 
 with open('README.md', 'w') as f:
     f.write(rm_text)
