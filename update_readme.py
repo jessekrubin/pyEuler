@@ -48,7 +48,7 @@ with open('README.md', 'w') as f:
         line = ""
         for n in chunk:
             if n in DONE:
-                status = "DONE"
+                status = ":metal:"
             if n in NOT_DONE:
                 status = ":confused:"
 
