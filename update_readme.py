@@ -43,7 +43,7 @@ with open('README.md', 'w') as f:
     )
     f.write("| ---:| --- | ---:| --- | ---:| --- | ---:| --- |\n")
     l = [i for i in range(1, N_EULER_PROBS)]
-    l_chunks = [l[i:i + 8] for i in range(0, (N_EULER_PROBS), 8)]
+    l_chunks = [l[i:i + 4] for i in range(0, (N_EULER_PROBS), 4)]
     # print(l_chunks)
     for chunk in l_chunks:
         status = ":wavy_dash:"
