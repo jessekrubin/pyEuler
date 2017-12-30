@@ -44,13 +44,13 @@ with open('README.md', 'w') as f:
     l_chunks = [l[i:i + 4] for i in range(0, (N_EULER_PROBS), 4)]
     # print(l_chunks)
     for chunk in l_chunks:
-        status = ".."
+        status = ":wavy_dash:"
         line = ""
         for n in chunk:
             if n in DONE:
                 status = ":metal:"
             if n in NOT_DONE:
-                status = ":confused:"
+                status = ":scream:"
 
             line += "| {} | {} ".format(str(n).zfill(3), status)
         line += "|\n"
