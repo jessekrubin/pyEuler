@@ -36,14 +36,20 @@ Last I heard ({}) i've done {} problems, and am currently working on {}.
 
 print(rm_text)
 
+NUM_COLUMNS = 4
+
 with open('README.md', 'w') as f:
     f.write(rm_text)
-    f.write(
-        "| Problem # | :white_check_mark:? | p# | :white_check_mark:? | p# |:white_check_mark:? | p# |:white_check_mark:? |\n"
-    )
-    f.write("| ---:| --- | ---:| --- | ---:| --- | ---:| --- |\n")
+    table_header = "| Problem # | :white_check_mark:? |" + " p# | :white_check_mark:? |" * (
+        NUM_COLUMNS - 1) + "\n"
+    print(table_header)
+    # "p# | :white_check_mark:? | p# |:white_check_mark:? | p# |:white_check_mark:? |\n"
+    f.write(table_header)
+    header_sep = "|" + " ---:| --- |" * NUM_COLUMNS + "\n"
+    # print(header_sep)
+    f.write(header_sep)
     l = [i for i in range(1, N_EULER_PROBS)]
-    l_chunks = [l[i:i + 4] for i in range(0, (N_EULER_PROBS), 4)]
+    l_chunks = [l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)]
     # print(l_chunks)
     for chunk in l_chunks:
         status = ":wavy_dash:"
@@ -58,14 +64,7 @@ with open('README.md', 'w') as f:
         line += "|\n"
         # print(line)
         f.write(line)
-    # for i in range(1, N_EULER_PROBS):
-    #     status = "???"
-    #     if i in DONE:
-    #         status = "DONE"
-    #     elif i in NOT_DONE:
-    #         status = "in prog"
-
-    #     this_line = "| {} | {} |\n".format(str(i).zfill(3), status)
-    #     f.write(this_line)
 
 f.close()
+
+print("readme updated")
