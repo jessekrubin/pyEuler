@@ -8,7 +8,7 @@ NOT_DONE: [5, 23, 28, 37, 44, 47, 49, 50, 68, 74, 76, 86, 205, 206, 357, 613]
 
 ## Problems table
 
-| Problem # | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? |
+| Problem # | :white_check_mark::question: | p# | :white_check_mark::question: | p# | :white_check_mark::question: | p# | :white_check_mark::question: | p# | :white_check_mark::question: | p# | :white_check_mark::question: |
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |
 | 1 | :metal: | 2 | :metal: | 3 | :metal: | 4 | :metal: | 5 | :scream: | 6 | :metal: |
 | 7 | :metal: | 8 | :metal: | 9 | :metal: | 10 | :metal: | 11 | :metal: | 12 | :metal: |
