@@ -38,10 +38,12 @@ print(rm_text)
 
 with open('README.md', 'w') as f:
     f.write(rm_text)
-    f.write("| Problem # | ???  | ### | ??? | ### | ??? | ### | ??? |\n")
+    f.write(
+        "| Problem # | :white_check_mark:? | p# | :white_check_mark:? | p# |:white_check_mark:? | p# |:white_check_mark:? |\n"
+    )
     f.write("| ---:| --- | ---:| --- | ---:| --- | ---:| --- |\n")
     l = [i for i in range(1, N_EULER_PROBS)]
-    l_chunks = [l[i:i + 4] for i in range(0, (N_EULER_PROBS), 4)]
+    l_chunks = [l[i:i + 8] for i in range(0, (N_EULER_PROBS), 8)]
     # print(l_chunks)
     for chunk in l_chunks:
         status = ":wavy_dash:"
