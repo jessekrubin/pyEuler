@@ -45,7 +45,7 @@ with open('README.md', 'w') as f:
     print(table_header)
     # "p# | :white_check_mark:? | p# |:white_check_mark:? | p# |:white_check_mark:? |\n"
     f.write(table_header)
-    header_sep = "|" + " ---:| --- |" * NUM_COLUMNS + "\n"
+    header_sep = "|" + " ---:|:--- |" * NUM_COLUMNS + "\n"
     # print(header_sep)
     f.write(header_sep)
     l = [i for i in range(1, N_EULER_PROBS)]
