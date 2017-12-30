@@ -60,7 +60,7 @@ with open('README.md', 'w') as f:
             if n in NOT_DONE:
                 status = ":scream:"
 
-            line += "| {} | {} ".format(str(n).zfill(3), status)
+            line += "| {} | {} ".format(str(n), status)
         line += "|\n"
         # print(line)
         f.write(line)

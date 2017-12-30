@@ -10,23 +10,23 @@ NOT_DONE: [5, 23, 28, 37, 44, 47, 49, 50, 68, 74, 76, 86, 205, 206, 357, 613]
 
 | Problem # | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? | p# | :white_check_mark:? |
 | ---:| --- | ---:| --- | ---:| --- | ---:| --- | ---:| --- | ---:| --- |
-| 001 | :metal: | 002 | :metal: | 003 | :metal: | 004 | :metal: | 005 | :scream: | 006 | :metal: |
-| 007 | :metal: | 008 | :metal: | 009 | :metal: | 010 | :metal: | 011 | :metal: | 012 | :metal: |
-| 013 | :metal: | 014 | :metal: | 015 | :metal: | 016 | :metal: | 017 | :metal: | 018 | :metal: |
-| 019 | :metal: | 020 | :metal: | 021 | :metal: | 022 | :metal: | 023 | :scream: | 024 | :metal: |
-| 025 | :metal: | 026 | :metal: | 027 | :metal: | 028 | :scream: | 029 | :metal: | 030 | :metal: |
-| 031 | :metal: | 032 | :metal: | 033 | :metal: | 034 | :metal: | 035 | :metal: | 036 | :metal: |
-| 037 | :scream: | 038 | :metal: | 039 | :metal: | 040 | :metal: | 041 | :metal: | 042 | :metal: |
-| 043 | :wavy_dash: | 044 | :scream: | 045 | :metal: | 046 | :metal: | 047 | :scream: | 048 | :scream: |
-| 049 | :scream: | 050 | :scream: | 051 | :scream: | 052 | :scream: | 053 | :scream: | 054 | :scream: |
-| 055 | :wavy_dash: | 056 | :wavy_dash: | 057 | :wavy_dash: | 058 | :wavy_dash: | 059 | :wavy_dash: | 060 | :wavy_dash: |
-| 061 | :wavy_dash: | 062 | :wavy_dash: | 063 | :wavy_dash: | 064 | :wavy_dash: | 065 | :wavy_dash: | 066 | :wavy_dash: |
-| 067 | :metal: | 068 | :scream: | 069 | :scream: | 070 | :scream: | 071 | :scream: | 072 | :scream: |
-| 073 | :wavy_dash: | 074 | :scream: | 075 | :scream: | 076 | :scream: | 077 | :scream: | 078 | :scream: |
-| 079 | :metal: | 080 | :metal: | 081 | :metal: | 082 | :metal: | 083 | :metal: | 084 | :metal: |
-| 085 | :wavy_dash: | 086 | :scream: | 087 | :scream: | 088 | :scream: | 089 | :scream: | 090 | :scream: |
-| 091 | :wavy_dash: | 092 | :metal: | 093 | :metal: | 094 | :metal: | 095 | :metal: | 096 | :metal: |
-| 097 | :wavy_dash: | 098 | :wavy_dash: | 099 | :wavy_dash: | 100 | :wavy_dash: | 101 | :wavy_dash: | 102 | :metal: |
+| 1 | :metal: | 2 | :metal: | 3 | :metal: | 4 | :metal: | 5 | :scream: | 6 | :metal: |
+| 7 | :metal: | 8 | :metal: | 9 | :metal: | 10 | :metal: | 11 | :metal: | 12 | :metal: |
+| 13 | :metal: | 14 | :metal: | 15 | :metal: | 16 | :metal: | 17 | :metal: | 18 | :metal: |
+| 19 | :metal: | 20 | :metal: | 21 | :metal: | 22 | :metal: | 23 | :scream: | 24 | :metal: |
+| 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :scream: | 29 | :metal: | 30 | :metal: |
+| 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
+| 37 | :scream: | 38 | :metal: | 39 | :metal: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
+| 43 | :wavy_dash: | 44 | :scream: | 45 | :metal: | 46 | :metal: | 47 | :scream: | 48 | :scream: |
+| 49 | :scream: | 50 | :scream: | 51 | :scream: | 52 | :scream: | 53 | :scream: | 54 | :scream: |
+| 55 | :wavy_dash: | 56 | :wavy_dash: | 57 | :wavy_dash: | 58 | :wavy_dash: | 59 | :wavy_dash: | 60 | :wavy_dash: |
+| 61 | :wavy_dash: | 62 | :wavy_dash: | 63 | :wavy_dash: | 64 | :wavy_dash: | 65 | :wavy_dash: | 66 | :wavy_dash: |
+| 67 | :metal: | 68 | :scream: | 69 | :scream: | 70 | :scream: | 71 | :scream: | 72 | :scream: |
+| 73 | :wavy_dash: | 74 | :scream: | 75 | :scream: | 76 | :scream: | 77 | :scream: | 78 | :scream: |
+| 79 | :metal: | 80 | :metal: | 81 | :metal: | 82 | :metal: | 83 | :metal: | 84 | :metal: |
+| 85 | :wavy_dash: | 86 | :scream: | 87 | :scream: | 88 | :scream: | 89 | :scream: | 90 | :scream: |
+| 91 | :wavy_dash: | 92 | :metal: | 93 | :metal: | 94 | :metal: | 95 | :metal: | 96 | :metal: |
+| 97 | :wavy_dash: | 98 | :wavy_dash: | 99 | :wavy_dash: | 100 | :wavy_dash: | 101 | :wavy_dash: | 102 | :metal: |
 | 103 | :wavy_dash: | 104 | :wavy_dash: | 105 | :wavy_dash: | 106 | :wavy_dash: | 107 | :wavy_dash: | 108 | :wavy_dash: |
 | 109 | :wavy_dash: | 110 | :wavy_dash: | 111 | :wavy_dash: | 112 | :wavy_dash: | 113 | :wavy_dash: | 114 | :wavy_dash: |
 | 115 | :wavy_dash: | 116 | :wavy_dash: | 117 | :wavy_dash: | 118 | :wavy_dash: | 119 | :wavy_dash: | 120 | :wavy_dash: |
