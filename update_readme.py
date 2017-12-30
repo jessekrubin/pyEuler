@@ -50,7 +50,7 @@ with open('README.md', 'w') as f:
             if n in DONE:
                 status = "DONE"
             if n in NOT_DONE:
-                status = "...."
+                status = ":confused:"
 
             line += "| {} | {} ".format(str(n).zfill(3), status)
         line += "|\n"
