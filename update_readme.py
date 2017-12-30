@@ -40,7 +40,7 @@ NUM_COLUMNS = 6
 
 with open('README.md', 'w') as f:
     f.write(rm_text)
-    table_header = "| Problem # | :curly_loop: |" + " p# | :curly_loop: |" * (
+    table_header = "| Problem # | DONE? |" + " p# | DONE? |" * (
         NUM_COLUMNS - 1) + "\n"
     print(table_header)
     # "p# | :white_check_mark:? | p# |:white_check_mark:? | p# |:white_check_mark:? |\n"
