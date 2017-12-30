@@ -1,7 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
-
 """
 Prime permutations
 Problem 49
@@ -22,7 +21,7 @@ import helpme as hm
 four_dig_primes = []
 for i in range(1000, 10000):
     if (hm.is_prime(i)):
-        primesWperms.append(i)
+        four_dig_primes.append(i)
 
 # 4_dig_prime_perms = []
 

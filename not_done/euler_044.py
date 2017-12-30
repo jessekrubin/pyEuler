@@ -13,14 +13,16 @@ It can be seen that P4 + P7 = 22 + 70 = 92 = P8. However, their difference,
 70 − 22 = 48, is not pentagonal.
 
 Find the pair of pentagonal numbers, Pj and Pk, for which their sum and
-difference are pentagonal and D = |Pk − Pj| is minimised; what is the value of D?
+difference are pentagonal and D = |Pk − Pj| is minimised; what is the value
+of D?
 """
 
 from functools import lru_cache
 
+
 @lru_cache(maxsize=None)
 def pent_num(n):
-    return (n * (3*n-1) //2)
+    return (n * (3 * n - 1) // 2)
 
 
 pen_nums = set()
@@ -53,4 +55,3 @@ for i in range(100):
 #             break
 #     pentagonal_nums.append(pni)
 #     i += 1
-
