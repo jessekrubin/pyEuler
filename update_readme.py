@@ -17,8 +17,8 @@ NOT_DONE = [
 DONE.sort()
 NOT_DONE.sort()
 
-print("DONE: {}".format(DONE))
-print("NOT_DONE: {}".format(NOT_DONE))
+DONE_LIST_STR = ("DONE: {}".format(DONE))
+NOT_DONE_LIST_STR = ("NOT_DONE: {}".format(NOT_DONE))
 
 N_EULER_PROBS = 615 + 1
 rm_text = """# pEuler
@@ -26,9 +26,15 @@ rm_text = """# pEuler
 AHA, you have found my project Euler repo. 
 Last I heard ({}) i've done {} problems, and am currently working on {}. 
 
+{}
+{}
+
 ## Problems table
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE))
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR,
+           NOT_DONE_LIST_STR)
+
+print(rm_text)
 
 with open('README.md', 'w') as f:
     f.write(rm_text)
@@ -38,7 +44,7 @@ with open('README.md', 'w') as f:
     l_chunks = [l[i:i + 4] for i in range(0, (N_EULER_PROBS), 4)]
     # print(l_chunks)
     for chunk in l_chunks:
-        status = "???"
+        status = ".."
         line = ""
         for n in chunk:
             if n in DONE:

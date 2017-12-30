@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin
-
 """
 Non-abundant sums
 Problem 23
@@ -26,6 +25,7 @@ two abundant numbers.
 
 import math
 
+
 def divisors_gen(n):
     large_divisors = []
     for i in range(1, int(math.sqrt(n) + 1)):
@@ -37,10 +37,15 @@ def divisors_gen(n):
         yield divisor
 
 
-def is_perfect(n):
+def sum_divisors(n):
+    return sum((i for i in divisors_gen(n))) / 2
+
+
+def is_perfect_n(n):
     return (n == sum((i for i in divisors_gen(n))) // 2)
 
 
 for i in divisors_gen(28):
     print(i)
-is_perfect(28)
+print(is_perfect_n(28))
+print

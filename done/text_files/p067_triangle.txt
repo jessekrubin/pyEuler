@@ -1,84 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Jesse Rubin - project Euler
-
-"""
-Maximum path sum II
-Problem 67
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
-
-3
-7 4
-2 4 6
-8 5 9 3
-
-That is, 3 + 7 + 4 + 9 = 23.
-
-Find the maximum total from top to bottom in triangle.txt (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.
-
-NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 299 altogether! If you could check one trillion (1012) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
-"""
-
-lil_string_triangle = """3
-7 4
-2 4 6
-8 5 9 3"""
-
-def main():
-    print("main")
-    huge_tri = huge_triangle()
-    # print(huge_tri)
-    huge_tri_lists = triangle_lists(huge_tri)
-    lil_triangle = triangle_lists(lil_string_triangle)
-    print(lil_triangle)
-    # print(huge_tri_lists)
-    # answer = triangle_max_sum_path(lil_triangle)
-    # answer2 = triangle_max_sum_path_maybe_faster(lil_triangle, 0, 0)
-    # print("sum: {}".format(answer))
-    # print("sum: {}".format(answer2))
-    answer= triangle_max_sum_path_maybe_faster(huge_tri_lists, 0, 0)
-    print("sum: {}".format(answer))
-
-
-# CODE FROM PROBLEM 18
-def triangle_lists(s):
-    lines = s.split("\n")
-    listlist = [line.split(" ") for line in lines]
-    lists = []
-    for l in listlist:
-        lists.append(list(map(int, l)))
-    return (lists)
-
-
-def triangle_max_sum_path(l):
-    if len(l) == 1:
-        return (l[0][0])
-    else:
-        top = (l[0][0])
-        left = []
-        right = []
-        for ls in l:
-            # print(ls)
-            if len(ls) > 1:
-                # print(ls)
-                left.append(ls[:-1])
-                right.append(ls[1:])
-        # print(left)
-        # print(right)
-        return max((triangle_max_sum_path(left) + top, triangle_max_sum_path(right) + top))
-
-def triangle_max_sum_path_maybe_faster(l, r, i):
-    if len(l) == r + 1:
-        return (l[r][i])
-    else:
-        top = (l[r][i])
-        # left = l[r+1][i+0]
-        # right = l[r+1][i+1]
-        return max((triangle_max_sum_path_maybe_faster(l, r+1, i) + top, triangle_max_sum_path_maybe_faster(l, r+1, i +1) + top))
-
-
-def huge_triangle():
-    return """59
+59
 73 41
 52 40 09
 26 53 06 34
@@ -177,8 +97,4 @@ def huge_triangle():
 60 85 59 39 60 07 57 76 77 92 06 35 15 72 23 41 45 52 95 18 64 79 86 53 56 31 69 11 91 31 84 50 44 82 22 81 41 40 30 42 30 91 48 94 74 76 64 58 74 25 96 57 14 19 03 99 28 83 15 75 99 01 89 85 79 50 03 95 32 67 44 08 07 41 62 64 29 20 14 76 26 55 48 71 69 66 19 72 44 25 14 01 48 74 12 98 07
 64 66 84 24 18 16 27 48 20 14 47 69 30 86 48 40 23 16 61 21 51 50 26 47 35 33 91 28 78 64 43 68 04 79 51 08 19 60 52 95 06 68 46 86 35 97 27 58 04 65 30 58 99 12 12 75 91 39 50 31 42 64 70 04 46 07 98 73 98 93 37 89 77 91 64 71 64 65 66 21 78 62 81 74 42 20 83 70 73 95 78 45 92 27 34 53 71 15
 30 11 85 31 34 71 13 48 05 14 44 03 19 67 23 73 19 57 06 90 94 72 57 69 81 62 59 68 88 57 55 69 49 13 07 87 97 80 89 05 71 05 05 26 38 40 16 62 45 99 18 38 98 24 21 26 62 74 69 04 85 57 77 35 58 67 91 79 79 57 86 28 66 34 72 51 76 78 36 95 63 90 08 78 47 63 45 31 22 70 52 48 79 94 15 77 61 67 68
-23 33 44 81 80 92 93 75 94 88 23 61 39 76 22 03 28 94 32 06 49 65 41 34 18 23 08 47 62 60 03 63 33 13 80 52 31 54 73 43 70 26 16 69 57 87 83 31 03 93 70 81 47 95 77 44 29 68 39 51 56 59 63 07 25 70 07 77 43 53 64 03 94 42 95 39 18 01 66 21 16 97 20 50 90 16 70 10 95 69 29 06 25 61 41 26 15 59 63 35"""
-
-
-if __name__ == "__main__":
-    main()
+23 33 44 81 80 92 93 75 94 88 23 61 39 76 22 03 28 94 32 06 49 65 41 34 18 23 08 47 62 60 03 63 33 13 80 52 31 54 73 43 70 26 16 69 57 87 83 31 03 93 70 81 47 95 77 44 29 68 39 51 56 59 63 07 25 70 07 77 43 53 64 03 94 42 95 39 18 01 66 21 16 97 20 50 90 16 70 10 95 69 29 06 25 61 41 26 15 59 63 35
