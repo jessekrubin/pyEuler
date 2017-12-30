@@ -38,7 +38,7 @@ print(rm_text)
 
 with open('README.md', 'w') as f:
     f.write(rm_text)
-    f.write("| ### | ???  | ### | ??? | ### | ??? | ### | ??? |\n")
+    f.write("| Problem # | ???  | ### | ??? | ### | ??? | ### | ??? |\n")
     f.write("| ---:| --- | ---:| --- | ---:| --- | ---:| --- |\n")
     l = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [l[i:i + 4] for i in range(0, (N_EULER_PROBS), 4)]
