@@ -8,7 +8,9 @@ DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 24, 25, 29, 31, 3
 ## Problems table
 
 :metal: = done
+
 :scream: = in progress
+
 :wavy_dash: = n/a; not started
 
 | Problem # | Done? | # | Done? | # | Done? | # | Done? | # | Done? | # | Done? |

@@ -32,7 +32,9 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 ## Problems table
 
 {} = done
+
 {} = in progress
+
 {} = n/a; not started
 
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
