@@ -10,29 +10,26 @@ DONE_PATH = r'./done'
 NOT_DONE_PATH = r'./not_done'
 LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
 DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
+DONE.sort()
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
     if isfile(join(NOT_DONE_PATH, f)) and f.startswith("euler")
 ]
-DONE.sort()
 NOT_DONE.sort()
-
 DONE_LIST_STR = ("DONE: {}".format(DONE))
-NOT_DONE_LIST_STR = ("NOT_DONE: {}".format(NOT_DONE))
-
+NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBS = 615 + 1
 rm_text = """# pEuler
 
-AHA, you have found my project Euler repo. 
-Last I heard ({}) i've done {} problems, and am currently working on {}. 
+This is my primarily python project euler problems repository.
 
-{}
+Last I checked ({}) i've done {} problems, and am currently working on {}. 
+
 {}
 
 ## Problems table
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR,
-           NOT_DONE_LIST_STR)
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR)
 
 print(rm_text)
 
@@ -49,7 +46,9 @@ with open('README.md', 'w') as f:
     # print(header_sep)
     f.write(header_sep)
     l = [i for i in range(1, N_EULER_PROBS)]
-    l_chunks = [l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)]
+    l_chunks = [
+        l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)
+    ]
     # print(l_chunks)
     for chunk in l_chunks:
         status = ":wavy_dash:"
