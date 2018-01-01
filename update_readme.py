@@ -31,11 +31,11 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ## Problems table
 
-### {} = done
+###### {} = done
 
-### {} = in progress
+###### {} = in progress
 
-### {} = n/a; not started
+###### {} = n/a; not started
 
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
            INPROG_EMOJI, NOT_STARTED_EMOJI)
