@@ -1,12 +1,15 @@
 # pEuler
 
-This is my primarily python project euler problems repository.
-
-Last I checked (2017-12-30) i've done 31 problems, and am currently working on 16. 
+This is my primarily python project euler problems repository. 
+Last I checked (2018-01-01) i've done 31 problems, and am currently working on 16. 
 
 DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 24, 25, 29, 31, 35, 36, 38, 40, 41, 42, 45, 67, 79, 92, 102]
 
 ## Problems table
+
+:metal: = done
+:scream: = in progress
+:wavy_dash: = n/a; not started
 
 | Problem # | Done? | # | Done? | # | Done? | # | Done? | # | Done? | # | Done? |
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |

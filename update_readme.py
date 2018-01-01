@@ -19,17 +19,24 @@ NOT_DONE.sort()
 DONE_LIST_STR = ("DONE: {}".format(DONE))
 NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBS = 615 + 1
+DONE_EMOJI = ":metal:"
+INPROG_EMOJI = ":scream:"
+NOT_STARTED_EMOJI = ":wavy_dash:"
 rm_text = """# pEuler
 
-This is my primarily python project euler problems repository.
-
+This is my primarily python project euler problems repository. 
 Last I checked ({}) i've done {} problems, and am currently working on {}. 
 
 {}
 
 ## Problems table
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR)
+{} = done
+{} = in progress
+{} = n/a; not started
+
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
+           INPROG_EMOJI, NOT_STARTED_EMOJI)
 
 print(rm_text)
 
@@ -51,13 +58,13 @@ with open('README.md', 'w') as f:
     ]
     # print(l_chunks)
     for chunk in l_chunks:
-        status = ":wavy_dash:"
+        status = NOT_STARTED_EMOJI
         line = ""
         for n in chunk:
             if n in DONE:
-                status = ":metal:"
+                status = DONE_EMOJI
             if n in NOT_DONE:
-                status = ":scream:"
+                status = INPROG_EMOJI
 
             line += "| {} | {} ".format(str(n), status)
         line += "|\n"
