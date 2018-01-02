@@ -1,6 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - update README.md
+# Python script to update the README.md for this repo
 
 import datetime
 from os import listdir
@@ -24,8 +25,8 @@ INPROG_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":wavy_dash:"
 rm_text = """# pEuler
 
-This is my primarily python project euler problems repository. 
-Last I checked ({}) i've done {} problems, and am currently working on {}. 
+This is my primarily python project euler problems repository.
+Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 {}
 
@@ -70,4 +71,6 @@ with open('README.md', 'w') as f:
 
 f.close()
 
-print("readme updated")
+print("##################")
+print("# readme updated #")
+print("##################")

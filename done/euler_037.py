@@ -4,7 +4,7 @@
 
 """
 Truncatable primes
-Problem 37 
+Problem 37
 The number 3797 has an interesting property. Being prime itself, it is possible
 to continuously remove digits from left to right, and remain prime at each
 stage: 3797, 797, 97, and 7. Similarly we can work from right to left:
@@ -50,10 +50,12 @@ def trunk_prime(n):
     # print(left)
 
 
-print(trunk_prime(3797))
-
-
-primes = [i for i in range(2, 100000) if trunk_prime(i)]
-print((primes))
-print(len(primes))
-print(max(primes))
+primes = [i for i in range(2, 1000000) if trunk_prime(i)]
+print("Trunk-Ate-Able primes: {}".format(primes))
+print("Num trunk primes: {}".format(len(primes)))
+print("SUM: {}".format(sum(primes)))
+answer = """
+Trunk-Ate-Able primes: [23, 37, 53, 73, 313, 317, 373, 797, 3137, 3797, 739397]
+Num trunk primes: 11
+SUM: 748317
+"""
