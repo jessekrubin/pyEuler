@@ -48,17 +48,13 @@ with open('README.md', 'w') as f:
     f.write(rm_text)
     table_header = "| Problem # | Done? |" + " # | Done? |" * (
         NUM_COLUMNS - 1) + "\n"
-    print(table_header)
-    # "p# | :white_check_mark:? | p# |:white_check_mark:? | p# |:white_check_mark:? |\n"
     f.write(table_header)
     header_sep = "|" + " ---:|:--- |" * NUM_COLUMNS + "\n"
-    # print(header_sep)
     f.write(header_sep)
     l = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
         l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)
     ]
-    # print(l_chunks)
     for chunk in l_chunks:
         status = NOT_STARTED_EMOJI
         line = ""
@@ -70,7 +66,6 @@ with open('README.md', 'w') as f:
 
             line += "| {} | {} ".format(str(n), status)
         line += "|\n"
-        # print(line)
         f.write(line)
 
 f.close()

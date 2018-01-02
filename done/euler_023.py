@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin
+# Jesse and Graham Rubin
+
 """
 Non-abundant sums
 Problem 23
@@ -19,8 +20,8 @@ cannot be reduced any further by analysis even though it is known that the
 greatest number that cannot be expressed as the sum of two abundant numbers
 is less than this limit.
 
-Find the sum of all the positive integers which cannot be written as the sum of
-two abundant numbers.
+Find the sum of all the positive integers which cannot be written as the sum
+of two abundant numbers.
 """
 
 import math
@@ -49,8 +50,27 @@ a_bun = set()
 d_fish = set()
 perf = set()
 
-for i in range(1, 30):
-    print("___")
-    print(i)
-print(is_perfect_n(28))
-print
+for i in range(1, 28124):
+    # print("___")
+    # print(i)
+    sum_divs = sum_divisors(i)
+    if sum_divs == i:
+        perf.add(int(sum_divs))
+    else:
+        if sum_divs > i:
+            a_bun.add(i)
+        else:
+            d_fish.add(i)
+
+abun_sums = set()
+for abunNum in a_bun:
+    for another_abun in a_bun:
+        abun_sums.add(abunNum + another_abun)
+
+# print("...found all abun sums...")
+answer_sum = 0
+for i in range(28124):
+    if i not in abun_sums:
+        answer_sum += i
+
+print("Sum: {}".format(answer_sum))  # Sum: 4179871

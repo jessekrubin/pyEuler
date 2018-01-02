@@ -20,6 +20,7 @@ consecutive primes?
 
 import functools
 
+
 @functools.lru_cache(maxsize=None)
 def is_prime(n):
     """is_prime(n) returns True if n is prime
@@ -43,5 +44,6 @@ def consecutive_prime_sum_below(n):
     # Primes Less Than n
     p_lt_n = list(filter(is_prime, (i for i in range(1, n))))
     print(p_lt_n)
+
 
 consecutive_prime_sum_below(100)
