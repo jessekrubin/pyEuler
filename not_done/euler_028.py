@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 # Jesse Rubin - project Euler
 """
 Number spiral diagonals
@@ -17,6 +18,48 @@ It can be verified that the sum of the numbers on the diagonals is 101.
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed
 in the same way?
 """
+
+
+class grid(object):
+    def __init__(self, size):
+        self.size = size
+        self.array = grid.make_grid(size)
+        self.center_xy = size // 2
+        self.nw_diag = [(i, i) for i in range(self.center_xy)]
+        self.se_diag = [(i, i) for i in range(self.center_xy + 1, self.size)]
+        self.ne_diag = [(i, self.size - i - 1) for i in range(self.center_xy)]
+        self.sw_diag = [(self.size - i - 1, i) for i in range(self.center_xy)]
+        # print(self.nw_diag)
+        # print(self.ne_diag)
+        # print(self.se_diag)
+        # print(self.sw_diag)
+        self.spiral()
+
+    @staticmethod
+    def make_grid(size):
+        retlist = []
+        for i in range(size):
+            retlist.append([size * (i) + (j) for j in range(size)])
+        return retlist
+
+    def spiral_step(self, current):
+        return current
+
+    def spiral(self):
+        print(self.__str__())
+        cur_xy = (self.center_xy, self.center_xy)
+        for i in range(self.size**2):
+            self.array[cur_xy[0]][cur_xy[1]] = 1
+            cur_xy = self.spiral_step(cur_xy)
+        print(self.__str__())
+
+    def __str__(self):
+        return "".join([str(line) + "\n" for line in self.array])
+
+
+grid5 = grid(5)
+print(grid5)
+size = 5
 
 
 def east(x, y):
