@@ -46,7 +46,7 @@ def divisors(n):
 
 @lru_cache(maxsize=None)
 def nDivisors(n):
-    divs = []
+    divs = ()
     large_divisors = []
     for i in range(1, int(math.sqrt(n) + 1)):
         if n % i == 0:

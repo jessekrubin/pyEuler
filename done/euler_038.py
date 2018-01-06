@@ -21,7 +21,9 @@ concatenated product of an integer with (1,2, ... , n) where n > 1?
 """
 
 from itertools import permutations
+
 lists_of_multipliers = [[j for j in range(1, i)] for i in range(3, 11)]
+
 
 # print(lists_of_multipliers)
 
@@ -35,10 +37,9 @@ list_of_perms = set([make_number(perm) for perm in permutations(one_to_nine)])
 max_pan_digit = max(list_of_perms)
 
 
-
 def check_num(n):
     for multipliers in lists_of_multipliers:
-        num = int(''.join([str(i*n) for i in multipliers]))
+        num = int(''.join([str(i * n) for i in multipliers]))
         if num in list_of_perms:
             return True
         if num > max_pan_digit:
