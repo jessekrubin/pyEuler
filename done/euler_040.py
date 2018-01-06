@@ -48,7 +48,7 @@ def concat_nums_2_length(n):
 
 s = "".join(concat_nums_2_length(12))
 # print(s)
-indexes = [10**i for i in range(6)]
+indexes = [10 ** i for i in range(6)]
 
 digs = [int(s[i - 1]) for i in indexes]
 

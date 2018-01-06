@@ -39,7 +39,7 @@ class DiceGame(object):
         return (random.randint(1, 6), random.randint(1, 6), random.randint(1, 6),
                 random.randint(1, 6), random.randint(1, 6), random.randint(1, 6))
 
-    def totaNumGames(self):
+    def total_num_games(self):
         return self.a + self.b + self.c
 
     def get_stats(self):
@@ -47,10 +47,10 @@ class DiceGame(object):
         print("ties: {}".format(self.a))
         print("pyr: {}".format(self.b))
         print("cube: {}".format(self.c))
-        print("total games: {}".format(self.totaNumGames()))
-        print("ties frac: {}".format(self.a / self.totaNumGames()))
-        print("pyr frac: {}".format(self.b / self.totaNumGames()))
-        print("cube frac: {}".format(self.c / self.totaNumGames()))
+        print("total games: {}".format(self.total_num_games()))
+        print("ties frac: {}".format(self.a / self.total_num_games()))
+        print("pyr frac: {}".format(self.b / self.total_num_games()))
+        print("cube frac: {}".format(self.c / self.total_num_games()))
 
     def playGame(self):
         pyr = sum(self.roll1())

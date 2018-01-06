@@ -19,7 +19,7 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
 containing nearly two-thousand common English words, how many are triangle words?
 """
 
-#open file and put into list
+# open file and put into list
 with open(r'text_files/words_p42.txt') as f:
     words = [s.strip("\"") for s in f.readlines()[0].split(',')]
 
@@ -29,8 +29,9 @@ def string_score(name):
     name = name.lower()
     score = 0
     for character in name:
-        score += (ord(character)-96)
+        score += (ord(character) - 96)
     return score
+
 
 word_scores = map(string_score, words)
 max_word_score = (max(map(string_score, words)))
@@ -43,5 +44,5 @@ while cur_triangle_num <= max_word_score:
     cur_triangle_num += i
     i += 1
 
-total =sum([1 for i in word_scores if i in triangle_numbers_below_max])
+total = sum([1 for i in word_scores if i in triangle_numbers_below_max])
 print("# coded triangle numbers: {}".format(total))

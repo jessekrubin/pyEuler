@@ -5,8 +5,8 @@
 Special Pythagorean triplet
 Problem 9 
 A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
-
 a**2 + b**2 = c**2
+
 For example, 32 + 42 = 9 + 16 = 25 = 52.
 
 There exists exactly one Pythagorean triplet for which a + b + c = 1000.
@@ -44,6 +44,5 @@ for i in range(1, 1000):
 combos = set(combos)
 for trip in filter(is_p_triplet, combos):
     triplet = trip
-
     product = triplet[0] * triplet[1] * triplet[2]
-print("Triplet product: {}".format(product))
+    print("Triplet product: {}".format(product))
