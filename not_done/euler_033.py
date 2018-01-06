@@ -69,4 +69,4 @@ for thing in thingsy:
     denProd *= thing[1]
 
 print(numProd + " - " + numProd / 387296)
-print(denProd + " - " + denProd / 387296))
+print(denProd + " - " + denProd / 387296)

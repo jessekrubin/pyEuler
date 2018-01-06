@@ -1,7 +1,7 @@
 # pEuler
 
 This is my primarily python project euler problems repository.
-Last I checked (2018-01-03) i've done 35 problems, and am currently working on 15.
+Last I checked (2018-01-06) i've done 35 problems, and am currently working on 15.
 
 DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 28, 29, 31, 35, 36, 37, 38, 40, 41, 42, 45, 67, 79, 92, 102]
 

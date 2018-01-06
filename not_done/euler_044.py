@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
+
 """
 Pentagon numbers
 Problem 44
@@ -23,7 +24,6 @@ from functools import lru_cache
 @lru_cache(maxsize=None)
 def pent_num(n):
     return (n * (3 * n - 1) // 2)
-
 
 pen_nums = set()
 for i in range(100):
