@@ -52,7 +52,7 @@ class DiceGame(object):
         print("pyr frac: {}".format(self.b / self.total_num_games()))
         print("cube frac: {}".format(self.c / self.total_num_games()))
 
-    def playGame(self):
+    def play_game(self):
         pyr = sum(self.roll1())
         cubes = sum(self.roll2())
 
@@ -65,9 +65,9 @@ class DiceGame(object):
 
 
 g = DiceGame()
-g.playGame()
+g.play_game()
 
 for i in range(999999):
-    g.playGame()
+    g.play_game()
     if i % 10 == 0:
         g.get_stats()

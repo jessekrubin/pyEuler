@@ -28,13 +28,13 @@ def is_prime(n):
     return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
 
 
-i = 1
+ind = 1
 n_primes = 0
 nth_prime = 10001
 while n_primes < nth_prime + 1:
-    if is_prime(i):
+    if is_prime(ind):
         n_primes += 1
-    i += 1
+    ind += 1
 
-answer = (i - 1)
+answer = (ind - 1)
 print("10,001th prime is: {}".format(answer))

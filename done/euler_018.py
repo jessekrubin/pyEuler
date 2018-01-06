@@ -59,8 +59,8 @@ big_triangle = """75
 
 
 def triangle_lists(s):
-    lines = s.split("\n")
-    listlist = [line.split(" ") for line in lines]
+    text_lines = s.split("\n")
+    listlist = [line.split(" ") for line in text_lines]
     lists = []
     for l in listlist:
         lists.append(list(map(int, l)))

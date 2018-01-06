@@ -62,4 +62,4 @@ for i in range(1, 10000000):
     if goes2_89(i):
         count += 1
 
-print("# -> 89: {}".format(count))
+print("# of numbers that go to 89: {}".format(count))

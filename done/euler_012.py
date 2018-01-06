@@ -36,6 +36,7 @@ from functools import lru_cache
 def divisors(n):
     large_divisors = []
     divs = []
+    # noinspection PyShadowingNames
     for i in range(1, int(math.sqrt(n) + 1)):
         if n % i == 0:
             divs.append(i)
@@ -48,6 +49,7 @@ def divisors(n):
 def n_divisors(n):
     divs = []
     large_divisors = []
+    # noinspection PyShadowingNames
     for i in range(1, int(math.sqrt(n) + 1)):
         if n % i == 0:
             divs.append(i)
