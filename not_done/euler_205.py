@@ -1,3 +1,4 @@
+# coding=utf-8
 # Dice Game
 # Problem 205
 # Peter has nine four-sided (pyramidal) dice, each with faces numbered 1, 2, 3, 4.

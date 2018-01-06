@@ -35,13 +35,11 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 from itertools import permutations
 
 
-def is_valid_3_gone(l):
-    l1 = sum()
 
 
 def make_3_gon_from_list(l):
     print(l)
-    l1 = 
+    return l
 
 
 def three_gon_ring():

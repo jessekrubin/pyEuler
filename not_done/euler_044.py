@@ -29,7 +29,7 @@ pen_nums = set()
 for i in range(100):
     for j in range(i):
         print("___")
-        pen_nums.add(pen_nums(i))
+        pen_nums.add(pent_num(i))
         sum = pent_num(i) + pent_num(j)
         diff = pent_num(i) - pent_num(j)
         if sum in pen_nums and diff in pen_nums:

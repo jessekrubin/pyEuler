@@ -1,3 +1,4 @@
+# coding=utf-8
 def prime_factors_set(n):
     i = 2
     factors = []

@@ -1,3 +1,4 @@
+# coding=utf-8
 # Consider all integer combinations of ab for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
 
 # 22 = 4, 23 = 8, 24 = 16, 25 = 32
