@@ -21,7 +21,7 @@ in the same way?
 """
 
 
-class grid(object):
+class Grid(object):
     def __init__(self, size):
         self.sum_diags = 1
         self.size = size
@@ -37,7 +37,7 @@ class grid(object):
                             for i in range(self.center_xy)])
         if self.size > 3:
             self.ne_diag.remove((0, self.size))
-        self.array = grid.make_grid(size)
+        self.array = Grid.make_grid(size)
         self.direction = 1
         self.diags_sum = 0
         self.spiral()
@@ -104,14 +104,14 @@ class grid(object):
         print("SUM: {}".format(self.sum_diags))
 
 
-grid3 = grid(3)
+grid3 = Grid(3)
 grid3.print_diags_sum()
 # SUM: 25
 
-grid5 = grid(5)
+grid5 = Grid(5)
 grid5.print_diags_sum()
 # SUM: 101
 
-grid1001 = grid(1001)
+grid1001 = Grid(1001)
 grid1001.print_diags_sum()
 # SUM: 669171001

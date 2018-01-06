@@ -22,7 +22,7 @@ How many starting numbers below ten million will arrive at 89?
 import functools
 
 
-def digitsList(n):
+def digits_list(n):
     d = [int(x) for x in str(n)]
     return d
 
@@ -30,9 +30,9 @@ def digitsList(n):
 # digitsList(123) returns [1, 2, 3]
 
 
-def nextNum(n):
+def next_num(n):
     # print(n)
-    d = digitsList(n)
+    d = digits_list(n)
     m = 0
     for p in d:
         m += p * p
@@ -40,7 +40,7 @@ def nextNum(n):
     return m
 
 
-# nextNum(123) returns 14
+# next_num(123) returns 14
 
 
 @functools.lru_cache(maxsize=None)
@@ -52,7 +52,7 @@ def goes2_89(n):
         elif n == 1:
             return False
         else:
-            return goes2_89(nextNum(n))
+            return goes2_89(next_num(n))
 
 
 count = 0

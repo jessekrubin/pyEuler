@@ -30,6 +30,7 @@ date1_ord = start.toordinal()
 date2_ord = fin.toordinal()
 cnt = 0
 
+d_ord = date1_ord
 for date in range(date1_ord, date2_ord):
     d = date.fromordinal(d_ord)
     if (d.weekday() == 6) and (d.day == 1):
