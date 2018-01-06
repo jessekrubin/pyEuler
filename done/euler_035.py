@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin
-# SOLVED
+# Jesse Rubin - project Euler
 
 """
 Circular primes
 Problem 35
-The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+The number, 197, is called a circular prime because all rotations of the
+digits: 197, 971, and 719, are themselves prime.
 
-There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+There are thirteen such primes below 100:
+2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
 
 How many circular primes are there below one million?
 """
@@ -27,6 +28,7 @@ def rotate_list(l, n):
 
 one_nine_seven = hm.digits_list(197)
 
+
 # print(one_nine_seven)
 # print(rotate_list(one_nine_seven, 1))
 
@@ -40,7 +42,7 @@ def dig_list_2_int(l):
     l.reverse()
     d = 0
     for i in range(len(l)):
-        d += (l[i] * 10**i)
+        d += (l[i] * 10 ** i)
     return d
 
 

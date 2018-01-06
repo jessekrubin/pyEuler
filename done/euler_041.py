@@ -27,7 +27,6 @@ def is_prime(n):
     return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
 
 
-
 numslists = []
 for i in range(1, 10):
     numslists.append([x + 1 for x in range(i)])

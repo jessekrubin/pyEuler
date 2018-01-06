@@ -61,11 +61,11 @@ p = Pool(16)
 # print(mean(angs))
 # print(stdev(angs))
 
-l = []
+list1 = []
 for _ in tqdm.tqdm(p.imap_unordered(angle, v), total=len(v)):
-    l.append(abs(_))
+    list1.append(abs(_))
 
-l2 = [(i / math.pi) for i in l]
-print(mean(l))
-print(mean(l) / math.pi)
-print(mean(l2))
+list2 = [(i / math.pi) for i in list1]
+print(mean(list1))
+print(mean(list1) / math.pi)
+print(mean(list2))

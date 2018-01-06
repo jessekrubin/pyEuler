@@ -35,8 +35,6 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 from itertools import permutations
 
 
-
-
 def make_3_gon_from_list(l):
     print(l)
     return l
@@ -47,6 +45,5 @@ def three_gon_ring():
     print(nums)
     for i in permutations(nums):
         print(i)
-
 
 # three_gon_ring()

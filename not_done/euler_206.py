@@ -63,4 +63,5 @@ def is_1_2_3_4_5_6_7_8_9_0(n):
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

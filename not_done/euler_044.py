@@ -25,6 +25,7 @@ from functools import lru_cache
 def pent_num(n):
     return n * (3 * n - 1) // 2
 
+
 pen_nums = set()
 for i in range(100):
     for j in range(i):
@@ -33,7 +34,6 @@ for i in range(100):
         sum = pent_num(i) + pent_num(j)
         diff = pent_num(i) - pent_num(j)
         if sum in pen_nums and diff in pen_nums:
-
             print(i)
             print(j)
             print(sum)

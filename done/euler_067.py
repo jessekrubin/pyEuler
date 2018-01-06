@@ -60,7 +60,7 @@ def tri_max_fast(l):
 
 little_tri = triangle_lists(lil_string_triangle)
 
-#open file and put into list
+# open file and put into list
 cur_dir = (os.getcwd())
 with open(path.join(cur_dir, r'text_files/p067_triangle.txt')) as f:
     # triangles = [
