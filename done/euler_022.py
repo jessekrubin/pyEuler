@@ -18,7 +18,7 @@ What is the total of all the name scores in the file?
 
 
 def get_names():
-    names = ["MARY", "PATRICIA", "LINDA", "BARBARA", "ELIZABETH", "JENNIFER", "MARIA", "SUSAN", "MARGARET", "DOROTHY",
+    return ["MARY", "PATRICIA", "LINDA", "BARBARA", "ELIZABETH", "JENNIFER", "MARIA", "SUSAN", "MARGARET", "DOROTHY",
              "LISA", "NANCY", "KAREN", "BETTY", "HELEN", "SANDRA", "DONNA", "CAROL", "RUTH", "SHARON", "MICHELLE",
              "LAURA", "SARAH", "KIMBERLY", "DEBORAH", "JESSICA", "SHIRLEY", "CYNTHIA", "ANGELA", "MELISSA", "BRENDA",
              "AMY", "ANNA", "REBECCA", "VIRGINIA", "KATHLEEN", "PAMELA", "MARTHA", "DEBRA", "AMANDA", "STEPHANIE",
@@ -517,7 +517,6 @@ def get_names():
              "ARLIE", "WINFORD", "WALLY", "LUIGI", "KENETH", "JACINTO", "GRAIG", "FRANKLYN", "EDMUNDO", "SID", "PORTER",
              "LEIF", "JERAMY", "BUCK", "WILLIAN", "VINCENZO", "SHON", "LYNWOOD", "JERE", "HAI", "ELDEN", "DORSEY",
              "DARELL", "BRODERICK", "ALONSO"]
-    return names
 
 
 def name_score(name):

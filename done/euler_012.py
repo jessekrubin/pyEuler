@@ -45,7 +45,7 @@ def divisors(n):
 
 
 @lru_cache(maxsize=None)
-def nDivisors(n):
+def n_divisors(n):
     divs = []
     large_divisors = []
     for i in range(1, int(math.sqrt(n) + 1)):
@@ -64,17 +64,16 @@ while maxmax < 500:
     i += 1
     cur_triangle_number += i
 
-    numDivs = nDivisors(cur_triangle_number)
+    numDivs = n_divisors(cur_triangle_number)
 
     if numDivs > maxmax:
         maxmax = numDivs
-        # print("***")
     #     print("NEW MAX")
     #     print("index: {}".format(i))
     #     print("cur #: {}".format(cur_triangle_number))
-    #     print("# divisors: {}".format(nDivisors(cur_triangle_number)))
+    #     print("# divisors: {}".format(n_divisors(cur_triangle_number)))
 
 print("________")
 print("tri num index: {}".format(i))
 print("cur #: {}".format(cur_triangle_number))
-print("# divisors: {}".format(nDivisors(cur_triangle_number)))
+print("# divisors: {}".format(n_divisors(cur_triangle_number)))

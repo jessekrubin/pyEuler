@@ -35,10 +35,10 @@ def is_p_triplet(t):
 combos = []
 for i in range(1, 1000):
     for j in range(i):
-        l = [i, j, (1000 - i - j)]
-        l.sort()
-        l = tuple(l)
-        combos.append(l)
+        trio = [i, j, (1000 - i - j)]
+        trio.sort()
+        trio = tuple(trio)
+        combos.append(trio)
         # print(l)
 
 combos = set(combos)
