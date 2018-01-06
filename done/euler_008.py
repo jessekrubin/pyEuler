@@ -36,7 +36,7 @@ greatest product. What is the value of this product?
 from operator import mul
 from functools import reduce
 
-grid = """73167176531330624919225119674426574742355349194934
+grid_string = """73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -57,7 +57,7 @@ grid = """73167176531330624919225119674426574742355349194934
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"""
 
-l = list(map(int, list("".join((grid.split("\n"))))))
+grid = list(map(int, list("".join((grid_string.split("\n"))))))
 
 
 def biggest_product(n, nums):
@@ -68,5 +68,5 @@ def biggest_product(n, nums):
     ])
 
 
-print("answer 4: {}".format(biggest_product(4, l)))  # answer 4: 5832
-print("answer 13: {}".format(biggest_product(13, l)))  # answer 13: 23514624000
+print("answer 4: {}".format(biggest_product(4, grid)))  # answer 4: 5832
+print("answer 13: {}".format(biggest_product(13, grid)))  # answer 13: 23514624000

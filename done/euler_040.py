@@ -38,12 +38,12 @@ def digits_list(n):
 
 
 def concat_nums_2_length(n):
-    l = []
+    n_list = []
     i = 1
-    while len(l) < 1000001:
-        l += digits_list(i)
+    while len(n_list) < 1000001:
+        n_list += digits_list(i)
         i += 1
-    return map(str, l)
+    return map(str, n_list)
 
 
 s = "".join(concat_nums_2_length(12))

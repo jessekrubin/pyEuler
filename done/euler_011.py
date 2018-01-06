@@ -65,7 +65,7 @@ for string in lines:
     lineInts = []
     for s in strNums:
         lineInts.append(int(s))
-    grid .append(lineInts)
+    grid.append(lineInts)
 
 
 def horizontal(r, c):
@@ -88,6 +88,7 @@ horizontals = []
 verticals = []
 diags = []
 otherdiags = []
+misses = 0
 for j in range(20):
     for i in range(20):
         try:
@@ -97,20 +98,20 @@ for j in range(20):
 
         try:
             verticals.append(vertical(i, j))
-        except:
+        except Exception:
             pass
 
         try:
             diags.append(diag(i, j))
-        except:
+        except Exception:
             pass
 
         try:
             otherdiags.append(otherdiag(i, j))
-        except:
+        except Exception:
             pass
 
 allDirs = horizontals + verticals + diags + otherdiags
 # print(allDirs)
 # print(grid)
-print("Max product: {}".format(max(allDirs))) # Max product: 70600674
+print("Max product: {}".format(max(allDirs)))  # Max product: 70600674

@@ -11,7 +11,6 @@ DONE_PATH = r'./done'
 NOT_DONE_PATH = r'./not_done'
 LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
 DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
-DONE.sort()
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
     if isfile(join(NOT_DONE_PATH, f)) and f.startswith("euler")
@@ -23,7 +22,9 @@ N_EULER_PROBS = 615 + 1
 DONE_EMOJI = ":metal:"
 INPROG_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":wavy_dash:"
-rm_text = """# pEuler
+N_COLUMNS = 6
+
+README_TEXT = """# pEuler
 
 This is my primarily python project euler problems repository.
 Last I checked ({}) i've done {} problems, and am currently working on {}.
@@ -41,20 +42,16 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
            INPROG_EMOJI, NOT_STARTED_EMOJI)
 
-print(rm_text)
-
-NUM_COLUMNS = 6
-
 with open('README.md', 'w') as f:
-    f.write(rm_text)
+    f.write(README_TEXT)
     table_header = "| Problem # | Done? |" + " # | Done? |" * (
-        NUM_COLUMNS - 1) + "\n"
+            N_COLUMNS - 1) + "\n"
     f.write(table_header)
-    header_sep = "|" + " ---:|:--- |" * NUM_COLUMNS + "\n"
+    header_sep = "|" + " ---:|:--- |" * N_COLUMNS + "\n"
     f.write(header_sep)
-    l = [i for i in range(1, N_EULER_PROBS)]
+    euler_prob_nums = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
-        l[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
+        euler_prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBS, N_COLUMNS)
     ]
     for chunk in l_chunks:
         status = NOT_STARTED_EMOJI
@@ -71,6 +68,9 @@ with open('README.md', 'w') as f:
 
 f.close()
 
-print("##################")
-print("# readme updated #")
-print("##################")
+print(DONE)
+print(NOT_DONE)
+print("\nDear Jesse,\n"
+      "you updated the readme! So proud of you!\n"
+      "Yourself,\n"
+      "Jesse")
