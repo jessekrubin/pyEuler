@@ -20,7 +20,7 @@ import helpme as hm
 
 four_dig_primes = []
 for i in range(1000, 10000):
-    if (hm.is_prime(i)):
+    if hm.is_prime(i):
         four_dig_primes.append(i)
 
 # 4_dig_prime_perms = []
@@ -28,7 +28,7 @@ for i in range(1000, 10000):
 
 def str_rotations_gen(s):
     for i in range(len(s)):
-        return (s[i:] + s[:i])
+        return s[i:] + s[:i]
 
 
 print(str_rotations_gen('123'))

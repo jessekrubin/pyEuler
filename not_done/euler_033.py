@@ -61,7 +61,7 @@ print(thingsy)
 product = 1
 for i in map(div_toop, thingsy):
     print(i)
-    product = product * i
+    product *= i
 numProd = 1
 denProd = 1
 for thing in thingsy:

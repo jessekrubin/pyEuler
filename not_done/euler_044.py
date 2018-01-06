@@ -23,7 +23,7 @@ from functools import lru_cache
 
 @lru_cache(maxsize=None)
 def pent_num(n):
-    return (n * (3 * n - 1) // 2)
+    return n * (3 * n - 1) // 2
 
 pen_nums = set()
 for i in range(100):

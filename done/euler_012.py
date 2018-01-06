@@ -39,7 +39,7 @@ def divisors(n):
     for i in range(1, int(math.sqrt(n) + 1)):
         if n % i == 0:
             divs.append(i)
-            if (i * i != n):
+            if i * i != n:
                 large_divisors.append(n // i)
     return set(divs + large_divisors)
 
@@ -60,13 +60,13 @@ cur_triangle_number = 1
 maxmax = 1
 i = 1
 # for i in range(1, 20):
-while(maxmax < 500):
+while maxmax < 500:
     i += 1
     cur_triangle_number += i
 
     numDivs = nDivisors(cur_triangle_number)
 
-    if (numDivs > maxmax):
+    if numDivs > maxmax:
         maxmax = numDivs
         # print("***")
     #     print("NEW MAX")

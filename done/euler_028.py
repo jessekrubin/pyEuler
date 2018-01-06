@@ -23,6 +23,7 @@ in the same way?
 
 class grid(object):
     def __init__(self, size):
+        self.sum_diags = 1
         self.size = size
         self.center_xy = size // 2
         self.nw_diag = set([(i, i) for i in range(self.center_xy)])
@@ -81,20 +82,23 @@ class grid(object):
     def __str__(self):
         return "".join([str(line) + "\n" for line in self.array])
 
-    def west(self, x, y):
+    @staticmethod
+    def west(x, y):
         return x, y + 1
 
-    def north(self, x, y):
+    @staticmethod
+    def north(x, y):
         return x + 1, y
 
-    def east(self, x, y):
+    @staticmethod
+    def east(x, y):
         return x, y - 1
 
-    def south(self, x, y):
+    @staticmethod
+    def south(x, y):
         return x - 1, y
 
     def print_diags_sum(self):
-        self.sum_diags = 1
         for coords in set.union(self.ne_diag_real, self.nw_diag, self.se_diag, self.sw_diag):
             self.sum_diags += self.array[coords[0]][coords[1]]
         print("SUM: {}".format(self.sum_diags))

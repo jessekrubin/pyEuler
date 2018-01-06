@@ -26,7 +26,7 @@ def is_p_triplet(t):
     if t[0] > t[1] or t[0] > t[2] or t[1] > t[2] or t[0] < 0 or t[0] == t[1] or t[1] == t[2]:
         return False
     else:
-        if (t[2]**2 == t[1]**2 + t[0]**2):
+        if t[2]**2 == t[1]**2 + t[0]**2:
             return True
         else:
             return False
@@ -34,7 +34,7 @@ def is_p_triplet(t):
 combos = []
 for i in range(1, 1000):
     for j in range(i):
-        l =[(i), (j), (1000 - i - j)]
+        l =[i, j, (1000 - i - j)]
         l.sort()
         l = tuple(l)
         combos.append(l)
@@ -42,7 +42,7 @@ for i in range(1, 1000):
 
 combos = set(combos)
 for trip in filter(is_p_triplet, combos):
-    triplet = (trip)
+    triplet = trip
 
 product =triplet[0] * triplet[1] * triplet[2]
 print("Triplet product: {}".format(product))

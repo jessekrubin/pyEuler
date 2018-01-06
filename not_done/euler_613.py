@@ -40,7 +40,7 @@ def angle(vecs):
 
 
 def rad2deg(n):
-    return (180 * n / math.pi)
+    return 180 * n / math.pi
 
 
 def get_vecs(tup):
@@ -48,7 +48,7 @@ def get_vecs(tup):
     c2 = (0, 300)
     v1 = (c1[0] - tup[0], c1[1] - tup[1])
     v2 = (c2[0] - tup[0], c2[1] - tup[1])
-    return (v1, v2)
+    return v1, v2
 
 
 v = [

@@ -29,9 +29,9 @@ def digits_list(n):
 
     digits = []
     cur = n
-    while(cur != 0):
+    while cur != 0:
         digits.append(cur % 10)
-        cur = cur // 10
+        cur //= 10
     # digits.append(cur)
     digits.reverse()
     return digits
@@ -40,7 +40,7 @@ def digits_list(n):
 def concat_nums_2_length(n):
     l = []
     i = 1
-    while(len(l) < 1000001):
+    while len(l) < 1000001:
         l += digits_list(i)
         i += 1
     return map(str, l)

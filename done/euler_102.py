@@ -27,7 +27,7 @@ given above.
 import numpy as np
 
 #open file and put into list
-with open(r'text_files/p102_triangles.txt', 'r') as f:
+with open(r'text_files/p102_triangles.txt') as f:
     triangles = [
         tuple(map(int, j.split(',')))
         for j in [i.strip('\n') for i in f.readlines()]
@@ -35,11 +35,11 @@ with open(r'text_files/p102_triangles.txt', 'r') as f:
 
 
 def triangle_area(v1, v2):
-    return (abs(np.cross(v1, v2)) / 2)
+    return abs(np.cross(v1, v2)) / 2
 
 
 def origin_trianlges(a, b, c):
-    return (triangle_area(a, b) + triangle_area(b, c) + triangle_area(a, c))
+    return triangle_area(a, b) + triangle_area(b, c) + triangle_area(a, c)
 
 
 def origin_in_trianlge(l):
@@ -49,11 +49,8 @@ def origin_in_trianlge(l):
     c = np.array([l[4], l[5]])
     ab = np.array([(l[2] - l[0]), (l[3] - l[1])])
     ac = np.array([(l[4] - l[0]), (l[5] - l[1])])
-    bc = np.array([(l[2] - l[4]), (l[3] - l[5])])
 
-    big_t = triangle_area(ab, ac)
-    tri_t = origin_trianlges(a, b, c)
-    if (triangle_area(ab, ac) != origin_trianlges(a, b, c)):
+    if triangle_area(ab, ac) != origin_trianlges(a, b, c):
         return False
     return True
 

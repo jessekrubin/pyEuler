@@ -2,7 +2,7 @@
 def prime_factors_set(n):
     i = 2
     factors = []
-    while(i * i < n + 1):
+    while i * i < n + 1:
         if n % i:
             i += 1
         else:

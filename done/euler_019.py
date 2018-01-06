@@ -33,6 +33,6 @@ cnt = 0
 for date in range(date1_ord, date2_ord):
     d = date.fromordinal(d_ord)
     if (d.weekday() == 6) and (d.day == 1):
-        cnt = cnt + 1
+        cnt += 1
 
 print("Number of Sunday 1'st days is {}".format(cnt))

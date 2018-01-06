@@ -33,7 +33,7 @@ def triangle_lists(s):
     lists = []
     for l in listlist:
         lists.append(list(map(int, l)))
-    return (lists)
+    return lists
 
 
 def max_two_rows(upper, lower):
@@ -62,7 +62,7 @@ little_tri = triangle_lists(lil_string_triangle)
 
 #open file and put into list
 cur_dir = (os.getcwd())
-with open(path.join(cur_dir, r'text_files/p067_triangle.txt'), 'r') as f:
+with open(path.join(cur_dir, r'text_files/p067_triangle.txt')) as f:
     # triangles = [
     #     tuple(map(int, j.split(',')))
     #     for j in [i.strip('\n') for i in f.readlines()]

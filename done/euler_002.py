@@ -20,9 +20,9 @@ import functools
 @functools.lru_cache(maxsize=None)
 def fib(n):
     if n == 0 or n == 1 or n == 2:
-        return (n)
+        return n
     else:
-        return (fib(n - 1) + fib(n - 2))
+        return fib(n - 1) + fib(n - 2)
 
 
 fibs = [n for n in [fib(i) for i in range(50)] if n % 2 == 0 and n <= 4000000]

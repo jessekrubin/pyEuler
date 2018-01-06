@@ -21,19 +21,21 @@ class DiceGame(object):
         self.c = 0
 
     # @staticmethod
-    def roll1(self):
+    @staticmethod
+    def roll1():
         return (random.randint(1, 4), random.randint(1, 4), random.randint(
             1, 4), random.randint(1, 4), random.randint(1, 4),
                 random.randint(1, 4), random.randint(1, 4), random.randint(
                     1, 4), random.randint(1, 4))
 
     # @staticmethod
-    def roll2(self):
+    @staticmethod
+    def roll2():
         return (random.randint(1, 6), random.randint(1, 6), random.randint(1, 6),
                 random.randint(1, 6), random.randint(1, 6), random.randint(1, 6))
 
     def totaNumGames(self):
-        return (self.a + self.b +self.c)
+        return self.a + self.b + self.c
 
     def get_stats(self):
         print("____")

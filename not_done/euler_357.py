@@ -13,7 +13,7 @@ from functools import lru_cache
 
 @lru_cache(maxsize=None)
 def funnn(d, n):
-    return (d + (n / d))
+    return d + (n / d)
 
 
 def divisors_thing(number):
@@ -45,6 +45,6 @@ def divisors_thing(number):
 
 total = 0
 for i in range(1, 100000000):
-    if (divisors_thing(i)):
+    if divisors_thing(i):
         # print(i)
         total += i

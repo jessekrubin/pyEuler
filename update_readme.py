@@ -54,7 +54,7 @@ with open('README.md', 'w') as f:
     f.write(header_sep)
     l = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
-        l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)
+        l[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
     for chunk in l_chunks:
         status = NOT_STARTED_EMOJI

@@ -41,7 +41,6 @@ def trunk_prime(n):
     for i in range(1, len(digs)):
         right = int("".join(digs[i:]))
         # print(right)
-        p = 1 - i
         left = int("".join(digs[:i]))
         if not is_prime(right) or not is_prime(left):
             return False

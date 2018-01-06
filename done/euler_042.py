@@ -20,7 +20,7 @@ containing nearly two-thousand common English words, how many are triangle words
 """
 
 #open file and put into list
-with open(r'text_files/words_p42.txt', 'r') as f:
+with open(r'text_files/words_p42.txt') as f:
     words = [s.strip("\"") for s in f.readlines()[0].split(',')]
 
 
@@ -30,7 +30,7 @@ def string_score(name):
     score = 0
     for character in name:
         score += (ord(character)-96)
-    return (score)
+    return score
 
 word_scores = map(string_score, words)
 max_word_score = (max(map(string_score, words)))
@@ -38,7 +38,7 @@ max_word_score = (max(map(string_score, words)))
 i = 2
 cur_triangle_num = 1
 triangle_numbers_below_max = []
-while(cur_triangle_num <= max_word_score):
+while cur_triangle_num <= max_word_score:
     triangle_numbers_below_max.append(cur_triangle_num)
     cur_triangle_num += i
     i += 1

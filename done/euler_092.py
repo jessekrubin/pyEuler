@@ -45,7 +45,7 @@ def nextNum(n):
 
 @functools.lru_cache(maxsize=None)
 def goes2_89(n):
-    while (True):
+    while True:
         # print("current: {}".format(n))
         if n == 89:
             return True
@@ -59,7 +59,7 @@ count = 0
 for i in range(1, 10000000):
     # print(i)
     # print(goes2_89(i))
-    if (goes2_89(i)):
+    if goes2_89(i):
         count += 1
 
 print("# -> 89: {}".format(count))

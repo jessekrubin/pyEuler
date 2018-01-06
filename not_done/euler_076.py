@@ -24,7 +24,7 @@ def total(n):
     def num_sums(n):
         ways = 0
         if n == 0:
-            return (ways + 1)
+            return ways + 1
         # for every integer below n...
         for i in range(n):
 

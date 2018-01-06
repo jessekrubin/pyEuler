@@ -64,12 +64,12 @@ def triangle_lists(s):
     lists = []
     for l in listlist:
         lists.append(list(map(int, l)))
-    return (lists)
+    return lists
 
 
 def triangle_max_sum_path(l):
     if len(l) == 1:
-        return (l[0][0])
+        return l[0][0]
     else:
         top = (l[0][0])
         left = []

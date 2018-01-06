@@ -37,15 +37,15 @@ def fib(n):
 
 def n_b_ten_digits(n):
     digs = sum((1 for i in str(n)))
-    return(digs)
+    return digs
 
 def ind_first_fib_w_n_digs(n):
     n_fib_digs = 0
     i = 0
-    while(n_fib_digs < n):
+    while n_fib_digs < n:
         n_fib_digs=n_b_ten_digits(fib(i))
         i += 1
-    return(i - 1)
+    return i - 1
 
 n = 3
 answer = ind_first_fib_w_n_digs(n)

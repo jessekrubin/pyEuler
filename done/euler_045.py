@@ -26,13 +26,13 @@ def pn(n):
     return int(n*(((3*n)-1)/2))
 
 def hn(n):
-    return int(n*(((2*n)-1)))
+    return int(n * ((2 * n) - 1))
 
 all_three = []
 
 
 i = 1
-while(len(all_three) < 3):
+while len(all_three) < 3:
     t = tn(i)
     p_nums.append(pn(i))
     h_nums.append(hn(i))

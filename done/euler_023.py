@@ -43,7 +43,7 @@ def sum_divisors(n):
 
 
 def is_perfect_n(n):
-    return (n == sum((i for i in divisors_gen(n))) // 2)
+    return n == sum((i for i in divisors_gen(n))) // 2
 
 
 a_bun = set()

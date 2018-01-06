@@ -26,6 +26,6 @@ g1 = [[131, 673, 234, 103, 18], [201, 96, 342, 965, 150],
                                   956], [805, 732, 524, 37, 331]]
 
 cur_dir = os.getcwd() + '\\not_done\\'
-with open(path.join(cur_dir, r'text_files\p081_matrix.txt'), 'r') as file:
+with open(path.join(cur_dir, r'text_files\p081_matrix.txt')) as file:
     ls = file.readlines()
 print(ls)

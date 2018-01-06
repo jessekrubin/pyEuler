@@ -31,8 +31,8 @@ def is_prime(n):
 i = 1
 n_primes = 0
 nth_prime = 10001
-while(n_primes < nth_prime + 1):
-    if(is_prime(i)):
+while n_primes < nth_prime + 1:
+    if is_prime(i):
         n_primes += 1
     i += 1
 
