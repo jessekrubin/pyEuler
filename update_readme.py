@@ -18,9 +18,9 @@ NOT_DONE = [
 NOT_DONE.sort()
 DONE_LIST_STR = ("DONE: {}".format(DONE))
 NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
-N_EULER_PROBS = 615 + 1
+N_EULER_PROBLEMS = 615 + 1
 DONE_EMOJI = ":metal:"
-INPROG_EMOJI = ":scream:"
+IN_PROGRESS_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":wavy_dash:"
 N_COLUMNS = 6
 
@@ -40,7 +40,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 ###### {} = n/a; not started
 
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
-           INPROG_EMOJI, NOT_STARTED_EMOJI)
+           IN_PROGRESS_EMOJI, NOT_STARTED_EMOJI)
 
 with open('README.md', 'w') as f:
     f.write(README_TEXT)
@@ -49,9 +49,9 @@ with open('README.md', 'w') as f:
     f.write(table_header)
     header_sep = "|" + " ---:|:--- |" * N_COLUMNS + "\n"
     f.write(header_sep)
-    euler_prob_nums = [i for i in range(1, N_EULER_PROBS)]
+    euler_prob_nums = [i for i in range(1, N_EULER_PROBLEMS)]
     l_chunks = [
-        euler_prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBS, N_COLUMNS)
+        euler_prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBLEMS, N_COLUMNS)
     ]
     for chunk in l_chunks:
         status = NOT_STARTED_EMOJI
@@ -60,7 +60,7 @@ with open('README.md', 'w') as f:
             if n in DONE:
                 status = DONE_EMOJI
             if n in NOT_DONE:
-                status = INPROG_EMOJI
+                status = IN_PROGRESS_EMOJI
 
             line += "| {} | {} ".format(str(n), status)
         line += "|\n"

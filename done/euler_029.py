@@ -22,14 +22,11 @@ and 2 ≤ b ≤ 100?
 
 def powers_function(max_a, max_b):
     sequence = []
-
     for a in range(2, max_a + 1):
         for b in range(2, max_b + 1):
-            # print("({}, {})".format(a, b))
-            # print("a**b: {}".format(a**b))
             sequence.append(a ** b)
-
     return set(sequence)
+
 
 seq = (powers_function(100, 100))
 print("SEQUENCE LENGTH: {}".format(len(seq)))

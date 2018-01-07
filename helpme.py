@@ -9,23 +9,47 @@ from functools import lru_cache
 
 
 @lru_cache(maxsize=None)
-def is_prime(n):
-    """returns True if n is prime
+def is_prime(number: int) -> bool:
+    """True if number is prime
 
+    >>> is_prime(37)
+    True
+    >>> is_prime(100)
+    False
+    >>> is_prime(89)
+    True
     >>> is_prime(10)
     False
     >>> is_prime(17)
     True
     """
 
-    if n % 2 == 0 and n > 2:
+    if number % 2 == 0 and number > 2:
         return False
-    return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
+    return all(number % i for i in range(3, int(sqrt(number)) + 1, 2))
 
 
 @lru_cache(maxsize=None)
-def fib(n):
-    if n < 2:
+def fib(n: int) -> int:
+    """
+    get the nth fibonacci number
+
+    :param n:
+    :return: nth fib number
+    >>> fib(1)
+    1
+    >>> fib(2)
+    2
+    >>> fib(3)
+    3
+    >>> fib(4)
+    5
+    >>> fib(5)
+    8
+    >>> fib(6)
+    13
+    """
+    if n < 3:
         return n
     else:
         return fib(n - 1) + fib(n - 2)
@@ -50,7 +74,7 @@ def divisors_gen(n):
 
 
 def n_divisors(n):
-    return sum((1 for i in divisors_gen(n)))
+    return sum((1 for _ in divisors_gen(n)))
 
 
 def divisors_list(n):
@@ -62,8 +86,8 @@ def number_rotations_generator(l):
         yield (l[-i:] + l[:-i])
 
 
-def is_palindrome(s):
-    """Returns True a string is a palindrome.
+def is_palindrome(string):
+    """True a string is a palindrome.
 
     Doctests:
     >>> is_palindrome("racecar")
@@ -71,9 +95,8 @@ def is_palindrome(s):
     >>> is_palindrome("greg")
     False
     """
-
-    for i, c in enumerate(s):
-        if c != s[-i - 1]:
+    for index, character in enumerate(string):
+        if character != string[-index - 1]:
             return False
     return True
 
@@ -86,9 +109,8 @@ def rotate_list(l, n):
     return l[-n:] + l[:-n]
 
 
-def num_base_ten_digits(n):
-    digs = sum((1 for i in str(n)))
-    return digs
+def num_base_ten_digits(number: int) -> int:
+    return sum((1 for _ in str(number)))
 
 
 def digits_list(num):
@@ -102,7 +124,7 @@ def digits_list(num):
 
 
 def cross_prod(toop1, toop2):
-    return ((toop1[0] * toop2[1]) - (toop1[1] * toop2[0]))
+    return (toop1[0] * toop2[1]) - (toop1[1] * toop2[0])
 
 
 def dig_list_2_int(l):

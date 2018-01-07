@@ -15,7 +15,7 @@ British usage.
 """
 
 
-def one_nine(n):
+def one_nine(n: int):
     if n == 1:
         return "one"
     elif n == 2:
@@ -84,7 +84,6 @@ def write_num_as_string(n):
     if n == 1000:
         return "one thousand"
     else:
-        returned_string = ""
         a, b = divmod(n, 100)
         if a == 0:
             return one_ninenine(n)

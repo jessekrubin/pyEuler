@@ -23,7 +23,7 @@ from functools import reduce
 from operator import mul
 
 
-def concat_nums_2_length(n):
+def concat_nums_2_length():
     n_list = []
     i = 1
     while len(n_list) < 1000001:
@@ -32,7 +32,7 @@ def concat_nums_2_length(n):
     return map(str, n_list)
 
 
-s = "".join(concat_nums_2_length(12))
+s = "".join(concat_nums_2_length())
 # print(s)
 indexes = [10 ** i for i in range(6)]
 digs = [int(s[i - 1]) for i in indexes]

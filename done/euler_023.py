@@ -24,26 +24,15 @@ Find the sum of all the positive integers which cannot be written as the sum
 of two abundant numbers.
 """
 
-import math
-
-
-def divisors_gen(n):
-    large_divisors = []
-    for i in range(1, int(math.sqrt(n) + 1)):
-        if n % i == 0:
-            yield i
-            if i * i != n:
-                large_divisors.append(n // i)
-    for divisor in reversed(large_divisors):
-        yield divisor
+from helpme import divisors_list
 
 
 def sum_divisors(n):
-    return sum((i for i in divisors_gen(n))) / 2
+    return sum((i for i in divisors_list(n))) / 2
 
 
 def is_perfect_n(n):
-    return n == sum((i for i in divisors_gen(n))) // 2
+    return n == sum((i for i in divisors_list(n))) // 2
 
 
 a_bun = set()

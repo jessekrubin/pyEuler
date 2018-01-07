@@ -31,12 +31,12 @@ for i in range(100):
     for j in range(i):
         print("___")
         pen_nums.add(pent_num(i))
-        sum = pent_num(i) + pent_num(j)
+        sum_total = pent_num(i) + pent_num(j)
         diff = pent_num(i) - pent_num(j)
-        if sum in pen_nums and diff in pen_nums:
+        if sum_total in pen_nums and diff in pen_nums:
             print(i)
             print(j)
-            print(sum)
+            print(sum_total)
             print(diff)
 
 # pentagonal_nums = []

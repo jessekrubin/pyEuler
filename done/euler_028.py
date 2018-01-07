@@ -49,7 +49,7 @@ class Grid(object):
             retlist.append([0 for _ in range(size)])
         return retlist
 
-    def update_direction(self, x, y, i):
+    def update_direction(self, x, y):
         if x == self.center_xy and y == self.center_xy + 1:
             self.direction = 0
         else:
@@ -62,8 +62,8 @@ class Grid(object):
             if (x, y) in self.sw_diag:
                 self.direction = 2
 
-    def spiral_step(self, x, y, i):
-        self.update_direction(x, y, i)
+    def spiral_step(self, x, y):
+        self.update_direction(x, y)
         if self.direction == 1:
             return self.west(x, y)
         if self.direction == 2:
@@ -77,7 +77,7 @@ class Grid(object):
         cur_x, cur_y = self.center_xy, self.center_xy
         for i in range(self.size**2):
             self.array[cur_x][cur_y] = i + 1
-            cur_x, cur_y = self.spiral_step(cur_x, cur_y, i)
+            cur_x, cur_y = self.spiral_step(cur_x, cur_y)
 
     def __str__(self):
         return "".join([str(line) + "\n" for line in self.array])

@@ -68,5 +68,6 @@ for thing in thingsy:
     numProd *= thing[0]
     denProd *= thing[1]
 
-print(numProd + " - " + numProd / 387296)
-print(denProd + " - " + denProd / 387296)
+
+print(f"{numProd} - {numProd} / 387296")
+print(f"{denProd} - {denProd} / 387296")

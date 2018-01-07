@@ -22,7 +22,8 @@ Give your answer rounded to 10 digits after the decimal point.
 
 import math
 from multiprocessing import Pool
-from statistics import mean, stdev
+from statistics import mean
+
 import tqdm
 
 

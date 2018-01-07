@@ -49,7 +49,6 @@ class Graph(object):
             nums.append(o)
             nums2.append(otherdict[o])
 
-        nums = nums.sort()
         guess = []
         for i in range(len(otherdict.keys())):
             guess.append(otherdict[i])
