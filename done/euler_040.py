@@ -18,23 +18,9 @@ following expression.
 d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 """
 
-import functools
-import operator
-
-
-def digits_list(n):
-    """
-    Returns a list of the base-10 digits in a number
-    """
-
-    digits = []
-    cur = n
-    while cur != 0:
-        digits.append(cur % 10)
-        cur //= 10
-    # digits.append(cur)
-    digits.reverse()
-    return digits
+from helpme import digits_list
+from functools import reduce
+from operator import mul
 
 
 def concat_nums_2_length(n):
@@ -49,8 +35,6 @@ def concat_nums_2_length(n):
 s = "".join(concat_nums_2_length(12))
 # print(s)
 indexes = [10 ** i for i in range(6)]
-
 digs = [int(s[i - 1]) for i in indexes]
-
-ans = functools.reduce(operator.mul, digs, 1)
+ans = reduce(mul, digs, 1)
 print("product: {}".format(ans))

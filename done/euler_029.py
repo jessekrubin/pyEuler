@@ -31,10 +31,5 @@ def powers_function(max_a, max_b):
 
     return set(sequence)
 
-
-# print(len(powers_function(5, 5)))
-# print(powers_function(5, 5))
-
-
 seq = (powers_function(100, 100))
 print("SEQUENCE LENGTH: {}".format(len(seq)))

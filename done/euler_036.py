@@ -13,15 +13,14 @@ base 10 and base 2.
 leading zeros.)
 """
 
-import helpme as hm
+from helpme import is_palindrome, int_2_binary_string
 
-sum = 0
+multiple_liner = 0
 for i in range(1000000):
-    if (hm.str_is_pal(str(i))) and hm.str_is_pal((hm.int_2_binary_str(i))):
-        # print(i)
-        # print(hm.str_is_pal(str(i)))
-        # print(hm.int_2_binary_str(i))
-        # print(hm.str_is_pal(hm.int_2_binary_str(i)))
-        sum += i
+    # Check if both as strings are palindromes
+    if (is_palindrome(str(i))) and is_palindrome((int_2_binary_string(i))):
+        multiple_liner += i
 
-print("total: {}".format(sum))
+one_liner = sum([i for i in range(1000000) if (is_palindrome(str(i))) and is_palindrome((int_2_binary_string(i)))])
+
+print("One liner(!): {}".format(one_liner))

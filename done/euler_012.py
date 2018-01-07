@@ -22,60 +22,27 @@ Let us list the factors of the first seven triangle numbers:
 21: 1, 3, 7, 21
 28: 1, 2, 4, 7, 14, 28
 
-We can see that 28 is the first triangle number to have over five divisors.
+We can see that 28 is the first triangle number to have over five divisors_gen.
 
 What is the value of the first triangle number to have over five hundred
-divisors?
+divisors_gen?
 """
 
-import math
-from functools import lru_cache
-
-
-@lru_cache(maxsize=None)
-def divisors(n):
-    large_divisors = []
-    divs = []
-    # noinspection PyShadowingNames
-    for i in range(1, int(math.sqrt(n) + 1)):
-        if n % i == 0:
-            divs.append(i)
-            if i * i != n:
-                large_divisors.append(n // i)
-    return set(divs + large_divisors)
-
-
-@lru_cache(maxsize=None)
-def n_divisors(n):
-    divs = []
-    large_divisors = []
-    # noinspection PyShadowingNames
-    for i in range(1, int(math.sqrt(n) + 1)):
-        if n % i == 0:
-            divs.append(i)
-            if i * i != n:
-                divs.append(n // i)
-    return len(set(divs + large_divisors))
-
+from helpme import n_divisors
 
 cur_triangle_number = 1
 maxmax = 1
 i = 1
-# for i in range(1, 20):
 while maxmax < 500:
     i += 1
     cur_triangle_number += i
-
     numDivs = n_divisors(cur_triangle_number)
-
     if numDivs > maxmax:
         maxmax = numDivs
-    #     print("NEW MAX")
-    #     print("index: {}".format(i))
-    #     print("cur #: {}".format(cur_triangle_number))
-    #     print("# divisors: {}".format(n_divisors(cur_triangle_number)))
 
-print("________")
-print("tri num index: {}".format(i))
-print("cur #: {}".format(cur_triangle_number))
-print("# divisors: {}".format(n_divisors(cur_triangle_number)))
+print(f"tri num index: {i}")
+print(f"triangle #: {cur_triangle_number}")
+print(f"# divisors_gen: {n_divisors(cur_triangle_number)}")
+# tri num index: 12375
+# cur #: 76576500
+# # divisors_gen: 576

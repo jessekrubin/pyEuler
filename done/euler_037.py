@@ -16,20 +16,7 @@ right and right to left.
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
 
-import functools
-import math
-
-
-@functools.lru_cache(maxsize=None)
-def is_prime(n):
-    """
-    is_prime(n) returns True if n is prime
-    """
-    if n == 1:
-        return False
-    if n % 2 == 0 and n > 2:
-        return False
-    return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
+from helpme import is_prime
 
 
 def trunk_prime(n):

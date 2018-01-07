@@ -16,16 +16,12 @@ would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
 """
 
-
-def name_score(name):
-    return sum((ord(character) - 96 for character in name.lower()))
-
+from helpme import string_score
 
 with open(r'./text_files/p22_names.txt') as file:
     names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
 
 names = [name for name_line in names_lines for name in name_line]
 names.sort()
-
-total_score = sum(((i + 1) * name_score(names[i]) for i in range(len(names))))
+total_score = sum(((i + 1) * string_score(names[i]) for i in range(len(names))))
 print("Total: {}".format(total_score))

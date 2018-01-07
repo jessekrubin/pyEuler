@@ -24,14 +24,14 @@ What is the index of the first term in the Fibonacci sequence to
 contain 1000 digits?
 """
 
-import helpme as hm
+from helpme import num_base_ten_digits, fib
 
 
 def ind_first_fib_w_n_digs(n):
     n_fib_digs = 0
     i = 0
     while n_fib_digs < n:
-        n_fib_digs = hm.num_base_ten_digits(hm.fib(i))
+        n_fib_digs = num_base_ten_digits(fib(i))
         i += 1
     return i - 1
 

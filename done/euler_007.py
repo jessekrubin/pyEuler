@@ -11,22 +11,7 @@ the 6th prime is 13.
 What is the 10 001st prime number?
 """
 
-
-def is_prime(n):
-    """is_prime(n) returns True if n is prime
-
-    Doctests:
-    >>> is_prime(10)
-    False
-    >>> is_prime(17)
-    True
-    """
-    import math
-
-    if n % 2 == 0 and n > 2:
-        return False
-    return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
-
+from helpme import is_prime
 
 ind = 1
 n_primes = 0

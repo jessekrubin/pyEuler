@@ -46,7 +46,7 @@ class Grid(object):
     def make_grid(size):
         retlist = []
         for i in range(size):
-            retlist.append([0 for j in range(size)])
+            retlist.append([0 for _ in range(size)])
         return retlist
 
     def update_direction(self, x, y, i):

@@ -14,12 +14,11 @@ There are thirteen such primes below 100:
 How many circular primes are there below one million?
 """
 
-import helpme as hm
-
+from helpme import is_circ_prime
 
 num_circ_primes = 0
 for i in range(1, 1000000):
-    if hm.is_circ_prime(i):
+    if is_circ_prime(i):
         num_circ_primes += 1
 
 print("# of circlular primes: {}".format(num_circ_primes - 1))

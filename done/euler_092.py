@@ -19,34 +19,21 @@ at 1 or 89.
 How many starting numbers below ten million will arrive at 89?
 """
 
-import functools
-
-
-def digits_list(n):
-    d = [int(x) for x in str(n)]
-    return d
-
-
-# digitsList(123) returns [1, 2, 3]
+from functools import lru_cache
+from helpme import digits_list
 
 
 def next_num(n):
-    # print(n)
     d = digits_list(n)
     m = 0
     for p in d:
         m += p * p
-    # print(m)
     return m
 
 
-# next_num(123) returns 14
-
-
-@functools.lru_cache(maxsize=None)
+@lru_cache(maxsize=None)
 def goes2_89(n):
     while True:
-        # print("current: {}".format(n))
         if n == 89:
             return True
         elif n == 1:
@@ -55,11 +42,12 @@ def goes2_89(n):
             return goes2_89(next_num(n))
 
 
-count = 0
+many_lines = 0
 for i in range(1, 10000000):
-    # print(i)
-    # print(goes2_89(i))
     if goes2_89(i):
-        count += 1
+        many_lines += 1
 
-print("# of numbers that go to 89: {}".format(count))
+print("# of numbers that go to 89: {}".format(many_lines))
+
+one_line = sum((1 for i in range(1, 10000000) if goes2_89(i)))
+print("# of numbers that go to 89: {}".format(one_line))

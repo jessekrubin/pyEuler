@@ -19,18 +19,11 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
 containing nearly two-thousand common English words, how many are triangle words?
 """
 
+from helpme import string_score
+
 # open file and put into list
 with open(r'text_files/words_p42.txt') as f:
     words = [s.strip("\"") for s in f.readlines()[0].split(',')]
-
-
-def string_score(name):
-    # print(name)
-    name = name.lower()
-    score = 0
-    for character in name:
-        score += (ord(character) - 96)
-    return score
 
 
 word_scores = map(string_score, words)

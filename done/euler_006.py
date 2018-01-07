@@ -17,10 +17,10 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
 
-NO = 10
-ANS = sum([i + 1 for i in range(NO)])**2 - sum([(i + 1)**2 for i in range(NO)])
-print("Difference ({}): {}".format(NO, ANS))
+NUMBER = 10
+ANSWER = sum([i + 1 for i in range(NUMBER)]) ** 2 - sum([(i + 1) ** 2 for i in range(NUMBER)])
+print("Difference ({}): {}".format(NUMBER, ANSWER))
 
-NO = 100
-ANS = sum([i + 1 for i in range(NO)])**2 - sum([(i + 1)**2 for i in range(NO)])
-print("Difference ({}): {}".format(NO, ANS))
+NUMBER = 100
+ANSWER = sum([i + 1 for i in range(NUMBER)]) ** 2 - sum([(i + 1) ** 2 for i in range(NUMBER)])
+print("Difference ({}): {}".format(NUMBER, ANSWER))

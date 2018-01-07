@@ -23,17 +23,15 @@ How many Sundays fell on the first of the month during the twentieth century
 
 from datetime import date
 
-start = date(1901, 1, 1)
-fin = date(2000, 12, 31)
+START = date(1901, 1, 1)
+START_ORD = START.toordinal()
+FINISH = date(2000, 12, 31)
+FINISH_ORD = FINISH.toordinal()
+N_SUNDAYS = 0
 
-date1_ord = start.toordinal()
-date2_ord = fin.toordinal()
-cnt = 0
-
-d_ord = date1_ord
-for date in range(date1_ord, date2_ord):
-    d = date.fromordinal(d_ord)
+for day in range(START_ORD, FINISH_ORD):
+    d = date.fromordinal(day)
     if (d.weekday() == 6) and (d.day == 1):
-        cnt += 1
+        N_SUNDAYS += 1
 
-print("Number of Sunday 1'st days is {}".format(cnt))
+print("Number of Sunday 1'st days is {}".format(N_SUNDAYS))

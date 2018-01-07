@@ -24,25 +24,8 @@ seen that 1/7 has a 6-digit recurring cycle.
 Find the value of d < 1000 for which 1/d contains the longest recurring
 cycle in its decimal fraction part.
 """
-import functools
-import helpme as hm
 
-
-@functools.lru_cache(maxsize=None)
-def is_prime(n):
-    """is_prime(n) returns True if n is prime
-
-    Doctests:
-    >>> is_prime(10)
-    False
-    >>> is_prime(17)
-    True
-    """
-    import math
-
-    if n % 2 == 0 and n > 2:
-        return False
-    return all(n % i for i in range(3, int(math.sqrt(n)) + 1, 2))
+from helpme import is_prime
 
 
 def num_cycles(p):
@@ -51,7 +34,7 @@ def num_cycles(p):
     # if the the remainder of the 10 to the power of that number  is one
     # that's the cycle length
     for i in range(1, p):
-        hopefully_one_maybe = 10**i % p
+        hopefully_one_maybe = 10 ** i % p
         if hopefully_one_maybe == 1:
             return i
     # otherwise return -1

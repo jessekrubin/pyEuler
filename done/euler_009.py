@@ -14,13 +14,6 @@ Find the product abc.
 """
 
 
-# combos = []
-# for i in range(1, 1000):
-#     for j in range(i):
-#         for k in range(j):
-#             thing = tuple((i, j, k))
-#             if sum(thing) == 1000:
-#                 combos.append(thing)
 def is_p_triplet(t):
     # print   (t)
     if t[0] > t[1] or t[0] > t[2] or t[1] > t[2] or t[0] < 0 or t[0] == t[1] or t[1] == t[2]:
@@ -32,16 +25,16 @@ def is_p_triplet(t):
             return False
 
 
-combos = []
+combos = set()
 for i in range(1, 1000):
     for j in range(i):
         trio = [i, j, (1000 - i - j)]
         trio.sort()
         trio = tuple(trio)
-        combos.append(trio)
-        # print(l)
+        combos.add(trio)
 
 combos = set(combos)
+
 for trip in filter(is_p_triplet, combos):
     triplet = trip
     product = triplet[0] * triplet[1] * triplet[2]

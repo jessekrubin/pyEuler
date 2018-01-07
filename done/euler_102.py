@@ -24,7 +24,7 @@ NOTE: The first two examples in the file represent the triangles in the example
 given above.
 """
 
-import numpy as np
+from helpme import cross_prod
 
 # open file and put into list
 with open(r'text_files/p102_triangles.txt') as f:
@@ -35,7 +35,7 @@ with open(r'text_files/p102_triangles.txt') as f:
 
 
 def triangle_area(v1, v2):
-    return abs(np.cross(v1, v2)) / 2
+    return abs(cross_prod(v1, v2)) / 2
 
 
 def origin_trianlges(a, b, c):
@@ -43,25 +43,15 @@ def origin_trianlges(a, b, c):
 
 
 def origin_in_trianlge(l):
-    # print(l)
-    a = np.array([l[0], l[1]])
-    b = np.array([l[2], l[3]])
-    c = np.array([l[4], l[5]])
-    ab = np.array([(l[2] - l[0]), (l[3] - l[1])])
-    ac = np.array([(l[4] - l[0]), (l[5] - l[1])])
-
-    if triangle_area(ab, ac) != origin_trianlges(a, b, c):
-        return False
-    return True
-
-    # print(a)
-    # print(b)
-    # print(c)
-    # print(ab)
-    # print(ac)
-    # print(big_t)
-    # print(tri_t)
+    a = tuple([l[0], l[1]])
+    b = tuple([l[2], l[3]])
+    c = tuple([l[4], l[5]])
+    ab = tuple([b[0] - a[0], b[1] - a[1]])
+    ac = tuple([c[0] - a[0], c[1] - a[1]])
+    if triangle_area(ab, ac) == origin_trianlges(a, b, c):
+        return True
+    return False
 
 
 answer = sum([1 for i in list(map(origin_in_trianlge, triangles)) if i])
-print("# triangles: {}".format(answer))
+print(f"# triangles: {answer}")
