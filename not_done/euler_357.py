@@ -18,9 +18,9 @@ def funnn(d, n):
 
 
 def divisors_thing(number):
-    for i in divisors_list(number):
-        fun_num = (funnn(i, number))
-        if not funnn(i, number).is_integer():
+    for index in divisors_list(number):
+        fun_num = (funnn(index, number))
+        if not funnn(index, number).is_integer():
             return False
         else:
             if not is_prime(fun_num):

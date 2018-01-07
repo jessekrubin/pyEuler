@@ -61,10 +61,10 @@ big_triangle = """75
 def triangle_lists(s):
     text_lines = s.split("\n")
     listlist = [line.split(" ") for line in text_lines]
-    lists = []
+    line_lists = []
     for l in listlist:
-        lists.append(list(map(int, l)))
-    return lists
+        line_lists.append(list(map(int, l)))
+    return line_lists
 
 
 def triangle_max_sum_path(l):

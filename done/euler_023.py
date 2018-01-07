@@ -28,11 +28,7 @@ from helpme import divisors_list
 
 
 def sum_divisors(n):
-    return sum((i for i in divisors_list(n))) / 2
-
-
-def is_perfect_n(n):
-    return n == sum((i for i in divisors_list(n))) // 2
+    return sum((divisor for divisor in divisors_list(n))) / 2
 
 
 a_bun = set()

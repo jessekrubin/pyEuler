@@ -20,28 +20,27 @@ the ant leaves the triangle along its longest side?
 Give your answer rounded to 10 digits after the decimal point.
 """
 
-import math
+from math import sqrt, acos, pi
 from multiprocessing import Pool
 from statistics import mean
-
-import tqdm
+from tqdm import tqdm
 
 
 def dotproduct(v1, v2):
     return sum((a * b) for a, b in zip(v1, v2))
 
 
-def length(v):
-    return math.sqrt(dotproduct(v, v))
+def length(vector):
+    return sqrt(dotproduct(vector, vector))
 
 
 def angle(vecs):
-    return math.acos(
+    return acos(
         dotproduct(vecs[0], vecs[1]) / (length(vecs[0]) * length(vecs[1])))
 
 
 def rad2deg(n):
-    return 180 * n / math.pi
+    return 180 * n / pi
 
 
 def get_vecs(tup):
@@ -63,10 +62,10 @@ p = Pool(16)
 # print(stdev(angs))
 
 list1 = []
-for _ in tqdm.tqdm(p.imap_unordered(angle, v), total=len(v)):
+for _ in tqdm(p.imap_unordered(angle, v), total=len(v)):
     list1.append(abs(_))
 
-list2 = [(i / math.pi) for i in list1]
+list2 = [(i / pi) for i in list1]
 print(mean(list1))
-print(mean(list1) / math.pi)
+print(mean(list1) / pi)
 print(mean(list2))

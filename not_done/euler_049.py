@@ -27,8 +27,8 @@ for i in range(1000, 10000):
 
 
 def str_rotations_gen(s):
-    for i in range(len(s)):
-        return s[i:] + s[:i]
+    for j in range(len(s)):
+        return s[j:] + s[:j]
 
 
 print(str_rotations_gen('123'))

@@ -27,10 +27,10 @@ contain 1000 digits?
 from helpme import num_base_ten_digits, fib
 
 
-def ind_first_fib_w_n_digs(n):
+def ind_first_fib_w_n_digs(index):
     n_fib_digs = 0
     i = 0
-    while n_fib_digs < n:
+    while n_fib_digs < index:
         n_fib_digs = num_base_ten_digits(fib(i))
         i += 1
     return i - 1
