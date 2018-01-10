@@ -68,6 +68,8 @@ with open('README.md', 'w') as f:
 
 f.close()
 
+print(len(DONE))
+print(len(NOT_DONE))
 print(DONE)
 print(NOT_DONE)
 print("\nDear Jesse,\n"
