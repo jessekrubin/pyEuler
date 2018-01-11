@@ -71,3 +71,4 @@ for thing in thingsy:
 
 print(f"{numProd} - {numProd} / 387296")
 print(f"{denProd} - {denProd} / 387296")
+print("simplifies to 1/100")
