@@ -5,6 +5,5 @@
 Problem 0
 template
 """
+# THIS IS A TEMPLATEEEEE
 
-print("SUM: {}".format(
-    sum([i for i in range(1000) if (i % 3 == 0) or (i % 5 == 0)])))

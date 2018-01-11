@@ -142,6 +142,14 @@ def cross_prod(toop1, toop2):
 
 
 def dig_list_2_int(l):
+    """
+    >>> dig_list_2_int([1, 2, 3])
+    123
+
+
+    :param l:
+    :return:
+    """
     d = 0
     for i in range(len(l), 0, -1):
         d += (l[i] * 10 ** i)
