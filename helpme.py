@@ -28,6 +28,20 @@ def is_prime(number: int) -> bool:
         return False
     return all(number % i for i in range(3, int(sqrt(number)) + 1, 2))
 
+@lru_cache(maxsize=None)
+def is_perfect_square(positive_n):
+    if positive_n < 5:
+        if positive_n == 4 or positive_n == 1:
+            return True
+        return False
+    half = positive_n // 2
+    seen_set = set([half])
+    while half * half != positive_n:
+        half = (half + (positive_n // half)) // 2
+        if half in seen_set:
+            return False
+        seen_set.add(half)
+    return True
 
 @lru_cache(maxsize=None)
 def fib(n: int) -> int:
@@ -61,7 +75,7 @@ def is_circ_prime(n):
     return all(
             (is_prime(dig_list_2_int(i)) for i in number_rotations_generator(digist)))
 
-
+@lru_cache(maxsize=4)
 def divisors_gen(n):
     large_divisors = []
     for i in range(1, int(sqrt(n) + 1)):
@@ -72,9 +86,9 @@ def divisors_gen(n):
     for divisor in reversed(large_divisors):
         yield divisor
 
-
+@lru_cache(maxsize=None)
 def n_divisors(n):
-    return sum((1 for _ in divisors_gen(n)))
+    return sum(1 for _ in divisors_gen(n))
 
 
 def divisors_list(n):
