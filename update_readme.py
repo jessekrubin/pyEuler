@@ -21,7 +21,7 @@ NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBLEMS = 615 + 1
 DONE_EMOJI = ":metal:"
 IN_PROGRESS_EMOJI = ":scream:"
-NOT_STARTED_EMOJI = ":wavy_dash:"
+NOT_STARTED_EMOJI = ":see_no_evil:"
 N_COLUMNS = 6
 
 README_TEXT = """# pEuler
