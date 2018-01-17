@@ -54,9 +54,9 @@ with open('README.md', 'w') as f:
         euler_prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBLEMS, N_COLUMNS)
     ]
     for chunk in l_chunks:
-        status = NOT_STARTED_EMOJI
         line = ""
         for n in chunk:
+            status = NOT_STARTED_EMOJI
             if n in DONE:
                 status = DONE_EMOJI
             if n in NOT_DONE:

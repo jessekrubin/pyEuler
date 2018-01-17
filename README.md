@@ -1,9 +1,9 @@
 # pEuler
 
 This is my primarily python project euler problems repository.
-Last I checked (2018-01-16) i've done 48 problems, and am currently working on 15.
+Last I checked (2018-01-16) i've done 49 problems, and am currently working on 15.
 
-DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 37, 38, 40, 41, 42, 43, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
+DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 37, 38, 40, 41, 42, 43, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
 
 ## Problems table
 
@@ -17,39 +17,39 @@ DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23, 24, 25
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |
 | 1 | :metal: | 2 | :metal: | 3 | :metal: | 4 | :metal: | 5 | :metal: | 6 | :metal: |
 | 7 | :metal: | 8 | :metal: | 9 | :metal: | 10 | :metal: | 11 | :metal: | 12 | :metal: |
-| 13 | :metal: | 14 | :metal: | 15 | :metal: | 16 | :metal: | 17 | :metal: | 18 | :metal: |
+| 13 | :metal: | 14 | :wavy_dash: | 15 | :wavy_dash: | 16 | :wavy_dash: | 17 | :metal: | 18 | :metal: |
 | 19 | :metal: | 20 | :metal: | 21 | :metal: | 22 | :metal: | 23 | :metal: | 24 | :metal: |
-| 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :metal: |
-| 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
-| 37 | :metal: | 38 | :metal: | 39 | :metal: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
-| 43 | :metal: | 44 | :scream: | 45 | :metal: | 46 | :metal: | 47 | :scream: | 48 | :metal: |
-| 49 | :scream: | 50 | :metal: | 51 | :metal: | 52 | :metal: | 53 | :metal: | 54 | :metal: |
-| 55 | :wavy_dash: | 56 | :metal: | 57 | :metal: | 58 | :metal: | 59 | :metal: | 60 | :metal: |
+| 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :wavy_dash: |
+| 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :wavy_dash: | 35 | :metal: | 36 | :metal: |
+| 37 | :metal: | 38 | :metal: | 39 | :wavy_dash: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
+| 43 | :metal: | 44 | :scream: | 45 | :metal: | 46 | :wavy_dash: | 47 | :scream: | 48 | :metal: |
+| 49 | :scream: | 50 | :metal: | 51 | :wavy_dash: | 52 | :wavy_dash: | 53 | :wavy_dash: | 54 | :wavy_dash: |
+| 55 | :wavy_dash: | 56 | :metal: | 57 | :wavy_dash: | 58 | :wavy_dash: | 59 | :wavy_dash: | 60 | :wavy_dash: |
 | 61 | :wavy_dash: | 62 | :wavy_dash: | 63 | :wavy_dash: | 64 | :wavy_dash: | 65 | :wavy_dash: | 66 | :wavy_dash: |
-| 67 | :metal: | 68 | :scream: | 69 | :scream: | 70 | :scream: | 71 | :scream: | 72 | :scream: |
-| 73 | :wavy_dash: | 74 | :scream: | 75 | :scream: | 76 | :scream: | 77 | :scream: | 78 | :scream: |
-| 79 | :metal: | 80 | :metal: | 81 | :metal: | 82 | :metal: | 83 | :metal: | 84 | :metal: |
-| 85 | :metal: | 86 | :scream: | 87 | :scream: | 88 | :scream: | 89 | :scream: | 90 | :scream: |
-| 91 | :wavy_dash: | 92 | :metal: | 93 | :metal: | 94 | :metal: | 95 | :metal: | 96 | :metal: |
-| 97 | :metal: | 98 | :metal: | 99 | :metal: | 100 | :metal: | 101 | :metal: | 102 | :metal: |
+| 67 | :metal: | 68 | :scream: | 69 | :wavy_dash: | 70 | :wavy_dash: | 71 | :wavy_dash: | 72 | :wavy_dash: |
+| 73 | :wavy_dash: | 74 | :scream: | 75 | :wavy_dash: | 76 | :scream: | 77 | :wavy_dash: | 78 | :wavy_dash: |
+| 79 | :metal: | 80 | :wavy_dash: | 81 | :wavy_dash: | 82 | :wavy_dash: | 83 | :wavy_dash: | 84 | :wavy_dash: |
+| 85 | :metal: | 86 | :scream: | 87 | :wavy_dash: | 88 | :wavy_dash: | 89 | :wavy_dash: | 90 | :wavy_dash: |
+| 91 | :wavy_dash: | 92 | :metal: | 93 | :wavy_dash: | 94 | :wavy_dash: | 95 | :wavy_dash: | 96 | :wavy_dash: |
+| 97 | :metal: | 98 | :wavy_dash: | 99 | :wavy_dash: | 100 | :wavy_dash: | 101 | :wavy_dash: | 102 | :metal: |
 | 103 | :wavy_dash: | 104 | :wavy_dash: | 105 | :wavy_dash: | 106 | :wavy_dash: | 107 | :wavy_dash: | 108 | :wavy_dash: |
-| 109 | :wavy_dash: | 110 | :wavy_dash: | 111 | :wavy_dash: | 112 | :metal: | 113 | :metal: | 114 | :metal: |
+| 109 | :wavy_dash: | 110 | :wavy_dash: | 111 | :wavy_dash: | 112 | :metal: | 113 | :wavy_dash: | 114 | :wavy_dash: |
 | 115 | :wavy_dash: | 116 | :wavy_dash: | 117 | :wavy_dash: | 118 | :wavy_dash: | 119 | :wavy_dash: | 120 | :wavy_dash: |
-| 121 | :wavy_dash: | 122 | :wavy_dash: | 123 | :wavy_dash: | 124 | :wavy_dash: | 125 | :scream: | 126 | :scream: |
+| 121 | :wavy_dash: | 122 | :wavy_dash: | 123 | :wavy_dash: | 124 | :wavy_dash: | 125 | :scream: | 126 | :wavy_dash: |
 | 127 | :wavy_dash: | 128 | :wavy_dash: | 129 | :wavy_dash: | 130 | :wavy_dash: | 131 | :wavy_dash: | 132 | :wavy_dash: |
 | 133 | :wavy_dash: | 134 | :wavy_dash: | 135 | :wavy_dash: | 136 | :wavy_dash: | 137 | :wavy_dash: | 138 | :wavy_dash: |
-| 139 | :wavy_dash: | 140 | :wavy_dash: | 141 | :wavy_dash: | 142 | :scream: | 143 | :scream: | 144 | :scream: |
-| 145 | :scream: | 146 | :scream: | 147 | :scream: | 148 | :scream: | 149 | :scream: | 150 | :scream: |
+| 139 | :wavy_dash: | 140 | :wavy_dash: | 141 | :wavy_dash: | 142 | :scream: | 143 | :wavy_dash: | 144 | :wavy_dash: |
+| 145 | :scream: | 146 | :wavy_dash: | 147 | :wavy_dash: | 148 | :scream: | 149 | :wavy_dash: | 150 | :wavy_dash: |
 | 151 | :wavy_dash: | 152 | :wavy_dash: | 153 | :wavy_dash: | 154 | :wavy_dash: | 155 | :wavy_dash: | 156 | :wavy_dash: |
 | 157 | :wavy_dash: | 158 | :wavy_dash: | 159 | :wavy_dash: | 160 | :wavy_dash: | 161 | :wavy_dash: | 162 | :wavy_dash: |
 | 163 | :wavy_dash: | 164 | :wavy_dash: | 165 | :wavy_dash: | 166 | :wavy_dash: | 167 | :wavy_dash: | 168 | :wavy_dash: |
 | 169 | :wavy_dash: | 170 | :wavy_dash: | 171 | :wavy_dash: | 172 | :wavy_dash: | 173 | :wavy_dash: | 174 | :wavy_dash: |
-| 175 | :wavy_dash: | 176 | :wavy_dash: | 177 | :wavy_dash: | 178 | :wavy_dash: | 179 | :scream: | 180 | :scream: |
+| 175 | :wavy_dash: | 176 | :wavy_dash: | 177 | :wavy_dash: | 178 | :wavy_dash: | 179 | :scream: | 180 | :wavy_dash: |
 | 181 | :wavy_dash: | 182 | :wavy_dash: | 183 | :wavy_dash: | 184 | :wavy_dash: | 185 | :wavy_dash: | 186 | :wavy_dash: |
 | 187 | :wavy_dash: | 188 | :wavy_dash: | 189 | :wavy_dash: | 190 | :wavy_dash: | 191 | :wavy_dash: | 192 | :wavy_dash: |
 | 193 | :wavy_dash: | 194 | :wavy_dash: | 195 | :wavy_dash: | 196 | :wavy_dash: | 197 | :wavy_dash: | 198 | :wavy_dash: |
 | 199 | :wavy_dash: | 200 | :wavy_dash: | 201 | :wavy_dash: | 202 | :wavy_dash: | 203 | :wavy_dash: | 204 | :wavy_dash: |
-| 205 | :scream: | 206 | :metal: | 207 | :metal: | 208 | :metal: | 209 | :metal: | 210 | :metal: |
+| 205 | :scream: | 206 | :metal: | 207 | :wavy_dash: | 208 | :wavy_dash: | 209 | :wavy_dash: | 210 | :wavy_dash: |
 | 211 | :wavy_dash: | 212 | :wavy_dash: | 213 | :wavy_dash: | 214 | :wavy_dash: | 215 | :wavy_dash: | 216 | :wavy_dash: |
 | 217 | :wavy_dash: | 218 | :wavy_dash: | 219 | :wavy_dash: | 220 | :wavy_dash: | 221 | :wavy_dash: | 222 | :wavy_dash: |
 | 223 | :wavy_dash: | 224 | :wavy_dash: | 225 | :wavy_dash: | 226 | :wavy_dash: | 227 | :wavy_dash: | 228 | :wavy_dash: |
@@ -74,7 +74,7 @@ DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23, 24, 25
 | 337 | :wavy_dash: | 338 | :wavy_dash: | 339 | :wavy_dash: | 340 | :wavy_dash: | 341 | :wavy_dash: | 342 | :wavy_dash: |
 | 343 | :wavy_dash: | 344 | :wavy_dash: | 345 | :wavy_dash: | 346 | :wavy_dash: | 347 | :wavy_dash: | 348 | :wavy_dash: |
 | 349 | :wavy_dash: | 350 | :wavy_dash: | 351 | :wavy_dash: | 352 | :wavy_dash: | 353 | :wavy_dash: | 354 | :wavy_dash: |
-| 355 | :wavy_dash: | 356 | :wavy_dash: | 357 | :scream: | 358 | :scream: | 359 | :scream: | 360 | :scream: |
+| 355 | :wavy_dash: | 356 | :wavy_dash: | 357 | :scream: | 358 | :wavy_dash: | 359 | :wavy_dash: | 360 | :wavy_dash: |
 | 361 | :wavy_dash: | 362 | :wavy_dash: | 363 | :wavy_dash: | 364 | :wavy_dash: | 365 | :wavy_dash: | 366 | :wavy_dash: |
 | 367 | :wavy_dash: | 368 | :wavy_dash: | 369 | :wavy_dash: | 370 | :wavy_dash: | 371 | :wavy_dash: | 372 | :wavy_dash: |
 | 373 | :wavy_dash: | 374 | :wavy_dash: | 375 | :wavy_dash: | 376 | :wavy_dash: | 377 | :wavy_dash: | 378 | :wavy_dash: |
@@ -117,4 +117,4 @@ DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23, 24, 25
 | 595 | :wavy_dash: | 596 | :wavy_dash: | 597 | :wavy_dash: | 598 | :wavy_dash: | 599 | :wavy_dash: | 600 | :wavy_dash: |
 | 601 | :wavy_dash: | 602 | :wavy_dash: | 603 | :wavy_dash: | 604 | :wavy_dash: | 605 | :wavy_dash: | 606 | :wavy_dash: |
 | 607 | :wavy_dash: | 608 | :wavy_dash: | 609 | :wavy_dash: | 610 | :wavy_dash: | 611 | :wavy_dash: | 612 | :wavy_dash: |
-| 613 | :scream: | 614 | :scream: | 615 | :scream: |
+| 613 | :scream: | 614 | :wavy_dash: | 615 | :wavy_dash: |

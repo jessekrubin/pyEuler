@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d215d3d-a590-4c2b-913c-408ee5886ef7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/done/euler_020.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/done/euler_021.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/done/euler_043.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/update_readme.py" afterPath="$PROJECT_DIR$/update_readme.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,6 +14,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="update_readme.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/update_readme.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="euler_020.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/done/euler_020.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -29,14 +36,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="euler_021.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="euler_021.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/done/euler_021.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding>
-                <element signature="e#581#612#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,12 +174,12 @@
         <option value="$PROJECT_DIR$/not_done/euler_027.py" />
         <option value="$PROJECT_DIR$/euler_148a.py" />
         <option value="$PROJECT_DIR$/euler_148.py" />
-        <option value="$PROJECT_DIR$/update_readme.py" />
         <option value="$PROJECT_DIR$/not_done/euler_032.py" />
         <option value="$PROJECT_DIR$/not_done/euler_043.py" />
         <option value="$PROJECT_DIR$/done/euler_019.py" />
         <option value="$PROJECT_DIR$/done/euler_020.py" />
         <option value="$PROJECT_DIR$/done/euler_021.py" />
+        <option value="$PROJECT_DIR$/update_readme.py" />
       </list>
     </option>
   </component>
@@ -280,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.euler_021">
+  <component name="RunManager" selected="Python.update_readme">
     <configuration name="euler_020" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -872,14 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_readme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/done/euler_019.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
@@ -900,11 +897,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/done/euler_021.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#581#612#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_readme.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
