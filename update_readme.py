@@ -27,9 +27,8 @@ N_COLUMNS = 6
 README_TEXT = """# pEuler
 
 This is my primarily python project euler problems repository.
+I do these problems for fun. 
 Last I checked ({}) i've done {} problems, and am currently working on {}.
-
-{}
 
 ## Problems table
 
@@ -39,7 +38,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ###### {} = n/a; not started
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI,
            IN_PROGRESS_EMOJI, NOT_STARTED_EMOJI)
 
 with open('README.md', 'w') as f:
