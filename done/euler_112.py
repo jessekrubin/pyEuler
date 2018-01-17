@@ -26,28 +26,31 @@ Find the least number for which the proportion of bouncy numbers is exactly
 
 from helpme import digits_list
 
+
 def bouncy(n):
-   digits = digits_list(n)
-   increasing = False
-   decreasing = False
-   for i in range(0, len(digits) - 1):
-       if digits[i+1] < digits[i]:
-         increasing = True
-       elif digits[i+1] > digits[i]:
-         decreasing = True
-       if increasing and decreasing:
-         return True
-   return False
+    digits = digits_list(n)
+    increasing = False
+    decreasing = False
+    for i in range(0, len(digits) - 1):
+        if digits[i + 1] < digits[i]:
+            increasing = True
+        elif digits[i + 1] > digits[i]:
+            decreasing = True
+        if increasing and decreasing:
+            return True
+    return False
+
 
 def find_proportion(percent):
     i = 100
     bouncy_count = 0
-    while(True):
+    while (True):
         i += 1
         if bouncy(i):
             bouncy_count += 1
         if bouncy_count / i == (percent / 100):
             return i
+
 
 percentage = 90
 answer = find_proportion(percentage)

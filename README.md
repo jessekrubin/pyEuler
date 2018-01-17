@@ -1,9 +1,9 @@
 # pEuler
 
 This is my primarily python project euler problems repository.
-Last I checked (2018-01-16) i've done 43 problems, and am currently working on 15.
+Last I checked (2018-01-16) i've done 46 problems, and am currently working on 15.
 
-DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 28, 29, 31, 33, 35, 36, 37, 38, 40, 41, 42, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
+DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 37, 38, 40, 41, 42, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
 
 ## Problems table
 
@@ -15,12 +15,12 @@ DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 2
 
 | Problem # | Done? | # | Done? | # | Done? | # | Done? | # | Done? | # | Done? |
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |
-| 1 | :metal: | 2 | :metal: | 3 | :metal: | 4 | :metal: | 5 | :scream: | 6 | :metal: |
+| 1 | :metal: | 2 | :metal: | 3 | :metal: | 4 | :metal: | 5 | :metal: | 6 | :metal: |
 | 7 | :metal: | 8 | :metal: | 9 | :metal: | 10 | :metal: | 11 | :metal: | 12 | :metal: |
 | 13 | :metal: | 14 | :metal: | 15 | :metal: | 16 | :metal: | 17 | :metal: | 18 | :metal: |
 | 19 | :metal: | 20 | :metal: | 21 | :metal: | 22 | :metal: | 23 | :metal: | 24 | :metal: |
-| 25 | :metal: | 26 | :metal: | 27 | :scream: | 28 | :metal: | 29 | :metal: | 30 | :metal: |
-| 31 | :metal: | 32 | :scream: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
+| 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :metal: |
+| 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
 | 37 | :metal: | 38 | :metal: | 39 | :metal: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
 | 43 | :wavy_dash: | 44 | :scream: | 45 | :metal: | 46 | :metal: | 47 | :scream: | 48 | :metal: |
 | 49 | :scream: | 50 | :metal: | 51 | :metal: | 52 | :metal: | 53 | :metal: | 54 | :metal: |
@@ -35,11 +35,11 @@ DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 2
 | 103 | :wavy_dash: | 104 | :wavy_dash: | 105 | :wavy_dash: | 106 | :wavy_dash: | 107 | :wavy_dash: | 108 | :wavy_dash: |
 | 109 | :wavy_dash: | 110 | :wavy_dash: | 111 | :wavy_dash: | 112 | :metal: | 113 | :metal: | 114 | :metal: |
 | 115 | :wavy_dash: | 116 | :wavy_dash: | 117 | :wavy_dash: | 118 | :wavy_dash: | 119 | :wavy_dash: | 120 | :wavy_dash: |
-| 121 | :wavy_dash: | 122 | :wavy_dash: | 123 | :wavy_dash: | 124 | :wavy_dash: | 125 | :wavy_dash: | 126 | :wavy_dash: |
+| 121 | :wavy_dash: | 122 | :wavy_dash: | 123 | :wavy_dash: | 124 | :wavy_dash: | 125 | :scream: | 126 | :scream: |
 | 127 | :wavy_dash: | 128 | :wavy_dash: | 129 | :wavy_dash: | 130 | :wavy_dash: | 131 | :wavy_dash: | 132 | :wavy_dash: |
 | 133 | :wavy_dash: | 134 | :wavy_dash: | 135 | :wavy_dash: | 136 | :wavy_dash: | 137 | :wavy_dash: | 138 | :wavy_dash: |
 | 139 | :wavy_dash: | 140 | :wavy_dash: | 141 | :wavy_dash: | 142 | :scream: | 143 | :scream: | 144 | :scream: |
-| 145 | :wavy_dash: | 146 | :wavy_dash: | 147 | :wavy_dash: | 148 | :wavy_dash: | 149 | :wavy_dash: | 150 | :wavy_dash: |
+| 145 | :scream: | 146 | :scream: | 147 | :scream: | 148 | :scream: | 149 | :scream: | 150 | :scream: |
 | 151 | :wavy_dash: | 152 | :wavy_dash: | 153 | :wavy_dash: | 154 | :wavy_dash: | 155 | :wavy_dash: | 156 | :wavy_dash: |
 | 157 | :wavy_dash: | 158 | :wavy_dash: | 159 | :wavy_dash: | 160 | :wavy_dash: | 161 | :wavy_dash: | 162 | :wavy_dash: |
 | 163 | :wavy_dash: | 164 | :wavy_dash: | 165 | :wavy_dash: | 166 | :wavy_dash: | 167 | :wavy_dash: | 168 | :wavy_dash: |

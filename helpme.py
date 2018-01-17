@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
-# JESSES pEuler helper functions
+# JESSE'S pEuler helper functions
 
 from math import sqrt
 from collections import deque
@@ -10,7 +10,8 @@ from functools import lru_cache
 
 @lru_cache(maxsize=None)
 def is_prime(number: int) -> bool:
-    """True if number is prime
+    """
+    True if number is prime
 
     >>> is_prime(37)
     True
@@ -23,10 +24,11 @@ def is_prime(number: int) -> bool:
     >>> is_prime(17)
     True
     """
-
     if number % 2 == 0 and number > 2:
         return False
-    return all(number % i for i in range(3, int(sqrt(number)) + 1, 2))
+    else:
+        return all(number % i for i in range(3, int(sqrt(number) + 1), 2))
+
 
 @lru_cache(maxsize=None)
 def is_perfect_square(positive_n):
@@ -35,7 +37,7 @@ def is_perfect_square(positive_n):
             return True
         return False
     half = positive_n // 2
-    seen_set = set([half])
+    seen_set = {half}
     while half * half != positive_n:
         half = (half + (positive_n // half)) // 2
         if half in seen_set:
@@ -43,12 +45,12 @@ def is_perfect_square(positive_n):
         seen_set.add(half)
     return True
 
+
 @lru_cache(maxsize=None)
 def fib(n: int) -> int:
-    """
-    get the nth fibonacci number
+    """Return the nth fibonacci number
 
-    :param n:
+    :param n: fib number index
     :return: nth fib number
     >>> fib(1)
     1
@@ -73,7 +75,8 @@ def fib(n: int) -> int:
 def is_circ_prime(n):
     digist = [int(j) for j in digits_list(n)]
     return all(
-            (is_prime(dig_list_2_int(i)) for i in number_rotations_generator(digist)))
+        (is_prime(dig_list_2_int(i)) for i in number_rotations_generator(digist)))
+
 
 @lru_cache(maxsize=4)
 def divisors_gen(n):
@@ -86,8 +89,15 @@ def divisors_gen(n):
     for divisor in reversed(large_divisors):
         yield divisor
 
+
 @lru_cache(maxsize=None)
 def n_divisors(n):
+    """
+    >>> n_divisors(12)
+    6
+    >>> n_divisors(10)
+    4
+    """
     return sum(1 for _ in divisors_gen(n))
 
 
@@ -128,6 +138,17 @@ def num_base_ten_digits(number: int) -> int:
 
 
 def digits_list(num):
+    """
+    >>> digits_list(1111)
+    [1, 1, 1, 1]
+    >>> digits_list(982)
+    [9, 8, 2]
+    >>> digits_list(101)
+    [1, 0, 1]
+    >>> digits_list(123)
+    [1, 2, 3]
+    """
+
     digits = deque()
     while True:
         num, r = divmod(num, 10)
@@ -143,18 +164,33 @@ def cross_prod(toop1, toop2):
 
 def dig_list_2_int(l):
     """
+    >>> dig_list_2_int([3, 2, 1])
+    321
+    >>> dig_list_2_int([1, 1, 1, 1, 2, 3])
+    111123
     >>> dig_list_2_int([1, 2, 3])
     123
-
-
-    :param l:
-    :return:
     """
     d = 0
-    for i in range(len(l), 0, -1):
-        d += (l[i] * 10 ** i)
+    n_digs = len(l)
+    for i in range(0, n_digs, 1):
+        d += (l[n_digs - i - 1] * 10 ** i)
     return d
 
 
 def string_score(name):
+    """
+    >>> string_score('me')
+    18
+    >>> string_score('poooood')
+    95
+    >>> string_score('gregory')
+    95
+    """
     return sum((ord(character) - 96 for character in name.lower()))
+
+
+if __name__ == '__main__':
+    import doctest
+
+    doctest.testmod()  # run doctests if this script is called

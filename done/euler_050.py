@@ -20,17 +20,17 @@ consecutive primes?
 from helpme import is_prime
 
 
-def consecutive_prime_sum(number:int):
+def consecutive_prime_sum(number: int):
     primes_list = [i for i in range(2, number) if is_prime(i)]
     print(f'found primes below {number}')
     primes_set = set(primes_list)
     longest_seq = 1
     max_sum = 1
     for i in range(len(primes_list), 0, -1):
-        cur_sum = primes_list[i-1]
+        cur_sum = primes_list[i - 1]
         cur_seq_length = 1
-        for j in range(i-1, 0, -1):
-            cur_sum += primes_list[j-1]
+        for j in range(i - 1, 0, -1):
+            cur_sum += primes_list[j - 1]
             cur_seq_length += 1
             if cur_sum > number:
                 break
@@ -39,12 +39,16 @@ def consecutive_prime_sum(number:int):
                 longest_seq = cur_seq_length
     return longest_seq, max_sum
 
+
 below = 100
 answer_sequence_length, prime_answer = consecutive_prime_sum(below)
-print(f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
+print(
+    f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
 below = 1000
 answer_sequence_length, prime_answer = consecutive_prime_sum(below)
-print(f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
+print(
+    f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
 below = 1000000
 answer_sequence_length, prime_answer = consecutive_prime_sum(below)
-print(f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
+print(
+    f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')

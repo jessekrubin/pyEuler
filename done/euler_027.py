@@ -20,21 +20,19 @@ consecutive values of n, starting with n=0.
 
 from helpme import is_prime
 
-def quad(n, a, b): return ((n*n) + (a * n) + b)
+
+def quad(n, a, b): return ((n * n) + (a * n) + b)
+
 
 def sequece_length(a: int, b: int):
     n = 0
-    while(True):
-        numb = quad(n, a, b)
+    while (True):
+        numb = abs(quad(n, a, b))
         if not is_prime(numb):
             return n
         n += 1
 
-print(sequece_length(-79, 1601))
-combos = [(i, j) for i in range(-1000,1001, 1) for j in range(-1000,1001, 1)]
-print(len(combos))
-print(combos[0])
-
+combos = [(i, j) for i in range(-1000, 1001, 1) for j in range(-1000, 1001, 1)]
 
 maxseq = 1
 c = (1, 1)
@@ -44,6 +42,6 @@ for combo in combos:
         maxseq = sl
         c = combo
 
-print(maxseq)
-print(c)
-
+print("Longest sequence length is {} and is the result of using the number {}".format(maxseq, c))
+product_answer = c[0] * c[1]
+print("The product of the two numbers is {}".format(product_answer))

@@ -20,29 +20,26 @@ include it once in your sum.
 """
 
 from helpme import dig_list_2_int
-
-one2nine = [i for i in range(1, 10)]
 from itertools import permutations
-print(one2nine)
-
 
 def pandigital_product(list):
-    combos = 0
+    """
+    >>> pandigital_product([3, 9, 1, 8, 6, 7, 2, 5, 4])
+    True
+    """
     for i in range(2, 9):
-        print("")
-        print(list)
         for j in range(1, i):
-            print("__")
             last = list[i:]
             furst = list[:j]
             second = list[j:i]
-            print(furst)
-            print(second)
-            print(last)
-            combos += 1
-    print(combos)
+            if dig_list_2_int(furst)*dig_list_2_int(second) == dig_list_2_int(last):
+                return dig_list_2_int(last)
+    return 0
 
+one2nine = [i for i in range(1, 10)]
+pandigital_lists = [i for i in permutations(one2nine)]
+products = set()
+for pandigit in pandigital_lists:
+    products.add(pandigital_product(pandigit))
 
-
-testone = [3, 9, 1, 8, 6, 7,2,5,4]
-pandigital_product(testone)
+print("Sum of products: {}".format(sum(products)))
