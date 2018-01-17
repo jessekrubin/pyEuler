@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d215d3d-a590-4c2b-913c-408ee5886ef7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/not_done/euler_125.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/not_done/euler_145.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/not_done/euler_148.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/done/euler_020.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/done/euler_021.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/done/euler_043.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/done/euler_048.py" afterPath="$PROJECT_DIR$/done/euler_048.py" />
-      <change beforePath="$PROJECT_DIR$/done/euler_050.py" afterPath="$PROJECT_DIR$/done/euler_050.py" />
-      <change beforePath="$PROJECT_DIR$/done/euler_085.py" afterPath="$PROJECT_DIR$/done/euler_085.py" />
-      <change beforePath="$PROJECT_DIR$/done/euler_097.py" afterPath="$PROJECT_DIR$/done/euler_097.py" />
-      <change beforePath="$PROJECT_DIR$/done/euler_112.py" afterPath="$PROJECT_DIR$/done/euler_112.py" />
-      <change beforePath="$PROJECT_DIR$/done/euler_206.py" afterPath="$PROJECT_DIR$/done/euler_206.py" />
-      <change beforePath="$PROJECT_DIR$/euler_148a.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/helpme.py" afterPath="$PROJECT_DIR$/helpme.py" />
-      <change beforePath="$PROJECT_DIR$/not_done/euler_005.py" afterPath="$PROJECT_DIR$/done/euler_005.py" />
-      <change beforePath="$PROJECT_DIR$/not_done/euler_027.py" afterPath="$PROJECT_DIR$/done/euler_027.py" />
-      <change beforePath="$PROJECT_DIR$/not_done/euler_032.py" afterPath="$PROJECT_DIR$/done/euler_032.py" />
-      <change beforePath="$PROJECT_DIR$/not_done/euler_086.py" afterPath="$PROJECT_DIR$/not_done/euler_086.py" />
-      <change beforePath="$PROJECT_DIR$/update_readme.py" afterPath="$PROJECT_DIR$/update_readme.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +17,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="update_readme.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/update_readme.py">
+      <file leaf-file-name="euler_020.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/done/euler_020.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+            <state relative-caret-position="400">
+              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+              <folding>
+                <element signature="e#338#364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_021.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/done/euler_021.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <folding>
+                <element signature="e#581#612#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_068.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/not_done/euler_068.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_074.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/not_done/euler_074.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_043.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/done/euler_043.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="e#681#714#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_045.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/done/euler_045.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_050.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/done/euler_050.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="euler_056.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/done/euler_056.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,8 +106,8 @@
       <file leaf-file-name="euler_032.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/done/euler_032.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="515">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
                 <element signature="e#656#689#0" expanded="true" />
                 <element signature="e#760#836#1" expanded="false" />
@@ -62,9 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/done/euler_003.py" />
-        <option value="$PROJECT_DIR$/done/euler_004.py" />
-        <option value="$PROJECT_DIR$/done/euler_006.py" />
         <option value="$PROJECT_DIR$/done/euler_007.py" />
         <option value="$PROJECT_DIR$/done/euler_009.py" />
         <option value="$PROJECT_DIR$/done/euler_036.py" />
@@ -81,7 +140,6 @@
         <option value="$PROJECT_DIR$/not_done/euler_076.py" />
         <option value="$PROJECT_DIR$/done/euler_012.py" />
         <option value="$PROJECT_DIR$/done/euler_011.py" />
-        <option value="$PROJECT_DIR$/done/euler_019.py" />
         <option value="$PROJECT_DIR$/not_done/euler_005.py" />
         <option value="$PROJECT_DIR$/done/euler_029.py" />
         <option value="$PROJECT_DIR$/done/euler_079.py" />
@@ -113,6 +171,10 @@
         <option value="$PROJECT_DIR$/euler_148.py" />
         <option value="$PROJECT_DIR$/update_readme.py" />
         <option value="$PROJECT_DIR$/not_done/euler_032.py" />
+        <option value="$PROJECT_DIR$/not_done/euler_043.py" />
+        <option value="$PROJECT_DIR$/done/euler_019.py" />
+        <option value="$PROJECT_DIR$/done/euler_020.py" />
+        <option value="$PROJECT_DIR$/done/euler_021.py" />
       </list>
     </option>
   </component>
@@ -167,7 +229,7 @@
             <path>
               <item name="pyEuler" type="b2602c69:ProjectViewProjectNode" />
               <item name="pyEuler" type="462c0819:PsiDirectoryNode" />
-              <item name="not_done" type="462c0819:PsiDirectoryNode" />
+              <item name="done" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -192,10 +254,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jesse\git\pyEuler\done" />
+      <recent name="C:\Users\jesse\git\pyEuler\not_done" />
       <recent name="C:\Users\JRubin\git\pEuler\not_done" />
       <recent name="C:\Users\JRubin\git\pEuler" />
       <recent name="C:\Users\jesse\git\pyEuler" />
-      <recent name="C:\Users\jesse\git\pyEuler\done\text_files" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jesse\git\pyEuler\done" />
@@ -217,7 +280,43 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.update_readme">
+  <component name="RunManager" selected="Python.euler_021">
+    <configuration name="euler_020" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/done" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pEuler" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/done/euler_020.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="euler_021" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/done" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pEuler" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/done/euler_021.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="euler_027" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -254,6 +353,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="euler_043" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/not_done" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pEuler" />
+      <option name="SCRIPT_NAME" value="C:\Users\jesse\git\pyEuler\done\euler_043.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="update_readme" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -271,60 +388,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Doctest n_divisors" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pEuler" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpme.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="n_divisors" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_FUNCTION" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration name="Doctest string_score" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pEuler" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpme.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="string_score" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_FUNCTION" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration name="Doctests in helpme" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pEuler" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpme.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
     </configuration>
     <configuration name="helpme_pytest" type="tests" factoryName="py.test">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -344,19 +407,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.update_readme" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.helpme_pytest" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in helpme" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctest n_divisors" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctest string_score" />
-      <item index="5" class="java.lang.String" itemvalue="Python.euler_027" />
-      <item index="6" class="java.lang.String" itemvalue="Python.euler_032" />
+      <item index="2" class="java.lang.String" itemvalue="Python.euler_027" />
+      <item index="3" class="java.lang.String" itemvalue="Python.euler_032" />
+      <item index="4" class="java.lang.String" itemvalue="Python.euler_043" />
+      <item index="5" class="java.lang.String" itemvalue="Python.euler_020" />
+      <item index="6" class="java.lang.String" itemvalue="Python.euler_021" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.euler_032" />
-        <item index="1" class="java.lang.String" itemvalue="Python.euler_027" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in helpme" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctest string_score" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctest n_divisors" />
+        <item index="0" class="java.lang.String" itemvalue="Python.euler_021" />
+        <item index="1" class="java.lang.String" itemvalue="Python.euler_020" />
+        <item index="2" class="java.lang.String" itemvalue="Python.euler_043" />
+        <item index="3" class="java.lang.String" itemvalue="Python.euler_032" />
+        <item index="4" class="java.lang.String" itemvalue="Python.euler_027" />
       </list>
     </recent_temporary>
   </component>
@@ -475,45 +538,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/done/euler_026.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/done/euler_010.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/done/euler_011.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="101" column="11" lean-forward="false" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/done/euler_031.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/done/euler_029.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/done/euler_019.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -576,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/done/euler_056.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/done/euler_067.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
@@ -605,20 +626,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/not_done/euler_050.py" />
-    <entry file="file://$PROJECT_DIR$/done/euler_050.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/not_done/euler_068.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/not_done/euler_049.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -684,20 +691,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/done/euler_001.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/not_done/euler_044.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/not_done/euler_074.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -810,10 +803,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/not_done/euler_044.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/done/euler_032.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="515">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="e#656#689#0" expanded="true" />
             <element signature="e#760#836#1" expanded="false" />
@@ -821,11 +822,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/not_done/euler_068.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/not_done/euler_074.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_043.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#681#714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_045.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_050.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_056.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/update_readme.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+        <state relative-caret-position="335">
+          <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_019.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_020.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#338#364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/done/euler_021.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding>
+            <element signature="e#581#612#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

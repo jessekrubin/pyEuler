@@ -1,9 +1,9 @@
 # pEuler
 
 This is my primarily python project euler problems repository.
-Last I checked (2018-01-16) i've done 46 problems, and am currently working on 15.
+Last I checked (2018-01-16) i've done 48 problems, and am currently working on 15.
 
-DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 37, 38, 40, 41, 42, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
+DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 36, 37, 38, 40, 41, 42, 43, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
 
 ## Problems table
 
@@ -22,7 +22,7 @@ DONE: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26
 | 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :metal: |
 | 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
 | 37 | :metal: | 38 | :metal: | 39 | :metal: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
-| 43 | :wavy_dash: | 44 | :scream: | 45 | :metal: | 46 | :metal: | 47 | :scream: | 48 | :metal: |
+| 43 | :metal: | 44 | :scream: | 45 | :metal: | 46 | :metal: | 47 | :scream: | 48 | :metal: |
 | 49 | :scream: | 50 | :metal: | 51 | :metal: | 52 | :metal: | 53 | :metal: | 54 | :metal: |
 | 55 | :wavy_dash: | 56 | :metal: | 57 | :metal: | 58 | :metal: | 59 | :metal: | 60 | :metal: |
 | 61 | :wavy_dash: | 62 | :wavy_dash: | 63 | :wavy_dash: | 64 | :wavy_dash: | 65 | :wavy_dash: | 66 | :wavy_dash: |
