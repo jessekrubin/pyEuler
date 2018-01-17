@@ -21,15 +21,14 @@ NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBLEMS = 615 + 1
 DONE_EMOJI = ":metal:"
 IN_PROGRESS_EMOJI = ":scream:"
-NOT_STARTED_EMOJI = ":wavy_dash:"
+NOT_STARTED_EMOJI = ":see_no_evil:"
 N_COLUMNS = 6
 
 README_TEXT = """# pEuler
 
 This is my primarily python project euler problems repository.
+I do these problems for fun. 
 Last I checked ({}) i've done {} problems, and am currently working on {}.
-
-{}
 
 ## Problems table
 
@@ -39,7 +38,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ###### {} = n/a; haven't seen it (thus the monkey)
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI,
            IN_PROGRESS_EMOJI, NOT_STARTED_EMOJI)
 
 with open('README.md', 'w') as f:
@@ -54,9 +53,9 @@ with open('README.md', 'w') as f:
         euler_prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBLEMS, N_COLUMNS)
     ]
     for chunk in l_chunks:
-        status = NOT_STARTED_EMOJI
         line = ""
         for n in chunk:
+            status = NOT_STARTED_EMOJI
             if n in DONE:
                 status = DONE_EMOJI
             if n in NOT_DONE:
@@ -68,8 +67,8 @@ with open('README.md', 'w') as f:
 
 f.close()
 
-print(len(DONE))
-print(len(NOT_DONE))
+print("DONE: {}".format(len(DONE)))
+print("NOT DONE: {}".format(len(NOT_DONE)))
 print(DONE)
 print(NOT_DONE)
 print("\nDear Jesse,\n"

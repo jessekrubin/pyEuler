@@ -11,17 +11,19 @@ Although there exists no rectangular grid that contains exactly two million
 rectangles, find the area of the grid with the nearest solution.
 """
 
+
 # num rectangles is (height**2 + height) times (width**2 + width)
 # all over four
 # this equation is simple enough to figure out, though it took me a while and
 # I tore some of my hari out
-def num_rectangles(height, width): return ((height**2 + height)*(width**2 + width)) // 4
+def num_rectangles(height, width): return ((height ** 2 + height) * (width ** 2 + width)) // 4
+
 
 numrectdict = {}
 # so go ahead and just try abunch, i guess
 for i in range(1, 100):
-    for j in range(1, i+1):
+    for j in range(1, i + 1):
         numrectdict[abs(2000000 - num_rectangles(i, j))] = i * j
 
-min_key = min(numrectdict.keys()) # min key is going to be the closes
+min_key = min(numrectdict.keys())  # min key is going to be the closes
 print("AREA w/ nearest solution: {}".format(numrectdict[min_key]))

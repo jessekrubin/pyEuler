@@ -21,11 +21,12 @@ down.
 import os
 from os import path
 
-g1 = [[131, 673, 234, 103,  18],
-      [201,  96, 342, 965, 150],
+g1 = [[131, 673, 234, 103, 18],
+      [201, 96, 342, 965, 150],
       [630, 803, 746, 422, 111],
       [537, 699, 497, 121, 956],
-      [805, 732, 524,  37, 331]]
+      [805, 732, 524, 37, 331]]
+
 
 def min_path_sum(grid):
     print(grid)
@@ -33,14 +34,12 @@ def min_path_sum(grid):
     height = len(grid)
     for i in range(width):
         for j in range(height):
-            if i*j == 0:
+            if i * j == 0:
                 if i == 0:
-
-
+                    print("herm")
 
     print(width)
     print(height)
-
 
 
 min_path_sum(g1)
