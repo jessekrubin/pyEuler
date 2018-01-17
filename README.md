@@ -1,9 +1,9 @@
 # pEuler
 
 This is my primarily python project euler problems repository.
-Last I checked (2018-01-16) i've done 43 problems, and am currently working on 15.
+Last I checked (2018-01-17) i've done 45 problems, and am currently working on 15.
 
-DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 28, 29, 31, 33, 35, 36, 37, 38, 40, 41, 42, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
+DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 22, 23, 24, 25, 26, 28, 29, 31, 33, 35, 36, 37, 38, 40, 41, 42, 45, 48, 50, 56, 67, 79, 85, 92, 97, 102, 112, 206]
 
 ## Problems table
 
@@ -11,7 +11,7 @@ DONE: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 22, 23, 24, 25, 26, 2
 
 ###### :scream: = in progress
 
-###### :wavy_dash: = n/a; not started
+###### :wavy_dash: = n/a; haven't seen it (thus the monkey)
 
 | Problem # | Done? | # | Done? | # | Done? | # | Done? | # | Done? | # | Done? |
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |

@@ -83,7 +83,7 @@ def one_ninenine(n):
 def write_num_as_string(n):
     if n == 1000:
         return "one thousand"
-    else:
+        else:
         a, b = divmod(n, 100)
         if a == 0:
             return one_ninenine(n)

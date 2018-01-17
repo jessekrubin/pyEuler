@@ -37,7 +37,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ###### {} = in progress
 
-###### {} = n/a; not started
+###### {} = n/a; haven't seen it (thus the monkey)
 
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
            IN_PROGRESS_EMOJI, NOT_STARTED_EMOJI)
