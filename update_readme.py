@@ -1,7 +1,19 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin - update README.md
-# Python script to update the README.md for this repo
+# Jesse Rubin -
+"""
+Updates the README.md for this (pyEuler) repository.
+
+Works by looking for the files that are in the /done and /not_done for script
+names (which are all numbered).
+"""
+
+__author__ = "Jesse Rubin"
+__copyright__ = "Copypasta 2018?"
+__license__ = "FJBJ (for jesse by jesse)"
+__version__ = "3.14159"
+__maintainer__ = "Jesse Rubin"
+__status__ = "Awesome"
 
 from os import listdir, path
 from datetime import datetime
