@@ -5,7 +5,8 @@
 Updates the README.md for this (pyEuler) repository.
 
 Works by looking for the files that are in the /done and /not_done for script
-names (which are all numbered).
+names (which are all numbered). I usually run this script after I commit a
+problem solution.
 """
 
 __author__ = "Jesse Rubin"
