@@ -34,6 +34,8 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ## Problems table
 
+### Key
+
 ###### {} = done
 
 ###### {} = in progress
@@ -69,11 +71,21 @@ with open('README.md', 'w') as f:
 
 f.close()
 
-print("DONE: {}".format(len(DONE)))
-print("NOT DONE: {}".format(len(NOT_DONE)))
-print(DONE)
-print(NOT_DONE)
-print("\nDear Jesse,\n"
+#####################
+### MESSAGE TO ME ###
+#####################
+DONE_CHUNKS = [DONE[i:i + 20] for i in range(0, len(DONE), 20)]
+NOT_DONE_CHUNKS = [NOT_DONE[i:i + 20] for i in range(0, len(NOT_DONE), 20)]
+print("")
+print("Jesse, you have done {} problems; they are:".format(len(DONE)))
+for chunk in DONE_CHUNKS:
+    print(chunk)
+print("")
+print("You, Jesse, have started but not finished {} problems; those are:".format(len(NOT_DONE)))
+for chunk in NOT_DONE_CHUNKS:
+    print(chunk)
+print("")
+print("Dear Jesse,\n"
       "you updated the readme! So proud of you!\n"
       "Yourself,\n"
       "Jesse")
