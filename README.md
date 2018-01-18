@@ -8,10 +8,7 @@ Last I checked (2018-01-18) i've done 51 problems, and am currently working on 1
 
 ## Problems table
 
-##### KEY: 
-##### :metal: = done; 
-##### :scream: = in progress; 
-##### :see_no_evil: = haven't seen it (thus the monkey)
+###### KEY: :metal: = done; :scream: = in progress; :see_no_evil: = haven't seen it (thus the monkey)
 
 | Problem # | Done? | # | Done? | # | Done? | # | Done? | # | Done? | # | Done? |
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |
