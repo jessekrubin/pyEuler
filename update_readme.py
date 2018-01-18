@@ -3,17 +3,16 @@
 # Jesse Rubin - update README.md
 # Python script to update the README.md for this repo
 
-import datetime
-from os import listdir
-from os.path import isfile, join
+from os import listdir, path
+from datetime import datetime
 
 DONE_PATH = r'./done'
 NOT_DONE_PATH = r'./not_done'
-LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
-DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
+LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
+DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if path.isfile(path.join(DONE_PATH, f))]
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
-    if isfile(join(NOT_DONE_PATH, f)) and f.startswith("euler")
+    if path.isfile(path.join(NOT_DONE_PATH, f)) and f.startswith("euler")
 ]
 NOT_DONE.sort()
 DONE_LIST_STR = ("DONE: {}".format(DONE))
