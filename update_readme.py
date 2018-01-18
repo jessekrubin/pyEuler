@@ -35,11 +35,8 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 ## Problems table
 
 ### KEY:
-
-{} = done
-
-{} = in progress
-
+{} = done;
+{} = in progress;
 {} = haven't seen it (thus the monkey)
 
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI,
