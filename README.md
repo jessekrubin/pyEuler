@@ -4,17 +4,11 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-01-17) i've done 51 problems, and am currently working on 15.
+Last I checked (2018-01-18) i've done 51 problems, and am currently working on 15.
 
 ## Problems table
 
-### Key
-
-###### :metal: = done
-
-###### :scream: = in progress
-
-###### :see_no_evil: = n/a; haven't seen it (thus the monkey)
+### KEY: :metal: = done; :scream: = in progress; :see_no_evil: = haven't seen it (thus the monkey)
 
 | Problem # | Done? | # | Done? | # | Done? | # | Done? | # | Done? | # | Done? |
 | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- | ---:|:--- |
