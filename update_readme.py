@@ -58,9 +58,9 @@ with open('README.md', 'w') as f:
     f.write(table_header)
     header_sep = "|" + " ---:|:--- |" * N_COLUMNS + "\n"
     f.write(header_sep)
-    euler_prob_nums = [i for i in range(1, N_EULER_PROBLEMS)]
+    prob_nums = [i for i in range(1, N_EULER_PROBLEMS)]
     l_chunks = [
-        euler_prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBLEMS, N_COLUMNS)
+        prob_nums[i:i + N_COLUMNS] for i in range(0, N_EULER_PROBLEMS, N_COLUMNS)
     ]
     for chunk in l_chunks:
         line = ""
@@ -81,12 +81,13 @@ f.close()
 ### MESSAGE TO ME ###
 #####################
 DONE_CHUNKS = [DONE[i:i + 20] for i in range(0, len(DONE), 20)]
-NOT_DONE_CHUNKS = [NOT_DONE[i:i + 20] for i in range(0, len(NOT_DONE), 20)]
-print("")
+print("_____")
 print("Jesse, you have done {} problems; they are:".format(len(DONE)))
 for chunk in DONE_CHUNKS:
     print(chunk)
-print("")
+
+NOT_DONE_CHUNKS = [NOT_DONE[i:i + 20] for i in range(0, len(NOT_DONE), 20)]
+print("_____")
 print("You, Jesse, have started but not finished {} problems; those are:".format(len(NOT_DONE)))
 for chunk in NOT_DONE_CHUNKS:
     print(chunk)

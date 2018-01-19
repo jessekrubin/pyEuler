@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-01-19) i've done 52 problems, and am currently working on 15.
+Last I checked (2018-01-19) i've done 55 problems, and am currently working on 15.
 
 ## Problems table
 
@@ -16,9 +16,9 @@ Last I checked (2018-01-19) i've done 52 problems, and am currently working on 1
 | 7 | :metal: | 8 | :metal: | 9 | :metal: | 10 | :metal: | 11 | :metal: | 12 | :metal: |
 | 13 | :metal: | 14 | :metal: | 15 | :metal: | 16 | :metal: | 17 | :metal: | 18 | :metal: |
 | 19 | :metal: | 20 | :metal: | 21 | :metal: | 22 | :metal: | 23 | :metal: | 24 | :metal: |
-| 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :see_no_evil: |
-| 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :see_no_evil: | 35 | :metal: | 36 | :metal: |
-| 37 | :metal: | 38 | :metal: | 39 | :see_no_evil: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
+| 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :metal: |
+| 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
+| 37 | :metal: | 38 | :metal: | 39 | :metal: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
 | 43 | :metal: | 44 | :scream: | 45 | :metal: | 46 | :see_no_evil: | 47 | :scream: | 48 | :metal: |
 | 49 | :scream: | 50 | :metal: | 51 | :see_no_evil: | 52 | :see_no_evil: | 53 | :see_no_evil: | 54 | :see_no_evil: |
 | 55 | :see_no_evil: | 56 | :metal: | 57 | :see_no_evil: | 58 | :see_no_evil: | 59 | :see_no_evil: | 60 | :see_no_evil: |
