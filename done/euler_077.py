@@ -32,7 +32,7 @@ def prime_sums(n):
 
 # test case
 # n1 = 10
-# ans1 = prime_sums(n1)
+# ans1 = coin_partitions(n1)
 # print("{} ways to make {}".format(ans1, n1))
 
 answer = None

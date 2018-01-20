@@ -30,3 +30,28 @@ non-repeating chain with a starting number below one million is sixty terms.
 How many chains, with a starting number below one million, contain exactly sixty
 non-repeating terms?
 """
+from helpme import digits_list
+from math import factorial
+
+dic = {}
+def factorial_chain_length(starting_n):
+    seen_nums = set()
+    def recursing(n):
+        next = sum(map(factorial, digits_list(n)))
+        if next in seen_nums:
+            return 1
+        else:
+            if n not in dic.keys():
+                seen_nums.add(n)
+                return recursing(next) + 1
+            else:
+                return dic[n]
+    dic[starting_n] = recursing(starting_n)
+    return dic[starting_n]
+
+answer = 0
+for i in range(1, 1000001):
+    if factorial_chain_length(i) == 60:
+        answer += 1
+
+print("ANSWER: {}".format(answer))
