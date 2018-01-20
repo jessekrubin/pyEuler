@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin ~ Project Euler
-
 """
+Name scores
+Problem 22
+
 Using names.txt (right click and 'Save Link/Target As...'), a 46K text file
 containing over five-thousand first names, begin by sorting it into
 alphabetical order. Then working out the alphabetical value for each name,
@@ -18,7 +20,7 @@ What is the total of all the name scores in the file?
 
 from helpme import string_score
 
-with open(r'./text_files/p22_names.txt') as file:
+with open(r'../txt_files/p22_names.txt') as file:
     names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
 
 names = [name for name_line in names_lines for name in name_line]

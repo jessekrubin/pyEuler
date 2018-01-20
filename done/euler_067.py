@@ -22,8 +22,6 @@ to try every route to solve this problem, as there are 299 altogether! If you
 could check one trillion (1012) routes every second it would take over twenty
 billion years to check them all. There is an efficient algorithm to solve it.
 """
-import os.path
-from os import path
 
 lil_string_triangle = """3
 7 4
@@ -56,9 +54,7 @@ def tri_max_fast(l):
 
 little_tri = triangle_lists(lil_string_triangle)
 
-# open file and put into list
-cur_dir = (os.getcwd())
-with open(path.join(cur_dir, r'text_files/p067_triangle.txt')) as f:
+with open(r'../txt_files/p067_triangle.txt') as f:
     lines = tuple([
         tuple(map(int, j.split(' ')))
         for j in [i.strip('\n') for i in f.readlines()]

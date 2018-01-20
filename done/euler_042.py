@@ -22,7 +22,7 @@ containing nearly two-thousand common English words, how many are triangle words
 from helpme import string_score
 
 # open file and put into list
-with open(r'text_files/words_p42.txt') as f:
+with open(r'../txt_files/p042_words.txt') as f:
     words = [s.strip("\"") for s in f.readlines()[0].split(',')]
 
 
