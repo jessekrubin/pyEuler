@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-01-19) i've done 55 problems, and am currently working on 15.
+Last I checked (2018-01-19) i've done 60 problems, and am currently working on 12.
 
 ## Problems table
 
@@ -19,12 +19,12 @@ Last I checked (2018-01-19) i've done 55 problems, and am currently working on 1
 | 25 | :metal: | 26 | :metal: | 27 | :metal: | 28 | :metal: | 29 | :metal: | 30 | :metal: |
 | 31 | :metal: | 32 | :metal: | 33 | :metal: | 34 | :metal: | 35 | :metal: | 36 | :metal: |
 | 37 | :metal: | 38 | :metal: | 39 | :metal: | 40 | :metal: | 41 | :metal: | 42 | :metal: |
-| 43 | :metal: | 44 | :scream: | 45 | :metal: | 46 | :see_no_evil: | 47 | :scream: | 48 | :metal: |
-| 49 | :scream: | 50 | :metal: | 51 | :see_no_evil: | 52 | :see_no_evil: | 53 | :see_no_evil: | 54 | :see_no_evil: |
+| 43 | :metal: | 44 | :metal: | 45 | :metal: | 46 | :metal: | 47 | :metal: | 48 | :metal: |
+| 49 | :metal: | 50 | :metal: | 51 | :see_no_evil: | 52 | :see_no_evil: | 53 | :see_no_evil: | 54 | :see_no_evil: |
 | 55 | :see_no_evil: | 56 | :metal: | 57 | :see_no_evil: | 58 | :see_no_evil: | 59 | :see_no_evil: | 60 | :see_no_evil: |
 | 61 | :see_no_evil: | 62 | :see_no_evil: | 63 | :see_no_evil: | 64 | :see_no_evil: | 65 | :see_no_evil: | 66 | :see_no_evil: |
 | 67 | :metal: | 68 | :scream: | 69 | :see_no_evil: | 70 | :see_no_evil: | 71 | :see_no_evil: | 72 | :see_no_evil: |
-| 73 | :see_no_evil: | 74 | :scream: | 75 | :see_no_evil: | 76 | :scream: | 77 | :see_no_evil: | 78 | :see_no_evil: |
+| 73 | :see_no_evil: | 74 | :scream: | 75 | :see_no_evil: | 76 | :scream: | 77 | :metal: | 78 | :see_no_evil: |
 | 79 | :metal: | 80 | :see_no_evil: | 81 | :see_no_evil: | 82 | :see_no_evil: | 83 | :see_no_evil: | 84 | :see_no_evil: |
 | 85 | :metal: | 86 | :scream: | 87 | :see_no_evil: | 88 | :see_no_evil: | 89 | :see_no_evil: | 90 | :see_no_evil: |
 | 91 | :see_no_evil: | 92 | :metal: | 93 | :see_no_evil: | 94 | :see_no_evil: | 95 | :see_no_evil: | 96 | :see_no_evil: |

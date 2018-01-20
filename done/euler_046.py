@@ -18,15 +18,22 @@ It turns out that the conjecture was false.
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?.
 """
 
-# n = 5
-# f = 1
-# primes = set()
-#
-# while True:
-#     if all(n % p for p in primes):
-#         primes.add(n)
-#     else:
-#         if not any((n - 2 * i * i) in primes for i in range(1, n)):
-#             break
-#     n += 3 - f
-#     f = -f
+from helpme import is_prime
+from math import sqrt
+
+n = 3
+prime_numbers = set()
+prime_numbers.add(2)
+answer = None
+while answer == None:
+    if is_prime(n):
+        prime_numbers.add(n)
+    else:
+        for p in prime_numbers:
+            if sqrt(((n-p)/2)) == int(sqrt(((n-p)/2))):
+                break # break if it works with the conjecture
+        else:
+            answer = n
+    n += 2
+
+print("ANSWER: {}".format(answer))
