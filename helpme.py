@@ -64,19 +64,19 @@ def is_perfect_square(positive_n):
 def fib(n: int) -> int:
     """Return the nth fibonacci number
 
-    :param n: fib number index
-    :return: nth fib number
-    >>> fib(1)
+    :param n: fib_gen number index
+    :return: nth fib_gen number
+    >>> fib_gen(1)
     1
-    >>> fib(2)
+    >>> fib_gen(2)
     2
-    >>> fib(3)
+    >>> fib_gen(3)
     3
-    >>> fib(4)
+    >>> fib_gen(4)
     5
-    >>> fib(5)
+    >>> fib_gen(5)
     8
-    >>> fib(6)
+    >>> fib_gen(6)
     13
     """
     if n < 3:

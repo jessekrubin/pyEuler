@@ -38,8 +38,8 @@ def ind_first_fib_w_n_digs(index):
 
 n = 3
 answer = ind_first_fib_w_n_digs(n)
-print("index of first fib num w/ {} digits: {}".format(n, answer))
+print("index of first fib_gen num w/ {} digits: {}".format(n, answer))
 
 n = 1000
 answer = ind_first_fib_w_n_digs(n)
-print("index of first fib num w/ {} digits: {}".format(n, answer))
+print("index of first fib_gen num w/ {} digits: {}".format(n, answer))

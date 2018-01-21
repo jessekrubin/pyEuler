@@ -20,15 +20,15 @@ NOT_DONE.sort()
 DONE_LIST_STR = ("DONE: {}".format(DONE))
 NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBS = 615 + 1
-DONE_EMOJI = ":metal:"
+DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":wavy_dash:"
 rm_text = """# pEuler
-
 This is my primarily python project euler problems repository.
+I do these problems for fun, and because if I don't do them...then who will?
+Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
+Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 Last I checked ({}) i've done {} problems, and am currently working on {}.
-
-{}
 
 ## Problems table
 
@@ -57,9 +57,9 @@ with open('README.md', 'w') as f:
         l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)
     ]
     for chunk in l_chunks:
-        status = NOT_STARTED_EMOJI
         line = ""
         for n in chunk:
+            status = NOT_STARTED_EMOJI
             if n in DONE:
                 status = DONE_EMOJI
             if n in NOT_DONE:
