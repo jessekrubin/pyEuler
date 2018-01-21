@@ -22,7 +22,7 @@ NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBS = 615 + 1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
-NOT_STARTED_EMOJI = ":wavy_dash:"
+NOT_STARTED_EMOJI = ":see_no_evil:"
 rm_text = """# pEuler
 This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
@@ -32,13 +32,9 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ## Problems table
 
-###### {} = done
+###### KEY: {} = done; {} = in progress; {} = n/a; not started
 
-###### {} = in progress
-
-###### {} = n/a; not started
-
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_LIST_STR, DONE_EMOJI,
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI,
            INPROG_EMOJI, NOT_STARTED_EMOJI)
 
 print(rm_text)
