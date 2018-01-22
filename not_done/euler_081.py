@@ -29,17 +29,15 @@ g1 = [[131, 673, 234, 103, 18],
 
 
 def min_path_sum(grid):
-    print(grid)
+    start = (0, 0)
     width = len(grid[0])
     height = len(grid)
-    for i in range(width):
-        for j in range(height):
-            if i * j == 0:
-                if i == 0:
-                    print("herm")
+    finish = (width - 1, height - 1)
+    coords = set([(i, j) for i in range(width) for j in range(height)])
+    cur = start
+    
 
-    print(width)
-    print(height)
+
 
 
 min_path_sum(g1)
