@@ -17,6 +17,7 @@ four million, find the sum of the even-valued terms.
 from helpme import fib
 
 
-fibs = [n for n in [fib(i) for i in range(50)] if n % 2 == 0 and n <= 4000000]
-answer = sum(fibs)
-print("Sum: {}".format(answer))  # Sum: 4613732
+even_fibs_below_4_mil = [n for n in [fib(i) for i in range(40)] if n % 2 == 0 and n <= 4000000]
+print("Even fib numbers below 4 million: {}".format(even_fibs_below_4_mil))
+sum_of_those_fibs = sum(even_fibs_below_4_mil)
+print("Sum: {}".format(sum_of_those_fibs))  # Sum: 4613732

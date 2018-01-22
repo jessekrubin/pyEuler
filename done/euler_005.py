@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# phil and samantha and jesse
+# JESSE RUBIN -- project Euler
 """
 Smallest multiple
 Problem 5

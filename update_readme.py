@@ -23,7 +23,9 @@ N_EULER_PROBS = 615 + 1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":see_no_evil:"
-rm_text = """# pEuler
+NUM_COLUMNS = 6
+README_TEXT = """# pEuler
+
 This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
@@ -37,12 +39,8 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI,
            INPROG_EMOJI, NOT_STARTED_EMOJI)
 
-print(rm_text)
-
-NUM_COLUMNS = 6
-
 with open('README.md', 'w') as f:
-    f.write(rm_text)
+    f.write(README_TEXT)
     table_header = "| Problem # | Done? |" + " # | Done? |" * (
         NUM_COLUMNS - 1) + "\n"
     f.write(table_header)
@@ -65,8 +63,13 @@ with open('README.md', 'w') as f:
         line += "|\n"
         f.write(line)
 
-f.close()
-
-print("##################")
-print("# readme updated #")
-print("##################")
+print("______________________")
+print("# problems done: {}".format(len(DONE)))
+print("______________________")
+print("# problems !done: {}".format(len(NOT_DONE)))
+print("______________________")
+print("Dear Jesse,\n"
+      "you have updated this repo's README.md.\n"
+      "So proud of you,\n"
+      "Yourself,\n"
+      "Jesse")
