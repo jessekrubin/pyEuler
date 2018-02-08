@@ -13,14 +13,14 @@ base 10 and base 2.
 leading zeros.)
 """
 
-from helpme import is_palindrome, int_2_binary_string
+from helpme import is_palindrome, int_to_binary_string
 
 multiple_liner = 0
 for i in range(1000000):
     # Check if both as strings are palindromes
-    if (is_palindrome(str(i))) and is_palindrome((int_2_binary_string(i))):
+    if (is_palindrome(str(i))) and is_palindrome((int_to_binary_string(i))):
         multiple_liner += i
 
-one_liner = sum([i for i in range(1000000) if (is_palindrome(str(i))) and is_palindrome((int_2_binary_string(i)))])
+one_liner = sum([i for i in range(1000000) if (is_palindrome(str(i))) and is_palindrome((int_to_binary_string(i)))])
 
 print("One liner(!): {}".format(one_liner))

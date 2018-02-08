@@ -24,7 +24,7 @@ NOTE: The first two examples in the file represent the triangles in the example
 given above.
 """
 
-from helpme import cross_prod
+from helpme import cross_prod_2d
 
 # open file and put into list
 with open(r'../txt_files/p102_triangles.txt') as f:
@@ -35,7 +35,7 @@ with open(r'../txt_files/p102_triangles.txt') as f:
 
 
 def triangle_area(v1, v2):
-    return abs(cross_prod(v1, v2)) / 2
+    return abs(cross_prod_2d(v1, v2)) / 2
 
 
 def origin_trianlges(a, b, c):

@@ -11,7 +11,7 @@ from functools import lru_cache
 @lru_cache(maxsize=None)
 def is_prime(number: int) -> bool:
     """
-    True if number is prime
+    Returns True if number is prime
 
     >>> is_prime(37)
     True
@@ -19,18 +19,18 @@ def is_prime(number: int) -> bool:
     False
     >>> is_prime(89)
     True
-    >>> is_prime(10)
-    False
-    >>> is_prime(17)
-    True
     """
-    if number % 2 == 0 and number > 2:
-        return False
-    else:
-        return all(number % i for i in range(3, int(sqrt(number) + 1), 2))
+    if number % 2 == 0 and number > 2: return False
+    else: return all(number % i for i in range(3, int(sqrt(number) + 1), 2))
 
 
 def prime_factorization(n):
+    """
+    Returns prime factorization as a list
+
+    :param n:
+    :return:
+    """
     i = 2
     factors = []
     while i * i <= n:
@@ -64,19 +64,14 @@ def is_perfect_square(positive_n):
 def fib(n: int) -> int:
     """Return the nth fibonacci number
 
-    :param n: fib_gen number index
-    :return: nth fib_gen number
-    >>> fib_gen(1)
+    :param n: nth fib number index
+    :return: nth fib number
+
+    >>> fib(1)
     1
-    >>> fib_gen(2)
+    >>> fib(2)
     2
-    >>> fib_gen(3)
-    3
-    >>> fib_gen(4)
-    5
-    >>> fib_gen(5)
-    8
-    >>> fib_gen(6)
+    >>> fib(6)
     13
     """
     if n < 3:
@@ -139,7 +134,7 @@ def is_palindrome(string):
     return True
 
 
-def int_2_binary_string(n):
+def int_to_binary_string(n):
     return bin(n)[2:]
 
 
@@ -152,7 +147,8 @@ def num_base_ten_digits(number: int) -> int:
 
 
 def digits_list(num):
-    """
+    """Returns a list of the digits in a number
+
     >>> digits_list(1111)
     [1, 1, 1, 1]
     >>> digits_list(982)
@@ -162,7 +158,6 @@ def digits_list(num):
     >>> digits_list(123)
     [1, 2, 3]
     """
-
     digits = deque()
     while True:
         num, r = divmod(num, 10)
@@ -172,8 +167,14 @@ def digits_list(num):
     return list(digits)
 
 
-def cross_prod(toop1, toop2):
-    return (toop1[0] * toop2[1]) - (toop1[1] * toop2[0])
+def cross_prod_2d(v1: tuple or list, v2: tuple or list) -> int:
+    """Cross product of two 2d vectors
+
+    :param v1: first vector
+    :param v2: second vector
+    :return: cross product
+    """
+    return (v1[0] * v2[1]) - (v1[1] * v2[0])
 
 
 def dig_list_2_int(l):
@@ -206,5 +207,4 @@ def string_score(name):
 
 if __name__ == '__main__':
     import doctest
-
     doctest.testmod()  # run doctests if this script is called
