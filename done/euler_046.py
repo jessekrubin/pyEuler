@@ -25,7 +25,7 @@ n = 3
 prime_numbers = set()
 prime_numbers.add(2)
 answer = None
-while answer == None:
+while answer is None:
     if is_prime(n):
         prime_numbers.add(n)
     else:

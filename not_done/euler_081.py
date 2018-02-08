@@ -28,20 +28,35 @@ g1 = [[131, 673, 234, 103, 18],
       [805, 732, 524, 37, 331]]
 
 
-def min_path_sum(grid):
-    start = (0, 0)
-    width = len(grid[0])
-    height = len(grid)
-    finish = (width - 1, height - 1)
-    coords = set([(i, j) for i in range(width) for j in range(height)])
-    cur = start
-    
+def min_path(grid):
+    w = len(grid[0])
+    h = len(grid)
+
+    def coord_val(place):
+        return grid[place[0]][place[1]]
+
+    sol_grid = [[0]*w for i in range(h)]
+    sol_grid[0][0] = coord_val((0, 0))
+
+    def set_solgrid(place, val):
+        sol_grid[place[0]][place[1]] = val
+
+    def printgrid():
+        for r in sol_grid: print(r)
+
+    right = [(i, 0) for i in range(1, h)]
+    top = [(0, i) for i in range(1, w)]
+
+    for coord in right:
+        set_solgrid(coord, (coord_val(coord) + coord_val((coord[0] - 1, coord[1]))))
+
+    for coord in top:
+        set_solgrid(coord, (coord_val(coord) + coord_val((coord[0] - 1, coord[1]))))
+
+    allcoords = set([(i, j) for i in range(w) for j in range(h)])
+    print(allcoords)
 
 
 
 
-min_path_sum(g1)
-# cur_dir = os.getcwd()
-# with open(path.join(cur_dir, r"text_files\p081_matrix.txt")) as file:
-#     ls = file.readlines()
-# print(ls)
+min_path(g1)

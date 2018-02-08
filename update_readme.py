@@ -36,8 +36,8 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ###### KEY: {} = done; {} = in progress; {} = n/a; not started
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI,
-           INPROG_EMOJI, NOT_STARTED_EMOJI)
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI, INPROG_EMOJI,
+           NOT_STARTED_EMOJI)
 
 with open('README.md', 'w') as f:
     f.write(README_TEXT)
@@ -48,7 +48,7 @@ with open('README.md', 'w') as f:
     f.write(header_sep)
     l = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
-        l[i:i + NUM_COLUMNS] for i in range(0, (N_EULER_PROBS), NUM_COLUMNS)
+        l[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
     for chunk in l_chunks:
         line = ""

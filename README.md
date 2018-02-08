@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-01-22) i've done 64 problems, and am currently working on 11.
+Last I checked (2018-02-08) i've done 65 problems, and am currently working on 12.
 
 ## Problems table
 
@@ -25,10 +25,10 @@ Last I checked (2018-01-22) i've done 64 problems, and am currently working on 1
 | 61 | :see_no_evil: | 62 | :see_no_evil: | 63 | :see_no_evil: | 64 | :see_no_evil: | 65 | :see_no_evil: | 66 | :see_no_evil: |
 | 67 | :snake: | 68 | :scream: | 69 | :see_no_evil: | 70 | :see_no_evil: | 71 | :see_no_evil: | 72 | :see_no_evil: |
 | 73 | :see_no_evil: | 74 | :snake: | 75 | :see_no_evil: | 76 | :snake: | 77 | :snake: | 78 | :scream: |
-| 79 | :snake: | 80 | :see_no_evil: | 81 | :see_no_evil: | 82 | :see_no_evil: | 83 | :see_no_evil: | 84 | :see_no_evil: |
-| 85 | :snake: | 86 | :scream: | 87 | :see_no_evil: | 88 | :see_no_evil: | 89 | :see_no_evil: | 90 | :see_no_evil: |
+| 79 | :snake: | 80 | :see_no_evil: | 81 | :scream: | 82 | :see_no_evil: | 83 | :see_no_evil: | 84 | :see_no_evil: |
+| 85 | :snake: | 86 | :see_no_evil: | 87 | :see_no_evil: | 88 | :see_no_evil: | 89 | :see_no_evil: | 90 | :see_no_evil: |
 | 91 | :see_no_evil: | 92 | :snake: | 93 | :see_no_evil: | 94 | :see_no_evil: | 95 | :see_no_evil: | 96 | :see_no_evil: |
-| 97 | :snake: | 98 | :see_no_evil: | 99 | :see_no_evil: | 100 | :see_no_evil: | 101 | :see_no_evil: | 102 | :snake: |
+| 97 | :snake: | 98 | :see_no_evil: | 99 | :snake: | 100 | :see_no_evil: | 101 | :see_no_evil: | 102 | :snake: |
 | 103 | :see_no_evil: | 104 | :snake: | 105 | :see_no_evil: | 106 | :see_no_evil: | 107 | :see_no_evil: | 108 | :see_no_evil: |
 | 109 | :see_no_evil: | 110 | :see_no_evil: | 111 | :see_no_evil: | 112 | :snake: | 113 | :see_no_evil: | 114 | :see_no_evil: |
 | 115 | :see_no_evil: | 116 | :see_no_evil: | 117 | :see_no_evil: | 118 | :see_no_evil: | 119 | :see_no_evil: | 120 | :see_no_evil: |

@@ -37,7 +37,7 @@ def prime_sums(n):
 
 answer = None
 i = 3
-while answer == None:
+while answer is None:
     i += 1
     if prime_sums(i) > 5000:
         answer = i
