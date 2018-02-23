@@ -21,11 +21,9 @@ down.
 import os
 from os import path
 
-g1 = [[131, 673, 234, 103, 18],
-      [201, 96, 342, 965, 150],
-      [630, 803, 746, 422, 111],
-      [537, 699, 497, 121, 956],
-      [805, 732, 524, 37, 331]]
+g1 = [[131, 673, 234, 103, 18], [201, 96, 342, 965, 150],
+      [630, 803, 746, 422, 111], [537, 699, 497, 121,
+                                  956], [805, 732, 524, 37, 331]]
 
 
 def min_path(grid):
@@ -35,28 +33,55 @@ def min_path(grid):
     def coord_val(place):
         return grid[place[0]][place[1]]
 
-    sol_grid = [[0]*w for i in range(h)]
+    sol_grid = [[0] * w for i in range(h)]
     sol_grid[0][0] = coord_val((0, 0))
+
+    def sol_coord_val(place):
+        return sol_grid[place[0]][place[1]]
 
     def set_solgrid(place, val):
         sol_grid[place[0]][place[1]] = val
 
     def printgrid():
-        for r in sol_grid: print(r)
+        print("_____________")
+        for r in sol_grid:
+            print(r)
 
-    right = [(i, 0) for i in range(1, h)]
-    top = [(0, i) for i in range(1, w)]
+    def level_coordinates(level):
+        side = [(i, level) for i in range(level, h)]
+        top = [(level, i) for i in range(level, w)]
+        return side + top
 
-    for coord in right:
-        set_solgrid(coord, (coord_val(coord) + coord_val((coord[0] - 1, coord[1]))))
+    def calc_level(level):
+        coords = level_coordinates(level)
+        coords = set()
+        if level == 0:
+            for coord in side:
+                set_solgrid(coord, (coord_val(coord) + coord_val(
+                    (coord[0] - 1, coord[1]))))
+            for coord in top:
+                set_solgrid(coord, (coord_val(coord) + coord_val(
+                    (coord[0] - 1, coord[1]))))
+        else:
+            print(side, top)
+            for coord in side and top:
+                coordval = coord_val(coord)
+                uno = (coordval + sol_coord_val((coord[0] - 1, coord[1])))
+                dos = (coordval + sol_coord_val((coord[0], coord[1] - 1)))
+                set_solgrid(coord, min([uno, dos]))
+            # for coord in top:
+            #     uno = (coord_val(coord) + sol_coord_val(
+            #         (coord[0] - 1, coord[1])))
+            #     dos = (coord_val(coord) + sol_coord_val(
+            #         (coord[0], coord[1] - 1)))
+            #     set_solgrid(coord, min([uno, dos]))
 
-    for coord in top:
-        set_solgrid(coord, (coord_val(coord) + coord_val((coord[0] - 1, coord[1]))))
+    for i in range(h):
+        calc_level(i)
+        printgrid()
 
-    allcoords = set([(i, j) for i in range(w) for j in range(h)])
-    print(allcoords)
-
-
+    # allcoords = set([(i, j) for i in range(w) for j in range(h)])
+    printgrid()
 
 
 min_path(g1)
