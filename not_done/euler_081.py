@@ -21,9 +21,11 @@ down.
 import os
 from os import path
 
-g1 = [[131, 673, 234, 103, 18], [201, 96, 342, 965, 150],
-      [630, 803, 746, 422, 111], [537, 699, 497, 121,
-                                  956], [805, 732, 524, 37, 331]]
+g1 = [[131, 673, 234, 103,  18],
+      [201,  96, 342, 965, 150],
+      [630, 803, 746, 422, 111],
+      [537, 699, 497, 121, 956],
+      [805, 732, 524,  37, 331]]
 
 
 def min_path(grid):
@@ -53,18 +55,20 @@ def min_path(grid):
         return side + top
 
     def calc_level(level):
-        coords = level_coordinates(level)
-        coords = set()
+        coords = sorted(level_coordinates(level))
         if level == 0:
-            for coord in side:
-                set_solgrid(coord, (coord_val(coord) + coord_val(
-                    (coord[0] - 1, coord[1]))))
-            for coord in top:
-                set_solgrid(coord, (coord_val(coord) + coord_val(
-                    (coord[0] - 1, coord[1]))))
+            for coord in coords:
+                if coord == (0, 0):
+                    print(coord)
+                    set_solgrid(coord, (coord_val(coord)))
+                    # set_solgrid(coord, (coord_val(coord) + coord_val( (coord[0] - 1, coord[1]))))
+                else:
+                    if coord[0] == 0:
+                        set_solgrid(coord, (coord_val(coord) + coord_val((coord[0], coord[1]-1))))
+                    else:
+                        set_solgrid(coord, (coord_val(coord) + coord_val((coord[0]-1, coord[1]))))
         else:
-            print(side, top)
-            for coord in side and top:
+            for coord in coords:
                 coordval = coord_val(coord)
                 uno = (coordval + sol_coord_val((coord[0] - 1, coord[1])))
                 dos = (coordval + sol_coord_val((coord[0], coord[1] - 1)))
