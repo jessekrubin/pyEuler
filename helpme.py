@@ -6,6 +6,7 @@
 from math import sqrt
 from collections import deque
 from functools import lru_cache
+from itertools import count, chain
 
 
 @lru_cache(maxsize=None)
