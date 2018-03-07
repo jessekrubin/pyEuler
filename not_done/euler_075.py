@@ -6,7 +6,6 @@ Problem 0
 template
 """
 
-from tqdm import tqdm
 from math import sqrt
 
 

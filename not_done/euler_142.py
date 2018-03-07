@@ -11,9 +11,6 @@ x + y, x − y, x + z, x − z, y + z, y − z
 are all perfect squares.
 """
 
-from lib.maths import is_perfect_square
-
-
 perfect_squares = set([i**2 for i in range(10000000)])
 
 

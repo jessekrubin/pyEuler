@@ -27,13 +27,13 @@ def pascal_div_seven(n):
             loop_number += 1
             cur_thing = 6 * loop_number
 
-else:
-cur_thing -= loop_number
-print(loop_number)
-print(nent)
-print(ret_sum)
-print((nent - ret_sum))
-return ret_sum
+# else:
+# cur_thing -= loop_number
+# print(loop_number)
+# print(nent)
+# print(ret_sum)
+# print((nent - ret_sum))
+# return ret_sum
 
 answer = pascal_div_seven(21)
 print(answer)
@@ -77,6 +77,6 @@ pascal_triangle_divisible_by_7(100)
 #     print(totoal)
 
 
-solution_thingy(100)
+# solution_thingy(100)
 
 # pascal_triangle_divisible_by_7(1000000000)
