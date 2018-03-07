@@ -27,7 +27,7 @@ def log_thingy(pair):
     Uses the identity log(a**x) = log(a) * x to calc aproximate value of the
     exponential terms.
     """
-    return (log(pair[0]) * pair[1])
+    return log(pair[0]) * pair[1]
 
 
 with open("./txt_files/p099_base_exp.txt") as f:

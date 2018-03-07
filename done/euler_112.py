@@ -44,7 +44,7 @@ def bouncy(n):
 def find_proportion(percent):
     i = 100
     bouncy_count = 0
-    while (True):
+    while True:
         i += 1
         if bouncy(i):
             bouncy_count += 1

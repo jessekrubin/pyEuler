@@ -24,7 +24,7 @@ NOTE: The first two examples in the file represent the triangles in the example
 given above.
 """
 
-from lib.maths import cross_prod_2d
+from lib.vfunk import cross_prod_2d
 
 # open file and put into list
 with open(r'../txt_files/p102_triangles.txt') as f:

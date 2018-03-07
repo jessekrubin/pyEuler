@@ -20,7 +20,7 @@ from lib.bench import tictoc
 @tictoc
 def permuted_multiples(max_multiplier=6):
     for n_digits in count(2):
-        for number in range(10**(n_digits-1), ((10 ** (n_digits)) // max_multiplier)):
+        for number in range(10**(n_digits-1), ((10 ** n_digits) // max_multiplier)):
             if all(is_permutation(number, number*multiplier) for multiplier in range(2, max_multiplier + 1)):
                 return number
         if n_digits > 30:
