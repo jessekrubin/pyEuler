@@ -11,7 +11,8 @@ from the product of two 2-digit numbers is 9009 = 91 × 99.
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
-from helpme import is_palindrome
+# from helpme import is_palindrome
+from lib.string_theory import is_palindrome
 
 palindrome_numbers = max(
     map(int,

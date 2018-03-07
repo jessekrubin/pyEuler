@@ -9,7 +9,7 @@ Problem 16
 What is the sum of the digits of the number 2^1000?
 """
 
-from helpme import digits_list
+from lib.listless import digits_list
 
 ANSWER = sum(digits_list(2**1000))
 print("Sum of digits of 2^1000: {}".format(ANSWER))

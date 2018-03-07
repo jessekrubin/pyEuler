@@ -18,7 +18,7 @@ would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
 """
 
-from helpme import string_score
+from lib.string_theory import string_score
 
 with open(r'../txt_files/p22_names.txt') as file:
     names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]

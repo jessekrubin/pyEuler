@@ -13,7 +13,7 @@ base 10 and base 2.
 leading zeros.)
 """
 
-from helpme import is_palindrome, int_to_binary_string
+from lib.string_theory import is_palindrome, int_to_binary_string
 
 multiple_liner = 0
 for i in range(1000000):

@@ -28,7 +28,7 @@ What is the value of the first triangle number to have over five hundred
 divisors_gen?
 """
 
-from helpme import n_divisors
+from lib.maths import n_divisors
 
 cur_triangle_number = 1
 maxmax = 1

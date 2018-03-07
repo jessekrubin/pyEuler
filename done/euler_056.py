@@ -12,7 +12,7 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the
 maximum digital sum?
 """
 
-from helpme import digits_list
+from lib.listless import digits_list
 
 max_dig_sum = max((sum(digits_list(i**j)) for i in range(1, 100) for j in range(1, 100)))
 print("max: {}".format(max_dig_sum))

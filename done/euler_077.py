@@ -16,7 +16,7 @@ ways:
 What is the first value which can be written as the sum of primes in over
 five thousand different ways?
 """
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 # this is the same as my coin sums code
 def prime_sums(n):

@@ -11,7 +11,7 @@ the 6th prime is 13.
 What is the 10 001st prime number?
 """
 
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 ind = 1
 n_primes = 0

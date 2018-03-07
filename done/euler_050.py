@@ -17,7 +17,7 @@ Which prime, below one-million, can be written as the sum of the most
 consecutive primes?
 """
 
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 
 def consecutive_prime_sum(number: int):

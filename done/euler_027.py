@@ -18,7 +18,7 @@ for the quadratic expression that produces the maximum number of primes for
 consecutive values of n, starting with n=0.
 """
 
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 
 def quad(n, a, b): return ((n * n) + (a * n) + b)

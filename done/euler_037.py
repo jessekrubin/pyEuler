@@ -16,7 +16,7 @@ right and right to left.
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
 
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 
 def trunk_prime(n):

@@ -12,7 +12,7 @@ What is the largest n-digit pandigital prime that exists?
 """
 
 from itertools import permutations
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 numslists = []
 for i in range(1, 10):

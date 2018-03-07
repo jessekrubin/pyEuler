@@ -19,7 +19,7 @@ HINT: Some products can be obtained in more than one way so be sure to only
 include it once in your sum.
 """
 
-from helpme import dig_list_2_int
+from lib.listless import dig_list_2_int
 from itertools import permutations
 
 def pandigital_product(list):
