@@ -14,10 +14,17 @@ Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
 from math import factorial
 from lib.listless import digits_list
+from lib.bench import cprof, tictoc
 
-def digit_factorials(n): return n == sum(map(factorial, digits_list(n)))
+def is_digit_factorial(n):
+    return n == sum(map(factorial, digits_list(n)))
 
-answer = sum(i for i in range(3, 50000) if digit_factorials(i))
+# @cprof
+@tictoc
+def digit_factorials(upper_bound):
+    return sum(i for i in range(3, upper_bound) if is_digit_factorial(i))
+
+answer = digit_factorials(500000)
 print("Sum of all 'digit factorial' numbers: {}".format(answer))
 
 
