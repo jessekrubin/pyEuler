@@ -24,23 +24,9 @@ from math import sqrt, acos, pi
 from multiprocessing import Pool
 from statistics import mean
 from tqdm import tqdm
+from lib.vfunk import dotproduct, angle
 
 
-def dotproduct(v1, v2):
-    return sum((a * b) for a, b in zip(v1, v2))
-
-
-def length(vector):
-    return sqrt(dotproduct(vector, vector))
-
-
-def angle(vecs):
-    return acos(
-        dotproduct(vecs[0], vecs[1]) / (length(vecs[0]) * length(vecs[1])))
-
-
-def rad2deg(n):
-    return 180 * n / pi
 
 
 def get_vecs(tup):

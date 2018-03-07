@@ -25,7 +25,7 @@ side length of the square spiral for which the ratio of primes along both
 diagonals first falls below 10%?
 """
 
-from helpme import is_prime
+from lib.octopus_prime import is_prime
 
 class Grid(object):
     def __init__(self, size):

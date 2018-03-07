@@ -13,7 +13,7 @@ T(7)=77-7!=818503.
 Find T(1012). Give the last 9 digits of your answer.
 """
 
-from helpme import cash_factorial
+from lib.maths import cash_factorial
 from math import factorial
 
 def tee(n):

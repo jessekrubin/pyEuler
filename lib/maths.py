@@ -1,14 +1,5 @@
 from functools import lru_cache
-from math import sqrt
-
-def cross_prod_2d(v1: tuple or list, v2: tuple or list) -> int:
-    """Cross product of two 2d vectors
-
-    :param v1: first vector
-    :param v2: second vector
-    :return: cross product
-    """
-    return (v1[0] * v2[1]) - (v1[1] * v2[0])
+from math import sqrt, pi
 
 @lru_cache(maxsize=None)
 def cash_factorial(n):
@@ -17,7 +8,8 @@ def cash_factorial(n):
     else:
         return cash_factorial(n-1) * n
 
-
+def rad2deg(n):
+    return 180 * n / pi
 
 @lru_cache(maxsize=None)
 def is_perfect_square(positive_n):

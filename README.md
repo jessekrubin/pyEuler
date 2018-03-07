@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-03-07) i've done 69 problems, and am currently working on 16.
+Last I checked (2018-03-07) i've done 70 problems, and am currently working on 14.
 
 ## Problems table
 
@@ -20,7 +20,7 @@ Last I checked (2018-03-07) i've done 69 problems, and am currently working on 1
 | 31 | :snake: | 32 | :snake: | 33 | :snake: | 34 | :snake: | 35 | :snake: | 36 | :snake: |
 | 37 | :snake: | 38 | :snake: | 39 | :snake: | 40 | :snake: | 41 | :snake: | 42 | :snake: |
 | 43 | :snake: | 44 | :snake: | 45 | :snake: | 46 | :snake: | 47 | :snake: | 48 | :snake: |
-| 49 | :snake: | 50 | :snake: | 51 | :see_no_evil: | 52 | :scream: | 53 | :snake: | 54 | :see_no_evil: |
+| 49 | :snake: | 50 | :snake: | 51 | :see_no_evil: | 52 | :snake: | 53 | :snake: | 54 | :see_no_evil: |
 | 55 | :see_no_evil: | 56 | :snake: | 57 | :see_no_evil: | 58 | :scream: | 59 | :see_no_evil: | 60 | :see_no_evil: |
 | 61 | :see_no_evil: | 62 | :see_no_evil: | 63 | :see_no_evil: | 64 | :see_no_evil: | 65 | :see_no_evil: | 66 | :see_no_evil: |
 | 67 | :snake: | 68 | :scream: | 69 | :see_no_evil: | 70 | :see_no_evil: | 71 | :see_no_evil: | 72 | :see_no_evil: |
@@ -32,7 +32,7 @@ Last I checked (2018-03-07) i've done 69 problems, and am currently working on 1
 | 103 | :see_no_evil: | 104 | :snake: | 105 | :see_no_evil: | 106 | :see_no_evil: | 107 | :see_no_evil: | 108 | :see_no_evil: |
 | 109 | :see_no_evil: | 110 | :see_no_evil: | 111 | :see_no_evil: | 112 | :snake: | 113 | :see_no_evil: | 114 | :see_no_evil: |
 | 115 | :see_no_evil: | 116 | :see_no_evil: | 117 | :see_no_evil: | 118 | :see_no_evil: | 119 | :see_no_evil: | 120 | :see_no_evil: |
-| 121 | :see_no_evil: | 122 | :see_no_evil: | 123 | :see_no_evil: | 124 | :snake: | 125 | :scream: | 126 | :see_no_evil: |
+| 121 | :see_no_evil: | 122 | :see_no_evil: | 123 | :see_no_evil: | 124 | :snake: | 125 | :see_no_evil: | 126 | :see_no_evil: |
 | 127 | :see_no_evil: | 128 | :see_no_evil: | 129 | :see_no_evil: | 130 | :see_no_evil: | 131 | :see_no_evil: | 132 | :see_no_evil: |
 | 133 | :see_no_evil: | 134 | :see_no_evil: | 135 | :see_no_evil: | 136 | :see_no_evil: | 137 | :see_no_evil: | 138 | :see_no_evil: |
 | 139 | :see_no_evil: | 140 | :see_no_evil: | 141 | :see_no_evil: | 142 | :scream: | 143 | :see_no_evil: | 144 | :see_no_evil: |

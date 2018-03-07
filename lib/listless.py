@@ -1,4 +1,17 @@
-from collections import deque
+from collections import deque, Counter
+
+def is_permutation(a, b):
+    """
+    Checks if two integers or lists are permutations of each other
+    :param a:
+    :param b:
+    :return:
+    """
+    if type(a) == int:
+        a = digits_list(a)
+    if type(b) == int:
+        b = digits_list(b)
+    return len(a) == len(b) and Counter(a) == Counter(b)
 
 def rotate_list(l, n=1):
     return l[-n:] + l[:-n]

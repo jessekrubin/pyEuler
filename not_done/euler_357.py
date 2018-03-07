@@ -12,7 +12,8 @@ such that for every divisor d of n, d+n/d is prime.
 """
 
 from functools import lru_cache
-from helpme import divisors_list, is_prime
+from lib.octopus_prime import is_prime
+from lib.maths import divisors_list
 
 
 @lru_cache(maxsize=None)
