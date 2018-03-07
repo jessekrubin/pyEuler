@@ -11,7 +11,7 @@ Last I checked (2018-03-07) i've done 70 problems, and am currently working on 1
 ###### KEY: :snake: = done; :scream: = in progress; :see_no_evil: = n/a; not started
 
 | Problem # | # | # | # | # | # | # | # | # | # |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 1\|:snake: | 2\|:snake: | 3\|:snake: | 4\|:snake: | 5\|:snake: | 6\|:snake: | 7\|:snake: | 8\|:snake: | 9\|:snake: | 10\|:snake: |
 | 11\|:snake: | 12\|:snake: | 13\|:snake: | 14\|:snake: | 15\|:snake: | 16\|:snake: | 17\|:snake: | 18\|:snake: | 19\|:snake: | 20\|:snake: |
 | 21\|:snake: | 22\|:snake: | 23\|:snake: | 24\|:snake: | 25\|:snake: | 26\|:snake: | 27\|:snake: | 28\|:snake: | 29\|:snake: | 30\|:snake: |

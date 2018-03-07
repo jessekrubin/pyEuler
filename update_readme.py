@@ -44,7 +44,7 @@ with open('README.md', 'w') as f:
     table_header = "| Problem # |" + " # |" * (
             NUM_COLUMNS - 1) + "\n"
     f.write(table_header)
-    header_sep = "|" + " --- |" * NUM_COLUMNS + "\n"
+    header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
     f.write(header_sep)
     probs = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
