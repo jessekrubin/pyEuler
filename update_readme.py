@@ -23,7 +23,7 @@ N_EULER_PROBS = 615 + 1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":see_no_evil:"
-NUM_COLUMNS = 6
+NUM_COLUMNS = 10
 README_TEXT = """# pEuler
 
 This is my primarily python project euler problems repository.
@@ -41,10 +41,10 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 with open('README.md', 'w') as f:
     f.write(README_TEXT)
-    table_header = "| Problem # | Done? |" + " # | Done? |" * (
+    table_header = "| Problem # |" + " # |" * (
             NUM_COLUMNS - 1) + "\n"
     f.write(table_header)
-    header_sep = "|" + " ---:|:--- |" * NUM_COLUMNS + "\n"
+    header_sep = "|" + " ---:|" * NUM_COLUMNS + "\n"
     f.write(header_sep)
     probs = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
@@ -59,7 +59,7 @@ with open('README.md', 'w') as f:
             if n in NOT_DONE:
                 status = INPROG_EMOJI
 
-            line += "| {} | {} ".format(str(n), status)
+            line += "| {} ~ {} ".format(str(n), status)
         line += "|\n"
         f.write(line)
 
