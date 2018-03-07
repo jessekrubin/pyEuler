@@ -27,8 +27,6 @@ from tqdm import tqdm
 from lib.vfunk import dotproduct, angle
 
 
-
-
 def get_vecs(tup):
     c1 = (400, 0)
     c2 = (0, 300)

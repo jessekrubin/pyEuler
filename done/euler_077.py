@@ -18,6 +18,7 @@ five thousand different ways?
 """
 from lib.octopus_prime import is_prime
 
+
 # this is the same as my coin sums code
 def prime_sums(n):
     primes = [p for p in range(2, n) if is_prime(p)]
@@ -29,6 +30,7 @@ def prime_sums(n):
         for i in range(prime, n + 1):
             sums[i] += sums[abs(i - prime)]
     return sums[n]
+
 
 # test case
 # n1 = 10
@@ -43,5 +45,4 @@ while answer is None:
         answer = i
 
 print("first value which can be written as the sum of primes in over five"
-      " thousand different ways?: {}".format((answer)))
-
+      " thousand different ways?: {}".format(answer))

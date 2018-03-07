@@ -10,6 +10,7 @@ consecutive digits of n have a sum greater than 9?
 
 from functools import lru_cache
 
+
 # recursive solution
 @lru_cache(maxsize=None)
 def num_nums(first, second, remaining_digits):
@@ -20,6 +21,7 @@ def num_nums(first, second, remaining_digits):
         for i in range(10 - (first + second)):
             ret_val += num_nums(second, i, remaining_digits - 1)
         return ret_val
+
 
 one_two_nine_answer = 0
 for i in range(1, 10, 1):

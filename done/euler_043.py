@@ -22,24 +22,26 @@ d8d9d10=289 is divisible by 17
 Find the sum of all 0 to 9 pandigital numbers with this property.
 """
 
-
 from lib.listless import dig_list_2_int
 from itertools import permutations
 
+
 def pandigital_substring_thing(pandigit_list):
-    if pandigit_list[0] == 0: return False # leading 0 shouldnt count
+    if pandigit_list[0] == 0:
+        return False  # leading 0 shouldnt count
     else:
         div_primes = [2, 3, 5, 7, 11, 13, 17]
         for i in range(1, 8):
-            if dig_list_2_int(pandigit_list[i:i+3]) % div_primes[i-1] != 0:
+            if dig_list_2_int(pandigit_list[i:i + 3]) % div_primes[i - 1] != 0:
                 return False
     return True
+
 
 # well_they_gave_us_this_one = [1,4,0,6,3,5,7,2,8,9]
 # test_answer = pandigital_substring_thing(well_they_gave_us_this_one)
 # print(test_answer)
 
-circle_to_nine = [i for i in range(0, 10)] #circle is the way kids say 0 now a days
+circle_to_nine = [i for i in range(0, 10)]  # circle is the way kids say 0 now a days
 pandigit_lists = [dig_list_2_int(i) for i in permutations(circle_to_nine) if pandigital_substring_thing(i)]
 sum_answer = sum(pandigit_lists)
 print("Sum of products: {}".format(sum_answer))

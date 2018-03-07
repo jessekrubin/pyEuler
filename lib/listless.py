@@ -1,4 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN - project Euler
 from collections import deque, Counter
+
 
 def is_permutation(a, b):
     """
@@ -13,12 +17,15 @@ def is_permutation(a, b):
         b = digits_list(b)
     return len(a) == len(b) and Counter(a) == Counter(b)
 
+
 def rotate_list(l, n=1):
     return l[-n:] + l[:-n]
+
 
 def rot_list_gen(l):
     for i in range(len(l)):
         yield (l[-i:] + l[:-i])
+
 
 def digits_list(num):
     """Returns a list of the digits in a number
@@ -40,6 +47,7 @@ def digits_list(num):
             break
     return list(digits)
 
+
 def dig_list_2_int(l):
     """
     >>> dig_list_2_int([3, 2, 1])
@@ -54,4 +62,3 @@ def dig_list_2_int(l):
     for i in range(0, n_digs, 1):
         d += (l[n_digs - i - 1] * 10 ** i)
     return d
-

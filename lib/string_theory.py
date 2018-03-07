@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN - project Euler
 
 
 def is_palindrome(string):
@@ -15,8 +18,6 @@ def is_palindrome(string):
     return True
 
 
-
-
 def int_to_binary_string(n):
     return bin(n)[2:]
 
@@ -31,4 +32,3 @@ def string_score(name):
     95
     """
     return sum((ord(character) - 96 for character in name.lower()))
-

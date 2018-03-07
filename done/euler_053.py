@@ -24,24 +24,27 @@ greater than one-million?
 
 from functools import lru_cache
 
+
 @lru_cache(maxsize=None)
 def fact(n):
     if n == 1:
         return 1
     else:
-        return fact(n-1)*n
+        return fact(n - 1) * n
+
 
 def choose(a, b):
     if a >= b:
-        return fact(a)/(fact(b)*fact(a-b))
+        return fact(a) / (fact(b) * fact(a - b))
     else:
         raise Exception("b>a; which isnt supposed to happen")
 
+
 up_bound = 100
 total_over_a_mil = 0
-for N in range(1, up_bound+1):
+for N in range(1, up_bound + 1):
     for i in range(1, N):
-        if choose(N, i) > 1000000: total_over_a_mil += 1
+        if choose(N, i) > 1000000:
+            total_over_a_mil += 1
 
 print("ANSWER: {}".format(total_over_a_mil))
-

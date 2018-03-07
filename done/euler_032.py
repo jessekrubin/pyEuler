@@ -22,6 +22,7 @@ include it once in your sum.
 from lib.listless import dig_list_2_int
 from itertools import permutations
 
+
 def pandigital_product(list):
     """
     >>> pandigital_product([3, 9, 1, 8, 6, 7, 2, 5, 4])
@@ -32,9 +33,10 @@ def pandigital_product(list):
             last = list[i:]
             furst = list[:j]
             second = list[j:i]
-            if dig_list_2_int(furst)*dig_list_2_int(second) == dig_list_2_int(last):
+            if dig_list_2_int(furst) * dig_list_2_int(second) == dig_list_2_int(last):
                 return dig_list_2_int(last)
     return 0
+
 
 one2nine = [i for i in range(1, 10)]
 pandigital_lists = [i for i in permutations(one2nine)]

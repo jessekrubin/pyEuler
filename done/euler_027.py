@@ -21,16 +21,17 @@ consecutive values of n, starting with n=0.
 from lib.octopus_prime import is_prime
 
 
-def quad(n, a, b): return ((n * n) + (a * n) + b)
+def quad(n, a, b): return (n * n) + (a * n) + b
 
 
 def sequece_length(a: int, b: int):
     n = 0
-    while (True):
+    while True:
         numb = abs(quad(n, a, b))
         if not is_prime(numb):
             return n
         n += 1
+
 
 combos = [(i, j) for i in range(-1000, 1001, 1) for j in range(-1000, 1001, 1)]
 

@@ -20,17 +20,22 @@ from lib.octopus_prime import prime_factorization
 from functools import reduce
 from operator import mul, itemgetter
 
+
 def prime_factors_set_list(n):
     return list(set(prime_factorization(n)))
+
 
 def rad(n):
     return reduce(mul, (prime_factors_set_list(n)), 1)
 
+
 def rad_list(upper_bound):
-    return [(rad(n), n) for n in range(1, upper_bound+1)]
+    return [(rad(n), n) for n in range(1, upper_bound + 1)]
+
 
 def eee(highest, k):
-    return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k-1][1]
+    return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k - 1][1]
+
 
 greatest, k = 10, 4
 solution = eee(greatest, k)

@@ -16,7 +16,6 @@ import random
 from itertools import combinations
 from tqdm import tqdm
 
-
 n_four_dice = 9
 four_side = [1, 2, 3, 4] * n_four_dice
 print(four_side)
@@ -34,17 +33,16 @@ for combo in tqdm(combinations(four_side, 9)):
     curcolin = sum(combo)
     for c2 in combinations(six_side, 6):
         c2sum = sum(c2)
-        if curcolin > c2sum: colin += 1
-        elif c2sum > curcolin: peter  += 1
-        else: ties += 1
+        if curcolin > c2sum:
+            colin += 1
+        elif c2sum > curcolin:
+            peter += 1
+        else:
+            ties += 1
 
 print(colin)
 print(peter)
 print(ties)
-
-
-
-
 
 # for i in range(10):
 #     print(random.randint(1, 10))

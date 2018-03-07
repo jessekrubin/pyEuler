@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN - project Euler
+
 from math import sqrt, acos
 
 
@@ -8,6 +12,7 @@ def length(vector):
 def angle(v1, v2):
     return acos(
         dotproduct(v1, v2) / (length(v1) * length(v2)))
+
 
 def dotproduct(v1, v2):
     return sum((a * b) for a, b in zip(v1, v2))

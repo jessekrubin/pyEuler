@@ -1,8 +1,9 @@
-# !/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# JESSE RUBIN - project Euler
 from functools import lru_cache
 from math import sqrt
+
 
 @lru_cache(maxsize=None)
 def is_prime(number: int) -> bool:
@@ -16,8 +17,11 @@ def is_prime(number: int) -> bool:
     >>> is_prime(89)
     True
     """
-    if number % 2 == 0 and number > 2: return False
-    else: return all(number % i for i in range(3, int(sqrt(number) + 1), 2))
+    if number % 2 == 0 and number > 2:
+        return False
+    else:
+        return all(number % i for i in range(3, int(sqrt(number) + 1), 2))
+
 
 def prime_factorization(n):
     """
@@ -37,5 +41,3 @@ def prime_factorization(n):
     if n > 1:
         factors.append(n)
     return factors
-
-

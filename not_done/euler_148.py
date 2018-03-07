@@ -6,7 +6,7 @@ Problem 0
 template
 """
 
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin
 """
@@ -26,17 +26,19 @@ def pascal_div_seven(n):
         if cur_thing == 0:
             loop_number += 1
             cur_thing = 6 * loop_number
+
 else:
 cur_thing -= loop_number
 print(loop_number)
 print(nent)
 print(ret_sum)
 print((nent - ret_sum))
-return (ret_sum)
-
+return ret_sum
 
 answer = pascal_div_seven(21)
 print(answer)
+
+
 def next_pascal_row(row):
     len_next_row = len(row)
     retrow = [1] * len_next_row  # like scooby doo

@@ -20,9 +20,11 @@ from functools import lru_cache
 
 amicable_numbers = set()
 
+
 @lru_cache(maxsize=None)
 def sum_proper_divisors(n):
     return sum(divisors_gen(n)) - n
+
 
 for a in range(10, 10000):
     b = sum_proper_divisors(a)
@@ -31,5 +33,3 @@ for a in range(10, 10000):
         amicable_numbers.add(a)
 
 print("Sum of amicable numbers below 10000: {}".format(sum(amicable_numbers)))
-
-

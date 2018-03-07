@@ -15,25 +15,27 @@ How many reversible numbers are there below one-billion (10^9)?
 """
 
 
-
 def reverse(n):
     reversed = 0
-    while(n > 0):
+    while n > 0:
         reversed *= 10
         reversed += n % 10
         n //= 10
     return reversed
 
+
 def is_reversible(n):
-    if n%10 == 0: return False
+    if n % 10 == 0:
+        return False
     soom = n + reverse(n)
     cur_dig = 0
-    while(soom > 0):
+    while soom > 0:
         cur_dig = soom % 10
         if cur_dig % 2 == 0:
             return False
-        soom //=10
+        soom //= 10
     return True
+
 
 def reversable_numbers_below(n):
     seen = set()
@@ -50,5 +52,5 @@ def reversable_numbers_below(n):
                     count += 2
     return count
 
-print(reversable_numbers_below(1000))
 
+print(reversable_numbers_below(1000))

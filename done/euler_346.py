@@ -17,12 +17,13 @@ Find the sum of all strong repunits below 10^12.
 
 import time
 
+
 def ones_base_n(base, under):
     """returns 1111...1 base10 repunits for a given base under a number"""
     current = base + 1
     place = 2
-    while(current < under):
-        current += base**place
+    while current < under:
+        current += base ** place
         place += 1
         if current < under:
             yield current
@@ -31,12 +32,13 @@ def ones_base_n(base, under):
 def sum_strong_repunits(upper_limit):
     """sums the strong repunites beneath the upper limit"""
     total = 0
-    max_base = upper_limit.bit_length()**2
+    max_base = upper_limit.bit_length() ** 2
     for base in range(2, max_base):
         # for number in ones_base_n(base, upper_limit):
         #     total += number
         total += sum(ones_base_n(base, upper_limit))
     return total
+
 
 print("___")
 t0 = time.time()
@@ -47,10 +49,7 @@ print("time: {}".format(t1))
 
 print("___")
 t0 = time.time()
-result = sum_strong_repunits(10**12)
+result = sum_strong_repunits(10 ** 12)
 t1 = time.time() - t0
 print("ANSWER: {}".format(result))
 print("time: {}".format(t1))
-
-
-

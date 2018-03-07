@@ -21,6 +21,7 @@ each. What is the first of these numbers?
 
 from lib.octopus_prime import prime_factorization
 
+
 def distinct_primes_factors(n_distinct_factors):
     num_prime_factors = {}
     i = 0
@@ -36,4 +37,3 @@ def distinct_primes_factors(n_distinct_factors):
 # print(distinct_primes_factors(3))
 answer = distinct_primes_factors(4)
 print(answer)
-

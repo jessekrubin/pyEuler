@@ -21,13 +21,11 @@ of their digits.
 
 from lib.listless import digits_list
 
-def digit_powers(number, power): return number == sum(map(lambda x: x**power, digits_list(number)))
+
+def digit_powers(number, power): return number == sum(map(lambda x: x ** power, digits_list(number)))
 
 
-
-fifth_pows = list(i for i in range(4000, 200000) if digit_powers(i, 5));
+fifth_pows = list(i for i in range(4000, 200000) if digit_powers(i, 5))
 answer = sum(fifth_pows)
 print("Digit fifth powers: {}".format(fifth_pows))
 print("SUM: {}".format(answer))
-
-

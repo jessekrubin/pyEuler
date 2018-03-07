@@ -27,6 +27,7 @@ diagonals first falls below 10%?
 
 from lib.octopus_prime import is_prime
 
+
 class Grid(object):
     def __init__(self, size):
         self.sum_diags = 1
@@ -44,16 +45,15 @@ class Grid(object):
         if self.size > 3:
             self.ne_diag.remove((0, self.size))
 
-        self.op_diag = list((self.size - i -1, i) for i in range(self.size))
+        self.op_diag = list((self.size - i - 1, i) for i in range(self.size))
         self.main_diag = list((i, i) for i in range(self.size))
         self.all_diag_coords = set(self.main_diag + self.op_diag)
         self.array = Grid.make_grid(size)
         self.direction = 1
         self.diags_sum = 0
         self.diag_numbers = set()
-        self.num_diag_nums = 2*self.size - 1
+        self.num_diag_nums = 2 * self.size - 1
         self.spiral()
-
 
     def grid_info(self):
         rows = [str(row) for row in self.array]
@@ -117,9 +117,10 @@ class Grid(object):
 
     def diag_primes(self):
         num_diag_primes = [self.array[coord[0]][coord[1]] for coord in self.all_diag_coords]
-        hermy = sum(1 for num in num_diag_primes if is_prime(num)) -1
+        hermy = sum(1 for num in num_diag_primes if is_prime(num)) - 1
         ratio = hermy / self.num_diag_nums
         return ratio
+
 
 # grid3 = Grid(3)
 # grid3.grid_info()
@@ -131,7 +132,7 @@ class Grid(object):
 
 ratio = 0.62
 i = 3
-while(ratio > 0.10):
+while ratio > 0.10:
     grid = Grid(i)
     ratio = grid.diag_primes()
     i += 2

@@ -25,14 +25,15 @@ from functools import lru_cache
 def pent_num(n):
     return n * (3 * n - 1) // 2
 
+
 answer = None
 pentagonal_numbers = set()
 i = 0
-while answer == None:
+while answer is None:
     i += 1
     p_k = pent_num(i)
     for p_j in pentagonal_numbers:
-        if p_k-p_j in pentagonal_numbers and p_k-2*p_j in pentagonal_numbers:
+        if p_k - p_j in pentagonal_numbers and p_k - 2 * p_j in pentagonal_numbers:
             answer = p_k - 2 * p_j
             break
     pentagonal_numbers.add(p_k)

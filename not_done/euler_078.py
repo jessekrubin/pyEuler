@@ -18,6 +18,7 @@ O   O   O   O   O
 Find the least value of n for which p(n) is divisible by one million.
 """
 
+
 def coin_partitions(n):
     nums = [i for i in range(1, n)]
     sums = [0] * (n + 1)
@@ -28,5 +29,5 @@ def coin_partitions(n):
             sums[i] += sums[i - num]
     return sums[n]
 
-print(coin_partitions(55374))
 
+print(coin_partitions(55374))

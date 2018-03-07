@@ -30,8 +30,8 @@ while answer is None:
         prime_numbers.add(n)
     else:
         for p in prime_numbers:
-            if sqrt(((n-p)/2)) == int(sqrt(((n-p)/2))):
-                break # break if it works with the conjecture
+            if sqrt(((n - p) / 2)) == int(sqrt(((n - p) / 2))):
+                break  # break if it works with the conjecture
         else:
             answer = n
     n += 2

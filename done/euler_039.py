@@ -14,6 +14,7 @@ For which value of p ≤ 1000, is the number of solutions maximised?
 
 from operator import itemgetter
 
+
 def num_integer_right_triangles(perimeter):
     num_triangles = 0
     for b in range(1, perimeter // 2):
@@ -22,7 +23,7 @@ def num_integer_right_triangles(perimeter):
             continue
         a = int(a)
         if a < b:
-            if a**2 + b**2 == (perimeter - a - b)**2:
+            if a ** 2 + b ** 2 == (perimeter - a - b) ** 2:
                 num_triangles += 1
     return num_triangles
 

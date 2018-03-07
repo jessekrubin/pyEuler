@@ -42,13 +42,13 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 with open('README.md', 'w') as f:
     f.write(README_TEXT)
     table_header = "| Problem # | Done? |" + " # | Done? |" * (
-        NUM_COLUMNS - 1) + "\n"
+            NUM_COLUMNS - 1) + "\n"
     f.write(table_header)
     header_sep = "|" + " ---:|:--- |" * NUM_COLUMNS + "\n"
     f.write(header_sep)
-    l = [i for i in range(1, N_EULER_PROBS)]
+    probs = [i for i in range(1, N_EULER_PROBS)]
     l_chunks = [
-        l[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
+        probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
     for chunk in l_chunks:
         line = ""

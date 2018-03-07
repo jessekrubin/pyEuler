@@ -1,10 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN - project Euler
+
 from cProfile import Profile
 from functools import wraps
 from time import time
 
 
 def tictoc(funk):
-
     @wraps(funk)
     def timed(*args, **kw):
         ts = time()
@@ -12,7 +15,9 @@ def tictoc(funk):
         te = time()
         print('%r  %2.4f ms' % (funk.__name__, (te - ts) * 1000))
         return result
+
     return timed
+
 
 def cprof(funk):
     """
@@ -34,4 +39,5 @@ def cprof(funk):
             print("__CPROFILE__")
             profile.print_stats()
         return ret_val
+
     return profiled_funk

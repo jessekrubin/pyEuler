@@ -16,15 +16,16 @@ from math import factorial
 from lib.listless import digits_list
 from lib.bench import cprof, tictoc
 
+
 def is_digit_factorial(n):
     return n == sum(map(factorial, digits_list(n)))
+
 
 # @cprof
 @tictoc
 def digit_factorials(upper_bound):
     return sum(i for i in range(3, upper_bound) if is_digit_factorial(i))
 
+
 answer = digit_factorials(500000)
 print("Sum of all 'digit factorial' numbers: {}".format(answer))
-
-

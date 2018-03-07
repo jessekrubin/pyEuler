@@ -16,17 +16,20 @@ Find T(1012). Give the last 9 digits of your answer.
 from lib.maths import cash_factorial
 from math import factorial
 
+
 def tee(n):
-    return 7**n - factorial(7)
+    return 7 ** n - factorial(7)
+
 
 assert tee(7) == 818503
 
 
 def tee2(n):
-    return n**n, factorial(n)
+    return n ** n, factorial(n)
+
 
 print(tee2(10))
 print(tee2(100))
 print(tee2(1000))
 
-print(tee(10**18))
+print(tee(10 ** 18))

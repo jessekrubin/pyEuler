@@ -24,11 +24,16 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 from functools import lru_cache
 from operator import itemgetter
 
+
 @lru_cache(maxsize=None)
 def collatz_seq_length(n):
-    if (n == 1): return 1
-    if n%2==0: return collatz_seq_length(n//2) + 1
-    else: return collatz_seq_length(3*n + 1) + 1
+    if n == 1:
+        return 1
+    if n % 2 == 0:
+        return collatz_seq_length(n // 2) + 1
+    else:
+        return collatz_seq_length(3 * n + 1) + 1
+
 
 seq_lengths = [collatz_seq_length(i) for i in range(1, 1000000)]
 

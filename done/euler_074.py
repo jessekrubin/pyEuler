@@ -35,8 +35,11 @@ from lib.listless import digits_list
 from math import factorial
 
 dic = {}
+
+
 def factorial_chain_length(starting_n):
     seen_nums = set()
+
     def recursing(n):
         next = sum(map(factorial, digits_list(n)))
         if next in seen_nums:
@@ -47,8 +50,10 @@ def factorial_chain_length(starting_n):
                 return recursing(next) + 1
             else:
                 return dic[n]
+
     dic[starting_n] = recursing(starting_n)
     return dic[starting_n]
+
 
 answer = 0
 for i in range(1, 1000001):

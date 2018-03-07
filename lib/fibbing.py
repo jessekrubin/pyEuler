@@ -1,4 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN - project Euler
+
 from functools import lru_cache
+
 
 @lru_cache(maxsize=None)
 def fib(n: int) -> int:

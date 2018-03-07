@@ -1,15 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# JESSE RUBIN - project Euler
 from functools import lru_cache
 from math import sqrt, pi
+
 
 @lru_cache(maxsize=None)
 def cash_factorial(n):
     if n == 1:
         return 1
     else:
-        return cash_factorial(n-1) * n
+        return cash_factorial(n - 1) * n
+
 
 def rad2deg(n):
     return 180 * n / pi
+
 
 @lru_cache(maxsize=None)
 def is_perfect_square(positive_n):
@@ -25,8 +31,6 @@ def is_perfect_square(positive_n):
             return False
         seen_set.add(half)
     return True
-
-
 
 
 @lru_cache(maxsize=4)

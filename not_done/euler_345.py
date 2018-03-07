@@ -42,9 +42,11 @@ mat_big = """
 813 883 451 509 615  77 281 613 459 205 380 274 302  35 805
 """
 
+
 def str_2_mat(strmat):
     return [list(int(num) for num in line.split(" ") if num is not '')
-            for line in strmat.split('\n') if line is not""]
+            for line in strmat.split('\n') if line is not ""]
+
 
 def matrix_sum(mat):
     h = len(mat)
@@ -58,7 +60,8 @@ def matrix_sum(mat):
     maximum = 0
     for perms in tqdm(permutations(row_combos), total=num_perms):
         summy = sum([mat[comb[0]][comb[1]] for comb in zip([i for i in range(w)], perms)])
-        if summy > maximum: maximum = summy
+        if summy > maximum:
+            maximum = summy
 
     print(maximum)
 
