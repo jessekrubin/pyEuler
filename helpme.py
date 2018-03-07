@@ -23,6 +23,12 @@ def is_prime(number: int) -> bool:
     if number % 2 == 0 and number > 2: return False
     else: return all(number % i for i in range(3, int(sqrt(number) + 1), 2))
 
+@lru_cache(maxsize=None)
+def cash_factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return cash_factorial(n-1) * n
 
 def prime_factorization(n):
     """
