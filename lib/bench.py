@@ -4,6 +4,8 @@ from time import time
 
 
 def tictoc(funk):
+
+    @wraps(funk)
     def timed(*args, **kw):
         ts = time()
         result = funk(*args, **kw)
@@ -21,7 +23,7 @@ def cprof(funk):
     :return:
     """
 
-    # @wraps(funk)
+    @wraps(funk)
     def profiled_funk(*args, **kwargs):
         profile = Profile()
         try:
