@@ -12,8 +12,8 @@ The result is a draw if the totals are equal.
 What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer
 rounded to seven decimal places in the form 0.abcdefg
 """
-import random
 from itertools import combinations
+
 from tqdm import tqdm
 
 n_four_dice = 9

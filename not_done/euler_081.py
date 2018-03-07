@@ -18,8 +18,6 @@ Find the minimal path sum, in matrix.txt, a 31K text file containing a 80 by
 80 matrix, from the top left to the bottom right by only moving right and
 down.
 """
-import os
-from os import path
 
 g1 = [[131, 673, 234, 103,  18],
       [201,  96, 342, 965, 150],

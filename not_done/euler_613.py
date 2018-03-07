@@ -20,11 +20,13 @@ the ant leaves the triangle along its longest side?
 Give your answer rounded to 10 digits after the decimal point.
 """
 
-from math import sqrt, acos, pi
+from math import pi
 from multiprocessing import Pool
 from statistics import mean
+
 from tqdm import tqdm
-from lib.vfunk import dotproduct, angle
+
+from lib.vfunk import angle
 
 
 def get_vecs(tup):
