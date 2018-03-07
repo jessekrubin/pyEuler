@@ -59,7 +59,7 @@ with open('README.md', 'w') as f:
             if n in NOT_DONE:
                 status = INPROG_EMOJI
 
-            line += "| {}~{} ".format(str(n), status)
+            line += "| {}\|{} ".format(str(n), status)
         line += "|\n"
         f.write(line)
 
