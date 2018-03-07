@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the 'helpme.py' file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-02-27) i've done 67 problems, and am currently working on 12.
+Last I checked (2018-03-06) i've done 68 problems, and am currently working on 16.
 
 ## Problems table
 
@@ -21,10 +21,10 @@ Last I checked (2018-02-27) i've done 67 problems, and am currently working on 1
 | 37 | :snake: | 38 | :snake: | 39 | :snake: | 40 | :snake: | 41 | :snake: | 42 | :snake: |
 | 43 | :snake: | 44 | :snake: | 45 | :snake: | 46 | :snake: | 47 | :snake: | 48 | :snake: |
 | 49 | :snake: | 50 | :snake: | 51 | :see_no_evil: | 52 | :see_no_evil: | 53 | :snake: | 54 | :see_no_evil: |
-| 55 | :see_no_evil: | 56 | :snake: | 57 | :see_no_evil: | 58 | :see_no_evil: | 59 | :see_no_evil: | 60 | :see_no_evil: |
+| 55 | :see_no_evil: | 56 | :snake: | 57 | :see_no_evil: | 58 | :scream: | 59 | :see_no_evil: | 60 | :see_no_evil: |
 | 61 | :see_no_evil: | 62 | :see_no_evil: | 63 | :see_no_evil: | 64 | :see_no_evil: | 65 | :see_no_evil: | 66 | :see_no_evil: |
 | 67 | :snake: | 68 | :scream: | 69 | :see_no_evil: | 70 | :see_no_evil: | 71 | :see_no_evil: | 72 | :see_no_evil: |
-| 73 | :see_no_evil: | 74 | :snake: | 75 | :see_no_evil: | 76 | :snake: | 77 | :snake: | 78 | :scream: |
+| 73 | :see_no_evil: | 74 | :snake: | 75 | :scream: | 76 | :snake: | 77 | :snake: | 78 | :scream: |
 | 79 | :snake: | 80 | :see_no_evil: | 81 | :scream: | 82 | :see_no_evil: | 83 | :see_no_evil: | 84 | :see_no_evil: |
 | 85 | :snake: | 86 | :see_no_evil: | 87 | :see_no_evil: | 88 | :see_no_evil: | 89 | :see_no_evil: | 90 | :see_no_evil: |
 | 91 | :see_no_evil: | 92 | :snake: | 93 | :see_no_evil: | 94 | :see_no_evil: | 95 | :see_no_evil: | 96 | :see_no_evil: |
@@ -69,7 +69,7 @@ Last I checked (2018-02-27) i've done 67 problems, and am currently working on 1
 | 325 | :see_no_evil: | 326 | :see_no_evil: | 327 | :see_no_evil: | 328 | :see_no_evil: | 329 | :see_no_evil: | 330 | :see_no_evil: |
 | 331 | :see_no_evil: | 332 | :see_no_evil: | 333 | :see_no_evil: | 334 | :see_no_evil: | 335 | :see_no_evil: | 336 | :see_no_evil: |
 | 337 | :see_no_evil: | 338 | :see_no_evil: | 339 | :see_no_evil: | 340 | :see_no_evil: | 341 | :see_no_evil: | 342 | :see_no_evil: |
-| 343 | :see_no_evil: | 344 | :see_no_evil: | 345 | :see_no_evil: | 346 | :see_no_evil: | 347 | :see_no_evil: | 348 | :see_no_evil: |
+| 343 | :see_no_evil: | 344 | :see_no_evil: | 345 | :scream: | 346 | :snake: | 347 | :see_no_evil: | 348 | :see_no_evil: |
 | 349 | :see_no_evil: | 350 | :see_no_evil: | 351 | :see_no_evil: | 352 | :see_no_evil: | 353 | :see_no_evil: | 354 | :see_no_evil: |
 | 355 | :see_no_evil: | 356 | :see_no_evil: | 357 | :scream: | 358 | :see_no_evil: | 359 | :see_no_evil: | 360 | :see_no_evil: |
 | 361 | :see_no_evil: | 362 | :see_no_evil: | 363 | :see_no_evil: | 364 | :see_no_evil: | 365 | :see_no_evil: | 366 | :see_no_evil: |
@@ -88,7 +88,7 @@ Last I checked (2018-02-27) i've done 67 problems, and am currently working on 1
 | 439 | :see_no_evil: | 440 | :see_no_evil: | 441 | :see_no_evil: | 442 | :see_no_evil: | 443 | :see_no_evil: | 444 | :see_no_evil: |
 | 445 | :see_no_evil: | 446 | :see_no_evil: | 447 | :see_no_evil: | 448 | :see_no_evil: | 449 | :see_no_evil: | 450 | :see_no_evil: |
 | 451 | :see_no_evil: | 452 | :see_no_evil: | 453 | :see_no_evil: | 454 | :see_no_evil: | 455 | :see_no_evil: | 456 | :see_no_evil: |
-| 457 | :see_no_evil: | 458 | :see_no_evil: | 459 | :see_no_evil: | 460 | :see_no_evil: | 461 | :see_no_evil: | 462 | :see_no_evil: |
+| 457 | :see_no_evil: | 458 | :scream: | 459 | :see_no_evil: | 460 | :see_no_evil: | 461 | :see_no_evil: | 462 | :see_no_evil: |
 | 463 | :see_no_evil: | 464 | :see_no_evil: | 465 | :see_no_evil: | 466 | :see_no_evil: | 467 | :see_no_evil: | 468 | :see_no_evil: |
 | 469 | :see_no_evil: | 470 | :see_no_evil: | 471 | :see_no_evil: | 472 | :see_no_evil: | 473 | :see_no_evil: | 474 | :see_no_evil: |
 | 475 | :see_no_evil: | 476 | :see_no_evil: | 477 | :see_no_evil: | 478 | :see_no_evil: | 479 | :see_no_evil: | 480 | :see_no_evil: |
