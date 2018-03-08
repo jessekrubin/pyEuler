@@ -3,9 +3,13 @@
 # JESSE RUBIN - project Euler
 from functools import lru_cache
 from math import sqrt
+from lib.decorations import
 
-def prime_sieve_gen(upper_bound):
-    D = {}
+def prime_sieve_gen(upper_bound, D=None):
+    if D is None:
+        D = {}
+    else:
+        D = D
     q = 2
     while True:
         if q not in D:

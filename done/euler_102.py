@@ -27,7 +27,7 @@ given above.
 from lib.vfunk import cross_prod_2d
 
 # open file and put into list
-with open(r'../txt_files/p102_triangles.txt') as f:
+with open(r'../files_n_stuff/p102_triangles.txt') as f:
     triangles = [
         tuple(map(int, j.split(',')))
         for j in [i.strip('\n') for i in f.readlines()]

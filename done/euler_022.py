@@ -20,7 +20,7 @@ What is the total of all the name scores in the file?
 
 from lib.string_theory import string_score
 
-with open(r'../txt_files/p22_names.txt') as file:
+with open(r'../files_n_stuff/p22_names.txt') as file:
     names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
 
 names = [name for name_line in names_lines for name in name_line]

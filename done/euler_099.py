@@ -30,7 +30,7 @@ def log_thingy(pair):
     return log(pair[0]) * pair[1]
 
 
-with open("./txt_files/p099_base_exp.txt") as f:
+with open("./files_n_stuff/p099_base_exp.txt") as f:
     pairs = [
         tuple(map(int,
                   line.strip('\n').split(','))) for line in f.readlines()
