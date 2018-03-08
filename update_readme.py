@@ -23,7 +23,7 @@ N_EULER_PROBS = 615 + 1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
 NOT_STARTED_EMOJI = ":see_no_evil:"
-NUM_COLUMNS = 10
+NUM_COLUMNS = 8
 README_TEXT = """# pEuler
 
 This is my primarily python project euler problems repository.
@@ -59,7 +59,7 @@ with open('README.md', 'w') as f:
             if n in NOT_DONE:
                 status = INPROG_EMOJI
 
-            line += "|{}_{}".format(str(n), status)
+            line += "|{} ~ {}".format(str(n), status)
         line += "|\n"
         f.write(line)
 
