@@ -15,6 +15,7 @@ OOO   O   O
 OO   OO   O
 OO   O   O   O
 O   O   O   O   O
+
 Find the least value of n for which p(n) is divisible by one million.
 """
 

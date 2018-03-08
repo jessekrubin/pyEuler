@@ -47,7 +47,7 @@ def tictoc(funk):
         ts = time()
         result = funk(*args, **kw)
         te = time()
-        print('%r  %2.4f ms' % (funk.__name__, (te - ts) * 1000))
+        print('%r  %2.10f ms' % (funk.__name__, (te - ts) * 1000))
         return result
 
     return timed
