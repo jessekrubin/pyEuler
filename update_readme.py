@@ -42,7 +42,6 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 with open('README.md', 'w') as f:
     f.write(README_TEXT)
 
-    f.write("<center>\n")
     table_header = "| Problem # |" + " # |" * (
             NUM_COLUMNS - 1) + "\n"
     f.write(table_header)
@@ -65,7 +64,6 @@ with open('README.md', 'w') as f:
         line += "|\n"
         f.write(line)
 
-    f.write("</center>\n")
 
 print("______________________")
 print("# problems done: {}".format(len(DONE)))
