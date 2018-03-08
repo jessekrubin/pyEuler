@@ -3,8 +3,10 @@
 # JESSE RUBIN - project Euler
 from functools import lru_cache
 from math import sqrt
-from lib.decorations import
+from lib.decorations import json_cash
+from os import path, getcwd, pardir
 
+@json_cash(path.join(path.abspath(path.join(getcwd(), pardir)), 'files_n_stuff', 'primes.json'))
 def prime_sieve_gen(upper_bound, D=None):
     if D is None:
         D = {}
