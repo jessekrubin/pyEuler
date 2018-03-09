@@ -39,18 +39,13 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 """.format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI, INPROG_EMOJI,
            NOT_STARTED_EMOJI)
 
-with open('README.md', 'w') as f:
-    f.write(README_TEXT)
 
-    table_header = "| Problem # |" + " # |" * (
-            NUM_COLUMNS - 1) + "\n"
-    f.write(table_header)
-    header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
-    f.write(header_sep)
+def sur_la_table():
     probs = [i for i in range(1, N_EULER_PROBS)]
     rows = [
         probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
+    table_lines = []
     for row in rows:
         if any(prob_num in DONE for prob_num in row) in DONE:
             line = ""
@@ -63,7 +58,38 @@ with open('README.md', 'w') as f:
 
                 line += "|{} ~ {}".format(str(n), status)
             line += "|\n"
-            f.write(line)
+            table_lines.append(line)
+    return table_lines
+
+
+with open('README.md', 'w') as f:
+    f.write(README_TEXT)
+
+    table_header = "| Problem # |" + " # |" * (
+            NUM_COLUMNS - 1) + "\n"
+    f.write(table_header)
+    header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
+    f.write(header_sep)
+    f.writelines(sur_la_table())
+
+
+    # probs = [i for i in range(1, N_EULER_PROBS)]
+    # rows = [
+    #     probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
+    # ]
+    # for row in rows:
+    #     if any(prob_num in DONE for prob_num in row) in DONE:
+    #         line = ""
+    #         for n in row:
+    #             status = NOT_STARTED_EMOJI
+    #             if n in DONE:
+    #                 status = DONE_EMOJI
+    #             if n in NOT_DONE:
+    #                 status = INPROG_EMOJI
+    #
+    #             line += "|{} ~ {}".format(str(n), status)
+    #         line += "|\n"
+    #         f.write(line)
 
 
 print("______________________")
