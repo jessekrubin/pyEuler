@@ -46,4 +46,4 @@ for i in range(1389026620, 1010101010, -10):
         answer = i
         break
 
-print(f"{answer} squared is {(answer**2)}, which is a concealed square")
+print(f'{answer} squared is {(answer**2)}, which is a concealed square')

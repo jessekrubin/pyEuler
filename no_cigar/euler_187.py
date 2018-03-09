@@ -57,6 +57,6 @@ def semi_prime_search(upper_bound):
         ans += (end + 1 if end >= 0 else -end - 1) - i
     return str(ans)
 
-n_semiprimes = sum(1 for _ in semi_prime_sieve(10**8))
-print(n_semiprimes)
-# print(semi_prime_search(10 ** 8))
+# n_semiprimes = sum(1 for _ in semi_prime_sieve(10**8))
+# print(n_semiprimes)
+print(semi_prime_search(10 ** 8))

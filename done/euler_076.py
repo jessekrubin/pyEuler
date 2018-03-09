@@ -18,8 +18,10 @@ How many different ways can one hundred be written as a sum of at least two
 positive integers?
 """
 
+from lib.decorations import tictoc
 
 # this is the same as my coin sums code
+@tictoc(1000)
 def num_sums(n):
     numbers_lt = [p for p in range(1, n)]
     sums = [0] * (n + 1)

@@ -6,29 +6,38 @@ Decorations
 """
 from cProfile import Profile
 from functools import wraps
-from time import time
+from time import time, perf_counter
 from json import load, dump
 from io import open
 from os import path, getcwd
 from inspect import getfile
+import timeit
 
-def tictoc(funk):
 
-    @wraps(funk)
-    def timed(*args, **kw):
-        ts = time()
-        result = funk(*args, **kw)
-        te = time()
-        
-        t_total = (te-ts)*1000
-        prob_n = getfile(funk)[-6:-3]
-        # print('%r  %2.10f ms' % (funk.__name__, t_total))
-        with open("./tictoc/p{}.tictoc".format(prob_n), "a") as tictoc_file:
-            tictoc_file.write('ARGS:{}_TIME:{}\n'.format(str(args), str(t_total)))
-        print('{} ~ {} ~ {} ms'.format(prob_n, funk.__name__, t_total))
-        return result
 
-    return timed
+class tictoc:
+    def __init__(self, n_trials=1):
+        self.n_trials=n_trials
+
+    def __call__(self, funk):
+        @wraps(funk)
+        def wrapper(*args, **kwargs):
+            ts = time()
+            for i in range(self.n_trials):
+                result = funk(*args, **kwargs)
+            te = time()
+            t_total = (te-ts)/self.n_trials
+            prob_n = getfile(funk)[-6:-3]
+            with open("./tictoc/p{}.tictoc".format(prob_n), "a") as tictoc_file:
+                tictoc_file.write(
+                    'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
+                                                                   str(kwargs),
+                                                                   str(t_total),
+                                                                   str(self.n_trials)))
+            print('{} ~ {} ~ {} ms'.format(getfile(funk), funk.__name__, t_total*1000))
+            return result
+
+        return wrapper
 
 
 class json_cash:

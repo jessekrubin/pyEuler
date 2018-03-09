@@ -17,6 +17,15 @@ def rad2deg(n):
     return 180 * n / pi
 
 
+def power_mod(number, exponent, mod):
+    if exponent>0:
+        if exponent%2==0:
+            return power_mod(number, exponent//2, mod)
+        else:
+            return power_mod(number, exponent//2, mod)*number
+    else:
+        return 1
+
 @lru_cache(maxsize=None)
 def is_perfect_square(positive_n):
     if positive_n < 5:

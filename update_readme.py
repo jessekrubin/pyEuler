@@ -40,25 +40,26 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
            NOT_STARTED_EMOJI)
 
 
+def make_table_line(row):
+    line = ""
+    for n in row:
+        status = NOT_STARTED_EMOJI
+        if n in DONE:
+            status = DONE_EMOJI
+        if n in NOT_DONE:
+            status = INPROG_EMOJI
+        line += "|{} ~ {}".format(str(n), status)
+    line += "|\n"
+    return line
+
+
 def sur_la_table():
     probs = [i for i in range(1, N_EULER_PROBS)]
     rows = [
         probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
-    table_lines = []
-    for row in rows:
-        if any(prob_num in DONE for prob_num in row) in DONE:
-            line = ""
-            for n in row:
-                status = NOT_STARTED_EMOJI
-                if n in DONE:
-                    status = DONE_EMOJI
-                if n in NOT_DONE:
-                    status = INPROG_EMOJI
-
-                line += "|{} ~ {}".format(str(n), status)
-            line += "|\n"
-            table_lines.append(line)
+    table_lines = [make_table_line(row) for row in rows
+                   if any(prob_num in DONE for prob_num in row) in DONE]
     return table_lines
 
 
@@ -71,26 +72,6 @@ with open('README.md', 'w') as f:
     header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
     f.write(header_sep)
     f.writelines(sur_la_table())
-
-
-    # probs = [i for i in range(1, N_EULER_PROBS)]
-    # rows = [
-    #     probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
-    # ]
-    # for row in rows:
-    #     if any(prob_num in DONE for prob_num in row) in DONE:
-    #         line = ""
-    #         for n in row:
-    #             status = NOT_STARTED_EMOJI
-    #             if n in DONE:
-    #                 status = DONE_EMOJI
-    #             if n in NOT_DONE:
-    #                 status = INPROG_EMOJI
-    #
-    #             line += "|{} ~ {}".format(str(n), status)
-    #         line += "|\n"
-    #         f.write(line)
-
 
 print("______________________")
 print("# problems done: {}".format(len(DONE)))

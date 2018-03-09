@@ -10,17 +10,9 @@ def primes_below(upperbound):
 
 
 def prime_sieve_gen(upper_bound=None, save_path=None):
-    if save_path is None:
-        save_path = path.abspath(path.join(getcwd(), pardir, 'files_n_stuff', 'prime_sieve_cache.json'))
-    try:
-        with open(save_path, 'r', encoding='utf-8') as f:
-            D = load(f)
-    except IOError:
-        D = {}
-
+    D = {}
     q = 2
     while True:
-        # print(D)
         if q not in D:
             yield q
             D[q * q] = [q]
@@ -31,8 +23,6 @@ def prime_sieve_gen(upper_bound=None, save_path=None):
         q += 1
         if upper_bound is not None and upper_bound < q:
             break
-
-    with open(save_path, 'w', encoding='utf-8') as f: dump(D, f, indent=2)
 
 # @lru_cache(maxsize=None)
 @json_cash(path.join(path.abspath(path.join(getcwd())), 'files_n_stuff'))
