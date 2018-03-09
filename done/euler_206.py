@@ -12,16 +12,16 @@ from lib.listless import digits_list
 
 
 def is_1_2_3_4_5_6_7_8_9_0(n):
-    """
-    >>> is_1_2_3_4_5_6_7_8_9_0(1122334455667788990)
-    True
-    >>> is_1_2_3_4_5_6_7_8_9_0(1121314151617181910)
-    True
-    >>> is_1_2_3_4_5_6_7_8_9_0(11122334455667788990)
-    False
-    >>> is_1_2_3_4_5_6_7_8_9_0(1112214455667788990)
-    False
-    """
+    # """
+    # >>> is_1_2_3_4_5_6_7_8_9_0(1122334455667788990)
+    # True
+    # >>> is_1_2_3_4_5_6_7_8_9_0(1121314151617181910)
+    # True
+    # >>> is_1_2_3_4_5_6_7_8_9_0(11122334455667788990)
+    # False
+    # >>> is_1_2_3_4_5_6_7_8_9_0(1112214455667788990)
+    # False
+    # """
     digs = digits_list(n)
     if len(digs) != 19:
         return False
@@ -40,10 +40,11 @@ def is_1_2_3_4_5_6_7_8_9_0(n):
 # print(math.sqrt(lower_bound))
 
 
-answer = None
-for i in range(1389026620, 1010101010, -10):
-    if is_1_2_3_4_5_6_7_8_9_0(i ** 2):
-        answer = i
-        break
+def p206():
+    for i in range(1389026620, 1010101010, -10):
+        if is_1_2_3_4_5_6_7_8_9_0(i ** 2):
+            return i
 
-print(f'{answer} squared is {(answer**2)}, which is a concealed square')
+if __name__=='__main__':
+    answer = p206()
+    print('{} squared is {} -- a concealed square'.format(answer, answer**2))

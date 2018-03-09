@@ -56,13 +56,13 @@ def factorial_chain_length(starting_n):
     dic[starting_n] = recursing(starting_n)
     return dic[starting_n]
 
-@tictoc
-def p074(upper_bound = 1000000):
+@tictoc()
+def p074(upper_bound):
     answer = 0
     for i in range(upper_bound):
         if factorial_chain_length(i+1) == 60:
             answer += 1
     return answer
 
-ans = p074()
+ans = p074(1000000)
 print("ANSWER: {}".format(ans))

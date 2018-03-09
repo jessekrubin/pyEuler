@@ -6,35 +6,41 @@ Decorations
 """
 from cProfile import Profile
 from functools import wraps
-from time import time, perf_counter
+from time import time
 from json import load, dump
 from io import open
-from os import path, getcwd
+from os import path
 from inspect import getfile
-import timeit
-
 
 
 class tictoc:
-    def __init__(self, n_trials=1):
-        self.n_trials=n_trials
+    def __init__(self, runs=1):
+        self.runs=runs
 
     def __call__(self, funk):
         @wraps(funk)
         def wrapper(*args, **kwargs):
             ts = time()
-            for i in range(self.n_trials):
+            for i in range(self.runs):
                 result = funk(*args, **kwargs)
             te = time()
-            t_total = (te-ts)/self.n_trials
+            t_total = (te-ts)/self.runs
             prob_n = getfile(funk)[-6:-3]
             with open("./tictoc/p{}.tictoc".format(prob_n), "a") as tictoc_file:
                 tictoc_file.write(
                     'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
                                                                    str(kwargs),
                                                                    str(t_total),
-                                                                   str(self.n_trials)))
-            print('{} ~ {} ~ {} ms'.format(getfile(funk), funk.__name__, t_total*1000))
+                                                                   str(self.runs)))
+            print('__TICTOC__\n'
+                  '    file: {}\n'
+                  '    funk: {}\n'
+                  '    time: {} ms\n'
+                  '    runs: {}\n'.format(getfile(funk),
+                                          funk.__name__,
+                                          t_total*1000,
+                                          self.runs
+                                          ))
             return result
 
         return wrapper
