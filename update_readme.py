@@ -52,19 +52,18 @@ with open('README.md', 'w') as f:
         probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
     for row in rows:
-        if any(row) in DONE:
-            continue
-        line = ""
-        for n in row:
-            status = NOT_STARTED_EMOJI
-            if n in DONE:
-                status = DONE_EMOJI
-            if n in NOT_DONE:
-                status = INPROG_EMOJI
+        if any(prob_num in DONE for prob_num in row) in DONE:
+            line = ""
+            for n in row:
+                status = NOT_STARTED_EMOJI
+                if n in DONE:
+                    status = DONE_EMOJI
+                if n in NOT_DONE:
+                    status = INPROG_EMOJI
 
-            line += "|{} ~ {}".format(str(n), status)
-        line += "|\n"
-        f.write(line)
+                line += "|{} ~ {}".format(str(n), status)
+            line += "|\n"
+            f.write(line)
 
 
 print("______________________")
