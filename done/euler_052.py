@@ -14,7 +14,7 @@ contain the same digits.
 
 from lib.listless import is_permutation
 from itertools import count
-from lib.bench import tictoc
+from lib.decorations import tictoc
 
 
 @tictoc

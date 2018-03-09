@@ -15,9 +15,13 @@ four million, find the sum of the even-valued terms.
 """
 
 from lib.fibbing import fib
+from lib.decorations import tictoc
 
+@tictoc
+def sum_even_fibs(upper_bound):
+    return [n for n in [fib(i) for i in range(40)] if n % 2 == 0 and n < upper_bound+1]
 
-even_fibs_below_4_mil = [n for n in [fib(i) for i in range(40)] if n % 2 == 0 and n <= 4000000]
+even_fibs_below_4_mil = sum_even_fibs(4000000)
 print("Even fib numbers below 4 million: {}".format(even_fibs_below_4_mil))
 sum_of_those_fibs = sum(even_fibs_below_4_mil)
 print("Sum: {}".format(sum_of_those_fibs))  # Sum: 4613732

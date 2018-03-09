@@ -13,14 +13,12 @@ Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 """
 
 from math import factorial
-
-from lib.bench import tictoc
+from lib.decorations import tictoc
 from lib.listless import digits_list
 
 
 def is_digit_factorial(n):
     return n == sum(map(factorial, digits_list(n)))
-
 
 @tictoc
 def digit_factorials(upper_bound):

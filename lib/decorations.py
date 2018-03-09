@@ -9,7 +9,27 @@ from functools import wraps
 from time import time
 from json import load, dump
 from io import open
-from os import path
+from os import path, getcwd
+from inspect import getfile
+
+def tictoc(funk):
+
+    @wraps(funk)
+    def timed(*args, **kw):
+        ts = time()
+        result = funk(*args, **kw)
+        te = time()
+        
+        t_total = (te-ts)*1000
+        prob_n = getfile(funk)[-6:-3]
+        # print('%r  %2.10f ms' % (funk.__name__, t_total))
+        with open("./tictoc/p{}.tictoc".format(prob_n), "a") as tictoc_file:
+            tictoc_file.write('ARGS:{}_TIME:{}\n'.format(str(args), str(t_total)))
+        print('{} ~ {} ~ {} ms'.format(prob_n, funk.__name__, t_total))
+        return result
+
+    return timed
+
 
 class json_cash:
     def __init__(self, cash_dir):
@@ -41,16 +61,6 @@ class json_cash:
         return wrapper
 
 
-def tictoc(funk):
-    @wraps(funk)
-    def timed(*args, **kw):
-        ts = time()
-        result = funk(*args, **kw)
-        te = time()
-        print('%r  %2.10f ms' % (funk.__name__, (te - ts) * 1000))
-        return result
-
-    return timed
 
 
 def cprof(funk):
