@@ -48,12 +48,14 @@ with open('README.md', 'w') as f:
     header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
     f.write(header_sep)
     probs = [i for i in range(1, N_EULER_PROBS)]
-    l_chunks = [
+    rows = [
         probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
-    for chunk in l_chunks:
+    for row in rows:
+        if any(row) in DONE:
+            continue
         line = ""
-        for n in chunk:
+        for n in row:
             status = NOT_STARTED_EMOJI
             if n in DONE:
                 status = DONE_EMOJI
