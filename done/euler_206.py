@@ -34,6 +34,7 @@ def is_1_2_3_4_5_6_7_8_9_0(n):
             return False
     return True
 
+
 @tictoc(1000)
 def p206():
     range_max = int(sqrt(1020304050607080900))
@@ -45,4 +46,4 @@ def p206():
 
 if __name__=='__main__':
     answer = p206()
-    print('{}^2 is {}, which is a concealed square'.format(answer, answer**2))
+    print('{}^2 is {}'.format(answer, answer**2))
