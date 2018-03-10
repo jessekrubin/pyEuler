@@ -12,7 +12,7 @@ Last I checked (2018-03-10) i've done 73 problems, and am currently working on 1
  
 :snake: = done
 
-:no_smoking: = close but no cigar
+:no_smoking: = close, but no cigar; it could be faster
 
 :scream: = in progress
 

@@ -42,7 +42,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
  
 {} = done
 
-{} = close but no cigar
+{} = close, but no cigar; it could be faster
 
 {} = in progress
 
