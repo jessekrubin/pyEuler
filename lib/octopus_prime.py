@@ -74,3 +74,37 @@ def prime_factorization(n):
     if n > 1:
         factors.append(n)
     return factors
+
+class OctopusPrime(list):
+    def __init__(self, n = 1000):
+        list.__init__(self, prime_sieve_gen(n))
+
+    def __in__(self, n):
+        i = bisect_left(self, n)
+        return i < len(self) and self[i] == n
+
+    def __iter__(self):
+        return OctopusPrime.Iter(self)
+
+    def check(self, n):
+        if n <= self.primes[-1]:
+            return n in self
+        else:
+            for p in self:
+                if n % p == 0:
+                    return False
+            return True
+
+    def grow(self, n = None):
+        n = n if n is not None else self[-1] * 10
+        self.extend(prime_sieve_gen(self.max))
+
+
+if __name__ == '__main__':
+    listo = primes_below(10)
+    print(listo)
+    octpi = OctopusPrime()
+    print(octpi)
+    # for t in octpi:
+    #     print(t)
+
