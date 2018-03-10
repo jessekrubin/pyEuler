@@ -9,9 +9,12 @@ from os.path import isfile, join
 
 DONE_PATH = r'./done'
 NOT_DONE_PATH = r'./not_done'
+NO_CIGAR_PATH = r'./no_cigar'
 LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
 DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
 DONE.sort()
+NO_CIGAR = [int(f[6:9]) for f in listdir(NO_CIGAR_PATH) if isfile(join(NO_CIGAR_PATH, f))]
+NO_CIGAR.sort()
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
     if isfile(join(NOT_DONE_PATH, f)) and f.startswith("euler")
@@ -22,6 +25,7 @@ NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
 N_EULER_PROBS = 615 + 1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
+NO_CIGAR_EMOJI = ":no_smoking:"
 NOT_STARTED_EMOJI = ":see_no_evil:"
 NUM_COLUMNS = 8
 README_TEXT = """# pEuler
@@ -34,9 +38,20 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ## Problems table
 
-###### KEY: {} = done; {} = in progress; {} = n/a; not started
+###### KEY:
+ 
+{} = done
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE), DONE_EMOJI, INPROG_EMOJI,
+{} = close but no cigar
+
+{} = in progress
+
+{} = n/a; not started
+
+""".format(LAST_UPDATED, len(DONE), len(NOT_DONE),
+           DONE_EMOJI,
+           NO_CIGAR_EMOJI,
+           INPROG_EMOJI,
            NOT_STARTED_EMOJI)
 
 
@@ -46,7 +61,9 @@ def make_table_line(row):
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = DONE_EMOJI
-        if n in NOT_DONE:
+        elif n in NO_CIGAR:
+            status = NO_CIGAR_EMOJI
+        elif n in NOT_DONE:
             status = INPROG_EMOJI
         line += "|{} ~ {}".format(str(n), status)
     line += "|\n"
@@ -75,6 +92,8 @@ with open('README.md', 'w') as f:
 
 print("______________________")
 print("# problems done: {}".format(len(DONE)))
+print("______________________")
+print("# problems kinda done: {}".format(len(NO_CIGAR)))
 print("______________________")
 print("# problems !done: {}".format(len(NOT_DONE)))
 print("______________________")
