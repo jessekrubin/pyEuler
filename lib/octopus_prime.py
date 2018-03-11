@@ -4,14 +4,25 @@
 from lib.decorations import json_cash
 from os import path, getcwd, pardir
 from json import load, dump
+import inspect
+import os
+
+
 
 def primes_below(upperbound):
     return list(n for n in prime_sieve_gen(upperbound))
 
 
-def prime_sieve_gen(upper_bound=None, save_path=None):
-    D = {}
-    q = 2
+def prime_sieve_gen(known_primes=None, upper_bound=None):
+    if known_primes is not None:
+        D = { p**2 : [p] for p in known_primes}
+        q = known_primes[-1]
+        for n in known_primes:
+            thing = ((q//n)*n)+n
+            D.setdefault(thing, []).append(n)
+    else:
+        D = {}
+        q = 2
     while True:
         if q not in D:
             yield q
@@ -24,8 +35,24 @@ def prime_sieve_gen(upper_bound=None, save_path=None):
         if upper_bound is not None and upper_bound < q:
             break
 
+def prime_sieve_gen_orig(upper_bound=None, save_path=None):
+    D = {}
+    q = 2
+    while True:
+        if q not in D:
+            yield q
+            D[q * q] = [q]
+        else:
+            for p in D[q]:
+                D.setdefault(p + q, []).append(p)
+            del D[q]
+        print(D)
+        q += 1
+        if upper_bound is not None and upper_bound < q:
+            break
+
 # @lru_cache(maxsize=None)
-@json_cash(path.join(path.abspath(path.join(getcwd())), 'files_n_stuff'))
+# @json_cash(path.join(path.abspath(path.join(getcwd())), 'txt_files'))
 def is_prime(number: int) -> bool:
     """
     Returns True if number is prime
@@ -76,15 +103,77 @@ def prime_factorization(n):
     return factors
 
 class OctopusPrime(list):
-    def __init__(self, n = 1000):
-        list.__init__(self, prime_sieve_gen(n))
+    def __init__(self, save_path = None, n = 10):
+        if save_path is None:
+            self.save_path = path.join(path.dirname(inspect.getfile(OctopusPrime)), 'octopus.prime')
+        else:
+            self.save_path = save_path
 
-    def __in__(self, n):
-        i = bisect_left(self, n)
-        return i < len(self) and self[i] == n
+        try:
+            list.__init__(self, self.load())
+        except ValueError:
+            list.__init__(self, prime_sieve_gen(n))
+            self.save()
 
-    def __iter__(self):
-        return OctopusPrime.Iter(self)
+        self.max_saved = len(self) - 1
+        self.biggest = self[-1]
+
+        # print("AHCHCHAHCSD")
+        # print(self)
+
+    def __del__(self):
+        print("deleting")
+        print(self)
+        print("saving")
+        self.append_save()
+
+
+    def load(self):
+        if path.isfile(self.save_path):
+            print("found")
+            with open(self.save_path, 'r') as f:
+                primes = [int(line) for line in f.readlines()]
+            if len(primes) > 0:
+                return primes
+            else:
+                raise ValueError("{} NO PRIMES IN FILE".format(self.save_path))
+        raise FileNotFoundError("{} Not file".format(self.save_path))
+
+    def append_save(self):
+        print("append save")
+        print(self)
+        print(self.biggest)
+        print(self.max_saved)
+
+        with open(self.save_path, 'a', encoding='utf-8') as f:
+            for i in range(self.max_saved, len(self)):
+                print(i)
+                print(self[i])
+                # f.write(str(prime))
+                # f.write('\n')
+
+    # @staticmethod
+    # def prime_sieve_gen(self, upper_bound=None, save_path=None):
+    #     D = {}
+    #     q = 2
+    #     while True:
+    #         if q not in D:
+    #             yield q
+    #             D[q * q] = [q]
+    #         else:
+    #             for p in D[q]:
+    #                 D.setdefault(p + q, []).append(p)
+    #             del D[q]
+    #         print(D)
+    #         q += 1
+    #         if upper_bound is not None and upper_bound < q:
+    #             break
+
+    def save(self):
+        with open(self.save_path, 'w', encoding='utf-8') as f:
+            for prime in self:
+                f.write(str(prime))
+                f.write('\n')
 
     def check(self, n):
         if n <= self.primes[-1]:
@@ -95,16 +184,18 @@ class OctopusPrime(list):
                     return False
             return True
 
+
     def grow(self, n = None):
+        print("grow")
+        print(self)
         n = n if n is not None else self[-1] * 10
-        self.extend(prime_sieve_gen(self.max))
+        self = list(prime_sieve_gen(n))
+
+    def is_prime(self, number):
+        print(self)
+        print(number in self)
+        print(number)
 
 
-if __name__ == '__main__':
-    listo = primes_below(10)
-    print(listo)
-    octpi = OctopusPrime()
-    print(octpi)
-    # for t in octpi:
-    #     print(t)
+
 
