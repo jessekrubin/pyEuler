@@ -9,7 +9,7 @@ from functools import wraps
 from time import time
 from json import load, dump
 from io import open
-from os import path
+from os import path, getcwd
 from inspect import getfile
 
 
@@ -26,7 +26,7 @@ class tictoc:
             te = time()
             t_total = (te-ts)/self.runs
             prob_n = getfile(funk)[-6:-3]
-            with open("./tictoc/p{}.tictoc".format(prob_n), "a") as tictoc_file:
+            with open(path.join(getcwd(), "./tictoc/p{}.tictoc".format(prob_n)), "a") as tictoc_file:
                 tictoc_file.write(
                     'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
                                                                    str(kwargs),

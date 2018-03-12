@@ -66,10 +66,7 @@ with open(r'../txt_files/p067_triangle.txt') as f:
 def p067():
     return tri_max_fast(big_tri)
 
-
-# lil_tri max sum should be 23
-assert 23 == tri_max_fast(little_tri)
-
+assert 23 == tri_max_fast(little_tri) # lil_tri max sum should be 23
 
 if __name__ == '__main__':
     answer2 = p067()
