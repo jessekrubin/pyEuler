@@ -23,10 +23,7 @@ could check one trillion (1012) routes every second it would take over twenty
 billion years to check them all. There is an efficient algorithm to solve it.
 """
 
-lil_string_triangle = """3
-7 4
-2 4 6
-8 5 9 3"""
+from lib.decorations import tictoc
 
 
 def triangle_lists(s):
@@ -52,18 +49,28 @@ def tri_max_fast(l):
     return max(cur_row)
 
 
+lil_string_triangle = """3
+7 4
+2 4 6
+8 5 9 3"""
 little_tri = triangle_lists(lil_string_triangle)
 
 with open(r'../txt_files/p067_triangle.txt') as f:
-    lines = tuple([
+    big_tri = tuple([
         tuple(map(int, j.split(' ')))
         for j in [i.strip('\n') for i in f.readlines()]
     ])
 
-big_tri = lines
 
-answer = tri_max_fast(little_tri)
-print("Little Triangle MAX PATH: {}".format(answer))
+@tictoc(1000)
+def p067():
+    return tri_max_fast(big_tri)
 
-answer2 = tri_max_fast(big_tri)
-print("Big Triangle MAX PATH: {}".format(answer2))
+
+# lil_tri max sum should be 23
+assert 23 == tri_max_fast(little_tri)
+
+
+if __name__ == '__main__':
+    answer2 = p067()
+    print("Big Triangle MAX PATH: {}".format(answer2))

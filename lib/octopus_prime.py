@@ -2,33 +2,39 @@
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 from os import path
-import inspect
-import bisect
+from inspect import getfile
+from bisect import bisect_right, bisect_left
+from functools import lru_cache
 
 def prime_sieve_gen(upper_bound=None, known_primes=None):
-    if known_primes is not None and max(known_primes) > 2:
-        D = { p**2 : [p] for p in known_primes}
-        q = known_primes[-1]
-        for n in known_primes:
-            D.setdefault(((q//n)*n)+n, []).append(n)
-        q+=1
+    if known_primes is not None and max(known_primes) > 1:
+        div_dict = {p**2: p for p in known_primes}
+        filter_num = known_primes[-1]
+        for kprime in known_primes:
+            divisible_num = (filter_num//kprime)*kprime + kprime
+            while divisible_num in div_dict:
+                divisible_num += kprime
+            div_dict[divisible_num] = kprime
+        filter_num += 1
     else:
-        D = {}
-        q = 2
+        div_dict = {}
+        filter_num = 2
+
     while True:
-        if q not in D:
-            yield q
-            D[q * q] = [q]
+        prime_div = div_dict.pop(filter_num, None)
+        if prime_div:
+            divisible_num = prime_div + filter_num
+            while divisible_num in div_dict:
+                divisible_num += prime_div
+            div_dict[divisible_num] = prime_div
         else:
-            for p in D[q]:
-                D.setdefault(p + q, []).append(p)
-            del D[q]
-        q += 1
-        if upper_bound is not None and upper_bound < q:
+            div_dict[filter_num * filter_num] = filter_num
+            yield filter_num
+        filter_num += 1
+        if upper_bound is not None and upper_bound < filter_num:
             break
 
-# @lru_cache(maxsize=None)
-# @json_cash(path.join(path.abspath(path.join(getcwd())), 'txt_files'))
+@lru_cache(maxsize=None)
 def is_prime(number: int) -> bool:
     """
     Returns True if number is prime
@@ -80,9 +86,15 @@ def prime_factorization(n):
 
 
 class OctopusPrime(list):
+    """
+    OctopusPrime is capable of finding all the primes you need
+
+
+    """
+
     def __init__(self,n=10, save_path = None):
         if save_path is None:
-            self.save_path = path.join(path.dirname(inspect.getfile(OctopusPrime)), 'octopus.prime')
+            self.save_path = path.join(path.dirname(getfile(OctopusPrime)), 'octopus.prime')
         else:
             self.save_path = save_path
         try:
@@ -132,7 +144,7 @@ class OctopusPrime(list):
     def prime_range(self, lower_bound, upper_bound):
         if upper_bound > self[-1]:
             self.transform(upper_bound)
-        return self[bisect.bisect_right(self, lower_bound):bisect.bisect_left(self, upper_bound)]
+        return self[bisect_right(self, lower_bound):bisect_left(self, upper_bound)]
 
 #########
 # TESTS #

@@ -17,10 +17,18 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
 
-NUMBER = 10
-ANSWER = sum([i + 1 for i in range(NUMBER)]) ** 2 - sum([(i + 1) ** 2 for i in range(NUMBER)])
-print("Difference ({}): {}".format(NUMBER, ANSWER))
+from lib.decorations import tictoc
 
-NUMBER = 100
-ANSWER = sum([i + 1 for i in range(NUMBER)]) ** 2 - sum([(i + 1) ** 2 for i in range(NUMBER)])
-print("Difference ({}): {}".format(NUMBER, ANSWER))
+def sq_sum_diff(num_numbers):
+    return sum([i + 1 for i in range(num_numbers)]) ** 2 - sum([(i + 1) ** 2 for i in range(num_numbers)])
+
+@tictoc(1000)
+def p006():
+    return sq_sum_diff(100)
+
+assert 2640 == sq_sum_diff(10)
+
+
+if __name__=='__main__':
+    answer = p006()
+    print("Difference ({}): {}".format(100, answer)) # Difference(100): 25164150

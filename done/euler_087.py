@@ -24,7 +24,7 @@ from math import sqrt
 def power_triple(triple):
     return sum(triple[index]**(index + 2) for index in range(3))
 
-@tictoc
+@tictoc(1)
 def prime_power_triples(below):
     primes = [p for p in prime_sieve_gen(int(sqrt(below)+1))]
     n_primes = len(primes)

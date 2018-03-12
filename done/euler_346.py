@@ -16,6 +16,7 @@ Find the sum of all strong repunits below 10^12.
 """
 
 import time
+from lib.decorations import tictoc
 
 
 def ones_base_n(base, under):
@@ -40,16 +41,17 @@ def sum_strong_repunits(upper_limit):
     return total
 
 
-print("___")
-t0 = time.time()
-result = sum_strong_repunits(1000)
-t1 = time.time() - t0
-print("ANSWER: {}".format(result))
-print("time: {}".format(t1))
+@tictoc(1000)
+def p346():
+    return sum_strong_repunits(10**12)
 
-print("___")
-t0 = time.time()
-result = sum_strong_repunits(10 ** 12)
-t1 = time.time() - t0
-print("ANSWER: {}".format(result))
-print("time: {}".format(t1))
+if __name__ == '__main__':
+    print("___")
+    t0 = time.time()
+    result = sum_strong_repunits(1000)
+    t1 = time.time() - t0
+    print("ANSWER: {}".format(result))
+    print("time: {}".format(t1))
+
+    result = p346()
+    print("ANSWER: {}".format(result))

@@ -11,15 +11,21 @@ the 6th prime is 13.
 What is the 10 001st prime number?
 """
 
-from lib.octopus_prime import is_prime
+from lib.octopus_prime import is_prime, prime_sieve_gen
+from lib.decorations import tictoc
+from itertools import count
 
-ind = 1
-n_primes = 0
-nth_prime = 10001
-while n_primes < nth_prime + 1:
-    if is_prime(ind):
-        n_primes += 1
-    ind += 1
+@tictoc(100)
+def p007(nth_prime):
+    ind = 1
+    n_primes = 0
+    while n_primes < nth_prime + 1:
+        if is_prime(ind):
+            n_primes += 1
+        ind += 2
+    return ind-1
 
-answer = (ind - 1)
-print("10,001th prime is: {}".format(answer))
+if __name__ == '__main__':
+    answer = p007(nth_prime=10001)
+    print("10,001th prime is: {}".format(answer))
+
