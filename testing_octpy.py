@@ -6,33 +6,26 @@ octpy = OctopusPrime()
 print(octpy)
 
 
-octpy.grow(20)
+octpy.transform(20)
 print(octpy)
 
 print(octpy.is_prime(23))
 print(octpy)
 
-octpy.grow(40)
+octpy.transform(40)
 print(octpy)
 
 
 
-octpy.grow(50)
+octpy.transform(50)
 print(octpy)
 
 
 another = OctopusPrime()
 print(another)
+print(another.is_prime(99))
+print(another)
 
-
-####
-# print("___")
-# someprimes = [i for i in prime_sieve_gen(upper_bound=20)]
-# print(someprimes)
-#
-# another = list(prime_sieve_gen(known_primes=someprimes, upper_bound=100))
-# another = sorted(another)
-# print(another)
-#
-# for p in prime_sieve_gen(known_primes=someprimes, upper_bound=100):
-#     print("prime found ", p)
+print(another.prime_range(160, 200))
+print(another.primes_below(20))
+print(another)
