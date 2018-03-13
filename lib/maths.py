@@ -71,3 +71,18 @@ def divisors_list(n):
 
 def n_digits(number: int) -> int:
     return sum((1 for _ in str(number)))
+
+
+def reverse(n):
+    """
+    Reverses a number
+
+    :param n:
+    :return:
+    """
+    reversed = 0
+    while n > 0:
+        reversed *= 10
+        reversed += n % 10
+        n //= 10
+    return reversed
