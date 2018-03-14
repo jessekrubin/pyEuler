@@ -14,8 +14,9 @@ from inspect import getfile
 
 
 class tictoc:
-    def __init__(self, runs=1):
+    def __init__(self, runs=1, save=False):
         self.runs=runs
+        self.save=save
 
     def __call__(self, funk):
         @wraps(funk)
@@ -25,13 +26,15 @@ class tictoc:
                 result = funk(*args, **kwargs)
             te = time()
             t_total = (te-ts)/self.runs
-            prob_n = getfile(funk)[-6:-3]
-            with open(path.join(getcwd(), "./tictoc/p{}.tictoc".format(prob_n)), "a") as tictoc_file:
-                tictoc_file.write(
-                    'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
-                                                                   str(kwargs),
-                                                                   str(t_total),
-                                                                   str(self.runs)))
+
+            if self.save:
+                prob_n = getfile(funk)[-6:-3]
+                with open(path.join(getcwd(), "./tictoc/p{}.tictoc".format(prob_n)), "a") as tictoc_file:
+                    tictoc_file.write(
+                        'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
+                                                                       str(kwargs),
+                                                                       str(t_total),
+                                                                       str(self.runs)))
             print('__TICTOC__\n'
                   '    file: {}\n'
                   '    funk: {}\n'

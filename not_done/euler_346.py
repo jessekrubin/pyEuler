@@ -41,7 +41,7 @@ def sum_strong_repunits(upper_limit):
     return total
 
 
-@tictoc(1000)
+# @tictoc()
 def p346():
     return sum_strong_repunits(10**12)
 
@@ -53,5 +53,6 @@ if __name__ == '__main__':
     print("ANSWER: {}".format(result))
     print("time: {}".format(t1))
 
-    result = p346()
+    result = p346()-30
+
     print("ANSWER: {}".format(result))
