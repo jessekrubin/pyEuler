@@ -16,33 +16,41 @@ from itertools import combinations
 
 from tqdm import tqdm
 
-n_four_dice = 9
-four_side = [1, 2, 3, 4] * n_four_dice
-print(four_side)
 
-n_six_dice = 6
-six_side = [1, 2, 3, 4, 5, 6] * n_six_dice
+peter_dice = 9
+peter_sides = 4
+peter_total_possible_rolls = peter_sides**peter_dice
+print(peter_total_possible_rolls)
 
-# sum = sum([1 for i in combinations(four_side, 9)])
-# print(sum)
 
-colin = 0
-peter = 0
-ties = 0
-for combo in tqdm(combinations(four_side, 9)):
-    curcolin = sum(combo)
-    for c2 in combinations(six_side, 6):
-        c2sum = sum(c2)
-        if curcolin > c2sum:
-            colin += 1
-        elif c2sum > curcolin:
-            peter += 1
-        else:
-            ties += 1
 
-print(colin)
-print(peter)
-print(ties)
+# n_four_dice = 9
+# four_side = [1, 2, 3, 4] * n_four_dice
+# print(four_side)
+#
+# n_six_dice = 6
+# six_side = [1, 2, 3, 4, 5, 6] * n_six_dice
+#
+# # sum = sum([1 for i in combinations(four_side, 9)])
+# # print(sum)
+#
+# colin = 0
+# peter = 0
+# ties = 0
+# for combo in tqdm(combinations(four_side, 9)):
+#     curcolin = sum(combo)
+#     for c2 in combinations(six_side, 6):
+#         c2sum = sum(c2)
+#         if curcolin > c2sum:
+#             colin += 1
+#         elif c2sum > curcolin:
+#             peter += 1
+#         else:
+#             ties += 1
+#
+# print(colin)
+# print(peter)
+# print(ties)
 
 # for i in range(10):
 #     print(random.randint(1, 10))
