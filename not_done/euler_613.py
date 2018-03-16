@@ -36,22 +36,5 @@ def get_vecs(tup):
     v2 = (c2[0] - tup[0], c2[1] - tup[1])
     return v1, v2
 
+print(get_vecs((0, 0)))
 
-v = [
-    i
-    for i in map(get_vecs, ((x, y) for x in range(1, 300, 1)
-                            for y in range(1, 400, 1)))
-]
-p = Pool(16)
-# angs = p.map(angle, vecs)
-# print(mean(angs))
-# print(stdev(angs))
-
-list1 = []
-for _ in tqdm(p.imap_unordered(angle, v), total=len(v)):
-    list1.append(abs(_))
-
-list2 = [(i / pi) for i in list1]
-print(mean(list1))
-print(mean(list1) / pi)
-print(mean(list2))

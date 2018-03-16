@@ -28,34 +28,70 @@ be formed?
 """
 
 from math import sqrt
+from itertools import count
+from collections import defaultdict
+from tqdm import tqdm
+
+L = 150
+range_lim = int(sqrt(L) + 1)
+print(range_lim)
+squares={i**2:i for i in range(1, L)}
+# print(squares)
+print("found squares")
+
+triangles = {}
+for a in tqdm(range(1, range_lim)):
+    for b in range(1, a):
+        c_sq = (a*a) + (b*b)
+        if c_sq in squares:
+            per = a+b+squares[c_sq]
+            triangles[per] = triangles.get(per, 0) + 1
 
 
-def num_integer_right_triangles(perimeter):
-    num_triangles = 0
-    for b in range(1, perimeter // 2):
-        if num_triangles > 1:
-            return False
-        a = (2 * b * perimeter - perimeter ** 2) / (2 * (b - perimeter))
 
-        if a % 1:
-            continue
-        a = int(a)
-        if a < b:
-            if a ** 2 + b ** 2 == (perimeter - a - b) ** 2:
-                num_triangles += 1
-    if num_triangles == 0:
-        return False
-    return True
+    # if a+b>(L):
+    #     break
+print(triangles)
 
-
-def singular_right_tris(l):
-    sings = 0
-    l_max = int(sqrt(l) / 2)
-    for i in range(1, l_max):
-        if num_integer_right_triangles(i):
-            sings += 1
-    return sings
+# perimeter=120
+# num_triangles = 0
+# for b in range(1, perimeter // 2):
+#     a = (2 * b * perimeter - perimeter ** 2) / (2 * (b - perimeter))
+#
+#     if a % 1:
+#         continue
+#     a = int(a)
+#     if a < b:
+#         if a ** 2 + b ** 2 == (perimeter - a - b) ** 2:
+#             num_triangles += 1
+#
 
 
-LLL = 1500000
-print(singular_right_tris(LLL))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
