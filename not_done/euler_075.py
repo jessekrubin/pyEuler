@@ -27,25 +27,30 @@ L ≤ 1,500,000 can exactly one integer sided right angle triangle
 be formed?
 """
 
-from math import sqrt
+from math import sqrt, gcd
 from itertools import count
 from collections import defaultdict
 from tqdm import tqdm
 
-L = 150
+L = 15000
 range_lim = int(sqrt(L) + 1)
 print(range_lim)
-squares={i**2:i for i in range(1, L)}
+
+squares={i**2:i for i in range(1, L//2)}
 # print(squares)
 print("found squares")
 
 triangles = {}
-for a in tqdm(range(1, range_lim)):
-    for b in range(1, a):
-        c_sq = (a*a) + (b*b)
-        if c_sq in squares:
-            per = a+b+squares[c_sq]
-            triangles[per] = triangles.get(per, 0) + 1
+for a in tqdm(range(1, L)):
+    for b in range(1, a, 2):
+        if gcd(a, b) == 1:
+            # print("___")
+            # print(a, b)
+            c_sq = (a*a) + (b*b)
+            if c_sq in squares:
+                # print("HERM")
+                per = a+b+squares[c_sq]
+                triangles[per] = triangles.get(per, 0) + 1
 
 
 
