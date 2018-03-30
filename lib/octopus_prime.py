@@ -5,6 +5,7 @@ from os import path
 from inspect import getfile
 from bisect import bisect_right, bisect_left
 from functools import lru_cache
+from numpy import load, save
 
 def prime_sieve_gen(upper_bound=None, known_primes=None):
     if known_primes is not None and max(known_primes) > 1:
@@ -87,44 +88,62 @@ def prime_factorization(n):
 
 class OctopusPrime(list):
     """
-    OctopusPrime is capable of finding all the primes you need
+    OctopusPrime, the leader of the Autobots, here to help you find primes
 
+    ░░░░░░░▄▄▄▄█████████████▄▄▄░░░░░░░
+    ████▄▀████████▀▀▀▀▀▀████████▀▄████
+    ▀████░▀██████▄▄░░░░▄▄██████▀░████▀
+    ░███▀▀█▄▄░▀▀██████████▀▀░▄▄█▀▀███░
+    ░████▄▄▄▀▀█▄░░░▀▀▀▀░░░▄█▀▀▄▄▄████░
+    ░░██▄▄░▀▀████░██▄▄██░████▀▀░▄▄██░░
+    ░░░▀████▄▄▄██░██████░██▄▄▄████▀░░░
+    ░░██▄▀▀▀▀▀▀▀▀░░████░░▀▀▀▀▀▀▀▀▄██░░
+    ░░░██░░░░░░░░░░████░░░░░░░░░░██░░░
+    ░░░███▄▄░░░░▄█░████░█▄░░░░▄▄███░░░
+    ░░░███████░███░████░███░███████░░░
+    ░░░███████░███░▀▀▀▀░███░███████░░░
+    ░░░███████░████████████░███████░░░
+    ░░░░▀█████░███░▄▄▄▄░███░█████▀░░░░
+    ░░░░░░░░▀▀░██▀▄████▄░██░▀▀░░░░░░░░
+    ░░░░░░░░░░░░▀░██████░▀░░░░░░░░░░░░
 
     """
 
     def __init__(self,n=10, save_path = None):
         if save_path is None:
-            self.save_path = path.join(path.dirname(getfile(OctopusPrime)), 'octopus.prime')
+            self.save_path = path.join(path.dirname(getfile(OctopusPrime)), 'primes.npy')
         else:
             self.save_path = save_path
         try:
             list.__init__(self, self.__load())
+            print(self)
             self.max_loaded = self[-1]
-        except ValueError:
+        except:
             print("AM HERE")
             list.__init__(self, list(prime_sieve_gen(upper_bound=10)))
             self.max_loaded = 0
 
     def __del__(self):
-        if len(self)> self.max_loaded:
-            print("herm")
+        print("\n deleieintsdlkjfa")
+        print(self)
+        if self[-1]> self.max_loaded:
             self.__save()
 
+    def __str__(self):
+        info = ["__\ninfo ",
+                "# primes: {}".format(len(self)),
+                "save path: {}".format(self.save_path),
+                "max prime: {}".format(0)]
+                # "max prime: {}".format(self[-1])]
+        if len(self)< 200:
+            info.append(super.__str__(self))
+        return "\n".join(info)
+
     def __load(self):
-        if path.isfile(self.save_path):
-            with open(self.save_path, 'r') as f:
-                primes = [int(line) for line in f.readlines() if line is not '\n']
-            if len(primes) > 0:
-                return primes
-            elif len(primes) == 0:
-                raise ValueError
-        raise FileNotFoundError("{} Not file".format(self.save_path))
+        return load(self.save_path)
 
     def __save(self):
-        with open(self.save_path, 'w', encoding='utf-8') as f:
-            for prime in self:
-                f.write(str(prime))
-                f.write('\n')
+        save(self.save_path, self)
 
     def transform(self, n = None):
         n = n if n is not None else self[-1] * 10
@@ -139,9 +158,9 @@ class OctopusPrime(list):
             return False
 
     def primes_below(self, upper_bound):
-        return self.prime_range(1, upper_bound)
+        return self.primes_between(1, upper_bound)
 
-    def prime_range(self, lower_bound, upper_bound):
+    def primes_between(self, lower_bound, upper_bound):
         if upper_bound > self[-1]:
             self.transform(upper_bound)
         return self[bisect_right(self, lower_bound):bisect_left(self, upper_bound)]

@@ -18,6 +18,7 @@ print(octpy)
 
 
 octpy.transform(50)
+octpy.transform(200)
 print(octpy)
 
 
@@ -26,6 +27,6 @@ print(another)
 print(another.is_prime(99))
 print(another)
 
-# print(another.prime_range(160, 200))
+# print(another.primes_between(160, 200))
 # print(another.primes_below(20))
 # print(another)
