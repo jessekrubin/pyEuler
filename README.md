@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-03-30) i've done 77 problems, and am currently working on 20.
+Last I checked (2018-04-01) i've done 77 problems, and am currently working on 20.
 
 ## Problems table
 
@@ -37,4 +37,6 @@ Last I checked (2018-03-30) i've done 77 problems, and am currently working on 2
 |113 ~ :scream:|114 ~ :see_no_evil:|115 ~ :see_no_evil:|116 ~ :see_no_evil:|117 ~ :see_no_evil:|118 ~ :see_no_evil:|119 ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|123 ~ :snake:|124 ~ :snake:|125 ~ :see_no_evil:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|164 ~ :snake:|165 ~ :see_no_evil:|166 ~ :see_no_evil:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
+|177 ~ :see_no_evil:|178 ~ :see_no_evil:|179 ~ :no_smoking:|180 ~ :see_no_evil:|181 ~ :see_no_evil:|182 ~ :see_no_evil:|183 ~ :see_no_evil:|184 ~ :see_no_evil:|
+|185 ~ :see_no_evil:|186 ~ :see_no_evil:|187 ~ :no_smoking:|188 ~ :see_no_evil:|189 ~ :see_no_evil:|190 ~ :see_no_evil:|191 ~ :see_no_evil:|192 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|205 ~ :scream:|206 ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|

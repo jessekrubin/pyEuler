@@ -76,7 +76,7 @@ def sur_la_table():
         probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
     ]
     table_lines = [make_table_line(row) for row in rows
-                   if any(prob_num in DONE for prob_num in row) in DONE]
+                   if any(prob_num in DONE or prob_num in NO_CIGAR for prob_num in row) in DONE]
     return table_lines
 
 
