@@ -7,7 +7,7 @@ from functools import lru_cache
 
 @lru_cache(maxsize=None)
 def fib(n: int) -> int:
-    """Return the nth fibonacci number w/ recursion
+    """Return the nth fibonacci number
 
     :param n: nth fib number index
     :return: nth fib number
