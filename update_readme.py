@@ -4,20 +4,20 @@
 # Python script to update the README.md for this repo
 
 import datetime
+from os import path
 from os import listdir
-from os.path import isfile, join
 
 DONE_PATH = r'./done'
 NOT_DONE_PATH = r'./not_done'
 NO_CIGAR_PATH = r'./no_cigar'
 LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
-DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if isfile(join(DONE_PATH, f))]
+DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if path.isfile(path.join(DONE_PATH, f))]
 DONE.sort()
-NO_CIGAR = [int(f[6:9]) for f in listdir(NO_CIGAR_PATH) if isfile(join(NO_CIGAR_PATH, f))]
+NO_CIGAR = [int(f[6:9]) for f in listdir(NO_CIGAR_PATH) if path.isfile(path.join(NO_CIGAR_PATH, f))]
 NO_CIGAR.sort()
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
-    if isfile(join(NOT_DONE_PATH, f)) and f.startswith("euler")
+    if path.isfile(path.join(NOT_DONE_PATH, f)) and f.startswith("euler")
 ]
 NOT_DONE.sort()
 DONE_LIST_STR = ("DONE: {}".format(DONE))
