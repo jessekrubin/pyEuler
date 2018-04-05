@@ -38,9 +38,11 @@ class tictoc:
             print('__TICTOC__\n'
                   '    file: {}\n'
                   '    funk: {}\n'
+                  '    args: {}\n'
                   '    time: {} ms\n'
                   '    runs: {}\n'.format(getfile(funk),
                                           funk.__name__,
+                                          str(args),
                                           t_total*1000,
                                           self.runs
                                           ))
