@@ -4,7 +4,7 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
-Last I checked (2018-04-05) i've done 80 problems, and am currently working on 18.
+Last I checked (2018-04-08) i've done 81 problems, and am currently working on 18.
 
 ## Problems table
 
@@ -29,7 +29,7 @@ Last I checked (2018-04-05) i've done 80 problems, and am currently working on 1
 |49 ~ :snake:|50 ~ :snake:|51 ~ :see_no_evil:|52 ~ :snake:|53 ~ :snake:|54 ~ :see_no_evil:|55 ~ :snake:|56 ~ :snake:|
 |57 ~ :see_no_evil:|58 ~ :snake:|59 ~ :see_no_evil:|60 ~ :snake:|61 ~ :see_no_evil:|62 ~ :snake:|63 ~ :snake:|64 ~ :see_no_evil:|
 |65 ~ :see_no_evil:|66 ~ :see_no_evil:|67 ~ :snake:|68 ~ :scream:|69 ~ :scream:|70 ~ :see_no_evil:|71 ~ :see_no_evil:|72 ~ :see_no_evil:|
-|73 ~ :see_no_evil:|74 ~ :snake:|75 ~ :scream:|76 ~ :snake:|77 ~ :snake:|78 ~ :scream:|79 ~ :snake:|80 ~ :see_no_evil:|
+|73 ~ :snake:|74 ~ :snake:|75 ~ :scream:|76 ~ :snake:|77 ~ :snake:|78 ~ :scream:|79 ~ :snake:|80 ~ :see_no_evil:|
 |81 ~ :snake:|82 ~ :see_no_evil:|83 ~ :see_no_evil:|84 ~ :see_no_evil:|85 ~ :snake:|86 ~ :see_no_evil:|87 ~ :snake:|88 ~ :see_no_evil:|
 |89 ~ :see_no_evil:|90 ~ :see_no_evil:|91 ~ :see_no_evil:|92 ~ :snake:|93 ~ :see_no_evil:|94 ~ :see_no_evil:|95 ~ :see_no_evil:|96 ~ :see_no_evil:|
 |97 ~ :snake:|98 ~ :scream:|99 ~ :snake:|100 ~ :see_no_evil:|101 ~ :see_no_evil:|102 ~ :snake:|103 ~ :see_no_evil:|104 ~ :snake:|
