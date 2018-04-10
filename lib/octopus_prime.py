@@ -7,12 +7,13 @@ from bisect import bisect_right, bisect_left
 from functools import lru_cache
 from numpy import load, save
 
+
 def prime_sieve_gen(upper_bound=None, known_primes=None):
     if known_primes is not None and max(known_primes) > 1:
         div_dict = {p**2: p for p in known_primes}
         filter_num = known_primes[-1]
         for kprime in known_primes:
-            divisible_num = (filter_num//kprime)*kprime + kprime
+            divisible_num = (filter_num // kprime) * kprime + kprime
             while divisible_num in div_dict:
                 divisible_num += kprime
             div_dict[divisible_num] = kprime
@@ -34,6 +35,7 @@ def prime_sieve_gen(upper_bound=None, known_primes=None):
         filter_num += 1
         if upper_bound is not None and upper_bound < filter_num:
             break
+
 
 @lru_cache(maxsize=None)
 def is_prime(number: int) -> bool:
@@ -109,43 +111,60 @@ class OctopusPrime(list):
 
     """
 
-    def __init__(self,n=10, save_path = None):
+    def __init__(self, n=10, save_path=None):
+        autobot = """
+        ______OCTOPUS_PRIME ACTIVATE______
+        ░░░░░░░▄▄▄▄█████████████▄▄▄░░░░░░░
+        ████▄▀████████▀▀▀▀▀▀████████▀▄████
+        ▀████░▀██████▄▄░░░░▄▄██████▀░████▀
+        ░███▀▀█▄▄░▀▀██████████▀▀░▄▄█▀▀███░
+        ░████▄▄▄▀▀█▄░░░▀▀▀▀░░░▄█▀▀▄▄▄████░
+        ░░██▄▄░▀▀████░██▄▄██░████▀▀░▄▄██░░
+        ░░░▀████▄▄▄██░██████░██▄▄▄████▀░░░
+        ░░██▄▀▀▀▀▀▀▀▀░░████░░▀▀▀▀▀▀▀▀▄██░░
+        ░░░██░░░░░░░░░░████░░░░░░░░░░██░░░
+        ░░░███▄▄░░░░▄█░████░█▄░░░░▄▄███░░░
+        ░░░███████░███░████░███░███████░░░
+        ░░░███████░███░▀▀▀▀░███░███████░░░
+        ░░░███████░████████████░███████░░░
+        ░░░░▀█████░███░▄▄▄▄░███░█████▀░░░░
+        ░░░░░░░░▀▀░██▀▄████▄░██░▀▀░░░░░░░░
+        ░░░░░░░░░░░░▀░██████░▀░░░░░░░░░░░░
+
+
+        """
         if save_path is None:
-            self.save_path = path.join(path.dirname(getfile(OctopusPrime)), 'primes.npy')
+            self.save_path = path.join(path.dirname(
+                getfile(OctopusPrime)), 'primes.npy')
         else:
             self.save_path = save_path
         try:
-            list.__init__(self, self.__load())
-            print(self)
+            list.__init__(self, self._load())
             self.max_loaded = self[-1]
         except:
-            print("AM HERE")
             list.__init__(self, list(prime_sieve_gen(upper_bound=10)))
             self.max_loaded = 0
 
     def __del__(self):
-        print("\n deleieintsdlkjfa")
-        print(self)
-        if self[-1]> self.max_loaded:
-            self.__save()
+        if self[-1] > self.max_loaded:
+            self._save()
 
     def __str__(self):
         info = ["__\ninfo ",
+
                 "# primes: {}".format(len(self)),
                 "save path: {}".format(self.save_path),
-                "max prime: {}".format(0)]
-                # "max prime: {}".format(self[-1])]
-        if len(self)< 200:
-            info.append(super.__str__(self))
+                "max prime: {}".format(self[-1])]
+        # "max prime: {}".format(self[-1])]
         return "\n".join(info)
 
-    def __load(self):
+    def _load(self):
         return load(self.save_path)
 
-    def __save(self):
+    def _save(self):
         save(self.save_path, self)
 
-    def transform(self, n = None):
+    def transform(self, n=None):
         n = n if n is not None else self[-1] * 10
         self.extend(list(prime_sieve_gen(upper_bound=n, known_primes=self)))
 
@@ -163,11 +182,8 @@ class OctopusPrime(list):
     def primes_between(self, lower_bound, upper_bound):
         if upper_bound > self[-1]:
             self.transform(upper_bound)
-        return self[bisect_right(self, lower_bound):bisect_left(self, upper_bound)]
+        return self[bisect_right(self, lower_bound):bisect_left(self.upper_bound)]
 
 #########
 # TESTS #
 #########
-
-
-

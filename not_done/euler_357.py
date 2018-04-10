@@ -15,25 +15,42 @@ from functools import lru_cache
 from lib.octopus_prime import is_prime
 from lib.maths import divisors_list
 
+from functools import partial
+from lib.octopus_prime import prime_sieve_gen
+from tqdm import tqdm
 
-@lru_cache(maxsize=None)
 def funnn(d, n):
     return d + (n / d)
 
+def thingy(limit):
+    print("____")
+    print(limit)
+    D = {}
+    count = 1
+    primes = set(i for i in(prime_sieve_gen(limit)))
+    # print("\nprimes made")
+    def divisors_thing(divs, n):
+        return all(i in primes for i in map(partial(funnn, n=n),(divs)))
 
-def divisors_thing(number):
-    for index in divisors_list(number):
-        fun_num = (funnn(index, number))
-        if not funnn(index, number).is_integer():
-            return False
+
+    for q in tqdm(range(0, limit+1)):
+        if q not in D:
+            D.setdefault(q + q, set()).add(q)
         else:
-            if not is_prime(fun_num):
-                return False
-    return True
+            if q%4==2:
+                first_half = sorted(D[q])
 
+                if divisors_thing(first_half[0:1+len(first_half)//2], q):
+                    # print(q)
+                    count += q
+            # print("SOMETHING", something)
 
-total = 0
-for i in range(1, 100000000):
-    if divisors_thing(i):
-        # print(i)
-        total += i
+            for p in D[q]:
+                D.setdefault(p + q, set()).add(p)
+            D.setdefault(q + q, set()).add(q)
+            del D[q]
+
+    return (count)
+
+for i in range(2, 10):
+    print(thingy(10 ** i))
