@@ -32,6 +32,7 @@ README_TEXT = """# pEuler
 
 This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
+Recently I have started to do some of the problems in bash. 
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 
