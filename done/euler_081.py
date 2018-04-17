@@ -26,7 +26,7 @@ lil_mat = [[131, 673, 234, 103, 18],
            [537, 699, 497, 121, 956],
            [805, 732, 524,  37, 331]]
 
-with open('../txt_files/p081_matrix.txt') as f: # load the matrix
+with open('../txt_files/p081_p082_p083_matrix.txt') as f: # load the matrix
     big_mat = [list(map(int, row.strip('\n').split(','))) for row in f.readlines()]
 
 def min_path_two_ways(grid):
