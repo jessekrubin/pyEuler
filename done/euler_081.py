@@ -42,7 +42,7 @@ def min_path_two_ways(grid):
     for j in range(1, size):
         sol_grid[j][0] += sol_grid[j - 1][0]
 
-    # for each cell not in the first row and the first column in 'Z' order
+    # for each box not in the first row and the first column in 'Z' order
     for i in range(1, size):
         for j in range(1, size):
             # take the min
