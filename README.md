@@ -6,7 +6,7 @@ Recently I have started to do some of the problems in bash.
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 
-Last I checked (2018-04-17) i've done 86 problems, and am currently working on 20.
+Last I checked (2018-04-18) i've done 87 problems, and am currently working on 20.
 
 ## Problems table
 
@@ -38,6 +38,7 @@ Last I checked (2018-04-17) i've done 86 problems, and am currently working on 2
 |105 ~ :see_no_evil:|106 ~ :see_no_evil:|107 ~ :snake:|108 ~ :scream:|109 ~ :see_no_evil:|110 ~ :see_no_evil:|111 ~ :see_no_evil:|112 ~ :snake:|
 |113 ~ :scream:|114 ~ :see_no_evil:|115 ~ :see_no_evil:|116 ~ :see_no_evil:|117 ~ :see_no_evil:|118 ~ :see_no_evil:|119 ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|123 ~ :snake:|124 ~ :snake:|125 ~ :see_no_evil:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
+|129 ~ :see_no_evil:|130 ~ :see_no_evil:|131 ~ :see_no_evil:|132 ~ :see_no_evil:|133 ~ :see_no_evil:|134 ~ :snake:|135 ~ :see_no_evil:|136 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|164 ~ :snake:|165 ~ :see_no_evil:|166 ~ :see_no_evil:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|205 ~ :scream:|206 ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|
 |345 ~ :scream:|346 ~ :scream:|347 ~ :snake:|348 ~ :snake:|349 ~ :see_no_evil:|350 ~ :see_no_evil:|351 ~ :see_no_evil:|352 ~ :see_no_evil:|

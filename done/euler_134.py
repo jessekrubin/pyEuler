@@ -43,6 +43,4 @@ for i in trange(len(primes) - 1, ascii=True):
         mod_tens *= 10
     total += prime_pair_connection(primes[i], primes[i+1], mod_tens)
 
-print(total)
-
-# 18613431715334298
+print(total) # 18613431715334298
