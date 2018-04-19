@@ -1,7 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
-
 """
 Largest product in a grid
 Problem 11
@@ -36,7 +35,7 @@ What is the greatest product of four adjacent numbers in the same
 direction(up, down, left, right, or diagonally) in the 20×20 grid?
 """
 
-grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+mat = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -57,62 +56,31 @@ grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
-lines = grid.split("\n")
-
-grid = []
-
-for string in lines:
-    strNums = string.split(" ")
-    lineInts = []
-    for s in strNums:
-        lineInts.append(int(s))
-    grid.append(lineInts)
+mat = [list(map(int, string.split(" "))) for string in mat.split('\n')]
 
 
 def horizontal(r, c):
-    return grid[r][c] * grid[r][c + 1] * grid[r][c + 2] * grid[r][c + 3]
+    return mat[r][c] * mat[r][c + 1] * mat[r][c + 2] * mat[r][c + 3]
 
 
 def vertical(r, c):
-    return grid[r][c] * grid[r + 1][c] * grid[r + 2][c] * grid[r + 3][c]
+    return mat[r][c] * mat[r + 1][c] * mat[r + 2][c] * mat[r + 3][c]
 
 
-def diag(r, c):
-    return grid[r][c] * grid[r + 1][c + 1] * grid[r + 2][c + 2] * grid[r + 3][c + 3]
+def backslash(r, c):
+    return mat[r][c] * mat[r + 1][c + 1] * mat[r + 2][c + 2] * mat[r + 3][c
+                                                                          + 3]
 
 
-def otherdiag(r, c):
-    return grid[r][c] * grid[r - 1][c + 1] * grid[r - 2][c + 2] * grid[r - 3][c + 3]
+def forwardslash(r, c):
+    return mat[r][c] * mat[r - 1][c + 1] * mat[r - 2][c + 2] * mat[r - 3][c
+                                                                          + 3]
 
 
-horizontals = []
-verticals = []
-diags = []
-otherdiags = []
-misses = 0
-for j in range(20):
-    for i in range(20):
-        try:
-            horizontals.append(horizontal(i, j))
-        except IndexError:
-            pass
-
-        try:
-            verticals.append(vertical(i, j))
-        except IndexError:
-            pass
-
-        try:
-            diags.append(diag(i, j))
-        except IndexError:
-            pass
-
-        try:
-            otherdiags.append(otherdiag(i, j))
-        except IndexError:
-            pass
-
-allDirs = horizontals + verticals + diags + otherdiags
-# print(allDirs)
-# print(grid)
-print("Max product: {}".format(max(allDirs)))  # Max product: 70600674
+horizontals = max(horizontal(r, c) for r in range(20) for c in range(17))
+verticals = max(vertical(r, c) for r in range(17) for c in range(20))
+backslash_diag = max(backslash(r, c) for r in range(17) for c in range(17))
+forwardslash_diag = max(
+    forwardslash(r, c) for r in range(3, 20) for c in range(17))
+max_product = max((horizontals, verticals, forwardslash_diag, backslash_diag))
+print("Max product: {}".format(max_product))  # Max product: 70600674

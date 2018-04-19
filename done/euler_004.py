@@ -14,17 +14,25 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 from lib.string_theory import is_palindrome
 from lib.decorations import tictoc
 
+
 def largest_palidrome_product(n_digit_numbers):
-    lower_bound = 10**(n_digit_numbers-1)
+    lower_bound = 10**(n_digit_numbers - 1)
     upper_bound = lower_bound * 10
-    return max(map(int, filter(is_palindrome, (str(int(i * j)) for i in range(lower_bound,upper_bound) for j in range(i, upper_bound)))))
+    return max(
+        map(int,
+            filter(is_palindrome, (str(int(i * j))
+                                   for i in range(lower_bound, upper_bound)
+                                   for j in range(i, upper_bound)))))
+
 
 assert 9009 == largest_palidrome_product(2)
+
 
 @tictoc(10)
 def p004():
     return largest_palidrome_product(3)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     answer = p004()
     print("max paindrome: {}".format(answer))

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin ~ Project Euler
-
 """
 Even Fibonacci numbers
 Problem 2
@@ -17,9 +16,14 @@ four million, find the sum of the even-valued terms.
 from lib.fibbing import fib
 from lib.decorations import tictoc
 
+
 @tictoc
 def sum_even_fibs(upper_bound):
-    return [n for n in [fib(i) for i in range(40)] if n % 2 == 0 and n < upper_bound+1]
+    return [
+        n for n in [fib(i) for i in range(40)]
+        if n % 2 == 0 and n < upper_bound + 1
+    ]
+
 
 even_fibs_below_4_mil = sum_even_fibs(4000000)
 print("Even fib numbers below 4 million: {}".format(even_fibs_below_4_mil))

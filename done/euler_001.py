@@ -12,13 +12,16 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 from lib.decorations import tictoc
 
+
 def fives_n_threes(upper_bound):
     return sum(i for i in range(upper_bound) if (i % 3 == 0) or (i % 5 == 0))
+
 
 @tictoc(1000)
 def p001():
     return fives_n_threes(1000)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     answer = p001()
     print("Sum: {}".format(answer))  # Sum: 233168
