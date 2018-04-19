@@ -33,8 +33,11 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 16- and 17-digit strings. What is the maximum 16-digit string for a "magic"
 5-gon ring?
 """
+
 from itertools import combinations
 
+# Looking for the max 16 digit string for the magic 5-gon ring means that
+# the 10 must be on the outside.
 one_to_ten = tuple((i+1 for i in range(10)))
 print(one_to_ten)
 

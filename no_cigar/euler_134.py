@@ -19,12 +19,10 @@ from lib.octopus_prime import is_prime, prime_sieve_gen
 from tqdm import tqdm
 from tqdm import trange
 
-lower_bound_p1 = 5
-upper_bound_p1 = 1000000
 
 def prime_pair_connection(p1, p2, mod_tens):
-    ret = p2*11
-    mul = 11
+    ret = p2
+    mul = 1
     mul_by = 2 # the multiplication is always by 2 so skip every other
     while ret%mod_tens!=p1:
         ret += mul_by*p2
@@ -34,7 +32,9 @@ def prime_pair_connection(p1, p2, mod_tens):
 
 assert 1219 == prime_pair_connection(19, 23, 100)
 
-primes = [p for p in prime_sieve_gen(upper_bound_p1+5) if p > 3]
+lower_bound_p1 = 5 # starting at 5
+upper_bound_p1 = 1000000 + 5 # get one more prime larger than 1000000
+primes = [p for p in prime_sieve_gen(upper_bound_p1) if p > 3]
 
 total = 0
 mod_tens = 10
@@ -43,4 +43,4 @@ for i in trange(len(primes) - 1, ascii=True):
         mod_tens *= 10
     total += prime_pair_connection(primes[i], primes[i+1], mod_tens)
 
-print(total) # 18613431715334298
+print("ANSWER: {}".format(total)) # ANSWER: 18613426663617118
