@@ -11,7 +11,7 @@ x + y, x − y, x + z, x − z, y + z, y − z
 are all perfect squares.
 """
 
-perfect_squares = set([i**2 for i in range(10000000)])
+perfect_squares = set(i**2 for i in range(10000000))
 
 
 #
