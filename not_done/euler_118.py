@@ -45,10 +45,9 @@ from lib.listless import dig_list_2_int
 
 def check_partitions(perm):
     print(perm)
-    if len(perm) == 1:
-        
-
     lests = []
+    if len(perm) == 1:
+        lests.append([])
     for i in range(len(perm)):
         num = dig_list_2_int(perm[0:i+1])
         if is_prime(num):
@@ -56,6 +55,7 @@ def check_partitions(perm):
             l = check_partitions(perm[i+1:])
             if l is not None and len(l)>1:
                 lests.append([num, l])
+    print(lests)
     return lests
 
 
