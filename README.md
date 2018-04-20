@@ -6,7 +6,7 @@ Recently I have started to do some of the problems in bash.
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 
-Last I checked (2018-04-19) i've done 87 problems, and am currently working on 21.
+Last I checked (2018-04-19) i've done 88 problems, and am currently working on 21.
 
 ## Problems table
 
@@ -30,7 +30,7 @@ Last I checked (2018-04-19) i've done 87 problems, and am currently working on 2
 |41 ~ :snake:|42 ~ :snake:|43 ~ :snake:|44 ~ :snake:|45 ~ :snake:|46 ~ :snake:|47 ~ :snake:|48 ~ :snake:|
 |49 ~ :snake:|50 ~ :snake:|51 ~ :see_no_evil:|52 ~ :snake:|53 ~ :snake:|54 ~ :snake:|55 ~ :snake:|56 ~ :snake:|
 |57 ~ :see_no_evil:|58 ~ :snake:|59 ~ :see_no_evil:|60 ~ :snake:|61 ~ :see_no_evil:|62 ~ :snake:|63 ~ :snake:|64 ~ :see_no_evil:|
-|65 ~ :see_no_evil:|66 ~ :see_no_evil:|67 ~ :snake:|68 ~ :scream:|69 ~ :scream:|70 ~ :see_no_evil:|71 ~ :snake:|72 ~ :scream:|
+|65 ~ :see_no_evil:|66 ~ :see_no_evil:|67 ~ :snake:|68 ~ :snake:|69 ~ :scream:|70 ~ :see_no_evil:|71 ~ :snake:|72 ~ :scream:|
 |73 ~ :snake:|74 ~ :snake:|75 ~ :scream:|76 ~ :snake:|77 ~ :snake:|78 ~ :scream:|79 ~ :snake:|80 ~ :see_no_evil:|
 |81 ~ :snake:|82 ~ :scream:|83 ~ :snake:|84 ~ :see_no_evil:|85 ~ :snake:|86 ~ :see_no_evil:|87 ~ :snake:|88 ~ :see_no_evil:|
 |89 ~ :snake:|90 ~ :see_no_evil:|91 ~ :see_no_evil:|92 ~ :snake:|93 ~ :see_no_evil:|94 ~ :see_no_evil:|95 ~ :see_no_evil:|96 ~ :scream:|
