@@ -3,82 +3,45 @@
 # Jesse Rubin
 """
 """
-from pprint import pprint
 
-lil_mat = [[131, 673, 234, 103, 18],
-           [201,  96, 342, 965, 150],
-           [630, 803, 746, 422, 111],
-           [537, 699, 497, 121, 956],
-           [805, 732, 524,  37, 331]]
-
-with open('../txt_files/p082_matrix.txt') as f: # load the matrix
-    big_mat = list(list(map(int, row.strip('\n').split(','))) for row in f.readlines())
-
-
-lil_mat = [list(reversed(line)) for line in lil_mat]
-
-[121, 1086, 533, 489, 368]
-[355, 697, 1279, 986, 892]
-[1028, 793, 1596, 1685, 1624]
-[1125, 994, 1624, 2161, 2429]
-
-def min_path_three_ways(sol_grid):
-    printing = False
-    # size of the grid
-    size = len(sol_grid)
-    outerswep = [0] * size
-    for col in range(1, size):
-        sweeper2 = outerswep
-        if printing:
-            print("___")
-            print("COL", col)
-            pprint(sol_grid)
-        for row in range(0, size):
-
-            vals = [sol_grid[row][col-1]]
-            # if row == 0:
-            #     vals.append(sol_grid[row+1][col-1] + sol_grid[row+1][col])
-            # if row == (size - 1):
-            #     vals.append(sol_grid[row-1][col-1] + sol_grid[row-1][col])
-            # else:
-
-            # try:
-            #     vals.append(sol_grid[row+1][col-1] + sol_grid[row+1][col])
-            # except:
-            #     pass
-            # try:
-            #     vals.append(sol_grid[row-1][col-1] + sol_grid[row-1][col])
-            # except:
-            #     pass
-            try:
-                vals.append(outerswep[row+1] + sol_grid[row+1][col])
-            except:
-                pass
-            try:
-                vals.append(outerswep[row-1] + sol_grid[row-1][col])
-            except:
-                pass
-            sweeper2[row] = (min(vals))
-        for row in range(0, size):
-            if row == 3 and col == 4:
-                print(row)
-            sol_grid[row][col] += sweeper2[row]
-        outerswep = sweeper2
-        if printing:
-            print("GRID UPDATED COL")
-            print("")
-            print(sweeper2)
-            pprint(sol_grid)
-    print(outerswep)
-    print(min(outerswep))
-    lascol = ([sol_grid[r][size-1] for r in range(size)])
-    return min(lascol)
+def min_path_three_ways(mat):
+    mat = list(map(list, zip(*mat))) # transpose lists so that we can just jump frum list to list
+    h = len(mat)
+    w = len(mat[0])
+    solution = [mat[0][:]]
+    for i in range(1, h):
+        sweeper2 = [0]*w
+        left = [solution[i-1][0], (solution[i-1][1] + mat[i][1])]
+        right = [solution[i-1][w-1], (solution[i-1][w-2] + mat[i][w-2])]
+        sweeper2[0] = min(left)
+        sweeper2[w-1] = min(right)
+        for j in range(1, w-1):
+            paths = []
+            paths.append(solution[i-1][j])
+            if j > 0: # check horizontal paths going one way
+                for jj in range(j):
+                    paths.append((solution[i-1][jj]) + sum(mat[i][jj:j]))
+            if j < (w-1): # check horizontal paths going the other way
+                for jj in range(j+1, w-1):
+                    paths.append((solution[i-1][jj]) + sum(mat[i][j+1:jj+1]))
+            sweeper2[j] = min(paths)
+        for j in range(w):
+            sweeper2[j] += mat[i][j]
+        solution.append(sweeper2)
+    return min(solution[-1])
 
 def p083():
-    lil_test = min_path_three_ways(lil_mat) # check the small test case
-    print(lil_test)
+    lil_mat = [[131, 673, 234, 103, 18],
+               [201,  96, 342, 965, 150],
+               [630, 803, 746, 422, 111],
+               [537, 699, 497, 121, 956],
+               [805, 732, 524,  37, 331]]
+
+    with open('../txt_files/p081_p082_p083_matrix.txt') as f: # load the matrix
+        big_mat = list(list(map(int, row.strip('\n').split(','))) for row in f.readlines())
+    assert  994 == min_path_three_ways(lil_mat) # check the small test case
     return min_path_three_ways(big_mat)
 
 if __name__ == '__main__':
     answer = p083()
-    print("Minimum path two ways: {}".format(answer))
+    print("Minimum path three ways: {}".format(answer))
