@@ -19,12 +19,7 @@ How many elements would be contained in the set of reduced proper fractions
 for d ≤ 1,000,000?
 """
 
-from tqdm import tqdm
-from functools import lru_cache
-from math import gcd
 import bisect
-
-from lib.octopus_prime import prime_sieve_gen
 
 
 def genprimes(limit):

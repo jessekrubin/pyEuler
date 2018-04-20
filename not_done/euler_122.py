@@ -31,11 +31,8 @@ for example m(15) = 5.
 For 1 ≤ k ≤ 200, find ∑ m(k).
 """
 
-from itertools import count
 from lib.octopus_prime import is_prime, prime_sieve_gen
-from functools import lru_cache
 
-@lru_cache(maxsize=None)
 def m(k):
     if is_prime(k):
         thingy = [h for h in prime_sieve_gen(k)]
@@ -52,7 +49,7 @@ def m(k):
                 return len(set(exponents))
             if k-n in exponents:
                 return len(set(exponents))
-    return(k)
+    return k
 
 
 # result = m(16)

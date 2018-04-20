@@ -14,11 +14,10 @@ For example,
 Find f(1,000,000,000,000)
 """
 
-from lib.maths import cash_factorial
-from itertools import count
+from functools import lru_cache
 
 from tqdm import tqdm
-from functools import lru_cache
+
 
 @lru_cache(maxsize=None)
 def mull(a, b):

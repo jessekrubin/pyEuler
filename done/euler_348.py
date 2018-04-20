@@ -7,7 +7,7 @@ template
 """
 # THIS IS A TEMPLATEEEEE
 
-+#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin
 """
@@ -42,7 +42,7 @@ def find_square_cube_pals():
         for j in range(1, i+1):
             # nermber: int = isq + (j*j*j)
             nermber = isq + cube(j)
-            if is_palindrome((nermber)):
+            if is_palindrome(nermber):
                 pals_dict[nermber] = pals_dict.get(nermber, 0) + 1
 
     # {5229225: 4, 37088073: 4, 108909801: 4, 56200265: 4, 796767697: 4}

@@ -28,7 +28,7 @@ def ordered_fractions(d):
         if frac_multiplied * left_denom > left_numerator * denom:
             left_denom = denom
             left_numerator = frac_multiplied
-    return (left_numerator, left_denom)
+    return left_numerator, left_denom
 
 assert (2, 5) == ordered_fractions(8)
 

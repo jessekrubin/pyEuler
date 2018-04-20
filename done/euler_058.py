@@ -35,7 +35,7 @@ def spiral_prime_iterator(ratio_bound):
     adds = 0
     total_priems = 0
     total_nums = 0
-    while(ratio > ratio_bound):
+    while ratio > ratio_bound:
         if adds > 0 and adds % 4 == 0:
             addon += 2
         i += addon

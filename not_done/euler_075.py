@@ -27,11 +27,11 @@ L ≤ 1,500,000 can exactly one integer sided right angle triangle
 be formed?
 """
 
-from math import sqrt, gcd
-from itertools import count
-from collections import defaultdict
-from tqdm import tqdm
 import bisect
+from math import sqrt
+
+from tqdm import tqdm
+
 
 # def triangles(limit):
 #     L = limit
@@ -103,7 +103,7 @@ def triangles(limit):
 
     county += sum(1 for k, v in tri_perims.items() if v ==1)
     print(county)
-    return(county)
+    return county
 
 # triangles(30)
 

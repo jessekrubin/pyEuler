@@ -6,11 +6,10 @@ Decorations
 """
 from cProfile import Profile
 from functools import wraps
-from time import time
-from json import load, dump
+from inspect import getfile
 from io import open
 from os import path, getcwd
-from inspect import getfile
+from time import time
 
 
 class tictoc:
@@ -50,38 +49,17 @@ class tictoc:
 
         return wrapper
 
-
-class json_cash:
-    def __init__(self, cash_dir):
-        self.cache_dir = cash_dir
-        self.cache = {}
-
-    def __call__(self, funk):
-
-        @wraps(funk)
-        def wrapper(*args, **kwargs):
-            cache_file_path = path.join(self.cache_dir, funk.__name__ + ".json")
-            try:
-                with open(cache_file_path, 'r', encoding='utf-8') as stored:
-                    self.cache[args] = load(stored)
-            except IOError:
-                pass
-
-            if args in self.cache:
-                return self.cache[str(args)]
-            else:
-                val = funk(*args, **kwargs)
-                self.cache[str(args)] = val
-                with open(cache_file_path, 'w', encoding='utf-8') as stored:
-                    print(self.cache)
-                    dump(self.cache, stored, indent=2)
-                return val
-            return data
-
-        return wrapper
-
-
-
+def cash(funk):
+    cash_money = {}
+    @wraps(funk)
+    def wrapper(*argz):
+        if argz in cash_money:
+            return cash_money[argz]
+        else:
+            rv = funk(*argz)
+            cash_money[argz] = rv
+            return rv
+    return wrapper
 
 def cprof(funk):
     """

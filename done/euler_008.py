@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin
-
 """
 Largest product in a series
 Problem 8

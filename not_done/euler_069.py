@@ -27,8 +27,6 @@ Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 
 from math import gcd
 from operator import itemgetter
-from lib.maths import divisors_gen
-from lib.octopus_prime import is_prime
 
 
 def phi(n):

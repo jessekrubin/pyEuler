@@ -15,9 +15,9 @@ by p1 and n is divisible by p2. Let S be the smallest of these values of n.
 Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 """
 
-from lib.octopus_prime import is_prime, prime_sieve_gen
-from tqdm import tqdm
 from tqdm import trange
+
+from lib.octopus_prime import prime_sieve_gen
 
 
 def prime_pair_connection(p1, p2, mod_tens):

@@ -11,13 +11,12 @@ Find the sum of all positive integers n not exceeding 100,000,000
 such that for every divisor d of n, d+n/d is prime.
 """
 
-from functools import lru_cache
-from lib.octopus_prime import is_prime
-from lib.maths import divisors_list
-
 from functools import partial
-from lib.octopus_prime import prime_sieve_gen
+
 from tqdm import tqdm
+
+from lib.octopus_prime import prime_sieve_gen
+
 
 def funnn(d, n):
     return d + (n / d)
@@ -30,7 +29,7 @@ def thingy(limit):
     primes = set(i for i in(prime_sieve_gen(limit)))
     # print("\nprimes made")
     def divisors_thing(divs, n):
-        return all(i in primes for i in map(partial(funnn, n=n),(divs)))
+        return all(i in primes for i in map(partial(funnn, n=n), divs))
 
 
     for q in tqdm(range(0, limit+1)):
@@ -50,7 +49,7 @@ def thingy(limit):
             D.setdefault(q + q, set()).add(q)
             del D[q]
 
-    return (count)
+    return count
 
 for i in range(2, 10):
     print(thingy(10 ** i))

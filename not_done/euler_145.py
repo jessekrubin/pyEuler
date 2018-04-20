@@ -13,7 +13,7 @@ There are 120 reversible numbers below one-thousand.
 
 How many reversible numbers are there below one-billion (10^9)?
 """
-from tqdm import tqdm
+
 
 def reverse(n):
     reversed = 0

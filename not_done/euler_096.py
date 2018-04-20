@@ -184,7 +184,7 @@ class Sodoku:
         boxbuds = Sodoku.box_inds(r, c)
         rowbuds = Sodoku.row_inds(r)
         colbuds = Sodoku.col_inds(c)
-        return (set.union(boxbuds, rowbuds, colbuds))
+        return set.union(boxbuds, rowbuds, colbuds)
 
     def dict_update(self, r, c, val):
         check = Sodoku.affected_inds(r, c).intersection(self.d.keys())
@@ -200,26 +200,21 @@ class Sodoku:
 
     def reduce_dictionary(self):
         # print(any(1 == len(v) for k, v in self.d.items()))
-        while not all(1 < len(v) for k, v in self.d.items()):
+        while any(1 == len(v) for k, v in self.d.items()):
             for k in list(self.d.keys()):
                 if k in self.d:
-                    posibilities = self.cell_possibilities(*k)
-                    print(k, posibilities)
-                    if len(posibilities) == 1:
-                        val = posibilities.pop()
+                    if len(self.d[k]) == 1:
+                        val = self.d[k].pop()
                         self.set_cell(*k, val)
 
-                    else:
-                        self.d[k] = posibilities
-            self.d = {k: v for k, v in self.d.items() if len(v) > 0}
-            # print(self.d)
+            self.d = {k: v for k, v in self.d.items() if len(v) > 0} # clean up the dictionary of empty sets
+
             for i in range(3):
                 for j in range(3):
                     boxinds = self.box_inds(i, j).intersection(self.d.keys())
                     couttttt = self.box_cell_count(boxinds)
                     for k, v in couttttt.items():
                         if v == 1:
-                            # print(k, v)
                             for ind in boxinds:
                                 if ind in self.d and k in self.d[ind]:
                                     # print(ind, self.d[ind])
@@ -275,11 +270,11 @@ class Sodoku:
         for r in range(9):
             if s.rowset(r) != must_be:
                 return False
-            if (s.colset(r) != must_be):
+            if s.colset(r) != must_be:
                 return False
         for r in range(3):
             for c in range(3):
-                if (s.boxset(r, c) != must_be):
+                if s.boxset(r, c) != must_be:
                     return False
         return True
 
@@ -287,28 +282,28 @@ class Sodoku:
 
     def solve(self):
         self.reduce_dictionary()
-        if (Sodoku.is_solved(self.board)):
+        if Sodoku.is_solved(self.board):
             print("SOLUTION FOUND")
             # print(self)
-            return self.board
         else:
             print("NO SOLVE YET")
             print(self)
             print(self.d)
 
-            cell, p = self.d.popitem()
-            for k, v in self.d.items():
-                for poss in v:
-                    print(self)
-                    print(cell, p)
-                    pboard = [row[:] for row in self.board]
-                    pboard[cell[0]][cell[1]] = poss
-                    ssss = Sodoku(pboard, self.d.copy())
-                    ssss.solve()
-                    aaaa= Sodoku.is_solved(pboard)
-                    # print(ssss)
-                    if len(ssss.d) == 0:
-                        return ssss.board
+        return self.board
+            # cell, p = self.d.popitem()
+            # for k, v in self.d.items():
+            #     for poss in v:
+            #         print(self)
+            #         print(cell, p)
+            #         pboard = [row[:] for row in self.board]
+            #         pboard[cell[0]][cell[1]] = poss
+            #         ssss = Sodoku(pboard, self.d.copy())
+            #         ssss.solve()
+            #         aaaa= Sodoku.is_solved(pboard)
+            #         # print(ssss)
+            #         if len(ssss.d) == 0:
+            #             return ssss.board
 
 
             # potential = Sodoku(self.board, self.d)
@@ -327,10 +322,10 @@ ssss = Sodoku(sodokus[1])
 ssss.solve()
 print(ssss)
 cccccoutnter = 0
-# for s in sodokus:
-#     cccccoutnter += 1
-#     print("puzzle num ", cccccoutnter)
-#     ssss = Sodoku(s)
-#     print(ssss)
-#     ssss.solve()
-#     print(ssss)
+for i in range(len(sodokus)-20):
+    cccccoutnter += 1
+    print("puzzle num ", cccccoutnter)
+    ssss = Sodoku(sodokus[i])
+    print(ssss)
+    ssss.solve()
+    print(ssss)

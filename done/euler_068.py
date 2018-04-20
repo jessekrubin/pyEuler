@@ -35,7 +35,7 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 """
 
 from itertools import combinations, permutations
-from math import factorial
+
 from lib.listless import rotate_list
 
 # Looking for the max 16 digit string for the magic 5-gon ring means that
@@ -49,7 +49,7 @@ for t in combinations(one_to_ten, 3):
 triplets = {k : v for k, v in triplets.items() if 13 < k < 20}
 
 def rotate_ring(ring):
-    while(ring[0][0] != min(r[0] for r in ring)):
+    while ring[0][0] != min(r[0] for r in ring):
         ring = rotate_list(ring, 1)
     return ring
 
@@ -57,7 +57,7 @@ def rotate_ring(ring):
 
 
 def rotate_ring(ring):
-    while(ring[0][0] != min(r[0] for r in ring)):
+    while ring[0][0] != min(r[0] for r in ring):
         ring = rotate_list(ring, 1)
     return ring
 

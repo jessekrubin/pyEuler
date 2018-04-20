@@ -4,8 +4,8 @@
 from os import path
 from inspect import getfile
 from bisect import bisect_right, bisect_left
-# from functools import lru_cache
-# from numpy import load, save
+from functools import lru_cache
+from numpy import load, save
 
 
 def prime_sieve_gen(upper_bound=None, known_primes=None):
@@ -37,7 +37,7 @@ def prime_sieve_gen(upper_bound=None, known_primes=None):
             break
 
 
-# @lru_cache(maxsize=None)
+@lru_cache(maxsize=None)
 def is_prime(number):
     """
     Returns True if number is prime

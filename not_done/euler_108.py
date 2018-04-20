@@ -17,7 +17,6 @@ What is the least value of n for which the number of distinct solutions exceeds 
 
 NOTE: This problem is an easier version of Problem 110; it is strongly advised that you solve this one first.
 """
-from math import sqrt
 
 from itertools import count
 
@@ -28,9 +27,9 @@ def count_recips(n):
     for i in range(n+1, 2*n):
         for j in count(2*n):
             print(i, j)
-            if (i*j ==  i*n + j*n):
+            if i*j ==  i*n + j*n:
                 total += 1
-            elif (i*j > i*n + j*n):
+            elif i*j > i*n + j*n:
                 # print(i*j)
                 # print(i*n)
                 # print(n*j)

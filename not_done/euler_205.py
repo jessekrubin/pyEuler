@@ -12,11 +12,7 @@ The result is a draw if the totals are equal.
 What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer
 rounded to seven decimal places in the form 0.abcdefg
 """
-from itertools import combinations, permutations, combinations_with_replacement
-
-
-from tqdm import tqdm
-from collections import defaultdict
+from itertools import permutations, combinations_with_replacement
 
 for c in combinations_with_replacement('1234', 4):
     print(c)
@@ -36,9 +32,6 @@ for c in combinations_with_replacement('1234', 4):
 #         except:
 #             vals[sum(combo)] = 1
 #     return vals
-
-from tqdm import tqdm
-from collections import defaultdict
 
 for c in combinations_with_replacement('1234', 4):
     print(c)

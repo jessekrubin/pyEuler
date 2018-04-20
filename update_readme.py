@@ -36,6 +36,7 @@ Recently I have started to do some of the problems in bash.
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 
+
 Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 ## Problems table
@@ -81,26 +82,28 @@ def sur_la_table():
                    if any(prob_num in DONE for prob_num in row) in DONE]
     return table_lines
 
+def write_README():
+    with open('README.md', 'w') as f:
+        f.write(README_TEXT)
 
-with open('README.md', 'w') as f:
-    f.write(README_TEXT)
+        table_header = "| Problem # |" + " # |" * (
+                NUM_COLUMNS - 1) + "\n"
+        f.write(table_header)
+        header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
+        f.write(header_sep)
+        f.writelines(sur_la_table())
 
-    table_header = "| Problem # |" + " # |" * (
-            NUM_COLUMNS - 1) + "\n"
-    f.write(table_header)
-    header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
-    f.write(header_sep)
-    f.writelines(sur_la_table())
-
-print("______________________")
-print("# problems done: {}".format(len(DONE)))
-print("______________________")
-print("# problems kinda done: {}".format(len(NO_CIGAR)))
-print("______________________")
-print("# problems !done: {}".format(len(NOT_DONE)))
-print("______________________")
-print("Dear Jesse,\n"
-      "you have updated this repo's README.md.\n"
-      "So proud of you,\n"
-      "Yourself,\n"
-      "Jesse")
+if __name__ == '__main__':
+    write_README()
+    print("______________________")
+    print("# problems done: {}".format(len(DONE)))
+    print("______________________")
+    print("# problems kinda done: {}".format(len(NO_CIGAR)))
+    print("______________________")
+    print("# problems !done: {}".format(len(NOT_DONE)))
+    print("______________________")
+    print("Dear Jesse,\n"
+          "you have updated this repo's README.md.\n"
+          "So proud of you,\n"
+          "Yourself,\n"
+          "Jesse")

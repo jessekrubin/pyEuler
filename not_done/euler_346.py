@@ -16,7 +16,6 @@ Find the sum of all strong repunits below 10^12.
 """
 
 import time
-from lib.decorations import tictoc
 
 
 def ones_base_n(base, under):

@@ -19,9 +19,6 @@ O   O   O   O   O
 Find the least value of n for which p(n) is divisible by one million.
 """
 
-from itertools import count
-import functools
-
 
 def p(n):
     sums = [0] * (n+1)

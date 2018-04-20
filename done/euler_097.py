@@ -23,7 +23,7 @@ from lib.maths import power_mod
 
 @tictoc
 def p097(last_n_digits=10):
-    return (power_mod(2, 7830456, 10**last_n_digits)*28433 + 1)
+    return power_mod(2, 7830456, 10 ** last_n_digits) * 28433 + 1
 
 if __name__=='__main__':
     answer = p097()
