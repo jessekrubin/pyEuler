@@ -6,6 +6,8 @@ Recently I have started to do some of the problems in bash.
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 
+![alt text](https://projecteuler.net/profile/rubinj.png)
+
 Last I checked (2018-04-20) i've done 88 problems, and am currently working on 23.
 
 ## Problems table

@@ -13,6 +13,7 @@ NO_CIGAR_PATH = r'./no_cigar'
 LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
 DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if path.isfile(path.join(DONE_PATH, f))]
 DONE.sort()
+EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
 NO_CIGAR = [int(f[6:9]) for f in listdir(NO_CIGAR_PATH) if path.isfile(path.join(NO_CIGAR_PATH, f))]
 NO_CIGAR.sort()
 NOT_DONE = [
@@ -36,6 +37,7 @@ Recently I have started to do some of the problems in bash.
 Functions I regularly use are kept in the lib package file at the root of this repo;
 Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
 
+![alt text]({})
 
 Last I checked ({}) i've done {} problems, and am currently working on {}.
 
@@ -51,7 +53,10 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 {} = n/a; not started
 
-""".format(LAST_UPDATED, len(DONE), len(NOT_DONE),
+""".format(EULER_IMG_URL,
+           LAST_UPDATED,
+           len(DONE),
+           len(NOT_DONE),
            DONE_EMOJI,
            NO_CIGAR_EMOJI,
            INPROG_EMOJI,
