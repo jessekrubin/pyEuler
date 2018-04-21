@@ -8,7 +8,7 @@ Feel free to check it out and leave either constructive or dispariging criticism
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-04-20) i've done 89 problems, and am currently working on 22.
+Last I checked (2018-04-20) i've done 91 problems, and am currently working on 22.
 
 ## Problems table
 
@@ -41,6 +41,7 @@ Last I checked (2018-04-20) i've done 89 problems, and am currently working on 2
 |113 ~ :scream:|114 ~ :see_no_evil:|115 ~ :see_no_evil:|116 ~ :see_no_evil:|117 ~ :see_no_evil:|118 ~ :scream:|119 ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|123 ~ :snake:|124 ~ :snake:|125 ~ :see_no_evil:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|164 ~ :snake:|165 ~ :see_no_evil:|166 ~ :see_no_evil:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
+|169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|172 ~ :see_no_evil:|173 ~ :snake:|174 ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|205 ~ :scream:|206 ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|
 |345 ~ :scream:|346 ~ :scream:|347 ~ :snake:|348 ~ :snake:|349 ~ :see_no_evil:|350 ~ :see_no_evil:|351 ~ :see_no_evil:|352 ~ :see_no_evil:|
 |609 ~ :see_no_evil:|610 ~ :see_no_evil:|611 ~ :see_no_evil:|612 ~ :see_no_evil:|613 ~ :snake:|614 ~ :see_no_evil:|615 ~ :see_no_evil:|
