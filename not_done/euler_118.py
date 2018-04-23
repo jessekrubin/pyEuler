@@ -17,7 +17,7 @@ from itertools import permutations
 from lib.octopus_prime import is_prime
 
 
-# primes = [p for p in prime_sieve_gen(10000000000)]
+# primes = [pytriplets_gen for pytriplets_gen in prime_sieve_gen(10000000000)]
 # print(len(primes))
 #
 def partition(number):

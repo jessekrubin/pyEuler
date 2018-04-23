@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
-
+"""
+collection of v funky vector functions for project euler
+"""
 from math import sqrt, acos
-
 
 def length(vector):
     return sqrt(dotproduct(vector, vector))
@@ -18,7 +19,7 @@ def dotproduct(v1, v2):
     return sum((a * b) for a, b in zip(v1, v2))
 
 
-def cross_prod_2d(v1: tuple or list, v2: tuple or list) -> int:
+def cross_prod_2d(v1, v2):
     """Cross product of two 2d vectors
 
     :param v1: first vector

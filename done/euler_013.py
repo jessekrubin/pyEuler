@@ -112,4 +112,4 @@ big_ass_string = """37107287533902102798797998220837590246510135740250
 53503534226472524250874054075591789781264330331690"""
 
 first_10_digits = str(sum(list(map(int, (big_ass_string.split('\n'))))))[0:10]
-print(f"1st 10 digits: {first_10_digits}")
+print("1st 10 digits: {}".format(first_10_digits))

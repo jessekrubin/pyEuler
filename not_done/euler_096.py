@@ -72,24 +72,25 @@ sodoku = [[int(n) for n in l] for l in grid.split('\n')]
 print(sodoku)
 from collections import Counter
 
-class Sodoku:
+
+class Sodoku(object):
     ALL = {1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-    def __init__(self, board, dict = None):
+    def __init__(self, board, dict=None):
         self.board = board
         self.num_zeros = sum(sum(1 for n in l if n == 0) for l in self.board)
         if dict is not None:
             self.d = dict
         else:
-            all_set = {i+1 for i in range(9)}
-            self.d = {(r, c): {i+1 for i in range(9)}
+            all_set = {i + 1 for i in range(9)}
+            self.d = {(r, c): {i + 1 for i in range(9)}
                       for r in range(9) for c in range(9) if self.board[r][c] == 0}
 
             for r in range(9):
                 for c in range(9):
                     if self.board[r][c] > 0:
-                         # print(self.board)
-                         self.dict_update(r, c, self.board[r][c])
+                        # print(self.board)
+                        self.dict_update(r, c, self.board[r][c])
 
             # print(self.d)
             # print(self)
@@ -106,18 +107,18 @@ class Sodoku:
         mid_border = "╠═══════╬═══════╬═══════╣"
         bot_border = "╚═══════╩═══════╩═══════╝"
         top_boxes = "\n".join(
-            "║ {} {} {} ║ {} {} {} ║ {} {} {} ║".format(*self.row(l))
-            for l in range(0, 3))
+                "║ {} {} {} ║ {} {} {} ║ {} {} {} ║".format(*self.row(l))
+                for l in range(0, 3))
         mid_boxes = "\n".join(
-            "║ {} {} {} ║ {} {} {} ║ {} {} {} ║".format(*self.row(l))
-            for l in range(3, 6))
+                "║ {} {} {} ║ {} {} {} ║ {} {} {} ║".format(*self.row(l))
+                for l in range(3, 6))
         bot_boxes = "\n".join(
-            "║ {} {} {} ║ {} {} {} ║ {} {} {} ║".format(*self.row(l))
-            for l in range(6, 9))
+                "║ {} {} {} ║ {} {} {} ║ {} {} {} ║".format(*self.row(l))
+                for l in range(6, 9))
         strings = [
             header, top_border, top_boxes, mid_border, mid_boxes, mid_border,
             bot_boxes, bot_border
-        ]
+            ]
         return "\n".join(strings)
 
     def row(self, n):
@@ -125,6 +126,7 @@ class Sodoku:
 
     def rowset(self, n):
         # thing = {self.d[(n, i)] for i in range(9) if len(self.d[(n, i)]) == 1}
+        # noinspection Annotator
         a = {*self.board[n]}
         # print(thing, a)
         return a
@@ -134,6 +136,7 @@ class Sodoku:
 
     def colset(self, n):
         # return {self.board[r][n] for r in range(9)}
+        # noinspection Annotator
         return {*self.col(n)}
 
     def box(self, r, c):
@@ -142,14 +145,13 @@ class Sodoku:
         # if c > 2:
         c //= 3
 
-        box = [self.row(i)[c * 3:3+(c*3)] for i in range(r*3, (r*3) + 3)]
+        box = [self.row(i)[c * 3:3 + (c * 3)] for i in range(r * 3, (r * 3) + 3)]
 
         # print(box)
         return box
 
-
     def boxset(self, r, c):
-        box =  self.box(r, c)
+        box = self.box(r, c)
         return {n for sublist in box for n in sublist if n > 0}
 
     def cell_possibilities(self, r, c):
@@ -189,7 +191,7 @@ class Sodoku:
     def dict_update(self, r, c, val):
         check = Sodoku.affected_inds(r, c).intersection(self.d.keys())
         for cell in check:
-            if cell in self.d and len(self.d[cell])>0:
+            if cell in self.d and len(self.d[cell]) > 0:
                 if val in self.d[cell]:
                     self.d[cell].remove(val)
 
@@ -205,9 +207,10 @@ class Sodoku:
                 if k in self.d:
                     if len(self.d[k]) == 1:
                         val = self.d[k].pop()
+                        # noinspection Annotator
                         self.set_cell(*k, val)
 
-            self.d = {k: v for k, v in self.d.items() if len(v) > 0} # clean up the dictionary of empty sets
+            self.d = {k: v for k, v in self.d.items() if len(v) > 0}  # clean up the dictionary of empty sets
 
             for i in range(3):
                 for j in range(3):
@@ -218,6 +221,7 @@ class Sodoku:
                             for ind in boxinds:
                                 if ind in self.d and k in self.d[ind]:
                                     # print(ind, self.d[ind])
+                                    # noinspection Annotator
                                     self.set_cell(*ind, k)
                                     self.reduce_dictionary()
                         if v == 2:
@@ -237,14 +241,14 @@ class Sodoku:
                                 # print(xxx)
                                 thing = self.row_inds(xxx.pop()).intersection(self.d.keys()) - boxinds
                                 for cell in thing:
-                                    if cell in self.d and len(self.d[cell])>0:
+                                    if cell in self.d and len(self.d[cell]) > 0:
                                         if k in self.d[cell]:
                                             self.d[cell].remove(k)
                             if len(yyy) == 1:
                                 # print(yyy)
                                 thing = self.col_inds(yyy.pop()).intersection(self.d.keys()) - boxinds
                                 for cell in thing:
-                                    if cell in self.d and len(self.d[cell])>0:
+                                    if cell in self.d and len(self.d[cell]) > 0:
                                         if k in self.d[cell]:
                                             self.d[cell].remove(k)
 
@@ -265,7 +269,7 @@ class Sodoku:
 
     @staticmethod
     def is_solved(board):
-        must_be = {i+1 for i in range(9)}
+        must_be = {i + 1 for i in range(9)}
         s = Sodoku(board)
         for r in range(9):
             if s.rowset(r) != must_be:
@@ -278,8 +282,6 @@ class Sodoku:
                     return False
         return True
 
-
-
     def solve(self):
         self.reduce_dictionary()
         if Sodoku.is_solved(self.board):
@@ -291,22 +293,21 @@ class Sodoku:
             print(self.d)
 
         return self.board
-            # cell, p = self.d.popitem()
-            # for k, v in self.d.items():
-            #     for poss in v:
-            #         print(self)
-            #         print(cell, p)
-            #         pboard = [row[:] for row in self.board]
-            #         pboard[cell[0]][cell[1]] = poss
-            #         ssss = Sodoku(pboard, self.d.copy())
-            #         ssss.solve()
-            #         aaaa= Sodoku.is_solved(pboard)
-            #         # print(ssss)
-            #         if len(ssss.d) == 0:
-            #             return ssss.board
+        # cell, pytriplets_gen = self.d.popitem()
+        # for k, v in self.d.items():
+        #     for poss in v:
+        #         print(self)
+        #         print(cell, pytriplets_gen)
+        #         pboard = [row[:] for row in self.board]
+        #         pboard[cell[0]][cell[1]] = poss
+        #         ssss = Sodoku(pboard, self.d.copy())
+        #         ssss.solve()
+        #         aaaa= Sodoku.is_solved(pboard)
+        #         # print(ssss)
+        #         if len(ssss.d) == 0:
+        #             return ssss.board
 
-
-            # potential = Sodoku(self.board, self.d)
+        # potential = Sodoku(self.board, self.d)
 
 s1 = Sodoku(sodoku)
 print("___")

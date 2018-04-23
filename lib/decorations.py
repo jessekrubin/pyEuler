@@ -12,10 +12,11 @@ from os import path, getcwd
 from time import time
 
 
-class tictoc:
+class tictoc(object):
+
     def __init__(self, runs=1, save=False):
-        self.runs=runs
-        self.save=save
+        self.runs = runs
+        self.save = save
 
     def __call__(self, funk):
         @wraps(funk)
@@ -24,16 +25,16 @@ class tictoc:
             for i in range(self.runs):
                 result = funk(*args, **kwargs)
             te = time()
-            t_total = (te-ts)/self.runs
+            t_total = (te - ts) / self.runs
 
             if self.save:
                 prob_n = getfile(funk)[-6:-3]
-                with open(path.join(getcwd(), "./tictoc/p{}.tictoc".format(prob_n)), "a") as tictoc_file:
+                with open(path.join(getcwd(), "./tictoc/pytriplets_gen{}.tictoc".format(prob_n)), "a") as tictoc_file:
                     tictoc_file.write(
-                        'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
-                                                                       str(kwargs),
-                                                                       str(t_total),
-                                                                       str(self.runs)))
+                            'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
+                                                                           str(kwargs),
+                                                                           str(t_total),
+                                                                           str(self.runs)))
             print('__TICTOC__\n'
                   '    file: {}\n'
                   '    funk: {}\n'
@@ -42,14 +43,20 @@ class tictoc:
                   '    runs: {}\n'.format(getfile(funk),
                                           funk.__name__,
                                           str(args),
-                                          t_total*1000,
+                                          t_total * 1000,
                                           self.runs
                                           ))
             return result
 
         return wrapper
 
-def cash(funk):
+def cash_muney(funk):
+    """
+    for when you want that lru cach money but are working w py2
+
+    :param funk:
+    :return:
+    """
     cash_money = {}
     @wraps(funk)
     def wrapper(*argz):

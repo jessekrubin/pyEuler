@@ -4,6 +4,7 @@
 """
 Digit cancelling ordered_fractions
 Problem 33
+
 The fraction 49/98 is a curious fraction, as an inexperienced mathematician
 in attempting to simplify it may incorrectly believe that 49/98 = 4/8,
 which is correct, is obtained by cancelling the 9s.
@@ -13,8 +14,8 @@ We shall consider ordered_fractions like, 30/50 = 3/5, to be trivial examples.
 There are exactly four non-trivial examples of this type of fraction, less
 than one in value, and containing two digits in the numerator and denominator.
 
-If the product of these four ordered_fractions is given in its lowest common terms,
-find the value of the denominator.
+If the product of these four ordered_fractions is given in its lowest common
+terms, find the value of the denominator.
 """
 
 list_of_toops = [(j, i) for i in range(10, 100) for j in range(10, i)]
@@ -57,10 +58,8 @@ def div_toop(toop):
 
 thingsy = [toop for toop in list_of_toops if is_fishy_fraction(toop)]
 
-print(thingsy)
 product = 1
 for i in map(div_toop, thingsy):
-    print(i)
     product *= i
 numProd = 1
 denProd = 1
@@ -69,6 +68,6 @@ for thing in thingsy:
     denProd *= thing[1]
 
 
-print(f"{numProd} - {numProd} / 387296")
-print(f"{denProd} - {denProd} / 387296")
-print("simplifies to 1/100")
+# print("{} - {} / 387296".format(numProd, numProd))
+# print("{} - {} / 387296".format(denProd, denProd))
+print("Simplifies to 1/100")

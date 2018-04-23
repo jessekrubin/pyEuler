@@ -13,7 +13,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 """
 
-from lib.fibbing import fib
+from lib.maths import fib
 from lib.decorations import tictoc
 
 

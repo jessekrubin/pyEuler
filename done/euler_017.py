@@ -15,7 +15,7 @@ British usage.
 """
 
 
-def one_nine(n: int):
+def one_nine(n):
     if n == 1:
         return "one"
     elif n == 2:

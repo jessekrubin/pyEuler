@@ -17,38 +17,35 @@ Which prime, below one-million, can be written as the sum of the most
 consecutive primes?
 """
 
-from lib.octopus_prime import is_prime
+from lib.octopus_prime import prime_sieve_gen
 
 
-def consecutive_prime_sum(number: int):
-    primes_list = [i for i in range(2, number) if is_prime(i)]
-    print(f'found primes below {number}')
+def consecutive_prime_sum(upper_bound):
+    primes_list = [p for p in prime_sieve_gen(upper_bound)]
     primes_set = set(primes_list)
     longest_seq = 1
     max_sum = 1
-    for i in range(len(primes_list), 0, -1):
-        cur_sum = primes_list[i - 1]
+    for p in range(len(primes_list), 0, -1):
+        cur_sum = primes_list[p - 1]
         cur_seq_length = 1
-        for j in range(i - 1, 0, -1):
+        for j in range(p - 1, 0, -1):
             cur_sum += primes_list[j - 1]
             cur_seq_length += 1
-            if cur_sum > number:
+            if cur_sum > upper_bound:
                 break
-            if cur_seq_length >= longest_seq and cur_sum < number and cur_sum in primes_set:
+            if cur_seq_length >= longest_seq and cur_sum < upper_bound and cur_sum in primes_set:
                 max_sum = cur_sum
                 longest_seq = cur_seq_length
     return longest_seq, max_sum
 
+def p050():
+    assert 6, 41 == consecutive_prime_sum(100)
+    assert 21, 953 == consecutive_prime_sum(1000)
 
-below = 100
-answer_sequence_length, prime_answer = consecutive_prime_sum(below)
-print(
-    f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
-below = 1000
-answer_sequence_length, prime_answer = consecutive_prime_sum(below)
-print(
-    f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
-below = 1000000
-answer_sequence_length, prime_answer = consecutive_prime_sum(below)
-print(
-    f'{prime_answer} is the largest prime below {below} and can be written as the sum of {answer_sequence_length} consecutive primes')
+    below = 1000000
+    answer_sequence_length, prime_answer = consecutive_prime_sum(below)
+    print('Largest prime below {}: {}'.format(below, prime_answer))
+    print('sum of {} consecutive primes'.format(answer_sequence_length))
+
+if __name__ == '__main__':
+    p050()

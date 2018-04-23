@@ -54,25 +54,25 @@ print(p)
 
 # def counting_fractions(upper_bound=None, known_primes=None):
 #     div_dict = {}
-#     p = 2
+#     pytriplets_gen = 2
 #     count = 0
 #     primes = []
 #     while True:
-#         prime_div = div_dict.pop(p, None)
+#         prime_div = div_dict.pop(pytriplets_gen, None)
 #         if prime_div:
-#             divisible_num = prime_div + p
+#             divisible_num = prime_div + pytriplets_gen
 #             print(div_dict)
 #             while divisible_num in div_dict:
 #                 divisible_num += prime_div
 #             div_dict.setdefault(divisible_num, []).append(prime_div)
 #         else:
-#             div_dict.setdefault(p*p, []).append(p)
-#             count += p - 1
-#             primes.append(p)
-#             # yield p
+#             div_dict.setdefault(pytriplets_gen*pytriplets_gen, []).append(pytriplets_gen)
+#             count += pytriplets_gen - 1
+#             primes.append(pytriplets_gen)
+#             # yield pytriplets_gen
 #         print(primes)
-#         p += 1
-#         if upper_bound is not None and upper_bound < p:
+#         pytriplets_gen += 1
+#         if upper_bound is not None and upper_bound < pytriplets_gen:
 #             break
 #     return count
 
@@ -88,9 +88,9 @@ print(p)
 #         if denom in primes_set:
 #             n2 += denom - 1
 #         else:
-#             # smaller_primes = [p for p in primes[0:bisect.bisect_left(primes, denom)] if denom % p != 0]
-#             # smaller_primes = sum(1 for p in primes[0:bisect.bisect_left(primes, denom)] if denom % p != 0)
-#             smaller_primes = [p for p in primes[0:bisect.bisect_left(primes, denom)] if denom % p != 0]
+#             # smaller_primes = [pytriplets_gen for pytriplets_gen in primes[0:bisect.bisect_left(primes, denom)] if denom % pytriplets_gen != 0]
+#             # smaller_primes = sum(1 for pytriplets_gen in primes[0:bisect.bisect_left(primes, denom)] if denom % pytriplets_gen != 0)
+#             smaller_primes = [pytriplets_gen for pytriplets_gen in primes[0:bisect.bisect_left(primes, denom)] if denom % pytriplets_gen != 0]
 #             # print("here", denom)
 #             # print(smaller_primes)
 #             # for ppp in smaller_primes:

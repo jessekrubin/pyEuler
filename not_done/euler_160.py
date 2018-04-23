@@ -40,5 +40,5 @@ def thingy(numb=9, trailing=5):
         fact %= 10**trailing
     print(fact)
 
-thingy(numb=20, trailing=5)
-thingy(numb=1000000000000, trailing=5)
+thingy(numb=20)
+thingy(numb=1000000000000)

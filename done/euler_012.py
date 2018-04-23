@@ -29,19 +29,16 @@ divisors_gen?
 
 from lib.maths import n_divisors
 
-cur_triangle_number = 1
+cur_tri = 1
 maxmax = 1
 i = 1
 while maxmax < 500:
     i += 1
-    cur_triangle_number += i
-    numDivs = n_divisors(cur_triangle_number)
+    cur_tri += i
+    numDivs = n_divisors(cur_tri)
     if numDivs > maxmax:
         maxmax = numDivs
 
-print(f"tri num index: {i}")
-print(f"triangle #: {cur_triangle_number}")
-print(f"# divisors_gen: {n_divisors(cur_triangle_number)}")
-# tri num index: 12375
-# cur #: 76576500
-# # divisors_gen: 576
+print('tri num index: {}'.format(i))  # tri num index: 12375
+print('triangle #: {}'.format(cur_tri))  # cur #: 76576500
+print('# divisors_gen: {}'.format(n_divisors(cur_tri)))  # # divisors_gen: 576

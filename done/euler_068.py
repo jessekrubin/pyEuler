@@ -50,7 +50,7 @@ triplets = {k : v for k, v in triplets.items() if 13 < k < 20}
 
 def rotate_ring(ring):
     while ring[0][0] != min(r[0] for r in ring):
-        ring = rotate_list(ring, 1)
+        ring = rotate_list(ring)
     return ring
 
 
@@ -58,7 +58,7 @@ def rotate_ring(ring):
 
 def rotate_ring(ring):
     while ring[0][0] != min(r[0] for r in ring):
-        ring = rotate_list(ring, 1)
+        ring = rotate_list(ring)
     return ring
 
 def five_gon(ring, remaining_combos):

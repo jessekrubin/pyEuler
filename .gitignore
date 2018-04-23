@@ -2,12 +2,4 @@
 
 # folders
 /.idea/**
-/.vscode/**
-__pycache__/**
-lib/__pycache__/**
-/done/.idea/**
-/not_done/.idea/**
-
 # file types
-*.pyc
-*.json

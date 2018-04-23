@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
-from functools import lru_cache
 from math import sqrt, pi
+from lib.decorations import cash_muney
 
-
-@lru_cache(maxsize=None)
+@cash_muney
 def cash_factorial(n):
     if n == 1:
         return 1
@@ -26,7 +25,7 @@ def power_mod(number, exponent, mod):
     else:
         return 1
 
-@lru_cache(maxsize=None)
+@cash_muney
 def is_perfect_square(positive_n):
     if positive_n < 5:
         if positive_n == 4 or positive_n == 1:
@@ -42,7 +41,6 @@ def is_perfect_square(positive_n):
     return True
 
 
-@lru_cache(maxsize=4)
 def divisors_gen(n):
     large_divisors = []
     for i in range(1, int(sqrt(n) + 1)):
@@ -54,7 +52,6 @@ def divisors_gen(n):
         yield divisor
 
 
-@lru_cache(maxsize=None)
 def n_divisors(n):
     """
     >>> n_divisors(12)
@@ -64,12 +61,22 @@ def n_divisors(n):
     """
     return sum(1 for _ in divisors_gen(n))
 
+@cash_muney
+def gcd_cash_muny(a,b):
+    """
+    cashed gcd from some stack overfloat thign cuz there are five+
+    """
+    r=a%b
+    if r==0:
+        return b
+    if r==1:
+        return 1
+    return gcd_cash_muny(b,r)
 
 def divisors_list(n):
     return [i for i in divisors_gen(n)]
 
-
-def n_digits(number: int) -> int:
+def n_digits(number):
     return sum((1 for _ in str(number)))
 
 
@@ -86,3 +93,23 @@ def reverse(n):
         reversed += n % 10
         n //= 10
     return reversed
+
+
+@cash_muney
+def fib(n):
+    """Return the nth fibonacci number
+
+    :param n: nth fib number index
+    :return: nth fib number
+
+    >>> fib(1)
+    1
+    >>> fib(2)
+    2
+    >>> fib(6)
+    13
+    """
+    if n < 3:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)

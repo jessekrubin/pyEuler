@@ -26,19 +26,19 @@ def thing(z, y, x):
 
 print(thing(13, 10, 7))
 
-for arithmetic_shit in count(1):
+for arithmetic_stuff in count(1):
     for i in range(1, upper_limit * 2):
         try:
-            eval = thing(i, i+arithmetic_shit, i+(2*arithmetic_shit))
+            eval = thing(i, i + arithmetic_stuff, i + (2 * arithmetic_stuff))
             if eval > 0:
-                print(i, i+arithmetic_shit, i+(2*arithmetic_shit))
+                print(i, i + arithmetic_stuff, i + (2 * arithmetic_stuff))
                 print(eval)
                 if eval < upper_limit:
                     siv[eval] += 1
         except:
             pass
 
-    if arithmetic_shit > 2*upper_limit:
+    if arithmetic_stuff > 2*upper_limit:
         break
 
 

@@ -24,7 +24,7 @@ from lib.octopus_prime import is_prime
 def quad(n, a, b): return (n * n) + (a * n) + b
 
 
-def sequece_length(a: int, b: int):
+def sequece_length(a, b):
     n = 0
     while True:
         numb = abs(quad(n, a, b))

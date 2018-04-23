@@ -51,7 +51,7 @@ def min_path_two_ways(grid):
     # return the last value
     return sol_grid[size - 1][size - 1]
 
-@tictoc(1)
+@tictoc()
 def p081():
     return min_path_two_ways(big_mat)
 

@@ -21,11 +21,10 @@ Give your answer rounded to 10 digits after the decimal point.
 """
 
 from math import pi
-from statistics import mean
 
 from tqdm import tqdm
 
-from lib.vfunk import angle
+from lib.vfunky import angle
 
 
 c1 = 4000
@@ -40,5 +39,5 @@ def point_prob(tup):
 if __name__ == '__main__':
     points = [[i, j] for i in range(0, c1) for j in range(0, c2)]
     probs = list(tqdm(map(point_prob, points), total=len(points)))
-    answer = mean(probs)
+    answer = sum(probs)/float(len(probs))
     print("probability: {}".format(answer))

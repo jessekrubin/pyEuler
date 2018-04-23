@@ -59,7 +59,9 @@ How many hands does Player 1 win?
 
 from collections import Counter
 
-class Card:
+
+class Card(object):
+
     def __init__(self, val, suit, strang):
         self.val = val
         self.suit = suit
@@ -73,11 +75,16 @@ class Card:
         try:
             val = int(chars[0])
         except ValueError:
-            if chars[0] == 'T': val = 10
-            elif chars[0] == 'J': val = 11
-            elif chars[0] == 'Q': val = 12
-            elif chars[0] == 'K': val = 13
-            elif chars[0] == 'A': val = 14
+            if chars[0] == 'T':
+                val = 10
+            elif chars[0] == 'J':
+                val = 11
+            elif chars[0] == 'Q':
+                val = 12
+            elif chars[0] == 'K':
+                val = 13
+            elif chars[0] == 'A':
+                val = 14
         return Card(val, suit, strang)
 
     def __str__(self):

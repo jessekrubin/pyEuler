@@ -24,7 +24,7 @@ NOTE: The first two examples in the file represent the triangles in the example
 given above.
 """
 
-from lib.vfunk import cross_prod_2d
+from lib.vfunky import cross_prod_2d
 
 # open file and put into list
 with open(r'../txt_files/p102_triangles.txt') as f:
@@ -54,4 +54,4 @@ def origin_in_trianlge(l):
 
 
 answer = sum([1 for i in list(map(origin_in_trianlge, triangles)) if i])
-print(f"# triangles: {answer}")
+print("# triangles: {}".format(answer))
