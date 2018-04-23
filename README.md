@@ -8,7 +8,7 @@ Feel free to check it out and leave either constructive or dispariging criticism
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-04-20) i've done 91 problems, and am currently working on 22.
+Last I checked (2018-04-22) i've done 92 problems, and am currently working on 22.
 
 ## Problems table
 
@@ -33,7 +33,7 @@ Last I checked (2018-04-20) i've done 91 problems, and am currently working on 2
 |49 ~ :snake:|50 ~ :snake:|51 ~ :see_no_evil:|52 ~ :snake:|53 ~ :snake:|54 ~ :snake:|55 ~ :snake:|56 ~ :snake:|
 |57 ~ :see_no_evil:|58 ~ :snake:|59 ~ :see_no_evil:|60 ~ :snake:|61 ~ :see_no_evil:|62 ~ :snake:|63 ~ :snake:|64 ~ :see_no_evil:|
 |65 ~ :see_no_evil:|66 ~ :see_no_evil:|67 ~ :snake:|68 ~ :snake:|69 ~ :scream:|70 ~ :see_no_evil:|71 ~ :snake:|72 ~ :scream:|
-|73 ~ :snake:|74 ~ :snake:|75 ~ :scream:|76 ~ :snake:|77 ~ :snake:|78 ~ :scream:|79 ~ :snake:|80 ~ :see_no_evil:|
+|73 ~ :snake:|74 ~ :snake:|75 ~ :snake:|76 ~ :snake:|77 ~ :snake:|78 ~ :scream:|79 ~ :snake:|80 ~ :see_no_evil:|
 |81 ~ :snake:|82 ~ :snake:|83 ~ :snake:|84 ~ :see_no_evil:|85 ~ :snake:|86 ~ :see_no_evil:|87 ~ :snake:|88 ~ :see_no_evil:|
 |89 ~ :snake:|90 ~ :see_no_evil:|91 ~ :see_no_evil:|92 ~ :snake:|93 ~ :see_no_evil:|94 ~ :see_no_evil:|95 ~ :see_no_evil:|96 ~ :scream:|
 |97 ~ :snake:|98 ~ :scream:|99 ~ :snake:|100 ~ :see_no_evil:|101 ~ :see_no_evil:|102 ~ :snake:|103 ~ :see_no_evil:|104 ~ :snake:|
@@ -41,7 +41,7 @@ Last I checked (2018-04-20) i've done 91 problems, and am currently working on 2
 |113 ~ :scream:|114 ~ :see_no_evil:|115 ~ :see_no_evil:|116 ~ :see_no_evil:|117 ~ :see_no_evil:|118 ~ :scream:|119 ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|123 ~ :snake:|124 ~ :snake:|125 ~ :see_no_evil:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|164 ~ :snake:|165 ~ :see_no_evil:|166 ~ :see_no_evil:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
-|169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|172 ~ :see_no_evil:|173 ~ :snake:|174 ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
+|169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|172 ~ :scream:|173 ~ :snake:|174 ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|205 ~ :scream:|206 ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|
 |345 ~ :scream:|346 ~ :scream:|347 ~ :snake:|348 ~ :snake:|349 ~ :see_no_evil:|350 ~ :see_no_evil:|351 ~ :see_no_evil:|352 ~ :see_no_evil:|
 |609 ~ :see_no_evil:|610 ~ :see_no_evil:|611 ~ :see_no_evil:|612 ~ :see_no_evil:|613 ~ :snake:|614 ~ :see_no_evil:|615 ~ :see_no_evil:|
