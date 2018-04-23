@@ -6,10 +6,11 @@ from collections import deque, Counter
 
 def is_permutation(a, b):
     """
-    Checks if two integers or lists are permutations of each other
-    :param a:
-    :param b:
-    :return:
+    Checks if ints / lists are permutations
+
+    :param a: int or list
+    :param b: int or list
+    :return: bool; True if a an b are permutations
     """
     if type(a) == int:
         a = digits_list(a)

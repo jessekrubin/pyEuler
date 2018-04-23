@@ -9,20 +9,9 @@ where each “_” is a single digit.
 """
 
 from lib.listless import digits_list
-from lib.decorations import tictoc
 from math import sqrt
 
 def is_1_2_3_4_5_6_7_8_9_0(n):
-    # """
-    # >>> is_1_2_3_4_5_6_7_8_9_0(1122334455667788990)
-    # True
-    # >>> is_1_2_3_4_5_6_7_8_9_0(1121314151617181910)
-    # True
-    # >>> is_1_2_3_4_5_6_7_8_9_0(11122334455667788990)
-    # False
-    # >>> is_1_2_3_4_5_6_7_8_9_0(1112214455667788990)
-    # False
-    # """
     digs = digits_list(n)
     if len(digs) != 19:
         return False
@@ -34,8 +23,6 @@ def is_1_2_3_4_5_6_7_8_9_0(n):
             return False
     return True
 
-
-@tictoc(1000)
 def p206():
     range_max = int(sqrt(1020304050607080900))
     range_min = int(sqrt(1929394959697989990))
@@ -45,5 +32,9 @@ def p206():
             return i
 
 if __name__=='__main__':
+    assert True == is_1_2_3_4_5_6_7_8_9_0(1122334455667788990)
+    assert True == is_1_2_3_4_5_6_7_8_9_0(1121314151617181910)
+    assert False == is_1_2_3_4_5_6_7_8_9_0(11122334455667788990)
+    assert False == is_1_2_3_4_5_6_7_8_9_0(1112214455667788990)
     answer = p206()
     print('{}^2 is {}'.format(answer, answer**2))

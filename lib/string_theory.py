@@ -18,7 +18,7 @@ def is_palindrome(string):
     return True
 
 
-def int_to_binary_string(n):
+def binary_string(n):
     return bin(n)[2:]
 
 
