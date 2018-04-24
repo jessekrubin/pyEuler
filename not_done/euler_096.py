@@ -293,11 +293,11 @@ class Sodoku(object):
             print(self.d)
 
         return self.board
-        # cell, pytriplets_gen = self.d.popitem()
+        # cell, pytriple_gen = self.d.popitem()
         # for k, v in self.d.items():
         #     for poss in v:
         #         print(self)
-        #         print(cell, pytriplets_gen)
+        #         print(cell, pytriple_gen)
         #         pboard = [row[:] for row in self.board]
         #         pboard[cell[0]][cell[1]] = poss
         #         ssss = Sodoku(pboard, self.d.copy())

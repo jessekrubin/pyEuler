@@ -4,12 +4,53 @@
 from math import sqrt, pi
 from lib.decorations import cash_muney
 
+try: xrange
+except NameError: xrange = range
+
 @cash_muney
 def cash_factorial(n):
     if n == 1:
         return 1
     else:
         return cash_factorial(n - 1) * n
+
+from tqdm import tqdm
+def pytriple_gen(max_c, primatives_only=True):
+    """
+    primative pythagorean triples generator
+
+    thanks to 3Blue1Brown
+    special thanks to 3Blue1Brown's video on pythagorean triples
+    https://www.youtube.com/watch?v=QJYmyhnaaek&t=300s
+
+    :param max_c:
+    :return:
+    """
+    count = 0
+    for real_pts in tqdm(xrange(2, int(sqrt(max_c))+1, 1), ascii=True):
+        county = 0
+        start = 1 if real_pts%2==0 else 2
+        # step = 1 if real_pts%2==0 else 2
+        for imag_pts in xrange(start, real_pts, 2):
+            comp = complex(real_pts, imag_pts)
+            sqrd = comp * comp
+            real = int(sqrd.real)
+            imag = int(sqrd.imag)
+            if abs(real-imag)%2 == 1 and gcd(imag, real) == 1:
+                sea = int((comp * comp.conjugate()).real)
+                triple = (imag, real, sea) if real > imag else (real, imag, sea)
+
+                # print("good")
+                # print(triple)
+                # print("")
+                if triple[2] > max_c:
+                    break
+                else:
+                    county += 1
+                    yield triple
+            else:
+                print(imag, real)
+        count += county
 
 
 def rad2deg(n):
@@ -25,22 +66,6 @@ def power_mod(number, exponent, mod):
     else:
         return 1
 
-@cash_muney
-def is_perfect_square(positive_n):
-    if positive_n < 5:
-        if positive_n == 4 or positive_n == 1:
-            return True
-        return False
-    half = positive_n // 2
-    seen_set = {half}
-    while half * half != positive_n:
-        half = (half + (positive_n // half)) // 2
-        if half in seen_set:
-            return False
-        seen_set.add(half)
-    return True
-
-
 def divisors_gen(n):
     large_divisors = []
     for i in range(1, int(sqrt(n) + 1)):
@@ -51,6 +76,10 @@ def divisors_gen(n):
     for divisor in reversed(large_divisors):
         yield divisor
 
+def gcd(a,b):
+    while a:
+        a,b = b%a,a
+    return b
 
 def n_divisors(n):
     """

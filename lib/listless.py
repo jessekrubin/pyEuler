@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 from collections import deque, Counter
+from sys import version_info
 
+if version_info.major > 2:
+    xrange = range
 
 def is_permutation(a, b):
     """
@@ -29,7 +32,11 @@ def rot_list_gen(l):
 
 
 def digits_list(num):
-    """Returns a list of the digits in a number
+    """
+    Returns a list of the digits in a number
+
+    :param num:
+    :return:
 
     >>> digits_list(1111)
     [1, 1, 1, 1]

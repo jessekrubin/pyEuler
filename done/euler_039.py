@@ -4,12 +4,12 @@
 """
 Integer right triangles
 Problem 39
-If pytriplets_gen is the perimeter of a right angle triangle with integral length sides,
-{a,b,c}, there are exactly three solutions for pytriplets_gen = 120.
+If pytriple_gen is the perimeter of a right angle triangle with integral length sides,
+{a,b,c}, there are exactly three solutions for pytriple_gen = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
-For which value of pytriplets_gen ≤ 1000, is the number of solutions maximised?
+For which value of pytriple_gen ≤ 1000, is the number of solutions maximised?
 """
 
 from operator import itemgetter

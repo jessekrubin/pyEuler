@@ -2,53 +2,13 @@
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 """
-Decorations
+Decorations used by me!!!
 """
 from cProfile import Profile
 from functools import wraps
 from inspect import getfile
-from io import open
-from os import path, getcwd
 from time import time
 
-
-class tictoc(object):
-
-    def __init__(self, runs=1, save=False):
-        self.runs = runs
-        self.save = save
-
-    def __call__(self, funk):
-        @wraps(funk)
-        def wrapper(*args, **kwargs):
-            ts = time()
-            for i in range(self.runs):
-                result = funk(*args, **kwargs)
-            te = time()
-            t_total = (te - ts) / self.runs
-
-            if self.save:
-                prob_n = getfile(funk)[-6:-3]
-                with open(path.join(getcwd(), "./tictoc/pytriplets_gen{}.tictoc".format(prob_n)), "a") as tictoc_file:
-                    tictoc_file.write(
-                            'ARGS:{}_KWARGS:{}_TIME:{}_TRIALS:{}\n'.format(str(args),
-                                                                           str(kwargs),
-                                                                           str(t_total),
-                                                                           str(self.runs)))
-            print('__TICTOC__\n'
-                  '    file: {}\n'
-                  '    funk: {}\n'
-                  '    args: {}\n'
-                  '    time: {} ms\n'
-                  '    runs: {}\n'.format(getfile(funk),
-                                          funk.__name__,
-                                          str(args),
-                                          t_total * 1000,
-                                          self.runs
-                                          ))
-            return result
-
-        return wrapper
 
 def cash_muney(funk):
     """
@@ -90,3 +50,40 @@ def cprof(funk):
         return ret_val
 
     return profiled_funk
+
+class tictoc(object):
+    """
+    Timing decorator object
+
+    :param runs: number of runs to time over (defaults to 1)
+    """
+
+    def __init__(self, runs=1):
+        self.runs = runs
+
+    def __str__(self, t_total, funk, args_string):
+            return('__TICTOC__\n'
+                   '    file: {}\n'
+                   '    funk: {}\n'
+                   '    args: {}\n'
+                   '    time: {} ms\n'
+                   '    runs: {}\n'.format(getfile(funk),
+                                          funk.__name__,
+                                          args_string,
+                                          t_total * 1000,
+                                          self.runs))
+
+    def __call__(self, funk):
+        @wraps(funk)
+        def wrapper(*args, **kwargs):
+            self.args = str(args)
+            ts = time()
+            for i in range(self.runs):
+                result = funk(*args, **kwargs)
+            te = time()
+            t_total = (te - ts) / self.runs
+            print(self.__str__(t_total, funk, str(args)))
+            return result
+
+        return wrapper
+

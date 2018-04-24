@@ -48,12 +48,12 @@ def s(n):
     return ret_sum
 
 def p347():
-    # m(pytriplets_gen, q, N) tests
+    # m(pytriple_gen, q, N) test
     assert 96 == m(2, 3, 100)
     assert 75 == m(3, 5, 100)
     assert 0 == m(2, 73, 100)
 
-    # s(n) tests
+    # s(n) test
     assert 2262 == s(100)
 
     sol = 0
