@@ -1,7 +1,9 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - update README.md
-# Python script to update the README.md for this repo
+"""
+Python script to update the README.md for this repo
+"""
 
 import datetime
 from os import path
@@ -47,7 +49,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
  
 {} = done
 
-{} = close, but no cigar; it could be faster
+{} = close, but no cigar; takes more than 1 min
 
 {} = in progress
 
@@ -101,9 +103,11 @@ def write_README():
 if __name__ == '__main__':
     write_README()
     print("______________________")
-    print("# problems done: {}".format(len(DONE)))
+    print("# problems done: {}".format(len(DONE)+len(NO_CIGAR)))
     print("______________________")
-    print("# problems kinda done: {}".format(len(NO_CIGAR)))
+    print("# cigars: {}".format(len(DONE)))
+    print("______________________")
+    print("# not-cigars: {}".format(len(NO_CIGAR)))
     print("______________________")
     print("# problems !done: {}".format(len(NOT_DONE)))
     print("______________________")

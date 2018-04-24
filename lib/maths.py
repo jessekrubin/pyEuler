@@ -3,6 +3,7 @@
 # JESSE RUBIN - project Euler
 from math import sqrt, pi
 from lib.decorations import cash_muney
+from tqdm import tqdm
 
 try: xrange
 except NameError: xrange = range
@@ -14,7 +15,6 @@ def cash_factorial(n):
     else:
         return cash_factorial(n - 1) * n
 
-from tqdm import tqdm
 def pytriple_gen(max_c, primatives_only=True):
     """
     primative pythagorean triples generator
@@ -26,32 +26,18 @@ def pytriple_gen(max_c, primatives_only=True):
     :param max_c:
     :return:
     """
-    count = 0
-    for real_pts in tqdm(xrange(2, int(sqrt(max_c))+1, 1), ascii=True):
-        county = 0
-        start = 1 if real_pts%2==0 else 2
-        # step = 1 if real_pts%2==0 else 2
-        for imag_pts in xrange(start, real_pts, 2):
+    for real_pts in xrange(2, int(sqrt(max_c))+1, 1):
+        for imag_pts in xrange(real_pts%2+1, real_pts, 2):
             comp = complex(real_pts, imag_pts)
             sqrd = comp * comp
             real = int(sqrd.real)
             imag = int(sqrd.imag)
             if abs(real-imag)%2 == 1 and gcd(imag, real) == 1:
                 sea = int((comp * comp.conjugate()).real)
-                triple = (imag, real, sea) if real > imag else (real, imag, sea)
-
-                # print("good")
-                # print(triple)
-                # print("")
-                if triple[2] > max_c:
+                if sea > max_c:
                     break
                 else:
-                    county += 1
-                    yield triple
-            else:
-                print(imag, real)
-        count += county
-
+                    yield (imag, real, sea) if real > imag else (real, imag, sea)
 
 def rad2deg(n):
     return 180 * n / pi
