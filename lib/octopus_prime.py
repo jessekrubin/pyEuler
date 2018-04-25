@@ -5,7 +5,7 @@ from os import path
 from inspect import getfile
 from bisect import bisect_right, bisect_left
 from lib.decorations import cash_muney
-# from numpy import load, save
+from numpy import load, save
 
 
 def prime_sieve_gen(upper_bound=None, known_primes=None):
@@ -88,114 +88,92 @@ def prime_factorization(n):
     return factors
 
 
-# class OctopusPrime(list):
-#     """
-#     OctopusPrime, the leader of the Autobots, here to help you find primes
-#
-#     ░░░░░░░▄▄▄▄█████████████▄▄▄░░░░░░░
-#     ████▄▀████████▀▀▀▀▀▀████████▀▄████
-#     ▀████░▀██████▄▄░░░░▄▄██████▀░████▀
-#     ░███▀▀█▄▄░▀▀██████████▀▀░▄▄█▀▀███░
-#     ░████▄▄▄▀▀█▄░░░▀▀▀▀░░░▄█▀▀▄▄▄████░
-#     ░░██▄▄░▀▀████░██▄▄██░████▀▀░▄▄██░░
-#     ░░░▀████▄▄▄██░██████░██▄▄▄████▀░░░
-#     ░░██▄▀▀▀▀▀▀▀▀░░████░░▀▀▀▀▀▀▀▀▄██░░
-#     ░░░██░░░░░░░░░░████░░░░░░░░░░██░░░
-#     ░░░███▄▄░░░░▄█░████░█▄░░░░▄▄███░░░
-#     ░░░███████░███░████░███░███████░░░
-#     ░░░███████░███░▀▀▀▀░███░███████░░░
-#     ░░░███████░████████████░███████░░░
-#     ░░░░▀█████░███░▄▄▄▄░███░█████▀░░░░
-#     ░░░░░░░░▀▀░██▀▄████▄░██░▀▀░░░░░░░░
-#     ░░░░░░░░░░░░▀░██████░▀░░░░░░░░░░░░
-#
-#     """
-#
-#     def __init__(self, n=10, save_path=None):
-#         autobot = """
-#         ______OCTOPUS_PRIME ACTIVATE______
-#         ░░░░░░░▄▄▄▄█████████████▄▄▄░░░░░░░
-#         ████▄▀████████▀▀▀▀▀▀████████▀▄████
-#         ▀████░▀██████▄▄░░░░▄▄██████▀░████▀
-#         ░███▀▀█▄▄░▀▀██████████▀▀░▄▄█▀▀███░
-#         ░████▄▄▄▀▀█▄░░░▀▀▀▀░░░▄█▀▀▄▄▄████░
-#         ░░██▄▄░▀▀████░██▄▄██░████▀▀░▄▄██░░
-#         ░░░▀████▄▄▄██░██████░██▄▄▄████▀░░░
-#         ░░██▄▀▀▀▀▀▀▀▀░░████░░▀▀▀▀▀▀▀▀▄██░░
-#         ░░░██░░░░░░░░░░████░░░░░░░░░░██░░░
-#         ░░░███▄▄░░░░▄█░████░█▄░░░░▄▄███░░░
-#         ░░░███████░███░████░███░███████░░░
-#         ░░░███████░███░▀▀▀▀░███░███████░░░
-#         ░░░███████░████████████░███████░░░
-#         ░░░░▀█████░███░▄▄▄▄░███░█████▀░░░░
-#         ░░░░░░░░▀▀░██▀▄████▄░██░▀▀░░░░░░░░
-#         ░░░░░░░░░░░░▀░██████░▀░░░░░░░░░░░░
-#
-#
-#         """
-#         if save_path is None:
-#             self.save_path = path.join(path.dirname(
-#                 getfile(OctopusPrime)), 'primes.npy')
-#         else:
-#             self.save_path = save_path
-#         try:
-#             list.__init__(self, self._load())
-#             self.max_loaded = self[-1]
-#         except:
-#             list.__init__(self, list(prime_sieve_gen(upper_bound=10)))
-#             self.max_loaded = 0
-#
-#     def __del__(self):
-#         if self[-1] > self.max_loaded:
-#             self._save()
-#
-#     def __str__(self):
-#         info = ["__\ninfo ",
-#
-#                 "# primes: {}".format(len(self)),
-#                 "save path: {}".format(self.save_path),
-#                 "max prime: {}".format(self[-1])]
-#         # "max prime: {}".format(self[-1])]
-#         return "\n".join(info)
-#
-#     def _load(self):
-#         return load(self.save_path)
-#
-#     def _save(self):
-#         save(self.save_path, self)
-#
-#     def transform(self, n=None):
-#         n = n if n is not None else self[-1] * 10
-#         self.extend(list(prime_sieve_gen(upper_bound=n, known_primes=self)))
-#
-#     def is_prime(self, number):
-#         if number > self[-1]:
-#             self.transform(number + 1)
-#         if number in self:
-#             return True
-#         else:
-#             return False
-#
-#     def primes_below(self, upper_bound):
-#         return self.primes_between(1, upper_bound)
-#
-#     def primes_between(self, lower_bound, upper_bound):
-#         if upper_bound > self[-1]:
-#             self.transform(upper_bound)
-#         return self[bisect_right(self, lower_bound):bisect_left(self.upper_bound)]
+class OctopusPrime(list):
+    """
+    OctopusPrime, the leader of the Autobots, here to help you find primes
+
+    ______OCTOPUS_PRIME ACTIVATE______
+    ░░░░░░░▄▄▄▄█████████████▄▄▄░░░░░░░
+    ████▄▀████████▀▀▀▀▀▀████████▀▄████
+    ▀████░▀██████▄▄░░░░▄▄██████▀░████▀
+    ░███▀▀█▄▄░▀▀██████████▀▀░▄▄█▀▀███░
+    ░████▄▄▄▀▀█▄░░░▀▀▀▀░░░▄█▀▀▄▄▄████░
+    ░░██▄▄░▀▀████░██▄▄██░████▀▀░▄▄██░░
+    ░░░▀████▄▄▄██░██████░██▄▄▄████▀░░░
+    ░░██▄▀▀▀▀▀▀▀▀░░████░░▀▀▀▀▀▀▀▀▄██░░
+    ░░░██░░░░░░░░░░████░░░░░░░░░░██░░░
+    ░░░███▄▄░░░░▄█░████░█▄░░░░▄▄███░░░
+    ░░░███████░███░████░███░███████░░░
+    ░░░███████░███░▀▀▀▀░███░███████░░░
+    ░░░███████░████████████░███████░░░
+    ░░░░▀█████░███░▄▄▄▄░███░█████▀░░░░
+    ░░░░░░░░▀▀░██▀▄████▄░██░▀▀░░░░░░░░
+    ░░░░░░░░░░░░▀░██████░▀░░░░░░░░░░░░
+
+    """
+
+    def __init__(self, n=10, savings_n_loads=True, save_path=None):
+        # if savings_n_loads:
+        #     if save_path is None:
+        #         self.save_path = path.join(path.dirname(
+        #             getfile(OctopusPrime)), 'primes.npy')
+        #     else:
+        #         self.save_path = save_path
+        #     try:
+        #         list.__init__(self, self._load())
+        #         self.max_loaded = self[-1]
+        #     except:
+        #         list.__init__(self, list(prime_sieve_gen(upper_bound=10)))
+        #         self.max_loaded = 0
+        # else:
+        #     list.__init__(self, list(prime_sieve_gen(upper_bound=100)))
+        #     self.max_loaded = self[-1]
+        list.__init__(self, list(prime_sieve_gen(upper_bound=n)))
+        self.max_loaded = self[-1]
+    #
+    # def __del__(self):
+    #     if self[-1] > self.max_loaded:
+    #         self._save()
+
+    # def _load(self):
+    #     return load(self.save_path)
+    #
+    # def _save(self):
+    #     save(self.save_path, self)
+
+    def transform(self, n=None):
+        n = n if n is not None else self[-1] * 10
+        self.extend(list(prime_sieve_gen(upper_bound=n, known_primes=self)))
+
+    def is_prime(self, number):
+        if number > self[-1]:
+            self.transform(number + 1)
+        if number in self:
+            return True
+        else:
+            return False
+
+    def primes_below(self, upper_bound):
+        return self.primes_between(1, upper_bound)
+
+    def primes_between(self, lower_bound, upper_bound):
+        if upper_bound > self[-1]:
+            self.transform(upper_bound)
+        return self[bisect_right(self, lower_bound):bisect_left(self, upper_bound)]
 
 #########
 # TESTS #
 #########
 if __name__ == '__main__':
-    op = OctopusPrime()
-
-
-    print("transforming")
-    print(op)
-    while len(op) < 1000:
-        somethign = int(op[-1]*10)
-        print("transforming up to ", somethign)
-        print("next ", somethign)
-        op.transform(somethign)
-        op._save()
+    pass
+    # op = OctopusPrime()
+    #
+    #
+    # print("transforming")
+    # print(op)
+    # while len(op) < 1000:
+    #     somethign = int(op[-1]*10)
+    #     print("transforming up to ", somethign)
+    #     print("next ", somethign)
+    #     op.transform(somethign)
+    #     op._save()

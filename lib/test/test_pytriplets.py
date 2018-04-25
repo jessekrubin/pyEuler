@@ -7,7 +7,7 @@ testing the pytriplets function/gen I made
 from lib.maths import pytriple_gen
 
 
-def test_pytriplets_gen():
+def test_pytriplets_c_lt100():
 
     """
     Testing the primative pytriplet generator
@@ -21,6 +21,7 @@ def test_pytriplets_gen():
     p_set = {t for t in pytriple_gen(100)}
     assert lt100 == p_set
 
+def test_pytriplets_c_lt300():
     lt300 = {(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25),
              (20, 21, 29), (9, 40, 41), (12, 35, 37), (11, 60, 61),
              (28, 45, 53), (33, 56, 65), (13, 84, 85), (16, 63, 65),
@@ -55,3 +56,5 @@ def test_pytriplets_gen():
     # print(len(non_prim_lt100), len(np_set))
     # print(non_prim_lt100 - np_set)
     # print(np_set)
+
+
