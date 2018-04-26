@@ -46,7 +46,7 @@ from lib.listless import dig_list_2_int
 def check_partitions(perm):
     print(perm)
     lests = []
-    if len(perm) == 1:
+    if len(perm) == 0:
         lests.append([])
     for i in range(len(perm)):
         num = dig_list_2_int(perm[0:i+1])

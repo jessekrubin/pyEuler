@@ -14,7 +14,7 @@
 #
 # Find the sum of all values of n that satisfy s(n)=60.
 
-from lib.octopus_prime import prime_factorization
+from lib.octopus_prime import pfactors_gen
 
 def s(n):
     if n%2==1:
@@ -34,7 +34,7 @@ def s(n):
     return count
 print(2 ** 8 - 1)
 
-print(prime_factorization(2**8 - 1))
+print(pfactors_gen(2 ** 8 - 1))
 # count = {j}
 count = 0
 # for i in trange(2, 100000, 2, ascii=True):
@@ -46,8 +46,8 @@ for i in range(2, 1000, 2):
         count += i
         print("___")
         print(count, i)
-        # print(prime_factorization(i), i)
-        # print(prime_factorization(count[res]), count[res])
+        # print(pfactors_gen(i), i)
+        # print(pfactors_gen(count[res]), count[res])
 
 
 print(count)

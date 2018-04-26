@@ -1,40 +1,78 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
-from os import path
-from inspect import getfile
+
 from bisect import bisect_right, bisect_left
+from itertools import chain, count
 from lib.decorations import cash_muney
-from numpy import load, save
+from lib.maths import expo
 
 
-def prime_sieve_gen(upper_bound=None, known_primes=None):
-    if known_primes is not None and max(known_primes) > 1:
-        div_dict = {p**2: p for p in known_primes}
-        filter_num = known_primes[-1]
-        for kprime in known_primes:
-            divisible_num = (filter_num // kprime) * kprime + kprime
-            while divisible_num in div_dict:
-                divisible_num += kprime
-            div_dict[divisible_num] = kprime
-        filter_num += 1
-    else:
+def prime_sieve_gen(upper_bound=0, known_primes=[2, 5, 7, 11]):
+    """
+    infinite (within reason) prime number generator
+
+    My big modification is the pdiv_dictionary() function that recreats the
+    dictionary of divisors so that you can continue to generate prime numbers
+    from a (sorted) list of prime numbers.
+
+    BASED ON:
+        eratosthenes by David Eppstein, UC Irvine, 28 Feb 2002
+        http://code.activestate.com/recipes/117119/
+        and
+        the thread at that url
+
+
+    :param upper_bound:
+    :param known_primes:
+    :return:
+    """
+
+    def pdiv_dictionary():
+        """
+        Recreates the prime divisors dictionary used by the generator
+        """
         div_dict = {}
-        filter_num = 2
+        for pdiv in known_primes:  # for each prime
+            multiple = known_primes[-1] // pdiv * pdiv
+            if multiple % 2 == 0:
+                multiple += pdiv
+            else:
+                multiple += 2 * pdiv
+            while multiple in div_dict: multiple += pdiv * 2
+            div_dict[multiple] = pdiv
+        return div_dict
 
-    while True:
-        prime_div = div_dict.pop(filter_num, None)
+    # recreate the dictionary of divisors if a list of primes numbers was given
+    # as a parameter. 15, is the next thing div 3 beyond 11, and othewise we
+    # look to the squares
+    divz = {15: 3, 25: 5, 49: 7, 121: 11} if known_primes[-1] == 11 else pdiv_dictionary()
+    start = known_primes[-1] + 2
+    if start == 13: yield 2; yield 3; yield 5; yield 7; yield 11
+    for num in count(start, 2):
+        if 0 < upper_bound < num: break  # stop at upper bound
+        prime_div = divz.pop(num, None)
         if prime_div:
-            divisible_num = prime_div + filter_num
-            while divisible_num in div_dict:
-                divisible_num += prime_div
-            div_dict[divisible_num] = prime_div
+            multiple = (2 * prime_div) + num
+            while multiple in divz: multiple += (2 * prime_div)
+            divz[multiple] = prime_div
         else:
-            div_dict[filter_num * filter_num] = filter_num
-            yield filter_num
-        filter_num += 1
-        if upper_bound is not None and upper_bound < filter_num:
-            break
+            divz[num * num] = num
+            yield num
+
+
+def pfactorization_gen(n):
+    return (n for n in chain.from_iterable([p] * expo(p, n) for p in pfactors_gen(n)))
+
+
+def pfactors_gen(n):
+    """
+    Returns prime factorization as a list
+
+    :param n:
+    :return:
+    """
+    return (p for p in prime_sieve_gen(int(n ** (1 / 2) + 1)) if n % p == 0)
 
 
 @cash_muney
@@ -68,26 +106,6 @@ def is_prime(number):
     return True
 
 
-def prime_factorization(n):
-    """
-    Returns prime factorization as a list
-
-    :param n:
-    :return:
-    """
-    i = 2
-    factors = []
-    while i * i <= n:
-        if n % i:
-            i += 1
-        else:
-            n //= i
-            factors.append(i)
-    if n > 1:
-        factors.append(n)
-    return factors
-
-
 class OctopusPrime(list):
     """
     OctopusPrime, the leader of the Autobots, here to help you find primes
@@ -113,33 +131,8 @@ class OctopusPrime(list):
     """
 
     def __init__(self, n=10, savings_n_loads=True, save_path=None):
-        # if savings_n_loads:
-        #     if save_path is None:
-        #         self.save_path = path.join(path.dirname(
-        #             getfile(OctopusPrime)), 'primes.npy')
-        #     else:
-        #         self.save_path = save_path
-        #     try:
-        #         list.__init__(self, self._load())
-        #         self.max_loaded = self[-1]
-        #     except:
-        #         list.__init__(self, list(prime_sieve_gen(upper_bound=10)))
-        #         self.max_loaded = 0
-        # else:
-        #     list.__init__(self, list(prime_sieve_gen(upper_bound=100)))
-        #     self.max_loaded = self[-1]
         list.__init__(self, list(prime_sieve_gen(upper_bound=n)))
         self.max_loaded = self[-1]
-    #
-    # def __del__(self):
-    #     if self[-1] > self.max_loaded:
-    #         self._save()
-
-    # def _load(self):
-    #     return load(self.save_path)
-    #
-    # def _save(self):
-    #     save(self.save_path, self)
 
     def transform(self, n=None):
         n = n if n is not None else self[-1] * 10
@@ -160,20 +153,3 @@ class OctopusPrime(list):
         if upper_bound > self[-1]:
             self.transform(upper_bound)
         return self[bisect_right(self, lower_bound):bisect_left(self, upper_bound)]
-
-#########
-# TESTS #
-#########
-if __name__ == '__main__':
-    pass
-    # op = OctopusPrime()
-    #
-    #
-    # print("transforming")
-    # print(op)
-    # while len(op) < 1000:
-    #     somethign = int(op[-1]*10)
-    #     print("transforming up to ", somethign)
-    #     print("next ", somethign)
-    #     op.transform(somethign)
-    #     op._save()

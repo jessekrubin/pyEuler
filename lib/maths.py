@@ -5,6 +5,7 @@ from math import sqrt, pi
 from lib.decorations import cash_muney
 from tqdm import tqdm
 
+# py2/3 range/xrange
 try: xrange
 except NameError: xrange = range
 
@@ -54,7 +55,7 @@ def power_mod(number, exponent, mod):
 
 def divisors_gen(n):
     large_divisors = []
-    for i in range(1, int(sqrt(n) + 1)):
+    for i in xrange(1, int(sqrt(n) + 1)):
         if n % i == 0:
             yield i
             if i * i != n:
@@ -75,18 +76,6 @@ def n_divisors(n):
     4
     """
     return sum(1 for _ in divisors_gen(n))
-
-@cash_muney
-def gcd_cash_muny(a,b):
-    """
-    cashed gcd from some stack overfloat thign cuz there are five+
-    """
-    r=a%b
-    if r==0:
-        return b
-    if r==1:
-        return 1
-    return gcd_cash_muny(b,r)
 
 def divisors_list(n):
     return [i for i in divisors_gen(n)]
@@ -128,3 +117,21 @@ def fib(n):
         return n
     else:
         return fib(n - 1) + fib(n - 2)
+
+
+def expo(d, n):
+    """
+    returns the number of times a divisor divides n (is the exponent)
+
+    :param d: divisor
+    :param n: number being divided
+    :return:
+    """
+    if n < d: # flip
+        d, n = n, d
+    c = n
+    divs = 0
+    while c%d == 0:
+        c //= d
+        divs += 1
+    return divs

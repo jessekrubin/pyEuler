@@ -19,7 +19,7 @@ Find the first four consecutive integers to have four distinct prime factors
 each. What is the first of these numbers?
 """
 
-from lib.octopus_prime import prime_factorization
+from lib.octopus_prime import pfactors_gen
 
 
 def distinct_primes_factors(n_distinct_factors):
@@ -27,7 +27,7 @@ def distinct_primes_factors(n_distinct_factors):
     i = 0
     while True:
         i += 1
-        num_prime_factors[i] = len(set(prime_factorization(i)))
+        num_prime_factors[i] = len(set(pfactors_gen(i)))
         if i > 10 and num_prime_factors[i] == n_distinct_factors:
             if all(n_distinct_factors == num_prime_factors[i - j] for j in range(n_distinct_factors)):
                 return i + 1 - n_distinct_factors

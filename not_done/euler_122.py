@@ -30,26 +30,53 @@ for example m(15) = 5.
 
 For 1 ≤ k ≤ 200, find ∑ m(k).
 """
+from itertools import chain
 
-from lib.octopus_prime import is_prime, prime_sieve_gen
+from lib.octopus_prime import is_prime, prime_sieve_gen, pfactors_gen
+from math import log
+
+def expo(d, n):
+    """
+    returns the number of times a divisor divides n (is the exponent)
+
+    :param d: divisor
+    :param n: number being divided
+    :return:
+    """
+    if n < d: # flip
+        d, n = n, d
+    c = n
+    divs = 0
+    while c%d == 0:
+        c //= d
+        divs += 1
+    return divs
+
+def pfactorization(n):
+    return (n for n in chain.from_iterable([p] * expo(p, n) for p in pfactors_gen(n)))
+
 
 def m(k):
-    if is_prime(k):
-        thingy = [h for h in prime_sieve_gen(k)]
-        return len(thingy)
-    exponents = [1]
-    for i in range(k):
-        last = exponents[-1]
-        exponents.append(last+last)
-        mul = exponents[-1-i]+last
-        if k%mul==0:
-            exponents.append(mul)
-        for n in exponents:
-            if k==2*n:
-                return len(set(exponents))
-            if k-n in exponents:
-                return len(set(exponents))
-    return k
+    print("+++")
+    print("K", k)
+    # for f in pfactorization_gen(k):
+    #     print(f)
+    # if is_prime(k):
+    #     thingy = [h for h in prime_sieve_gen(k)]
+    #     return len(thingy)
+    # exponents = [1]
+    # for i in range(k):
+    #     last = exponents[-1]
+    #     exponents.append(last+last)
+    #     mul = exponents[-1-i]+last
+    #     if k%mul==0:
+    #         exponents.append(mul)
+    #     for n in exponents:
+    #         if k==2*n:
+    #             return len(set(exponents))
+    #         if k-n in exponents:
+    #             return len(set(exponents))
+    # return k
 
 
 # result = m(16)
@@ -64,6 +91,9 @@ def m(k):
 #     print("___")
 #     print(i)
 #     print(m(i))
+print(m(15))
+
+
 first20 = {i:m(i) for i in range(1, 20)}
 print(first20)
 ans = sum(m(i) for i in range(1, 200+1))
