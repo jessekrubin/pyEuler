@@ -2,5 +2,7 @@
 
 # folders
 /.idea/**
+/.pytest_cache/**
+lib/test/.pytest_cache/**
 # file types
 *.pyc

@@ -1,6 +1,0 @@
-[
-  "test_octopus_prime.py::TestOctopusPrimeMethods::()::test_lt100_no_save_load",
-  "test_octopus_prime.py::TestOctopusPrimeMethods::()::test_primes_gt50_lt200",
-  "test_pytriplets.py::test_pytriplets_c_lt100",
-  "test_pytriplets.py::test_pytriplets_c_lt300"
-]
