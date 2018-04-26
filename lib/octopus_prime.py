@@ -108,7 +108,7 @@ def is_prime(number):
 
 class OctopusPrime(list):
     """
-    OctopusPrime, the leader of the Autobots, here to help you find primes
+    OctopusPrime, the 8-leg autobot, here to help you find PRIMES
 
     ______OCTOPUS_PRIME ACTIVATE______
     ░░░░░░░▄▄▄▄█████████████▄▄▄░░░░░░░
@@ -127,7 +127,6 @@ class OctopusPrime(list):
     ░░░░▀█████░███░▄▄▄▄░███░█████▀░░░░
     ░░░░░░░░▀▀░██▀▄████▄░██░▀▀░░░░░░░░
     ░░░░░░░░░░░░▀░██████░▀░░░░░░░░░░░░
-
     """
 
     def __init__(self, n=10, savings_n_loads=True, save_path=None):
