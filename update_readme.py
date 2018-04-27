@@ -71,7 +71,7 @@ def make_table_line(row):
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = DONE_EMOJI
-            n_string = "[{}](done/euler_{})".format(str(n), str(n).zfill(3))
+            n_string = "[{}](done/euler_{}.py)".format(str(n), str(n).zfill(3))
         else:
             n_string = str(n)
             if n in NO_CIGAR:
