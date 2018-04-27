@@ -4,7 +4,10 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Recently I have started to do some of the problems in bash. 
 Functions I regularly use are kept in the lib package file at the root of this repo;
-Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
+Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please). 
+The folder named 'no_cigar' has my solutions that take longer than a minute to run; 
+if you were to give feedback, this is where it would be most helpful.
+
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
