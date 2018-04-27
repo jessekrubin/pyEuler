@@ -43,9 +43,12 @@ Last I checked (2018-04-27) i've done 96 problems, and am currently working on 2
 |105 ~ :see_no_evil:|106 ~ :see_no_evil:|[107](done/euler_107.py) ~ :snake:|108 ~ :scream:|109 ~ :see_no_evil:|110 ~ :see_no_evil:|111 ~ :see_no_evil:|[112](done/euler_112.py) ~ :snake:|
 |113 ~ :scream:|114 ~ :see_no_evil:|115 ~ :see_no_evil:|116 ~ :see_no_evil:|117 ~ :see_no_evil:|118 ~ :scream:|[119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|[123](done/euler_123.py) ~ :snake:|[124](done/euler_124.py) ~ :snake:|[125](done/euler_125.py) ~ :snake:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
+|129 ~ :see_no_evil:|130 ~ :see_no_evil:|131 ~ :see_no_evil:|132 ~ :see_no_evil:|133 ~ :see_no_evil:|134 ~ :no_smoking:|135 ~ :see_no_evil:|136 ~ :scream:|
 |137 ~ :see_no_evil:|138 ~ :see_no_evil:|[139](done/euler_139.py) ~ :snake:|140 ~ :see_no_evil:|141 ~ :see_no_evil:|142 ~ :scream:|143 ~ :see_no_evil:|144 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|[164](done/euler_164.py) ~ :snake:|165 ~ :see_no_evil:|166 ~ :see_no_evil:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
 |169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|172 ~ :scream:|[173](done/euler_173.py) ~ :snake:|[174](done/euler_174.py) ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
+|177 ~ :see_no_evil:|178 ~ :see_no_evil:|179 ~ :no_smoking:|180 ~ :see_no_evil:|181 ~ :see_no_evil:|182 ~ :see_no_evil:|183 ~ :see_no_evil:|184 ~ :see_no_evil:|
+|185 ~ :see_no_evil:|186 ~ :see_no_evil:|187 ~ :no_smoking:|188 ~ :see_no_evil:|189 ~ :see_no_evil:|190 ~ :see_no_evil:|191 ~ :see_no_evil:|192 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|205 ~ :scream:|[206](done/euler_206.py) ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|
 |345 ~ :scream:|346 ~ :scream:|[347](done/euler_347.py) ~ :snake:|[348](done/euler_348.py) ~ :snake:|349 ~ :see_no_evil:|350 ~ :see_no_evil:|351 ~ :see_no_evil:|352 ~ :see_no_evil:|
 |609 ~ :see_no_evil:|610 ~ :see_no_evil:|611 ~ :see_no_evil:|612 ~ :see_no_evil:|[613](done/euler_613.py) ~ :snake:|614 ~ :see_no_evil:|615 ~ :see_no_evil:|
