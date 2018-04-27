@@ -66,18 +66,21 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 
 def make_table_line(row):
-    line = ""
+    linelist = []
     for n in row:
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = DONE_EMOJI
-        elif n in NO_CIGAR:
-            status = NO_CIGAR_EMOJI
-        elif n in NOT_DONE:
-            status = INPROG_EMOJI
-        line += "|{} ~ {}".format(str(n), status)
-    line += "|\n"
-    return line
+            n_string = "[{}](done/euler_{})".format(str(n), str(n).zfill(3))
+        else:
+            n_string = str(n)
+            if n in NO_CIGAR:
+                status = NO_CIGAR_EMOJI
+            if n in NOT_DONE:
+                status = INPROG_EMOJI
+        linelist.append("|{} ~ {}".format(n_string, status))
+    linelist.append('|\n')
+    return "".join(linelist)
 
 
 def sur_la_table():
