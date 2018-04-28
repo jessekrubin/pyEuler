@@ -21,7 +21,7 @@ NO_CIGAR.sort()
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
     if path.isfile(path.join(NOT_DONE_PATH, f)) and f.startswith("euler")
-]
+    ]
 NOT_DONE.sort()
 DONE_LIST_STR = ("DONE: {}".format(DONE))
 NOT_DONE_LIST_STR = ("IN PROGRESS: {}".format(NOT_DONE))
@@ -37,7 +37,10 @@ This is my primarily python project euler problems repository.
 I do these problems for fun, and because if I don't do them...then who will?
 Recently I have started to do some of the problems in bash. 
 Functions I regularly use are kept in the lib package file at the root of this repo;
-Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please).
+Feel free to check it out and leave either constructive or dispariging criticism (no neutral criticism please). 
+The folder named 'no_cigar' has my solutions that take longer than a minute to run; 
+if you were to give feedback, this is where it would be most helpful.
+
 
 ![alt text]({})
 
@@ -66,28 +69,32 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 
 def make_table_line(row):
-    line = ""
+    linelist = []
     for n in row:
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = DONE_EMOJI
-        elif n in NO_CIGAR:
-            status = NO_CIGAR_EMOJI
-        elif n in NOT_DONE:
-            status = INPROG_EMOJI
-        line += "|{} ~ {}".format(str(n), status)
-    line += "|\n"
-    return line
+            n_string = "[{}](done/euler_{}.py)".format(str(n), str(n).zfill(3))
+        else:
+            n_string = str(n)
+            if n in NO_CIGAR:
+                status = NO_CIGAR_EMOJI
+            if n in NOT_DONE:
+                status = INPROG_EMOJI
+        linelist.append("|{} ~ {}".format(n_string, status))
+    linelist.append('|\n')
+    return "".join(linelist)
 
 
 def sur_la_table():
     probs = [i for i in range(1, N_EULER_PROBS)]
     rows = [
         probs[i:i + NUM_COLUMNS] for i in range(0, N_EULER_PROBS, NUM_COLUMNS)
-    ]
+        ]
     table_lines = [make_table_line(row) for row in rows
-                   if any(prob_num in DONE for prob_num in row) in DONE]
+                   if any(prob_num in DONE + NO_CIGAR for prob_num in row) in DONE]
     return table_lines
+
 
 def write_README():
     with open('README.md', 'w') as f:
@@ -100,10 +107,11 @@ def write_README():
         f.write(header_sep)
         f.writelines(sur_la_table())
 
+
 if __name__ == '__main__':
     write_README()
     print("______________________")
-    print("# problems done: {}".format(len(DONE)+len(NO_CIGAR)))
+    print("# problems done: {}".format(len(DONE) + len(NO_CIGAR)))
     print("______________________")
     print("# cigars: {}".format(len(DONE)))
     print("______________________")
