@@ -8,7 +8,7 @@ from lib.decorations import cash_muney
 from lib.maths import expo
 
 
-def prime_sieve_gen(upper_bound=0, kprimes=[2, 3, 5, 7, 11]):
+def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
     """
     infinite (within reason) prime number generator
 
@@ -23,7 +23,7 @@ def prime_sieve_gen(upper_bound=0, kprimes=[2, 3, 5, 7, 11]):
         the thread at that url
 
 
-    :param upper_bound: upper bound of numbers to check
+    :param plim: upper limit of numbers to check
     :param kprimes: known primes list
     :return:
     """
@@ -45,24 +45,21 @@ def prime_sieve_gen(upper_bound=0, kprimes=[2, 3, 5, 7, 11]):
 
     # [1]
     # See if the upper bound is greater than the known primes
-    if 0 < upper_bound <= kprimes[-1]:
+    if 0 < plim <= kprimes[-1]:
         for p in kprimes:
-            if p <= upper_bound:
+            if p <= plim:
                 yield p
         return # return bc we are done
 
     # [2]
-    # Recreate the prime divisibility dictionary using primes
+    # Recreate the prime divisibility dictionary using kprimes;
+    # Set start and yield first 4 primes
     divz = pdiv_dictionary()
-    start = kprimes[-1] + 2
-    if start == 13:
-        yield 2
-        yield 3
-        yield 5
-        yield 7
-        yield 11
-    for num in count(start, 2):
-        if 0 < upper_bound < num: break  # stop at upper bound
+    start = kprimes[-1] + 2 # max prime + 2 (make sure it is odd)
+    if start == 13: yield 2; yield 3; yield 5; yield 7; yield 11
+    # use count or range depending on if generator is infinite
+    it = count(start, 2) if plim == 0 else range(start, plim, 2)
+    for num in it:
         prime_div = divz.pop(num, None)
         if prime_div:
             multiple = (2 * prime_div) + num
@@ -142,12 +139,12 @@ class OctopusPrime(list):
     """
 
     def __init__(self, n=10, savings_n_loads=True, save_path=None):
-        list.__init__(self, list(prime_sieve_gen(upper_bound=n)))
+        list.__init__(self, list(prime_sieve_gen(plim=n)))
         self.max_loaded = self[-1]
 
     def transform(self, n=None):
         n = n if n is not None else self[-1] * 10
-        self.extend(list(prime_sieve_gen(upper_bound=n, kprimes=self)))
+        self.extend(list(prime_sieve_gen(plim=n, kprimes=self)))
 
     def is_prime(self, number):
         if number > self[-1]:
