@@ -9,6 +9,7 @@ number, 134217728=89, is a ninth power.
 
 How many n-digit positive integers exist which are also an nth power?
 """
+__sol__ = 49
 from itertools import count
 
 def powerful_digits(n):
@@ -32,3 +33,8 @@ def number_of_powerful_digits():
 
 answer = number_of_powerful_digits()
 print("Total number of powerful digits: {}".format(answer))
+def p063():
+    pass
+
+if __name__ == '__main__':
+    p063()

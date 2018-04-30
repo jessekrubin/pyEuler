@@ -18,6 +18,7 @@ It can be seen that there are 21 elements in this set.
 How many elements would be contained in the set of reduced proper fractions
 for d ≤ 1,000,000?
 """
+__sol__ = 303963552391
 from sys import version_info
 
 if version_info.major > 2:

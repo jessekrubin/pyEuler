@@ -30,12 +30,17 @@ def log_thingy(pair):
     return log(pair[0]) * pair[1]
 
 
-with open("./txt_files/p099_base_exp.txt") as f:
-    pairs = [
-        tuple(map(int,
-                  line.strip('\n').split(','))) for line in f.readlines()
-    ]
-logvals = [log_thingy(pair) for pair in pairs]
-index, log_val = max(enumerate(logvals), key=itemgetter(1))
-answer_string = "Line # with the greatest value is {}".format(index + 1)
-print(answer_string)
+def p099():
+    with open("../txt_files/p099_base_exp.txt") as f:
+        pairs = [
+            tuple(map(int,
+                      line.strip('\n').split(','))) for line in f.readlines()
+            ]
+    logvals = [log_thingy(pair) for pair in pairs]
+    index, log_val = max(enumerate(logvals), key=itemgetter(1))
+    return index + 1
+
+
+if __name__ == '__main__':
+    greatest_line = p099()
+    print("Line # with the greatest value is {}".format(greatest_line))

@@ -34,6 +34,7 @@ form.
 Note: You can assume that all the Roman numerals in the file contain no more
 than four consecutive identical units.
 """
+__sol__ = None
 
 def further_shrink(roman_str):
     roman_str = roman_str.replace('DCCCC', 'CM')
@@ -57,3 +58,8 @@ print("Characters saved {}".format(answer))
 
 
 
+def p089():
+    pass
+
+if __name__ == '__main__':
+    p089()

@@ -14,6 +14,7 @@ Find the minimal path sum, in matrix.txt (right click and "Save Link/Target
 As..."), a 31K text file containing a 80 by 80 matrix, from the left column to
 the right column.
 """
+__sol__ = None
 
 def min_path_three_ways(mat):
     mat = list(map(list, zip(*mat))) # transpose lists so that we can just jump frum list to list
@@ -56,3 +57,8 @@ def p083():
 if __name__ == '__main__':
     answer = p083()
     print("Minimum path three ways: {}".format(answer))
+def p082():
+    pass
+
+if __name__ == '__main__':
+    p082()

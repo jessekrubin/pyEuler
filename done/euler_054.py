@@ -180,8 +180,6 @@ class PokerHand:
 with open("../txt_files/p054_poker.txt") as f:
     games = [game.strip('\n').split(' ') for game in f.readlines()]
 
-
-
 def p054():
     p1_wins = 0
     for g in games:
@@ -196,3 +194,8 @@ def p054():
 if __name__ == '__main__':
     answer = p054()
     print("Player 1 wins {} times".format(answer))
+def p054():
+    pass
+
+if __name__ == '__main__':
+    p054()

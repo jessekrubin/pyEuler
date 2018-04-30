@@ -52,6 +52,9 @@ def origin_in_trianlge(l):
         return True
     return False
 
+def p102():
+    return sum(1 for i in list(map(origin_in_trianlge, triangles)) if i)
 
-answer = sum([1 for i in list(map(origin_in_trianlge, triangles)) if i])
-print("# triangles: {}".format(answer))
+if __name__ == '__main__':
+    answer = p102()
+    print("# triangles: {}".format(answer))

@@ -10,7 +10,6 @@ numbers.
 """
 __sol__ = 5537376230
 
-
 big_ass_string = """37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
@@ -112,8 +111,11 @@ big_ass_string = """37107287533902102798797998220837590246510135740250
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690"""
 
-first_10_digits = str(sum(list(map(int, (big_ass_string.split('\n'))))))[0:10]
-print("1st 10 digits: {}".format(first_10_digits))
+
 def p013():
-    pass
-if __name__ == '__main__':    p013()
+    return int(str(sum(list(map(int, (big_ass_string.split('\n'))))))[0:10])
+
+
+if __name__ == '__main__':
+    first_10_digits = p013()
+    print("1st 10 digits: {}".format(first_10_digits))

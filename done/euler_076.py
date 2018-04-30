@@ -17,6 +17,7 @@ It is possible to write five as a sum in exactly six different ways:
 How many different ways can one hundred be written as a sum of at least two
 positive integers?
 """
+__sol__ = None
 
 from lib.decorations import tictoc
 
@@ -35,3 +36,8 @@ def num_sums(n):
 numero = 100
 number_o_sums = num_sums(numero)
 print("{} can be written as a sum of at least two positive integers {} ways.".format(numero, number_o_sums))
+def p076():
+    pass
+
+if __name__ == '__main__':
+    p076()

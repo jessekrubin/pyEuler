@@ -16,6 +16,7 @@ ways:
 What is the first value which can be written as the sum of primes in over
 five thousand different ways?
 """
+__sol__ = None
 from lib.octopus_prime import is_prime
 
 
@@ -46,3 +47,8 @@ while answer is None:
 
 print("first value which can be written as the sum of primes in over five"
       " thousand different ways?: {}".format(answer))
+def p077():
+    pass
+
+if __name__ == '__main__':
+    p077()

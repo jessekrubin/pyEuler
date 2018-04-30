@@ -19,6 +19,7 @@ side lengths and area and whose perimeters do not exceed one billion
 from lib.maths import pytriple_gen
 from time import time
 
+
 def almost_equilateral(max_perimeter):
     """
     Generates almost equilateral triangles
@@ -31,15 +32,13 @@ def almost_equilateral(max_perimeter):
     An AET is really just 2 pythag-triple-triangles (back 2 back), where double
     the shortest leg in the triple +/-1 is equal to the hypotenuse (c). For an
     AET max perimeter of p, we look at pythagorean triples with c < p/3.
-
-    :param max_perimeter: Max perimeter for the almost equilateral triangle
-    :return:
     """
     for tri in pytriple_gen((max_perimeter + 3) // 3):
         if abs(tri[-1] - (tri[0] * 2)) == 1:
             yield (tri[0] * 2, tri[-1], tri[-1])
 
-def p094(max_perimeter):
+
+def p094(max_perimeter=(10 ** 9)):
     perimeter_sum = 0
     for i in almost_equilateral(max_perimeter):
         perimeter_sum += sum(i)
@@ -50,7 +49,7 @@ if __name__ == '__main__':
     assert 66 == p094(100)
     assert 984 == p094(1000)
     ti = time()
-    sol = p094(10 ** 9)
+    sol = p094()
     tf = time()
     print("Solution: {}".format(sol))
-    print("Time:     {} ms".format((tf-ti)*1000))
+    print("Time:     {} ms".format((tf - ti) * 1000))

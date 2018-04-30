@@ -4,21 +4,21 @@ from os import path
 from os import listdir
 import importlib
 import json
-with open('txt_files/solutions.txt') as f:
+with open('../txt_files/solutions.txt') as f:
     thing = json.load(f)
 
-print(thing)
+# print(thing)
 
 
 def add_sol(p, ans = None):
-    with open("./done/euler_{}.py".format(p)) as f:
+    with open("euler_{}.py".format(p)) as f:
         lines = [l.strip('\n') for l in  f.readlines()]
     sol_ind = [i for i in range(len(lines)) if lines[i] == '"""']
     if ans is None:
         lines.insert(sol_ind[1]+1, "__sol__ = None")
     else:
         lines.insert(sol_ind[1]+1, "__sol__ = {}".format(ans))
-    with open("./done/euler_{}.py".format(p), 'wb') as f:
+    with open("euler_{}.py".format(p), 'wb') as f:
         f.writelines("\n".join(lines))
 
 def set_sol(p, ans):
@@ -26,7 +26,7 @@ def set_sol(p, ans):
         lines = [l.strip('\n') for l in  f.readlines()]
     sol_ind = [i for i in range(len(lines)) if lines[i] == '"""']
     lines[sol_ind[1]+1] = "__sol__ = {}".format(ans)
-    with open("./done/euler_{}.py".format(p), 'wb') as f:
+    with open("euler_{}.py".format(p), 'wb') as f:
         f.writelines("\n".join(lines))
 
 def add_pxxx(p):
@@ -35,18 +35,17 @@ def add_pxxx(p):
                   '',
                   'if __name__ == \'__main__\':',
                   '    p{}()'.format(p)]
-    with open("./done/euler_{}.py".format(p), 'a') as f:
+    with open("euler_{}.py".format(p), 'a') as f:
         f.write('\n'.join(pxxx_lines))
 
 def check_answers():
-    DONE_PATH = r'./done'
+    DONE_PATH = r'.'
     DONE = [f[6:9] for f in listdir(DONE_PATH)
             if path.isfile(path.join(DONE_PATH, f))
             and f.startswith('euler_') and f.endswith('.py')]
     print("Checking {} problems.".format(len(DONE)))
 
     for problem in DONE:
-        print("TESTING p{}".format(problem))
         try:
             p_file = importlib.import_module("done.euler_{}".format(problem))
         except IOError:
@@ -71,12 +70,12 @@ def check_answers():
                 raise ValueError()
             # p_ans = answers[problem]
             assert p_ans == my_ans()
+            print("p{} PASSED".format(problem))
+        except AssertionError as e: # failed test
+            print("p{} FAILED".format(problem))
+            print(my_ans(), p_ans)
         except ValueError as e:
             print("p{} __sol__ is None".format(problem))
-        except AssertionError as e:
-            print(my_ans(), p_ans)
-            print(e.message)
-            print("{} FAILED".format(problem))
         except IOError as e:
             print("IO ERROR: prolly a text file")
 

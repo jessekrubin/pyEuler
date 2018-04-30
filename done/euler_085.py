@@ -10,6 +10,7 @@ contains eighteen rectangles.
 Although there exists no rectangular grid that contains exactly two million
 rectangles, find the area of the grid with the nearest solution.
 """
+__sol__ = None
 
 
 # num rectangles is (height**2 + height) times (width**2 + width)
@@ -27,3 +28,8 @@ for i in range(1, 100):
 
 min_key = min(numrectdict.keys())  # min key is going to be the closes
 print("AREA w/ nearest solution: {}".format(numrectdict[min_key]))
+def p085():
+    pass
+
+if __name__ == '__main__':
+    p085()

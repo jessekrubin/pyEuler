@@ -16,6 +16,7 @@ that can be expressed in such a way:
 How many numbers below fifty million can be expressed as the sum of a prime
 square, prime cube, and prime fourth power?
 """
+__sol__ = None
 
 from lib.octopus_prime import prime_sieve_gen
 from lib.decorations import tictoc
@@ -44,3 +45,8 @@ def prime_power_triples(below):
 answer = prime_power_triples(50000000)
 print("ANSWER: {}".format(answer))
 
+def p087():
+    pass
+
+if __name__ == '__main__':
+    p087()

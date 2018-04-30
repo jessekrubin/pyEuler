@@ -22,6 +22,7 @@ to try every route to solve this problem, as there are 299 altogether! If you
 could check one trillion (1012) routes every second it would take over twenty
 billion years to check them all. There is an efficient algorithm to solve it.
 """
+__sol__ = 7273
 
 from lib.decorations import tictoc
 
@@ -62,12 +63,11 @@ with open(r'../txt_files/p067_triangle.txt') as f:
     ])
 
 
-@tictoc(1000)
 def p067():
     return tri_max_fast(big_tri)
 
-assert 23 == tri_max_fast(little_tri) # lil_tri max sum should be 23
 
 if __name__ == '__main__':
+    assert 23 == tri_max_fast(little_tri) # lil_tri max sum should be 23
     answer2 = p067()
     print("Big Triangle MAX PATH: {}".format(answer2))
