@@ -8,7 +8,7 @@ from lib.decorations import cash_muney
 from lib.maths import expo
 
 
-def prime_sieve_gen(upper_bound=0, known_primes=[2, 5, 7, 11]):
+def prime_sieve_gen(upper_bound=0, kprimes=[2, 3, 5, 7, 11]):
     """
     infinite (within reason) prime number generator
 
@@ -23,8 +23,8 @@ def prime_sieve_gen(upper_bound=0, known_primes=[2, 5, 7, 11]):
         the thread at that url
 
 
-    :param upper_bound:
-    :param known_primes:
+    :param upper_bound: upper bound of numbers to check
+    :param kprimes: known primes list
     :return:
     """
 
@@ -33,8 +33,8 @@ def prime_sieve_gen(upper_bound=0, known_primes=[2, 5, 7, 11]):
         Recreates the prime divisors dictionary used by the generator
         """
         div_dict = {}
-        for pdiv in known_primes:  # for each prime
-            multiple = known_primes[-1] // pdiv * pdiv
+        for pdiv in kprimes:  # for each prime
+            multiple = kprimes[-1] // pdiv * pdiv
             if multiple % 2 == 0:
                 multiple += pdiv
             else:
@@ -43,12 +43,24 @@ def prime_sieve_gen(upper_bound=0, known_primes=[2, 5, 7, 11]):
             div_dict[multiple] = pdiv
         return div_dict
 
-    # recreate the dictionary of divisors if a list of primes numbers was given
-    # as a parameter. 15, is the next thing div 3 beyond 11, and othewise we
-    # look to the squares
-    divz = {15: 3, 25: 5, 49: 7, 121: 11} if known_primes[-1] == 11 else pdiv_dictionary()
-    start = known_primes[-1] + 2
-    if start == 13: yield 2; yield 3; yield 5; yield 7; yield 11
+    # [1]
+    # See if the upper bound is greater than the known primes
+    if 0 < upper_bound <= kprimes[-1]:
+        for p in kprimes:
+            if p <= upper_bound:
+                yield p
+        return # return bc we are done
+
+    # [2]
+    # Recreate the prime divisibility dictionary using primes
+    divz = pdiv_dictionary()
+    start = kprimes[-1] + 2
+    if start == 13:
+        yield 2
+        yield 3
+        yield 5
+        yield 7
+        yield 11
     for num in count(start, 2):
         if 0 < upper_bound < num: break  # stop at upper bound
         prime_div = divz.pop(num, None)
@@ -135,7 +147,7 @@ class OctopusPrime(list):
 
     def transform(self, n=None):
         n = n if n is not None else self[-1] * 10
-        self.extend(list(prime_sieve_gen(upper_bound=n, known_primes=self)))
+        self.extend(list(prime_sieve_gen(upper_bound=n, kprimes=self)))
 
     def is_prime(self, number):
         if number > self[-1]:

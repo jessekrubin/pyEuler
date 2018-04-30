@@ -25,24 +25,47 @@ It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
 Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 """
 
-from math import gcd
+from lib.maths import gcd
 from operator import itemgetter
 
+from lib.octopus_prime import pfactors_gen, prime_sieve_gen
 
 def phi(n):
-    return sum(1 for rel_p in range(1, n+1) if gcd(rel_p, n) == 1)
-
-def n_over_phi(n):
-    return n/phi(n)
-
-def p069(upper_bound):
-    phis = ((n, n_over_phi(n)) for n in range(10, upper_bound + 1, 10))
-    index, value = max(phis, key=itemgetter(1))
-    return index
+    a = [rel_p for rel_p in range(1, n) if gcd(rel_p, n) == 1]
+    print(a)
+    print(len(a))
+    return len(a)
 
 
-print(p069(10))
-print(p069(100))
-print(p069(1000))
-print(p069(10000))
-print(p069(100000))
+def phi2(n):
+    primes = [p for p in prime_sieve_gen(n)]
+    print(primes)
+
+for i in range(1, 10):
+    phi(i)
+    phi2(i)
+
+# def n_over_phi(n):
+#     return n/phi(n)
+#
+# def p069(upper_bound):
+#     phis = ((n, n_over_phi(n)) for n in range(10, upper_bound + 1, 10))
+#     index, value = max(phis, key=itemgetter(1))
+#     return index
+#
+# for i in range(1, 100):
+#     print("")
+#     phiii = (phi(i))
+#     try:
+#         thing = float(i)/float(phiii)
+#
+#         print(thing)
+#     except:
+#         pass
+
+
+# print(p069(10))
+# print(p069(100))
+# print(p069(1000))
+# print(p069(10000))
+# print(p069(100000))
