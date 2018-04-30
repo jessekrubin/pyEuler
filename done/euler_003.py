@@ -8,8 +8,15 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 
 What is the largest prime factor of the number 600851475143?
 """
+__sol__ = 6857
 
 from lib.octopus_prime import pfactors_gen
 
-answer = max(pfactors_gen(600851475143))
-print("largest prime factor of 600851475143 is: {}".format(answer))  # 6857
+
+def p003():
+    return max(pfactors_gen(600851475143))
+
+
+if __name__ == '__main__':
+    answer = p003()
+    print("Largest prime factor of 600851475143: {}".format(answer))  # 6857

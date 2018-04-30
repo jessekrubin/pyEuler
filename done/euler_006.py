@@ -16,6 +16,7 @@ numbers and the square of the sum is 3025 − 385 = 2640.
 Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
+__sol__ = None
 
 
 def sq_sum_diff(num_numbers):
@@ -26,8 +27,7 @@ def p006():
     return sq_sum_diff(100)
 
 
-assert 2640 == sq_sum_diff(10)
-
 if __name__ == '__main__':
+    assert 2640 == sq_sum_diff(10)
     answer = p006()
     print("Difference ({}): {}".format(100, answer))  # Difference(100): 25164150

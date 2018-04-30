@@ -31,6 +31,7 @@ product are 9 × 9 × 8 × 9 = 5832.
 Find the thirteen adjacent digits in the 1000-digit number that have the
 greatest product. What is the value of this product?
 """
+__sol__ = None
 
 from operator import mul
 from functools import reduce
@@ -69,3 +70,9 @@ def biggest_product(n, nums):
 
 print("answer 4: {}".format(biggest_product(4, grid)))  # answer 4: 5832
 print("answer 13: {}".format(biggest_product(13, grid)))  # answer 13: 23514624000
+
+def p008():
+    pass
+
+if __name__ == '__main__':
+    p008()
