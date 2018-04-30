@@ -18,6 +18,7 @@ The first three consecutive numbers to have three distinct prime factors are:
 Find the first four consecutive integers to have four distinct prime factors
 each. What is the first of these numbers?
 """
+__sol__ = 134043
 
 from lib.octopus_prime import pfactors_gen
 
@@ -37,3 +38,8 @@ def distinct_primes_factors(n_distinct_factors):
 # print(distinct_primes_factors(3))
 answer = distinct_primes_factors(4)
 print(answer)
+def p047():
+    pass
+
+if __name__ == '__main__':
+    p047()

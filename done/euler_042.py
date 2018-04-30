@@ -18,24 +18,29 @@ triangle number then we shall call the word a triangle word.
 Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
 containing nearly two-thousand common English words, how many are triangle words?
 """
+__sol__ = 162
 
 from lib.string_theory import string_score
 
 # open file and put into list
-with open(r'../txt_files/p042_words.txt') as f:
-    words = [s.strip("\"") for s in f.readlines()[0].split(',')]
+def p042():
+    with open(r'../txt_files/p042_words.txt') as f:
+        words = [s.strip("\"") for s in f.readlines()[0].split(',')]
 
 
-word_scores = map(string_score, words)
-max_word_score = (max(map(string_score, words)))
+    word_scores = map(string_score, words)
+    max_word_score = (max(map(string_score, words)))
 
-i = 2
-cur_triangle_num = 1
-triangle_numbers_below_max = []
-while cur_triangle_num <= max_word_score:
-    triangle_numbers_below_max.append(cur_triangle_num)
-    cur_triangle_num += i
-    i += 1
+    i = 2
+    cur_triangle_num = 1
+    triangle_numbers_below_max = []
+    while cur_triangle_num <= max_word_score:
+        triangle_numbers_below_max.append(cur_triangle_num)
+        cur_triangle_num += i
+        i += 1
+    return sum([1 for i in word_scores if i in triangle_numbers_below_max])
 
-total = sum([1 for i in word_scores if i in triangle_numbers_below_max])
-print("# coded triangle numbers: {}".format(total))
+
+if __name__ == '__main__':
+    answer = p042()
+    print("# coded triangle numbers: {}".format(answer))

@@ -23,6 +23,7 @@ is less than this limit.
 Find the sum of all the positive integers which cannot be written as the sum
 of two abundant numbers.
 """
+__sol__ = 4179871
 
 from lib.maths import divisors_list
 
@@ -59,3 +60,6 @@ for i in range(28124):
         answer_sum += i
 
 print("Sum: {}".format(answer_sum))  # Sum: 4179871
+def p023():
+    pass
+if __name__ == '__main__':    p023()

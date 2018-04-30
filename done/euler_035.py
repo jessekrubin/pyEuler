@@ -13,13 +13,14 @@ There are thirteen such primes below 100:
 
 How many circular primes are there below one million?
 """
+__sol__ = 55
 
 from lib.listless import digits_list, dig_list_2_int, rot_list_gen
 from lib.octopus_prime import is_prime
-from functools import lru_cache
+from lib.decorations import cash_muney
 
 
-@lru_cache(maxsize=None)
+@cash_muney
 def is_circ_prime(n):
     digist = [int(j) for j in digits_list(n)]
     return all(
@@ -32,3 +33,8 @@ for i in range(1, 1000000):
         num_circ_primes += 1
 
 print("# of circlular primes: {}".format(num_circ_primes - 1))
+def p035():
+    pass
+
+if __name__ == '__main__':
+    p035()

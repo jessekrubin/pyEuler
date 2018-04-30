@@ -13,13 +13,14 @@ this property.
 Find the lowest sum for a set of five primes for which any two primes
 concatenate to produce another prime.
 """
+__sol__ = None
 
 from lib.octopus_prime import is_prime, prime_sieve_gen
 from itertools import combinations
 from collections import defaultdict
-from functools import lru_cache
+from lib.decorations import cash_muney
 
-@lru_cache(maxsize=None)
+@cash_muney
 def num_digits(number):
     d = number
     digs = 0
@@ -28,11 +29,10 @@ def num_digits(number):
         digs += 1
     return digs
 
-@lru_cache(maxsize=None)
 def concat_numbers(a, b):
     return a*10**(num_digits(b)) + b
 
-@lru_cache(maxsize=None)
+@cash_muney
 def check_pair(p1, p2):
     if is_prime(concat_numbers(p1, p2)) and is_prime(concat_numbers(p2, p1)):
         return True
@@ -74,3 +74,8 @@ print(answer)
 answer = prime_pair_sets(5)
 print(answer)
 
+def p060():
+    pass
+
+if __name__ == '__main__':
+    p060()

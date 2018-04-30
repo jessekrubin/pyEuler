@@ -11,6 +11,7 @@ If pytriple_gen is the perimeter of a right angle triangle with integral length 
 
 For which value of pytriple_gen ≤ 1000, is the number of solutions maximised?
 """
+__sol__ = 840
 
 from operator import itemgetter
 
@@ -31,3 +32,8 @@ def num_integer_right_triangles(perimeter):
 n_right_tris = [num_integer_right_triangles(p) for p in range(1, 1001)]
 best_perimeter, num_tris = max(enumerate(n_right_tris), key=itemgetter(1))
 print("A perimeter = {} has {} integer right triangles".format(best_perimeter, num_tris))
+def p039():
+    pass
+
+if __name__ == '__main__':
+    p039()

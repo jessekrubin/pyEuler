@@ -13,6 +13,7 @@ forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20
 letters. The use of "and" when writing out numbers is in compliance with
 British usage.
 """
+__sol__ = 21124
 
 
 def one_nine(n):
@@ -94,15 +95,20 @@ def write_num_as_string(n):
             return one_nine(a) + " hundred and " + one_ninenine(b)
 
 
-characters = 0
-for i in range(1, 1001):
-    # print("~~~")
-    # print(i)
-    # print(write_num_as_string(i))
-    # print(len(write_num_as_string(i)))
-    # print((write_num_as_string(i).replace(" ", "")))
-    # print(len(write_num_as_string(i).replace(" ", "")))
-    characters += len(write_num_as_string(i).replace(" ", ""))
+def p017():
+    characters = 0
+    for i in range(1, 1001):
+        # print("~~~")
+        # print(i)
+        # print(write_num_as_string(i))
+        # print(len(write_num_as_string(i)))
+        # print((write_num_as_string(i).replace(" ", "")))
+        # print(len(write_num_as_string(i).replace(" ", "")))
+        characters += len(write_num_as_string(i).replace(" ", ""))
+    return characters
 
-print("total number of chars in strings [1-1000]:")
-print(characters)
+
+if __name__ == '__main__':
+    characters = p017()
+    print("total number of chars in strings [1-1000]:")
+    print(characters)

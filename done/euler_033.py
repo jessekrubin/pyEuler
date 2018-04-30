@@ -17,6 +17,7 @@ than one in value, and containing two digits in the numerator and denominator.
 If the product of these four ordered_fractions is given in its lowest common
 terms, find the value of the denominator.
 """
+__sol__ = 100
 
 list_of_toops = [(j, i) for i in range(10, 100) for j in range(10, i)]
 # print(list_thing)
@@ -71,3 +72,6 @@ for thing in thingsy:
 # print("{} - {} / 387296".format(numProd, numProd))
 # print("{} - {} / 387296".format(denProd, denProd))
 print("Simplifies to 1/100")
+def p033():
+    pass
+if __name__ == '__main__':    p033()

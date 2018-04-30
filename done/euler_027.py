@@ -17,6 +17,7 @@ of n (e.g. |11|=11 and |−4|=4). Find the product of the coefficients, a and b,
 for the quadratic expression that produces the maximum number of primes for
 consecutive values of n, starting with n=0.
 """
+__sol__ = -59231
 
 from lib.octopus_prime import is_prime
 
@@ -46,3 +47,6 @@ for combo in combos:
 print("Longest sequence length is {} and is the result of using the number {}".format(maxseq, c))
 product_answer = c[0] * c[1]
 print("The product of the two numbers is {}".format(product_answer))
+def p027():
+    pass
+if __name__ == '__main__':    p027()

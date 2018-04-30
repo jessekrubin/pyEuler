@@ -37,6 +37,7 @@ trying every route. However, Problem 67, is the same challenge with a triangle
 containing one-hundred rows; it cannot be solved by brute force, and requires a
 clever method! ;o)
 """
+__sol__ = 1074
 
 lil_triangle = """3
 7 4
@@ -77,18 +78,18 @@ def triangle_max_sum_path(l):
         left = []
         right = []
         for ls in l:
-            # print(ls)
             if len(ls) > 1:
-                # print(ls)
                 left.append(ls[:-1])
                 right.append(ls[1:])
-        # print(left)
-        # print(right)
         return max((triangle_max_sum_path(left) + top,
                     triangle_max_sum_path(right) + top))
 
 
-lists = triangle_lists(lil_triangle)
-print("MAX PATH SUM: {}".format(triangle_max_sum_path(lists)))
-lists = triangle_lists(big_triangle)
-print("MAX PATH SUM: {}".format(triangle_max_sum_path(lists)))
+def p018():
+    return triangle_max_sum_path(triangle_lists(big_triangle))
+
+
+if __name__ == '__main__':
+    assert 23 == triangle_max_sum_path(triangle_lists(lil_triangle))
+    max_path_sum = p018()
+    print("MAX PATH SUM: {}".format(max_path_sum))

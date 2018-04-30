@@ -24,6 +24,7 @@ with side length 9 will be formed. If this process is continued, what is the
 side length of the square spiral for which the ratio of primes along both
 diagonals first falls below 10%?
 """
+__sol__ = 26241
 
 from lib.octopus_prime import is_prime
 
@@ -48,3 +49,8 @@ def spiral_prime_iterator(ratio_bound):
 
 
 print(spiral_prime_iterator(0.1))
+def p058():
+    pass
+
+if __name__ == '__main__':
+    p058()

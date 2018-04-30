@@ -19,6 +19,7 @@ of 9 and (1,2,3,4,5).
 What is the largest 1 to 9 pandigital 9-digit number that can be formed as the
 concatenated product of an integer with (1,2, ... , n) where n > 1?
 """
+__sol__ = 932718654
 
 from itertools import permutations
 
@@ -75,3 +76,8 @@ print("greatest pandigit thingy formed with: {}".format(max([i for i in range(10
 # 9267
 # 9273
 # 9327
+def p038():
+    pass
+
+if __name__ == '__main__':
+    p038()

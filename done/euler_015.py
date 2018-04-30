@@ -9,6 +9,7 @@ the right and down, there are exactly 6 routes to the bottom right corner.
 
 How many such routes are there through a 20×20 grid?
 """
+__sol__ = 137846528820
 
 
 def calc_next_row(row):
@@ -28,3 +29,6 @@ while len(grid) < 22:
 
 ANSWER = grid[-1][-1]
 print("Number of paths: {}".format(ANSWER))
+def p015():
+    pass
+if __name__ == '__main__':    p015()

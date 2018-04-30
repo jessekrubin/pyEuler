@@ -20,6 +20,7 @@ unless it is divisible by 400.
 How many Sundays fell on the first of the month during the twentieth century
 (1 Jan 1901 to 31 Dec 2000)?
 """
+__sol__ = 171
 
 from datetime import date
 
@@ -35,3 +36,6 @@ for day in range(START_ORD, FINISH_ORD):
         N_SUNDAYS += 1
 
 print("Number of Sunday 1'st days is {}".format(N_SUNDAYS))
+def p019():
+    pass
+if __name__ == '__main__':    p019()

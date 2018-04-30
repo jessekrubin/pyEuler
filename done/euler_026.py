@@ -23,6 +23,7 @@ seen that 1/7 has a 6-digit recurring cycle.
 Find the value of d < 1000 for which 1/d contains the longest recurring
 cycle in its decimal fraction part.
 """
+__sol__ = 983
 
 from lib.octopus_prime import is_prime
 
@@ -48,3 +49,6 @@ max_thing = max(num_cycles)
 answer = (primes_under_uno_thousand[num_cycles.index(max_thing)])
 print("Max num cycles: {}".format(max_thing))
 print("num we care about: {}".format(answer))
+def p026():
+    pass
+if __name__ == '__main__':    p026()

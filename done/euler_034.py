@@ -11,19 +11,23 @@ their digits.
 
 Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 """
+__sol__ = 40730
 
 from math import factorial
-from lib.decorations import tictoc
 from lib.listless import digits_list
 
 
 def is_digit_factorial(n):
     return n == sum(map(factorial, digits_list(n)))
 
-@tictoc
 def digit_factorials(upper_bound):
     return sum(i for i in range(3, upper_bound) if is_digit_factorial(i))
 
 
 answer = digit_factorials(500000)
 print("Sum of all 'digit factorial' numbers: {}".format(answer))
+def p034():
+    pass
+
+if __name__ == '__main__':
+    p034()

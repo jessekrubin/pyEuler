@@ -15,6 +15,7 @@ exhibiting this property, but there is one other 4-digit increasing sequence.
 What 12-digit number do you form by concatenating the three terms in this
 sequence?
 """
+__sol__ = 296962999629
 
 from lib.octopus_prime import is_prime
 from lib.listless import digits_list
@@ -40,3 +41,8 @@ for k, v in prime_perms.items():
             validsets.append(combo)
 
 print("The set of primes is: {}".format(validsets[1]))
+def p049():
+    pass
+
+if __name__ == '__main__':
+    p049()

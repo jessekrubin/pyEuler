@@ -17,11 +17,11 @@ Find the pair of pentagonal numbers, Pj and Pk, for which their sum and
 difference are pentagonal and D = |Pk − Pj| is minimised; what is the value
 of D?
 """
+__sol__ = 5482660
 
-from functools import lru_cache
+from lib.decorations import cash_muney
 
-
-@lru_cache(maxsize=None)
+@cash_muney
 def pent_num(n):
     return n * (3 * n - 1) // 2
 
@@ -39,3 +39,8 @@ while answer is None:
     pentagonal_numbers.add(p_k)
 
 print("D: {}".format(answer))
+def p044():
+    pass
+
+if __name__ == '__main__':
+    p044()

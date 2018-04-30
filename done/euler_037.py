@@ -15,6 +15,7 @@ right and right to left.
 
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
+__sol__ = 748317
 
 from lib.octopus_prime import is_prime
 
@@ -45,3 +46,8 @@ Trunk-Ate-Able primes: [23, 37, 53, 73, 313, 317, 373, 797, 3137, 3797, 739397]
 Num trunk primes: 11
 SUM: 748317
 """
+def p037():
+    pass
+
+if __name__ == '__main__':
+    p037()

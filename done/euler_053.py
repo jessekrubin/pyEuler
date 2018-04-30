@@ -21,11 +21,11 @@ It is not until n = 23, that a value exceeds one-million: 23C10 = 1144066.
 How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are
 greater than one-million?
 """
+__sol__ = 4075
 
-from functools import lru_cache
+from lib.decorations import cash_muney
 
-
-@lru_cache(maxsize=None)
+@cash_muney
 def fact(n):
     if n == 1:
         return 1
@@ -48,3 +48,8 @@ for N in range(1, up_bound + 1):
             total_over_a_mil += 1
 
 print("ANSWER: {}".format(total_over_a_mil))
+def p053():
+    pass
+
+if __name__ == '__main__':
+    p053()

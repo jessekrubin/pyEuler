@@ -10,18 +10,18 @@ Problem 5
 What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
 """
-__sol__ = None
+__sol__ = 232792560
 
-good_divs = [20, 19, 18, 17, 16, 14, 13, 11]
-
-answer = 20
-while True:
-    if all(answer % n == 0 for n in good_divs):
-        break
-    answer += 20
-
-print("Answer: {}".format(answer))
 def p005():
-    pass
+    good_divs = [20, 19, 18, 17, 16, 14, 13, 11]
 
-if __name__ == '__main__':    p005()
+    ret_val = 20
+    while True:
+        if all(ret_val % n == 0 for n in good_divs):
+            break
+        ret_val += 20
+    return ret_val
+
+if __name__ == '__main__':
+    answer = p005()
+    print("Answer: {}".format(answer))

@@ -8,6 +8,7 @@ Problem 13
 Work out the first ten digits of the sum of the following one-hundred 50-digit
 numbers.
 """
+__sol__ = 5537376230
 
 
 big_ass_string = """37107287533902102798797998220837590246510135740250
@@ -113,3 +114,6 @@ big_ass_string = """37107287533902102798797998220837590246510135740250
 
 first_10_digits = str(sum(list(map(int, (big_ass_string.split('\n'))))))[0:10]
 print("1st 10 digits: {}".format(first_10_digits))
+def p013():
+    pass
+if __name__ == '__main__':    p013()

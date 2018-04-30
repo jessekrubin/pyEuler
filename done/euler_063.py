@@ -10,7 +10,6 @@ number, 134217728=89, is a ninth power.
 How many n-digit positive integers exist which are also an nth power?
 """
 from itertools import count
-from lib.decorations import tictoc
 
 def powerful_digits(n):
     max_n_digit_num = (10**n)-1
@@ -23,7 +22,6 @@ def powerful_digits(n):
         elif current > max_n_digit_num:
             return n_powerful_digits
 
-@tictoc
 def number_of_powerful_digits():
     total_powerful_digits = 0
     for ndigs in count(1):

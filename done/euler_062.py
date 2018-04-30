@@ -11,6 +11,7 @@ which has exactly three permutations of its digits which are also cube.
 Find the smallest cube for which exactly five permutations of its digits
 are cube.
 """
+__sol__ = None
 
 from itertools import count
 from lib.listless import digits_list, dig_list_2_int
@@ -69,3 +70,8 @@ print("Answer:", cubic_perms(5)) # 127035954683
 
 
 
+def p062():
+    pass
+
+if __name__ == '__main__':
+    p062()

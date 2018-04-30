@@ -12,6 +12,7 @@ base 10 and base 2.
 (Please note that the palindromic number, in either base, may not include
 leading zeros.)
 """
+__sol__ = 872187
 
 from lib.string_theory import is_palindrome, binary_string
 
@@ -24,3 +25,8 @@ for i in range(1000000):
 one_liner = sum([i for i in range(1000000) if (is_palindrome(str(i))) and is_palindrome((binary_string(i)))])
 
 print("One liner(!): {}".format(one_liner))
+def p036():
+    pass
+
+if __name__ == '__main__':
+    p036()

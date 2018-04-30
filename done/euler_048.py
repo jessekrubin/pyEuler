@@ -8,6 +8,7 @@ The series, 1^1 + 2^2 + 3^3 + ... + 10^10 = 10405071317.
 
 Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
 """
+__sol__ = 9110846700
 
 
 def power_series(number):
@@ -19,3 +20,8 @@ def power_series(number):
 
 series_sum_1000 = power_series(1000) % 10000000000
 print("Answer: {}".format(series_sum_1000))
+def p048():
+    pass
+
+if __name__ == '__main__':
+    p048()

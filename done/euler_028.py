@@ -19,6 +19,7 @@ It can be verified that the sum of the numbers on the diagonals is 101.
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed
 in the same way?
 """
+__sol__ = 669171001
 
 
 class Grid(object):
@@ -115,3 +116,6 @@ grid5.print_diags_sum()
 grid1001 = Grid(1001)
 grid1001.print_diags_sum()
 # SUM: 669171001
+def p028():
+    pass
+if __name__ == '__main__':    p028()

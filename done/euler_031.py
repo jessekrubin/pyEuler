@@ -14,6 +14,7 @@ It is possible to make £2 in the following way:
 1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
 How many different ways can £2 be made using any number of coins?
 """
+__sol__ = 73682
 
 
 def coin_sums(n):
@@ -40,3 +41,6 @@ print("{} ways to make {}".format(ans2, n2))
 n3 = 200
 ans3 = coin_sums(n3)
 print("{} ways to make {}".format(ans3, n3))
+def p031():
+    pass
+if __name__ == '__main__':    p031()

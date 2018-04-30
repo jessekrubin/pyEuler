@@ -10,20 +10,16 @@ the 6th prime is 13.
 
 What is the 10 001st prime number?
 """
-__sol__ = None
+__sol__ = 104743
 
 from lib.octopus_prime import is_prime, prime_sieve_gen
-from lib.decorations import tictoc
-from itertools import count
 
 def p007(nth_prime=10001):
-    ind = 1
-    n_primes = 0
-    while n_primes < nth_prime + 1:
-        if is_prime(ind):
-            n_primes += 1
-        ind += 2
-    return ind-1
+    count = 0
+    for p in prime_sieve_gen():
+        count += 1
+        if count == 10001:
+            return p
 
 if __name__ == '__main__':
     answer = p007()

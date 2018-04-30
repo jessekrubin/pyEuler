@@ -12,6 +12,7 @@ For example, 32 + 42 = 9 + 16 = 25 = 52.
 There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 """
+__sol__ = 31875000
 
 
 def is_p_triplet(t):
@@ -25,17 +26,24 @@ def is_p_triplet(t):
             return False
 
 
-combos = set()
-for i in range(1, 1000):
-    for j in range(i):
-        trio = [i, j, (1000 - i - j)]
-        trio.sort()
-        trio = tuple(trio)
-        combos.add(trio)
 
-combos = set(combos)
 
-for trip in filter(is_p_triplet, combos):
-    triplet = trip
-    product = triplet[0] * triplet[1] * triplet[2]
+def p009():
+    combos = set()
+    for i in range(1, 1000):
+        for j in range(i):
+            trio = [i, j, (1000 - i - j)]
+            trio.sort()
+            trio = tuple(trio)
+            combos.add(trio)
+
+    combos = set(combos)
+
+    for trip in filter(is_p_triplet, combos):
+        triplet = trip
+        return triplet[0] * triplet[1] * triplet[2]
+
+
+if __name__ == '__main__':
+    product = p009()
     print("Triplet product: {}".format(product))

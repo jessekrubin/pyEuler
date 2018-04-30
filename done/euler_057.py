@@ -23,6 +23,7 @@ numerator exceeds the number of digits in the denominator.
 In the first one-thousand expansions, how many fractions contain a numerator
 with more digits than denominator?
 """
+__sol__ = 153
 
 from lib.decorations import cash_muney
 from fractions import Fraction

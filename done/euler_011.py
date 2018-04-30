@@ -34,6 +34,7 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same
 direction(up, down, left, right, or diagonally) in the 20×20 grid?
 """
+__sol__ = 70600674
 
 mat = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -77,10 +78,15 @@ def forwardslash(r, c):
                                                                           + 3]
 
 
-horizontals = max(horizontal(r, c) for r in range(20) for c in range(17))
-verticals = max(vertical(r, c) for r in range(17) for c in range(20))
-backslash_diag = max(backslash(r, c) for r in range(17) for c in range(17))
-forwardslash_diag = max(
-    forwardslash(r, c) for r in range(3, 20) for c in range(17))
-max_product = max((horizontals, verticals, forwardslash_diag, backslash_diag))
-print("Max product: {}".format(max_product))  # Max product: 70600674
+def p011():
+    horizontals = max(horizontal(r, c) for r in range(20) for c in range(17))
+    verticals = max(vertical(r, c) for r in range(17) for c in range(20))
+    backslash_diag = max(backslash(r, c) for r in range(17) for c in range(17))
+    forwardslash_diag = max(
+            forwardslash(r, c) for r in range(3, 20) for c in range(17))
+    return max((horizontals, verticals, forwardslash_diag, backslash_diag))
+
+
+if __name__ == '__main__':
+    max_product = p011()
+    print("Max product: {}".format(max_product))  # Max product: 70600674

@@ -17,6 +17,7 @@ following expression.
 
 d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 """
+__sol__ = 210
 
 from lib.listless import digits_list
 from functools import reduce
@@ -38,3 +39,8 @@ indexes = [10 ** i for i in range(6)]
 digs = [int(s[i - 1]) for i in indexes]
 ans = reduce(mul, digs, 1)
 print("product: {}".format(ans))
+def p040():
+    pass
+
+if __name__ == '__main__':
+    p040()

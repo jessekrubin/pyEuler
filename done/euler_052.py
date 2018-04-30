@@ -11,13 +11,12 @@ the same digits, but in a different order.
 Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x,
 contain the same digits.
 """
+__sol__ = 142857
 
 from lib.listless import is_permutation
 from itertools import count
-from lib.decorations import tictoc
 
 
-@tictoc
 def permuted_multiples(max_multiplier=6):
     for n_digits in count(2):
         for number in range(10**(n_digits-1), ((10 ** n_digits) // max_multiplier)):
@@ -31,3 +30,8 @@ max_mul = 6
 result = permuted_multiples(max_mul)
 print("max multiplier: {}".format(max_mul))
 print("answer: {}".format(result))
+def p052():
+    pass
+
+if __name__ == '__main__':
+    p052()

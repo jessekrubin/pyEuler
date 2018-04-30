@@ -56,7 +56,7 @@ winner.
 
 How many hands does Player 1 win?
 """
-
+__sol__ = 376
 from collections import Counter
 
 
@@ -180,13 +180,19 @@ class PokerHand:
 with open("../txt_files/p054_poker.txt") as f:
     games = [game.strip('\n').split(' ') for game in f.readlines()]
 
-p1_wins = 0
-for g in games:
-    for c in g:
-        Card.string_to_card(c)
-    player_1 = PokerHand([Card.string_to_card(card_string) for card_string in g[:5]])
-    player_2 = PokerHand([Card.string_to_card(card_string) for card_string in g[5:]])
-    if player_1 > player_2:
-        p1_wins += 1
 
-print("Player 1 wins {} times".format(p1_wins))
+
+def p054():
+    p1_wins = 0
+    for g in games:
+        for c in g:
+            Card.string_to_card(c)
+        player_1 = PokerHand([Card.string_to_card(card_string) for card_string in g[:5]])
+        player_2 = PokerHand([Card.string_to_card(card_string) for card_string in g[5:]])
+        if player_1 > player_2:
+            p1_wins += 1
+    return p1_wins
+
+if __name__ == '__main__':
+    answer = p054()
+    print("Player 1 wins {} times".format(answer))

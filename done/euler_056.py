@@ -11,8 +11,14 @@ Despite their size, the sum of the digits in each number is only 1.
 Considering natural numbers of the form, ab, where a, b < 100, what is the
 maximum digital sum?
 """
+__sol__ = 972
 
 from lib.listless import digits_list
 
 max_dig_sum = max((sum(digits_list(i**j)) for i in range(1, 100) for j in range(1, 100)))
 print("max: {}".format(max_dig_sum))
+def p056():
+    pass
+
+if __name__ == '__main__':
+    p056()

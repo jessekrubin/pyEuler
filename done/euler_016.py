@@ -8,8 +8,15 @@ Problem 16
 
 What is the sum of the digits of the number 2^1000?
 """
+__sol__ = 1366
 
 from lib.listless import digits_list
 
-ANSWER = sum(digits_list(2 ** 1000))
-print("Sum of digits of 2^1000: {}".format(ANSWER))
+
+def p016():
+    return sum(digits_list(2 ** 1000))
+
+
+if __name__ == '__main__':
+    answer = p016()
+    print("Sum of digits of 2^1000: {}".format(answer))
