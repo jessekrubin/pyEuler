@@ -15,8 +15,7 @@ from lib.octopus_prime import is_prime, prime_sieve_gen
 from lib.decorations import tictoc
 from itertools import count
 
-@tictoc(100)
-def p007(nth_prime):
+def p007(nth_prime=10001):
     ind = 1
     n_primes = 0
     while n_primes < nth_prime + 1:
@@ -26,6 +25,6 @@ def p007(nth_prime):
     return ind-1
 
 if __name__ == '__main__':
-    answer = p007(nth_prime=10001)
+    answer = p007()
     print("10,001th prime is: {}".format(answer))
 

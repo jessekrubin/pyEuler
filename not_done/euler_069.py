@@ -32,16 +32,23 @@ from lib.octopus_prime import pfactors_gen, prime_sieve_gen
 
 def phi(n):
     a = [rel_p for rel_p in range(1, n) if gcd(rel_p, n) == 1]
+    print("phi 1")
     print(a)
-    print(len(a))
     return len(a)
 
 
 def phi2(n):
+    if n == 1: return [1]
     primes = [p for p in prime_sieve_gen(n)]
+    if n == primes[-1]:
+        print([i for i in range(1, n)])
+    else:
+        pass
     print(primes)
 
 for i in range(1, 10):
+    print("")
+    print(i)
     phi(i)
     phi2(i)
 

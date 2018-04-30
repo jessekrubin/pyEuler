@@ -14,22 +14,26 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44,
 
 Evaluate the sum of all the amicable numbers under 10000.
 """
-
+__sol__ = 31626
 from lib.maths import divisors_gen
-from functools import lru_cache
-
-amicable_numbers = set()
+from lib.decorations import cash_muney
 
 
-@lru_cache(maxsize=None)
+@cash_muney
 def sum_proper_divisors(n):
     return sum(divisors_gen(n)) - n
 
 
-for a in range(10, 10000):
-    b = sum_proper_divisors(a)
-    c = sum_proper_divisors(b)
-    if a == c and a != b:
-        amicable_numbers.add(a)
+def p021():
+    amicable_numbers = set()
+    for a in range(10, 10000):
+        b = sum_proper_divisors(a)
+        c = sum_proper_divisors(b)
+        if a == c and a != b:
+            amicable_numbers.add(a)
+    return sum(amicable_numbers)
 
-print("Sum of amicable numbers below 10000: {}".format(sum(amicable_numbers)))
+
+if __name__ == '__main__':
+    ans = p021()
+    print("Sum of amicable numbers below 10000: {}".format(ans))

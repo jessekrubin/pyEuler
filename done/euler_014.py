@@ -21,11 +21,10 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
-from functools import lru_cache
 from operator import itemgetter
+from lib.decorations import cash_muney
 
-
-@lru_cache(maxsize=None)
+@cash_muney
 def collatz_seq_length(n):
     if n == 1:
         return 1
@@ -39,4 +38,3 @@ seq_lengths = [collatz_seq_length(i) for i in range(1, 1000000)]
 
 max_index, sequence_length = max(enumerate(seq_lengths), key=itemgetter(1))
 print("{} produces a collatz sequence length of {}".format(max_index, sequence_length))
-print("THIS IS THE ANSWER!!!")

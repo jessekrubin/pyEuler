@@ -4,13 +4,17 @@
 # Python script to update the README.md for this repo
 
 
-from lib.octopus_prime import OctopusPrime, prime_sieve_gen, is_prime
+from lib.octopus_prime import OctopusPrime, prime_sieve_gen, is_prime, pfactors_gen
 
 
 def test_is_prime():
     p_lt200 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
                61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 197, 199]
     assert all(is_prime(n) for n in p_lt200)
+
+
+def test_pfactors_gen():
+    assert [pf for pf in pfactors_gen(12)] == [2, 3]
 
 
 class TestOctopusPrimeMethods(object):

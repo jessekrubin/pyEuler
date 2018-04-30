@@ -6,6 +6,7 @@ from bisect import bisect_right, bisect_left
 from itertools import chain, count
 from lib.decorations import cash_muney
 from lib.maths import expo
+from math import sqrt
 
 
 def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
@@ -73,7 +74,6 @@ def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
 def pfactorization_gen(n):
     return (n for n in chain.from_iterable([p] * expo(p, n) for p in pfactors_gen(n)))
 
-
 def pfactors_gen(n):
     """
     Returns prime factorization as a list
@@ -81,7 +81,7 @@ def pfactors_gen(n):
     :param n:
     :return:
     """
-    return (p for p in prime_sieve_gen(int(n ** (1 / 2) + 1)) if n % p == 0)
+    return (p for p in prime_sieve_gen(int(sqrt(n) + 1)) if n % p == 0)
 
 
 @cash_muney

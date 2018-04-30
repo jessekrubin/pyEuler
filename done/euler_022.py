@@ -20,10 +20,14 @@ What is the total of all the name scores in the file?
 
 from lib.string_theory import string_score
 
-with open(r'../txt_files/p022_names.txt') as file:
-    names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
+def p022():
+    with open(r'../txt_files/p022_names.txt') as file:
+        names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
 
-names = [name for name_line in names_lines for name in name_line]
-names.sort()
-total_score = sum(((i + 1) * string_score(names[i]) for i in range(len(names))))
-print("Total: {}".format(total_score))
+    names = [name for name_line in names_lines for name in name_line]
+    # names.sort()
+    return  sum(((i + 1) * string_score(names[i]) for i in range(len(names))))
+
+if __name__ == '__main__':
+    total_score = p022()
+    print("Total: {}".format(total_score))
