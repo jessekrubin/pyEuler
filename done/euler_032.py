@@ -39,13 +39,15 @@ def pandigital_product(list):
     return 0
 
 
-one2nine = [i for i in range(1, 10)]
-pandigital_lists = [i for i in permutations(one2nine)]
-products = set()
-for pandigit in pandigital_lists:
-    products.add(pandigital_product(pandigit))
-
-print("Sum of products: {}".format(sum(products)))
 def p032():
-    pass
-if __name__ == '__main__':    p032()
+    one2nine = [i for i in range(1, 10)]
+    pandigital_lists = [i for i in permutations(one2nine)]
+    products = set()
+    for pandigit in pandigital_lists:
+        products.add(pandigital_product(pandigit))
+    return sum(products)
+
+
+if __name__ == '__main__':
+    ans = p032()
+    print("Sum of products: {}".format(ans))

@@ -41,31 +41,31 @@ from lib.listless import rotate_list
 
 # Looking for the max 16 digit string for the magic 5-gon ring means that
 # the 10 must be on the outside.
-one_to_ten = [i+1 for i in range(10)]
+one_to_ten = [i + 1 for i in range(10)]
 
 triplets = {}
 for t in combinations(one_to_ten, 3):
     triplets.setdefault(sum(t), []).append(t)
 
-triplets = {k : v for k, v in triplets.items() if 13 < k < 20}
-
-def rotate_ring(ring):
-    while ring[0][0] != min(r[0] for r in ring):
-        ring = rotate_list(ring)
-    return ring
-
-
+triplets = {k: v for k, v in triplets.items() if 13 < k < 20}
 
 
 def rotate_ring(ring):
     while ring[0][0] != min(r[0] for r in ring):
         ring = rotate_list(ring)
     return ring
+
+
+def rotate_ring(ring):
+    while ring[0][0] != min(r[0] for r in ring):
+        ring = rotate_list(ring)
+    return ring
+
 
 def five_gon(ring, remaining_combos):
     if len(ring) == 5:
         # check if valid
-        if all(ring[i][2] == ring[(i+1)%5][1] for i in range(5)):
+        if all(ring[i][2] == ring[(i + 1) % 5][1] for i in range(5)):
             return ring
         return
     else:
@@ -110,11 +110,14 @@ def magic_5_gon(sum, combos):
     rings = [rotate_ring(ring) for ring in ringo if ring != None]
     return max(rings)
 
+
 def p068():
     rings = {k: magic_5_gon(k, v) for k, v in triplets.items()}
     rings = [int("".join(["".join([str(n) for n in piece]) for piece in ring]))
              for sum, ring in rings.items()]
-    print("MAX 5 GON: {}".format(max(rings)))
+    return max(rings)
+
 
 if __name__ == '__main__':
-    p068()
+    ans = p068()
+    print("MAX 5 GON: {}".format(ans))

@@ -69,5 +69,5 @@ def p067():
 
 if __name__ == '__main__':
     assert 23 == tri_max_fast(little_tri) # lil_tri max sum should be 23
-    answer2 = p067()
-    print("Big Triangle MAX PATH: {}".format(answer2))
+    answer = p067()
+    print("Big Triangle MAX PATH: {}".format(answer))

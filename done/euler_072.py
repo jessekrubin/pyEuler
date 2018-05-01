@@ -36,10 +36,10 @@ def countingfracs(lim=8):
 
 
 def p072():
-    sol = countingfracs(10 ** 6)
-    print("Solution: {}".format(sol))
+    return countingfracs(10 ** 6)
 
 
 if __name__ == '__main__':
     assert 21 == countingfracs(8)
-    p072()
+    sol = p072()
+    print("# elements in the set of reduced proper fracs: {}".format(sol))

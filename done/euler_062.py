@@ -16,62 +16,25 @@ __sol__ = 127035954683
 from itertools import count
 from lib.listless import digits_list, dig_list_2_int
 
+
 def cubic_perms(n_perms):
     cubed_dict = {}
     for i in count(100):
-        ccc = dig_list_2_int(sorted(digits_list(i**3), reverse=True))
+        ccc = dig_list_2_int(sorted(digits_list(i ** 3), reverse=True))
         if ccc in cubed_dict:
             cubed_dict[ccc].append(i)
             if len(cubed_dict[ccc]) > n_perms - 1:
                 # print(cubed_dict[ccc])
-                return cubed_dict[ccc][0]**3
+                return cubed_dict[ccc][0] ** 3
         else:
             cubed_dict.setdefault(ccc, []).append(i)
 
 
-print("Answer:", cubic_perms(3)) # 41063625
-print("Answer:", cubic_perms(5)) # 127035954683
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def p062():
-    pass
+    return cubic_perms(5)
+
 
 if __name__ == '__main__':
-    p062()
+    assert cubic_perms(3) == 41063625
+    ans = p062()
+    print("Answer: {}".format(ans))  # 127035954683

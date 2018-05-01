@@ -20,6 +20,7 @@ from itertools import combinations
 from collections import defaultdict
 from lib.decorations import cash_muney
 
+
 @cash_muney
 def num_digits(number):
     d = number
@@ -29,8 +30,10 @@ def num_digits(number):
         digs += 1
     return digs
 
+
 def concat_numbers(a, b):
-    return a*10**(num_digits(b)) + b
+    return a * 10 ** (num_digits(b)) + b
+
 
 @cash_muney
 def check_pair(p1, p2):
@@ -39,13 +42,11 @@ def check_pair(p1, p2):
     else:
         return False
 
-# @lru_cache(maxsize=None)
 def is_prime_pair_set(primes):
-    # print(primes)
     return all(check_pair(c[0], c[1]) for c in combinations(primes, 2))
 
-test_set = (3, 7, 109, 673)
-assert True == is_prime_pair_set(test_set)
+
+
 
 def prime_pair_sets(set_size):
     pairs = defaultdict(set)
@@ -62,20 +63,22 @@ def prime_pair_sets(set_size):
                 pairs[p].add(p)
                 pairs[pp].add(pp)
 
-        for comb in combinations(pairs[p], set_size-1):
+        for comb in combinations(pairs[p], set_size - 1):
             sssss = look_up_is_prime_pair_set(comb)
             if len(sssss) == set_size:
                 return sum(sssss)
         past_primes.append(p)
 
 
-answer = prime_pair_sets(4)
-print(answer)
-answer = prime_pair_sets(5)
-print(answer)
-
 def p060():
-    pass
+    return prime_pair_sets(5)
+
 
 if __name__ == '__main__':
-    p060()
+    # is prime pair set test case
+    test_set = (3, 7, 109, 673)
+    assert True == is_prime_pair_set(test_set)
+    # prime pair sets small test case
+    assert 792 == prime_pair_sets(4)
+    ans = p060()
+    print("Answer: {}".format(ans))

@@ -194,8 +194,3 @@ def p054():
 if __name__ == '__main__':
     answer = p054()
     print("Player 1 wins {} times".format(answer))
-def p054():
-    pass
-
-if __name__ == '__main__':
-    p054()

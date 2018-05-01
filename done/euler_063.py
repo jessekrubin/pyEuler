@@ -12,16 +12,18 @@ How many n-digit positive integers exist which are also an nth power?
 __sol__ = 49
 from itertools import count
 
+
 def powerful_digits(n):
-    max_n_digit_num = (10**n)-1
+    max_n_digit_num = (10 ** n) - 1
     current = 0
     n_powerful_digits = 0
     for i in count(1):
         current = i ** n
-        if current >= 10**(n-1) and current < 10**n:
+        if current >= 10 ** (n - 1) and current < 10 ** n:
             n_powerful_digits += 1
         elif current > max_n_digit_num:
             return n_powerful_digits
+
 
 def number_of_powerful_digits():
     total_powerful_digits = 0
@@ -31,10 +33,11 @@ def number_of_powerful_digits():
         if result == 0:
             return total_powerful_digits
 
-answer = number_of_powerful_digits()
-print("Total number of powerful digits: {}".format(answer))
+
 def p063():
-    pass
+    return number_of_powerful_digits()
+
 
 if __name__ == '__main__':
-    p063()
+    answer = p063()
+    print("Total number of powerful digits: {}".format(answer))
