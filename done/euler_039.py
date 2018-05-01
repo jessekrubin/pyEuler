@@ -4,8 +4,8 @@
 """
 Integer right triangles
 Problem 39
-If pytriple_gen is the perimeter of a right angle triangle with integral length sides,
-{a,b,c}, there are exactly three solutions for pytriple_gen = 120.
+If pytriple_sum is the perimeter of a right angle triangle with integral length
+sides, {a,b,c}, there are exactly three solutions for pytriple_sum = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
@@ -29,11 +29,12 @@ def num_integer_right_triangles(perimeter):
     return num_triangles
 
 
-n_right_tris = [num_integer_right_triangles(p) for p in range(1, 1001)]
-best_perimeter, num_tris = max(enumerate(n_right_tris), key=itemgetter(1))
-print("A perimeter = {} has {} integer right triangles".format(best_perimeter, num_tris))
 def p039():
-    pass
+    n_right_tris = [num_integer_right_triangles(p) for p in range(1, 1001)]
+    best_perimeter, num_tris = max(enumerate(n_right_tris), key=itemgetter(1))
+    return best_perimeter + 1  # bc array storage
+
 
 if __name__ == '__main__':
-    p039()
+    ans = p039()
+    print("A perimeter = {} has 8 integer right triangles".format(ans))

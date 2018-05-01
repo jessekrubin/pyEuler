@@ -38,16 +38,15 @@ def pandigital_substring_thing(pandigit_list):
     return True
 
 
-# well_they_gave_us_this_one = [1,4,0,6,3,5,7,2,8,9]
-# test_answer = pandigital_substring_thing(well_they_gave_us_this_one)
-# print(test_answer)
-
-circle_to_nine = [i for i in range(0, 10)]  # circle is the way kids say 0 now a days
-pandigit_lists = [dig_list_2_int(i) for i in permutations(circle_to_nine) if pandigital_substring_thing(i)]
-sum_answer = sum(pandigit_lists)
-print("Sum of products: {}".format(sum_answer))
 def p043():
-    pass
+    # well_they_gave_us_this_one = [1,4,0,6,3,5,7,2,8,9]
+    # test_answer = pandigital_substring_thing(well_they_gave_us_this_one)
+    # print(test_answer)
+    circle_to_nine = [i for i in range(0, 10)]  # circle is the way kids say 0 now a days
+    pandigit_lists = [dig_list_2_int(i) for i in permutations(circle_to_nine) if pandigital_substring_thing(i)]
+    return sum(pandigit_lists)
+
 
 if __name__ == '__main__':
-    p043()
+    ans = p043()
+    print("Sum of products: {}".format(ans))

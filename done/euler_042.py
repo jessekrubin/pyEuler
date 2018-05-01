@@ -22,7 +22,6 @@ __sol__ = 162
 
 from lib.string_theory import string_score
 
-# open file and put into list
 def p042():
     with open(r'../txt_files/p042_words.txt') as f:
         words = [s.strip("\"") for s in f.readlines()[0].split(',')]
