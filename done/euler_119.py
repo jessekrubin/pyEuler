@@ -15,7 +15,8 @@ You are given that a2 = 512 and a10 = 614656.
 
 Find a30.
 """
-__sol__ = None
+__sol__ = 248155780267521
+
 
 def digits_sum(number):
     tot = 0
@@ -24,18 +25,18 @@ def digits_sum(number):
         number //= 10
     return tot
 
-a = []
-for num in range(2, 100):
-    for exponent in range(1, 20):
-        aaa = num ** exponent
-        if digits_sum(aaa) == num and aaa > 10:
-            a.append(aaa)
-            a.sort()
 
-a.sort()
-print(a[29])
 def p119():
-    pass
+    a = []
+    for num in range(2, 100):
+        for exponent in range(1, 20):
+            aaa = num ** exponent
+            if digits_sum(aaa) == num and aaa > 10:
+                a.append(aaa)
+
+    a.sort()
+    return a[30-1]
+
 
 if __name__ == '__main__':
     ANSWER = p119()

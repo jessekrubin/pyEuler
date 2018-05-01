@@ -21,27 +21,22 @@ N(15) = 832.
 
 What is ∑ N(n) for 1 ≤ n ≤ 10?
 """
-__sol__ = None
+__sol__ = 209566
 
 from lib.maths import divisors_list
 
-def square_lams2(upperlimit):
-    divfours = [i for i in range(upperlimit+1) if i % 4 == 0 and i >4]
+
+def p174():
+    divfours = [i for i in range(1000000 + 1) if i % 4 == 0 and i > 4]
     total = 0
     for num in divfours:
-        divs = divisors_list(num//4)
-        num_lams = len(divs)//2
+        divs = divisors_list(num // 4)
+        num_lams = len(divs) // 2
         if 0 < num_lams < 11:
             total += 1
 
     return (total)
 
-
-ans = square_lams2(1000000)
-print("ANSWER: {}".format(ans))
-
-def p174():
-    pass
 
 if __name__ == '__main__':
     ANSWER = p174()

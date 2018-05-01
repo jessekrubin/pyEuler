@@ -9,31 +9,24 @@ Let pn be the nth prime: 2, 3, 5, 7, 11, ..., and let r be the remainder when
 
 For example, when n = 3, p3 = 5, and 43 + 63 = 280 ≡ 5 mod 25.
 
-The least value of n for which the remainder first exceeds 109 is 7037.
+The least value of n for which the remainder first exceeds 10^9 is 7037.
 
-Find the least value of n for which the remainder first exceeds 1010.
+Find the least value of n for which the remainder first exceeds 10^10.
 """
-__sol__ = None
-
+__sol__ = 21035
 
 from lib.octopus_prime import prime_sieve_gen
-from lib.decorations import tictoc
 
-@tictoc()
 def psr(remainder_max):
     for n, p in enumerate(prime_sieve_gen()):
         rem = 2*(n+2)*p
         if rem > remainder_max:
-            return n
-
-print((psr(1000000000)))
-print((psr(10000000000)))
-
-
+            return n + 1
 
 def p123():
-    pass
+    return psr(10000000000)
 
 if __name__ == '__main__':
+    assert 7037 == psr(1000000000)
     ANSWER = p123()
     print("Answer: {}".format(ANSWER))

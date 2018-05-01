@@ -4,14 +4,14 @@
 """
 Numbers for which no 3 consecutive digits have a sum greater than a given value
 Problem 164
+
 How many 20 digit numbers n (without any leading zero) exist such that no three
 consecutive digits of n have a sum greater than 9?
 """
-__sol__ = None
+__sol__ = 378158756814587
 
 from lib.decorations import cash_muney
 
-# recursive solution
 
 @cash_muney
 def num_nums(first, second, remaining_digits):
@@ -22,6 +22,7 @@ def num_nums(first, second, remaining_digits):
         ret_val += num_nums(second, i, remaining_digits - 1)
     return ret_val
 
+
 def p164():
     count = 0
     # for nums 'starting' w/ i (1,2,...,9) find the answer and add to count
@@ -29,8 +30,9 @@ def p164():
         # each will have 19 remaining digits
         # 0 is fubbed in as the first
         count += num_nums(0, i, 19)
+    return count
 
-    print("ANSWER: {}".format(count))
 
 if __name__ == '__main__':
-    p164()
+    count = p164()
+    print("ANSWER: {}".format(count))

@@ -20,7 +20,7 @@ Given that the perimeter of the right triangle is less than one-hundred
 million, how many Pythagorean triangles would allow such a tiling to take
 place?
 """
-__sol__ = None
+__sol__ = 10057761
 
 from lib.maths import pytriple_gen
 
@@ -41,11 +41,11 @@ def pytiles(max_perimeter):
 
 
 def p139():
-    assert 9 == pytiles(100)
-    assert 99 == pytiles(1000)
-    sol = pytiles(10 ** 8)
-    print("# py-try-angles: {}".format(sol))
+    return pytiles(10 ** 8)
 
 
 if __name__ == '__main__':
-    p139()
+    assert 9 == pytiles(100)
+    assert 99 == pytiles(1000)
+    sol = p139()
+    print("# py-try-angles: {}".format(sol))
