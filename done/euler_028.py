@@ -23,6 +23,7 @@ __sol__ = 669171001
 
 
 class Grid(object):
+
     def __init__(self, size):
         self.sum_diags = 1
         self.size = size
@@ -76,7 +77,7 @@ class Grid(object):
 
     def spiral(self):
         cur_x, cur_y = self.center_xy, self.center_xy
-        for i in range(self.size**2):
+        for i in range(self.size ** 2):
             self.array[cur_x][cur_y] = i + 1
             cur_x, cur_y = self.spiral_step(cur_x, cur_y)
 
@@ -99,23 +100,22 @@ class Grid(object):
     def south(x, y):
         return x - 1, y
 
-    def print_diags_sum(self):
+    def diag_sum(self):
         for coords in set.union(self.ne_diag_real, self.nw_diag, self.se_diag, self.sw_diag):
             self.sum_diags += self.array[coords[0]][coords[1]]
-        print("SUM: {}".format(self.sum_diags))
+        return self.sum_diags
 
 
-grid3 = Grid(3)
-grid3.print_diags_sum()
-# SUM: 25
-
-grid5 = Grid(5)
-grid5.print_diags_sum()
-# SUM: 101
-
-grid1001 = Grid(1001)
-grid1001.print_diags_sum()
-# SUM: 669171001
 def p028():
-    pass
-if __name__ == '__main__':    p028()
+    grid1001 = Grid(1001)
+    return grid1001.diag_sum()
+
+
+if __name__ == '__main__':
+    grid3 = Grid(3)
+    assert 25 == grid3.diag_sum()
+    grid5 = Grid(5)
+    assert 101 == grid5.diag_sum()
+    ANSWER = p028()
+    print("Answer: {}".format(ANSWER))
+

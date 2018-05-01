@@ -35,7 +35,8 @@ def add_pxxx(p):
                   '    pass',
                   '',
                   'if __name__ == \'__main__\':',
-                  '    p{}()'.format(p)]
+                  '    ANSWER = p{}()'.format(p),
+                  '    print(\"Answer: {}\".format(ANSWER))']
     with open("euler_{}.py".format(p), 'a') as f:
         f.write('\n'.join(pxxx_lines))
 

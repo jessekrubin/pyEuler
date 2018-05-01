@@ -25,26 +25,19 @@ contain 1000 digits?
 """
 __sol__ = 4782
 
-from lib.maths import fib
-from lib.maths import n_digits
+from lib.maths import fib, n_digits
 
 
-def ind_first_fib_w_n_digs(index):
+def p025(no_digits=1000):
     n_fib_digs = 0
     i = 0
-    while n_fib_digs < index:
+    while n_fib_digs < no_digits:
         n_fib_digs = n_digits(fib(i))
         i += 1
-    return i - 1
+    return i
 
 
-n = 3
-answer = ind_first_fib_w_n_digs(n)
-print("index of first fib_gen num w/ {} digits: {}".format(n, answer))
-
-n = 1000
-answer = ind_first_fib_w_n_digs(n)
-print("index of first fib_gen num w/ {} digits: {}".format(n, answer))
-def p025():
-    pass
-if __name__ == '__main__':    p025()
+if __name__ == '__main__':
+    assert 12 == p025(3)
+    answer = p025()
+    print("index of first fib_gen num w/ 1000 digits: {}".format(answer))

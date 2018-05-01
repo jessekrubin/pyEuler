@@ -26,11 +26,12 @@ Given that L is the length of the wire, for how many values of
 L ≤ 1,500,000 can exactly one integer sided right angle triangle
 be formed?
 """
-__sol__ = None
+__sol__ = 161667
 
 from math import sqrt
 from itertools import count
 from fractions import gcd
+
 
 def pytriples_gen(perimeter_lim):
     """
@@ -41,16 +42,17 @@ def pytriples_gen(perimeter_lim):
     real_lim = 1 + perimeter_lim // 2
     for reals in range(2, real_lim, 2):
         for imaginaries in count(1):
-            sqrd = complex(reals, imaginaries)**2
+            sqrd = complex(reals, imaginaries) ** 2
             real = abs(sqrd.real)
             imaginary = sqrd.imag
             hypotenuse = int(sqrt((real * real) + (imaginary * imaginary)))
-            if (hypotenuse+imaginary+real) > perimeter_lim:
+            if (hypotenuse + imaginary + real) > perimeter_lim:
                 break
             if gcd(real, imaginary) == 1:
                 yield (real, imaginary, hypotenuse)
 
-def p075(L):
+
+def p075(L=1500000):
     triangles = {}
     for i in pytriples_gen(L):
         primative_perimeter = sum(i)
@@ -62,9 +64,8 @@ def p075(L):
     return sum(1 for k, v in triangles.items() if v == 1)
 
 
-
 if __name__ == '__main__':
     assert p075(50) == 6
     assert p075(150) == 16
-    answer = p075(1500000)
+    answer = p075()
     print("ANSWER: {}".format(answer))

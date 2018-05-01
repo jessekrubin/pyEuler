@@ -18,8 +18,7 @@ Find the minimal path sum, in matrix.txt, a 31K text file containing a 80 by
 80 matrix, from the top left to the bottom right by only moving right and
 down.
 """
-__sol__ = None
-from lib.decorations import tictoc
+__sol__ = 427337
 
 lil_mat = [[131, 673, 234, 103, 18],
            [201,  96, 342, 965, 150],
@@ -52,7 +51,6 @@ def min_path_two_ways(grid):
     # return the last value
     return sol_grid[size - 1][size - 1]
 
-@tictoc()
 def p081():
     return min_path_two_ways(big_mat)
 

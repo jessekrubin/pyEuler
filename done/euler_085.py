@@ -27,7 +27,7 @@ def p085():
         for j in range(1, i + 1):
             numrectdict[abs(2000000 - num_rectangles(i, j))] = i * j
 
-    return num_rectangles[min(numrectdict.keys())]  # min key is going to be the closes
+    return num_rectangles[min(numrectdict.keys())]  # min key is closest
 
 if __name__ == '__main__':
     answer = p085()
