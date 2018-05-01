@@ -26,8 +26,9 @@ def p022():
         names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
 
     names = [name for name_line in names_lines for name in name_line]
-    # names.sort()
-    return  sum(((i + 1) * string_score(names[i]) for i in range(len(names))))
+    names.sort()
+    return  sum(((i) * string_score(names[i]) for i in range(len(names))))
+
 
 if __name__ == '__main__':
     total_score = p022()

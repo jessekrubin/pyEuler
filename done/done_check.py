@@ -40,52 +40,55 @@ def add_pxxx(p):
     with open("euler_{}.py".format(p), 'a') as f:
         f.write('\n'.join(pxxx_lines))
 
-def check_answers():
+def check_answer(problem):
+    try:
+        p_file = importlib.import_module("done.euler_{}".format(problem))
+    except IOError:
+        print("IO ERROR: prolly a text file")
+
+    try:
+        p_funk = getattr(p_file, 'p{}'.format(problem))
+    except AttributeError as e:
+        print("{} has no pXXX() method")
+        add_pxxx(problem)
+
+    try:
+        p_ans = p_file.__sol__
+    except AttributeError as e:
+        print("{} has no __sol__ variable".format(problem))
+        add_sol(problem)
+
+    try:
+        if p_ans is None:
+            if problem in thing:
+                set_sol(problem, thing[problem])
+            raise ValueError()
+        # p_ans = answers[problem]
+        ts = time()
+        my_ans = p_funk()
+        te = time()
+        assert p_ans == my_ans
+        t_total = (te-ts)*1000
+        print("p{} PASSED; {} ms".format(problem, t_total))
+    except AssertionError as e: # failed test
+        print("p{} FAILED".format(problem))
+        print(p_funk(), p_ans)
+    except ValueError as e:
+        print("p{} __sol__ is None".format(problem))
+
+def check_all_answers():
     DONE_PATH = r'.'
     DONE = [f[6:9] for f in listdir(DONE_PATH)
             if path.isfile(path.join(DONE_PATH, f))
             and f.startswith('euler_') and f.endswith('.py')]
     print("Checking {} problems.".format(len(DONE)))
 
-    for problem in DONE:
-        try:
-            p_file = importlib.import_module("done.euler_{}".format(problem))
-        except IOError:
-            print("IO ERROR: prolly a text file")
+    # for problem in DONE:
+    #     check_answer(problem)
+    map(check_answer, DONE)
 
-        try:
-            p_funk = getattr(p_file, 'p{}'.format(problem))
-        except AttributeError as e:
-            print("{} has no pXXX() method")
-            add_pxxx(problem)
-
-        try:
-            p_ans = p_file.__sol__
-        except AttributeError as e:
-            print("{} has no __sol__ variable".format(problem))
-            add_sol(problem)
-
-        try:
-            if p_ans is None:
-                if problem in thing:
-                    set_sol(problem, thing[problem])
-                raise ValueError()
-            # p_ans = answers[problem]
-            ts = time()
-            my_ans = p_funk()
-            te = time()
-            assert p_ans == my_ans
-            t_total = (te-ts)*1000
-            print("p{} PASSED; {} ms".format(problem, t_total))
-        except AssertionError as e: # failed test
-            print("p{} FAILED".format(problem))
-            print(p_funk(), p_ans)
-        except ValueError as e:
-            print("p{} __sol__ is None".format(problem))
-        # except IOError as e:
-        #     print("IO ERROR: prolly a text file")
+    print("ALL PASSED")
 
 
-
-check_answers()
+check_all_answers()
 

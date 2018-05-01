@@ -13,10 +13,15 @@ DONE_PATH = r'./done'
 NOT_DONE_PATH = r'./not_done'
 NO_CIGAR_PATH = r'./no_cigar'
 LAST_UPDATED = datetime.datetime.now().strftime("%Y-%m-%d")
-DONE = [int(f[6:9]) for f in listdir(DONE_PATH) if path.isfile(path.join(DONE_PATH, f))]
+DONE = [int(f[6:9]) for f in listdir(DONE_PATH)
+        if path.isfile(path.join(DONE_PATH, f))
+        and f.startswith('euler_')
+        and f.endswith('.py')]
 DONE.sort()
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
-NO_CIGAR = [int(f[6:9]) for f in listdir(NO_CIGAR_PATH) if path.isfile(path.join(NO_CIGAR_PATH, f))]
+NO_CIGAR = [int(f[6:9]) for f in listdir(NO_CIGAR_PATH)
+            if path.isfile(path.join(NO_CIGAR_PATH, f))
+            and f.startswith('euler_')]
 NO_CIGAR.sort()
 NOT_DONE = [
     int(str(f[6:9])) for f in listdir(NOT_DONE_PATH)
