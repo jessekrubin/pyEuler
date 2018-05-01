@@ -1,7 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
-
 """
 Coin sums
 Problem 31
@@ -30,17 +29,12 @@ def coin_sums(n):
     return sums[n]
 
 
-n1 = 5
-ans1 = coin_sums(n1)
-print("{} ways to make {}".format(ans1, n1))
-
-n2 = 100
-ans2 = coin_sums(n2)
-print("{} ways to make {}".format(ans2, n2))
-
-n3 = 200
-ans3 = coin_sums(n3)
-print("{} ways to make {}".format(ans3, n3))
 def p031():
-    pass
-if __name__ == '__main__':    p031()
+    return coin_sums(200)
+
+
+if __name__ == '__main__':
+    assert 4 == coin_sums(5)
+    assert 4563 == coin_sums(100)
+    ans3 = p031()
+    print("{} ways to make {}".format(ans3, 200))

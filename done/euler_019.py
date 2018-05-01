@@ -24,18 +24,21 @@ __sol__ = 171
 
 from datetime import date
 
-START = date(1901, 1, 1)
-START_ORD = START.toordinal()
-FINISH = date(2000, 12, 31)
-FINISH_ORD = FINISH.toordinal()
-N_SUNDAYS = 0
 
-for day in range(START_ORD, FINISH_ORD):
-    d = date.fromordinal(day)
-    if (d.weekday() == 6) and (d.day == 1):
-        N_SUNDAYS += 1
-
-print("Number of Sunday 1'st days is {}".format(N_SUNDAYS))
 def p019():
-    pass
-if __name__ == '__main__':    p019()
+    START = date(1901, 1, 1)
+    START_ORD = START.toordinal()
+    FINISH = date(2000, 12, 31)
+    FINISH_ORD = FINISH.toordinal()
+    N_SUNDAYS = 0
+
+    for day in range(START_ORD, FINISH_ORD):
+        d = date.fromordinal(day)
+        if (d.weekday() == 6) and (d.day == 1):
+            N_SUNDAYS += 1
+    return N_SUNDAYS
+
+
+if __name__ == '__main__':
+    answer = p019()
+    print("Number of Sunday 1'st days is {}".format(answer))

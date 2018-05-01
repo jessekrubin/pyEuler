@@ -33,14 +33,12 @@ def concat_nums_2_length():
     return map(str, n_list)
 
 
-s = "".join(concat_nums_2_length())
-# print(s)
-indexes = [10 ** i for i in range(6)]
-digs = [int(s[i - 1]) for i in indexes]
-ans = reduce(mul, digs, 1)
-print("product: {}".format(ans))
 def p040():
-    pass
+    s = "".join(concat_nums_2_length())
+    indexes = [10 ** i for i in range(6)]
+    digs = [int(s[i - 1]) for i in indexes]
+    return reduce(mul, digs, 1)
 
 if __name__ == '__main__':
-    p040()
+    SOL = p040()
+    print("Expression val: {}".format(SOL))

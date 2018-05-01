@@ -22,7 +22,8 @@ __sol__ = -59231
 from lib.octopus_prime import is_prime
 
 
-def quad(n, a, b): return (n * n) + (a * n) + b
+def quad(n, a, b):
+    return (n * n) + (a * n) + b
 
 
 def sequece_length(a, b):
@@ -34,21 +35,18 @@ def sequece_length(a, b):
         n += 1
 
 
-combos = [(i, j) for i in range(-1000, 1001, 1) for j in range(-1000, 1001, 1)]
-
-maxseq = 1
-c = (1, 1)
-for combo in combos:
-    sl = sequece_length(combo[0], combo[1])
-    if sl > maxseq:
-        maxseq = sl
-        c = combo
-
-print("Longest sequence length is {} and is the result of using the number {}".format(maxseq, c))
-product_answer = c[0] * c[1]
-print("The product of the two numbers is {}".format(product_answer))
 def p027():
-    pass
+    combos = [(i, j) for i in range(-1000, 1001, 1) for j in range(-1000, 1001, 1)]
+    maxseq = 1
+    c = (1, 1)
+    for combo in combos:
+        sl = sequece_length(combo[0], combo[1])
+        if sl > maxseq:
+            maxseq = sl
+            c = combo
+    return c[0] * c[1]
+
 
 if __name__ == '__main__':
-    answer = p027()
+    ANSWER = p027()
+    print("a*b: {}".format(ANSWER))

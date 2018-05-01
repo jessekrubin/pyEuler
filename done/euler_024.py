@@ -29,7 +29,7 @@ def p024():
     strangs = []
     for i in permutations(numbers, len(numbers)):
         strangs.append(tuple2string(i))
-    return strangs[999999]
+    return int(strangs[999999])
 
 
 if __name__ == '__main__':

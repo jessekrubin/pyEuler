@@ -19,10 +19,7 @@ positive integers?
 """
 __sol__ = None
 
-from lib.decorations import tictoc
 
-# this is the same as my coin sums code
-@tictoc(1000)
 def num_sums(n):
     numbers_lt = [p for p in range(1, n)]
     sums = [0] * (n + 1)
@@ -33,11 +30,10 @@ def num_sums(n):
     return sums[n]
 
 
-numero = 100
-number_o_sums = num_sums(numero)
-print("{} can be written as a sum of at least two positive integers {} ways.".format(numero, number_o_sums))
 def p076():
-    pass
+    return num_sums(100)
+
 
 if __name__ == '__main__':
-    p076()
+    ANSWER = p076()
+    print("{} can be written as a sum of at least two positive integers {} ways.".format(100, ANSWER))

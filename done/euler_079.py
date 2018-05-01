@@ -35,8 +35,6 @@ class Graph(object):
     def print_graph(self):
         setlists = []
         for key in self.dig_dictionary:
-            print(key)
-            print(self.dig_dictionary[key])
             setlists.append((self.dig_dictionary[key]))
 
     def make_guess(self):
@@ -81,9 +79,10 @@ def guess_passcode(keys):
     return guess
 
 
-print("password guess: {}".format(guess_passcode(passcode_nums)))
+
 def p079():
-    pass
+    return guess_passcode(passcode_nums)
 
 if __name__ == '__main__':
-    p079()
+    ANSWER = p079()
+    print("password guess: {}".format(ANSWER))

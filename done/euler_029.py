@@ -29,8 +29,10 @@ def powers_function(max_a, max_b):
     return set(sequence)
 
 
-seq = (powers_function(100, 100))
-print("SEQUENCE LENGTH: {}".format(len(seq)))
 def p029():
-    pass
-if __name__ == '__main__':    p029()
+    return len(powers_function(100, 100))
+
+
+if __name__ == '__main__':
+    ANSWER = p029()
+    print("SEQUENCE LENGTH: {}".format(ANSWER))

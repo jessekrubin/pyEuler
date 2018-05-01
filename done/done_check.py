@@ -2,6 +2,7 @@
 
 from os import path
 from os import listdir
+from time import time
 import importlib
 import json
 with open('../txt_files/solutions.txt') as f:
@@ -52,7 +53,7 @@ def check_answers():
             print("IO ERROR: prolly a text file")
 
         try:
-            my_ans = getattr(p_file, 'p{}'.format(problem))
+            p_funk = getattr(p_file, 'p{}'.format(problem))
         except AttributeError as e:
             print("{} has no pXXX() method")
             add_pxxx(problem)
@@ -69,11 +70,15 @@ def check_answers():
                     set_sol(problem, thing[problem])
                 raise ValueError()
             # p_ans = answers[problem]
-            assert p_ans == my_ans()
-            print("p{} PASSED".format(problem))
+            ts = time()
+            my_ans = p_funk()
+            te = time()
+            assert p_ans == my_ans
+            t_total = (te-ts)*1000
+            print("p{} PASSED; {} ms".format(problem, t_total))
         except AssertionError as e: # failed test
             print("p{} FAILED".format(problem))
-            print(my_ans(), p_ans)
+            print(p_funk(), p_ans)
         except ValueError as e:
             print("p{} __sol__ is None".format(problem))
         except IOError as e:

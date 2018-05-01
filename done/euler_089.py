@@ -48,18 +48,17 @@ def further_shrink(roman_str):
 def saved_chars_better(roman):
     return len(roman) - len(further_shrink(roman))
 
-with open('../txt_files/p089_roman_nums.txt') as f: # load the roman numerals
-    numerals = [numeral.strip('\n') for numeral in f.readlines()]
-
-answer = sum(map(saved_chars_better, numerals))
-print("Characters saved {}".format(answer))
 
 
 
 
 
 def p089():
-    pass
+    with open('../txt_files/p089_roman_nums.txt') as f: # load the roman numerals
+        numerals = [numeral.strip('\n') for numeral in f.readlines()]
+
+    return sum(map(saved_chars_better, numerals))
 
 if __name__ == '__main__':
-    p089()
+    answer = p089()
+    print("Characters saved {}".format(answer))
