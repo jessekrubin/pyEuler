@@ -49,4 +49,6 @@ product_answer = c[0] * c[1]
 print("The product of the two numbers is {}".format(product_answer))
 def p027():
     pass
-if __name__ == '__main__':    p027()
+
+if __name__ == '__main__':
+    answer = p027()

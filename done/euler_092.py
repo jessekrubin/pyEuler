@@ -18,6 +18,7 @@ at 1 or 89.
 
 How many starting numbers below ten million will arrive at 89?
 """
+__sol__ = None
 from lib.decorations import cash_muney
 from lib.listless import digits_list
 

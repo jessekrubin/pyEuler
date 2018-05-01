@@ -36,7 +36,7 @@ theoretical nature of Lychrel numbers.
 __sol__ = 249
 
 from lib.maths import reverse
-from lib.decorations import tictoc
+
 
 def is_lychrel(n):
     """
@@ -54,40 +54,13 @@ def is_lychrel(n):
             return False
     return True
 
-assert False == is_lychrel(47)
-assert False == is_lychrel(349)
 
-@tictoc(100)
 def p055():
     return sum(1 for i in range(10000) if is_lychrel(i))
 
-answer = p055()
-print(answer)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    answer = p055()
+    assert False == is_lychrel(47)
+    assert False == is_lychrel(349)
+    print("ANSWER: {}".format(answer))

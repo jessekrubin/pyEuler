@@ -23,6 +23,7 @@ of triangles for which the interior contains the origin.
 NOTE: The first two examples in the file represent the triangles in the example 
 given above.
 """
+__sol__ = None
 
 from lib.vfunky import cross_prod_2d
 
