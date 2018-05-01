@@ -20,6 +20,7 @@ Let S(N) be the sum of all distinct M(p,q,N). S(100)=2262.
 Find S(10 000 000).
 """
 __sol__ = 11109800204052
+
 from math import log
 from lib.octopus_prime import prime_sieve_gen
 from bisect import bisect_right
