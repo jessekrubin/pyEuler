@@ -18,7 +18,7 @@ at 1 or 89.
 
 How many starting numbers below ten million will arrive at 89?
 """
-__sol__ = None
+__sol__ = 8581146
 from lib.decorations import cash_muney
 from lib.listless import digits_list
 
@@ -30,7 +30,7 @@ def next_num(n):
         m += p * p
     return m
 
-
+@cash_muney
 def goes2_89(n):
     while True:
         if n == 89:

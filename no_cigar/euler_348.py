@@ -5,16 +5,7 @@
 Problem 0
 template
 """
-# THIS IS A TEMPLATEEEEE
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Jesse Rubin
-"""
-Problem 0
-template
-"""
-from tqdm import tqdm
+__sol__ = 1004195061
 
 
 def is_palindrome(n):
@@ -26,11 +17,9 @@ def square(n):
 def cube(n):
     return n*n*n
 
-
 def find_square_cube_pals():
     pals_dict = {}
-    # takes like 5 mins to run, so walk away and grab a snack
-    for i in tqdm(range(1, 30000)):
+    for i in range(1, 30000):
         isq = square(i)
         delthis = []
         for pal, count in pals_dict.items():
@@ -52,3 +41,11 @@ def find_square_cube_pals():
 five_four_pals = {5229225: 4, 37088073: 4, 108909801: 4, 56200265: 4, 796767697: 4}
 answer = sum(k for k in five_four_pals.keys())
 print("ANSWER:", answer)
+
+
+def p348():
+    pass
+
+if __name__ == '__main__':
+    ANSWER = p348()
+    print("Answer: {}".format(ANSWER))

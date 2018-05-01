@@ -82,8 +82,8 @@ def check_answers():
             print(p_funk(), p_ans)
         except ValueError as e:
             print("p{} __sol__ is None".format(problem))
-        except IOError as e:
-            print("IO ERROR: prolly a text file")
+        # except IOError as e:
+        #     print("IO ERROR: prolly a text file")
 
 
 

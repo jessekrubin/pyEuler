@@ -16,17 +16,13 @@ __sol__ = 872187
 
 from lib.string_theory import is_palindrome, binary_string
 
-multiple_liner = 0
-for i in range(1000000):
-    # Check if both as strings are palindromes
-    if (is_palindrome(str(i))) and is_palindrome((binary_string(i))):
-        multiple_liner += i
 
-one_liner = sum([i for i in range(1000000) if (is_palindrome(str(i))) and is_palindrome((binary_string(i)))])
-
-print("One liner(!): {}".format(one_liner))
 def p036():
-    pass
+    return sum(i for i in range(1000000)
+               if is_palindrome(str(i))
+               and is_palindrome(binary_string(i)))
+
 
 if __name__ == '__main__':
-    p036()
+    ANSWER = p036()
+    print("ANSWER: {}".format(ANSWER))

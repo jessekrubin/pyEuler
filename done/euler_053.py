@@ -25,6 +25,7 @@ __sol__ = 4075
 
 from lib.decorations import cash_muney
 
+
 @cash_muney
 def fact(n):
     if n == 1:
@@ -40,16 +41,16 @@ def choose(a, b):
         raise Exception("b>a; which isnt supposed to happen")
 
 
-up_bound = 100
-total_over_a_mil = 0
-for N in range(1, up_bound + 1):
-    for i in range(1, N):
-        if choose(N, i) > 1000000:
-            total_over_a_mil += 1
-
-print("ANSWER: {}".format(total_over_a_mil))
 def p053():
-    pass
+    up_bound = 100
+    total_over_a_mil = 0
+    for N in range(1, up_bound + 1):
+        for i in range(1, N):
+            if choose(N, i) > 1000000:
+                total_over_a_mil += 1
+    return total_over_a_mil
+
 
 if __name__ == '__main__':
-    p053()
+    ANSWER = p053()
+    print("ANSWER: {}".format(ANSWER))

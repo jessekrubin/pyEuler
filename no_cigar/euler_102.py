@@ -27,12 +27,6 @@ __sol__ = None
 
 from lib.vfunky import cross_prod_2d
 
-# open file and put into list
-with open(r'../txt_files/p102_triangles.txt') as f:
-    triangles = [
-        tuple(map(int, j.split(',')))
-        for j in [i.strip('\n') for i in f.readlines()]
-    ]
 
 
 def triangle_area(v1, v2):
@@ -54,6 +48,12 @@ def origin_in_trianlge(l):
     return False
 
 def p102():
+    # open file and put into list
+    with open(r'../txt_files/p102_triangles.txt') as f:
+        triangles = [
+            tuple(map(int, j.split(',')))
+            for j in [i.strip('\n') for i in f.readlines()]
+        ]
     return sum(1 for i in list(map(origin_in_trianlge, triangles)) if i)
 
 if __name__ == '__main__':

@@ -34,7 +34,8 @@ form.
 Note: You can assume that all the Roman numerals in the file contain no more
 than four consecutive identical units.
 """
-__sol__ = None
+__sol__ = 743
+
 
 def further_shrink(roman_str):
     roman_str = roman_str.replace('DCCCC', 'CM')
@@ -45,19 +46,17 @@ def further_shrink(roman_str):
     roman_str = roman_str.replace('IIII', 'IV')
     return roman_str
 
+
 def saved_chars_better(roman):
     return len(roman) - len(further_shrink(roman))
 
 
-
-
-
-
 def p089():
-    with open('../txt_files/p089_roman_nums.txt') as f: # load the roman numerals
+    with open('../txt_files/p089_roman_nums.txt') as f:  # load the roman numerals
         numerals = [numeral.strip('\n') for numeral in f.readlines()]
 
     return sum(map(saved_chars_better, numerals))
+
 
 if __name__ == '__main__':
     answer = p089()

@@ -21,6 +21,7 @@ N(15) = 832.
 
 What is ∑ N(n) for 1 ≤ n ≤ 10?
 """
+__sol__ = None
 
 from lib.maths import divisors_list
 
@@ -39,3 +40,9 @@ def square_lams2(upperlimit):
 ans = square_lams2(1000000)
 print("ANSWER: {}".format(ans))
 
+def p174():
+    pass
+
+if __name__ == '__main__':
+    ANSWER = p174()
+    print("Answer: {}".format(ANSWER))

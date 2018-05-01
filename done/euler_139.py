@@ -20,6 +20,7 @@ Given that the perimeter of the right triangle is less than one-hundred
 million, how many Pythagorean triangles would allow such a tiling to take
 place?
 """
+__sol__ = None
 
 from lib.maths import pytriple_gen
 

@@ -29,6 +29,7 @@ containing a network with forty vertices, and given in matrix form, find the
 maximum saving which can be achieved by removing redundant edges whilst
 ensuring that the network remains connected.
 """
+__sol__ = 259679
 from collections import defaultdict
 
 
@@ -43,7 +44,7 @@ def minimal_network(network_lists):
 
     def next_edges():
         return [(con, k) if k > con else (k, con) for k in solution.keys() for con in
-                (connections[k] - solution.keys())]
+                (connections[k] - set(solution.keys()))]
 
     def find_shortest_edge(next_edges=None):
         if next_edges is None:
@@ -72,20 +73,12 @@ def minimal_network(network_lists):
     return reduced_weight
 
 
-lil_network_str = """
--	16	12	21	-	-	-
-16	-	-	17	20	-	-
-12	-	-	28	-	31	-
-21	17	28	-	18	19	23
--	20	-	18	-	-	11
--	-	31	19	-	-	27
--	-	-	23	11	27	-"""
-lil_network = [line.split('\t') for line in lil_network_str.split('\n') if line != '']
-lil_min_network = minimal_network(lil_network)
-print("ANSWER:", lil_min_network)
+def p107():
+    with open('../txt_files/p107_network.txt') as f: txt_lines = f.readlines()
+    big_network = [line.strip('\n').split(',') for line in txt_lines]
+    return minimal_network(big_network)
 
-with open('../txt_files/p107_network.txt') as f:
-    big_network = [line.strip('\n').split(',') for line in f.readlines()]
 
-big_min_network = minimal_network(big_network)
-print("ANSWER:", big_min_network)
+if __name__ == '__main__':
+    ANSWER = p107()
+    print("MAX SAVING: {}".format(ANSWER))

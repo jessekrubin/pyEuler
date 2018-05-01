@@ -20,10 +20,11 @@ passcode_nums = [
     168, 160, 689, 716, 731, 736, 729, 316, 729, 729, 710, 769, 290, 719, 680,
     318, 389, 162, 289, 162, 718, 729, 319, 790, 680, 890, 362, 319, 760, 316,
     729, 380, 319, 728, 716
-]
+    ]
 
 
 class Graph(object):
+
     def __init__(self, digits):
         self.dig_dictionary = {}
         for d in digits:
@@ -75,13 +76,12 @@ def guess_passcode(keys):
     g.print_graph()
     guess_list = g.make_guess()
     guess_strings = [str(j) for j in guess_list]
-    guess = "".join(guess_strings)
-    return guess
-
+    return int("".join(guess_strings))
 
 
 def p079():
     return guess_passcode(passcode_nums)
+
 
 if __name__ == '__main__':
     ANSWER = p079()

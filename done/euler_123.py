@@ -13,6 +13,7 @@ The least value of n for which the remainder first exceeds 109 is 7037.
 
 Find the least value of n for which the remainder first exceeds 1010.
 """
+__sol__ = None
 
 
 from lib.octopus_prime import prime_sieve_gen
@@ -30,3 +31,9 @@ print((psr(10000000000)))
 
 
 
+def p123():
+    pass
+
+if __name__ == '__main__':
+    ANSWER = p123()
+    print("Answer: {}".format(ANSWER))

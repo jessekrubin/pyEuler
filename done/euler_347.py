@@ -19,27 +19,28 @@ Let S(N) be the sum of all distinct M(p,q,N). S(100)=2262.
 
 Find S(10 000 000).
 """
+__sol__ = 11109800204052
 from math import log
 from lib.octopus_prime import prime_sieve_gen
 from bisect import bisect_right
-from lib.decorations import tictoc
+
 
 def m(p, q, N):
     max_int_div = 0
-    max_p_exp  = int(log(N // q) / log(p)) + 2
+    max_p_exp = int(log(N // q) / log(p)) + 2
     q_log = log(q)
     for p_exp in range(1, max_p_exp):
         max_q_exp = int(log(N // p ** p_exp) / q_log) + 2
         for q_exp in range(1, max_q_exp):
-            num = (p**p_exp)*(q**q_exp)
+            num = (p ** p_exp) * (q ** q_exp)
             if N >= num > max_int_div:
                 max_int_div = num
     return max_int_div
 
-@tictoc()
+
 def s(n):
     primes = []
-    prime_sieve_limit = int(n//2) + 1 # plus two cause idk
+    prime_sieve_limit = int(n // 2) + 1  # plus two cause idk
     ret_sum = 0
     for p in prime_sieve_gen(prime_sieve_limit):
         mul_list = primes[0:bisect_right(primes, n // p)]
@@ -47,7 +48,12 @@ def s(n):
         primes.append(p)
     return ret_sum
 
-def p347():
+
+def p347(n=10 ** 7):
+    return s(n)
+
+
+if __name__ == '__main__':
     # m(pytriple_gen, q, N) test
     assert 96 == m(2, 3, 100)
     assert 75 == m(3, 5, 100)
@@ -56,13 +62,6 @@ def p347():
     # s(n) test
     assert 2262 == s(100)
 
-    sol = 0
-    for i in range(2, 8):
-        sol = s(10**i)
-    # sol = s(10**7)
-    print("Solution: {}".format(sol))
-    return sol
-
-if __name__=='__main__':
-    p347()
-
+    # answer
+    ANSWER = p347()
+    print("Solution: {}".format(ANSWER))

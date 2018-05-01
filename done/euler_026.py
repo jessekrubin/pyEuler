@@ -37,18 +37,15 @@ def num_cycles(p):
         hopefully_one_maybe = 10 ** i % p
         if hopefully_one_maybe == 1:
             return i
-    # otherwise return -1
     return -1
 
 
-primes_under_uno_thousand = [i for i in range(1, 1000) if is_prime(i)]
-# print(primes_under_uno_thousand)
-
-num_cycles = ([num_cycles(p) for p in primes_under_uno_thousand])
-max_thing = max(num_cycles)
-answer = (primes_under_uno_thousand[num_cycles.index(max_thing)])
-print("Max num cycles: {}".format(max_thing))
-print("num we care about: {}".format(answer))
 def p026():
-    pass
-if __name__ == '__main__':    p026()
+    primes_lt1000 = [i for i in range(1, 1000) if is_prime(i)]
+    cycles = [num_cycles(p) for p in primes_lt1000]
+    return primes_lt1000[cycles.index(max(cycles))]
+
+
+if __name__ == '__main__':
+    ANSWER = p026()
+    print("D w/ longest cycles: {}".format(ANSWER))

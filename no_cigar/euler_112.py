@@ -23,6 +23,7 @@ reach 21780 the proportion of bouncy numbers is equal to 90%.
 Find the least number for which the proportion of bouncy numbers is exactly
 99%
 """
+__sol__ = None
 
 from lib.listless import digits_list
 
@@ -55,6 +56,13 @@ def find_proportion(percent):
 percentage = 90
 answer = find_proportion(percentage)
 print("Least num for which {}% of numbers are bouncy: {}".format(percentage, answer))
-percentage = 99
-answer = find_proportion(percentage)
-print("Least num for which {}% of numbers are bouncy: {}".format(percentage, answer))
+# percentage = 99
+# answer = find_proportion(percentage)
+# print("Least num for which {}% of numbers are bouncy: {}".format(percentage, answer))
+def p112(percentage = 99):
+    return find_proportion(percentage)
+    pass
+
+if __name__ == '__main__':
+    ANSWER = p112()
+    print("Answer: {}".format(ANSWER))

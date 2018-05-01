@@ -17,9 +17,6 @@ Find the next triangle number that is also pentagonal and hexagonal.
 """
 __sol__ = 1533776805
 
-p_nums = []
-h_nums = []
-
 
 def tn(n):
     return int(n * ((n + 1) / 2))
@@ -33,23 +30,25 @@ def hn(n):
     return int(n * ((2 * n) - 1))
 
 
-all_three = []
-
-i = 1
-while len(all_three) < 3:
-    t = tn(i)
-    p_nums.append(pn(i))
-    h_nums.append(hn(i))
-    if t in p_nums:
-        if t in h_nums:
-            # print(t)
-            all_three.append(t)
-    i += 1
-
-answer = all_three[2]
-print("next #: {}".format(answer))
 def p045():
-    pass
+    p_nums = []
+    h_nums = []
+    all_three = []
+
+    i = 1
+    while len(all_three) < 3:
+        t = tn(i)
+        p_nums.append(pn(i))
+        h_nums.append(hn(i))
+        if t in p_nums:
+            if t in h_nums:
+                # print(t)
+                all_three.append(t)
+        i += 1
+
+    return all_three[2]
+
 
 if __name__ == '__main__':
-    p045()
+    answer = p045()
+    print("Next #: {}".format(answer))

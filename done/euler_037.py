@@ -32,22 +32,13 @@ def trunk_prime(n):
         left = int("".join(digs[:i]))
         if not is_prime(right) or not is_prime(left):
             return False
-
     return True
-    # print(left)
 
 
-primes = [i for i in range(2, 1000000) if trunk_prime(i)]
-print("Trunk-Ate-Able primes: {}".format(primes))
-print("Num trunk primes: {}".format(len(primes)))
-print("SUM: {}".format(sum(primes)))
-answer = """
-Trunk-Ate-Able primes: [23, 37, 53, 73, 313, 317, 373, 797, 3137, 3797, 739397]
-Num trunk primes: 11
-SUM: 748317
-"""
 def p037():
-    pass
+    return sum(i for i in range(2, 1000000) if trunk_prime(i))
+
 
 if __name__ == '__main__':
-    p037()
+    ANSWER = p037()
+    print("Sum of truncatable primes: {}".format(ANSWER))

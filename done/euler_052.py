@@ -19,19 +19,17 @@ from itertools import count
 
 def permuted_multiples(max_multiplier=6):
     for n_digits in count(2):
-        for number in range(10**(n_digits-1), ((10 ** n_digits) // max_multiplier)):
-            if all(is_permutation(number, number*multiplier) for multiplier in range(2, max_multiplier + 1)):
+        for number in range(10 ** (n_digits - 1), ((10 ** n_digits) // max_multiplier)):
+            if all(is_permutation(number, number * multiplier) for multiplier in range(2, max_multiplier + 1)):
                 return number
         if n_digits > 30:
             break
 
 
-max_mul = 6
-result = permuted_multiples(max_mul)
-print("max multiplier: {}".format(max_mul))
-print("answer: {}".format(result))
 def p052():
-    pass
+    return permuted_multiples(6)
+
 
 if __name__ == '__main__':
-    p052()
+    result = p052()
+    print("Smallest integer: {}".format(result))

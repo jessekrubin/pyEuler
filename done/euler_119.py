@@ -15,6 +15,7 @@ You are given that a2 = 512 and a10 = 614656.
 
 Find a30.
 """
+__sol__ = None
 
 def digits_sum(number):
     tot = 0
@@ -33,3 +34,9 @@ for num in range(2, 100):
 
 a.sort()
 print(a[29])
+def p119():
+    pass
+
+if __name__ == '__main__':
+    ANSWER = p119()
+    print("Answer: {}".format(ANSWER))

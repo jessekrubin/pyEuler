@@ -50,7 +50,7 @@ def min_path_three_ways(mat):
     return min(solution[-1])
 
 
-def p083():
+def p082():
     lil_mat = [[131, 673, 234, 103, 18],
                [201, 96, 342, 965, 150],
                [630, 803, 746, 422, 111],
@@ -64,13 +64,5 @@ def p083():
 
 
 if __name__ == '__main__':
-    answer = p083()
+    answer = p082()
     print("Minimum path three ways: {}".format(answer))
-
-
-def p082():
-    pass
-
-
-if __name__ == '__main__':
-    p082()

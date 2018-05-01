@@ -18,10 +18,9 @@ def power_series(number):
     return series_sum
 
 
-series_sum_1000 = power_series(1000) % 10000000000
-print("Answer: {}".format(series_sum_1000))
 def p048():
-    pass
+    return power_series(1000) % 10000000000
 
 if __name__ == '__main__':
-    p048()
+    answer = p048()
+    print("Answer: {}".format(answer))

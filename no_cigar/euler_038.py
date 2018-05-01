@@ -23,16 +23,13 @@ __sol__ = 932718654
 
 from itertools import permutations
 
-lists_of_multipliers = [[j for j in range(1, i)] for i in range(3, 11)]
-
-
-# print(lists_of_multipliers)
 
 
 def make_number(l):
     return int(''.join(l))
 
 
+lists_of_multipliers = [[j for j in range(1, i)] for i in range(3, 11)]
 one_to_nine = ['9', '8', '7', '6', '5', '4', '3', '2', '1']
 list_of_perms = set([make_number(perm) for perm in permutations(one_to_nine)])
 max_pan_digit = max(list_of_perms)

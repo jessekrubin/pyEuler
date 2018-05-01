@@ -22,24 +22,22 @@ __sol__ = 5777
 from lib.octopus_prime import is_prime
 from math import sqrt
 
-n = 3
-prime_numbers = set()
-prime_numbers.add(2)
-answer = None
-while answer is None:
-    if is_prime(n):
-        prime_numbers.add(n)
-    else:
-        for p in prime_numbers:
-            if sqrt(((n - p) / 2)) == int(sqrt(((n - p) / 2))):
-                break  # break if it works with the conjecture
-        else:
-            answer = n
-    n += 2
-
-print("ANSWER: {}".format(answer))
 def p046():
-    pass
+    n = 3
+    prime_numbers = set()
+    prime_numbers.add(2)
+    while True:
+        if is_prime(n):
+            prime_numbers.add(n)
+        else:
+            for p in prime_numbers:
+                if sqrt(((n - p) / 2)) == int(sqrt(((n - p) / 2))):
+                    break  # break if it works with the conjecture
+            else:
+                return n
+                answer = n
+        n += 2
 
 if __name__ == '__main__':
-    p046()
+    answer = p046()
+    print("ANSWER: {}".format(answer))

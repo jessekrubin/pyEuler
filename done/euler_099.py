@@ -17,7 +17,7 @@ determine which line number has the greatest numerical value.
 NOTE: The first two lines in the file represent the numbers in the example
 given above.
 """
-__sol__ = None
+__sol__ = 709
 
 from math import log
 from operator import itemgetter

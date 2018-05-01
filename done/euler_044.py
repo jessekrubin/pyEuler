@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
-
 """
 Pentagon numbers
 Problem 44
@@ -21,26 +20,25 @@ __sol__ = 5482660
 
 from lib.decorations import cash_muney
 
+
 @cash_muney
 def pent_num(n):
     return n * (3 * n - 1) // 2
 
 
-answer = None
-pentagonal_numbers = set()
-i = 0
-while answer is None:
-    i += 1
-    p_k = pent_num(i)
-    for p_j in pentagonal_numbers:
-        if p_k - p_j in pentagonal_numbers and p_k - 2 * p_j in pentagonal_numbers:
-            answer = p_k - 2 * p_j
-            break
-    pentagonal_numbers.add(p_k)
-
-print("D: {}".format(answer))
 def p044():
-    pass
+    answer = None
+    pentagonal_numbers = set()
+    i = 0
+    while answer is None:
+        i += 1
+        p_k = pent_num(i)
+        for p_j in pentagonal_numbers:
+            if p_k - p_j in pentagonal_numbers and p_k - 2 * p_j in pentagonal_numbers:
+                return p_k - 2 * p_j
+        pentagonal_numbers.add(p_k)
+
 
 if __name__ == '__main__':
-    p044()
+    ANSWER = p044()
+    print("ANSWER/value of D: {}".format(ANSWER))

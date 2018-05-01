@@ -27,11 +27,11 @@ def is_circ_prime(n):
         (is_prime(dig_list_2_int(i)) for i in rot_list_gen(digist)))
 
 
+
 num_circ_primes = 0
 for i in range(1, 1000000):
     if is_circ_prime(i):
         num_circ_primes += 1
-
 print("# of circlular primes: {}".format(num_circ_primes - 1))
 def p035():
     pass

@@ -67,10 +67,7 @@ denProd = 1
 for thing in thingsy:
     numProd *= thing[0]
     denProd *= thing[1]
-
-
-# print("{} - {} / 387296".format(numProd, numProd))
-# print("{} - {} / 387296".format(denProd, denProd))
+print(numProd, denProd)
 print("Simplifies to 1/100")
 def p033():
     pass
