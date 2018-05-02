@@ -35,22 +35,12 @@ def pytriple_gen(max_c, primatives_only=True):
                     yield (imag, real, sea) if real > imag else (real, imag, sea)
 
 
-# def triangle_area(v1, v2):
-#     return abs(cproduct(v1, v2)) / 2
-
-
 class Trigon(object):
+    """
+    Class to represent Trigons
+    """
 
     def __init__(self, pt1, pt2, pt3):
-        # if len(pts) == 3:
-        #     self.pt1 = Vuple(pts[0])
-        #     self.pt2 = Vuple(pts[1])
-        #     self.pt3 = Vuple(pts[2])
-        # elif len(pts) == 1:
-        #     a, b, c = pts[0]
-        #     self.pt1 = Vuple(a)
-        #     self.pt2 = Vuple(b)
-        #     self.pt3 = Vuple(c)
         self.pt1 = Vuple(pt1)
         self.pt2 = Vuple(pt2)
         self.pt3 = Vuple(pt3)
@@ -72,22 +62,17 @@ class Trigon(object):
         return self.area() == sum(map(methodcaller('area'),
                                       self.inner_triangles(point)))
 
+    def perimeter_point(self, point):
+        if type(point) is not Vuple:
+            point = Vuple(point)
+        return any(tri_area == 0 for tri_area in map(methodcaller('area'),
+                                                     self.inner_triangles(point)))
+
     def inner_triangles(self, point):
         t1 = Trigon(point, self.pt2, self.pt3)
         t2 = Trigon(self.pt1, point, self.pt3)
         t3 = Trigon(self.pt1, self.pt2, point)
         return t1, t2, t3
-
-    def points_set(self):
-        return {self.pt1, self.pt2, self.pt3}
-
-    def __eq__(self, other):
-        """Tests equality by testing if sets of points are equal
-
-        :param other:
-        :return:
-        """
-        return self.points_set() == other.points_set()
 
     def points(self):
         return self.pt1, self.pt2, self.pt3
@@ -102,4 +87,3 @@ class Trigon(object):
     @staticmethod
     def area_from_points(pt1, pt2, pt3):
         return abs(truediv(Vuple.cross(pt1 - pt2, pt3 - pt2), 2))
-
