@@ -60,7 +60,7 @@ def p055():
 
 
 if __name__ == '__main__':
-    answer = p055()
     assert False == is_lychrel(47)
     assert False == is_lychrel(349)
-    print("ANSWER: {}".format(answer))
+    ANSWER = p055()
+    print("ANSWER: {}".format(ANSWER))

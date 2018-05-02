@@ -16,7 +16,9 @@ from lib.maths import gcd_cash_muny
 from math import sqrt
 from tqdm import tqdm
 from bisect import bisect_left
-from lib.maths import pytriple_gen
+from lib.trigons import pytriple_gen
+
+
 #
 # def pytriple_gen(max_c, primatives_only=True):
 #     """

@@ -26,7 +26,7 @@ from math import sqrt
 with open('../txt_files/p098_words.txt') as f: # load the matrix
     words = [word.strip('"') for word in f.readline().split(',')]
 
-max_word_length = max(len(word) for word in words) # get the max word length
+max_word_length = max(len(word) for word in words) # get the max word mag
 
 
 max_square = int(sqrt(10**max_word_length)+1)

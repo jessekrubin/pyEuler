@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
-from math import sqrt, pi
+from math import sqrt, pi, acos
+from operator import add, sub
+
 from lib.decorations import cash_muney
-from tqdm import tqdm
+from sys import version_info
 
 # py2/3 range/xrange
-try: xrange
-except NameError: xrange = range
+if version_info.major > 2:
+    from functools import reduce
+
+    xrange = range
+
 
 @cash_muney
 def cash_factorial(n):
@@ -16,42 +21,20 @@ def cash_factorial(n):
     else:
         return cash_factorial(n - 1) * n
 
-def pytriple_gen(max_c, primatives_only=True):
-    """
-    primative pythagorean triples generator
-
-    thanks to 3Blue1Brown
-    special thanks to 3Blue1Brown's video on pythagorean triples
-    https://www.youtube.com/watch?v=QJYmyhnaaek&t=300s
-
-    :param max_c:
-    :return:
-    """
-    for real_pts in xrange(2, int(sqrt(max_c))+1, 1):
-        for imag_pts in xrange(real_pts%2+1, real_pts, 2):
-            comp = complex(real_pts, imag_pts)
-            sqrd = comp * comp
-            real = int(sqrd.real)
-            imag = int(sqrd.imag)
-            if abs(real-imag)%2 == 1 and gcd(imag, real) == 1:
-                sea = int((comp * comp.conjugate()).real)
-                if sea > max_c:
-                    break
-                else:
-                    yield (imag, real, sea) if real > imag else (real, imag, sea)
 
 def rad2deg(n):
     return 180 * n / pi
 
 
 def power_mod(number, exponent, mod):
-    if exponent>0:
-        if exponent%2==0:
-            return power_mod(number, exponent//2, mod)
+    if exponent > 0:
+        if exponent % 2 == 0:
+            return power_mod(number, exponent // 2, mod)
         else:
-            return power_mod(number, exponent//2, mod)*number
+            return power_mod(number, exponent // 2, mod) * number
     else:
         return 1
+
 
 def divisors_gen(n):
     large_divisors = []
@@ -63,10 +46,12 @@ def divisors_gen(n):
     for divisor in reversed(large_divisors):
         yield divisor
 
-def gcd(a,b):
+
+def gcd(a, b):
     while a:
-        a,b = b%a,a
+        a, b = b % a, a
     return b
+
 
 def n_divisors(n):
     """
@@ -77,8 +62,10 @@ def n_divisors(n):
     """
     return sum(1 for _ in divisors_gen(n))
 
+
 def divisors_list(n):
     return [i for i in divisors_gen(n)]
+
 
 def n_digits(number):
     return sum((1 for _ in str(number)))
@@ -127,11 +114,71 @@ def expo(d, n):
     :param n: number being divided
     :return:
     """
-    if n < d: # flip
+    if n < d:  # flip
         d, n = n, d
     c = n
     divs = 0
-    while c%d == 0:
+    while c % d == 0:
         c //= d
         divs += 1
     return divs
+
+
+def length(vector):
+    return sqrt(dproduct(vector, vector))
+
+
+def angle(v1, v2):
+    return acos(dproduct(v1, v2) / (length(v1) * length(v2)))
+
+
+def dproduct(v1, v2):
+    return sum((a * b) for a, b in zip(v1, v2))
+
+
+class Vuple(tuple):
+    """
+    Vector-Tuple class
+    """
+
+    def __init__(self, *args):
+        tuple.__init__(self, tuple(a for a in args))
+
+    def __gt__(self, other):
+        return Vuple.mag_sqrd(self) == Vuple.mag_sqrd(other)
+
+    def __eq__(self, other):
+        return Vuple.mag_sqrd(self) == Vuple.mag_sqrd(other)
+
+    def __add__(self, other):
+        return Vuple(map(add, self, other))
+
+    def __sub__(self, other):
+        return Vuple(map(sub, self, other))
+
+    # @staticmethod
+    # def unit_vuple(voop):
+    #     return Vuple.
+
+    @staticmethod
+    def mag_sqrd(voop):
+        return sum(el * el for el in voop)
+
+    @staticmethod
+    def mag(voop):
+        return sqrt(Vuple.mag_sqrd(voop))
+
+    @staticmethod
+    def dot(a, b):
+        return sum(va * vb for va, vb in zip(a, b))
+
+    @staticmethod
+    def cross(v1, v2):
+        """Cross product of two 2d vectors
+
+        :param v1: first vector
+        :param v2: second vector
+        :return: cross product
+        """
+        if len(v1) == 2 and len(v2) == 2:
+            return (v1[0] * v2[1]) - (v1[1] * v2[0])

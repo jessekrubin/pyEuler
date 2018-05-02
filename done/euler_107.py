@@ -20,7 +20,7 @@ G	-	-	-	23	11	27	-
 
 
 However, it is possible to optimise the network by removing some edges and
-still ensure that all points on the network remain connected. The network which
+still ensure that all from_points on the network remain connected. The network which
 achieves the maximum saving is shown below. It has a weight of 93, representing
 a saving of 243 − 93 = 150 from the original network.
 

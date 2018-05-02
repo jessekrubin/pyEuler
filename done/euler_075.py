@@ -4,7 +4,7 @@
 """
 Singular integer right triangles
 Problem 75
-It turns out that 12 cm is the smallest length of wire that can be bent to
+It turns out that 12 cm is the smallest mag of wire that can be bent to
 form an integer sided right angle triangle in exactly one way, but there are
 many more examples.
 
@@ -22,7 +22,7 @@ exactly three different integer sided right angle triangles.
 
 120 cm: (30,40,50), (20,48,52), (24,45,51)
 
-Given that L is the length of the wire, for how many values of
+Given that L is the mag of the wire, for how many values of
 L ≤ 1,500,000 can exactly one integer sided right angle triangle
 be formed?
 """

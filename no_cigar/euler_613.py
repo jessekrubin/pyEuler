@@ -24,8 +24,7 @@ from math import pi
 
 from tqdm import tqdm
 
-from lib.vfunky import angle
-
+from lib.maths import angle
 
 c1 = 4000
 c2 = 3000

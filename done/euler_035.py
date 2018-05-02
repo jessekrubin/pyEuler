@@ -16,7 +16,7 @@ How many circular primes are there below one million?
 __sol__ = 55
 
 from lib.listless import digits_list, dig_list_2_int, rot_list_gen
-from lib.octopus_prime import is_prime
+from lib.octopus_prime import is_prime, prime_sieve_gen
 from lib.decorations import cash_muney
 
 
@@ -24,17 +24,13 @@ from lib.decorations import cash_muney
 def is_circ_prime(n):
     digist = [int(j) for j in digits_list(n)]
     return all(
-        (is_prime(dig_list_2_int(i)) for i in rot_list_gen(digist)))
+            (is_prime(dig_list_2_int(i)) for i in rot_list_gen(digist)))
 
 
-
-num_circ_primes = 0
-for i in range(1, 1000000):
-    if is_circ_prime(i):
-        num_circ_primes += 1
-print("# of circlular primes: {}".format(num_circ_primes - 1))
 def p035():
-    pass
+    return sum(1 for p in prime_sieve_gen(10**6) if is_circ_prime(p))
+
 
 if __name__ == '__main__':
-    p035()
+    ANSWER = p035()
+    print("# of circlular primes: {}".format(ANSWER))

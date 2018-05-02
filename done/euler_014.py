@@ -40,4 +40,4 @@ def p014():
 
 if __name__ == '__main__':
     max_index = p014()
-    print("{} produces the longest collatz sequence length".format(max_index))
+    print("{} produces the longest collatz sequence mag".format(max_index))

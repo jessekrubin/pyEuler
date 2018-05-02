@@ -32,7 +32,7 @@ def num_cycles(p):
     # cycle has to be smaller than prime number
     # so for all nums less than,
     # if the the remainder of the 10 to the power of that number  is one
-    # that's the cycle length
+    # that's the cycle mag
     for i in range(1, p):
         hopefully_one_maybe = 10 ** i % p
         if hopefully_one_maybe == 1:

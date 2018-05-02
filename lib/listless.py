@@ -2,10 +2,15 @@
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 from collections import deque, Counter
+from operator import mul
 from sys import version_info
 
 if version_info.major > 2:
+    from functools import reduce
     xrange = range
+
+def list_product(l):
+    return reduce(mul, l)
 
 def is_permutation(a, b):
     """

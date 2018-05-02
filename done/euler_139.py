@@ -5,8 +5,8 @@
 Pythagorean tiles
 Problem 139
 Let (a, b, c) represent the three sides of a right angle triangle with integral
-length sides. It is possible to place four such triangles together to form a
-square with length c.
+mag sides. It is possible to place four such triangles together to form a
+square with mag c.
 
 For example, (3, 4, 5) triangles can be placed together to form a 5 by 5
 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5
@@ -22,13 +22,13 @@ place?
 """
 __sol__ = 10057761
 
-from lib.maths import pytriple_gen
+from lib.trigons import pytriple_gen
 
 
 def pytiles(max_perimeter):
     """
     we are looking for triangles where the hypotenuse is divisible by the side
-    length of the inner square, which is the difference in the RAT legs,
+    mag of the inner square, which is the difference in the RAT legs,
 
     :param max_perimeter: max right triangle perimeter
     :return: number of triangles

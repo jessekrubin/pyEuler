@@ -4,7 +4,7 @@
 """
 Almost equilateral triangles
 Problem 94
-It is easily proved that no equilateral triangle exists with integral length
+It is easily proved that no equilateral triangle exists with integral mag
 sides and integral area. However, the almost equilateral triangle 5-5-6 has
 an area of 12 square units.
 
@@ -16,7 +16,7 @@ side lengths and area and whose perimeters do not exceed one billion
 (1,000,000,000).
 """
 __sol__ = 518408346
-from lib.maths import pytriple_gen
+from lib.trigons import pytriple_gen
 from time import time
 
 

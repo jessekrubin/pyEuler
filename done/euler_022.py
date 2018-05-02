@@ -21,15 +21,15 @@ __sol__ = 871198282
 
 from lib.string_theory import string_score
 
+
 def p022():
     with open(r'../txt_files/p022_names.txt') as file:
-        names_lines = [line.strip('\"\n,').split("\", \"") for line in file.readlines()]
-
-    names = [name for name_line in names_lines for name in name_line]
+        names = file.readline().strip('\"').split('\",\"')
     names.sort()
-    return  sum(((i) * string_score(names[i]) for i in range(len(names))))
+    return sum((i + 1) * string_score(names[i]) for i in range(len(names)))
 
 
 if __name__ == '__main__':
+    assert 53 == string_score("COLIN")
     total_score = p022()
     print("Total: {}".format(total_score))

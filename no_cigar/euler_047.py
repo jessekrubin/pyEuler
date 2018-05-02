@@ -21,21 +21,25 @@ each. What is the first of these numbers?
 __sol__ = 134043
 
 from lib.octopus_prime import pfactors_gen
+from itertools import count
+from lib.decorations import cash_muney
 
+@cash_muney
+def n_distict_pfactors(n):
+    return len([pf for pf in pfactors_gen(n)])
 
-def distinct_primes_factors(n_distinct_factors):
+def distinct_primes_factors(n_facs):
     num_prime_factors = {}
-    i = 0
-    while True:
-        i += 1
-        num_prime_factors[i] = len(set(pfactors_gen(i)))
-        if i > 10 and num_prime_factors[i] == n_distinct_factors:
-            if all(n_distinct_factors == num_prime_factors[i - j] for j in range(n_distinct_factors)):
-                return i + 1 - n_distinct_factors
+    for i in count(10):
+        if i > 134050: break
+        num_prime_factors[i] = n_distict_pfactors(i)
+        if i > 10 and num_prime_factors[i] == n_facs:
+            if all(n_facs == num_prime_factors[i - j] for j in range(n_facs)):
+                return i + 1 - n_facs
 
 
-# print(distinct_primes_factors(2))
-# print(distinct_primes_factors(3))
+print(distinct_primes_factors(2))
+print(distinct_primes_factors(3))
 answer = distinct_primes_factors(4)
 print(answer)
 def p047():

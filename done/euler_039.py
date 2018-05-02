@@ -4,7 +4,7 @@
 """
 Integer right triangles
 Problem 39
-If pytriple_sum is the perimeter of a right angle triangle with integral length
+If pytriple_sum is the perimeter of a right angle triangle with integral mag
 sides, {a,b,c}, there are exactly three solutions for pytriple_sum = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
