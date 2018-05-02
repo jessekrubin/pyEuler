@@ -1,6 +1,7 @@
 # pyEuler .gitignore
 
 # folders
+.vscode/**
 /.idea/**
 /.pytest_cache/**
 lib/test/.pytest_cache/**
