@@ -11,7 +11,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-05-02) i've done 85 problems, and am currently working on 24.
+Last I checked (2018-05-02) i've done 99 problems, and am currently working on 24.
 
 ## Problems table
 

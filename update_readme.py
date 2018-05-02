@@ -65,7 +65,7 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
 
 """.format(EULER_IMG_URL,
            LAST_UPDATED,
-           len(DONE),
+           len(DONE)+len(NO_CIGAR),
            len(NOT_DONE),
            DONE_EMOJI,
            NO_CIGAR_EMOJI,
