@@ -26,11 +26,11 @@ def fib_gen(n):
     a, b = 0, 1
     for _ in range(n):
         yield a
-        a, b = b, a + b
+        a, b = b, a+b
 
 
 def first_ten_pan_digital(n):
-    last_9 = n % 1000000000
+    last_9 = n%1000000000
     if last_9 in pandigital_numbers:
         flrst_nine = n
         while flrst_nine > 1000000000:
@@ -50,9 +50,12 @@ while True:
     if fi > 100000000000:
         if first_ten_pan_digital(fi):
             break
-print(i - 1)
+print(i-1)
+
+
 def p104():
     pass
+
 
 if __name__ == '__main__':
     p104()

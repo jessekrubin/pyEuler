@@ -13,13 +13,14 @@ __sol__ = 9110846700
 
 def power_series(number):
     series_sum = 0
-    for i in range(1, number + 1):
-        series_sum += i ** i
+    for i in range(1, number+1):
+        series_sum += i**i
     return series_sum
 
 
 def p048():
-    return power_series(1000) % 10000000000
+    return power_series(1000)%10000000000
+
 
 if __name__ == '__main__':
     answer = p048()

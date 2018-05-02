@@ -35,9 +35,10 @@ def concat_nums_2_length():
 
 def p040():
     s = "".join(concat_nums_2_length())
-    indexes = [10 ** i for i in range(6)]
-    digs = [int(s[i - 1]) for i in indexes]
+    indexes = [10**i for i in range(6)]
+    digs = [int(s[i-1]) for i in indexes]
     return reduce(mul, digs, 1)
+
 
 if __name__ == '__main__':
     SOL = p040()

@@ -35,9 +35,9 @@ from lib.listless import digits_list
 from lib.decorations import tictoc, cash_muney
 from math import factorial
 
-
 dic = {}
 seen_nums = set()
+
 
 @cash_muney
 def recursing(n):
@@ -47,20 +47,23 @@ def recursing(n):
     else:
         if n not in dic.keys():
             seen_nums.add(n)
-            return recursing(next) + 1
+            return recursing(next)+1
         else:
             return dic[n]
+
 
 def factorial_chain_length(starting_n):
     dic[starting_n] = recursing(starting_n)
     return dic[starting_n]
 
+
 def p074(upper_bound):
     answer = 0
-    for i in range(upper_bound):
+    for i in xrange(upper_bound):
         if factorial_chain_length(i+1) == 60:
             answer += 1
     return answer
+
 
 ans = p074(1000000)
 print("ANSWER: {}".format(ans))

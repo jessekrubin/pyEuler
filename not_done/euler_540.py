@@ -51,6 +51,7 @@ def thing(n):
 
     print(count)
 
+
 (thing(20))
 thing(200)
 thing(1000)

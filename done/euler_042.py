@@ -22,10 +22,10 @@ __sol__ = 162
 
 from lib.string_theory import string_score
 
+
 def p042():
     with open(r'../txt_files/p042_words.txt') as f:
         words = [s.strip("\"") for s in f.readlines()[0].split(',')]
-
 
     word_scores = map(string_score, words)
     max_word_score = (max(map(string_score, words)))

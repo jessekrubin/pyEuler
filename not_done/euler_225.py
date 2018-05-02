@@ -16,12 +16,14 @@ Find the 124th odd number that does not divide any terms of the above sequence.
 from functools import lru_cache
 from itertools import count
 
+
 @lru_cache(maxsize=None)
 def trib(n):
     if n < 3:
         return 1
     else:
-        return trib(n-1) + trib(n-2) + trib(n-3)
+        return trib(n-1)+trib(n-2)+trib(n-3)
+
 
 def nth_non_div_odd(n):
     odd = 27
@@ -29,9 +31,8 @@ def nth_non_div_odd(n):
     for i in count(1):
         print(trib(i))
 
-
-
         if i > 50:
             break
+
 
 nth_non_div_odd(1)

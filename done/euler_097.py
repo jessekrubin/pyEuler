@@ -17,13 +17,13 @@ However, in 2004 there was found a massive non-Mersenne prime which contains
 
 Find the last ten digits of this prime number.
 """
-__sol__=8739992577
+__sol__ = 8739992577
 
 
 def p097():
     return pow(2, 7830457, 10**10)*28433%(10**10)+1
 
 
-if __name__=='__main__':
-    answer=p097()
+if __name__ == '__main__':
+    answer = p097()
     print('Last ten digits: {}'.format(answer))

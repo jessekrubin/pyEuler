@@ -23,6 +23,7 @@ from tqdm import tqdm
 def mull(a, b):
     return a*b
 
+
 def thingy(numb=9, trailing=5):
     # print(numb)
     # print(trailing)
@@ -30,15 +31,16 @@ def thingy(numb=9, trailing=5):
     for n in tqdm(range(1, numb), total=numb):
         # print(fact)
         mul = n+1
-        while mul%10==0:
-            mul//=10
+        while mul%10 == 0:
+            mul //= 10
         mul %= 10**trailing
 
         fact = mull(mul, fact)
-        while fact%10==0:
-            fact//=10
+        while fact%10 == 0:
+            fact //= 10
         fact %= 10**trailing
     print(fact)
+
 
 thingy(numb=20)
 thingy(numb=1000000000000)

@@ -24,28 +24,28 @@ with side mag 9 will be formed. If this process is continued, what is the
 side mag of the square spiral for which the ratio of primes along both
 diagonals first falls below 10%?
 """
-__sol__=26241
+__sol__ = 26241
 
 from lib.octopus_prime import is_prime
 from operator import truediv
 
 
 def spiral_prime_iterator(ratio_bound):
-    ratio=0.5
-    i=0
-    addon=2
-    adds=0
-    no_primes=0
-    total_nums=0
-    while ratio>ratio_bound:
-        if adds>0 and adds%4==0:
-            addon+=2
-        i+=addon
-        adds+=1
-        total_nums+=1
+    ratio = 0.5
+    i = 0
+    addon = 2
+    adds = 0
+    no_primes = 0
+    total_nums = 0
+    while ratio > ratio_bound:
+        if adds > 0 and adds%4 == 0:
+            addon += 2
+        i += addon
+        adds += 1
+        total_nums += 1
         if is_prime(i+1):
-            no_primes+=1
-        ratio=truediv(no_primes, total_nums)
+            no_primes += 1
+        ratio = truediv(no_primes, total_nums)
     return addon+1
 
 
@@ -53,6 +53,6 @@ def p058():
     return spiral_prime_iterator(0.1)
 
 
-if __name__=='__main__':
-    ANSWER=p058()
+if __name__ == '__main__':
+    ANSWER = p058()
     print("ANSWER: {}".format(ANSWER))

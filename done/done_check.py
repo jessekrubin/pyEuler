@@ -5,15 +5,17 @@ from os import listdir
 from time import time
 import importlib
 import json
+
 with open('../txt_files/solutions.txt') as f:
     thing = json.load(f)
+
 
 # print(thing)
 
 
-def add_sol(p, ans = None):
+def add_sol(p, ans=None):
     with open("euler_{}.py".format(p)) as f:
-        lines = [l.strip('\n') for l in  f.readlines()]
+        lines = [l.strip('\n') for l in f.readlines()]
     sol_ind = [i for i in range(len(lines)) if lines[i] == '"""']
     if ans is None:
         lines.insert(sol_ind[1]+1, "__sol__ = None")
@@ -22,13 +24,15 @@ def add_sol(p, ans = None):
     with open("euler_{}.py".format(p), 'wb') as f:
         f.writelines("\n".join(lines))
 
+
 def set_sol(p, ans):
     with open("./done/euler_{}.py".format(p)) as f:
-        lines = [l.strip('\n') for l in  f.readlines()]
+        lines = [l.strip('\n') for l in f.readlines()]
     sol_ind = [i for i in range(len(lines)) if lines[i] == '"""']
     lines[sol_ind[1]+1] = "__sol__ = {}".format(ans)
     with open("euler_{}.py".format(p), 'wb') as f:
         f.writelines("\n".join(lines))
+
 
 def add_pxxx(p):
     pxxx_lines = ['def p{}():'.format(p),
@@ -39,6 +43,7 @@ def add_pxxx(p):
                   '    print(\"Answer: {}\".format(ANSWER))']
     with open("euler_{}.py".format(p), 'a') as f:
         f.write('\n'.join(pxxx_lines))
+
 
 def check_answer(problem):
     try:
@@ -70,11 +75,12 @@ def check_answer(problem):
         assert p_ans == my_ans
         t_total = (te-ts)*1000
         print("p{} PASSED; {} ms".format(problem, t_total))
-    except AssertionError as e: # failed test
+    except AssertionError as e:  # failed test
         print("p{} FAILED".format(problem))
         print(p_funk(), p_ans)
     except ValueError as e:
         print("p{} __sol__ is None".format(problem))
+
 
 def check_all_answers():
     DONE_PATH = r'.'
@@ -91,4 +97,3 @@ def check_all_answers():
 
 
 check_all_answers()
-

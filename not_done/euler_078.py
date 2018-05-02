@@ -21,13 +21,14 @@ Find the least value of n for which pytriple_gen(n) is divisible by one million.
 
 
 def p(n):
-    sums = [0] * (n+1)
+    sums = [0]*(n+1)
     sums[0] = 1
     for num in range(1, n+1):
         for i in range(num, n+1):
-            sums[i] += sums[i - num]
+            sums[i] += sums[i-num]
     print(sums)
     return sums
+
 
 a = p(4)
 print(a)

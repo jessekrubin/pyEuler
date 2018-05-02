@@ -12,15 +12,17 @@ numbers from 1 to 20?
 """
 __sol__ = 232792560
 
+
 def p005():
     good_divs = [20, 19, 18, 17, 16, 14, 13, 11]
 
     ret_val = 20
     while True:
-        if all(ret_val % n == 0 for n in good_divs):
+        if all(ret_val%n == 0 for n in good_divs):
             break
         ret_val += 20
     return ret_val
+
 
 if __name__ == '__main__':
     answer = p005()

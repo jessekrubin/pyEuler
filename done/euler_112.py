@@ -11,31 +11,33 @@ Similarly if no digit is exceeded by the digit to its right it is called a
 decreasing number; for example, 66420.
 
 We shall call a positive integer that is neither increasing nor decreasing a
-"bouncy" number; for example, 155349.
+"is_bouncy" number; for example, 155349.
 
-Clearly there cannot be any bouncy numbers below one-hundred, but just over
-half of the numbers below one-thousand (525) are bouncy. In fact, the least
-number for which the proportion of bouncy numbers first reaches 50% is 538.
+Clearly there cannot be any is_bouncy numbers below one-hundred, but just over
+half of the numbers below one-thousand (525) are is_bouncy. In fact, the least
+number for which the proportion of is_bouncy numbers first reaches 50% is 538.
 
-Surprisingly, bouncy numbers become more and more common and by the time we
-reach 21780 the proportion of bouncy numbers is equal to 90%.
+Surprisingly, is_bouncy numbers become more and more common and by the time we
+reach 21780 the proportion of is_bouncy numbers is equal to 90%.
 
 Find the least number for which the proportion of bouncy numbers is exactly
 99%
 """
-__sol__ = None
-
+from __future__ import division
 from lib.listless import digits_list
 
+try: xrange
+except NameError: xrange = range
 
-def bouncy(n):
+
+def is_bouncy(n):
     digits = digits_list(n)
     increasing = False
     decreasing = False
-    for i in range(0, len(digits) - 1):
-        if digits[i + 1] < digits[i]:
+    for i in range(0, len(digits)-1):
+        if digits[i+1] < digits[i]:
             increasing = True
-        elif digits[i + 1] > digits[i]:
+        elif digits[i+1] > digits[i]:
             decreasing = True
         if increasing and decreasing:
             return True
@@ -47,22 +49,20 @@ def find_proportion(percent):
     bouncy_count = 0
     while True:
         i += 1
-        if bouncy(i):
+        if is_bouncy(i):
             bouncy_count += 1
-        if bouncy_count / i == (percent / 100):
+        if (bouncy_count/i) == (percent/100):
             return i
 
 
-percentage = 90
-answer = find_proportion(percentage)
-print("Least num for which {}% of numbers are bouncy: {}".format(percentage, answer))
-# percentage = 99
-# answer = find_proportion(percentage)
-# print("Least num for which {}% of numbers are bouncy: {}".format(percentage, answer))
-def p112(percentage = 99):
+__sol__ = 1587000
+
+
+def p112(percentage=99):
     return find_proportion(percentage)
-    pass
+
 
 if __name__ == '__main__':
+    assert 21780 == find_proportion(90)
     ANSWER = p112()
-    print("Answer: {}".format(ANSWER))
+    print("Smallest n where proportion bouncy is 99%: {}".format(ANSWER))

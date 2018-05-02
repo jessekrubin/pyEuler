@@ -22,14 +22,14 @@ from itertools import count
 
 
 def count_recips(n):
-    total = 1 # because everything has at least one
+    total = 1  # because everything has at least one
     print(n)
     for i in range(n+1, 2*n):
         for j in count(2*n):
             print(i, j)
-            if i*j ==  i*n + j*n:
+            if i*j == i*n+j*n:
                 total += 1
-            elif i*j > i*n + j*n:
+            elif i*j > i*n+j*n:
                 # print(i*j)
                 # print(i*n)
                 # print(n*j)
@@ -37,6 +37,7 @@ def count_recips(n):
                 # return total
             if j > 100:
                 return total
+
 
 print(count_recips(4))
 
@@ -67,4 +68,3 @@ print(count_recips(4))
 #             #     return ddd
 # print(p108(1000))
 #
-

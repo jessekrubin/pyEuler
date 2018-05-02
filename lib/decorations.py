@@ -4,10 +4,11 @@
 """
 Decorations used by me!!!
 """
-from cProfile import Profile
-from functools import wraps
-from inspect import getfile
-from time import time
+# from cProfile import Profile
+# from functools import wraps
+# from inspect import getfile
+# from time import time
+from . import *
 
 
 def cash_muney(funk):
@@ -18,6 +19,7 @@ def cash_muney(funk):
     :return:
     """
     cash_money = {}
+
     @wraps(funk)
     def wrapper(*argz):
         if argz in cash_money:
@@ -26,7 +28,9 @@ def cash_muney(funk):
             rv = funk(*argz)
             cash_money[argz] = rv
             return rv
+
     return wrapper
+
 
 def cprof(funk):
     """
@@ -51,6 +55,7 @@ def cprof(funk):
 
     return profiled_funk
 
+
 class tictoc(object):
     """
     Timing decorator object
@@ -62,16 +67,16 @@ class tictoc(object):
         self.runs = runs
 
     def __str__(self, t_total, funk, args_string):
-            return('__TICTOC__\n'
-                   '    file: {}\n'
-                   '    funk: {}\n'
-                   '    args: {}\n'
-                   '    time: {} ms\n'
-                   '    runs: {}\n'.format(getfile(funk),
-                                          funk.__name__,
-                                          args_string,
-                                          t_total * 1000,
-                                          self.runs))
+        return ('__TICTOC__\n'
+                '    file: {}\n'
+                '    funk: {}\n'
+                '    args: {}\n'
+                '    time: {} ms\n'
+                '    runs: {}\n'.format(getfile(funk),
+                                        funk.__name__,
+                                        args_string,
+                                        t_total*1000,
+                                        self.runs))
 
     def __call__(self, funk):
         @wraps(funk)
@@ -81,9 +86,8 @@ class tictoc(object):
             for i in range(self.runs):
                 result = funk(*args, **kwargs)
             te = time()
-            t_total = (te - ts) / self.runs
+            t_total = (te-ts)/self.runs
             print(self.__str__(t_total, funk, str(args)))
             return result
 
         return wrapper
-

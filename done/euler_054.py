@@ -93,7 +93,9 @@ class Card(object):
     def __repr__(self):
         return self.strang
 
+
 class PokerHand:
+
     def __init__(self, cards):
         self.cards = cards
         self.suits_counter = Counter(card.suit for card in cards)
@@ -142,9 +144,9 @@ class PokerHand:
         if 14 in self.vals_counter.keys() and 2 in self.vals_counter.keys():
             straight = True if set(self.vals_counter.keys()) == set([2, 3, 4, 5, 14]) else False
         else:
-            straight = True if len(self.vals_counter) == 5 and rank_counter[0] - (low_card-1) == 5 else False
+            straight = True if len(self.vals_counter) == 5 and rank_counter[0]-(low_card-1) == 5 else False
 
-        if flush and straight: # don't really need to deal with rank 9
+        if flush and straight:  # don't really need to deal with rank 9
             if rank_counter[0] == 14 and low_card == 10:
                 rank_counter[9] = rank_counter[0]
             else:
@@ -177,8 +179,10 @@ class PokerHand:
                     return False
         return None
 
+
 with open("../txt_files/p054_poker.txt") as f:
     games = [game.strip('\n').split(' ') for game in f.readlines()]
+
 
 def p054():
     p1_wins = 0
@@ -190,6 +194,7 @@ def p054():
         if player_1 > player_2:
             p1_wins += 1
     return p1_wins
+
 
 if __name__ == '__main__':
     answer = p054()

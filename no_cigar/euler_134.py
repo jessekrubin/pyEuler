@@ -23,24 +23,24 @@ def prime_pair_connection(p1, p2, mod_tens):
     ret = p2
     mul = 1
     mul_by = 2  # the multiplication is always by 2 so skip every other
-    while ret % mod_tens != p1:
-        ret += mul_by * p2
+    while ret%mod_tens != p1:
+        ret += mul_by*p2
         ret %= mod_tens
         mul += mul_by
-    return mul * p2
+    return mul*p2
 
 
 def p134():
     lower_bound_p1 = 5  # starting at 5
-    upper_bound_p1 = 1000000 + 5  # get one more prime larger than 1000000
-    primes = [p for p in prime_gen(upper_bound_p1) if p>3]
+    upper_bound_p1 = 1000000+5  # get one more prime larger than 1000000
+    primes = [p for p in prime_gen(upper_bound_p1) if p > 3]
 
     total = 0
     mod_tens = 10
-    for i in range(len(primes) - 1):
+    for i in range(len(primes)-1):
         if primes[i] > mod_tens:
             mod_tens *= 10
-        total += prime_pair_connection(primes[i], primes[i + 1], mod_tens)
+        total += prime_pair_connection(primes[i], primes[i+1], mod_tens)
     return total
 
 

@@ -21,23 +21,28 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 __sol__ = 837799
-
 from operator import itemgetter
 from lib.decorations import cash_muney
+
+try: xrange
+except: xrange = range
+
 
 @cash_muney
 def collatz_seq_length(n):
     if n == 1:
         return 1
-    if n % 2 == 0:
-        return collatz_seq_length(n // 2) + 1
+    if n%2 == 0:
+        return collatz_seq_length(n//2)+1
     else:
-        return collatz_seq_length(3 * n + 1) + 1
+        return collatz_seq_length(3*n+1)+1
+
 
 def p014():
-    seq_lengths = [collatz_seq_length(i) for i in range(1, 1000000)]
-    return max(enumerate(seq_lengths), key=itemgetter(1))[0] + 1
+    seq_lengths = [collatz_seq_length(i) for i in xrange(1, 1000000)]
+    return max(enumerate(seq_lengths), key=itemgetter(1))[0]+1
+
 
 if __name__ == '__main__':
     max_index = p014()
-    print("{} produces the longest collatz sequence mag".format(max_index))
+    print("{} produces the longest collatz sequence".format(max_index))

@@ -35,6 +35,7 @@ from itertools import chain
 from lib.octopus_prime import is_prime, prime_gen, pfactors_gen
 from math import log
 
+
 def expo(d, n):
     """
     returns the number of times a divisor divides n (is the exponent)
@@ -43,7 +44,7 @@ def expo(d, n):
     :param n: number being divided
     :return:
     """
-    if n < d: # flip
+    if n < d:  # flip
         d, n = n, d
     c = n
     divs = 0
@@ -52,8 +53,9 @@ def expo(d, n):
         divs += 1
     return divs
 
+
 def pfactorization(n):
-    return (n for n in chain.from_iterable([p] * expo(p, n) for p in pfactors_gen(n)))
+    return (n for n in chain.from_iterable([p]*expo(p, n) for p in pfactors_gen(n)))
 
 
 def m(k):
@@ -93,9 +95,7 @@ def m(k):
 #     print(m(i))
 print(m(15))
 
-
 first20 = {i:m(i) for i in range(1, 20)}
 print(first20)
 ans = sum(m(i) for i in range(1, 200+1))
 print(ans)
-

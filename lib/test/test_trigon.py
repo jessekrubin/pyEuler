@@ -5,6 +5,7 @@ testing the pytriplets function/gen I made
 """
 from lib.maths import Trigon, Vuple, pytriple_gen
 
+
 class TestTrigon(object):
 
     def test_triangle_area_half(self):
@@ -26,8 +27,6 @@ class TestTrigon(object):
         tri = Trigon((-175, 41), (-421, -714), (574, -645))
         assert Vuple((0, 0)) not in tri
         assert tri.contains_origin() == False
-
-
 
 
 class TestPytriplesGen(object):

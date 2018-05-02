@@ -29,10 +29,11 @@ from lib.maths import angle
 c1 = 4000
 c2 = 3000
 
+
 def point_prob(tup):
-    v1 = (c1 - tup[0],  -tup[1])
-    v2 = (- tup[0], c2 - tup[1])
-    return angle(v1, v2) / (2 * pi)
+    v1 = (c1-tup[0], -tup[1])
+    v2 = (- tup[0], c2-tup[1])
+    return angle(v1, v2)/(2*pi)
 
 
 if __name__ == '__main__':

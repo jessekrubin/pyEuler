@@ -16,9 +16,12 @@ Let E(k) be the kth element in the sorted n column; for example, E(4) = 8 and
 E(6) = 9. If rad(n) is sorted for 1 ≤ n ≤ 100000, find E(10000).
 """
 __sol__ = 21417
+
 from lib.octopus_prime import pfactors_gen
-from functools import reduce
 from operator import mul, itemgetter
+
+try: reduce
+except: from functools import reduce
 
 
 def prime_factors_set_list(n):
@@ -30,26 +33,18 @@ def rad(n):
 
 
 def rad_list(upper_bound):
-    return [(rad(n), n) for n in range(1, upper_bound + 1)]
+    return [(rad(n), n) for n in range(1, upper_bound+1)]
 
 
 def eee(highest, k):
-    return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k - 1][1]
+    return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k-1][1]
 
 
-greatest, k = 10, 4
-solution = eee(greatest, k)
-solution_str = "For 1 ≤ n ≤ {}, E({}) == {}.".format(greatest, k, solution)
-print(solution_str)
+def p124(greatest=10**5, k=10**4):
+    return eee(greatest, k)
 
-greatest, k = 100000, 10000
-solution = eee(greatest, k)
-solution_str = "For 1 ≤ n ≤ {}, E({}) == {}.".format(greatest, k, solution)
-print(solution_str)
-
-def p124():
-    pass
 
 if __name__ == '__main__':
+    assert 8 == eee(10, 4)
     ANSWER = p124()
-    print("Answer: {}".format(ANSWER))
+    print("For 1 ≤ n ≤ 10**5, E(10**4) == {}.".format(ANSWER))

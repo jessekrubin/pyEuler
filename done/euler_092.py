@@ -27,8 +27,9 @@ def next_num(n):
     d = digits_list(n)
     m = 0
     for p in d:
-        m += p * p
+        m += p*p
     return m
+
 
 @cash_muney
 def goes2_89(n):
@@ -43,6 +44,7 @@ def goes2_89(n):
 
 def p092():
     return sum((1 for i in range(1, 10000000) if goes2_89(i)))
+
 
 if __name__ == '__main__':
     answer = p092()

@@ -24,9 +24,11 @@ def partition(number):
     answer = set()
     answer.add((number))
     for x in range(1, number):
-         for y in partition(number - x):
-             answer.add(tuple(sorted((x, ) + y)))
+        for y in partition(number-x):
+            answer.add(tuple(sorted((x,)+y)))
     return answer
+
+
 #
 one_to_nine = [i+1 for i in range(9)]
 print(one_to_nine)
@@ -34,7 +36,7 @@ allperms = [i for i in permutations(one_to_nine)]
 print(len(allperms))
 #
 partitions_of_nine = partition(9)
-partition_perms = {partition: {part_perm for part_perm in permutations(partition)}
+partition_perms = {partition:{part_perm for part_perm in permutations(partition)}
                    for partition in partitions_of_nine}
 # print(allperms)
 
@@ -42,6 +44,7 @@ partition_perms = {partition: {part_perm for part_perm in permutations(partition
 #     print(i)
 
 from lib.listless import dig_list_2_int
+
 
 def check_partitions(perm):
     print(perm)
@@ -53,7 +56,7 @@ def check_partitions(perm):
         if is_prime(num):
             # print([num])
             l = check_partitions(perm[i+1:])
-            if l is not None and len(l)>1:
+            if l is not None and len(l) > 1:
                 lests.append([num, l])
     print(lests)
     return lests
@@ -67,8 +70,7 @@ sets = set()
 #     if thing is not None:
 #         sets.add(tuple(sorted((thing))))
 
-    # sets.add(thing)
-    # print(thing)
+# sets.add(thing)
+# print(thing)
 
 print(len(sets))
-

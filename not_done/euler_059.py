@@ -8,23 +8,8 @@ prob #
 Prompt
 """
 
-
-
-
-
 # with open(r'../txt_files/')
 with open('../txt_files/p059_cipher.txt') as f: cipher = f.readline().split(',')
-
-
-
-
-
-
-
-
-
-
-
 
 
 def p059():

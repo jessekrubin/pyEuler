@@ -16,22 +16,25 @@ equation has a unique solution.
 How many values of n less than fifty million have exactly one solution?
 """
 from itertools import count
+
 upper_limit = 100
 
 squares = [i*i for i in range(upper_limit)]
 siv = [0]*(upper_limit+1)
 
+
 def thing(z, y, x):
-    return squares[x] - squares[y] - squares[z]
+    return squares[x]-squares[y]-squares[z]
+
 
 print(thing(13, 10, 7))
 
 for arithmetic_stuff in count(1):
-    for i in range(1, upper_limit * 2):
+    for i in range(1, upper_limit*2):
         try:
-            eval = thing(i, i + arithmetic_stuff, i + (2 * arithmetic_stuff))
+            eval = thing(i, i+arithmetic_stuff, i+(2*arithmetic_stuff))
             if eval > 0:
-                print(i, i + arithmetic_stuff, i + (2 * arithmetic_stuff))
+                print(i, i+arithmetic_stuff, i+(2*arithmetic_stuff))
                 print(eval)
                 if eval < upper_limit:
                     siv[eval] += 1
@@ -40,8 +43,6 @@ for arithmetic_stuff in count(1):
 
     if arithmetic_stuff > 2*upper_limit:
         break
-
-
 
 # for i in range(3, upper_limit, 3):
 #     for j in range(1, (i//3)+1):
@@ -59,4 +60,3 @@ answer = sum(1 for n in siv if n == 1)
 print(answer)
 
 #
-

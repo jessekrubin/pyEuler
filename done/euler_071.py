@@ -22,14 +22,15 @@ order of size, find the numerator of the fraction immediately to the left of
 """
 __sol__ = 428570
 
+
 def ordered_fractions(d):
     right_denom = 7
     right_numerator = 3
     left_denom = 7
     left_numerator = 2
     for denom in range(d, 2, -1):
-        frac_multiplied = (right_numerator*denom-1) // right_denom
-        if frac_multiplied * left_denom > left_numerator * denom:
+        frac_multiplied = (right_numerator*denom-1)//right_denom
+        if frac_multiplied*left_denom > left_numerator*denom:
             left_denom = denom
             left_numerator = frac_multiplied
     return left_numerator, left_denom
@@ -38,6 +39,7 @@ def ordered_fractions(d):
 def p071():
     numerator, denom = ordered_fractions(1000000)
     return numerator
+
 
 if __name__ == '__main__':
     assert (2, 5) == ordered_fractions(8)

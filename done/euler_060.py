@@ -32,7 +32,7 @@ def num_digits(number):
 
 
 def concat_numbers(a, b):
-    return a * 10 ** (num_digits(b)) + b
+    return a*10**(num_digits(b))+b
 
 
 @cash_muney
@@ -42,10 +42,9 @@ def check_pair(p1, p2):
     else:
         return False
 
+
 def is_prime_pair_set(primes):
     return all(check_pair(c[0], c[1]) for c in combinations(primes, 2))
-
-
 
 
 def prime_pair_sets(set_size):
@@ -63,7 +62,7 @@ def prime_pair_sets(set_size):
                 pairs[p].add(p)
                 pairs[pp].add(pp)
 
-        for comb in combinations(pairs[p], set_size - 1):
+        for comb in combinations(pairs[p], set_size-1):
             sssss = look_up_is_prime_pair_set(comb)
             if len(sssss) == set_size:
                 return sum(sssss)

@@ -23,11 +23,11 @@ from lib.string_theory import is_palindrome
 
 
 def some_pals(upper_bound):
-    for i in range(1, int(sqrt(upper_bound) + 1)):
+    for i in range(1, int(sqrt(upper_bound)+1)):
         # print(i)
-        cur = i * i
-        for j in count(i + 1):
-            cur += j * j
+        cur = i*i
+        for j in count(i+1):
+            cur += j*j
             if cur >= upper_bound:
                 break
             elif is_palindrome(str(cur)):
@@ -35,10 +35,10 @@ def some_pals(upper_bound):
 
 
 def p125():
-    return sum(set(pal for pal in some_pals(10 ** 8)))
+    return sum(set(pal for pal in some_pals(10**8)))
 
 
 if __name__ == '__main__':
-    assert sum(set(pal for pal in some_pals(10 ** 3))) == 4164
+    assert sum(set(pal for pal in some_pals(10**3))) == 4164
     answer = p125()
     print("Solution: {}".format(answer))

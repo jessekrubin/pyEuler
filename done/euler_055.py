@@ -48,7 +48,7 @@ def is_lychrel(n):
     cur = n
     cur_rev = reverse(n)
     for i in range(49):
-        cur = cur + reverse(cur)
+        cur = cur+reverse(cur)
         cur_rev = reverse(cur)
         if cur == cur_rev:
             return False

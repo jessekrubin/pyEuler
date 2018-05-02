@@ -19,24 +19,25 @@ from lib.octopus_prime import prime_gen
 
 
 def funnn(d, n):
-    return d + (n / d)
+    return d+(n/d)
+
 
 def thingy(limit):
     print("____")
     print(limit)
     D = {}
     count = 1
-    primes = set(i for i in(prime_gen(limit)))
+    primes = set(i for i in (prime_gen(limit)))
+
     # print("\nprimes made")
     def divisors_thing(divs, n):
         return all(i in primes for i in map(partial(funnn, n=n), divs))
 
-
     for q in tqdm(range(0, limit+1)):
         if q not in D:
-            D.setdefault(q + q, set()).add(q)
+            D.setdefault(q+q, set()).add(q)
         else:
-            if q%4==2:
+            if q%4 == 2:
                 first_half = sorted(D[q])
 
                 if divisors_thing(first_half[0:1+len(first_half)//2], q):
@@ -45,11 +46,12 @@ def thingy(limit):
             # print("SOMETHING", something)
 
             for p in D[q]:
-                D.setdefault(p + q, set()).add(p)
-            D.setdefault(q + q, set()).add(q)
+                D.setdefault(p+q, set()).add(p)
+            D.setdefault(q+q, set()).add(q)
             del D[q]
 
     return count
 
+
 for i in range(2, 10):
-    print(thingy(10 ** i))
+    print(thingy(10**i))

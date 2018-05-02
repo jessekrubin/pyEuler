@@ -30,6 +30,7 @@ from operator import itemgetter
 
 from lib.octopus_prime import pfactors_gen, prime_gen
 
+
 def phi(n):
     a = [rel_p for rel_p in range(1, n) if gcd(rel_p, n) == 1]
     print("phi 1")
@@ -45,6 +46,7 @@ def phi2(n):
     else:
         pass
     print(primes)
+
 
 for i in range(1, 10):
     print("")

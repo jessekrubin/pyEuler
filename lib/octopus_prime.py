@@ -12,7 +12,7 @@ from sys import version_info
 if version_info.major > 2: xrange = range
 
 
-def prime_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
+def prime_gen(plim=0, kprimes=None):
     """
     infinite (within reason) prime number generator
 
@@ -32,18 +32,20 @@ def prime_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
     :return:
     """
 
+    if kprimes is None: kprimes = [2, 3, 5, 7, 11]
+
     def pdiv_dictionary():
         """
         Recreates the prime divisors dictionary used by the generator
         """
         div_dict = {}
         for pdiv in kprimes:  # for each prime
-            multiple = kprimes[-1] // pdiv * pdiv
-            if multiple % 2 == 0:
+            multiple = kprimes[-1]//pdiv*pdiv
+            if multiple%2 == 0:
                 multiple += pdiv
             else:
-                multiple += 2 * pdiv
-            while multiple in div_dict: multiple += pdiv * 2
+                multiple += 2*pdiv
+            while multiple in div_dict: multiple += pdiv*2
             div_dict[multiple] = pdiv
         return div_dict
 
@@ -59,7 +61,7 @@ def prime_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
     # Recreate the prime divisibility dictionary using kprimes;
     # Set start and yield first 4 primes
     divz = pdiv_dictionary()
-    start = kprimes[-1] + 2  # max prime + 2 (make sure it is odd)
+    start = kprimes[-1]+2  # max prime + 2 (make sure it is odd)
     if start == 13: yield 2; yield 3; yield 5; yield 7; yield 11
     # use count or range depending on if generator is infinite
     it = count(start, 2) if plim == 0 else xrange(start, plim, 2)
@@ -67,16 +69,16 @@ def prime_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
     for num in it:
         prime_div = divz.pop(num, None)
         if prime_div:
-            multiple = (2 * prime_div) + num
-            while multiple in divz: multiple += (2 * prime_div)
+            multiple = (2*prime_div)+num
+            while multiple in divz: multiple += (2*prime_div)
             divz[multiple] = prime_div
         else:
-            divz[num * num] = num
+            divz[num*num] = num
             yield num
 
 
 def pfactorization_gen(n):
-    return (n for n in chain.from_iterable([p] * expo(p, n) for p in pfactors_gen(n)))
+    return (n for n in chain.from_iterable([p]*expo(p, n) for p in pfactors_gen(n)))
 
 
 def pfactors_gen(n):
@@ -103,18 +105,18 @@ def is_prime(number):
     """
     if number == 2 or number == 3:
         return True
-    if number < 2 or number % 2 == 0:
+    if number < 2 or number%2 == 0:
         return False
     if number < 9:
         return True
-    if number % 3 == 0:
+    if number%3 == 0:
         return False
-    r = int(number ** 0.5)
+    r = int(number**0.5)
     step = 5
     while step <= r:
-        if number % step == 0:
+        if number%step == 0:
             return False
-        if number % (step + 2) == 0:
+        if number%(step+2) == 0:
             return False
         step += 6
     return True
@@ -148,12 +150,12 @@ class OctopusPrime(list):
         self.max_loaded = self[-1]
 
     def transform(self, n=None):
-        n = n if n is not None else self[-1] * 10
+        n = n if n is not None else self[-1]*10
         self.extend(list(prime_gen(plim=n, kprimes=self)))
 
     def is_prime(self, number):
         if number > self[-1]:
-            self.transform(number + 1)
+            self.transform(number+1)
         if number in self:
             return True
         else:

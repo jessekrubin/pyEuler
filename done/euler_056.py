@@ -15,8 +15,10 @@ __sol__ = 972
 
 from lib.listless import digits_list
 
+
 def p056():
     return max((sum(digits_list(i**j)) for i in range(1, 100) for j in range(1, 100)))
+
 
 if __name__ == '__main__':
     max_dig_sum = p056()

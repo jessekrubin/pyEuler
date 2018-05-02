@@ -27,10 +27,10 @@ def consecutive_prime_sum(upper_bound):
     longest_seq = 1
     max_sum = 1
     for p in range(len(primes_list), 0, -1):
-        cur_sum = primes_list[p - 1]
+        cur_sum = primes_list[p-1]
         cur_seq_length = 1
-        for j in range(p - 1, 0, -1):
-            cur_sum += primes_list[j - 1]
+        for j in range(p-1, 0, -1):
+            cur_sum += primes_list[j-1]
             cur_seq_length += 1
             if cur_sum > upper_bound:
                 break
@@ -39,9 +39,11 @@ def consecutive_prime_sum(upper_bound):
                 longest_seq = cur_seq_length
     return longest_seq, max_sum
 
+
 def p050():
     answer_sequence_length, prime_answer = consecutive_prime_sum(10**6)
     return prime_answer
+
 
 if __name__ == '__main__':
     assert 6, 41 == consecutive_prime_sum(100)

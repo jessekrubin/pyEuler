@@ -37,15 +37,15 @@ def triangle_lists(s):
 
 
 def max_two_rows(upper, lower):
-    new_upper = list([0] * len(upper))
+    new_upper = list([0]*len(upper))
     for i in range(len(upper)):
-        new_upper[i] = max([upper[i] + lower[i], upper[i] + lower[i + 1]])
+        new_upper[i] = max([upper[i]+lower[i], upper[i]+lower[i+1]])
     return new_upper
 
 
 def tri_max_fast(l):
-    cur_row = l[len(l) - 1]
-    for i in range(len(l) - 2, -1, -1):
+    cur_row = l[len(l)-1]
+    for i in range(len(l)-2, -1, -1):
         cur_row = max_two_rows(l[i], cur_row)
     return max(cur_row)
 
@@ -60,7 +60,7 @@ with open(r'../txt_files/p067_triangle.txt') as f:
     big_tri = tuple([
         tuple(map(int, j.split(' ')))
         for j in [i.strip('\n') for i in f.readlines()]
-    ])
+        ])
 
 
 def p067():
@@ -68,6 +68,6 @@ def p067():
 
 
 if __name__ == '__main__':
-    assert 23 == tri_max_fast(little_tri) # lil_tri max sum should be 23
+    assert 23 == tri_max_fast(little_tri)  # lil_tri max sum should be 23
     answer = p067()
     print("Big Triangle MAX PATH: {}".format(answer))

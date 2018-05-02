@@ -10,14 +10,14 @@ from tqdm import tqdm
 
 def next_pascal_row(row):
     len_next_row = len(row)
-    retrow = [1] * len_next_row  # like scooby doo
+    retrow = [1]*len_next_row  # like scooby doo
     for i in range(1, len(row), 1):
-        retrow[i] = row[i] + row[i - 1]
-    return retrow + [1]
+        retrow[i] = row[i]+row[i-1]
+    return retrow+[1]
 
 
 def pascal_triangle_divisible_by_7(num_rows):
-    upper_bound_49 = int(num_rows/49) + 1
+    upper_bound_49 = int(num_rows/49)+1
     sevens = {49*i for i in range(1, upper_bound_49)}
     print(sevens)
     not_divsible_by_seven = 0
@@ -30,7 +30,7 @@ def pascal_triangle_divisible_by_7(num_rows):
     tot = 0
     nd = 0
     for i in range(1, num_rows+1):
-        n_div7 = sum((1 for j in rowrowrow if j % 7 != 0))
+        n_div7 = sum((1 for j in rowrowrow if j%7 != 0))
 
         not_divsible_by_seven += n_div7
         # print(sum((1 for j in rowrowrow if j % 7 == 0)))
@@ -43,7 +43,7 @@ def pascal_triangle_divisible_by_7(num_rows):
         print("____")
         print(i, n_div7, cur)
 
-        if i% 49 == 0:
+        if i%49 == 0:
             # inc = 1
             mul += 1
             # cur = inc * mul
@@ -62,6 +62,7 @@ def pascal_triangle_divisible_by_7(num_rows):
     print(nd)
     print(tot)
 
+
 def p148(num_rows):
     inc = 1
     mul = 1
@@ -71,7 +72,7 @@ def p148(num_rows):
     for i in tqdm(range(1, num_rows+1), total=num_rows):
         tot += i
         nd += cur
-        if i % 49 == 0:
+        if i%49 == 0:
             # inc = 1
             mul += 1
             # cur = inc * mul
@@ -83,6 +84,7 @@ def p148(num_rows):
         else:
             cur += inc
     return tot, nd
+
 
 pascal_triangle_divisible_by_7(7)
 pascal_triangle_divisible_by_7(1000)
