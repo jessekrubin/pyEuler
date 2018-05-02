@@ -61,18 +61,18 @@ class Trigon(object):
             point = Vuple(point)
         return self.area() == sum(map(methodcaller('area'),
                                       self.inner_triangles(point)))
-
-    def perimeter_point(self, point):
-        if type(point) is not Vuple:
-            point = Vuple(point)
-        return any(tri_area == 0 for tri_area in map(methodcaller('area'),
-                                                     self.inner_triangles(point)))
-
+    
     def inner_triangles(self, point):
         t1 = Trigon(point, self.pt2, self.pt3)
         t2 = Trigon(self.pt1, point, self.pt3)
         t3 = Trigon(self.pt1, self.pt2, point)
         return t1, t2, t3
+
+    def perimeter_point(self, point):
+        if type(point) is not Vuple:
+            point = Vuple(point)
+        return any(tri_area == 0 for tri_area in
+                   map(methodcaller('area'), self.inner_triangles(point)))
 
     def points(self):
         return self.pt1, self.pt2, self.pt3
