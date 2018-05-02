@@ -4,5 +4,7 @@
 /.idea/**
 /.pytest_cache/**
 lib/test/.pytest_cache/**
+not_done/.idea/**
+
 # file types
 *.pyc
