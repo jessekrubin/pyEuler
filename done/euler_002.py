@@ -14,16 +14,16 @@ four million, find the sum of the even-valued terms.
 """
 __sol__ = 4613732
 
-from lib.maths import fib
+from lib.maths import fib_r
 
 
 def p002(upper_bound=4000000):
     return sum(
-            n for n in (fib(i) for i in range(40))
+            n for n in (fib_r(i) for i in range(40))
             if n % 2 == 0 and n < upper_bound + 1
             )
 
 
 if __name__ == '__main__':
     even_fibs_below_4_mil = p002()
-    print("Even fib numbers below 4 million: {}".format(even_fibs_below_4_mil))
+    print("Even fib_r numbers below 4 million: {}".format(even_fibs_below_4_mil))

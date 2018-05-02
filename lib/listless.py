@@ -4,13 +4,12 @@
 from collections import deque, Counter
 from operator import mul
 from sys import version_info
-
 if version_info.major > 2:
-    from functools import reduce
     xrange = range
 
 def list_product(l):
     return reduce(mul, l)
+
 
 def is_permutation(a, b):
     """
@@ -20,20 +19,20 @@ def is_permutation(a, b):
     :param b: int or list
     :return: bool; True if a an b are permutations
     """
-    if type(a) == int:
-        a = digits_list(a)
-    if type(b) == int:
-        b = digits_list(b)
-    return len(a) == len(b) and Counter(a) == Counter(b)
+    if type(a)==int:
+        a=digits_list(a)
+    if type(b)==int:
+        b=digits_list(b)
+    return len(a)==len(b) and Counter(a)==Counter(b)
 
 
 def rotate_list(l, n=1):
-    return l[-n:] + l[:-n]
+    return l[-n:]+l[:-n]
 
 
 def rot_list_gen(l):
     for i in range(len(l)):
-        yield (l[-i:] + l[:-i])
+        yield (l[-i:]+l[:-i])
 
 
 def digits_list(num):
@@ -52,11 +51,11 @@ def digits_list(num):
     >>> digits_list(123)
     [1, 2, 3]
     """
-    digits = deque()
+    digits=deque()
     while True:
-        num, r = divmod(num, 10)
+        num, r=divmod(num, 10)
         digits.appendleft(r)
-        if num == 0:
+        if num==0:
             break
     return list(digits)
 
@@ -70,8 +69,8 @@ def dig_list_2_int(l):
     >>> dig_list_2_int([1, 2, 3])
     123
     """
-    d = 0
-    n_digs = len(l)
+    d=0
+    n_digs=len(l)
     for i in range(0, n_digs, 1):
-        d += (l[n_digs - i - 1] * 10 ** i)
+        d+=(l[n_digs-i-1]*10**i)
     return d

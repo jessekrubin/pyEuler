@@ -24,14 +24,14 @@ contain 1000 digits?
 """
 __sol__ = 4782
 
-from lib.maths import fib, n_digits
+from lib.maths import fib_r, n_digits
 
 
 def p025(no_digits=1000):
     n_fib_digs = 0
     i = 0
     while n_fib_digs < no_digits:
-        n_fib_digs = n_digits(fib(i))
+        n_fib_digs = n_digits(fib_r(i))
         i += 1
     return i
 

@@ -24,7 +24,7 @@ NOTE: The first two examples in the file represent the triangles in the example
 given above.
 """
 __sol__ = 228
-from lib.trigons import Trigon
+from lib.maths import Trigon
 
 
 def p102():

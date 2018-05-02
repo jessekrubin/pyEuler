@@ -12,11 +12,10 @@ You are given that P(10**6) = 159139.
 Find P(3141592653589793).
 """
 from itertools import count
-from lib.maths import gcd_cash_muny
+from lib.maths import gcd_cash_muny, pytriple_gen
 from math import sqrt
 from tqdm import tqdm
 from bisect import bisect_left
-from lib.trigons import pytriple_gen
 
 
 #

@@ -3,9 +3,7 @@
 """
 testing the pytriplets function/gen I made
 """
-from lib.trigons import pytriple_gen, Trigon
-from lib.maths import Vuple
-
+from lib.maths import Trigon, Vuple, pytriple_gen
 
 class TestTrigon(object):
 
@@ -22,7 +20,7 @@ class TestTrigon(object):
     def test_point_on_perimeter(self):
         pts = [(-340, 495), (-153, -910), (835, -947)]
         tri = Trigon.from_points(pts)
-        assert tri.on_perimeter(pts[0])
+        assert tri.is_perimeter_point(pts[0])
 
     def test_origin_not_in_triangle(self):
         tri = Trigon((-175, 41), (-421, -714), (574, -645))

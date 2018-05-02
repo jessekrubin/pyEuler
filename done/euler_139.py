@@ -22,7 +22,7 @@ place?
 """
 __sol__ = 10057761
 
-from lib.trigons import pytriple_gen
+from lib.maths import pytriple_gen
 
 
 def pytiles(max_perimeter):

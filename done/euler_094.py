@@ -16,7 +16,7 @@ side lengths and area and whose perimeters do not exceed one billion
 (1,000,000,000).
 """
 __sol__ = 518408346
-from lib.trigons import pytriple_gen
+from lib.maths import pytriple_gen
 from time import time
 
 

@@ -32,31 +32,29 @@ non-repeating terms?
 """
 
 from lib.listless import digits_list
-from lib.decorations import tictoc
+from lib.decorations import tictoc, cash_muney
 from math import factorial
 
 
 dic = {}
+seen_nums = set()
 
+@cash_muney
+def recursing(n):
+    next = sum(map(factorial, digits_list(n)))
+    if next in seen_nums:
+        return 1
+    else:
+        if n not in dic.keys():
+            seen_nums.add(n)
+            return recursing(next) + 1
+        else:
+            return dic[n]
 
 def factorial_chain_length(starting_n):
-    seen_nums = set()
-
-    def recursing(n):
-        next = sum(map(factorial, digits_list(n)))
-        if next in seen_nums:
-            return 1
-        else:
-            if n not in dic.keys():
-                seen_nums.add(n)
-                return recursing(next) + 1
-            else:
-                return dic[n]
-
     dic[starting_n] = recursing(starting_n)
     return dic[starting_n]
 
-@tictoc(10)
 def p074(upper_bound):
     answer = 0
     for i in range(upper_bound):

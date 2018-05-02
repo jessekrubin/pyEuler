@@ -20,15 +20,17 @@ each. What is the first of these numbers?
 """
 __sol__ = 134043
 
-from lib.octopus_prime import pfactors_gen
 from itertools import count
+from lib.octopus_prime import pfactors_gen
 from lib.decorations import cash_muney
+
 
 @cash_muney
 def n_distict_pfactors(n):
     return len([pf for pf in pfactors_gen(n)])
 
-def distinct_primes_factors(n_facs):
+
+def p047(n_facs=4):
     num_prime_factors = {}
     for i in count(10):
         if i > 134050: break
@@ -38,12 +40,8 @@ def distinct_primes_factors(n_facs):
                 return i + 1 - n_facs
 
 
-print(distinct_primes_factors(2))
-print(distinct_primes_factors(3))
-answer = distinct_primes_factors(4)
-print(answer)
-def p047():
-    pass
-
 if __name__ == '__main__':
-    p047()
+    assert 14 == p047(2)
+    assert 644 == p047(3)
+    ANSWER = p047()
+    print("ANSWER: {}".format(ANSWER))

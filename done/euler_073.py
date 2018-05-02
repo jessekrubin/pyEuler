@@ -18,20 +18,26 @@ It can be seen that there are 3 fractions between 1/3 and 1/2.
 How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper
 fractions for d ≤ 12,000?
 """
-__sol__ = None
+__sol__ = 7295372
+
+from operator import floordiv
+from fractions import Fraction
+from sys import version_info
+
+if version_info.major > 2:
+    xrange = range
 
 
 def ordered_fractions(d):
     fracs = set()
+    half = Fraction(1, 2)
+    third = Fraction(1, 3)
     for denom in range(2, d + 1):
-        fracs.add(1 / denom)
-        for i in range(denom // 3, (1 + denom) // 2):
-            fracs.add(i / denom)
-
-    ordered_fracs = sorted(fracs)
-    start = ordered_fracs.index(1 / 3)
-    stop = ordered_fracs.index(1 / 2)
-    return stop - start - 1
+        for numerator in range(floordiv(denom, 3), floordiv((2 + denom), 2)):
+            f = Fraction(numerator, denom)
+            if half > f > third:
+                fracs.add(f)
+    return len(fracs)
 
 
 def p073():

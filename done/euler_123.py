@@ -17,16 +17,18 @@ __sol__ = 21035
 
 from lib.octopus_prime import prime_sieve_gen
 
+
 def psr(remainder_max):
     for n, p in enumerate(prime_sieve_gen()):
-        rem = 2*(n+2)*p
+        rem = 2 * (n + 2) * p
         if rem > remainder_max:
-            return n + 1
+            return n + 2
+
 
 def p123():
     return psr(10000000000)
 
+
 if __name__ == '__main__':
-    assert 7037 == psr(1000000000)
     ANSWER = p123()
     print("Answer: {}".format(ANSWER))
