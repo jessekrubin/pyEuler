@@ -12,15 +12,16 @@ class TestTrigon(object):
     def test_triangle_area_half(self):
         t2 = [(1, 0), (0, 1), (0, 0)]
         assert 0.5 == Trigon(*t2).area()
-
-    def test_triangle_init_tuples_list(self):
-        t_points = [(1, 0), (0, 1), (0, 0)]
-        assert Trigon(*t_points) == Trigon.from_points(t_points)
-
-    def test_triangle_init_single_list(self):
-        t_points = [(1, 0), (0, 1), (0, 0)]
-        t_points2 = [1, 0, 0, 1, 0, 0]
-        assert Trigon(*t_points) == Trigon.from_points(t_points2)
+    #
+    # def test_triangle_init_tuples_list(self):
+    #     t_points = [(1, 0), (0, 1), (0, 0)]
+    #     t_points2 = [(1, 0), (0, 1), (0, 0)]
+    #     assert Trigon(*t_points) == Trigon.from_points(t_points2)
+    #
+    # def test_triangle_init_single_list(self):
+    #     t_points = [(1, 0), (0, 1), (0, 0)]
+    #     t_points2 = [1, 0, 0, 1, 0, 0]
+    #     assert Trigon(*t_points) == Trigon.from_points(t_points2)
 
     def test_origin_in_triangle(self):
         pts = [(-340, 495), (-153, -910), (835, -947)]

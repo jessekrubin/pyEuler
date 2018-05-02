@@ -103,7 +103,3 @@ class Trigon(object):
     def area_from_points(pt1, pt2, pt3):
         return abs(truediv(Vuple.cross(pt1 - pt2, pt3 - pt2), 2))
 
-
-print(Trigon((1, 2), (1, 3), (0, 0)))
-print(Trigon.from_points([(1, 2), (1, 3), (0, 0)]))
-print(Trigon.from_points([1, 2, 1, 3, 0, 0]))

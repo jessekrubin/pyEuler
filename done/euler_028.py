@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 # Jesse Rubin - project Euler
 """
 Number spiral diagonals
@@ -29,10 +28,8 @@ class Grid(object):
         self.size = size
         self.center_xy = size // 2
         self.nw_diag = set([(i, i) for i in range(self.center_xy)])
-        self.se_diag = set([(i, i)
-                            for i in range(self.center_xy + 1, self.size)])
-        self.ne_diag_real = set([(i, self.size - i - 1)
-                                 for i in range(self.center_xy)])
+        self.se_diag = set([(i, i) for i in range(self.center_xy + 1, self.size)])
+        self.ne_diag_real = set([(i, self.size - i - 1) for i in range(self.center_xy)])
         self.ne_diag = set([(i, self.size - i)
                             for i in range(self.center_xy)])
         self.sw_diag = set([(self.size - i - 1, i)
@@ -118,4 +115,3 @@ if __name__ == '__main__':
     assert 101 == grid5.diag_sum()
     ANSWER = p028()
     print("Answer: {}".format(ANSWER))
-

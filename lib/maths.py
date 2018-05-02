@@ -9,8 +9,6 @@ from sys import version_info
 
 # py2/3 range/xrange
 if version_info.major > 2:
-    from functools import reduce
-
     xrange = range
 
 
@@ -64,7 +62,7 @@ def n_divisors(n):
 
 
 def divisors_list(n):
-    return [i for i in divisors_gen(n)]
+    return [div for div in divisors_gen(n)]
 
 
 def n_digits(number):
@@ -140,12 +138,8 @@ class Vuple(tuple):
     """
     Vector-Tuple class
     """
-
-    def __init__(self, *args):
-        tuple.__init__(self, tuple(a for a in args))
-
     def __gt__(self, other):
-        return Vuple.mag_sqrd(self) == Vuple.mag_sqrd(other)
+        return Vuple.mag_sqrd(self) > Vuple.mag_sqrd(other)
 
     def __eq__(self, other):
         return Vuple.mag_sqrd(self) == Vuple.mag_sqrd(other)
@@ -160,13 +154,16 @@ class Vuple(tuple):
     # def unit_vuple(voop):
     #     return Vuple.
 
+    # def mag_sqrd(self):
+    #     return sum(el * el for el in self)
+
     @staticmethod
     def mag_sqrd(voop):
         return sum(el * el for el in voop)
 
-    @staticmethod
-    def mag(voop):
-        return sqrt(Vuple.mag_sqrd(voop))
+    # @staticmethod
+    # def mag(voop):
+    #     return sqrt(Vuple(voop).mag_sqrd())
 
     @staticmethod
     def dot(a, b):

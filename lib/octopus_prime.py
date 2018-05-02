@@ -3,9 +3,13 @@
 # JESSE RUBIN - project Euler
 
 from bisect import bisect_right, bisect_left
+from lib.maths import divisors_gen
 from itertools import chain, count
 from lib.decorations import cash_muney
 from lib.maths import expo
+from sys import version_info
+
+if version_info.major > 2: xrange = range
 
 
 def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
@@ -49,16 +53,17 @@ def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
         for p in kprimes:
             if p <= plim:
                 yield p
-        return # return bc we are done
+        return  # return bc we are done
 
     # [2]
     # Recreate the prime divisibility dictionary using kprimes;
     # Set start and yield first 4 primes
     divz = pdiv_dictionary()
-    start = kprimes[-1] + 2 # max prime + 2 (make sure it is odd)
+    start = kprimes[-1] + 2  # max prime + 2 (make sure it is odd)
     if start == 13: yield 2; yield 3; yield 5; yield 7; yield 11
     # use count or range depending on if generator is infinite
-    it = count(start, 2) if plim == 0 else range(start, plim, 2)
+    it = count(start, 2) if plim == 0 else xrange(start, plim, 2)
+
     for num in it:
         prime_div = divz.pop(num, None)
         if prime_div:
@@ -73,6 +78,7 @@ def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
 def pfactorization_gen(n):
     return (n for n in chain.from_iterable([p] * expo(p, n) for p in pfactors_gen(n)))
 
+
 def pfactors_gen(n):
     """
     Returns prime factorization as a list
@@ -80,7 +86,7 @@ def pfactors_gen(n):
     :param n:
     :return:
     """
-    return (p for p in prime_sieve_gen((n+1)//2) if n % p == 0)
+    return (p for p in divisors_gen(n) if is_prime(p))
 
 
 @cash_muney

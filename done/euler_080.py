@@ -14,6 +14,7 @@ first one hundred decimal digits is 475.
 For the first one hundred natural numbers, find the total of the digital sums
 of the first one hundred decimal digits for all the irrational square roots.
 """
+__sol__ = 40886
 
 from decimal import getcontext, Decimal
 
