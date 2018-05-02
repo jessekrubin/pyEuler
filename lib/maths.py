@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 from math import sqrt, pi, acos
-from operator import add, sub, methodcaller, truediv
+from operator import add, sub, methodcaller, truediv, floordiv
 from lib.decorations import cash_muney
 from sys import version_info
 
@@ -24,9 +24,9 @@ def rad2deg(n):
 def power_mod(number, exponent, mod):
     if exponent>0:
         if exponent%2==0:
-            return power_mod(number, exponent//2, mod)
+            return power_mod(number, floordiv(exponent, 2), mod)
         else:
-            return power_mod(number, exponent//2, mod)*number
+            return power_mod(number, floordiv(exponent, 2), mod)*number
     else:
         return 1
 
@@ -118,18 +118,6 @@ def expo(d, n):
         c//=d
         divs+=1
     return divs
-
-
-def length(vector):
-    return sqrt(dproduct(vector, vector))
-
-
-def angle(v1, v2):
-    return acos(dproduct(v1, v2)/(length(v1)*length(v2)))
-
-
-def dproduct(v1, v2):
-    return sum((a*b) for a, b in zip(v1, v2))
 
 
 def pytriple_gen(max_c):
@@ -245,9 +233,9 @@ class Vuple(tuple):
     def mag_sqrd(voop):
         return sum(el*el for el in voop)
 
-    # @staticmethod
-    # def mag(voop):
-    #     return sqrt(Vuple(voop).mag_sqrd())
+    @staticmethod
+    def mag(voop):
+        return sqrt(Vuple.mag_sqrd(voop))
 
     @staticmethod
     def dproduct(a, b):
@@ -266,4 +254,4 @@ class Vuple(tuple):
 
     @staticmethod
     def angle(v1, v2):
-        return acos(dproduct(v1, v2)/(length(v1)*length(v2)))
+        return acos(truediv(dproduct(v1, v2), (Vuple.mag(v1)*Vuple.mag(v2))))

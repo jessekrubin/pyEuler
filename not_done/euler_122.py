@@ -32,7 +32,7 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 """
 from itertools import chain
 
-from lib.octopus_prime import is_prime, prime_sieve_gen, pfactors_gen
+from lib.octopus_prime import is_prime, prime_gen, pfactors_gen
 from math import log
 
 def expo(d, n):
@@ -62,7 +62,7 @@ def m(k):
     # for f in pfactorization_gen(k):
     #     print(f)
     # if is_prime(k):
-    #     thingy = [h for h in prime_sieve_gen(k)]
+    #     thingy = [h for h in prime_gen(k)]
     #     return len(thingy)
     # exponents = [1]
     # for i in range(k):

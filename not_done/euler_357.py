@@ -15,7 +15,7 @@ from functools import partial
 
 from tqdm import tqdm
 
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 
 
 def funnn(d, n):
@@ -26,7 +26,7 @@ def thingy(limit):
     print(limit)
     D = {}
     count = 1
-    primes = set(i for i in(prime_sieve_gen(limit)))
+    primes = set(i for i in(prime_gen(limit)))
     # print("\nprimes made")
     def divisors_thing(divs, n):
         return all(i in primes for i in map(partial(funnn, n=n), divs))

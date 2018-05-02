@@ -18,11 +18,11 @@ consecutive primes?
 """
 __sol__ = 997651
 
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 
 
 def consecutive_prime_sum(upper_bound):
-    primes_list = [p for p in prime_sieve_gen(upper_bound)]
+    primes_list = [p for p in prime_gen(upper_bound)]
     primes_set = set(primes_list)
     longest_seq = 1
     max_sum = 1

@@ -12,11 +12,11 @@ What is the 10 001st prime number?
 """
 __sol__ = 104743
 
-from lib.octopus_prime import is_prime, prime_sieve_gen
+from lib.octopus_prime import is_prime, prime_gen
 
 def p007(nth_prime=10001):
     count = 0
-    for p in prime_sieve_gen():
+    for p in prime_gen():
         count += 1
         if count == 10001:
             return p

@@ -15,7 +15,7 @@ concatenate to produce another prime.
 """
 __sol__ = 26033
 
-from lib.octopus_prime import is_prime, prime_sieve_gen
+from lib.octopus_prime import is_prime, prime_gen
 from itertools import combinations
 from collections import defaultdict
 from lib.decorations import cash_muney
@@ -55,7 +55,7 @@ def prime_pair_sets(set_size):
     def look_up_is_prime_pair_set(comb):
         return set.intersection(*[pairs[c] for c in comb])
 
-    for p in prime_sieve_gen():
+    for p in prime_gen():
         for pp in past_primes:
             if check_pair(p, pp):
                 pairs[p].add(pp)

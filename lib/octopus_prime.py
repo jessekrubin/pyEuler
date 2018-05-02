@@ -12,7 +12,7 @@ from sys import version_info
 if version_info.major > 2: xrange = range
 
 
-def prime_sieve_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
+def prime_gen(plim=0, kprimes=[2, 3, 5, 7, 11]):
     """
     infinite (within reason) prime number generator
 
@@ -144,12 +144,12 @@ class OctopusPrime(list):
     """
 
     def __init__(self, n=10, savings_n_loads=True, save_path=None):
-        list.__init__(self, list(prime_sieve_gen(plim=n)))
+        list.__init__(self, list(prime_gen(plim=n)))
         self.max_loaded = self[-1]
 
     def transform(self, n=None):
         n = n if n is not None else self[-1] * 10
-        self.extend(list(prime_sieve_gen(plim=n, kprimes=self)))
+        self.extend(list(prime_gen(plim=n, kprimes=self)))
 
     def is_prime(self, number):
         if number > self[-1]:

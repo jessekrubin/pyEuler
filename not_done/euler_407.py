@@ -16,13 +16,13 @@ Find ∑M(n) for 1 ≤ n ≤ 107.
 """
 from tqdm import tqdm
 from bisect import bisect_left
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 
 
 
 def S_M(max_n):
 
-    primes = [p for p in prime_sieve_gen(max_n)]
+    primes = [p for p in prime_gen(max_n)]
     squares = [n*n for n in range(max_n+1)]
     def M(n):
         # print("_")

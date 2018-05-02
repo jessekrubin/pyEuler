@@ -22,7 +22,7 @@ Find S(10 000 000).
 __sol__ = 11109800204052
 
 from math import log
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 from bisect import bisect_right
 
 
@@ -43,7 +43,7 @@ def s(n):
     primes = []
     prime_sieve_limit = int(n // 2) + 1  # plus two cause idk
     ret_sum = 0
-    for p in prime_sieve_gen(prime_sieve_limit):
+    for p in prime_gen(prime_sieve_limit):
         mul_list = primes[0:bisect_right(primes, n // p)]
         ret_sum += sum(m(ppp, p, n) for ppp in mul_list)
         primes.append(p)

@@ -15,11 +15,11 @@ distinct, prime factors?
 """
 
 
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 from math import sqrt
 
 def semi_prime_sieve(upper_bound):
-    primes_tomul = list(n for n in prime_sieve_gen(upper_bound))
+    primes_tomul = list(n for n in prime_gen(upper_bound))
     n_primes = len(primes_tomul)
     for i in range(n_primes):
         # print(i)
@@ -31,7 +31,7 @@ def semi_prime_sieve(upper_bound):
                 break
 
 def semi_prime_search(upper_bound):
-    primes_tomul = list(n for n in prime_sieve_gen(upper_bound))
+    primes_tomul = list(n for n in prime_gen(upper_bound))
     n_primes = len(primes_tomul)
 
     def max_index(x):

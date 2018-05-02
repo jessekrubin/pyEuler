@@ -16,7 +16,7 @@ Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 """
 __sol__ = 18613426663617118
 
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 
 
 def prime_pair_connection(p1, p2, mod_tens):
@@ -33,7 +33,7 @@ def prime_pair_connection(p1, p2, mod_tens):
 def p134():
     lower_bound_p1 = 5  # starting at 5
     upper_bound_p1 = 1000000 + 5  # get one more prime larger than 1000000
-    primes = [p for p in prime_sieve_gen(upper_bound_p1) if p > 3]
+    primes = [p for p in prime_gen(upper_bound_p1) if p>3]
 
     total = 0
     mod_tens = 10

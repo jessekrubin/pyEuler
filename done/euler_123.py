@@ -15,11 +15,11 @@ Find the least value of n for which the remainder first exceeds 10^10.
 """
 __sol__ = 21035
 
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 
 
 def psr(remainder_max):
-    for n, p in enumerate(prime_sieve_gen()):
+    for n, p in enumerate(prime_gen()):
         rem = 2 * (n + 2) * p
         if rem > remainder_max:
             return n + 2

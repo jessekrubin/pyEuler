@@ -9,11 +9,11 @@ The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 Find the sum of all the primes below two million.
 """
 __sol__ = 142913828922
-from lib.octopus_prime import prime_sieve_gen
+from lib.octopus_prime import prime_gen
 
 
 def p010():
-    return sum(p for p in prime_sieve_gen(2000000))
+    return sum(p for p in prime_gen(2000000))
 
 
 if __name__ == '__main__':
