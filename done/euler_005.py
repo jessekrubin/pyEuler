@@ -12,16 +12,13 @@ numbers from 1 to 20?
 """
 __sol__ = 232792560
 
+from itertools import count
+
 
 def p005():
     good_divs = [20, 19, 18, 17, 16, 14, 13, 11]
-
-    ret_val = 20
-    while True:
-        if all(ret_val%n == 0 for n in good_divs):
-            break
-        ret_val += 20
-    return ret_val
+    for div_n in count(start=20*(10**7), step=20):
+        if all(div_n%n == 0 for n in good_divs): return div_n
 
 
 if __name__ == '__main__':

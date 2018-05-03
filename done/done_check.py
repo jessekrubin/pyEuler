@@ -1,15 +1,11 @@
 # coding=utf-8
-
-from os import path
-from os import listdir
+from os import path, listdir, getcwd
 from time import time
-import importlib
+from importlib import import_module
 import json
 
-with open('../txt_files/solutions.txt') as f:
-    thing = json.load(f)
-
-
+# with open('../txt_files/solutions.txt') as f:
+#     thing = json.load(f)
 # print(thing)
 
 
@@ -46,29 +42,21 @@ def add_pxxx(p):
 
 
 def check_answer(problem):
-    try:
-        p_file = importlib.import_module("done.euler_{}".format(problem))
-    except IOError:
-        print("IO ERROR: prolly a text file")
+    p_file = import_module("done.euler_{}".format(problem))
 
     try:
         p_funk = getattr(p_file, 'p{}'.format(problem))
-    except AttributeError as e:
+    except AttributeError:
         print("{} has no pXXX() method")
         add_pxxx(problem)
 
     try:
         p_ans = p_file.__sol__
-    except AttributeError as e:
-        print("{} has no __sol__ variable".format(problem))
-        add_sol(problem)
+    except AttributeError:
+        print("NO __sol__ VARIABLE FOUND FOR euler_{}.py".format(problem))
 
     try:
-        if p_ans is None:
-            if problem in thing:
-                set_sol(problem, thing[problem])
-            raise ValueError()
-        # p_ans = answers[problem]
+        if p_ans is None: raise ValueError()
         ts = time()
         my_ans = p_funk()
         te = time()
@@ -83,15 +71,11 @@ def check_answer(problem):
 
 
 def check_all_answers():
-    DONE_PATH = r'.'
+    DONE_PATH = getcwd()
     DONE = [f[6:9] for f in listdir(DONE_PATH)
-            if path.isfile(path.join(DONE_PATH, f))
-            and f.startswith('euler_') and f.endswith('.py')]
-    print("Checking {} problems.".format(len(DONE)))
-
-    # for problem in DONE:
-    #     check_answer(problem)
-    map(check_answer, DONE)
+            if f.startswith('euler_') and f.endswith('.py')]
+    print("{} PYTHON PROBLEM SOLUTIONS FOUND".format(len(DONE)))
+    for p in DONE: check_answer(p)
 
     print("ALL PASSED")
 
