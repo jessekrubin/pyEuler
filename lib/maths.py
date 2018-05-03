@@ -227,16 +227,46 @@ class Vuple(tuple):
     def __sub__(self, other):
         return Vuple(map(sub, self, other))
 
-    # @staticmethod
-    # def unit_vuple(voop):
-    #     return Vuple.
+    def __mul__(self, k):
+        if type(k) is int or type(k) is float:
+            return self._mul_scalar(k)
+        # return Vuple(map(sub, self, k))
 
-    # def mag_sqrd(self):
-    #     return sum(el * el for el in self)
+    def __imul__(self, k):
+        if type(k) is int or type(k) is float:
+            return self._mul_scalar(k)
+
+    def _mul_scalar(self, k):
+        return Vuple((k*el for el in self))
+
+    def __truediv__(self, k):
+        if type(k) is int or type(k) is float:
+            return self._truediv_scalar(k)
+        # return Vuple(map(sub, self, k))
+
+    def __itruediv__(self, k):
+        if type(k) is int or type(k) is float:
+            return self._truediv_scalar(k)
+
+    def _truediv_scalar(self, k):
+        return Vuple((el/k for el in self))
+
+    def normalize(self):
+        return Vuple.unit_vuple(self)
+
+    @staticmethod
+    def unit_vuple(voop):
+        return Vuple(voop)/Vuple.mag(voop)
+
+    def get_mag_sqrd(self):
+        return Vuple.mag_sqrd(self)
 
     @staticmethod
     def mag_sqrd(voop):
         return sum(el*el for el in voop)
+
+    def get_mag(self):
+        return Vuple.mag(self)
 
     @staticmethod
     def mag(voop):
@@ -258,5 +288,8 @@ class Vuple(tuple):
             return (v1[0]*v2[1])-(v1[1]*v2[0])
 
     @staticmethod
-    def angle(v1, v2):
-        return acos(truediv(dproduct(v1, v2), (Vuple.mag(v1)*Vuple.mag(v2))))
+    def angle(v1, v2, radians=True):
+        # return acos(Vuple.dproduct(v1, v2)/(Vuple.mag(v1)*Vuple.mag(v2)))
+        q = 1 if radians else (180)/(pi)
+        return q*acos(Vuple.dproduct(Vuple.unit_vuple(v1),
+                                     Vuple.unit_vuple(v2)))
