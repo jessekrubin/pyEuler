@@ -3,7 +3,7 @@
 # JESSE RUBIN - project Euler
 from collections import deque, Counter
 from operator import mul
-
+from functools import reduce
 try: xrange
 except NameError: xrange = range
 
@@ -37,27 +37,29 @@ def rot_list_gen(l):
 
 
 def digits_list(num):
-    """
-    Returns a list of the digits in a number
+    """Returns a list of the digits in num
 
-    :param num:
-    :return:
+    Args:
+        num (int): number w/ digits to be listsed
 
-    >>> digits_list(1111)
-    [1, 1, 1, 1]
-    >>> digits_list(982)
-    [9, 8, 2]
-    >>> digits_list(101)
-    [1, 0, 1]
-    >>> digits_list(123)
-    [1, 2, 3]
+    Returns:
+        list of digits
+
+    Examples:
+        >>> digits_list(1111)
+        [1, 1, 1, 1]
+        >>> digits_list(982)
+        [9, 8, 2]
+        >>> digits_list(101)
+        [1, 0, 1]
+        >>> digits_list(123)
+        [1, 2, 3]
     """
+
     digits = deque()
-    while True:
+    for _ in xrange(len(str(num))):
         num, r = divmod(num, 10)
         digits.appendleft(r)
-        if num == 0:
-            break
     return list(digits)
 
 

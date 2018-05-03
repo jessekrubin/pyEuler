@@ -4,11 +4,10 @@
 """
 Decorations used by me!!!
 """
-# from cProfile import Profile
-# from functools import wraps
-# from inspect import getfile
-# from time import time
-from . import *
+from cProfile import Profile
+from functools import wraps
+from inspect import getfile
+from time import time
 
 
 def cash_muney(funk):

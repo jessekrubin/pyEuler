@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
 __author__ = "Jesse K. Rubin"
-__license__ = "GPL"
-__version__ = "NaN"
 
 from cProfile import Profile
 from functools import wraps

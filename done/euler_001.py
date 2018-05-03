@@ -9,15 +9,12 @@ get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
-__sol__ = 233168
+# __sol__ = 233168
+# __sol__ = 233168
 
 
-def fives_n_threes(upper_bound):
-    return sum(i for i in range(upper_bound) if (i % 3 == 0) or (i % 5 == 0))
-
-
-def p001():
-    return fives_n_threes(1000)
+def p001(upper_bound=1000):
+    return sum(i for i in range(upper_bound) if (i%3 == 0) or (i%5 == 0))
 
 
 if __name__ == '__main__':
