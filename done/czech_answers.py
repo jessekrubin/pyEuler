@@ -28,9 +28,9 @@ if __name__ == '__main__':
             if f.startswith('euler_')  # for which the file start with 'euler_'
             and f.endswith('.py')]  # and ends with '.py'
 
-    p = Pool(processes=16)
+    p = Pool(processes=8)
     t_results = {DONE[done_index]:res for done_index, res in
-                 tqdm(enumerate(p.imap_unordered(czech_answer, DONE)),
+                 tqdm(enumerate(p.imap(czech_answer, DONE)),
                       total=len(DONE),
                       ascii=True,
                       leave=True)}
