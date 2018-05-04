@@ -4,6 +4,7 @@
 """
 Decorations used by me!!!
 """
+from __future__ import division
 from cProfile import Profile
 from functools import wraps
 from inspect import getfile
@@ -56,37 +57,46 @@ def cprof(funk):
 
 
 class tictoc(object):
-    """
-    Timing decorator object
+    """Timing decorator object
 
-    :param runs: number of runs to time over (defaults to 1)
+    Args:
+        runs: # of runs to time over (defaults to 1)
     """
 
     def __init__(self, runs=1):
         self.runs = runs
 
     def __str__(self, t_total, funk, args_string):
-        return ('__TICTOC__\n'
-                '    file: {}\n'
-                '    funk: {}\n'
-                '    args: {}\n'
-                '    time: {} ms\n'
-                '    runs: {}\n'.format(getfile(funk),
-                                        funk.__name__,
-                                        args_string,
-                                        t_total*1000,
-                                        self.runs))
+        str_list = ['__TICTOC__',
+                    '    file: {}'.format(getfile(funk)),
+                    '    funk: {}'.format(funk.__name__),
+                    '    args: {}'.format(args_string),
+                    '    time: {}'.format(tictoc.ftime(t_total)),
+                    '    runs: {}'.format(self.runs)]
+        return '\n'.join(str_list)
 
-    def __call__(self, funk):
-        @wraps(funk)
-        def wrapper(*args, **kwargs):
+
+    def __call__(self, time_funk, printing=True):
+
+        @wraps(time_funk)
+        def time_wrapper(*args, **kwargs):
             self.args = str(args)
             ts = time()
             for i in range(self.runs):
-                result = funk(*args, **kwargs)
+                result = time_funk(*args, **kwargs)
             te = time()
             t_total = (te-ts)/self.runs
-            print(self.__str__(t_total, funk, str(args)))
+            if printing: print(self.__str__(t_total, time_funk, str(args)))
             return result
 
-        return wrapper
+        return time_wrapper
+
+    @staticmethod
+    def ftime(t1, t2=None):
+        if t2 is not None: return tictoc.ftime((t2-t1))
+        elif t1 == 0.0: return "~0.0~"
+        elif t1 >= 1: return "%.3f s"%(t1)
+        elif 1 > t1 >= 0.001: return "%.3f ms"%((10**3)*t1)
+        elif 0.001 > t1 >= 0.000001: return "%.3f μs"%((10**6)*t1)
+        elif 0.000001 > t1 >= 0.000000001: return ("%.3f ns"%((10**9)*t1))
+        else: return tictoc.ftime((t2-t1))

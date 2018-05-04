@@ -17,7 +17,7 @@ is divisible by both 2 and 73.
 
 Let S(N) be the sum of all distinct M(p,q,N). S(100)=2262.
 
-Find S(10 000 000).
+Find S(10,000,000).
 """
 __sol__ = 11109800204052
 

@@ -26,7 +26,7 @@ if version_info.major > 2:
 
 
 def countingfracs(lim=8):
-    phi_dictionary = {i: i for i in range(1, lim + 1)}
+    phi_dictionary = {i: i for i in xrange(1, lim + 1)}
 
     for n in xrange(2, lim + 1):
         if n == phi_dictionary[n]:

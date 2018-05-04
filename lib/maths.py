@@ -47,11 +47,19 @@ def divisors_gen(n):
         yield divisor
 
 
-def gcd(a, b):
+def itgcd(a, b):
     while a:
         a, b = b%a, a
     return b
 
+@cash_muney
+def rgcd(a, b):
+    if b > a:
+        return rgcd(b,a)
+    r = a%b
+    if r == 0:
+        return b
+    return rgcd(r,b)
 
 def n_divisors(n):
     """
@@ -143,7 +151,7 @@ def pytriple_gen(max_c):
             sqrd = comp*comp
             real = int(sqrd.real)
             imag = int(sqrd.imag)
-            if abs(real-imag)%2 == 1 and gcd(imag, real) == 1:
+            if abs(real-imag)%2 == 1 and itgcd(imag, real) == 1:
                 sea = int((comp*comp.conjugate()).real)
                 if sea > max_c:
                     break

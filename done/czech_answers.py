@@ -1,15 +1,26 @@
 # coding=utf-8
-from __future__ import with_statement
 from os import listdir, getcwd
 from time import time, sleep
 from importlib import import_module
 from tqdm import tqdm
 from multiprocessing import Pool
+from operator import itemgetter
 
 
 def czech_answer(pn_str):
-    p_file = import_module("done.euler_{}".format(pn_str))
+    """Checks if the project euler solutions in this repo are correct
 
+    Args:
+        pn_str (str): problem number string (ex: '001')
+
+    Returns:
+        run time (float): if the test passes
+        failure message (str): if test fails to pass
+            'NO_PFUNK': the problem file doesn have a pXXX() method
+            'NO_SOL': the problem has no __sol__ variable
+            'SOL_IS_NONE': the __sol__ variable for the problem is None
+    """
+    p_file = import_module("done.euler_{}".format(pn_str))
     try: p_funk = getattr(p_file, 'p{}'.format(pn_str))
     except AttributeError: return 'NO_PFUNK'
     try: p_ans = p_file.__sol__
@@ -37,23 +48,31 @@ if __name__ == '__main__':
     p.close()
     p.join()
 
-    PASSED = [pn for pn in t_results if type(t_results[pn]) is not str]
+    PASSED = [(pn, time) for pn, time in t_results.items() if type(time) is not str]
     print("{} PASSED".format(len(PASSED)))
 
+    if len(PASSED) == len(DONE):
+        print("ALL R A O K!!")
+    else:
+        print("{} TESTS PASS".format(len(PASSED)))
+        FAILED = [pn for pn, res in t_results.items() if res == 'FAIL']
+        if len(FAILED)>0:
+            print("__FAILS__")
+            print(FAILED)
+        NO_SOL = [pn for pn, res in t_results.items() if res == 'NO_SOL']
+        if len(NO_SOL)>0:
+            print("__NO_SOL__")
+            print(NO_SOL)
+        SOL_IS_NONE = [pn for pn, res in t_results.items() if res == 'SOL_IS_NONE']
+        if len(SOL_IS_NONE)>0:
+            print("__SOL_IS_NONE__")
+            print(SOL_IS_NONE)
+        NO_PFUNK = [pn for pn, res in t_results.items() if res == 'NO_PFUNK']
+        if len(NO_PFUNK)>0:
+            print("__NO_PFUNK__\n", NO_PFUNK)
+            print(NO_PFUNK)
 
-    FAILED = [pn for pn in t_results if t_results[pn] == 'FAIL']
-    if len(FAILED)>0:
-        print("__FAILS__")
-        FAILED
-    NO_SOL = [pn for pn in t_results if t_results[pn] == 'NO_SOL']
-    if len(NO_SOL)>0:
-        print("__NO_SOL__")
-        print(NO_SOL)
-    SOL_IS_NONE = [pn for pn in t_results if t_results[pn] == 'SOL_IS_NONE']
-    if len(SOL_IS_NONE)>0:
-        print("__SOL_IS_NONE__")
-        print(SOL_IS_NONE)
-    NO_PFUNK = [pn for pn in t_results if t_results[pn] == 'NO_PFUNK']
-    if len(NO_PFUNK)>0:
-        print("__NO_PFUNK__\n", NO_PFUNK)
-        print(NO_PFUNK)
+    PASSED.sort(key=itemgetter(1), reverse=True)
+    print("SOLUTIONS SLOWEST TO FASTEST")
+    print(PASSED)
+

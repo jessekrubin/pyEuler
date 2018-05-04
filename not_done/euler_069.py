@@ -25,14 +25,14 @@ It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
 Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 """
 
-from lib.maths import gcd
+from lib.maths import itgcd
 from operator import itemgetter
 
 from lib.octopus_prime import pfactors_gen, prime_gen
 
 
 def phi(n):
-    a = [rel_p for rel_p in range(1, n) if gcd(rel_p, n) == 1]
+    a = [rel_p for rel_p in range(1, n) if itgcd(rel_p, n) == 1]
     print("phi 1")
     print(a)
     return len(a)
