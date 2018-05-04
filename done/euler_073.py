@@ -20,7 +20,6 @@ fractions for d ≤ 12,000?
 """
 from __future__ import division
 
-from math import ceil, floor
 from lib.maths import itgcd
 from lib.octopus_prime import prime_gen
 
@@ -30,26 +29,38 @@ except NameError: xrange = range
 __sol__ = 7295372
 
 
-def fractions_in_range(max_denom):
-    primes = set(p for p in prime_gen(max_denom))
-    count = 0
-    for denom in xrange(4, max_denom+1):
-        min_n = int(floor(denom/3))
-        max_n = int(ceil(denom/2))
-        if denom in primes:
-            count += max_n-min_n
+def fractions_in_range(max_d=12000, gtd=3, ltd=2):
+    """number of reduced proper fractions in a range
+
+    Args:
+        max_d: maximum denominator
+        gtd: greater than denominator
+        ltd: less than denominator
+
+    Returns:
+        int: no. reduced proper fractions, frac, such that frac > (1/gtd) and
+             and frac < (1/ltd)
+
+    """
+    primes = set(p for p in prime_gen(max_d))
+    nfractions = 0
+    for denominator in xrange(4, max_d+1):
+        min_n = denominator//gtd+1
+        max_n = denominator//ltd+1
+        if denominator in primes:
+            nfractions += (max_n-min_n)
         else:
             for numerator in xrange(min_n, max_n):
-                if itgcd(numerator, denom) == 1:
-                    count += 1
-    return count
+                if itgcd(numerator, denominator) == 1:
+                    nfractions += 1
+    return nfractions
 
 
-def p073a(d=12000):
-    return fractions_in_range(d)
+def p073():
+    return fractions_in_range()
 
 
 if __name__ == '__main__':
     assert 3 == fractions_in_range(8)
-    answer = p074a()
+    answer = p073()
     print("# fracs: {}".format(answer))
