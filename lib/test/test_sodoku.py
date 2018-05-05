@@ -19,6 +19,10 @@ class Test_SodokuMethods(object):
         ret = s.get_oneline_str()
         assert ret == b
 
+    # def test_get_row(self):
+
+
+
 
 class Test_Not_Enough_Info(object):
     def test_empty_board(self):
@@ -43,14 +47,26 @@ class Test_Not_Enough_Info(object):
             s.solve()
 
 class Test_Duplicate(object):
+
     def test_duplicate_col(self):
-        pass
+        badcol='6.159.....9..1............4.7.314..6.24.....5..3....1...6.....3...9.2.4......16..'
+        sbc = Sodoku.from_oneline_str(badcol)
+        with raises(SodokuError):
+            sbc.solve()
 
     def test_duplicate_row(self):
-        pass
+        badrow='.4.1..35.............2.5......4.89..26.....12.5.3....7..4...16.6....7....1..8..2.'
+        sbr = Sodoku.from_oneline_str(badrow)
+        with raises(SodokuError):
+            sbr.solve()
 
     def test_duplicate_box(self):
-        pass
+        badbox = '..9.7...5..21..9..1...28....7...5..1..851.....5....3.......3..68........21.....87'
+        sbb = Sodoku.from_oneline_str(badbox)
+        with raises(SodokuError):
+            sbb.solve()
+
+
 
 class Test_Unsolvable(object):
     def test_row_unsolvable(self):
