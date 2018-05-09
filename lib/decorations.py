@@ -75,9 +75,7 @@ class tictoc(object):
                     '    runs: {}'.format(self.runs)]
         return '\n'.join(str_list)
 
-
     def __call__(self, time_funk, printing=True):
-
         @wraps(time_funk)
         def time_wrapper(*args, **kwargs):
             self.args = str(args)
@@ -95,8 +93,8 @@ class tictoc(object):
     def ftime(t1, t2=None):
         if t2 is not None: return tictoc.ftime((t2-t1))
         elif t1 == 0.0: return "~0.0~"
-        elif t1 >= 1: return "%.3f s"%(t1)
+        elif t1 >= 1: return "%.3f s"%t1
         elif 1 > t1 >= 0.001: return "%.3f ms"%((10**3)*t1)
         elif 0.001 > t1 >= 0.000001: return "%.3f μs"%((10**6)*t1)
-        elif 0.000001 > t1 >= 0.000000001: return ("%.3f ns"%((10**9)*t1))
+        elif 0.000001 > t1 >= 0.000000001: return "%.3f ns"%((10**9)*t1)
         else: return tictoc.ftime((t2-t1))

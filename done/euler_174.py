@@ -35,7 +35,7 @@ def p174():
         if 0 < num_lams < 11:
             total += 1
 
-    return (total)
+    return total
 
 
 if __name__ == '__main__':

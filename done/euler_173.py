@@ -28,7 +28,7 @@ def square_lams(upperlimit):
         divs = divisors_list(num // 4)
         total += len(divs) // 2
 
-    return (total)
+    return total
 
 
 def p173():

@@ -4,6 +4,7 @@
 from collections import deque, Counter
 from operator import mul
 from functools import reduce
+
 try: xrange
 except NameError: xrange = range
 
@@ -11,9 +12,11 @@ except NameError: xrange = range
 def list_product(l):
     return reduce(mul, l)
 
+
 def chunks(l, n):
     for i in range(0, len(l), n):
-        yield l[i:i + n]
+        yield l[i:i+n]
+
 
 def is_permutation(a, b):
     """

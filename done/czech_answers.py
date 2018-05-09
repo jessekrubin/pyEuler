@@ -1,10 +1,11 @@
 # coding=utf-8
-from os import listdir, getcwd
-from time import time, sleep
 from importlib import import_module
-from tqdm import tqdm
 from multiprocessing import Pool
 from operator import itemgetter
+from os import getcwd, listdir
+from time import time
+
+from tqdm import tqdm
 
 
 def czech_answer(pn_str):
@@ -28,7 +29,7 @@ def czech_answer(pn_str):
     if p_ans is None: return 'SOL_IS_NONE'
     ts = time()
     my_ans = p_funk()
-    te = (time() - ts)*1000
+    te = (time()-ts)*1000
     try: assert p_ans == my_ans
     except AssertionError: return 'FAIL'
     return round(te)
@@ -56,23 +57,22 @@ if __name__ == '__main__':
     else:
         print("{} TESTS PASS".format(len(PASSED)))
         FAILED = [pn for pn, res in t_results.items() if res == 'FAIL']
-        if len(FAILED)>0:
+        if len(FAILED) > 0:
             print("__FAILS__")
             print(FAILED)
         NO_SOL = [pn for pn, res in t_results.items() if res == 'NO_SOL']
-        if len(NO_SOL)>0:
+        if len(NO_SOL) > 0:
             print("__NO_SOL__")
             print(NO_SOL)
         SOL_IS_NONE = [pn for pn, res in t_results.items() if res == 'SOL_IS_NONE']
-        if len(SOL_IS_NONE)>0:
+        if len(SOL_IS_NONE) > 0:
             print("__SOL_IS_NONE__")
             print(SOL_IS_NONE)
         NO_PFUNK = [pn for pn, res in t_results.items() if res == 'NO_PFUNK']
-        if len(NO_PFUNK)>0:
+        if len(NO_PFUNK) > 0:
             print("__NO_PFUNK__\n", NO_PFUNK)
             print(NO_PFUNK)
 
     PASSED.sort(key=itemgetter(1), reverse=True)
     print("SOLUTIONS SLOWEST TO FASTEST")
     print(PASSED)
-

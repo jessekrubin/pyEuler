@@ -49,9 +49,12 @@ __sol__ = 0.3916721504
 from scipy.integrate import dblquad, nquad
 import numpy as np
 from lib.maths import radians_2_degrees, degrees_2_radians
+
+
 def integrand(y, x):
     'y must be the first argument, and x the second.'
-    return y * np.sin(x) + x * np.cos(y)
+    return y*np.sin(x)+x*np.cos(y)
+
 
 # c1 = 400
 # c2 = 300
@@ -80,6 +83,7 @@ def integrand(y, x):
 xz = 4
 yz = 3
 
+
 def point_prob(x, y):
     v1 = (xz-x, y)
     v2 = (x, yz-y)
@@ -88,15 +92,15 @@ def point_prob(x, y):
 
 # ans, err = dblquad(point_prob, 1, 4, lambda x: 1, lambda x: 3)
 def yyy(x):
-    return yz-x*(0.75)
+    return yz-x*0.75
 
 
 # ans, err = dblquad(point_prob, 0, xz, lambda x: 0, lambda x: yz-(x*(yz/xz)))
-ans, err = dblquad(point_prob, 0, xz, lambda x: 0, yyy)
+ans, err = dblquad(point_prob, 0, xz, lambda x:0, yyy)
 print(ans)
 print(ans/180)
 print(ans/6)
-print(ans/(2 * pi))
+print(ans/(2*pi))
 print((ans-360)/360)
 print((360-ans)/360)
 print((360-ans)/720)

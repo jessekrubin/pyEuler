@@ -11,7 +11,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-05-02) i've done 100 problems, and am currently working on 24.
+Last I checked (2018-05-09) i've done 101 problems, and am currently working on 23.
 
 ## Problems table
 
@@ -38,7 +38,7 @@ Last I checked (2018-05-02) i've done 100 problems, and am currently working on 
 |65 ~ :see_no_evil:|66 ~ :see_no_evil:|[67](done/euler_067.py) ~ :snake:|[68](done/euler_068.py) ~ :snake:|69 ~ :scream:|70 ~ :see_no_evil:|[71](done/euler_071.py) ~ :snake:|[72](done/euler_072.py) ~ :snake:|
 |[73](done/euler_073.py) ~ :snake:|74 ~ :no_smoking:|[75](done/euler_075.py) ~ :snake:|[76](done/euler_076.py) ~ :snake:|[77](done/euler_077.py) ~ :snake:|78 ~ :scream:|[79](done/euler_079.py) ~ :snake:|[80](done/euler_080.py) ~ :snake:|
 |[81](done/euler_081.py) ~ :snake:|[82](done/euler_082.py) ~ :snake:|[83](done/euler_083.py) ~ :snake:|84 ~ :see_no_evil:|[85](done/euler_085.py) ~ :snake:|86 ~ :see_no_evil:|[87](done/euler_087.py) ~ :snake:|88 ~ :see_no_evil:|
-|[89](done/euler_089.py) ~ :snake:|90 ~ :see_no_evil:|91 ~ :see_no_evil:|[92](done/euler_092.py) ~ :snake:|93 ~ :see_no_evil:|[94](done/euler_094.py) ~ :snake:|95 ~ :see_no_evil:|96 ~ :scream:|
+|[89](done/euler_089.py) ~ :snake:|90 ~ :see_no_evil:|91 ~ :see_no_evil:|[92](done/euler_092.py) ~ :snake:|93 ~ :see_no_evil:|[94](done/euler_094.py) ~ :snake:|95 ~ :see_no_evil:|[96](done/euler_096.py) ~ :snake:|
 |[97](done/euler_097.py) ~ :snake:|98 ~ :scream:|[99](done/euler_099.py) ~ :snake:|100 ~ :see_no_evil:|101 ~ :see_no_evil:|[102](done/euler_102.py) ~ :snake:|103 ~ :see_no_evil:|104 ~ :no_smoking:|
 |105 ~ :see_no_evil:|106 ~ :see_no_evil:|[107](done/euler_107.py) ~ :snake:|108 ~ :scream:|109 ~ :see_no_evil:|110 ~ :see_no_evil:|111 ~ :see_no_evil:|[112](done/euler_112.py) ~ :snake:|
 |113 ~ :scream:|114 ~ :see_no_evil:|115 ~ :see_no_evil:|116 ~ :see_no_evil:|117 ~ :see_no_evil:|118 ~ :scream:|[119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|

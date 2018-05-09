@@ -4,9 +4,7 @@
 """
 """
 
-from tqdm import tqdm
 from math import factorial
-from itertools import permutations
 
 stuff = [i for i in range(1, 10)]*3
 print(stuff)
@@ -15,7 +13,7 @@ a = factorial(18)  # there are 18! perms of stuff
 # for each permutation there are 8 possible places to sub in zeros
 print(a)
 
-ans = (227485267000992000)
+ans = 227485267000992000
 
 print(227485267000992000)
 print(ans//a)

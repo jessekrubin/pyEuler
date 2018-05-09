@@ -52,14 +52,16 @@ def itgcd(a, b):
         a, b = b%a, a
     return b
 
+
 @cash_muney
 def rgcd(a, b):
     if b > a:
-        return rgcd(b,a)
+        return rgcd(b, a)
     r = a%b
     if r == 0:
         return b
-    return rgcd(r,b)
+    return rgcd(r, b)
+
 
 def n_divisors(n):
     """
@@ -298,6 +300,6 @@ class Vuple(tuple):
     @staticmethod
     def angle(v1, v2, radians=True):
         # return acos(Vuple.dproduct(v1, v2)/(Vuple.mag(v1)*Vuple.mag(v2)))
-        q = 1 if radians else (180)/(pi)
+        q = 1 if radians else 180/pi
         return q*acos(Vuple.dproduct(Vuple.unit_vuple(v1),
                                      Vuple.unit_vuple(v2)))

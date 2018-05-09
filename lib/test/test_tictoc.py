@@ -3,6 +3,7 @@
 from lib.decorations import tictoc
 from time import sleep
 
+
 def test_ftime_seconds():
     ti = 1.2345
     tf = 5.4321

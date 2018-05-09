@@ -32,8 +32,7 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 """
 from itertools import chain
 
-from lib.octopus_prime import is_prime, prime_gen, pfactors_gen
-from math import log
+from lib.octopus_prime import pfactors_gen
 
 
 def expo(d, n):
