@@ -11,7 +11,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-05-09) i've done 101 problems, and am currently working on 23.
+Last I checked (2018-05-09) i've done 102 problems, and am currently working on 22.
 
 ## Problems table
 
@@ -34,7 +34,7 @@ Last I checked (2018-05-09) i've done 101 problems, and am currently working on 
 |[33](done/euler_033.py) ~ :snake:|[34](done/euler_034.py) ~ :snake:|[35](done/euler_035.py) ~ :snake:|[36](done/euler_036.py) ~ :snake:|[37](done/euler_037.py) ~ :snake:|[38](done/euler_038.py) ~ :snake:|[39](done/euler_039.py) ~ :snake:|[40](done/euler_040.py) ~ :snake:|
 |[41](done/euler_041.py) ~ :snake:|[42](done/euler_042.py) ~ :snake:|[43](done/euler_043.py) ~ :snake:|[44](done/euler_044.py) ~ :snake:|[45](done/euler_045.py) ~ :snake:|[46](done/euler_046.py) ~ :snake:|[47](done/euler_047.py) ~ :snake:|[48](done/euler_048.py) ~ :snake:|
 |[49](done/euler_049.py) ~ :snake:|[50](done/euler_050.py) ~ :snake:|51 ~ :see_no_evil:|[52](done/euler_052.py) ~ :snake:|[53](done/euler_053.py) ~ :snake:|[54](done/euler_054.py) ~ :snake:|[55](done/euler_055.py) ~ :snake:|[56](done/euler_056.py) ~ :snake:|
-|[57](done/euler_057.py) ~ :snake:|[58](done/euler_058.py) ~ :snake:|59 ~ :scream:|[60](done/euler_060.py) ~ :snake:|61 ~ :see_no_evil:|[62](done/euler_062.py) ~ :snake:|[63](done/euler_063.py) ~ :snake:|64 ~ :see_no_evil:|
+|[57](done/euler_057.py) ~ :snake:|[58](done/euler_058.py) ~ :snake:|[59](done/euler_059.py) ~ :snake:|[60](done/euler_060.py) ~ :snake:|61 ~ :see_no_evil:|[62](done/euler_062.py) ~ :snake:|[63](done/euler_063.py) ~ :snake:|64 ~ :see_no_evil:|
 |65 ~ :see_no_evil:|66 ~ :see_no_evil:|[67](done/euler_067.py) ~ :snake:|[68](done/euler_068.py) ~ :snake:|69 ~ :scream:|70 ~ :see_no_evil:|[71](done/euler_071.py) ~ :snake:|[72](done/euler_072.py) ~ :snake:|
 |[73](done/euler_073.py) ~ :snake:|74 ~ :no_smoking:|[75](done/euler_075.py) ~ :snake:|[76](done/euler_076.py) ~ :snake:|[77](done/euler_077.py) ~ :snake:|78 ~ :scream:|[79](done/euler_079.py) ~ :snake:|[80](done/euler_080.py) ~ :snake:|
 |[81](done/euler_081.py) ~ :snake:|[82](done/euler_082.py) ~ :snake:|[83](done/euler_083.py) ~ :snake:|84 ~ :see_no_evil:|[85](done/euler_085.py) ~ :snake:|86 ~ :see_no_evil:|[87](done/euler_087.py) ~ :snake:|88 ~ :see_no_evil:|
