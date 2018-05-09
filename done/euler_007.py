@@ -11,7 +11,7 @@ the 6th prime is 13.
 What is the 10 001st prime number?
 """
 
-from lib.maths import prime_gen, is_prime
+from biblioteca import prime_gen
 
 
 def p007(nth_prime=10001):

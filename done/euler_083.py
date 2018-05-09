@@ -77,6 +77,6 @@ if __name__ == '__main__':
                [630, 803, 746, 422, 111],
                [537, 699, 497, 121, 956],
                [805, 732, 524, 37, 331]]
-    assert 2297 == path_sum_four_ways(lil_mat)  # check the small test case
+    assert 2297 == path_sum_four_ways(lil_mat)  # check the small test_fest case
     answer = p083()
     print("Minimum path FOUR ways: {}".format(answer))

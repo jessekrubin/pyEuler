@@ -18,7 +18,7 @@ It turns out that the conjecture was false.
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?.
 """
 
-from lib.maths import is_prime
+from biblioteca import is_prime
 from math import sqrt
 
 

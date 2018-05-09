@@ -3,7 +3,7 @@
 """
 testing the toople class I have made
 """
-from lib.maths import Vuple
+from biblioteca import Vuple
 
 
 class Test_Vuple(object):

@@ -19,7 +19,7 @@ there are only 12951 numbers below one-million that are not bouncy and only
 
 How many numbers below a googol (10**100) are not bouncy?
 """
-from lib.listless import digits_list
+from biblioteca import digits_list
 
 
 def is_bouncy(n):

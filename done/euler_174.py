@@ -22,7 +22,7 @@ N(15) = 832.
 What is ∑ N(n) for 1 ≤ n ≤ 10?
 """
 
-from lib.maths import divisors_list
+from biblioteca import divisors_list
 
 
 def p174():

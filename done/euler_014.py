@@ -21,7 +21,7 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 from operator import itemgetter
-from lib.decorations import cash_muney
+from biblioteca import cash_muney
 
 try: xrange
 except: xrange = range

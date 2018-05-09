@@ -13,8 +13,7 @@ once contain only prime elements?
 """
 from collections import Counter
 from itertools import combinations, product, permutations
-from lib.maths import partitions, is_prime
-from lib.decorations import Jasm
+from biblioteca import partitions, is_prime, Jasm
 
 try: xrange
 except NameError: xrange = range

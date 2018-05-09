@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - Project Euler Tests
 
-from lib.maths import prime_gen, pfactors_gen, is_prime, OctopusPrime
+from biblioteca import prime_gen, pfactors_gen, is_prime, OctopusPrime
 
 p_lt50 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 p_lt100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
@@ -42,7 +42,7 @@ class TestPrimeSieve(object):
 
     def test_prime_seive_gen(self):
         """
-        test if can generate primes below 100
+        test_fest if can generate primes below 100
         """
         assert p_lt100 == [p for p in prime_gen(100)]
 
@@ -64,6 +64,6 @@ class TestPrimeSieve(object):
 
     def test_small_ub_large_known_primes(self):
         """
-        test handling an upper_bound < max prime
+        test_fest handling an upper_bound < max prime
         """
         assert list(prime_gen(50, kprimes=p_lt100)) == p_lt50

@@ -14,7 +14,7 @@ Find the sum of the digits in the number 100!
 """
 
 from math import factorial
-from lib.listless import digits_list
+from biblioteca import digits_list
 
 
 def p020():

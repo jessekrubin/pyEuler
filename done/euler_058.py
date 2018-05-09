@@ -25,7 +25,7 @@ side mag of the square spiral for which the ratio of primes along both
 diagonals first falls below 10%?
 """
 
-from lib.maths import is_prime
+from biblioteca import is_prime
 from operator import truediv
 
 

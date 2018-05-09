@@ -31,8 +31,7 @@ How many chains, with a starting number below one million, contain exactly sixty
 non-repeating terms?
 """
 
-from lib.listless import digits_list
-from lib.decorations import tictoc, cash_muney
+from biblioteca import cash_muney, digits_list
 from math import factorial
 
 dic = {}

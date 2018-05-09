@@ -11,11 +11,7 @@ For example P(20) = 3, since there are three triples: (3,4,5), (5,12,13) and (8,
 You are given that P(10**6) = 159139.
 Find P(3141592653589793).
 """
-from itertools import count
-from lib.maths import gcd_cash_muny, pytriple_gen
-from math import sqrt
-from tqdm import tqdm
-from bisect import bisect_left
+from biblioteca import pytriple_gen
 
 
 #

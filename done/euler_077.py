@@ -16,7 +16,7 @@ ways:
 What is the first value which can be written as the sum of primes in over
 five thousand different ways?
 """
-from lib.maths import is_prime
+from biblioteca import is_prime
 
 
 def prime_sums(n):
@@ -41,7 +41,7 @@ def p077():
             return i
 
 
-# test case
+# test_fest case
 # n1 = 10
 # ans1 = coin_partitions(n1)
 # print("{} ways to make {}".format(ans1, n1))

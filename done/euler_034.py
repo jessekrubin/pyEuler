@@ -13,7 +13,7 @@ Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 """
 
 from math import factorial
-from lib.listless import digits_list
+from biblioteca import digits_list
 
 
 def is_digit_factorial(n):

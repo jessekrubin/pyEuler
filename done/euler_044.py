@@ -17,7 +17,7 @@ difference are pentagonal and D = |Pk − Pj| is minimised; what is the value
 of D?
 """
 
-from lib.decorations import cash_muney
+from biblioteca import cash_muney
 
 
 @cash_muney

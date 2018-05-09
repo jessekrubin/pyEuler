@@ -24,7 +24,7 @@ puzzle grid and its solution grid.
             0 0 5 0 1 0 3 0 0                6 9 5 4 1 7 3 8 2
 
 A well constructed Su Doku puzzle has a unique solution and can be solved by
-logic, although it may be necessary to employ "guess and test" methods in order
+logic, although it may be necessary to employ "guess and test_fest" methods in order
 to eliminate options (there is much contested opinion over this). The
 complexity of the search determines the difficulty of the puzzle; the example
 above is considered easy because it can be solved by straight forward direct
@@ -39,8 +39,7 @@ top left corner of each solution grid; for example, 483 is the 3-digit number
 found in the top left corner of the solution grid above.
 """
 
-from lib.sodoku import Sodoku
-from lib.listless import chunks
+from biblioteca import chunks, Sodoku
 
 
 def sol3d(grid):

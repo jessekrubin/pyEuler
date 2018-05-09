@@ -19,7 +19,7 @@ the last nine digits are 1-9 pandigital, find k.
 __sol__ = None
 
 from itertools import permutations
-from lib.listless import dig_list_2_int
+from biblioteca import dig_list_2_int
 
 
 def fib_gen(n):

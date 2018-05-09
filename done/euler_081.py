@@ -57,6 +57,6 @@ def p081():
 
 
 if __name__ == '__main__':
-    assert min_path_two_ways(lil_mat) == 2427  # check the small test case
+    assert min_path_two_ways(lil_mat) == 2427  # check the small test_fest case
     answer = p081()
     print("Minimum path two ways: {}".format(answer))

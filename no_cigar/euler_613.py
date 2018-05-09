@@ -21,8 +21,7 @@ Give your answer rounded to 10 digits after the decimal point.
 """
 
 from math import pi
-from lib.maths import Vuple
-from tqdm import tqdm
+from biblioteca import Vuple
 
 try: xrange
 except NameError: xrange = range
@@ -46,9 +45,8 @@ __sol__ = 0.3916721504
 #     answer = (sum(probs)/float(len(probs)))/(2*pi)
 #     print("probability: {}".format(answer))
 
-from scipy.integrate import dblquad, nquad
+from scipy.integrate import dblquad
 import numpy as np
-from lib.maths import radians_2_degrees, degrees_2_radians
 
 
 def integrand(y, x):

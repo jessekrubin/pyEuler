@@ -24,7 +24,7 @@ In the first one-thousand expansions, how many fractions contain a numerator
 with more digits than denominator?
 """
 
-from lib.decorations import cash_muney
+from biblioteca import cash_muney
 from fractions import Fraction
 
 

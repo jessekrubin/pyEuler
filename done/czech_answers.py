@@ -17,8 +17,8 @@ def czech_answer(pn_str):
         pn_str (str): problem number string (ex: '001')
 
     Returns:
-        run time (float): if the test passes
-        failure message (str): if test fails to pass
+        run time (float): if the test_fest passes
+        failure message (str): if test_fest fails to pass
             'NO_PFUNK': the problem file doesn have a pXXX() method
             'NO_SOL': the problem has no __sol__ variable
             'SOL_IS_NONE': the __sol__ variable for the problem is None

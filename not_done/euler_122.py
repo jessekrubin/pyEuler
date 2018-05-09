@@ -32,7 +32,7 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 """
 from itertools import chain
 
-from lib.maths import pfactors_gen
+from biblioteca import pfactors_gen
 
 
 def expo(d, n):

@@ -3,7 +3,7 @@
 """
 testing the pytriplets function/gen I made
 """
-from lib.maths import pytriple_gen
+from biblioteca import pytriple_gen
 
 lt100 = {(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (20, 21, 29),
          (9, 40, 41), (12, 35, 37), (11, 60, 61), (28, 45, 53), (33, 56, 65),

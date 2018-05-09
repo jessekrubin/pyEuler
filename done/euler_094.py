@@ -15,7 +15,7 @@ Find the sum of the perimeters of all almost equilateral triangles w/ integral
 side lengths and area and whose perimeters do not exceed one billion
 (1,000,000,000).
 """
-from lib.maths import pytriple_gen
+from biblioteca import pytriple_gen
 from time import time
 
 

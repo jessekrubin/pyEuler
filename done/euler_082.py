@@ -58,7 +58,7 @@ def p082():
 
     with open('../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
         big_mat = list(list(map(int, row.strip('\n').split(','))) for row in f.readlines())
-    assert 994 == min_path_three_ways(lil_mat)  # check the small test case
+    assert 994 == min_path_three_ways(lil_mat)  # check the small test_fest case
     return min_path_three_ways(big_mat)
 
 

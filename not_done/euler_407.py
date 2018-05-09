@@ -16,7 +16,7 @@ Find ∑M(n) for 1 ≤ n ≤ 107.
 """
 from tqdm import tqdm
 from bisect import bisect_left
-from lib.maths import prime_gen
+from biblioteca import prime_gen
 
 
 def S_M(max_n):

@@ -18,7 +18,7 @@ following expression.
 d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 """
 
-from lib.listless import digits_list
+from biblioteca import digits_list
 from functools import reduce
 from operator import mul
 

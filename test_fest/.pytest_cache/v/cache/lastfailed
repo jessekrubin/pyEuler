@@ -1,0 +1,14 @@
+{
+  "test_sodoku.py::TestValidCases": true,
+  "test_sodoku.py::TestValidCases::()::test_naked_singles": true,
+  "test_sodoku.py::Test_Duplicate": true,
+  "test_sodoku.py::Test_Not_Enough_Info": true,
+  "test_sodoku.py::Test_SodokuMethods": true,
+  "test_sodoku.py::Test_Unsolvable": true,
+  "test_tictoc.py::test_tictoc": true,
+  "test_toop.py::TestToop": true,
+  "test_toop.py::TestToop::()::test_addition": true,
+  "test_toop.py::Test_Vuple::()::test_mul": true,
+  "test_trigon.py::TestTrigon::()::test_triangle_init_single_list": true,
+  "test_trigon.py::TestTrigon::()::test_triangle_init_tuples_list": true
+}

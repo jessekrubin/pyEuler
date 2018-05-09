@@ -18,7 +18,7 @@ HINT: Some products can be obtained in more than one way so be sure to only
 include it once in your sum.
 """
 
-from lib.listless import dig_list_2_int
+from biblioteca import dig_list_2_int
 from itertools import permutations
 
 

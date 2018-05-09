@@ -3,7 +3,7 @@
 """
 testing the pytriplets function/gen I made
 """
-from lib.maths import Trigon, Vuple, pytriple_gen
+from biblioteca import Trigon, Vuple, pytriple_gen
 
 
 class TestTrigon(object):

@@ -23,7 +23,7 @@ What is the index of the first term in the Fibonacci sequence to
 contain 1000 digits?
 """
 
-from lib.maths import fib_r, n_digits
+from biblioteca import fib_r, n_digits
 
 
 def p025(no_digits=1000):

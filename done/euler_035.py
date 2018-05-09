@@ -14,9 +14,7 @@ There are thirteen such primes below 100:
 How many circular primes are there below one million?
 """
 
-from lib.listless import digits_list, dig_list_2_int, rot_list_gen
-from lib.maths import prime_gen, is_prime
-from lib.decorations import cash_muney
+from biblioteca import prime_gen, is_prime, cash_muney, rot_list_gen, digits_list, dig_list_2_int
 
 
 @cash_muney

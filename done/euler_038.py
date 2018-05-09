@@ -21,7 +21,7 @@ concatenated product of an integer with (1,2, ... , n) where n > 1?
 """
 
 from itertools import permutations, count
-from lib.maths import n_digits
+from biblioteca import n_digits
 
 
 def make_number(l):

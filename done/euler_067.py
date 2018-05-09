@@ -23,8 +23,6 @@ could check one trillion (1012) routes every second it would take over twenty
 billion years to check them all. There is an efficient algorithm to solve it.
 """
 
-from lib.decorations import tictoc
-
 
 def triangle_lists(s):
     text_lines = s.split("\n")

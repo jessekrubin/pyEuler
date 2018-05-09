@@ -13,7 +13,7 @@ are cube.
 """
 
 from itertools import count
-from lib.listless import digits_list, dig_list_2_int
+from biblioteca import digits_list, dig_list_2_int
 
 
 def cubic_perms(n_perms):

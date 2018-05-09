@@ -16,8 +16,7 @@ What 12-digit number do you form by concatenating the three terms in this
 sequence?
 """
 
-from lib.maths import is_prime
-from lib.listless import digits_list
+from biblioteca import is_prime, digits_list
 from itertools import combinations
 from collections import defaultdict
 
