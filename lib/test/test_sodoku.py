@@ -23,7 +23,7 @@ class Test_SodokuMethods(object):
 
     # def test_cellbox(self):
     #     for i in range(81):
-            # print(Sodoku.cell_box(i))
+    # print(Sodoku.cell_box(i))
 
     def test_neighbors(self):
         a = {0: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 72, 18, 19, 20, 27, 36, 45, 54, 63},
@@ -129,7 +129,7 @@ class TestValidCases(object):
         assert s_solved == test_board
 
     def test_one_empty_square(self):
-        test_board =    '2564891733746159829817234565932748617128.6549468591327635147298127958634849362715'
+        test_board = '2564891733746159829817234565932748617128.6549468591327635147298127958634849362715'
         test_solution = '256489173374615982981723456593274861712836549468591327635147298127958634849362715'
         assert len(test_board) == len(test_solution)
         s = Sodoku.from_oneline_str(test_board)

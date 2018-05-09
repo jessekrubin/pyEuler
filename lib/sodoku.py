@@ -32,7 +32,7 @@ class Sodoku(object):
         d = Sodoku.update_dictionary(d)
         tf, d = Sodoku.reduce_dictionary(d)
         if tf == False:
-            raise SodokuError("unsolvable")
+            raise SodokuError("hidden_singles")
 
         print(d)
         a = [d[ind] for ind in range(81)]
@@ -46,35 +46,51 @@ class Sodoku(object):
             if len(d[i]) > 1:
                 return i
 
+    # @staticmethod
+# def hidden_singles(d):
+#     for boxr in range(3):
+#         for boxc in range(3):
+#             hs = {str(n):{ind for ind in Sodoku.box_inds(boxr, boxc)
+#                           if ind in d and str(n) in d[ind]}
+#                   for n in range(1, 10)}
+#             # print(hs)
+#             for num, inds in hs.items():
+#                 if len(inds) == 1:
+#                     nd = {k:v for k, v in d.items()}
+#                     nd[inds.pop()] = num
+#                     return nd
     @staticmethod
-    def hidden_singles(d):
-        for boxr in range(3):
-            for boxc in range(3):
-                hs = {str(n):{ind for ind in Sodoku.box_inds(boxr, boxc)
-                              if ind in d and str(n) in d[ind]}
-                      for n in range(1, 10)}
-                # print(hs)
-                for num, inds in hs.items():
-                    if len(inds) == 1:
-                        nd = {k:v for k, v in d.items()}
-                        nd[inds.pop()] = num
-                        return nd
+    def unsolvable(rcbd):
+        return any(len(v)==0 for v in rcbd.values())
+        # print("RCB")
+        # print(rcbd)
+
 
     @staticmethod
-    def unsolvable(d):
+    def hidden_singles(d):
+        nd = {k:v for k, v in d.items()}
         for rcb in range(9):
-            box = {str(n):{ind for ind in Sodoku.box_inds(*divmod(rcb, 3))
-                           if str(n) in d[ind]}
+            box = {str(n):[ind for ind in Sodoku.box_inds(*divmod(rcb, 3))
+                           if str(n) in d[ind]]
                    for n in range(1, 10)}
-            col = {str(n):{ind for ind in Sodoku.row_inds(rcb)
-                           if str(n) in d[ind]}
+            row = {str(n):[ind for ind in Sodoku.row_inds(rcb)
+                           if str(n) in d[ind]]
                    for n in range(1, 10)}
-            row = {str(n):{ind for ind in Sodoku.col_inds(rcb)
-                           if str(n) in d[ind]}
+            col = {str(n):[ind for ind in Sodoku.col_inds(rcb)
+                           if str(n) in d[ind]]
                    for n in range(1, 10)}
-            if any(len(v)==0 for v in chain(box.values(), row.values(), col.values())):
-                return True
-        return False
+            if Sodoku.unsolvable(box) or Sodoku.unsolvable(row) or Sodoku.unsolvable(col):
+                raise SodokuError("UNSOLVABLE")
+            print(Sodoku.unsolvable(row))
+            print(Sodoku.unsolvable(col))
+            #
+            # print("___")
+            # print(rcb)
+            # print(col)
+            # print(box)
+            # print(row)
+            # if any(len(v)==0 for v in chain(box.values(), row.values(), col.values())):
+        return nd
 
     @staticmethod
     def update_dictionary(d):
@@ -93,7 +109,7 @@ class Sodoku(object):
         d = Sodoku.hidden_singles(d)
         d = Sodoku.update_dictionary(d)
 
-        if any(len(v) == 0 for k, v in d.items()) or Sodoku.unsolvable(d):
+        if any(len(v) == 0 for k, v in d.items()):
             # raise SodokuError("UNSOLVABLE")
             return False, d
         print(any(len(v) == 0 for k, v in d.items()))
@@ -149,7 +165,6 @@ class Sodoku(object):
     @staticmethod
     # @cash_muney
     def box_inds(box_r, box_c, bsize=9):
-        # box_r, box_c = row_col if type(row_col) == tuple else divmod(row_col, 3)
         return {i*bsize+j
                 for i in range((box_r*3), (box_r*3)+3)
                 for j in range((box_c*3), (box_c*3)+3)}
@@ -188,15 +203,15 @@ class Sodoku(object):
 
 # assert set([30, 31, 32]+[39, 41]+[48, 49, 50]+[4, 13, 22, 31, 49, 58, 67, 76]+[36, 37, 38, 39, 41, 42, 43,
 #                                                                                44]) == Sodoku.neighbors(40)
-
-test_b = '....41....6.....2...2......32.6.........5..417.......2......23..48......5.1..2...'
-sodo = Sodoku.from_oneline_str(test_b)
-sodo.solve()
-
-test_board = '..2.3...8.....8....31.2.....6..5.27..1.....5.2.4.6..31....8.6.5.......13..531.4..'
-test_solution = '672435198549178362831629547368951274917243856254867931193784625486592713725316489'
-assert len(test_board) == len(test_solution)
-s = Sodoku.from_oneline_str(test_board)
-s.solve()
-s_solved = s.get_oneline_str()
-print(s_solved)
+#
+# test_b = '....41....6.....2...2......32.6.........5..417.......2......23..48......5.1..2...'
+# sodo = Sodoku.from_oneline_str(test_b)
+# sodo.solve()
+#
+# test_board = '..2.3...8.....8....31.2.....6..5.27..1.....5.2.4.6..31....8.6.5.......13..531.4..'
+# test_solution = '672435198549178362831629547368951274917243856254867931193784625486592713725316489'
+# assert len(test_board) == len(test_solution)
+# s = Sodoku.from_oneline_str(test_board)
+# s.solve()
+# s_solved = s.get_oneline_str()
+# print(s_solved)
