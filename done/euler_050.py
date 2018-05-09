@@ -16,9 +16,8 @@ prime, contains 21 terms, and is equal to 953.
 Which prime, below one-million, can be written as the sum of the most
 consecutive primes?
 """
-__sol__ = 997651
 
-from lib.octopus_prime import prime_gen
+from lib.maths import prime_gen
 
 
 def consecutive_prime_sum(upper_bound):

@@ -33,7 +33,6 @@ How many Lychrel numbers are there below ten-thousand?
 NOTE: Wording was modified slightly on 24 April 2007 to emphasise the
 theoretical nature of Lychrel numbers.
 """
-__sol__ = 249
 
 from lib.maths import reverse
 

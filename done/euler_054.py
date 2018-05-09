@@ -56,7 +56,6 @@ winner.
 
 How many hands does Player 1 win?
 """
-__sol__ = 376
 from collections import Counter
 
 

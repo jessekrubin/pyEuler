@@ -4,9 +4,11 @@ from multiprocessing import Pool
 from operator import itemgetter
 from os import getcwd, listdir
 from time import time
-
 from tqdm import tqdm
+import json as jasm
 
+with open('../txt_files/solutions.txt') as f:
+    SOLUTIONS = jasm.load(f)
 
 def czech_answer(pn_str):
     """Checks if the project euler solutions in this repo are correct
@@ -24,8 +26,8 @@ def czech_answer(pn_str):
     p_file = import_module("done.euler_{}".format(pn_str))
     try: p_funk = getattr(p_file, 'p{}'.format(pn_str))
     except AttributeError: return 'NO_PFUNK'
-    try: p_ans = p_file.__sol__
-    except AttributeError: return 'NO_SOL'
+    try: p_ans = SOLUTIONS[pn_str]
+    except KeyError: return 'NO_SOL'
     if p_ans is None: return 'SOL_IS_NONE'
     ts = time()
     my_ans = p_funk()
@@ -39,6 +41,7 @@ if __name__ == '__main__':
     DONE = [f[6:9] for f in listdir(getcwd())  # find all files in the done dir
             if f.startswith('euler_')  # for which the file start with 'euler_'
             and f.endswith('.py')]  # and ends with '.py'
+
 
     p = Pool(processes=8)
     t_results = {DONE[done_index]:res for done_index, res in

@@ -26,7 +26,6 @@ We can see that 28 is the first triangle number to have over five divisors_gen.
 What is the value of the first triangle number to have over five hundred
 divisors_gen?
 """
-__sol__ = 76576500
 
 from lib.maths import n_divisors
 

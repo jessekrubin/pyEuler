@@ -26,7 +26,6 @@ Given that L is the mag of the wire, for how many values of
 L ≤ 1,500,000 can exactly one integer sided right angle triangle
 be formed?
 """
-__sol__ = 161667
 
 from math import sqrt
 from itertools import count

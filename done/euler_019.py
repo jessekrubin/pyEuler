@@ -20,7 +20,6 @@ unless it is divisible by 400.
 How many Sundays fell on the first of the month during the twentieth century
 (1 Jan 1901 to 31 Dec 2000)?
 """
-__sol__ = 171
 
 from datetime import date
 

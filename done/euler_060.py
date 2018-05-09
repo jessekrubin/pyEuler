@@ -13,12 +13,11 @@ this property.
 Find the lowest sum for a set of five primes for which any two primes
 concatenate to produce another prime.
 """
-__sol__ = 26033
 
 from itertools import combinations
 from collections import defaultdict
 from lib.decorations import cash_muney
-from lib.octopus_prime import is_prime, prime_gen
+from lib.maths import prime_gen, is_prime
 
 
 @cash_muney

@@ -18,7 +18,6 @@ triangle number then we shall call the word a triangle word.
 Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
 containing nearly two-thousand common English words, how many are triangle words?
 """
-__sol__ = 162
 
 from lib.string_theory import string_score
 

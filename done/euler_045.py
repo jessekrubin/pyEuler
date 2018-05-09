@@ -15,7 +15,6 @@ It can be verified that T285 = P165 = H143 = 40755.
 
 Find the next triangle number that is also pentagonal and hexagonal.
 """
-__sol__ = 1533776805
 
 
 def tn(n):

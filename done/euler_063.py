@@ -9,7 +9,6 @@ number, 134217728=89, is a ninth power.
 
 How many n-digit positive integers exist which are also an nth power?
 """
-__sol__ = 49
 from itertools import count
 
 

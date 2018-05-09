@@ -16,7 +16,6 @@ Find the pair of pentagonal numbers, Pj and Pk, for which their sum and
 difference are pentagonal and D = |Pk − Pj| is minimised; what is the value
 of D?
 """
-__sol__ = 5482660
 
 from lib.decorations import cash_muney
 

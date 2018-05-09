@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - Project Euler Tests
 
-from lib.octopus_prime import is_prime, prime_gen, pfactors_gen, OctopusPrime
+from lib.maths import prime_gen, pfactors_gen, is_prime, OctopusPrime
 
 p_lt50 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 p_lt100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,

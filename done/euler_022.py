@@ -17,7 +17,6 @@ would obtain a score of 938 × 53 = 49714.
 
 What is the total of all the name scores in the file?
 """
-__sol__ = 871198282
 
 from lib.string_theory import string_score
 

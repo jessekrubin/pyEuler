@@ -20,13 +20,11 @@ fractions for d ≤ 12,000?
 """
 from __future__ import division
 
-from lib.maths import itgcd
-from lib.octopus_prime import prime_gen
+from lib.maths import itgcd, prime_gen
 
 try: xrange
 except NameError: xrange = range
 
-__sol__ = 7295372
 
 
 def fractions_in_range(max_d=12000, gtd=3, ltd=2):

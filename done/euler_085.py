@@ -10,7 +10,6 @@ contains eighteen rectangles.
 Although there exists no rectangular grid that contains exactly two million
 rectangles, find the area of the grid with the nearest solution.
 """
-__sol__ = 2772
 
 
 # num rectangles is (height**2 + height) times (width**2 + width) over four

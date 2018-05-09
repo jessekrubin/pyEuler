@@ -20,7 +20,6 @@ Find the minimal path sum, in matrix.txt (right click and "Save Link/Target
 As..."), a 31K text file containing a 80 by 80 matrix, from the left column to
 the right column.
 """
-__sol__ = 260324
 
 
 def min_path_three_ways(mat):

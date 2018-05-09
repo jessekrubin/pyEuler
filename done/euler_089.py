@@ -34,7 +34,6 @@ form.
 Note: You can assume that all the Roman numerals in the file contain no more
 than four consecutive identical units.
 """
-__sol__ = 743
 
 
 def further_shrink(roman_str):

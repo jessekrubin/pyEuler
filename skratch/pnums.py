@@ -1,7 +1,6 @@
 # coding=utf-8
 
-from lib.octopus_prime import prime_gen, OctopusPrime
-
+from lib.maths import prime_gen, OctopusPrime
 
 op = OctopusPrime(1000000)
 

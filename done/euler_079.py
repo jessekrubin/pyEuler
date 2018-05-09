@@ -13,7 +13,6 @@ The text file, keylog.txt, contains fifty successful login attempts.
 Given that the three characters are always asked for in order, analyse the file 
 so as to determine the shortest possible secret passcode of unknown mag.
 """
-__sol__ = 73162890
 
 passcode_nums = [
     319, 680, 180, 690, 129, 620, 762, 689, 762, 318, 368, 710, 720, 710, 629,

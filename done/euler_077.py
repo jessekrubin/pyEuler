@@ -16,8 +16,7 @@ ways:
 What is the first value which can be written as the sum of primes in over
 five thousand different ways?
 """
-__sol__ = 71
-from lib.octopus_prime import is_prime
+from lib.maths import is_prime
 
 
 def prime_sums(n):

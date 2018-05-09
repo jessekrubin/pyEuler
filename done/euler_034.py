@@ -11,7 +11,6 @@ their digits.
 
 Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 """
-__sol__ = 40730
 
 from math import factorial
 from lib.listless import digits_list

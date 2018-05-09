@@ -17,7 +17,6 @@ can be written as a 1 through 9 pandigital.
 HINT: Some products can be obtained in more than one way so be sure to only
 include it once in your sum.
 """
-__sol__ = 45228
 
 from lib.listless import dig_list_2_int
 from itertools import permutations

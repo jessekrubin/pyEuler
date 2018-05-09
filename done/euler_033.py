@@ -17,7 +17,6 @@ than one in value, and containing two digits in the numerator and denominator.
 If the product of these four fractions_in_range is given in its lowest common
 terms, find the value of the denominator.
 """
-__sol__ = 100
 
 from fractions import Fraction
 from lib.listless import list_product

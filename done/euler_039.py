@@ -11,7 +11,6 @@ sides, {a,b,c}, there are exactly three solutions for pytriple_sum = 120.
 
 For which value of pytriple_gen ≤ 1000, is the number of solutions maximised?
 """
-__sol__ = 840
 
 from operator import itemgetter
 

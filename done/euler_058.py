@@ -24,9 +24,8 @@ with side mag 9 will be formed. If this process is continued, what is the
 side mag of the square spiral for which the ratio of primes along both
 diagonals first falls below 10%?
 """
-__sol__ = 26241
 
-from lib.octopus_prime import is_prime
+from lib.maths import is_prime
 from operator import truediv
 
 

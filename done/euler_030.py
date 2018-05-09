@@ -18,7 +18,6 @@ The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 Find the sum of all the numbers that can be written as the sum of fifth powers
 of their digits.
 """
-__sol__ = 443839
 
 from lib.listless import digits_list
 

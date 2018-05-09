@@ -4,7 +4,7 @@
 """
 Coin partitions
 Problem 78
-Let pytriple_gen(n) represent the number of different ways in which n coins can be
+Let p(n) represent the number of different ways in which n coins can be
 separated into piles. For example, five coins can be separated into piles
 in exactly seven different ways, so pytriple_gen(5)=7.
 
@@ -16,7 +16,7 @@ OO   OO   O
 OO   O   O   O
 O   O   O   O   O
 
-Find the least value of n for which pytriple_gen(n) is divisible by one million.
+Find the least value of n for which p=(n) is divisible by one million.
 """
 
 

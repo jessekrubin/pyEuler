@@ -16,7 +16,6 @@ of positive integers.
 Find the sum of all the numbers less than 108 that are both palindromic and can
 be written as the sum of consecutive squares.
 """
-__sol__ = 2906969179
 from math import sqrt
 from itertools import count
 from lib.string_theory import is_palindrome

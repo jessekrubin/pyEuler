@@ -10,7 +10,6 @@ from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
-__sol__ = 906609
 
 from lib.string_theory import is_palindrome
 

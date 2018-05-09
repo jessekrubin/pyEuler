@@ -22,7 +22,6 @@ is less than this limit.
 Find the sum of all the positive integers which cannot be written as the sum
 of two abundant numbers.
 """
-__sol__ = 4179871
 
 from lib.maths import divisors_list
 

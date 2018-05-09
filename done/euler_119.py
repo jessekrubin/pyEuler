@@ -15,7 +15,6 @@ You are given that a2 = 512 and a10 = 614656.
 
 Find a30.
 """
-__sol__ = 248155780267521
 
 
 def digits_sum(number):

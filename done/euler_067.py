@@ -22,7 +22,6 @@ to try every route to solve this problem, as there are 299 altogether! If you
 could check one trillion (1012) routes every second it would take over twenty
 billion years to check them all. There is an efficient algorithm to solve it.
 """
-__sol__ = 7273
 
 from lib.decorations import tictoc
 

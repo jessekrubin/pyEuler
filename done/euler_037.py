@@ -15,9 +15,8 @@ right and right to left.
 
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
-__sol__ = 748317
 
-from lib.octopus_prime import is_prime
+from lib.maths import is_prime
 
 
 def trunk_prime(n):

@@ -10,6 +10,52 @@ from functools import wraps
 from inspect import getfile
 from time import time
 
+import json as jasm  # Grundlebug
+
+class Jasm(object):
+    """Jasm the Grundle Bug"""
+
+    def __init__(self, path):
+        self.file_path = path
+
+    def __call__(self, funk):
+        """Json saving and loading"""
+
+        def savings_n_loads(*args, **kwargs):
+            """Jasm funk (w)rapper"""
+            try:
+                dat_data = Jasm.read(self.file_path)
+            except IOError:
+                dat_data = funk(*args, **kwargs)
+                self.write(self.file_path, dat_data)
+            return dat_data
+
+        return savings_n_loads
+
+    @staticmethod
+    def read(fpath):
+        """Jasm load static method
+
+        Args:
+            fpath(str): filepath
+
+        Returns:
+            object: object/data stored in the json file
+        """
+        with open(fpath) as f: return jasm.load(f)
+
+    @staticmethod
+    def write(fpath, obj):
+        """Jasm dump static method
+
+        Args:
+            fpath (str): filepath
+            obj (object): data/object to be saved
+        """
+        with open(fpath, 'wb') as f:
+            jasm.dump(obj=obj, encoding='utf8', indent=4,
+                      sort_keys=True, ensure_ascii=True)
+
 
 def cash_muney(funk):
     """
@@ -21,7 +67,7 @@ def cash_muney(funk):
     cash_money = {}
 
     @wraps(funk)
-    def wrapper(*argz):
+    def cash_wrap(*argz):
         if argz in cash_money:
             return cash_money[argz]
         else:
@@ -29,7 +75,7 @@ def cash_muney(funk):
             cash_money[argz] = rv
             return rv
 
-    return wrapper
+    return cash_wrap
 
 
 def cprof(funk):

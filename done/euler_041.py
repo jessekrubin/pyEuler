@@ -10,10 +10,9 @@ is also prime.
 
 What is the largest n-digit pandigital prime that exists?
 """
-__sol__ = 7652413
 
 from itertools import permutations
-from lib.octopus_prime import is_prime
+from lib.maths import is_prime
 
 
 def p041():

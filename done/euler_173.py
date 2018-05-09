@@ -16,7 +16,6 @@ it is possible to form forty-one different square laminae.
 
 Using up to one million tiles how many different square laminae can be formed?
 """
-__sol__ = 1572729
 
 from lib.maths import divisors_list
 

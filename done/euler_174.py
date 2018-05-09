@@ -21,7 +21,6 @@ N(15) = 832.
 
 What is ∑ N(n) for 1 ≤ n ≤ 10?
 """
-__sol__ = 209566
 
 from lib.maths import divisors_list
 

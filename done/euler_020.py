@@ -12,7 +12,6 @@ and the sum of the digits in the number 10! is:
 
 Find the sum of the digits in the number 100!
 """
-__sol__ = 648
 
 from math import factorial
 from lib.listless import digits_list

@@ -13,9 +13,8 @@ necessarily distinct, prime factors: 4, 6, 9, 10, 14, 15, 21, 22, 25, 26.
 How many composite integers, n < 10**8, have precisely two, not necessarily
 distinct, prime factors?
 """
-__sol__ = 17427258
 
-from lib.octopus_prime import prime_gen
+from lib.maths import prime_gen
 from math import sqrt
 from bisect import bisect_left
 from operator import truediv

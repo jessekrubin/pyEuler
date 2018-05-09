@@ -55,7 +55,6 @@ def find_proportion(percent):
             return i
 
 
-__sol__ = 1587000
 
 
 def p112(percentage=99):

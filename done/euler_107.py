@@ -29,7 +29,6 @@ containing a network with forty vertices, and given in matrix form, find the
 maximum saving which can be achieved by removing redundant edges whilst
 ensuring that the network remains connected.
 """
-__sol__ = 259679
 from collections import defaultdict
 
 

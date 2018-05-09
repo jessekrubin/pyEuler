@@ -13,7 +13,7 @@
 #
 # Find the sum of all values of n that satisfy s(n)=60.
 
-from lib.octopus_prime import pfactors_gen
+from lib.maths import pfactors_gen
 
 
 def s(n):

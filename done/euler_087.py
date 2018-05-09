@@ -16,9 +16,8 @@ that can be expressed in such a way:
 How many numbers below fifty million can be expressed as the sum of a prime
 square, prime cube, and prime fourth power?
 """
-__sol__ = 1097343
 
-from lib.octopus_prime import prime_gen
+from lib.maths import prime_gen
 from lib.decorations import tictoc
 from math import sqrt
 

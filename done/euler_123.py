@@ -13,9 +13,8 @@ The least value of n for which the remainder first exceeds 10^9 is 7037.
 
 Find the least value of n for which the remainder first exceeds 10^10.
 """
-__sol__ = 21035
 
-from lib.octopus_prime import prime_gen
+from lib.maths import prime_gen
 
 
 def psr(remainder_max):

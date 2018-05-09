@@ -10,9 +10,8 @@ the 6th prime is 13.
 
 What is the 10 001st prime number?
 """
-__sol__ = 104743
 
-from lib.octopus_prime import is_prime, prime_gen
+from lib.maths import prime_gen, is_prime
 
 
 def p007(nth_prime=10001):
