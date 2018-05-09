@@ -652,7 +652,7 @@ def rotate_list(l, n=1):
     return l[-n:]+l[:-n]
 
 
-def rot_list_gen(l):
+def list_rotation_gen(l):
     for i in xrange(len(l)):
         yield (l[-i:]+l[:-i])
 
