@@ -21,13 +21,13 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 from operator import itemgetter
-from biblioteca import cash_muney
+from biblioteca import cash_it
 
 try: xrange
 except: xrange = range
 
 
-@cash_muney
+@cash_it
 def collatz_seq_length(n):
     if n == 1:
         return 1

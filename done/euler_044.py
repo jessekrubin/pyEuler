@@ -17,10 +17,10 @@ difference are pentagonal and D = |Pk − Pj| is minimised; what is the value
 of D?
 """
 
-from biblioteca import cash_muney
+from biblioteca import cash_it
 
 
-@cash_muney
+@cash_it
 def pent_num(n):
     return n * (3 * n - 1) // 2
 

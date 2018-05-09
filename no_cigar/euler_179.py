@@ -9,23 +9,21 @@ number of positive divisors. For example, 14 has the positive divisors
 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
 """
 
-from biblioteca import n_divisors
+from biblioteca import divisors_gen
 from tqdm import tqdm
 
 
-# THIS IS A SLOW ONE
-
 def posdivs(upper_bound):
     divisors_dict = {}
-    for i in tqdm(range(1, upper_bound)):
-        divisors_dict[i] = n_divisors(i)
+    for i in tqdm(range(1, upper_bound), ascii=True):
+        divisors_dict[i] = sum(1 for _ in divisors_gen(i))
 
     cpd_count = 0
-    for i in range(1, upper_bound - 1):
-        if divisors_dict[i] == divisors_dict[i + 1]:
+    for i in range(1, upper_bound-1):
+        if divisors_dict[i] == divisors_dict[i+1]:
             cpd_count += 1
     return cpd_count
 
 
-result = posdivs(10 ** 7)
+result = posdivs(10**7)
 print("ANSWER: {}".format(result))

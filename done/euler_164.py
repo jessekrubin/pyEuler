@@ -9,10 +9,10 @@ How many 20 digit numbers n (without any leading zero) exist such that no three
 consecutive digits of n have a sum greater than 9?
 """
 
-from biblioteca import cash_muney
+from biblioteca import cash_it
 
 
-@cash_muney
+@cash_it
 def num_nums(first, second, remaining_digits):
     if remaining_digits == 0:
         return 1

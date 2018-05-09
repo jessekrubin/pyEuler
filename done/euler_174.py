@@ -22,15 +22,14 @@ N(15) = 832.
 What is ∑ N(n) for 1 ≤ n ≤ 10?
 """
 
-from biblioteca import divisors_list
+from biblioteca import divisors_gen
 
 
 def p174():
     divfours = [i for i in range(1000000 + 1) if i % 4 == 0 and i > 4]
     total = 0
     for num in divfours:
-        divs = divisors_list(num // 4)
-        num_lams = len(divs) // 2
+        num_lams = len([d for d in divisors_gen(num // 4)])//2
         if 0 < num_lams < 11:
             total += 1
 

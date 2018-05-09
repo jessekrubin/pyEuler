@@ -22,10 +22,10 @@ How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are
 greater than one-million?
 """
 
-from biblioteca import cash_muney
+from biblioteca import cash_it
 
 
-@cash_muney
+@cash_it
 def fact(n):
     if n == 1:
         return 1

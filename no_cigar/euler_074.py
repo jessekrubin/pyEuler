@@ -31,14 +31,14 @@ How many chains, with a starting number below one million, contain exactly sixty
 non-repeating terms?
 """
 
-from biblioteca import cash_muney, digits_list
+from biblioteca import cash_it, digits_list
 from math import factorial
 
 dic = {}
 seen_nums = set()
 
 
-@cash_muney
+@cash_it
 def recursing(n):
     next = sum(map(factorial, digits_list(n)))
     if next in seen_nums:

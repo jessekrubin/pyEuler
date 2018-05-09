@@ -18,7 +18,7 @@ HINT: Some products can be obtained in more than one way so be sure to only
 include it once in your sum.
 """
 
-from biblioteca import dig_list_2_int
+from biblioteca import digits_to_int
 from itertools import permutations
 
 
@@ -32,8 +32,8 @@ def pandigital_product(list):
             last = list[i:]
             furst = list[:j]
             second = list[j:i]
-            if dig_list_2_int(furst) * dig_list_2_int(second) == dig_list_2_int(last):
-                return dig_list_2_int(last)
+            if digits_to_int(furst) * digits_to_int(second) == digits_to_int(last):
+                return digits_to_int(last)
     return 0
 
 

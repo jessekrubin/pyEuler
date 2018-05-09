@@ -13,13 +13,13 @@ are cube.
 """
 
 from itertools import count
-from biblioteca import digits_list, dig_list_2_int
+from biblioteca import digits_list, digits_to_int
 
 
 def cubic_perms(n_perms):
     cubed_dict = {}
     for i in count(100):
-        ccc = dig_list_2_int(sorted(digits_list(i ** 3), reverse=True))
+        ccc = digits_to_int(sorted(digits_list(i**3), reverse=True))
         if ccc in cubed_dict:
             cubed_dict[ccc].append(i)
             if len(cubed_dict[ccc]) > n_perms - 1:

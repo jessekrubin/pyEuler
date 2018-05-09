@@ -20,10 +20,10 @@ each. What is the first of these numbers?
 """
 
 from itertools import count
-from biblioteca import pfactors_gen, cash_muney
+from biblioteca import pfactors_gen, cash_it
 
 
-@cash_muney
+@cash_it
 def n_distict_pfactors(n):
     return len([pf for pf in pfactors_gen(n)])
 

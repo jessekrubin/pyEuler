@@ -16,10 +16,10 @@ concatenate to produce another prime.
 
 from itertools import combinations
 from collections import defaultdict
-from biblioteca import prime_gen, is_prime, cash_muney
+from biblioteca import prime_gen, is_prime, cash_it
 
 
-@cash_muney
+@cash_it
 def num_digits(number):
     d = number
     digs = 0
@@ -33,7 +33,7 @@ def concat_numbers(a, b):
     return a*10**(num_digits(b))+b
 
 
-@cash_muney
+@cash_it
 def check_pair(p1, p2):
     if is_prime(concat_numbers(p1, p2)) and is_prime(concat_numbers(p2, p1)):
         return True

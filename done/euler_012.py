@@ -27,7 +27,7 @@ What is the value of the first triangle number to have over five hundred
 divisors_gen?
 """
 
-from biblioteca import n_divisors
+from biblioteca import divisors_gen
 
 
 def p012():
@@ -37,7 +37,7 @@ def p012():
     while maxmax < 500:
         i += 1
         cur_tri += i
-        numDivs = n_divisors(cur_tri)
+        numDivs = sum(1 for _ in divisors_gen(cur_tri))
         if numDivs > maxmax:
             maxmax = numDivs
     return cur_tri

@@ -19,7 +19,7 @@ the last nine digits are 1-9 pandigital, find k.
 __sol__ = None
 
 from itertools import permutations
-from biblioteca import dig_list_2_int
+from biblioteca import digits_to_int
 
 
 def fib_gen(n):
@@ -41,7 +41,7 @@ def first_ten_pan_digital(n):
 
 
 one2nine = [i for i in range(1, 10)]
-pandigital_numbers = set(dig_list_2_int(i) for i in permutations(one2nine))
+pandigital_numbers = set(digits_to_int(i) for i in permutations(one2nine))
 fibs = fib_gen(99999999)
 i = 0
 while True:

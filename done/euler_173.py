@@ -17,15 +17,14 @@ it is possible to form forty-one different square laminae.
 Using up to one million tiles how many different square laminae can be formed?
 """
 
-from biblioteca import divisors_list
+from biblioteca import divisors_gen
 
 
 def square_lams(upperlimit):
     divfours = [i for i in range(upperlimit + 1) if i % 4 == 0 and i > 4]
     total = 0
     for num in divfours:
-        divs = divisors_list(num // 4)
-        total += len(divs) // 2
+        total += len([d for d in divisors_gen(num // 4)])//2
 
     return total
 

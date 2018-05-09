@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - Biblioteca
+"""
+My (Jesse Rubin) library of functions/methods and classes that I use on the reg
+"""
 from __future__ import division, generators, print_function, absolute_import
-
-import json as jasm
 from bisect import bisect_right, bisect_left
 from cProfile import Profile
 from collections import Counter, deque
@@ -13,24 +14,38 @@ from itertools import count, chain
 from math import sqrt, pi, acos
 from operator import add, sub, methodcaller, truediv, floordiv, mul
 from time import time
+import json as jasm
 
 try: xrange
 except NameError: xrange = range
 
+##############
+# GENERATORS #
+##############
+
+
+# DECORATORS #
+
+# CLASSES #
+
+
 
 def partitions(n, I=1):
     yield (n,)
-    for i in range(I, n//2+1):
+    for i in xrange(I, n//2+1):
         for p in partitions(n-i, i):
             yield (i,)+p
 
 
-def cash_muney(funk):
-    """
-    for when you want that lru cach money but are working w py2
+def cash_it(funk):
+    """for when you want that lru cach money but are working w py2
 
-    :param funk:
-    :return:
+    Args:
+        funk (function): function to be cached
+
+    Returns:
+        function: wrapped function
+
     """
     cash_money = {}
 
@@ -46,7 +61,7 @@ def cash_muney(funk):
     return cash_wrap
 
 
-@cash_muney
+@cash_it
 def cash_factorial(n):
     if n == 1:
         return 1
@@ -86,13 +101,15 @@ def divisors_gen(n):
 
 
 def itgcd(a, b):
+    """iterative gcd"""
     while a:
         a, b = b%a, a
     return b
 
 
-@cash_muney
+@cash_it
 def rgcd(a, b):
+    """recursive greatest common divisor"""
     if b > a:
         return rgcd(b, a)
     r = a%b
@@ -101,31 +118,17 @@ def rgcd(a, b):
     return rgcd(r, b)
 
 
-def n_divisors(n):
-    """
-    >>> n_divisors(12)
-    6
-    >>> n_divisors(10)
-    4
-    """
-    return sum(1 for _ in divisors_gen(n))
-
-
-def divisors_list(n):
-    return [div for div in divisors_gen(n)]
-
-
-def n_digits(number):
-    return sum((1 for _ in str(number)))
-
-
 def reverse(n):
-    """
-    Reverses a number
+    """Reverses a number
 
-    :param n:
-    :return:
+    Args:
+        n (int): number to be reversed
+
+    Returns:
+        int: reversed of a number
+
     """
+
     reversed = 0
     while n > 0:
         reversed *= 10
@@ -134,7 +137,7 @@ def reverse(n):
     return reversed
 
 
-@cash_muney
+@cash_it
 def fib_r(n):
     """Recursively the nth fibonacci number
 
@@ -156,12 +159,14 @@ def fib_r(n):
 
 
 def expo(d, n):
-    """
-    returns the number of times a divisor divides n (is the exponent)
+    """greatest exponent for a divisor of n
 
-    :param d: divisor
-    :param n: number being divided
-    :return:
+    Args:
+        d (int): divisor
+        n (int): number be divided
+
+    Returns:
+        int: number of times a divisor divides n
     """
     if n < d:  # flip
         d, n = n, d
@@ -422,7 +427,7 @@ def pfactors_gen(n):
     return (p for p in divisors_gen(n) if is_prime(p))
 
 
-@cash_muney
+@cash_it
 def is_prime(number):
     """
     Returns True if number is prime
@@ -594,7 +599,7 @@ class tictoc(object):
         def time_wrapper(*args, **kwargs):
             self.args = str(args)
             ts = time()
-            for i in range(self.runs):
+            for i in xrange(self.runs):
                 result = time_funk(*args, **kwargs)
             te = time()
             t_total = (te-ts)/self.runs
@@ -619,18 +624,23 @@ def list_product(l):
 
 
 def chunks(l, n):
-    for i in range(0, len(l), n):
+    for i in xrange(0, len(l), n):
         yield l[i:i+n]
 
 
 def is_permutation(a, b):
     """
-    Checks if ints / lists are permutations
+    Checks if two integers or lists are permutations lists are permutations
 
-    :param a: int or list
-    :param b: int or list
-    :return: bool; True if a an b are permutations
+    Args:
+        a (int or list): possible perumtation of b
+        b (int or list): possible perumtation of a
+
+    Returns:
+        bool: True if a and b are permutations of one another; False otherwise
+
     """
+
     if type(a) == int:
         a = digits_list(a)
     if type(b) == int:
@@ -643,7 +653,7 @@ def rotate_list(l, n=1):
 
 
 def rot_list_gen(l):
-    for i in range(len(l)):
+    for i in xrange(len(l)):
         yield (l[-i:]+l[:-i])
 
 
@@ -674,20 +684,16 @@ def digits_list(num):
     return list(digits)
 
 
-def dig_list_2_int(l):
+def digits_to_int(l):
     """
-    >>> dig_list_2_int([3, 2, 1])
+    >>> digits_to_int([3, 2, 1])
     321
-    >>> dig_list_2_int([1, 1, 1, 1, 2, 3])
+    >>> digits_to_int([1, 1, 1, 1, 2, 3])
     111123
-    >>> dig_list_2_int([1, 2, 3])
+    >>> digits_to_int([1, 2, 3])
     123
     """
-    d = 0
-    n_digs = len(l)
-    for i in range(0, n_digs, 1):
-        d += (l[n_digs-i-1]*10**i)
-    return d
+    return sum((l[len(l)-i-1]*10**i) for i in xrange(0, len(l), 1))
 
 
 def is_palindrome(string):
@@ -705,8 +711,9 @@ def is_palindrome(string):
     return True
 
 
-def binary_string(n):
-    return bin(n)[2:]
+def binary_string(number):
+    """Number to binary"""
+    return bin(number)[2:]
 
 
 def string_score(name):
@@ -730,8 +737,7 @@ class SodokuError(ValueError):
 
 
 class Sodoku(object):
-    """
-    Sodoku solver class
+    """Sodoku class
 
     [ 0,  1,  2,  3,  4,  5,  6,  7,  8]
     [ 9, 10, 11, 12, 13, 14, 15, 16, 17]
@@ -755,12 +761,12 @@ class Sodoku(object):
         d = {i:("".join(c for c in full_set)
                 if self.board[i] == '0'
                 else self.board[i])
-             for i in range(81)}
+             for i in xrange(81)}
         d = Sodoku.update_dictionary(d)
         tf, d = Sodoku.reduce_dictionary(d)
         if not tf:
             raise SodokuError("check_unsolvable")
-        a = [d[ind] for ind in range(81)]
+        a = [d[ind] for ind in xrange(81)]
         self.board = "".join(a)
         self.is_solved = True
 
@@ -771,7 +777,7 @@ class Sodoku(object):
 
     @staticmethod
     def first_unknown(d):
-        for i in range(81):
+        for i in xrange(81):
             if len(d[i]) > 1:
                 return i
 
@@ -782,18 +788,16 @@ class Sodoku(object):
     @staticmethod
     def check_unsolvable(d):
         nd = {k:v for k, v in d.items()}
-        for rcb in range(9):
+        for rcb in xrange(9):
             box = {str(n):[ind for ind in Sodoku.box_inds(*divmod(rcb, 3))
                            if str(n) in d[ind]]
-                   for n in range(1, 10)}
+                   for n in xrange(1, 10)}
             row = {str(n):[ind for ind in Sodoku.row_inds(rcb)
                            if str(n) in d[ind]]
-                   for n in range(1, 10)}
+                   for n in xrange(1, 10)}
             col = {str(n):[ind for ind in Sodoku.col_inds(rcb)
                            if str(n) in d[ind] or str(n) == d[ind]]
-                   for n in range(1, 10)}
-            # print([coli for coli in Sodoku.col_inds(rcb)])
-            # print([d[coli] for coli in Sodoku.col_inds(rcb)])
+                   for n in xrange(1, 10)}
             if Sodoku.unsolvable(box) or Sodoku.unsolvable(row) or Sodoku.unsolvable(col):
                 raise SodokuError("UNSOLVABLE")
         return nd
@@ -801,7 +805,7 @@ class Sodoku(object):
     @staticmethod
     def update_dictionary(d):
         nd = {k:v for k, v in d.items()}
-        for i in range(81):
+        for i in xrange(81):
             if len(nd[i]) == 1:
                 for nay in Sodoku.neighbors(i):
                     if len(nd[nay]) != 1 and nd[i] in nd[nay]:
@@ -854,7 +858,7 @@ class Sodoku(object):
     #     return "\n".join(strings)
     @staticmethod
     def hasdup(d):
-        for i in range(81):
+        for i in xrange(81):
             if len(d[i]) == 1:
                 for n in Sodoku.neighbors(i):
                     if d[n] == d[i]:
@@ -865,34 +869,36 @@ class Sodoku(object):
         return self.board
 
     @staticmethod
-    @cash_muney
     def neighbors(index, size=9):
         return {ni for ni in chain(Sodoku.row_inds(index//size),
                                    Sodoku.col_inds(index%size),
                                    Sodoku.cell_box(index))}-{index}
 
     @staticmethod
-    @cash_muney
     def row_inds(n, bsize=9):
-        return {i for i in range(n*bsize, n*bsize+bsize)}
+        return {i for i in xrange(n*bsize, n*bsize+bsize)}
 
     @staticmethod
-    @cash_muney
     def col_inds(n, bsize=9):
-        return {i for i in range(n, bsize**2, bsize)}
+        return {i for i in xrange(n, bsize**2, bsize)}
 
     @staticmethod
-    # @cash_muney
     def box_inds(box_r, box_c, bsize=9):
         return {i*bsize+j
-                for i in range((box_r*3), (box_r*3)+3)
-                for j in range((box_c*3), (box_c*3)+3)}
+                for i in xrange((box_r*3), (box_r*3)+3)
+                for j in xrange((box_c*3), (box_c*3)+3)}
 
     @staticmethod
-    @cash_muney
+    @cash_it
     def cell_box(index, bsize=9):
-        for box_r in range(3):
-            for box_c in range(3):
+        for box_r in xrange(3):
+            for box_c in xrange(3):
                 box = Sodoku.box_inds(box_r, box_c)
                 if index in box:
                     return box
+
+
+if __name__ == '__main__':
+    import doctest
+
+    doctest.testmod()

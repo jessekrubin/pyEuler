@@ -24,11 +24,11 @@ In the first one-thousand expansions, how many fractions contain a numerator
 with more digits than denominator?
 """
 
-from biblioteca import cash_muney
+from biblioteca import cash_it
 from fractions import Fraction
 
 
-@cash_muney
+@cash_it
 def sqrt_2_recursion(n_expansions):
     if n_expansions == 1:
         return Fraction(4, 2)

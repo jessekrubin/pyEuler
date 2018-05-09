@@ -14,10 +14,10 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44,
 
 Evaluate the sum of all the amicable numbers under 10000.
 """
-from biblioteca import divisors_gen, cash_muney
+from biblioteca import divisors_gen, cash_it
 
 
-@cash_muney
+@cash_it
 def sum_proper_divisors(n):
     return sum(divisors_gen(n)) - n
 

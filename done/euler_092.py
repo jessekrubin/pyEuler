@@ -18,7 +18,7 @@ at 1 or 89.
 
 How many starting numbers below ten million will arrive at 89?
 """
-from biblioteca import cash_muney, digits_list
+from biblioteca import cash_it, digits_list
 
 
 def next_num(n):
@@ -29,7 +29,7 @@ def next_num(n):
     return m
 
 
-@cash_muney
+@cash_it
 def goes2_89(n):
     while True:
         if n == 89:

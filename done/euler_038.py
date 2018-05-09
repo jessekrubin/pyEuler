@@ -21,7 +21,6 @@ concatenated product of an integer with (1,2, ... , n) where n > 1?
 """
 
 from itertools import permutations, count
-from biblioteca import n_digits
 
 
 def make_number(l):
@@ -36,7 +35,7 @@ def p038():
 
     def check_num(n):
         for multipliers in lists_of_multipliers:
-            num = int(''.join([str(i * n) for i in multipliers]))
+            num = int(''.join([str(i*n) for i in multipliers]))
             if num in list_of_perms:
                 return True
             if num > max_pan_digit:
@@ -47,8 +46,8 @@ def p038():
     remaining_digs = 9
     products = []
     for n in count(1):
-        products.append(starting_n * n)
-        remaining_digs -= n_digits(starting_n * n)
+        products.append(starting_n*n)
+        remaining_digs -= len(str(starting_n*n))
         if remaining_digs == 0:
             return int("".join([str(num) for num in products]))
 
