@@ -21,10 +21,27 @@ class Test_SodokuMethods(object):
         ret = s.get_oneline_str()
         assert ret == b
 
+    # def test_cellbox(self):
+    #     for i in range(81):
+            # print(Sodoku.cell_box(i))
+
     def test_neighbors(self):
-        b = [i for i in range(81)]
-        for i in range(9):
-            print(b[i*9:i*9+9])
+        a = {0: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 72, 18, 19, 20, 27, 36, 45, 54, 63},
+             13:{3, 4, 5, 67, 9, 10, 11, 12, 76, 14, 15, 16, 17, 21, 22, 23, 31, 40, 49, 58},
+             14:{3, 4, 5, 68, 9, 10, 11, 12, 13, 77, 15, 16, 17, 21, 22, 23, 32, 41, 50, 59},
+             22:{3, 4, 5, 67, 12, 13, 14, 76, 18, 19, 20, 21, 23, 24, 25, 26, 31, 40, 49, 58},
+             23:{3, 4, 5, 68, 12, 13, 14, 77, 18, 19, 20, 21, 22, 24, 25, 26, 32, 41, 50, 59},
+             35:{71, 8, 80, 17, 26, 27, 28, 29, 30, 31, 32, 33, 34, 42, 43, 44, 51, 52, 53, 62},
+             43:{70, 7, 79, 16, 25, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 51, 52, 53, 61},
+             52:{70, 7, 79, 16, 25, 33, 34, 35, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 61}}
+
+        for k, v in a.items():
+            assert Sodoku.neighbors(k) == v
+
+        # print(Sodoku.neighbors(0))
+        # b = [i for i in range(81)]
+        # for i in range(9):
+        #     print(b[i*9:i*9+9])
 
     # def test_get_row(self):
 
@@ -59,16 +76,19 @@ class Test_Duplicate(object):
         badcol = '6.159.....9..1............4.7.314..6.24.....5..3....1...6.....3...9.2.4......16..'
         with raises(SodokuError):
             sbc = Sodoku.from_oneline_str(badcol)
+            sbc.solve()
 
     def test_duplicate_row(self):
         badrow = '.4.1..35.............2.5......4.89..26.....12.5.3....7..4...16.6....7....1..8..2.'
         with raises(SodokuError):
             sbr = Sodoku.from_oneline_str(badrow)
+            sbr.solve()
 
     def test_duplicate_box(self):
         badbox = '..9.7...5..21..9..1...28....7...5..1..851.....5....3.......3..68........21.....87'
         with raises(SodokuError):
             sbb = Sodoku.from_oneline_str(badbox)
+            sbb.solve()
 
 
 class Test_Unsolvable(object):
@@ -105,16 +125,16 @@ class TestValidCases(object):
         test_board = '974236158638591742125487936316754289742918563589362417867125394253649871491873625'
         s = Sodoku.from_oneline_str(test_board)
         s.solve()
-        s_solved= s.get_oneline_str()
+        s_solved = s.get_oneline_str()
         assert s_solved == test_board
 
     def test_one_empty_square(self):
-        test_board = '2564891733746159829817234565932748617128.6549468591327635147298127958634849362715'
+        test_board =    '2564891733746159829817234565932748617128.6549468591327635147298127958634849362715'
         test_solution = '256489173374615982981723456593274861712836549468591327635147298127958634849362715'
         assert len(test_board) == len(test_solution)
         s = Sodoku.from_oneline_str(test_board)
         s.solve()
-        s_solved= s.get_oneline_str()
+        s_solved = s.get_oneline_str()
         assert s_solved == test_solution
         # assert
 
@@ -124,7 +144,7 @@ class TestValidCases(object):
         assert len(test_board) == len(test_solution)
         s = Sodoku.from_oneline_str(test_board)
         s.solve()
-        s_solved= s.get_oneline_str()
+        s_solved = s.get_oneline_str()
         assert s_solved == test_solution
 
     def test_naked_singles(self):
@@ -134,6 +154,5 @@ class TestValidCases(object):
         assert len(test_board) == len(test_solution)
         s = Sodoku.from_oneline_str(test_board)
         s.solve()
-        s_solved= s.get_oneline_str()
+        s_solved = s.get_oneline_str()
         assert s_solved == test_solution
-

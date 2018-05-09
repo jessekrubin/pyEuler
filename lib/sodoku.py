@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - py_euler
-from collections import Counter
-from lib.listless import chunks
-from math import sqrt
+from lib.decorations import cash_muney
+from itertools import chain
 
 
 class SodokuError(ValueError):
@@ -14,256 +13,169 @@ class SodokuError(ValueError):
         super(SodokuError, self).__init__(message, row, col)
 
 
-# class Sodoku(object):
-
-
-from lib.listless import chunks
-from lib.decorations import cash_muney
-
-from itertools import chain
-from collections import defaultdict
-
-
 class Sodoku(object):
 
-    def __init__(self, board, check_duplicates=True):
+    def __init__(self, board):
         self.board = board
-        self.SIZE = int(len(board)**(0.5))
-        self.size = int(self.SIZE**(0.5))
-        self.ID = {i for i in range(1, self.SIZE+1)}
-        self.NEIGH = self.make_neighbors_dict(self.SIZE)
-        self.ROW = {i:set(self.get_row(i)) for i in range(9)}
-        self.COL = {i:set(self.get_col(i)) for i in range(9)}
-        self.BOX = {i:set(self.get_box(i)) for i in range(9)}
-        self.BOXID = {ind:i for i in range(9) for ind in Sodoku.box_inds(i)}
-        if check_duplicates: self.check_duplicates()
-        # self.D = {i:{j for j in range(1, 10)}-{board[e] for e in self.NEIGH[i]}
-        #           for i in range(self.SIZE*self.SIZE)
-        #           if self.board[i] == 0}
-        self.D = {}
+        self.solutions = []
+        self.nz = [i for i in range(81) if board[i] != '0']
+        self.z = [i for i in range(81) if board[i] == '0']
 
-    def possibilities(self, ind):
-        taken = set.union(self.BOX[self.BOXID[ind]],
-                          self.ROW[ind//self.SIZE],
-                          self.COL[ind%self.SIZE])
-        p = {i for i in range(1, self.SIZE+1)}-taken
-        return p
-        # if len(p) == 0 and self.board[ind]==0:
-        #     raise SodokuError("NO POSSIBILITIES AT INDEX: {}".format(ind))
-        # return p
+    def solve(self):
+        if 17 > sum(1 for n in self.board if n != '0'):
+            raise SodokuError("not enough info")
+        full_set = '123456789'
+        d = {i:("".join(c for c in full_set)
+                if self.board[i] == '0'
+                else self.board[i])
+             for i in range(81)}
+        d = Sodoku.update_dictionary(d)
+        tf, d = Sodoku.reduce_dictionary(d)
+        if tf == False:
+            raise SodokuError("unsolvable")
 
-    def hidden_singles(self):
-        for boxi in range(9):
-            self.box_hidden_singles(boxi)
+        print(d)
+        a = [d[ind] for ind in range(81)]
+        print("".join(a))
 
-    def box_hidden_singles(self, boxi):
-        remaining = (set(i for i in range(1, self.SIZE+1))-set(self.BOX[boxi]))
-        print(" ")
-        print("BOX", boxi)
-        print(self.BOX)
-        print(self.BOX[boxi])
-        print(self.D)
-        n_row = {i:{ib//self.SIZE for ib in Sodoku.box_inds(boxi)
-                    if ib in self.D and i in self.D[ib]}
-                 for i in remaining}
-
-        n_cols = {i:{ib%self.SIZE for ib in Sodoku.box_inds(boxi)
-                     if ib in self.D and i in self.D[ib]}
-                  for i in remaining}
-        # for i in range(1, 10) if i not in self.BOX[boxi]}
-        # print(remaining)
-        # print(n_row)
-        # print(n_cols)
-        # print("HIDDEN SINGLE")
-        for n in remaining:
-            if len(n_cols[n]) == 1 and len(n_row[n]) == 1:
-                # print(n_row[n], n_cols[n])
-                self.set_cell(n_row[n].pop(), n_cols[n].pop(), n)
-
-            elif len(n_cols[n]) == 1 and len(n_row[n]) != 1:
-                # print(n_cols[n])
-                self.COL[n_cols[n].pop()].add(n)
-                self.update_dictionary()
-            elif len(n_cols[n]) != 1 and len(n_row[n]) == 1:
-                self.ROW[n_cols[n].pop()].add(n)
-                self.update_dictionary()
-                # self.set_cell()
-
-    def set_cell(self, r, c, value):
-        # ind = (rowcol[0]*self.SIZE)+rowcol[1] if type(rowcol)==tuple else rowcol
-        ind = self.SIZE*r+c
-        self.board[ind] = value
-        bi = self.BOXID[ind]
-        print("")
-        print("setval", value)
-        print("r, c, ind, boxin", r, c, ind, bi)
-        if ind in self.D:
-            del self.D[ind]
-        self.ROW[r].add(value)
-        self.COL[c].add(value)
-        self.BOX[bi].add(value)
-
-        # singles = {k:v for k, v in self.D.items() if len(v)==1}
-        # self.update_dictionary()
-        # singles = {k:v for k, v in self.D.items() if len(v)==1}
-        # for i in range(self.SIZE**2):
-        #     if i in self.D and len(self.D[i])==1:
-        #         nrow, ncol = divmod(i, self.SIZE)
-        #         self.set_cell(nrow, ncol, self.D[i].pop())
-
-        self.update_dictionary()
-
-        # print(singles)
-        # for n, nset in self.D.items():
-        #     if len(nset) == 1:bnm
-
-        # new = self.update_dictionary()
-        # for k in self.D:
-        #     if self.D[k] != new[k]:
-        #         print("YEAH FUCK")
-        #         print(self.D[k])
-        #         print(new[k])
-        # self.D = new
-
-        # print(len(self.D))
-
-    # def update_dictionary(self):
-    #     return {index:self.possibilities(index) for index in self.D.keys()}
-    def update_dictionary(self):
-        self.D = {index:self.possibilities(index)
-                  for index in range(self.SIZE**2)
-                  if self.board[index] == 0}
-
-
-    def check_duplicates(self):
-        for i in range(9):
-            if len(self.ROW[i]) != len(self.get_row(i)): raise SodokuError("invalid row")
-            if len(self.COL[i]) != len(self.get_col(i)): raise SodokuError("invalid col")
-            if len(self.BOX[i]) != len(self.get_box(i)): raise SodokuError("invalid box")
+        self.board = "".join(a)
 
     @staticmethod
-    def make_neighbors_dict(board_size):
-        neighbors = defaultdict(set)
-        for i in range(9):
-            box = set(Sodoku.box_inds(i, board_size))
-            for n in box:
-                # self.NEIGH[n] = box-{n}
-                neighbors[n].update(box-{n})
+    def first_unknown(d):
+        for i in range(81):
+            if len(d[i]) > 1:
+                return i
 
-        for i in range(9):
-            row = set(Sodoku.row_inds(i, board_size))
-            for row_n in row:
-                neighbors[row_n].update(row-{row_n})
+    @staticmethod
+    def hidden_singles(d):
+        for boxr in range(3):
+            for boxc in range(3):
+                hs = {str(n):{ind for ind in Sodoku.box_inds(boxr, boxc)
+                              if ind in d and str(n) in d[ind]}
+                      for n in range(1, 10)}
+                # print(hs)
+                for num, inds in hs.items():
+                    if len(inds) == 1:
+                        nd = {k:v for k, v in d.items()}
+                        nd[inds.pop()] = num
+                        return nd
 
-        for i in range(9):
-            col = set(Sodoku.col_inds(i, board_size))
-            for col_number in col:
-                neighbors[col_number].update(col-{col_number})
+    @staticmethod
+    def unsolvable(d):
+        for rcb in range(9):
+            box = {str(n):{ind for ind in Sodoku.box_inds(*divmod(rcb, 3))
+                           if str(n) in d[ind]}
+                   for n in range(1, 10)}
+            col = {str(n):{ind for ind in Sodoku.row_inds(rcb)
+                           if str(n) in d[ind]}
+                   for n in range(1, 10)}
+            row = {str(n):{ind for ind in Sodoku.col_inds(rcb)
+                           if str(n) in d[ind]}
+                   for n in range(1, 10)}
+            if any(len(v)==0 for v in chain(box.values(), row.values(), col.values())):
+                return True
+        return False
 
-        return neighbors
-        # self.NEIGH[col_number].update(e for e in set(j for j in col if j != col_number))
+    @staticmethod
+    def update_dictionary(d):
+        nd = {k:v for k, v in d.items()}
+        for i in range(81):
+            if len(nd[i]) == 1:
+                for nay in Sodoku.neighbors(i):
+                    if len(nd[nay]) != 1 and nd[i] in nd[nay]:
+                        nd[nay] = nd[nay].replace(nd[i], '')
+        return nd
+
+    @staticmethod
+    def reduce_dictionary(d):
+        if all(len(v) == 1 for v in d.values()):
+            return True, d
+        d = Sodoku.hidden_singles(d)
+        d = Sodoku.update_dictionary(d)
+
+        if any(len(v) == 0 for k, v in d.items()) or Sodoku.unsolvable(d):
+            # raise SodokuError("UNSOLVABLE")
+            return False, d
+        print(any(len(v) == 0 for k, v in d.items()))
+        print(d)
+        fz = Sodoku.first_unknown(d)
+        if fz is None:
+            if Sodoku.hasdup(d): return False, d
+            return Sodoku.reduce_dictionary(d)
+        for poss in d[fz]:
+            nd = {k:v for k, v in d.items()}
+            nd[fz] = str(poss)
+            if not Sodoku.hasdup(nd):
+                valid, ret = Sodoku.reduce_dictionary(nd)
+                if valid:
+                    return valid, ret
+        return False, d
+
+    @staticmethod
+    def hasdup(d):
+        for i in range(81):
+            if len(d[i]) == 1:
+                for n in Sodoku.neighbors(i):
+                    if d[n] == d[i]:
+                        return True
+        return False
 
     @classmethod
     def from_oneline_str(cls, strang):
         s = strang.replace('.', '0')
-        return Sodoku(board=[int(n) for n in s])
+        # return Sodoku(board=[n for n in s])
+        return Sodoku(board=strang.replace('.', '0'))
 
     def get_oneline_str(self):
-        return "".join(str(n) for n in self.board)
-
-    def get_row(self, r):
-        return [e for e in self.board[r*9:r*9+9] if e != 0]
-
-    def get_col(self, c):
-        return [e for e in self.board[c:81:9] if e != 0]
-
-    def get_box(self, b):
-        return [self.board[i] for i in Sodoku.box_inds(b) if self.board[i] != 0]
-
-    def prints(self):
-        for r in chunks(self.board, 9):
-            print(r)
+        return self.board
 
     @staticmethod
-    def is_solved(board):
-        expected = set(i for i in range(1, 10))
-        if sum(board) == 405:  # fast check
-            return all(set(board[rc:81:9]) == expected and
-                       set(board[rc*9:rc*9+9]) == expected and
-                       set(board[i] for i in Sodoku.box_inds(rc)) == expected
-                       for rc in range(9))
-        return False
-
-    def solve(self):
-        self.D = {i:self.possibilities(i)
-                  for i in range(self.SIZE*self.SIZE)
-                  if self.board[i] == 0}
-
-        print("solving")
-        self.prints()
-        nonzero = sum(1 for e in self.board if e != 0)
-
-        # check if ther is enough information
-        if nonzero <= 16: raise SodokuError("non enough info")
-
-        if Sodoku.is_solved(self.board): return
-        print(self.D)
-
-        print([len(v) for v in self.D.values()])
-        print([(v) for v in self.D.values()])
-        while any(len(self.D[k])<2 for k in self.D):
-            self.hidden_singles()
-            # print(self.D)
-            for i in range(self.SIZE**2):
-
-                if i in self.D:
-                    if len(self.D[i])==0 and self.board[i]>0:
-                        del self.D[i]
-                    if len(self.D[i])==1:
-                        nrow, ncol = divmod(i, self.SIZE)
-                        self.set_cell(nrow, ncol, self.D[i].pop())
-                    # elif len(self.D[i])==0 and self.board[i]>0:
-            self.update_dictionary()
-
-        print("SOLVED???")
-        print(self.D)
-        self.prints()
-
-        # start to do the recursing stuff
-
-    # def __str__(self):
-    #     return "\n".join(str(l) for l in self.arr)
+    @cash_muney
+    def neighbors(index, size=9):
+        return {ni for ni in chain(Sodoku.row_inds(index//size),
+                                   Sodoku.col_inds(index%size),
+                                   Sodoku.cell_box(index))}-{index}
 
     @staticmethod
+    @cash_muney
     def row_inds(n, bsize=9):
-        return [i for i in range(n*bsize, n*bsize+bsize)]
+        return {i for i in range(n*bsize, n*bsize+bsize)}
 
     @staticmethod
+    @cash_muney
     def col_inds(n, bsize=9):
-        return [i for i in range(n, bsize**2, bsize)]
+        return {i for i in range(n, bsize**2, bsize)}
 
     @staticmethod
-    def box_inds(row_col, bsize=9):
-        box_r, box_c = row_col if type(row_col) == tuple else divmod(row_col, 3)
-        return [i*bsize+j
+    # @cash_muney
+    def box_inds(box_r, box_c, bsize=9):
+        # box_r, box_c = row_col if type(row_col) == tuple else divmod(row_col, 3)
+        return {i*bsize+j
                 for i in range((box_r*3), (box_r*3)+3)
-                for j in range((box_c*3), (box_c*3)+3)]
+                for j in range((box_c*3), (box_c*3)+3)}
 
     @staticmethod
-    def cell_box_inds(cell_index, board_size=9):
-        return Sodoku.box_inds(cell_index//board_size)
+    @cash_muney
+    def cell_box(index, bsize=9):
+        for box_r in range(3):
+            for box_c in range(3):
+                box = Sodoku.box_inds(box_r, box_c)
+                if index in box:
+                    return box
 
-    # a = []
-    # for r in range(3):
-    #     for c in range(3):
-    #         a.append(Sodoku.box_inds((r, c)))
-    # for rc in range(9):
-    #     print(divmod(rc, 3))
-    #     Sodoku.box_inds(rc)
-    #
-    # ninenineboardsum = sum([i for i in range(1, 10)])*9
-    # print(ninenineboardsum)
 
+# test_board = '256489173'\
+#              '374615982'\
+#              '981723456'\
+#              '593274861'\
+#              '7128.6549'\
+#              '468591327635147298127958634849362715'
+# test_solution = '256489173374615982981723456593274861712836549468591327635147298127958634849362715'
+#
+# s = Sodoku.from_oneline_str(test_board)
+# s.solve()
+#
+# print(Sodoku.neighbors(40))
 # [ 0,  1,  2,  3,  4,  5,  6,  7,  8]
 # [ 9, 10, 11, 12, 13, 14, 15, 16, 17]
 # [18, 19, 20, 21, 22, 23, 24, 25, 26]
@@ -273,3 +185,18 @@ class Sodoku(object):
 # [54, 55, 56, 57, 58, 59, 60, 61, 62]
 # [63, 64, 65, 66, 67, 68, 69, 70, 71]
 # [72, 73, 74, 75, 76, 77, 78, 79, 80]
+
+# assert set([30, 31, 32]+[39, 41]+[48, 49, 50]+[4, 13, 22, 31, 49, 58, 67, 76]+[36, 37, 38, 39, 41, 42, 43,
+#                                                                                44]) == Sodoku.neighbors(40)
+
+test_b = '....41....6.....2...2......32.6.........5..417.......2......23..48......5.1..2...'
+sodo = Sodoku.from_oneline_str(test_b)
+sodo.solve()
+
+test_board = '..2.3...8.....8....31.2.....6..5.27..1.....5.2.4.6..31....8.6.5.......13..531.4..'
+test_solution = '672435198549178362831629547368951274917243856254867931193784625486592713725316489'
+assert len(test_board) == len(test_solution)
+s = Sodoku.from_oneline_str(test_board)
+s.solve()
+s_solved = s.get_oneline_str()
+print(s_solved)
