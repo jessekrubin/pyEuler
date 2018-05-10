@@ -145,7 +145,7 @@ def divisors_gen(n):
         yield divisor
 
 
-def itgcd(a, b):
+def gcd_it(a, b):
     """iterative gcd"""
     while a:
         a, b = b%a, a
@@ -153,14 +153,14 @@ def itgcd(a, b):
 
 
 @cash_it
-def rgcd(a, b):
+def gcd_r(a, b):
     """recursive greatest common divisor"""
     if b > a:
-        return rgcd(b, a)
+        return gcd_r(b, a)
     r = a%b
     if r == 0:
         return b
-    return rgcd(r, b)
+    return gcd_r(r, b)
 
 
 def reverse(n):
@@ -241,7 +241,7 @@ def pytriple_gen(max_c):
             sqrd = comp*comp
             real = int(sqrd.real)
             imag = int(sqrd.imag)
-            if abs(real-imag)%2 == 1 and itgcd(imag, real) == 1:
+            if abs(real-imag)%2 == 1 and gcd_it(imag, real) == 1:
                 sea = int((comp*comp.conjugate()).real)
                 if sea > max_c:
                     break

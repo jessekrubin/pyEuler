@@ -20,7 +20,7 @@ fractions for d ≤ 12,000?
 """
 from __future__ import division
 
-from biblioteca import itgcd, prime_gen
+from biblioteca import gcd_it, prime_gen
 
 try: xrange
 except NameError: xrange = range
@@ -49,7 +49,7 @@ def fractions_in_range(max_d=12000, gtd=3, ltd=2):
             nfractions += (max_n-min_n)
         else:
             for numerator in xrange(min_n, max_n):
-                if itgcd(numerator, denominator) == 1:
+                if gcd_it(numerator, denominator) == 1:
                     nfractions += 1
     return nfractions
 
