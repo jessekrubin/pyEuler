@@ -13,7 +13,7 @@ once contain only prime elements?
 """
 from collections import Counter
 from itertools import combinations, product, permutations
-from biblioteca import partitions, is_prime, Jasm
+from biblioteca import partitions_gen, is_prime, Jasm
 
 try: xrange
 except NameError: xrange = range
@@ -40,7 +40,7 @@ def is_pandigital_set(st):
 
 def p118():
     norep_primes = {int(k):v for k, v in no_repeating_dijits_primes().items()}
-    okparts = [p for p in partitions(9) if len(p) > 1 and sum(1 for n in p if n == 1) < 5]
+    okparts = [p for p in partitions_gen(9) if len(p) > 1 and sum(1 for n in p if n == 1) < 5]
     pandigital_prime_sets = set()
     for party in okparts:
         c = Counter(p for p in party)

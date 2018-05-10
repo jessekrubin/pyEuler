@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
 """
-Coin partitions
+Coin partitions_gen
 Problem 78
 Let p(n) represent the number of different ways in which n coins can be
 separated into piles. For example, five coins can be separated into piles

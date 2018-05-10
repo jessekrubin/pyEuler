@@ -8,7 +8,7 @@ Python script to update the README.md for this repo
 from datetime import datetime
 from json import load, dump
 from codecs import getwriter
-from os import listdir, path
+from os import listdir
 
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'

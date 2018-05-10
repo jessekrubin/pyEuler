@@ -4,20 +4,22 @@
 """
 My (Jesse Rubin) library of functions/methods and classes that I use on the reg
 """
-from __future__ import division, generators, print_function, absolute_import
-from bisect import bisect_right, bisect_left
+from __future__ import absolute_import, division, generators, print_function
+
+import json as jasm
+from bisect import bisect_left, bisect_right
 from cProfile import Profile
 from collections import Counter, deque
-from functools import wraps, reduce
+from functools import reduce, wraps
 from inspect import getfile
-from itertools import count, chain
-from math import sqrt, pi, acos
-from operator import add, sub, methodcaller, truediv, floordiv, mul
+from itertools import chain, count
+from math import acos, pi, sqrt
+from operator import add, floordiv, methodcaller, mul, sub, truediv
 from time import time
-import json as jasm
 
 try: xrange
 except NameError: xrange = range
+
 
 ##############
 # GENERATORS #
@@ -29,11 +31,19 @@ except NameError: xrange = range
 # CLASSES #
 
 
+def partitions_gen(max_p, min_p=1):
+    """Partitions generator
 
-def partitions(n, I=1):
-    yield (n,)
-    for i in xrange(I, n//2+1):
-        for p in partitions(n-i, i):
+    Args:
+        max_p (int): number for which to yield partiton tuples
+        min_p (int): smallest partition size
+
+    Yields:
+        tuple: partition of max_p with smallest partition being min_p
+    """
+    yield (max_p,)
+    for i in xrange(min_p, max_p//2+1):
+        for p in partitions_gen(max_p-i, i):
             yield (i,)+p
 
 
@@ -51,6 +61,14 @@ def cash_it(funk):
 
     @wraps(funk)
     def cash_wrap(*argz):
+        """
+
+        Args:
+            *argz:
+
+        Returns:
+
+        """
         if argz in cash_money:
             return cash_money[argz]
         else:
@@ -62,11 +80,19 @@ def cash_it(funk):
 
 
 @cash_it
-def cash_factorial(n):
+def rfactorial(n):
+    """Recursive factorial function
+
+    Args:
+        n:
+
+    Returns:
+
+    """
     if n == 1:
         return 1
     else:
-        return cash_factorial(n-1)*n
+        return rfactorial(n-1)*n
 
 
 def radians_2_degrees(rads):
@@ -80,6 +106,16 @@ def degrees_2_radians(degs):
 
 
 def power_mod(number, exponent, mod):
+    """
+
+    Args:
+        number:
+        exponent:
+        mod:
+
+    Returns:
+
+    """
     if exponent > 0:
         if exponent%2 == 0:
             return power_mod(number, floordiv(exponent, 2), mod)
@@ -90,6 +126,15 @@ def power_mod(number, exponent, mod):
 
 
 def divisors_gen(n):
+    """Divisors generator
+
+    Args:
+        n (int): number w/ divisors to be generated
+
+    Yields:
+        int: divisors
+
+    """
     large_divisors = []
     for i in xrange(1, int(sqrt(n)+1)):
         if n%i == 0:
@@ -216,6 +261,14 @@ class Trigon(object):
 
     @classmethod
     def from_points(cls, pts):
+        """
+
+        Args:
+            pts:
+
+        Returns:
+
+        """
         if len(pts) == 3:
             return Trigon(*pts)
         if len(pts) == 6:
@@ -232,29 +285,75 @@ class Trigon(object):
                                       self.inner_triangles(point)))
 
     def inner_triangles(self, point):
+        """Triangle funk that returns the three triangles w/ a point
+
+        The point (p) is connected to each point of a triangle. with points,
+        a, b, and c. The three triangles are t1=(a, b, p), t2=(a, c, p), and
+        t3 = (b, c, p).
+
+        Args:
+            point (tuple or Vuple): point to connect to Triangle Vertices
+
+        Returns:
+            t1, t2, t3 (Trigon): Three triangles
+
+        """
         t1 = Trigon(point, self.pt2, self.pt3)
         t2 = Trigon(self.pt1, point, self.pt3)
         t3 = Trigon(self.pt1, self.pt2, point)
         return t1, t2, t3
 
     def is_perimeter_point(self, point):
+        """
+
+        Args:
+            point:
+
+        Returns:
+
+        """
         if type(point) is not Vuple:
             point = Vuple(point)
         return any(tri_area == 0 for tri_area in
                    map(methodcaller('area'), self.inner_triangles(point)))
 
     def points(self):
+        """
+
+        Returns:
+
+        """
         return self.pt1, self.pt2, self.pt3
 
     def contains_origin(self):
+        """True if the origin (0,0) lies within the Triangle
+
+        Returns:
+
+        """
         return (0, 0) in self
 
     def area(self):
+        """
+
+        Returns:
+
+        """
         return abs(truediv(Vuple.cproduct(self.pt1-self.pt2,
                                           self.pt3-self.pt2), 2))
 
     @staticmethod
     def area_from_points(pt1, pt2, pt3):
+        """
+
+        Args:
+            pt1:
+            pt2:
+            pt3:
+
+        Returns:
+
+        """
         return abs(truediv(Vuple.cproduct(pt1-pt2, pt3-pt2), 2))
 
 
@@ -305,28 +404,76 @@ class Vuple(tuple):
         return Vuple((el/k for el in self))
 
     def normalize(self):
+        """
+
+        Returns:
+
+        """
         return Vuple.unit_vuple(self)
 
     @staticmethod
     def unit_vuple(voop):
+        """
+
+        Args:
+            voop:
+
+        Returns:
+
+        """
         return Vuple(voop)/Vuple.mag(voop)
 
     def get_mag_sqrd(self):
+        """
+
+        Returns:
+
+        """
         return Vuple.mag_sqrd(self)
 
     @staticmethod
     def mag_sqrd(voop):
+        """
+
+        Args:
+            voop:
+
+        Returns:
+
+        """
         return sum(el*el for el in voop)
 
     def get_mag(self):
+        """
+
+        Returns:
+
+        """
         return Vuple.mag(self)
 
     @staticmethod
     def mag(voop):
+        """
+
+        Args:
+            voop:
+
+        Returns:
+
+        """
         return sqrt(Vuple.mag_sqrd(voop))
 
     @staticmethod
     def dproduct(a, b):
+        """
+
+        Args:
+            a:
+            b:
+
+        Returns:
+
+        """
         return sum(va*vb for va, vb in zip(a, b))
 
     @staticmethod
@@ -342,6 +489,16 @@ class Vuple(tuple):
 
     @staticmethod
     def angle(v1, v2, radians=True):
+        """
+
+        Args:
+            v1:
+            v2:
+            radians:
+
+        Returns:
+
+        """
         # return acos(Vuple.dproduct(v1, v2)/(Vuple.mag(v1)*Vuple.mag(v2)))
         q = 1 if radians else 180/pi
         return q*acos(Vuple.dproduct(Vuple.unit_vuple(v1),
@@ -414,6 +571,14 @@ def prime_gen(plim=0, kprimes=None):
 
 
 def pfactorization_gen(n):
+    """
+
+    Args:
+        n:
+
+    Returns:
+
+    """
     return (n for n in chain.from_iterable([p]*expo(p, n) for p in pfactors_gen(n)))
 
 
@@ -486,10 +651,23 @@ class OctopusPrime(list):
         self.max_loaded = self[-1]
 
     def transform(self, n=None):
+        """
+
+        Args:
+            n:
+        """
         n = n if n is not None else self[-1]*10
         self.extend(list(prime_gen(plim=n, kprimes=self)))
 
     def is_prime(self, number):
+        """
+
+        Args:
+            number:
+
+        Returns:
+
+        """
         if number > self[-1]:
             self.transform(number+1)
         if number in self:
@@ -498,9 +676,26 @@ class OctopusPrime(list):
             return False
 
     def primes_below(self, upper_bound):
+        """
+
+        Args:
+            upper_bound:
+
+        Returns:
+
+        """
         return self.primes_between(1, upper_bound)
 
     def primes_between(self, lower_bound, upper_bound):
+        """
+
+        Args:
+            lower_bound:
+            upper_bound:
+
+        Returns:
+
+        """
         if upper_bound > self[-1]:
             self.transform(upper_bound)
         return self[bisect_right(self, lower_bound):bisect_left(self, upper_bound)]
@@ -547,8 +742,7 @@ class Jasm(object):
             obj (object): data/object to be saved
         """
         with open(fpath, 'wb') as f:
-            jasm.dump(obj=obj, encoding='utf8', indent=4,
-                      sort_keys=True, ensure_ascii=True)
+            jasm.dump(obj=obj, encoding='utf8', indent=4, sort_keys=True)
 
 
 def cprof(funk):
@@ -562,6 +756,15 @@ def cprof(funk):
 
     @wraps(funk)
     def profiled_funk(*args, **kwargs):
+        """
+
+        Args:
+            *args:
+            **kwargs:
+
+        Returns:
+
+        """
         profile = Profile()
         try:
             profile.enable()
@@ -597,6 +800,15 @@ class tictoc(object):
     def __call__(self, time_funk, printing=True):
         @wraps(time_funk)
         def time_wrapper(*args, **kwargs):
+            """
+
+            Args:
+                *args:
+                **kwargs:
+
+            Returns:
+
+            """
             self.args = str(args)
             ts = time()
             for i in xrange(self.runs):
@@ -610,6 +822,15 @@ class tictoc(object):
 
     @staticmethod
     def ftime(t1, t2=None):
+        """
+
+        Args:
+            t1:
+            t2:
+
+        Returns:
+
+        """
         if t2 is not None: return tictoc.ftime((t2-t1))
         elif t1 == 0.0: return "~0.0~"
         elif t1 >= 1: return "%.3f s"%t1
@@ -620,10 +841,24 @@ class tictoc(object):
 
 
 def list_product(l):
+    """
+
+    Args:
+        l:
+
+    Returns:
+
+    """
     return reduce(mul, l)
 
 
 def chunks(l, n):
+    """
+
+    Args:
+        l:
+        n:
+    """
     for i in xrange(0, len(l), n):
         yield l[i:i+n]
 
@@ -649,10 +884,24 @@ def is_permutation(a, b):
 
 
 def rotate_list(l, n=1):
+    """
+
+    Args:
+        l:
+        n:
+
+    Returns:
+
+    """
     return l[-n:]+l[:-n]
 
 
 def list_rotation_gen(l):
+    """
+
+    Args:
+        l:
+    """
     for i in xrange(len(l)):
         yield (l[-i:]+l[:-i])
 
@@ -729,7 +978,9 @@ def string_score(name):
 
 
 class SodokuError(ValueError):
+    """
 
+    """
     def __init__(self, message, row=None, col=None):
         self.message = message
         self.row, self.col = row, col
@@ -755,6 +1006,9 @@ class Sodoku(object):
         self.board = board.replace('.', '0')
 
     def solve(self):
+        """
+
+        """
         if 17 > sum(1 for n in self.board if n != '0'):
             raise SodokuError("not enough info")
         full_set = '123456789'
@@ -771,22 +1025,51 @@ class Sodoku(object):
         self.is_solved = True
 
     def euler_096_three_digit_number(self):
+        """
+
+        Returns:
+
+        """
         if not self.is_solved:
             self.solve()
         return int(self.board[0:3])
 
     @staticmethod
     def first_unknown(d):
+        """
+
+        Args:
+            d:
+
+        Returns:
+
+        """
         for i in xrange(81):
             if len(d[i]) > 1:
                 return i
 
     @staticmethod
     def unsolvable(rcbd):
+        """
+
+        Args:
+            rcbd:
+
+        Returns:
+
+        """
         return any(len(v) == 0 for v in rcbd.values())
 
     @staticmethod
     def check_unsolvable(d):
+        """
+
+        Args:
+            d:
+
+        Returns:
+
+        """
         nd = {k:v for k, v in d.items()}
         for rcb in xrange(9):
             box = {str(n):[ind for ind in Sodoku.box_inds(*divmod(rcb, 3))
@@ -804,6 +1087,14 @@ class Sodoku(object):
 
     @staticmethod
     def update_dictionary(d):
+        """
+
+        Args:
+            d:
+
+        Returns:
+
+        """
         nd = {k:v for k, v in d.items()}
         for i in xrange(81):
             if len(nd[i]) == 1:
@@ -814,6 +1105,14 @@ class Sodoku(object):
 
     @staticmethod
     def reduce_dictionary(d):
+        """
+
+        Args:
+            d:
+
+        Returns:
+
+        """
         if all(len(v) == 1 for v in d.values()):
             return True, d
         try:
@@ -858,6 +1157,14 @@ class Sodoku(object):
     #     return "\n".join(strings)
     @staticmethod
     def hasdup(d):
+        """
+
+        Args:
+            d:
+
+        Returns:
+
+        """
         for i in xrange(81):
             if len(d[i]) == 1:
                 for n in Sodoku.neighbors(i):
@@ -866,24 +1173,66 @@ class Sodoku(object):
         return False
 
     def get_oneline_str(self):
+        """
+
+        Returns:
+
+        """
         return self.board
 
     @staticmethod
     def neighbors(index, size=9):
+        """
+
+        Args:
+            index:
+            size:
+
+        Returns:
+
+        """
         return {ni for ni in chain(Sodoku.row_inds(index//size),
                                    Sodoku.col_inds(index%size),
                                    Sodoku.cell_box(index))}-{index}
 
     @staticmethod
     def row_inds(n, bsize=9):
+        """
+
+        Args:
+            n:
+            bsize:
+
+        Returns:
+
+        """
         return {i for i in xrange(n*bsize, n*bsize+bsize)}
 
     @staticmethod
     def col_inds(n, bsize=9):
+        """
+
+        Args:
+            n:
+            bsize:
+
+        Returns:
+
+        """
         return {i for i in xrange(n, bsize**2, bsize)}
 
     @staticmethod
     def box_inds(box_r, box_c, bsize=9):
+        """
+
+        Args:
+            box_r:
+            box_c:
+            bsize:
+
+        Returns:
+
+        """
         return {i*bsize+j
                 for i in xrange((box_r*3), (box_r*3)+3)
                 for j in xrange((box_c*3), (box_c*3)+3)}
@@ -891,6 +1240,15 @@ class Sodoku(object):
     @staticmethod
     @cash_it
     def cell_box(index, bsize=9):
+        """
+
+        Args:
+            index:
+            bsize:
+
+        Returns:
+
+        """
         for box_r in xrange(3):
             for box_c in xrange(3):
                 box = Sodoku.box_inds(box_r, box_c)
