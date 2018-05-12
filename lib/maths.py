@@ -1,26 +1,42 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - Biblioteca
-from math import pi, sqrt, acos
+from collections import Counter
+from math import pi, sqrt, acos, factorial
 from operator import floordiv, methodcaller, truediv, add, sub
 
 from lib import xrange
 from lib.decorations import cash_it
+from lib.listless import list_product
 
 
-def partitions_gen(max_p, min_p=1):
+def partitions_gen(numero, min_p=1, max_p=None):
     """Partitions generator
 
+    Adapted from:
+        code.activestate.com/recipes/218332-generator-for-integer-partitions/
+        Adaptions:
+            min_p: minimum partition value
+
     Args:
-        max_p (int): number for which to yield partiton tuples
-        min_p (int): smallest partition size
+        numero (int): number for which to yield partiton tuples
+        min_p (int): smallest part size
+        max_p (int): largest part size
 
     Yields:
         tuple: partition of max_p with smallest partition being min_p
+
+    Examples:
+        >>> list(partitions_gen(4))
+        [(4,), (1, 3), (1, 1, 2), (1, 1, 1, 1), (2, 2)]
+        >>> list(partitions_gen(4, min_p=1, max_p=2))
+        [(1, 1, 2), (1, 1, 1, 1), (2, 2)]
     """
-    yield (max_p,)
-    for i in xrange(min_p, max_p//2+1):
-        for p in partitions_gen(max_p-i, i):
+    if max_p is None or max_p>=numero:
+        yield (numero,)
+
+    for i in xrange(min_p, numero//2+1):
+        for p in partitions_gen(numero-i, i, max_p):
             yield (i,)+p
 
 
@@ -448,3 +464,10 @@ class Vuple(tuple):
         q = 1 if radians else 180/pi
         return q*acos(Vuple.dproduct(Vuple.unit_vuple(v1),
                                      Vuple.unit_vuple(v2)))
+
+
+def repermutations(toop):
+    c = Counter(n for n in toop)
+    a = list(factorial(nc) for nc in c.values())
+    ans = factorial(len(toop))//list_product(a)
+    return ans

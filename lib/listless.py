@@ -4,7 +4,7 @@
 from functools import reduce
 from operator import mul
 
-from collections.__init__ import Counter, deque
+from collections import Counter, deque
 
 from lib import xrange
 
