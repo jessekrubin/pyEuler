@@ -482,23 +482,6 @@ def is_palindrome(string):
     return True
 
 
-def binary_string(number):
-    """Number to binary"""
-    return bin(number)[2:]
-
-
-def string_score(name):
-    """
-    >>> string_score('me')
-    18
-    >>> string_score('poooood')
-    95
-    >>> string_score('gregory')
-    95
-    """
-    return sum((ord(character)-96 for character in name.lower()))
-
-
 if __name__ == '__main__':
     import doctest
 
