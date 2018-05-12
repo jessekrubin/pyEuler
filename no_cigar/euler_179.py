@@ -9,7 +9,7 @@ number of positive divisors. For example, 14 has the positive divisors
 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
 """
 
-from biblioteca import divisors_gen
+from lib.biblioteca import divisors_gen
 from tqdm import tqdm
 
 

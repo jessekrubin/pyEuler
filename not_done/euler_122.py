@@ -32,7 +32,7 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 """
 from itertools import chain
 
-from biblioteca import pfactors_gen
+from lib.amazon_prime import pfactors_gen
 
 
 def expo(d, n):
@@ -60,24 +60,8 @@ def pfactorization(n):
 def m(k):
     print("+++")
     print("K", k)
-    # for f in pfactorization_gen(k):
-    #     print(f)
-    # if is_prime(k):
-    #     thingy = [h for h in prime_gen(k)]
-    #     return len(thingy)
-    # exponents = [1]
-    # for i in range(k):
-    #     last = exponents[-1]
-    #     exponents.append(last+last)
-    #     mul = exponents[-1-i]+last
-    #     if k%mul==0:
-    #         exponents.append(mul)
-    #     for n in exponents:
-    #         if k==2*n:
-    #             return len(set(exponents))
-    #         if k-n in exponents:
-    #             return len(set(exponents))
-    # return k
+    factorization = list(pfactorization(k))
+    print(factorization)
 
 
 # result = m(16)
@@ -94,7 +78,3 @@ def m(k):
 #     print(m(i))
 print(m(15))
 
-first20 = {i:m(i) for i in range(1, 20)}
-print(first20)
-ans = sum(m(i) for i in range(1, 200+1))
-print(ans)

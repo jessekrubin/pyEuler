@@ -27,7 +27,7 @@ What is the value of the first triangle number to have over five hundred
 divisors_gen?
 """
 
-from biblioteca import divisors_gen
+from lib.biblioteca import divisors_gen
 
 
 def p012():

@@ -16,10 +16,9 @@ digits, is the first Fibonacci number for which the first nine digits are
 Given that Fk is the first Fibonacci number for which the first nine digits AND
 the last nine digits are 1-9 pandigital, find k.
 """
-__sol__ = None
 
 from itertools import permutations
-from biblioteca import digits_to_int
+from lib.listless import digits_to_int
 
 
 def fib_gen(n):

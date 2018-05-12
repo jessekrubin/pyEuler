@@ -16,7 +16,8 @@ concatenate to produce another prime.
 
 from itertools import combinations
 from collections import defaultdict
-from biblioteca import prime_gen, is_prime, cash_it
+from lib.amazon_prime import prime_gen, is_prime
+from lib.decorations import cash_it
 
 
 @cash_it

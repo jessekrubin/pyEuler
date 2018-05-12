@@ -14,7 +14,7 @@ How many composite integers, n < 10**8, have precisely two, not necessarily
 distinct, prime factors?
 """
 
-from biblioteca import prime_gen
+from lib.amazon_prime import prime_gen
 from math import sqrt
 from bisect import bisect_left
 from operator import truediv

@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin - py_euler sodoku test_fest
+# Jesse Rubin - py_euler sodoku.py test_fest
 """
-testing my sodoku solver
+testing my sodoku.py solver
 
 ty sudopedia
 http://sudopedia.enjoysudoku.com/Invalid_Test_Cases.html
 http://sudopedia.enjoysudoku.com/Valid_Test_Cases.html
 """
 
-from biblioteca import SodokuError, Sodoku
+from lib.sodoku import SodokuError, Sodoku
 from pytest import raises
 
 

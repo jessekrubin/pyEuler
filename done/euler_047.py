@@ -20,7 +20,8 @@ each. What is the first of these numbers?
 """
 
 from itertools import count
-from biblioteca import pfactors_gen, cash_it
+from lib.amazon_prime import pfactors_gen
+from lib.decorations import cash_it
 
 
 @cash_it

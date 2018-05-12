@@ -13,7 +13,7 @@ base 10 and base 2.
 leading zeros.)
 """
 
-from biblioteca import is_palindrome, binary_string
+from lib.biblioteca import is_palindrome, binary_string
 
 
 def p036():

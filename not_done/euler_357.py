@@ -15,7 +15,7 @@ from functools import partial
 
 from tqdm import tqdm
 
-from biblioteca import prime_gen
+from lib.amazon_prime import prime_gen
 
 
 def funnn(d, n):

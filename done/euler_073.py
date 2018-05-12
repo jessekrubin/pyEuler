@@ -20,7 +20,8 @@ fractions for d ≤ 12,000?
 """
 from __future__ import division
 
-from biblioteca import gcd_it, prime_gen
+from lib.biblioteca import gcd_it
+from lib.amazon_prime import prime_gen
 
 try: xrange
 except NameError: xrange = range

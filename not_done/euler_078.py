@@ -26,9 +26,14 @@ def p(n):
     for num in range(1, n+1):
         for i in range(num, n+1):
             sums[i] += sums[i-num]
-    print(sums)
     return sums
 
 
 a = p(4)
 print(a)
+
+
+for i in range(200):
+    pars = p(i)[-1]
+    if pars%10==0:
+        print(i, p(i))

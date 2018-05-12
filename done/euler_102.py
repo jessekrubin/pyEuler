@@ -23,7 +23,7 @@ of triangles for which the interior contains the origin.
 NOTE: The first two examples in the file represent the triangles in the example 
 given above.
 """
-from biblioteca import Trigon
+from lib.biblioteca import Trigon
 
 
 def p102():
