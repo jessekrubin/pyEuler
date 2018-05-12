@@ -25,7 +25,7 @@ It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
 Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 """
 
-from lib.biblioteca import gcd_it
+from lib.maths import gcd_it
 from lib.amazon_prime import prime_gen
 
 

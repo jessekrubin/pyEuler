@@ -21,7 +21,7 @@ Give your answer rounded to 10 digits after the decimal point.
 """
 
 from math import pi
-from lib.biblioteca import Vuple
+from lib.maths import Vuple
 
 try: xrange
 except NameError: xrange = range

@@ -3,7 +3,7 @@
 # JESSE RUBIN - Biblioteca
 from itertools import chain
 
-from lib.biblioteca import xrange
+from lib import xrange
 from lib.decorations import cash_it
 
 

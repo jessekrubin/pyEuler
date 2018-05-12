@@ -5,7 +5,8 @@ from bisect import bisect_right, bisect_left
 from itertools import count, chain
 from math import log
 
-from lib.biblioteca import xrange, expo, divisors_gen
+from lib import xrange
+from lib.maths import divisors_gen, expo
 from lib.decorations import cash_it
 
 

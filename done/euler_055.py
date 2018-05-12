@@ -34,7 +34,7 @@ NOTE: Wording was modified slightly on 24 April 2007 to emphasise the
 theoretical nature of Lychrel numbers.
 """
 
-from lib.biblioteca import reverse
+from lib.maths import reverse
 
 
 def is_lychrel(n):
