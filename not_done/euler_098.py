@@ -28,12 +28,35 @@ with open('../txt_files/p098_words.txt') as f: # load the matrix
 
 max_word_length = max(len(word) for word in words) # get the max word mag
 
+print(max_word_length)
+print(words)
+from itertools import count
+# for i in count(1):
+#     sq = (i*i)
+#     print(sq)
+#     if len(str(sq))>14:
+#         break
+from collections import defaultdict
+def find_anagrams(wlist):
+    anagrams = defaultdict(set)
+    for w in wlist:
+        print(w)
+        anagrams[tuple(sorted((c for c in w)))].add(w)
 
-max_square = int(sqrt(10**max_word_length)+1)
+    return(anagrams)
 
-squares = set(i**2 for i in range(1, max_square))
+
+
+find_anagrams(words)
+            # print(words[i], words[j])
+
+
+
+# max_square = int(sqrt(10**max_word_length)+1)
+
+# squares = set(i**2 for i in range(1, max_square))
 # print(squares)
-print(len(squares))
+# print(len(squares))
 
 
 

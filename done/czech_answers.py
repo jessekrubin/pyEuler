@@ -40,7 +40,7 @@ def czech_answer(pn_str):
 if __name__ == '__main__':
     DONE = [f[6:9] for f in listdir(getcwd())  # find all files in the done dir
             if f.startswith('euler_')  # for which the file start with 'euler_'
-            and f.endswith('euler_111.py')]  # and ends with 'euler_111.py'
+            and f.endswith('.py')]  # and ends with 'euler_111.py'
 
 
     p = Pool(processes=8)

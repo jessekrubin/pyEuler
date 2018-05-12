@@ -17,6 +17,7 @@ Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 __sol__ = 18613426663617118
 
 from lib.amazon_prime import prime_gen
+from tqdm import tqdm
 
 
 def prime_pair_connection(p1, p2, mod_tens):
@@ -37,7 +38,7 @@ def p134():
 
     total = 0
     mod_tens = 10
-    for i in range(len(primes)-1):
+    for i in tqdm(range(len(primes)-1)):
         if primes[i] > mod_tens:
             mod_tens *= 10
         total += prime_pair_connection(primes[i], primes[i+1], mod_tens)

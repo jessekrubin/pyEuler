@@ -6,7 +6,7 @@ from itertools import count, chain
 from math import log
 
 from lib import xrange
-from lib.maths import divisors_gen, expo
+from lib.maths import divisors_gen
 from lib.decorations import cash_it
 
 
@@ -165,12 +165,13 @@ class OctopusPrime(list):
         self.extend(list(prime_gen(plim=n, kprimes=self)))
 
     def is_prime(self, number):
-        """
+        """Ask Octopus Prime if a number is prime
 
         Args:
-            number:
+            number: the number you are inquiring about
 
         Returns:
+            Bool: True if the number is prime and False otherwise
 
         """
         if number > self[-1]:

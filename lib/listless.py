@@ -54,7 +54,7 @@ def rotate_list(l, n=1):
 
 
 def list_rotation_gen(l):
-    """
+    """Yields rotations of a list
 
     Args:
         l:
@@ -99,16 +99,23 @@ def digits_to_int(l):
     >>> digits_to_int([1, 2, 3])
     123
     """
-    return sum((l[len(l)-i-1]*10**i) for i in xrange(0, len(l), 1))
+    return sum(l[len(l)-i-1]*10**i for i in xrange(0, len(l), 1))
 
 
 def list_product(l):
-    """
+    """Product of all the elements in a list
 
     Args:
-        l:
+        l: list with integer elements
 
     Returns:
+        int: product of all the elements in a list
+
+    Examples:
+        >>> list_product([1, 2, 3, 4])
+        24
+        >>> list_product([-1, -2, -3, 4])
+        -24
 
     """
     return reduce(mul, l)
