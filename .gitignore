@@ -6,7 +6,7 @@
 cppeuler/.vs/**
 /.idea/**
 /.pytest_cache/**
-test_fest/.pytest_cache/**
+lib/test_fest/.pytest_cache/**
 not_done/.idea/**
 
 # file types
