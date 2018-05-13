@@ -2,6 +2,8 @@
 
 # folders
 .vscode/**
+.vs/**
+cppeuler/.vs/**
 /.idea/**
 /.pytest_cache/**
 test_fest/.pytest_cache/**
@@ -9,3 +11,17 @@ not_done/.idea/**
 
 # file types
 *.pyc
+*.exe
+*.ilk
+*.tlog
+*.log
+*.obj
+*.pdb
+*.filters
+*.user
+*.users
+*.opendb
+*.db
+*.idb
+*.ipch
+*.pch
