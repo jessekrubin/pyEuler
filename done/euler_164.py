@@ -24,7 +24,7 @@ def num_nums(first, second, remaining_digits):
 
 def p164():
     count = 0
-    # for nums 'starting' w/ i (1,2,...,9) find the answer and add to count
+    # for p172 'starting' w/ i (1,2,...,9) find the answer and add to count
     for i in range(1, 10, 1):
         # each will have 19 remaining digits
         # 0 is fubbed in as the first

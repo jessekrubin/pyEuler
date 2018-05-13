@@ -10,7 +10,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-05-13) i've done 107 problems, and am currently working on 23.
+Last I checked (2018-05-13) i've done 110 problems, and am currently working on 21.
 
 ## Problems table
 
@@ -40,12 +40,12 @@ Last I checked (2018-05-13) i've done 107 problems, and am currently working on 
 |[p89](done/euler_089.py) ~ :snake:|90 ~ :see_no_evil:|91 ~ :scream:|[p92](done/euler_092.py) ~ :snake:|93 ~ :see_no_evil:|[p94](done/euler_094.py) ~ :snake:|95 ~ :see_no_evil:|[p96](done/euler_096.py) ~ :snake:|
 |[p97](done/euler_097.py) ~ :snake:|98 ~ :scream:|[p99](done/euler_099.py) ~ :snake:|100 ~ :see_no_evil:|101 ~ :see_no_evil:|[p102](done/euler_102.py) ~ :snake:|103 ~ :see_no_evil:|104 ~ :no_smoking:|
 |105 ~ :see_no_evil:|106 ~ :see_no_evil:|[p107](done/euler_107.py) ~ :snake:|108 ~ :scream:|109 ~ :see_no_evil:|110 ~ :see_no_evil:|111 ~ :see_no_evil:|[p112](done/euler_112.py) ~ :snake:|
-|113 ~ :scream:|114 ~ :scream:|115 ~ :see_no_evil:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|[p119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|
+|113 ~ :scream:|[p114](done/euler_114.py) ~ :snake:|[p115](done/euler_115.py) ~ :snake:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|[p119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|[p123](done/euler_123.py) ~ :snake:|[p124](done/euler_124.py) ~ :snake:|[p125](done/euler_125.py) ~ :snake:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
 |129 ~ :see_no_evil:|130 ~ :see_no_evil:|131 ~ :see_no_evil:|132 ~ :see_no_evil:|133 ~ :see_no_evil:|134 ~ :no_smoking:|135 ~ :see_no_evil:|136 ~ :scream:|
 |137 ~ :see_no_evil:|138 ~ :see_no_evil:|[p139](done/euler_139.py) ~ :snake:|140 ~ :see_no_evil:|141 ~ :see_no_evil:|142 ~ :scream:|143 ~ :see_no_evil:|144 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|[p164](done/euler_164.py) ~ :snake:|165 ~ :see_no_evil:|166 ~ :scream:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
-|169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|172 ~ :scream:|[p173](done/euler_173.py) ~ :snake:|[p174](done/euler_174.py) ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
+|169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|[p172](done/euler_172.py) ~ :snake:|[p173](done/euler_173.py) ~ :snake:|[p174](done/euler_174.py) ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
 |177 ~ :see_no_evil:|178 ~ :see_no_evil:|179 ~ :no_smoking:|180 ~ :see_no_evil:|181 ~ :see_no_evil:|182 ~ :see_no_evil:|183 ~ :see_no_evil:|184 ~ :see_no_evil:|
 |185 ~ :see_no_evil:|186 ~ :see_no_evil:|[p187](done/euler_187.py) ~ :snake:|188 ~ :see_no_evil:|189 ~ :see_no_evil:|190 ~ :see_no_evil:|[p191](done/euler_191.py) ~ :snake:|192 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|[p205](done/euler_205.py) ~ :snake:|[p206](done/euler_206.py) ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|

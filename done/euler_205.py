@@ -13,6 +13,7 @@ The result is a draw if the totals are equal.
 What is the probability that Pyramidal Pete beats Cubic Colin?
 (Give your answer rounded to seven decimal places in the form 0.abcdefg)
 """
+from __future__ import division
 from itertools import product
 
 

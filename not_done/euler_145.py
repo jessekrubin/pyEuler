@@ -31,16 +31,16 @@ def is_reversible(n):
     cur_dig = 0
     while soom > 0:
         cur_dig = soom % 10
-        if cur_dig % 2 == 0:
+        if cur_dig>0 and cur_dig % 2 == 0:
             return False
         soom //= 10
     return True
-
+from tqdm import tqdm
 
 def reversable_numbers_below(n):
     seen = set()
     count = 0
-    for i in range(1, n):
+    for i in tqdm(range(1, n), ascii=True):
         if i not in seen:
             if is_reversible(i):
                 ri = reverse(i)
@@ -61,4 +61,4 @@ print(reversable_numbers_below(100000))
 print(reversable_numbers_below(1000000))
 print(reversable_numbers_below(10000000))
 print(reversable_numbers_below(100000000))
-# print(reversable_numbers_below(1000000000))
+print(reversable_numbers_below(1000000000))
