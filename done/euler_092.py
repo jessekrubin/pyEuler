@@ -18,16 +18,17 @@ at 1 or 89.
 
 How many starting numbers below ten million will arrive at 89?
 """
-from lib.listless import digits_list
 from lib.decorations import cash_it
 
+squares = {i:i*i for i in range(10)}
 
+
+@cash_it
 def next_num(n):
-    d = digits_list(n)
-    m = 0
-    for p in d:
-        m += p*p
-    return m
+    if n < 10:
+        return n*n
+    last = n%10
+    return squares[n%10]+next_num(n//10)
 
 
 @cash_it

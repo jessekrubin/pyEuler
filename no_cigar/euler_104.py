@@ -13,8 +13,8 @@ digits 1 to 9, but not necessarily in order). And F2749, which contains 575
 digits, is the first Fibonacci number for which the first nine digits are
 1-9 pandigital.
 
-Given that Fk is the first Fibonacci number for which the first nine digits AND
-the last nine digits are 1-9 pandigital, find k.
+Given that Fk is the first Fibonacci number for which the first nine digits
+AND the last nine digits are 1-9 pandigital, find k.
 """
 
 from itertools import permutations

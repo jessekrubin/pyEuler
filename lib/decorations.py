@@ -54,11 +54,16 @@ class Jasm(object):
 
         def savings_n_loads(*args, **kwargs):
             """Jasm funk (w)rapper"""
-            save_key = str((args, kwargs.items()))
+            if len(args)==0:
+                save_key = "None"
+            else:
+                save_key = str((args, kwargs.items()))
             try:
                 with open(fp) as f:
                     dat_data = jasm.load(f)
             except IOError:
+                dat_data = {}
+            except ValueError:
                 dat_data = {}
 
             if save_key not in dat_data:
