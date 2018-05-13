@@ -13,9 +13,7 @@ For example,
 
 Find f(1,000,000,000,000)
 """
-
 from functools import lru_cache
-
 from tqdm import tqdm
 
 

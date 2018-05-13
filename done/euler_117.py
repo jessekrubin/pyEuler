@@ -27,8 +27,6 @@ def red_green_AND_blue(row_size):
 
 def p117():
     return red_green_AND_blue(50)
-    # return red_green_AND_blue(5)
-
 
 
 if __name__ == '__main__':
