@@ -51,6 +51,35 @@ def is_dec(n):
             return False
     return True
 
+def increasing(remaining, last):
+    if remaining == 0:
+        return 1
+    else:
+        total = 0
+        for i in range(last, 10):
+            total += increasing(remaining-1, i)
+        return total
+
+def decreasing(remaining, last):
+    if remaining == 0:
+        return 1
+    else:
+        total = 0
+        for i in range(0, last+1):
+            total += decreasing(remaining-1, i)
+        return total
+
+t=0
+for i in range(1, 10):
+    t += decreasing(10, i)
+    t += increasing(10, i)
+
+# e=
+# print(t+9*(10**(e-1)))
+print(t)
+
+
+
 
 incs = []
 decs = []
@@ -64,12 +93,13 @@ for i in range(1, 10**6):
     elif is_dec(i) and not is_inc(i):
         decs.append(i)
 
-print(incs)
-print(decs)
-print(both)
-print(len(incs))
-print(len(decs))
-print(len(both))
-print((len(incs)+len(decs)-len(both)))
-print(len(set.union(set(incs), set(decs), set(both))))
+# print(incs)
+# print(decs)
+# print(both)
+# print(len(incs))
+# print(len(decs))
+# print(len(both))
+# print((len(incs)+len(decs)-len(both)))
+# print(len(set.union(set(incs), set(decs), set(both))))
+# print((set.union(set(incs), set(decs), set(both))))
 
