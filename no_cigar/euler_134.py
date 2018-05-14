@@ -38,7 +38,7 @@ def p134():
 
     total = 0
     mod_tens = 10
-    for i in tqdm(range(len(primes)-1)):
+    for i in tqdm(range(len(primes)-1), ascii=True):
         if primes[i] > mod_tens:
             mod_tens *= 10
         total += prime_pair_connection(primes[i], primes[i+1], mod_tens)
