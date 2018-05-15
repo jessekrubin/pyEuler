@@ -19,7 +19,7 @@ AND the last nine digits are 1-9 pandigital, find k.
 
 from itertools import permutations
 from lib.listless import digits_to_int
-
+from math import log, sqrt
 
 def fib_gen(n):
     a, b = 0, 1
@@ -27,6 +27,19 @@ def fib_gen(n):
         yield a
         a, b = b, a+b
 
+def approxonacci(fibn):
+    """
+    Wikipedia - Computation by rounding
+    https://en.wikipedia.org/wiki/Fibonacci_number
+    """
+    thing1 = log(sqrt(5), 10)
+    thing2 = log(1.618033988, 10)
+    t = thing2*fibn-thing1
+    return 10**(t-int(t)+8)
+
+def is_pandigital(n):
+    if type(n)==int:
+        return set(c for c in str(n)) == set(str(i) for i in range(1, 10))
 
 def first_ten_pan_digital(n):
     last_9 = n%1000000000
