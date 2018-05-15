@@ -17,52 +17,43 @@ Given that Fk is the first Fibonacci number for which the first nine digits
 AND the last nine digits are 1-9 pandigital, find k.
 """
 
-from itertools import permutations
+from itertools import permutations, count
 from lib.listless import digits_to_int
 from math import log, sqrt
 
-def fib_gen(n):
-    a, b = 0, 1
-    for _ in range(n):
-        yield a
-        a, b = b, a+b
 
-def approxonacci(fibn):
+# def approxonacci(fibn):
+#     thing1 = log(sqrt(5), 10)
+#     thing2 = log(1.618033988, 10)
+#     t = thing2*fibn-thing1
+#     t = int(pow(10, (t-int(t)+8)))
+#     return t
+
+
+def approxonacci(n):
     """
     Wikipedia - Computation by rounding
     https://en.wikipedia.org/wiki/Fibonacci_number
     """
-    thing1 = log(sqrt(5), 10)
-    thing2 = log(1.618033988, 10)
-    t = thing2*fibn-thing1
-    return 10**(t-int(t)+8)
+    t = n*0.20898764024997873+(-0.3494850021680094)
+    return int((10**(t-int(t)+8)))
 
 def is_pandigital(n):
-    if type(n)==int:
-        return set(c for c in str(n)) == set(str(i) for i in range(1, 10))
+    print(n)
+    return set(c for c in str(n) if c!='L') == set(str(i) for i in range(1, 10))
 
-def first_ten_pan_digital(n):
-    last_9 = n%1000000000
-    if last_9 in pandigital_numbers:
-        flrst_nine = n
-        while flrst_nine > 1000000000:
-            flrst_nine //= 10
-        if flrst_nine in pandigital_numbers:
-            return True
-    return False
+def fib_last10():
+    a, b = 0, 1
+    for n in count(0):
+        yield a, n
+        a, b = b%1000000000, a+b
 
-
-one2nine = [i for i in range(1, 10)]
-pandigital_numbers = set(digits_to_int(i) for i in permutations(one2nine))
-fibs = fib_gen(99999999)
-i = 0
-while True:
-    i += 1
-    fi = next(fibs)
-    if fi > 100000000000:
-        if first_ten_pan_digital(fi):
+for i, n in fib_last10():
+    print(i, n)
+    if is_pandigital(i):
+        if is_pandigital(approxonacci(n)):
             break
-print(i-1)
+
 
 
 def p104():
