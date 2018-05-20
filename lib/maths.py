@@ -4,6 +4,7 @@
 from collections import Counter
 from math import pi, sqrt, acos, factorial
 from operator import floordiv, methodcaller, truediv, add, sub
+from bisect import bisect
 
 from lib import xrange
 from lib.decorations import cash_it
@@ -32,7 +33,7 @@ def partitions_gen(numero, min_p=1, max_p=None):
         >>> list(partitions_gen(4, min_p=1, max_p=2))
         [(1, 1, 2), (1, 1, 1, 1), (2, 2)]
     """
-    if max_p is None or max_p>=numero:
+    if max_p is None or max_p >= numero:
         yield (numero,)
 
     for i in xrange(min_p, numero//2+1):
@@ -465,9 +466,25 @@ class Vuple(tuple):
         return q*acos(Vuple.dproduct(Vuple.unit_vuple(v1),
                                      Vuple.unit_vuple(v2)))
 
+    def is_disjoint(self, them):
+        return len(set(self)&set(them))==0
+
+class SortedVuple(Vuple):
+
+    def __new__(self, toop, presorted=True):
+        if presorted: return tuple.__new__(SortedVuple, toop)
+        else: return tuple.__new__(SortedVuple, sorted(toop))
+
+
+
+
 
 def repermutations(toop):
     c = Counter(n for n in toop)
     a = list(factorial(nc) for nc in c.values())
     ans = factorial(len(toop))//list_product(a)
     return ans
+
+
+def disjoint(a, b):
+    return not any(ae in b for ae in a)
