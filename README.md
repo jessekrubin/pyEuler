@@ -10,7 +10,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-05-19) i've done 113 problems, and am currently working on 21.
+Last I checked (2018-05-20) i've done 114 problems, and am currently working on 20.
 
 ## Problems table
 
@@ -40,7 +40,7 @@ Last I checked (2018-05-19) i've done 113 problems, and am currently working on 
 |[p89](done/euler_089.py) ~ :snake:|90 ~ :see_no_evil:|91 ~ :scream:|[p92](done/euler_092.py) ~ :snake:|93 ~ :see_no_evil:|[p94](done/euler_094.py) ~ :snake:|[p95](done/euler_095.py) ~ :snake:|[p96](done/euler_096.py) ~ :snake:|
 |[p97](done/euler_097.py) ~ :snake:|98 ~ :scream:|[p99](done/euler_099.py) ~ :snake:|100 ~ :see_no_evil:|101 ~ :see_no_evil:|[p102](done/euler_102.py) ~ :snake:|103 ~ :see_no_evil:|104 ~ :no_smoking:|
 |105 ~ :see_no_evil:|106 ~ :see_no_evil:|[p107](done/euler_107.py) ~ :snake:|108 ~ :scream:|109 ~ :see_no_evil:|110 ~ :see_no_evil:|111 ~ :see_no_evil:|[p112](done/euler_112.py) ~ :snake:|
-|113 ~ :scream:|[p114](done/euler_114.py) ~ :snake:|[p115](done/euler_115.py) ~ :snake:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|[p119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|
+|[p113](done/euler_113.py) ~ :snake:|[p114](done/euler_114.py) ~ :snake:|[p115](done/euler_115.py) ~ :snake:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|[p119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|
 |121 ~ :see_no_evil:|122 ~ :scream:|[p123](done/euler_123.py) ~ :snake:|[p124](done/euler_124.py) ~ :snake:|[p125](done/euler_125.py) ~ :snake:|126 ~ :see_no_evil:|127 ~ :see_no_evil:|128 ~ :see_no_evil:|
 |129 ~ :see_no_evil:|130 ~ :see_no_evil:|131 ~ :see_no_evil:|132 ~ :see_no_evil:|133 ~ :see_no_evil:|134 ~ :no_smoking:|135 ~ :see_no_evil:|136 ~ :scream:|
 |137 ~ :see_no_evil:|138 ~ :see_no_evil:|[p139](done/euler_139.py) ~ :snake:|140 ~ :see_no_evil:|141 ~ :see_no_evil:|142 ~ :scream:|143 ~ :see_no_evil:|144 ~ :see_no_evil:|
