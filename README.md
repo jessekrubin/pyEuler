@@ -10,7 +10,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-05-13) i've done 111 problems, and am currently working on 20.
+Last I checked (2018-05-19) i've done 113 problems, and am currently working on 21.
 
 ## Problems table
 
@@ -37,7 +37,7 @@ Last I checked (2018-05-13) i've done 111 problems, and am currently working on 
 |65 ~ :see_no_evil:|66 ~ :see_no_evil:|[p67](done/euler_067.py) ~ :snake:|[p68](done/euler_068.py) ~ :snake:|[p69](done/euler_069.py) ~ :snake:|70 ~ :see_no_evil:|[p71](done/euler_071.py) ~ :snake:|[p72](done/euler_072.py) ~ :snake:|
 |[p73](done/euler_073.py) ~ :snake:|[p74](done/euler_074.py) ~ :snake:|[p75](done/euler_075.py) ~ :snake:|[p76](done/euler_076.py) ~ :snake:|[p77](done/euler_077.py) ~ :snake:|78 ~ :scream:|[p79](done/euler_079.py) ~ :snake:|[p80](done/euler_080.py) ~ :snake:|
 |[p81](done/euler_081.py) ~ :snake:|[p82](done/euler_082.py) ~ :snake:|[p83](done/euler_083.py) ~ :snake:|84 ~ :see_no_evil:|[p85](done/euler_085.py) ~ :snake:|86 ~ :see_no_evil:|[p87](done/euler_087.py) ~ :snake:|88 ~ :see_no_evil:|
-|[p89](done/euler_089.py) ~ :snake:|90 ~ :see_no_evil:|91 ~ :scream:|[p92](done/euler_092.py) ~ :snake:|93 ~ :see_no_evil:|[p94](done/euler_094.py) ~ :snake:|95 ~ :see_no_evil:|[p96](done/euler_096.py) ~ :snake:|
+|[p89](done/euler_089.py) ~ :snake:|90 ~ :see_no_evil:|91 ~ :scream:|[p92](done/euler_092.py) ~ :snake:|93 ~ :see_no_evil:|[p94](done/euler_094.py) ~ :snake:|[p95](done/euler_095.py) ~ :snake:|[p96](done/euler_096.py) ~ :snake:|
 |[p97](done/euler_097.py) ~ :snake:|98 ~ :scream:|[p99](done/euler_099.py) ~ :snake:|100 ~ :see_no_evil:|101 ~ :see_no_evil:|[p102](done/euler_102.py) ~ :snake:|103 ~ :see_no_evil:|104 ~ :no_smoking:|
 |105 ~ :see_no_evil:|106 ~ :see_no_evil:|[p107](done/euler_107.py) ~ :snake:|108 ~ :scream:|109 ~ :see_no_evil:|110 ~ :see_no_evil:|111 ~ :see_no_evil:|[p112](done/euler_112.py) ~ :snake:|
 |113 ~ :scream:|[p114](done/euler_114.py) ~ :snake:|[p115](done/euler_115.py) ~ :snake:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|[p119](done/euler_119.py) ~ :snake:|120 ~ :see_no_evil:|
@@ -46,8 +46,8 @@ Last I checked (2018-05-13) i've done 111 problems, and am currently working on 
 |137 ~ :see_no_evil:|138 ~ :see_no_evil:|[p139](done/euler_139.py) ~ :snake:|140 ~ :see_no_evil:|141 ~ :see_no_evil:|142 ~ :scream:|143 ~ :see_no_evil:|144 ~ :see_no_evil:|
 |161 ~ :see_no_evil:|162 ~ :see_no_evil:|163 ~ :see_no_evil:|[p164](done/euler_164.py) ~ :snake:|165 ~ :see_no_evil:|166 ~ :scream:|167 ~ :see_no_evil:|168 ~ :see_no_evil:|
 |169 ~ :see_no_evil:|170 ~ :see_no_evil:|171 ~ :see_no_evil:|[p172](done/euler_172.py) ~ :snake:|[p173](done/euler_173.py) ~ :snake:|[p174](done/euler_174.py) ~ :snake:|175 ~ :see_no_evil:|176 ~ :see_no_evil:|
-|177 ~ :see_no_evil:|178 ~ :see_no_evil:|179 ~ :no_smoking:|180 ~ :see_no_evil:|181 ~ :see_no_evil:|182 ~ :see_no_evil:|183 ~ :see_no_evil:|184 ~ :see_no_evil:|
-|185 ~ :see_no_evil:|186 ~ :see_no_evil:|[p187](done/euler_187.py) ~ :snake:|188 ~ :see_no_evil:|189 ~ :see_no_evil:|190 ~ :see_no_evil:|[p191](done/euler_191.py) ~ :snake:|192 ~ :see_no_evil:|
+|177 ~ :see_no_evil:|[p178](done/euler_178.py) ~ :snake:|[p179](done/euler_179.py) ~ :snake:|180 ~ :see_no_evil:|181 ~ :see_no_evil:|182 ~ :see_no_evil:|183 ~ :see_no_evil:|184 ~ :see_no_evil:|
+|185 ~ :scream:|186 ~ :see_no_evil:|[p187](done/euler_187.py) ~ :snake:|188 ~ :see_no_evil:|189 ~ :see_no_evil:|190 ~ :see_no_evil:|[p191](done/euler_191.py) ~ :snake:|192 ~ :see_no_evil:|
 |201 ~ :see_no_evil:|202 ~ :see_no_evil:|203 ~ :see_no_evil:|204 ~ :see_no_evil:|[p205](done/euler_205.py) ~ :snake:|[p206](done/euler_206.py) ~ :snake:|207 ~ :see_no_evil:|208 ~ :see_no_evil:|
 |345 ~ :scream:|346 ~ :scream:|[p347](done/euler_347.py) ~ :snake:|348 ~ :no_smoking:|349 ~ :see_no_evil:|350 ~ :see_no_evil:|351 ~ :see_no_evil:|352 ~ :see_no_evil:|
 |609 ~ :see_no_evil:|610 ~ :see_no_evil:|611 ~ :see_no_evil:|612 ~ :see_no_evil:|613 ~ :no_smoking:|614 ~ :see_no_evil:|615 ~ :see_no_evil:|

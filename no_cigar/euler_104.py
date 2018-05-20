@@ -22,21 +22,13 @@ from lib.listless import digits_to_int
 from math import log, sqrt
 
 
-# def approxonacci(fibn):
-#     thing1 = log(sqrt(5), 10)
-#     thing2 = log(1.618033988, 10)
-#     t = thing2*fibn-thing1
-#     t = int(pow(10, (t-int(t)+8)))
-#     return t
-
-
 def approxonacci(n):
     """
     Wikipedia - Computation by rounding
     https://en.wikipedia.org/wiki/Fibonacci_number
     """
     t = n*0.20898764024997873+(-0.3494850021680094)
-    return int((10**(t-int(t)+8)))
+    return int(10**(t-int(t)+8))
 
 def is_pandigital(n):
     print(n)
