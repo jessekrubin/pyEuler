@@ -27,36 +27,47 @@ from itertools import combinations
 from collections import defaultdict
 
 
-def layer_cracks(remaining, legos=(2, 3), cur=None):
-    if cur is None:
+@cash_it
+def brick_cracks(remaining, legos=(2, 3), cur_layer=None):
+    """
+
+    Args:
+        remaining (int): Spaces to fill
+        legos (tuple): lego brick sizes to use
+        cur_layer (tuple): current layer
+
+    Yields:
+        tuple: permutations of brick combinations
+
+    """
+    if cur_layer is None:
         for lego in legos:
-            for layer in layer_cracks(remaining-lego, legos, [lego]):
+            for layer in brick_cracks(remaining-lego, legos, tuple([lego])):
                 yield layer
     else:
         for n in [l for l in legos if l <= remaining]:
-            for layer in layer_cracks(remaining-n, legos, cur+[n]): yield layer
-        if remaining == 0: yield tuple(sum(cur[0:i]) for i in range(1, len(cur)))
+            for layer in brick_cracks(remaining-n, legos, tuple(list(cur_layer)+[n])):
+                yield layer
+        if remaining == 0: yield tuple(sum(cur_layer[0:i]) for i in range(1, len(cur_layer)))
         if remaining == 1: raise StopIteration
 
 
 def W(width, height):
-    HEIGHT = height
-    WIDTH = width
+    cracks = set(layer for layer in brick_cracks(width))  # crack/brick layers
+    disjoints = defaultdict(set)  # disjoint layer combos dictionary
+    for a, b in combinations(cracks, 2):  # for each crack combination...
+        if disjoint(a, b):  # valid if cracks are disjoint...
+            disjoints[a].add(b)  # add b to the disjoing-crack-layers to a
+            disjoints[b].add(a)  # add a to the disjoing-crack-layers to b
 
-    # BRICKS = set(layer for layer in layer_cracks(WIDTH) if layer is not None)
-    BRICKS = set(layer for layer in layer_cracks(WIDTH))
-    disjoints = defaultdict(set)
-    for a, b in combinations(BRICKS, 2):
-        if disjoint(a, b):
-            disjoints[a].add(b)
-            disjoints[b].add(a)
-
-    @cash_it
+    @cash_it  # cache / memozation decorator for recurssive function
     def layer_combos(remaining, cur):
+        """Count layer combos using the disjoint sets dictionary"""
         if remaining == 0: return 1
         return sum(layer_combos(remaining-1, d) for d in disjoints[cur])
 
-    return sum(layer_combos(HEIGHT-1, layer) for layer in disjoints)
+    # return count of all layer combos for each starting layer
+    return sum(layer_combos(height-1, layer) for layer in disjoints)
 
 
 def p215():
