@@ -16,19 +16,60 @@ digits, is the first Fibonacci number for which the first nine digits are
 Given that Fk is the first Fibonacci number for which the first nine digits
 AND the last nine digits are 1-9 pandigital, find k.
 """
-
+from __future__ import division
+from math import pow, sqrt, log
 from itertools import permutations, count
 from lib.listless import digits_to_int
-from math import log, sqrt
 
 
+# def approxonacci(n):
+#     """
+#     Wikipedia - Computation by rounding
+#     https://en.wikipedia.org/wiki/Fibonacci_number
+#
+#     """
+#     # t = n*0.20898764024997873-0.3494850021680094
+#     # return int(10**(t-int(t)+8))
+#     phi = (1 + sqrt(5))/2.0
+#     return int(((pow(phi,n) - (pow((1-phi), n) / sqrt(5)))))
+
+
+# Python3 code to find n-th Fibonacci number
+
+# Approximate value of golden ratio
+PHI = 1.61803398874989484820
+# Fibonacci numbers upto n = 5
+f = [0, 1, 1, 2, 3, 5]
+
+logroot5 = log(5) / 2
+logphi = log((1 + 5 ** 0.5) / 2)
+
+def nearest_fib(n):
+    if n == 0:
+        return 0
+    # Approximate by inverting the large term of Binet's formula
+    y = int((log(n) + logroot5) / logphi)
+    lo = fast_fib(y)
+    hi = fast_fib(y + 1)
+    return lo if n - lo < hi - n else hi
+# Function to find nth
+# Fibonacci number
 def approxonacci(n):
-    """
-    Wikipedia - Computation by rounding
-    https://en.wikipedia.org/wiki/Fibonacci_number
-    """
-    t = n*0.20898764024997873+(-0.3494850021680094)
-    return int(10**(t-int(t)+8))
+    # Fibonacci numbers for n < 6
+    if n < 6:
+        return f[n]
+
+    # Else start counting from
+    # 5th term
+    t = 5
+    fn = 5
+
+    while t < n:
+        fn = round(fn*PHI)
+        t += 1
+
+    return fn
+
 
 def is_pandigital(n):
     print(n)

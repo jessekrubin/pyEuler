@@ -58,7 +58,8 @@ def chaingang(start_n):
 
 
 def p095():
-    for i in tqdm(range(2, 1000000), ascii=True):
+    # for i in tqdm(range(2, 1000000), ascii=True, desc="p095"):
+    for i in range(2, 1000000):
         if i not in chainlengths:
             chaingang(i)
 
