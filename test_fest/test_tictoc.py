@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from lib.decorations import tictoc
+from bib.decorations import tictoc
 
 
 def test_ftime_seconds():

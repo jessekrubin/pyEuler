@@ -17,7 +17,7 @@ How many numbers below fifty million can be expressed as the sum of a prime
 square, prime cube, and prime fourth power?
 """
 
-from lib.amazon_prime import prime_gen
+from bib.amazon_prime import prime_gen
 from math import sqrt
 
 

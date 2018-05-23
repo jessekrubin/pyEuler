@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 """
@@ -9,7 +8,7 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143?
 """
 
-from lib.amazon_prime import pfactors_gen
+from bib.amazon_prime import pfactors_gen
 
 
 def p003():
@@ -19,3 +18,5 @@ def p003():
 if __name__ == '__main__':
     answer = p003()
     print("Largest prime factor of 600851475143: {}".format(answer))  # 6857
+
+

@@ -21,7 +21,7 @@ Find S(10,000,000).
 """
 
 from math import log
-from lib.amazon_prime import prime_gen
+from bib.amazon_prime import prime_gen
 from bisect import bisect_right
 
 

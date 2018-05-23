@@ -24,8 +24,8 @@ NOTE: This is related to Problem 117.
 from collections import Counter
 from math import factorial
 
-from lib.maths import partitions_gen, repermutations
-from lib.listless import list_product
+from bib.maths import partitions_gen, repermutations
+from bib.listless import list_product
 
 
 

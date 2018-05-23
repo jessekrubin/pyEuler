@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN -- project Euler
 """
@@ -13,7 +12,6 @@ numbers from 1 to 20?
 
 from itertools import count
 
-
 def p005():
     good_divs = [20, 19, 18, 17, 16, 14, 13, 11]
     for div_n in count(start=20*(10**7), step=20):
@@ -23,3 +21,5 @@ def p005():
 if __name__ == '__main__':
     answer = p005()
     print("Answer: {}".format(answer))
+
+

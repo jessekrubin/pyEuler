@@ -109,5 +109,4 @@ def p017():
 
 if __name__ == '__main__':
     characters = p017()
-    print("total number of chars in strings [1-1000]:")
-    print(characters)
+    print("Total number of chars in strings [1-1000]: {}".format(characters))

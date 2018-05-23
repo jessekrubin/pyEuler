@@ -5,9 +5,9 @@ from bisect import bisect_right, bisect_left
 from itertools import count, chain
 from math import log
 
-from lib import xrange
-from lib.maths import divisors_gen
-from lib.decorations import cash_it
+from bib import xrange
+from bib.maths import divisors_gen
+from bib.decorations import cash_it
 
 
 def prime_gen(plim=0, kprimes=None):

@@ -19,7 +19,7 @@ AND the last nine digits are 1-9 pandigital, find k.
 from __future__ import division
 from math import pow, sqrt, log
 from itertools import permutations, count
-from lib.listless import digits_to_int
+from bib.listless import digits_to_int
 
 
 # def approxonacci(n):

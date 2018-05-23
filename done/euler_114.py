@@ -23,7 +23,7 @@ general it is permitted to mix block sizes. For example, on a row measuring
 eight units in length you could use red (3), black (1), and red (4).
 """
 
-from lib.decorations import cash_it
+from bib.decorations import cash_it
 
 
 @cash_it

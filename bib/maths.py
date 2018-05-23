@@ -6,9 +6,9 @@ from math import pi, sqrt, acos, factorial
 from operator import floordiv, methodcaller, truediv, add, sub
 from bisect import bisect
 
-from lib import xrange
-from lib.decorations import cash_it
-from lib.listless import list_product
+from bib import xrange
+from bib.decorations import cash_it
+from bib.listless import list_product
 
 
 def partitions_gen(numero, min_p=1, max_p=None):

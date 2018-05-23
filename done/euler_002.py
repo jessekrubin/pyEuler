@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin ~ Project Euler
 """
@@ -13,7 +12,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 """
 
-from lib.maths import fib_r
+from bib.maths import fib_r
 
 
 def p002(upper_bound=4000000):
@@ -25,3 +24,5 @@ def p002(upper_bound=4000000):
 if __name__ == '__main__':
     ANSWER = p002()
     print("Even fibonacci numbers less than 4,000,000: {}".format(ANSWER))
+
+

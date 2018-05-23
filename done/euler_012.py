@@ -1,4 +1,3 @@
-# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
 """
@@ -27,7 +26,7 @@ What is the value of the first triangle number to have over five hundred
 divisors_gen?
 """
 
-from lib.maths import divisors_gen
+from bib.maths import divisors_gen
 
 
 def p012():
@@ -46,3 +45,4 @@ def p012():
 if __name__ == '__main__':
     answer = p012()
     print('triangle #: {}'.format(answer))  # cur #: 76576500
+

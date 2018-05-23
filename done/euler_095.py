@@ -23,8 +23,8 @@ exceeding one million.
 """
 
 from tqdm import tqdm
-from lib.maths import divisors_gen
-from lib.amazon_prime import prime_gen
+from bib.maths import divisors_gen
+from bib.amazon_prime import prime_gen
 
 upperlim = 1000000
 primes = {p for p in prime_gen(upperlim)}

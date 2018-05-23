@@ -13,7 +13,7 @@
 #
 # Find the sum of all values of n that satisfy s(n)=60.
 
-from lib.amazon_prime import pfactors_gen
+from bib.amazon_prime import pfactors_gen
 
 
 def s(n):
