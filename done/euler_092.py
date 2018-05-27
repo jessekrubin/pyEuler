@@ -18,7 +18,7 @@ at 1 or 89.
 
 How many starting numbers below ten million will arrive at 89?
 """
-from lib.decorations import cash_it
+from bib.decorations import cash_it
 
 squares = {i:i*i for i in range(10)}
 

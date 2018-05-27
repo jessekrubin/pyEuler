@@ -39,8 +39,8 @@ top left corner of each solution grid; for example, 483 is the 3-digit number
 found in the top left corner of the solution grid above.
 """
 
-from lib.sodoku import Sodoku
-from lib.listless import chunks
+from bib.sodoku import Sodoku
+from bib.listless import chunks
 
 
 def sol3d(grid):

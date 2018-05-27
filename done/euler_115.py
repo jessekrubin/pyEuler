@@ -26,7 +26,7 @@ For m = 50, find the least value of n for which the fill-count function first
 exceeds one million.
 """
 
-from lib.decorations import cash_it
+from bib.decorations import cash_it
 from itertools import count
 
 

@@ -16,7 +16,7 @@ Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 """
 __sol__ = 18613426663617118
 
-from lib.amazon_prime import prime_gen
+from bib.amazon_prime import prime_gen
 from tqdm import tqdm
 
 

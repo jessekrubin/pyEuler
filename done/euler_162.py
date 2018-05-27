@@ -9,7 +9,7 @@ Prompt
 """
 
 from itertools import count
-from lib.decorations import cash_it
+from bib.decorations import cash_it
 from collections import Counter
 
 hex = ['0', '1', '2', '3', '4', '5', '6', '7',

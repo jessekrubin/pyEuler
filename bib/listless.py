@@ -6,7 +6,7 @@ from operator import mul
 
 from collections import Counter, deque
 
-from lib import xrange
+from bib import xrange
 
 
 def chunks(l, n):

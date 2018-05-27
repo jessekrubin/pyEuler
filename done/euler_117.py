@@ -14,7 +14,7 @@ How many ways can a row measuring fifty units in length be tiled?
 NOTE: This is related to Problem 116.
 """
 
-from lib.maths import partitions_gen, repermutations
+from bib.maths import partitions_gen, repermutations
 
 
 def red_green_AND_blue(row_size):

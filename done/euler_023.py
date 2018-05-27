@@ -23,7 +23,7 @@ Find the sum of all the positive integers which cannot be written as the sum
 of two abundant numbers.
 """
 
-from lib.maths import divisors_gen
+from bib.maths import divisors_gen
 
 
 def sum_divisors(n):
