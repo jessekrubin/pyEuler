@@ -1,4 +1,4 @@
-# !/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - update README.md
 """
@@ -60,7 +60,6 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
            INPROG_EMOJI,
            NOT_STARTED_EMOJI)
 SOLUTIONS_PATH = "./txt_files/solutions.txt"
-
 
 def update_solutions_txt(done):
     """
