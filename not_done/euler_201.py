@@ -310,9 +310,9 @@ ssum_h(b, len(b), None,19)
 # yew1(sb, 50)
 
 
-# def p000():
+# def p240():
 #     pass
 #
 #
 # if __name__ == '__main__':
-#     p000()
+#     p240()

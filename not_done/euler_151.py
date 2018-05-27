@@ -92,9 +92,9 @@ print(paper(tuple([16])))
 
 
 
-# def p000():
+# def p240():
 #     pass
 #
 #
 # if __name__ == '__main__':
-#     p000()
+#     p240()

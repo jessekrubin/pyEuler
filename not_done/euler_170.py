@@ -31,9 +31,9 @@ print(stuff)
                 # i, thing, ath = (i, int(''.join(c[:s])), int(''.join(c[s:])))
 
 
-# def p000():
+# def p240():
 #     pass
 #
 #
 # if __name__ == '__main__':
-#     p000()
+#     p240()
