@@ -9,6 +9,7 @@ from datetime import datetime
 from json import load, dump
 from codecs import getwriter
 from os import listdir
+from bib.listless import chunks
 
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
@@ -109,7 +110,9 @@ def sur_la_table():
     Returns:
 
     """
-    probs = [i for i in range(1, N_EULER_PROBS)]
+
+    # probs = [i for i in range(1, N_EULER_PROBS)]
+    probs = sorted(list(set(NOT_DONE+NO_CIGAR+DONE)))
     rows = [probs[i:i+NUM_COLUMNS]
             for i in range(0, N_EULER_PROBS, NUM_COLUMNS)]
     table_lines = [format_table_line(row) for row in rows
