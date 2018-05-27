@@ -16,7 +16,7 @@ def p003():
 
 
 if __name__ == '__main__':
-    answer = p003()
-    print("Largest prime factor of 600851475143: {}".format(answer))  # 6857
+    ANSWER = p003()
+    print("Largest prime factor of 600851475143: {}".format(ANSWER))  # 6857
 
 

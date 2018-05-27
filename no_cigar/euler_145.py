@@ -13,7 +13,7 @@ There are 120 reversible numbers below one-thousand.
 
 How many reversible numbers are there below one-billion (10^9)?
 """
-
+from tqdm import tqdm
 
 def reverse(n):
     reversed = 0
@@ -23,42 +23,27 @@ def reverse(n):
         n //= 10
     return reversed
 
-
 def is_reversible(n):
-    if n % 10 == 0:
-        return False
     soom = n + reverse(n)
-    cur_dig = 0
-    while soom > 0:
-        cur_dig = soom % 10
-        if cur_dig>0 and cur_dig % 2 == 0:
-            return False
-        soom //= 10
-    return True
-from tqdm import tqdm
+    return all(c in '13579' for c in str(soom))
 
 def reversable_numbers_below(n):
-    seen = set()
-    count = 0
+    r = set()
     for i in tqdm(range(1, n), ascii=True):
-        if i not in seen:
+        if i%10!= 0 and i not in r: #and r not in seen:
             if is_reversible(i):
-                ri = reverse(i)
-                if i == ri:
-                    count += 1
-                else:
-                    seen.add(ri)
-                    seen.add(i)
-                    count += 2
-    return count
+                r.add(i)
+                r.add(reverse(i))
+            # else:
+    return len(r)#count
 
-
+# 608720
 # print(reversable_numbers_below(10))
-print(reversable_numbers_below(100))
-# print(reversable_numbers_below(1000))
-print(reversable_numbers_below(10000))
-print(reversable_numbers_below(100000))
-print(reversable_numbers_below(1000000))
-print(reversable_numbers_below(10000000))
-print(reversable_numbers_below(100000000))
-print(reversable_numbers_below(1000000000))
+# print(reversable_numbers_below(100))
+print(reversable_numbers_below(1000))
+# print(reversable_numbers_below(10000))
+# print(reversable_numbers_below(100000))
+# print(reversable_numbers_below(1000000))
+# print(reversable_numbers_below(10000000))
+# print(reversable_numbers_below(100000000))
+print(reversable_numbers_below(10**9))

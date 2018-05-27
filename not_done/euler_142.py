@@ -10,9 +10,52 @@ x + y, x − y, x + z, x − z, y + z, y − z
 
 are all perfect squares.
 """
+from __future__ import  division
+from bib import xrange
+from itertools import combinations
 
-perfect_squares = set(i**2 for i in range(10000000))
+squares = [i*i for i in range(0, 10**6)]
+indcombso= combinations((i for i in xrange(2, 10**5)), 2)
+# print(squares)
+for i in indcombso:
+    ymz, ypz = i
+    # print(xmy, xpy)
+    twoy = squares[ypz] + squares[ymz]
+    # twox = squares[ypz] - squares[ymz]
+    if twoy%2 ==0:
+        print(ymz, ypz, twoy)
+    # y =
+    #     print(x)
 
+    # x_plux_y, x_plus_z, x_minus_z, x_minus_y = reversed(i)
+
+    # x_plux_y, x_minus_y, x_plus_z, x_minus_z, y_plux_z, y_minus_z = reversed(i)
+    # print(x_plux_y, x_minus_y, x_plus_z, x_minus_z, y_plux_z, y_minus_z)
+    # print(x_plux_y, x_minus_y, x_plus_z, x_minus_z)
+    # x = (x_plux_y+x_minus_y)/2
+    # x2 = (x_plus_z+x_minus_z)/2
+    # y = (y_plux_z+y_minus_z)/2
+
+    # print(x, x2)
+    # if x == x2:
+    #     break
+
+
+
+"""
+x + y, x − y, 
+x + z, x − z, 
+y + z, y − z
+
+
+x + y,
+x − y, 
+x + z,
+x − z,
+
+y + z,
+y − z
+"""
 
 #
 # for x in range(4, 1000000):

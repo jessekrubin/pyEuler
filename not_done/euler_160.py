@@ -13,32 +13,38 @@ For example,
 
 Find f(1,000,000,000,000)
 """
-from functools import lru_cache
 from tqdm import tqdm
+from math import log10
+from bib.decorations import cash_it
 
-
-@lru_cache(maxsize=None)
 def mull(a, b):
     return a*b
 
-
-def thingy(numb=9, trailing=5):
+@cash_it
+def thingy(numb):
     # print(numb)
     # print(trailing)
-    fact = 1
-    for n in tqdm(range(1, numb), total=numb):
-        # print(fact)
-        mul = n+1
-        while mul%10 == 0:
-            mul //= 10
-        mul %= 10**trailing
+    if numb == 1:
+        return 1
+    # l = log10(numb)
+    # print(l)
+    f  = (numb*thingy(numb-1))%1000000
+    while f %10 == 0:
+        f //= 10
+    # print(f)
+    return f
 
-        fact = mull(mul, fact)
-        while fact%10 == 0:
-            fact //= 10
-        fact %= 10**trailing
-    print(fact)
+        # return numb*thingy(numb-1)%1000000
 
 
-thingy(numb=20)
-thingy(numb=1000000000000)
+a = thingy(9)
+print(a)
+
+from itertools import count
+from tqdm import tqdm
+for i in tqdm(xrange(1, 1000000), ascii=True):
+    a = thingy(i)
+
+
+
+# thingy(numb=1000000000000)
