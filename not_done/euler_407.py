@@ -1,18 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
-
-
 """
 Idempotents
 Problem 407
-If we calculate a2 mod 6 for 0 ≤ a ≤ 5 we get: 0,1,4,3,4,1.
+If we calculate a^2 mod 6 for 0 ≤ a ≤ 5 we get: 0,1,4,3,4,1.
 
-The largest value of a such that a2 ≡ a mod 6 is 4.
-Let's call M(n) the largest value of a < n such that a2 ≡ a (mod n).
+The largest value of a such that a^2 ≡ a mod 6 is 4.
+Let's call M(n) the largest value of a < n such that a^2 ≡ a (mod n).
 So M(6) = 4.
 
-Find ∑M(n) for 1 ≤ n ≤ 107.
+Find ∑M(n) for 1 ≤ n ≤ 10^7.
 """
 from tqdm import tqdm
 from bisect import bisect_left
@@ -45,8 +43,8 @@ def S_M(max_n):
 
     m_sum = 0
     for n in tqdm(range(1, max_n+1)):
-        print("_")
-        print(n, M(n)**2, M(n))
+        # print("_")
+        # print(n, M(n)**2, M(n))
         m_sum += M(n)
     m_sum -= 1
     print("MSUM", m_sum)
@@ -58,6 +56,6 @@ S_M(10)  # 17
 S_M(10**2)  # 2549
 S_M(50)  # 538
 # S_M(10**3)
-# S_M(10**4)
-# S_M(10**5)
-# S_M(10**6)
+S_M(10**4)
+S_M(10**5)
+S_M(10**6)
