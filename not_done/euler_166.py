@@ -164,10 +164,18 @@ scc = ['6', '3', '3', '0',
        '0', '7', '_', '_',
        '1', '_', '_', '_']
 
+cc = [6, 3, 3, 0,
+      5, 0, 4, 3,
+      0, 7, 1, 4,
+      1, 2, 4, 5]
 def triangle_cc(tcc):
     print(tcc)
     ccsum = sum(int(tcc[n]) for n in range(4))
     print(ccsum)
+
+
+def upleft_tri(top, left, fs, ccsum):
+    print(top, left, fs, ccsum)
 
 
 triangle_cc(scc)
@@ -191,14 +199,19 @@ def criss_cross(total = 3):
                     sss.add(n)
                 if n[3]== comba[3] and n[0] == combb[3]:
                     sss.add(n)
+
+
             print(sss)
+            for diag in sss:
+                upleft_tri(comba, combb,diag, ccsum=total)
 
 
 
 
 
 
-# criss_cross()
+
+criss_cross()
 
 
 

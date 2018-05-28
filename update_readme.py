@@ -1,4 +1,4 @@
-# !/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin - update README.md
 """
@@ -9,22 +9,17 @@ from datetime import datetime
 from json import load, dump
 from codecs import getwriter
 from os import listdir
+from bib.listless import chunks
 
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
 
-DONE_PATH = r'./done'
-DONE = sorted([int(f[6:9]) for f in listdir(DONE_PATH)
-               if f.startswith('euler_')
-               and f.endswith('.py')])
-NO_CIGAR_PATH = r'./no_cigar'
-NO_CIGAR = sorted([int(f[6:9]) for f in listdir(NO_CIGAR_PATH)
-                   if f.startswith('euler_')
-                   and f.endswith('.py')])
-NOT_DONE_PATH = r'./not_done'
-NOT_DONE = sorted([int((f[6:9])) for f in listdir(NOT_DONE_PATH)
-                   if f.startswith("euler_")
-                   and f.endswith('.py')])
+DONE = sorted([int(f[6:9]) for f in listdir(r'./done')
+               if f.startswith('euler_') and f.endswith('.py')])
+NO_CIGAR = sorted([int(f[6:9]) for f in listdir(r'./no_cigar')
+                   if f.startswith('euler_') and f.endswith('.py')])
+NOT_DONE = sorted([int((f[6:9])) for f in listdir(r'./not_done')
+                   if f.startswith("euler_") and f.endswith('.py')])
 N_EULER_PROBS = 615+1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
@@ -67,29 +62,37 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
            NOT_STARTED_EMOJI)
 SOLUTIONS_PATH = "./txt_files/solutions.txt"
 
-
 def update_solutions_txt(done):
+    """
+
+    Args:
+        done:
+    """
     # read in
     with open(SOLUTIONS_PATH, 'r') as f: SOLUTIONS = load(f)
     # update
     SOLUTIONS = {k:(SOLUTIONS[k] if k in SOLUTIONS else None)
-                  for k in (str(k).zfill(3) for k in DONE)}
+                 for k in (str(k).zfill(3) for k in DONE)}
     # write out
     with open(SOLUTIONS_PATH, 'wb') as f:
-        dump(SOLUTIONS, getwriter('utf-8')(f),
-             indent=4,
-             sort_keys=True,
-             ensure_ascii=True)
-
+        dump(SOLUTIONS, getwriter('utf-8')(f), indent=4, sort_keys=True)
 
 
 def format_table_line(row):
+    """
+
+    Args:
+        row:
+
+    Returns:
+
+    """
     linelist = []
     for n in row:
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = DONE_EMOJI
-            n_string = "[{}](done/euler_{}.py)".format(str("p{}".format((n))), str(n).zfill(3))
+            n_string = "[{}](done/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
         else:
             n_string = str(n)
             if n in NO_CIGAR:
@@ -102,7 +105,14 @@ def format_table_line(row):
 
 
 def sur_la_table():
-    probs = [i for i in range(1, N_EULER_PROBS)]
+    """
+
+    Returns:
+
+    """
+
+    # probs = [i for i in range(1, N_EULER_PROBS)]
+    probs = sorted(list(set(NOT_DONE+NO_CIGAR+DONE)))
     rows = [probs[i:i+NUM_COLUMNS]
             for i in range(0, N_EULER_PROBS, NUM_COLUMNS)]
     table_lines = [format_table_line(row) for row in rows
@@ -112,6 +122,9 @@ def sur_la_table():
 
 
 def write_README():
+    """
+
+    """
     with open('README.md', 'w') as f:
         f.write(README_TEXT)
 

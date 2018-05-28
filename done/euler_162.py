@@ -59,7 +59,7 @@ def p162(n_dijits=16):
                             True if starting_dig == 'A' else False)
     return '{:02x}'.format(total).upper()
 
-# def p000():
+# def p240():
 #     pass
 #
 #
