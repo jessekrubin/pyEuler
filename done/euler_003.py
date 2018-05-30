@@ -1,3 +1,4 @@
+#!python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - project Euler
 """
@@ -18,5 +19,3 @@ def p003():
 if __name__ == '__main__':
     ANSWER = p003()
     print("Largest prime factor of 600851475143: {}".format(ANSWER))  # 6857
-
-
