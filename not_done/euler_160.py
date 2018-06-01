@@ -4,14 +4,14 @@
 """
 Factorial trailing digits
 Problem 160
-For any N, let f(N) be the last five digits before the trailing zeroes in N!.
+For any N, let subset_sums(N) be the last five digits before the trailing zeroes in N!.
 For example,
 
-9! = 362880 so f(9)=36288
-10! = 3628800 so f(10)=36288
-20! = 2432902008176640000 so f(20)=17664
+9! = 362880 so subset_sums(9)=36288
+10! = 3628800 so subset_sums(10)=36288
+20! = 2432902008176640000 so subset_sums(20)=17664
 
-Find f(1,000,000,000,000)
+Find subset_sums(1,000,000,000,000)
 """
 from tqdm import tqdm
 from math import log10
@@ -31,7 +31,7 @@ def thingy(numb):
     f  = (numb*thingy(numb-1))%1000000
     while f %10 == 0:
         f //= 10
-    # print(f)
+    # print(subset_sums)
     return f
 
         # return numb*thingy(numb-1)%1000000

@@ -2,10 +2,42 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - project Euler
 """
-Problem Name
-prob #
+Subsets with a unique sum
+Problem 201
+For any set A of numbers, let sum(A) be the sum of the elements of A.
+Consider the set B = {1,3,6,8,10,11}.
+There are 20 subsets of B containing three elements, and their sums are:
 
-Prompt
+sum({1,3,6}) = 10,
+sum({1,3,8}) = 12,
+sum({1,3,10}) = 14,
+sum({1,3,11}) = 15,
+sum({1,6,8}) = 15,
+sum({1,6,10}) = 17,
+sum({1,6,11}) = 18,
+sum({1,8,10}) = 19,
+sum({1,8,11}) = 20,
+sum({1,10,11}) = 22,
+sum({3,6,8}) = 17,
+sum({3,6,10}) = 19,
+sum({3,6,11}) = 20,
+sum({3,8,10}) = 21,
+sum({3,8,11}) = 22,
+sum({3,10,11}) = 24,
+sum({6,8,10}) = 24,
+sum({6,8,11}) = 25,
+sum({6,10,11}) = 27,
+sum({8,10,11}) = 29.
+
+Some of these sums occur more than once, others are unique. For a set A, let
+U(A,k) be the set of unique sums of k-element subsets of A, in our example we
+find U(B,3) = {10,12,14,18,21,25,27,29} and sum(U(B,3)) = 156.
+
+Now consider the 100-element set S = {1**2, 2**2, ... , 100**2}.
+S has 100891344545564193334812497256 50-element subsets.
+
+Determine the sum of all integers which are the sum of exactly one of the
+50-element subsets of S, i.e. find sum(U(S,50)).
 """
 
 from itertools import  combinations
@@ -13,6 +45,82 @@ from itertools import  combinations
 
 from collections import defaultdict
 from bisect import bisect
+def greater_than(arr, n):
+    return arr[bisect(arr, n):]
+
+from bib.decorations import cash_it
+
+def poss_nexts(arr, n, remaining):
+    return greater_than(arr, n)[:-remaining]
+
+def unique_sums(toople_list):
+    d = defaultdict(set)
+    for t in toople_list:
+        d[sum(t)].add(t)
+    retlist = []
+    for k, v in d.items():
+        if len(v) == 1:
+            retlist.append(v.pop())
+    return retlist
+
+def less_than(arr, n):
+    return arr[:bisect(arr, n)]
+
+
+def subsetsum(array,num):
+
+    if num == 0 or num < 1:
+        return None
+    elif len(array) == 0:
+        return None
+    else:
+        if array[0] == num:
+            return [array[0]]
+        else:
+            with_v = subsetsum(array[1:],(num - array[0]))
+            if with_v:
+                print([array[0]] + with_v)
+                return([array[0]] + with_v)
+                # return None
+            else:
+                print(subsetsum(array[1:],num))
+                return(subsetsum(array[1:],num))
+
+
+b = tuple([1, 3, 6, 8, 10, 11])
+squares = tuple([i*i for i in range(1, 100+1)])
+
+
+
+
+@cash_it
+def subset_sums(nset, start_i, target_sum, size):
+    if start_i >= len(nset):
+        return 1 if target_sum == 0 and size == 0 else 0
+    count = subset_sums(nset, start_i+1, target_sum, size)
+    count += subset_sums(nset, start_i+1, target_sum-nset[start_i], size-1)
+    return count
+
+from tqdm import tqdm
+
+def yewnu(b, subset_size):
+    print(b, subset_size)
+    smallest = sum(b[:subset_size])
+    largest= sum(b[-subset_size:])
+    print(smallest, largest)
+    t =0
+    for n in tqdm(range(smallest, largest+1)):
+        subs = subset_sums(b, 0, n, 3)
+        if subs == 1: t+=n
+    print(t)
+
+
+yewnu(b, 3)
+# yewnu(squares, 50)
+
+
+
+
 # def yew1(aset, sub_size):
 #     print(aset, sub_size)
 #     min_subsetsum = sum(aset[:sub_size])
@@ -76,24 +184,6 @@ from bisect import bisect
 #                     # print(sss)
 #         # return {subsum:subs.pop() for subsum, subs in d.items() if len(subs) == 1}
 #         return {subs.pop() for subsum, subs in d.items() if len(subs) == 1}
-def greater_than(arr, n):
-    return arr[bisect(arr, n):]
-
-from bib.decorations import cash_it
-
-def poss_nexts(arr, n, remaining):
-    return greater_than(arr, n)[:-remaining]
-
-def unique_sums(toople_list):
-    d = defaultdict(set)
-    for t in toople_list:
-        d[sum(t)].add(t)
-    retlist = []
-    for k, v in d.items():
-        if len(v) == 1:
-            retlist.append(v.pop())
-    return retlist
-
 # @cash_it
 # def yew2(arr, remaining, target_size = None):
 #     target_size = remaining if target_size is None else target_size
@@ -171,148 +261,9 @@ def unique_sums(toople_list):
 #         # print(anotherd)
 #         return tuple(l)
 
-def less_than(arr, n):
-    return arr[:bisect(arr, n)]
-
-
-
-# d = defaultdict(set)
-# for n in b:
-#     d[n].add((n, ))
-#
-# print(d)
-# nd = defaultdict(set)
-# for s1, s2 in combinations((v for v in d.values()), 2):
-#     for e in s1:
-#         for e2 in s2:
-#             print(e, e2)
-#             print(e+e2)
-#             if len(e+e2) < 3 + 1:
-#                 nd[sum(e+e2)].add(tuple(sorted(e+e2)))
-#
-# print(d)
-# print(nd)
-#
-#
-# for c in combinations(b):
-#     print(c)
-
-
-# A Dynamic Programming solution for
-# subset sum problem
-
-# Returns true if there is a subset
-# of set[] with sun equal to given sum
-
-def subsetsum(array,num):
-
-    if num == 0 or num < 1:
-        return None
-    elif len(array) == 0:
-        return None
-    else:
-        if array[0] == num:
-            return [array[0]]
-        else:
-            with_v = subsetsum(array[1:],(num - array[0]))
-            if with_v:
-                print([array[0]] + with_v)
-                return([array[0]] + with_v)
-                # return None
-            else:
-                print(subsetsum(array[1:],num))
-                return(subsetsum(array[1:],num))
-
-
-b = [1, 3, 6, 8, 10, 11]
-# Driver program to test above function
-n = len(b)
-sm = 19
-print(subsetsum(b, 19))
-
-# for thing in a:
-#     ansd[sum(thing)].add(thing)
-#
-# b = {k:v.pop() for k, v in ansd.items() if len(v)==1}
-# print(b)
-# print(sum(k for k in b))
-#
-# ansd = defaultdict(set)
-# b = [i*i for i in range(1, 101)]
-# a = yew2(tuple(b), 14)
-# for thing in a:
-#     ansd[sum(thing)].add(thing)
-#
-# b = {k:v.pop() for k, v in ansd.items() if len(v)==1}
-# print(b)
-# print(sum(k for k in b))
-
-
-# def ssum_h(list, n, subset, sum):
-#     if sum == 0:
-#         print subset
-#         return
-#
-#     if n == 0:
-#         return
-#
-#     if list[n-1] <= sum:
-#         ssum_h(list, n-1, subset, sum)
-#         ssum_h(list, n-1, subset+`list[n-1]`+" ", sum-list[n-1])
-#     else:
-#         ssum_h(list, n-1, subset, sum)
-
-def ssum_h(list, n, subset, sum):
-    if subset is None:
-        subset = []
-    if sum == 0:
-        print subset
-        return
-
-    if n == 0:
-        return
-
-    if subset[n-1] <= sum:
-        ssum_h(list, n-1, subset, sum)
-        ssum_h(list, n-1, subset+[n-1], sum-list[n-1])
-    else:
-        ssum_h(list, n-1, subset, sum)
-
-
-# ssum(b,19)
-ssum_h(b, len(b), None,19)
 
 
 
 
 
 
-# print(a)
-# print(sum(sum(k) for k in a))
-# b = [1, 3, 6, 8, 10, 11]
-# a = yew2(b, 4)
-# print(a)
-# print(sum(k for k in a))
-# #
-# b = [i*i for i in range(1, 101)]
-# a = yew2(b, 10)
-# print(a)
-# from collections import Counter
-# print(Counter(sum(k) for k in a))
-
-
-
-
-
-
-
-# sb = [i*i for i in range(1, 101)]
-# yew1(sb, 50)
-
-
-# def p240():
-#     pass
-#
-#
-# if __name__ == '__main__':
-#     p240()
