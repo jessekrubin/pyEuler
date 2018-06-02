@@ -18,8 +18,8 @@ natural numbers and the square of the sum.
 """
 
 
-def sq_sum_diff(num_numbers):
-    return sum([i + 1 for i in range(num_numbers)]) ** 2 - sum([(i + 1) ** 2 for i in range(num_numbers)])
+def sq_sum_diff(lim):
+    return sum(i+1 for i in range(lim))**2-sum((i+1)*(i+1) for i in range(lim))
 
 
 def p006():
@@ -28,5 +28,5 @@ def p006():
 
 if __name__ == '__main__':
     assert 2640 == sq_sum_diff(10)
-    answer = p006()
-    print("Difference ({}): {}".format(100, answer))  # Difference(100): 25164150
+    ANSWER = p006()
+    print("Difference ({}): {}".format(100, ANSWER))  # Difference(100): 25164150

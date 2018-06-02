@@ -23,5 +23,5 @@ def p007(nth_prime=10001):
 
 
 if __name__ == '__main__':
-    answer = p007()
-    print("10,001th prime is: {}".format(answer))
+    ANSWER = p007()
+    print("10,001th prime is: {}".format(ANSWER))

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin
+# Jesse Rubin ~ Project Euler
 """
 Largest product in a series
 Problem 8
@@ -35,7 +35,8 @@ greatest product. What is the value of this product?
 from operator import mul
 from functools import reduce
 
-grid_string = """73167176531330624919225119674426574742355349194934
+DIJITS_STR = """
+73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -54,23 +55,17 @@ grid_string = """73167176531330624919225119674426574742355349194934
 07198403850962455444362981230987879927244284909188
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
-71636269561882670428252483600823257530420752963450"""
+71636269561882670428252483600823257530420752963450
+"""
+DIJITS = list(map(int, DIJITS_STR.replace('\n', '')))
 
-grid = list(map(int, list("".join((grid_string.split("\n"))))))
-
-
-def max_product(n, nums):
-    return max([
-        reduce(mul, lll)
-        for lll in [nums[i:i + n] for i in range(len(nums) - n)]
-        if 0 not in lll
-        ])
-
-
-def p008():
-    return max_product(13, grid)
+print(DIJITS)
+def p008(n=13):
+    return max(reduce(mul, thirteen)
+               for thirteen in (DIJITS[i:i+n] for i in range(len(DIJITS)-n))
+               if 0 not in thirteen)
 
 
 if __name__ == '__main__':
-    assert 5832 == max_product(4, grid)  # answer 4: 5832
-    print("answer 13: {}".format(p008()))  # answer 13: 23514624000
+    assert 5832 == p008(4)  # ANSWER 4: 5832
+    print("ANSWER 13: {}".format(p008()))  # ANSWER 13: 23514624000

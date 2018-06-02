@@ -22,26 +22,21 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 from operator import itemgetter
 from bib.decorations import cash_it
-
-try: xrange
-except: xrange = range
+from bib import xrange
 
 
 @cash_it
-def collatz_seq_length(n):
-    if n == 1:
-        return 1
-    if n%2 == 0:
-        return collatz_seq_length(n//2)+1
-    else:
-        return collatz_seq_length(3*n+1)+1
+def collatz_len(n):
+    if n == 1: return 1
+    elif n%2 == 0: return collatz_len(n//2)+1
+    else: return collatz_len(3*n+1)+1
 
 
 def p014():
-    seq_lengths = [collatz_seq_length(i) for i in xrange(1, 1000000)]
-    return max(enumerate(seq_lengths), key=itemgetter(1))[0]+1
+    return max(((i, collatz_len(i)) for i in xrange(1, 1000000)),
+               key=itemgetter(1))[0]+1
 
 
 if __name__ == '__main__':
-    max_index = p014()
-    print("{} produces the longest collatz sequence".format(max_index))
+    LONGEST_CHAIN = p014()
+    print("{} produces the longest collatz sequence".format(LONGEST_CHAIN))

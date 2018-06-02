@@ -32,10 +32,11 @@ Prime Minister's phone number is 524287. After how many successful calls, not
 counting misdials, will 99% of the users (including the PM) be a friend, or a
 friend of a friend etc.
 """
-from __future__ import division, print_function
+from __future__ import division, print_function, generators
+from itertools import count
+from collections import defaultdict
 from bib import xrange
 from bib.decorations import cash_it
-from itertools import count
 
 @cash_it # cached 4 recursing
 def lagged_fib_gen(k):
@@ -48,26 +49,35 @@ def phone_records_gen():
     """phone records generator"""
     return ((lagged_fib_gen(2*n-1), lagged_fib_gen(2*n)) for n in count(1))
 
-pm = 524287 # prime minister's personal cell
+
+pm, percentage = 555552, 10
+# 525542
+# pm = 524287 # prime minister's personal cell
 records = phone_records_gen()
 
-networks = []
-
+networks = defaultdict(set)
 for i in count():
-    call = records.next()
-    networks.append(set(call))
-    for network in networks:
-        if len(network.intersection(call)) > 0:
+    call = set(next(records))
+    # print(call)
+    overlaps = []
+    overlap = False
+    for network in networks.values():
+        # print(network)
+        if not network.isdisjoint(call):
             network.update(call)
-
-    print(networks)
-    if any(el==pm for el in call):
-        print(call, "YEAH")
+            for n in call:
+                networks[n] = network
+            overlap = True
+    if overlap is False:
+        for numb in call:
+            networks[numb] = call
+    # print(networks)
+    if pm in call:
+        print("YEA")
+        print(len(networks))
         break
-    if i >100:
-        break
-
-
+    # if i > 1000:
+    #     break
 
 
 

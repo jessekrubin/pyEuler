@@ -14,97 +14,41 @@ letters. The use of "and" when writing out numbers is in compliance with
 British usage.
 """
 
+ONE_TO_NINE = {7:"seven", 1:"one", 2:"two", 3:"three", 4:"four", 5:"five",
+               6:"six", 8:"eight", 9:"nine"}
+TENS = {2:"twenty", 3:"thirty", 4:"forty", 5:"fifty", 6:"sixty", 7:"seventy",
+        8:"eighty", 9:"ninety"}
+WEIRD_TEENS = {10:"ten", 11:"eleven", 12:"twelve", 13:"thirteen",
+               15:"fifteen", 18:"eighteen"}
 
-def one_nine(n):
-    if n == 1:
-        return "one"
-    elif n == 2:
-        return "two"
-    elif n == 3:
-        return "three"
-    elif n == 4:
-        return "four"
-    elif n == 5:
-        return "five"
-    elif n == 6:
-        return "six"
-    elif n == 7:
-        return "seven"
-    elif n == 8:
-        return "eight"
-    elif n == 9:
-        return "nine"
-    return ""
+
+def lt10(n):
+    return ONE_TO_NINE[n] if n in ONE_TO_NINE else ""
+
+
+def gt9_lt20(n):
+    return WEIRD_TEENS[n] if n in WEIRD_TEENS else lt10(n%10)+"teen"
 
 
 def tens_place(n):
-    if n == 2:
-        return "twenty"
-    elif n == 3:
-        return "thirty"
-    elif n == 4:
-        return "forty"
-    elif n == 5:
-        return "fifty"
-    elif n == 6:
-        return "sixty"
-    elif n == 7:
-        return "seventy"
-    elif n == 8:
-        return "eighty"
-    return "ninety"
+    return TENS[n]
 
 
-def one_ninenine(n):
-    """returns strings for numbers 1 - 99"""
-    if n < 10:
-        return one_nine(n)
-    else:
-        if n == 10:
-            return "ten"
-        elif n == 11:
-            return "eleven"
-        elif n == 12:
-            return "twelve"
-        elif n == 13:
-            return "thirteen"
-        elif n == 15:
-            return "fifteen"
-        elif n == 18:
-            return "eighteen"
-        elif n < 20:
-            a, b = divmod(n, 10)
-            return one_nine(b) + "teen"
-        else:
-            a, b = divmod(n, 10)
-            return tens_place(a) + " " + one_nine(b)
+def lt100(n):
+    if n < 10: return lt10(n)
+    if n < 20: return gt9_lt20(n)
+    return tens_place(n//10)+lt10(n%10)
 
 
-def write_num_as_string(n):
-    if n == 1000:
-        return "one thousand"
-    else:
-        a, b = divmod(n, 100)
-        if a == 0:
-            return one_ninenine(n)
-        elif n % 100 == 0:
-            return one_nine(a) + " hundred "
-
-        else:
-            return one_nine(a) + " hundred and " + one_ninenine(b)
+def lte1000(n):
+    if n == 1000: return "onethousand"
+    if n < 100: return lt100(n)
+    if n%100 == 0: return lt10(n//100)+"hundred"
+    return lt10(n//100)+"hundredand"+lt100(n%100)
 
 
 def p017():
-    characters = 0
-    for i in range(1, 1001):
-        # print("~~~")
-        # print(i)
-        # print(write_num_as_string(i))
-        # print(len(write_num_as_string(i)))
-        # print((write_num_as_string(i).replace(" ", "")))
-        # print(len(write_num_as_string(i).replace(" ", "")))
-        characters += len(write_num_as_string(i).replace(" ", ""))
-    return characters
+    return sum(len(lte1000(i)) for i in range(1, 1000+1))
 
 
 if __name__ == '__main__':

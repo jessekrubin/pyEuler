@@ -13,34 +13,40 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 """
 
-
-def is_p_triplet(t):
-    # print   (t)
-    if t[0] > t[1] or t[0] > t[2] or t[1] > t[2] or t[0] < 0 or t[0] == t[1] or t[1] == t[2]:
-        return False
-    else:
-        if t[2]**2 == t[1]**2+t[0]**2:
-            return True
-        else:
-            return False
+from bib.maths import pytriple_gen
+from bib.listless import list_product
 
 
 def p009():
-    combos = set()
-    for i in range(1, 1000):
-        for j in range(i):
-            trio = [i, j, (1000-i-j)]
-            trio.sort()
-            trio = tuple(trio)
-            combos.add(trio)
-
-    combos = set(combos)
-
-    for trip in filter(is_p_triplet, combos):
-        triplet = trip
-        return triplet[0]*triplet[1]*triplet[2]
+    for tri in pytriple_gen(int(1000//2)):
+        if 1000%sum(tri) == 0: return list_product(tri)*(1000//sum(tri))**3
 
 
 if __name__ == '__main__':
     product = p009()
     print("Triplet product: {}".format(product))
+
+#######
+# OLD #
+#######
+# def is_p_triplet(t):
+#     if t[0] > t[1] or t[0] > t[2] or t[1] > t[2] or t[0] < 0 or t[0] == t[1] or t[1] == t[2]:
+#         return False
+#     else:
+#         if t[2]**2 == t[1]**2+t[0]**2:
+#             return True
+#         else:
+#             return False
+#
+#
+# def p009_OLD():
+#     combos = set()
+#     for i in range(1, 1000):
+#         for j in range(i):
+#             trio = [i, j, (1000-i-j)]
+#             trio.sort()
+#             trio = tuple(trio)
+#             combos.add(trio)
+#     combos = set(combos)
+#     for triplet in filter(is_p_triplet, combos):
+#         return triplet[0]*triplet[1]*triplet[2]
