@@ -24,18 +24,15 @@ contain 1000 digits?
 """
 
 from bib.maths import fib_r
-
+from itertools import count
 
 def p025(no_digits=1000):
-    n_fib_digs = 0
-    i = 0
-    while n_fib_digs < no_digits:
-        n_fib_digs = len(str(fib_r(i)))
-        i += 1
-    return i
+    for i in count(0):
+        if len(str(fib_r(i))) >= no_digits:
+            return i+1
 
 
 if __name__ == '__main__':
     assert 12 == p025(3)
-    answer = p025()
-    print("index of first fib_gen num w/ 1000 digits: {}".format(answer))
+    ANSWER = p025()
+    print("index of first fib_gen num w/ 1000 digits: {}".format(ANSWER))

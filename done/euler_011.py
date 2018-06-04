@@ -60,21 +60,19 @@ mat = [list(map(int, string.split(" "))) for string in mat.split('\n')]
 
 
 def horizontal(r, c):
-    return mat[r][c] * mat[r][c + 1] * mat[r][c + 2] * mat[r][c + 3]
+    return mat[r][c]*mat[r][c+1]*mat[r][c+2]*mat[r][c+3]
 
 
 def vertical(r, c):
-    return mat[r][c] * mat[r + 1][c] * mat[r + 2][c] * mat[r + 3][c]
+    return mat[r][c]*mat[r+1][c]*mat[r+2][c]*mat[r+3][c]
 
 
 def backslash(r, c):
-    return mat[r][c] * mat[r + 1][c + 1] * mat[r + 2][c + 2] * mat[r + 3][c
-                                                                          + 3]
+    return mat[r][c]*mat[r+1][c+1]*mat[r+2][c+2]*mat[r+3][c+3]
 
 
 def forwardslash(r, c):
-    return mat[r][c] * mat[r - 1][c + 1] * mat[r - 2][c + 2] * mat[r - 3][c
-                                                                          + 3]
+    return mat[r][c]*mat[r-1][c+1]*mat[r-2][c+2]*mat[r-3][c+3]
 
 
 def p011():

@@ -19,20 +19,13 @@ What is the millionth lexicographic permutation of the digits:
 from itertools import permutations
 
 
-def tuple2string(t):
-    return ''.join(t)
-
-
 def p024():
-    numbers = [str(i) for i in range(10)]
-    strangs = []
-    for i in permutations(numbers, len(numbers)):
-        strangs.append(tuple2string(i))
-    return int(strangs[999999])
+    # enumerate the permutations
+    for index, permutation in enumerate(permutations('0123456789')):
+        # return the integer representation of the permutation
+        if index+1 == 1000000: return int(''.join(permutation))
 
 
 if __name__ == '__main__':
-    answer = p024()
-    print("i = 1,000,000: {}".format(answer))
-
-
+    ANSWER = p024()
+    print("i = 1,000,000: {}".format(ANSWER))

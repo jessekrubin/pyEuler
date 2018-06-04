@@ -17,10 +17,19 @@ distinct, prime factors?
 from bib.amazon_prime import prime_gen
 from math import sqrt
 from bisect import bisect_left
+from itertools import combinations_with_replacement
 from operator import truediv
 
 try: xrange
 except NameError: xrange = range
+
+
+def p187a(upper_bound=10**8):
+    primes = list(n for n in prime_gen(1+upper_bound//2))
+    for c in combinations_with_replacement(primes, 2):
+        print(c)
+
+
 
 
 def p187(upper_bound=10**8):

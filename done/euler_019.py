@@ -25,17 +25,11 @@ from datetime import date
 
 
 def p019():
-    START = date(1901, 1, 1)
-    START_ORD = START.toordinal()
-    FINISH = date(2000, 12, 31)
-    FINISH_ORD = FINISH.toordinal()
-    N_SUNDAYS = 0
-
-    for day in range(START_ORD, FINISH_ORD):
-        d = date.fromordinal(day)
-        if (d.weekday() == 6) and (d.day == 1):
-            N_SUNDAYS += 1
-    return N_SUNDAYS
+    return sum(1 for day in  # count 1 for each day...
+               range(date(1901, 1, 1).toordinal(),  # from the start ord
+                     date(2000, 12, 31).toordinal())  # to the end ord
+               if date.fromordinal(day).weekday() == 6  # IF it is a sunday
+               and date.fromordinal(day).day == 1)  # AND the date is the 1st
 
 
 if __name__ == '__main__':

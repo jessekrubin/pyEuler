@@ -59,7 +59,7 @@ DIJITS_STR = """
 """
 DIJITS = list(map(int, DIJITS_STR.replace('\n', '')))
 
-print(DIJITS)
+
 def p008(n=13):
     return max(reduce(mul, thirteen)
                for thirteen in (DIJITS[i:i+n] for i in range(len(DIJITS)-n))

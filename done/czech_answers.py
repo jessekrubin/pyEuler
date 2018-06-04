@@ -1,13 +1,14 @@
 # coding=utf-8
 from sys import version_info
-from os import getcwd, listdir
+from sys import path as spath
+from os import getcwd, listdir, path
 from time import time
 from operator import itemgetter
 from importlib import import_module
 from multiprocessing import Pool
 from tqdm import tqdm
 import json as jasm
-
+spath.append(getcwd())
 with open('../txt_files/solutions.txt') as f:
     SOLUTIONS = jasm.load(f)
 
@@ -26,6 +27,7 @@ def czech_answer(pn_str):
             'SOL_IS_NONE': the __sol__ variable for the problem is None
     """
     p_file = import_module("done.euler_{}".format(pn_str))
+    # p_file = import_module(path(getcwd(), "euler_{}".format(pn_str)))
     try: p_funk = getattr(p_file, 'p{}'.format(pn_str))
     except AttributeError: return pn_str, 'NO_PFUNK'
     try: p_ans = SOLUTIONS[pn_str]
@@ -79,7 +81,7 @@ if __name__ == '__main__':
             if f.startswith('euler_')  # for which the file start with 'euler_'
             and f.endswith('.py')]  # and ends with 'euler_111.py'
 
-    p = Pool(processes=8)  # eight process pool
+    p = Pool(processes=4)  # eight process pool
     test_results = {problem_n:test_result for problem_n, test_result in
                     tqdm(p.imap_unordered(czech_answer, DONE),
                          total=len(DONE),

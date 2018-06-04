@@ -5,6 +5,7 @@
 .vs/**
 cppeuler/.vs/**
 /.idea/**
+/build/**
 /.pytest_cache/**
 bib/test_fest/.pytest_cache/**
 not_done/.idea/**
@@ -25,3 +26,9 @@ not_done/.idea/**
 *.idb
 *.ipch
 *.pch
+done/__pycache__/euler_019.cpython-36.pyc.52859488
+*.egg
+pyEuler.egg-info/PKG-INFO
+pyEuler.egg-info/SOURCES.txt
+pyEuler.egg-info/top_level.txt
+pyEuler.egg-info/dependency_links.txt
