@@ -1,5 +1,4 @@
-#!/bin/bash
-
+# !/bin/bash
 # Multiples of 3 and 5
 # Problem 1
 # If we list all the natural numbers below 10 that are multiples of 3 or 5, we
