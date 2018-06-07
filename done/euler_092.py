@@ -19,31 +19,32 @@ at 1 or 89.
 How many starting numbers below ten million will arrive at 89?
 """
 from bib.decorations import cash_it
+from itertools import combinations_with_replacement
 
-squares = {i:i*i for i in range(10)}
+squares = {str(i):i*i for i in range(10)}
 
 
-@cash_it
 def next_num(n):
-    if n < 10:
-        return n*n
-    last = n%10
-    return squares[n%10]+next_num(n//10)
+    return int(''.join(sorted(c for c in str(sum(squares[d] for d in str(n))))))
+
+
+nexts = {int(''.join(c)):next_num(''.join(c))
+         for c in combinations_with_replacement('0123456789', 8)}
 
 
 @cash_it
-def goes2_89(n):
-    while True:
-        if n == 89:
-            return True
-        elif n == 1:
-            return False
-        else:
-            return goes2_89(next_num(n))
+def goes_to_89(n):
+    if n == 89:
+        return True
+    elif n == 1:
+        return False
+    else:
+        return goes_to_89(nexts[n])
 
 
 def p092():
-    return sum((1 for i in range(1, 10000000) if goes2_89(i)))
+    return sum((1 for i in range(1, 10000000)
+                if goes_to_89(next_num(i))))
 
 
 if __name__ == '__main__':

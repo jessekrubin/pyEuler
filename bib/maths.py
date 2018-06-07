@@ -488,3 +488,7 @@ def repermutations(toop):
 
 def disjoint(a, b):
     return not any(ae in b for ae in a)
+
+
+def n_choose_r(n, r):
+    return factorial(n)/factorial(r)/factorial(n-r)

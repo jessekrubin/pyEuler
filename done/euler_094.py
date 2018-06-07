@@ -40,6 +40,7 @@ def almost_equilateral(max_perimeter):
 def p094(max_perimeter=(10**9)):
     perimeter_sum = 0
     for i in almost_equilateral(max_perimeter):
+        print(i)
         perimeter_sum += sum(i)
     return perimeter_sum
 

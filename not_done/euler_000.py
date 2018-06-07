@@ -14,4 +14,5 @@ def p000():
 
 
 if __name__ == '__main__':
-    p000()
+    ANSWER = p000()
+    print("ANSWER: {}".format(ANSWER))
