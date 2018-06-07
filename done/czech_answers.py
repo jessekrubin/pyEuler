@@ -1,13 +1,12 @@
 # coding=utf-8
-from sys import version_info, path as spath
-from os import getcwd, listdir, path
+from sys import version_info
+from os import listdir
 from time import time
 from operator import itemgetter
 from importlib import import_module
 from multiprocessing import Pool
 from tqdm import tqdm
 import json as jasm
-# spath.append(getcwd())
 with open('../txt_files/solutions.txt') as f:
     SOLUTIONS = jasm.load(f)
 
@@ -35,7 +34,8 @@ def czech_answer(pn_str):
         p_ans = SOLUTIONS[pn_str]
     except KeyError:
         return pn_str, 'NO_SOL'
-    if p_ans is None: return pn_str, 'SOL_IS_NONE'
+    if p_ans is None:
+        return pn_str, 'SOL_IS_NONE'
     ts = time()
     my_ans = p_funk()
     te = (time() - ts) * 1000
