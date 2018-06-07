@@ -14,7 +14,7 @@ from bib.listless import chunks
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
 
-DONE = sorted([int(f[6:9]) for f in listdir(r'./done')
+DONE = sorted([int(f[6:9]) for f in listdir(r'./done/py')
                if f.startswith('euler_') and f.endswith('.py')])
 NO_CIGAR = sorted([int(f[6:9]) for f in listdir(r'./no_cigar')
                    if f.startswith('euler_') and f.endswith('.py')])
@@ -92,7 +92,7 @@ def format_table_line(row):
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = DONE_EMOJI
-            n_string = "[{}](done/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
+            n_string = "[{}](done/py/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
         else:
             n_string = str(n)
             if n in NO_CIGAR:
