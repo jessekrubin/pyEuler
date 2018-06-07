@@ -10,7 +10,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-06-07) i've done 122 problems, and am currently working on 31.
+Last I checked (2018-05-27) i've done 120 problems, and am currently working on 22.
 
 ## Problems table
 
@@ -36,12 +36,11 @@ Last I checked (2018-06-07) i've done 122 problems, and am currently working on 
 |[p57](done/euler_057.py) ~ :snake:|[p58](done/euler_058.py) ~ :snake:|[p59](done/euler_059.py) ~ :snake:|[p60](done/euler_060.py) ~ :snake:|[p61](done/euler_061.py) ~ :snake:|[p62](done/euler_062.py) ~ :snake:|[p63](done/euler_063.py) ~ :snake:|[p67](done/euler_067.py) ~ :snake:|
 |[p68](done/euler_068.py) ~ :snake:|[p69](done/euler_069.py) ~ :snake:|[p71](done/euler_071.py) ~ :snake:|[p72](done/euler_072.py) ~ :snake:|[p73](done/euler_073.py) ~ :snake:|[p74](done/euler_074.py) ~ :snake:|[p75](done/euler_075.py) ~ :snake:|[p76](done/euler_076.py) ~ :snake:|
 |[p77](done/euler_077.py) ~ :snake:|78 ~ :scream:|[p79](done/euler_079.py) ~ :snake:|[p80](done/euler_080.py) ~ :snake:|[p81](done/euler_081.py) ~ :snake:|[p82](done/euler_082.py) ~ :snake:|[p83](done/euler_083.py) ~ :snake:|[p85](done/euler_085.py) ~ :snake:|
-|86 ~ :scream:|[p87](done/euler_087.py) ~ :snake:|[p89](done/euler_089.py) ~ :snake:|[p90](done/euler_090.py) ~ :snake:|91 ~ :scream:|[p92](done/euler_092.py) ~ :snake:|[p94](done/euler_094.py) ~ :snake:|[p95](done/euler_095.py) ~ :snake:|
-|[p96](done/euler_096.py) ~ :snake:|[p97](done/euler_097.py) ~ :snake:|98 ~ :scream:|[p99](done/euler_099.py) ~ :snake:|[p102](done/euler_102.py) ~ :snake:|103 ~ :scream:|104 ~ :no_smoking:|[p107](done/euler_107.py) ~ :snake:|
-|108 ~ :scream:|[p112](done/euler_112.py) ~ :snake:|[p113](done/euler_113.py) ~ :snake:|[p114](done/euler_114.py) ~ :snake:|[p115](done/euler_115.py) ~ :snake:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|
-|[p119](done/euler_119.py) ~ :snake:|122 ~ :scream:|[p123](done/euler_123.py) ~ :snake:|[p124](done/euler_124.py) ~ :snake:|[p125](done/euler_125.py) ~ :snake:|134 ~ :no_smoking:|136 ~ :scream:|[p139](done/euler_139.py) ~ :snake:|
-|142 ~ :scream:|145 ~ :no_smoking:|148 ~ :scream:|151 ~ :scream:|160 ~ :scream:|[p162](done/euler_162.py) ~ :snake:|[p164](done/euler_164.py) ~ :snake:|166 ~ :scream:|
-|170 ~ :scream:|[p172](done/euler_172.py) ~ :snake:|[p173](done/euler_173.py) ~ :snake:|[p174](done/euler_174.py) ~ :snake:|[p178](done/euler_178.py) ~ :snake:|[p179](done/euler_179.py) ~ :snake:|185 ~ :scream:|186 ~ :scream:|
-|[p187](done/euler_187.py) ~ :snake:|[p191](done/euler_191.py) ~ :snake:|201 ~ :scream:|[p205](done/euler_205.py) ~ :snake:|[p206](done/euler_206.py) ~ :snake:|[p215](done/euler_215.py) ~ :snake:|[p218](done/euler_218.py) ~ :snake:|220 ~ :scream:|
-|225 ~ :scream:|237 ~ :scream:|240 ~ :scream:|249 ~ :scream:|[p265](done/euler_265.py) ~ :snake:|268 ~ :scream:|345 ~ :scream:|346 ~ :scream:|
-|[p347](done/euler_347.py) ~ :snake:|348 ~ :no_smoking:|357 ~ :scream:|359 ~ :scream:|407 ~ :scream:|425 ~ :scream:|[p493](done/euler_493.py) ~ :snake:|613 ~ :no_smoking:|
+|[p87](done/euler_087.py) ~ :snake:|[p89](done/euler_089.py) ~ :snake:|[p90](done/euler_090.py) ~ :snake:|91 ~ :scream:|[p92](done/euler_092.py) ~ :snake:|[p94](done/euler_094.py) ~ :snake:|[p95](done/euler_095.py) ~ :snake:|[p96](done/euler_096.py) ~ :snake:|
+|[p97](done/euler_097.py) ~ :snake:|98 ~ :scream:|[p99](done/euler_099.py) ~ :snake:|[p102](done/euler_102.py) ~ :snake:|104 ~ :no_smoking:|[p107](done/euler_107.py) ~ :snake:|108 ~ :scream:|[p112](done/euler_112.py) ~ :snake:|
+|[p113](done/euler_113.py) ~ :snake:|[p114](done/euler_114.py) ~ :snake:|[p115](done/euler_115.py) ~ :snake:|[p116](done/euler_116.py) ~ :snake:|[p117](done/euler_117.py) ~ :snake:|[p118](done/euler_118.py) ~ :snake:|[p119](done/euler_119.py) ~ :snake:|122 ~ :scream:|
+|[p123](done/euler_123.py) ~ :snake:|[p124](done/euler_124.py) ~ :snake:|[p125](done/euler_125.py) ~ :snake:|134 ~ :no_smoking:|136 ~ :scream:|[p139](done/euler_139.py) ~ :snake:|142 ~ :scream:|145 ~ :no_smoking:|
+|148 ~ :scream:|151 ~ :scream:|160 ~ :scream:|[p162](done/euler_162.py) ~ :snake:|[p164](done/euler_164.py) ~ :snake:|166 ~ :scream:|170 ~ :scream:|[p172](done/euler_172.py) ~ :snake:|
+|[p173](done/euler_173.py) ~ :snake:|[p174](done/euler_174.py) ~ :snake:|[p178](done/euler_178.py) ~ :snake:|[p179](done/euler_179.py) ~ :snake:|185 ~ :scream:|[p187](done/euler_187.py) ~ :snake:|[p191](done/euler_191.py) ~ :snake:|201 ~ :scream:|
+|[p205](done/euler_205.py) ~ :snake:|[p206](done/euler_206.py) ~ :snake:|[p215](done/euler_215.py) ~ :snake:|225 ~ :scream:|240 ~ :scream:|[p265](done/euler_265.py) ~ :snake:|345 ~ :scream:|346 ~ :scream:|
+|[p347](done/euler_347.py) ~ :snake:|348 ~ :no_smoking:|357 ~ :scream:|407 ~ :scream:|613 ~ :no_smoking:|622 ~ :scream:|

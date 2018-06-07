@@ -14,7 +14,7 @@ from bib.listless import chunks
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
 
-DONE = sorted([int(f[6:9]) for f in listdir(r'./done/py/')
+DONE = sorted([int(f[6:9]) for f in listdir(r'./done')
                if f.startswith('euler_') and f.endswith('.py')])
 NO_CIGAR = sorted([int(f[6:9]) for f in listdir(r'./no_cigar')
                    if f.startswith('euler_') and f.endswith('.py')])
@@ -61,7 +61,6 @@ Last I checked ({}) i've done {} problems, and am currently working on {}.
            INPROG_EMOJI,
            NOT_STARTED_EMOJI)
 SOLUTIONS_PATH = "./txt_files/solutions.txt"
-
 
 def update_solutions_txt(done):
     """

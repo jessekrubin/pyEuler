@@ -1,5 +1,4 @@
 # coding=utf-8
-from __future__ import absolute_import, division, print_function
 from sys import version_info
 from sys import path as spath
 from os import getcwd, listdir, path
@@ -27,7 +26,8 @@ def czech_answer(pn_str):
             'NO_SOL': the problem has no __sol__ variable
             'SOL_IS_NONE': the __sol__ variable for the problem is None
     """
-    p_file = import_module("./py.euler_{}".format(pn_str))
+    p_file = import_module("done.euler_{}".format(pn_str))
+    # p_file = import_module(path(getcwd(), "euler_{}".format(pn_str)))
     try: p_funk = getattr(p_file, 'p{}'.format(pn_str))
     except AttributeError: return pn_str, 'NO_PFUNK'
     try: p_ans = SOLUTIONS[pn_str]
