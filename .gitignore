@@ -32,3 +32,5 @@ pyEuler.egg-info/PKG-INFO
 pyEuler.egg-info/SOURCES.txt
 pyEuler.egg-info/top_level.txt
 pyEuler.egg-info/dependency_links.txt
+*.so
+bib/cy_maths.c

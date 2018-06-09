@@ -1,50 +1,52 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Jesse Rubin
 """
-Factorial trailing digits
-Problem 160
-For any N, let subset_sums(N) be the last five digits before the trailing zeroes in N!.
-For example,
+Intersections
+Problem 165 
+A segment is uniquely defined by its two endpoints.
+By considering two line segments in plane geometry there are three possibilities:
+the segments have zero points, one point, or infinitely many points in common.
 
-9! = 362880 so subset_sums(9)=36288
-10! = 3628800 so subset_sums(10)=36288
-20! = 2432902008176640000 so subset_sums(20)=17664
+Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
+We will call a common point T of two segments L1 and L2 a true intersection point of L1 and L2 if T is the only common point of L1 and L2 and T is an interior point of both segments.
 
+Consider the three segments L1, L2, and L3:
+
+L1: (27, 44) to (12, 32)
+L2: (46, 53) to (17, 62)
+L3: (46, 70) to (22, 40)
+
+It can be verified that line segments L2 and L3 have a true intersection point. We note that as the one of the end points of L3: (22,40) lies on L1 this is not considered to be a true point of intersection. L1 and L2 have no common point. So among the three line segments, we find one true intersection point.
+
+Now let us do the same for 5000 line segments. To this end, we generate 20000 numbers using the so-called "Blum Blum Shub" pseudo-random number generator.
+
+s0 = 290797
+
+sn+1 = sn×sn (modulo 50515093)
+
+tn = sn (modulo 500)
+
+To create each line segment, we use four consecutive numbers tn. That is, the first line segment is given by:
+
+(t1, t2) to (t3, t4)
+
+The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27,144) to (12,232).
+
+How many distinct true intersection points are found among the 5000 line segments?
 Find subset_sums(1,000,000,000,000)
 """
-from tqdm import tqdm
-from math import log10
-from bib.decorations import cash_it
-
-def mull(a, b):
-    return a*b
-
-@cash_it
-def thingy(numb):
-    # print(numb)
-    # print(trailing)
-    if numb == 1:
-        return 1
-    # l = log10(numb)
-    # print(l)
-    f  = (numb*thingy(numb-1))%1000000
-    while f %10 == 0:
-        f //= 10
-    # print(subset_sums)
-    return f
-
-        # return numb*thingy(numb-1)%1000000
+from bib.maths import Vuple
 
 
-a = thingy(9)
-print(a)
-
-from itertools import count
-from tqdm import tqdm
-for i in tqdm(xrange(1, 1000000), ascii=True):
-    a = thingy(i)
+l1 = (27, 44, 12, 32)
+l2 = (46, 53, 17, 62)
+l3 = (46, 70, 22, 40)
 
 
+def lequation(l_toop):
+    xa, ya, xb, yb = l_toop
+    an = ya-yb
+    ad = xa-xb
+    if ad > 0:
+        
 
-# thingy(numb=1000000000000)
