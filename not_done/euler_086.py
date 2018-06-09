@@ -22,7 +22,6 @@ from bib.maths import pytriple_gen, Vuple
 from math import sqrt
 from itertools import count
 
-
 def cuboid_routes(m):
     total = 0
     maxhp = sqrt(1+(5*(m**2)))
@@ -31,55 +30,37 @@ def cuboid_routes(m):
         while(trip[0]<=m):
             cubs = set()
             for i in range(1, trip[0]):
-                if i > m: break
-                c = (tuple(sorted([i, trip[0]-i, trip[1]])))
+                c = tuple(sorted([i, trip[0]-i, trip[1]]))
                 if max(c)<=m:
                     cubs.add(c)
             if trip[1]-trip[0]<=trip[0]:
-                # total += trip
                 for i in range(trip[1]-trip[0], (trip[1]//2)+2):
-                    if i > m: break
-                    c = tuple(sorted([trip[0], trip[1]-i, i]))
-                    # if all(el<=m for el in c):
-                    cubs.add(c)
-            # total += trip[0]-1
+                    cubs.add(tuple(sorted([trip[0], trip[1]-i, i])))
             total += len(cubs)
-            # print(cubs)
-            # print(trip)
-            # print(trip[0]-1)
-            # total += trip[0]-(trip[0]//2)
             trip += Vuple(p)
     return total
 
 
-a = cuboid_routes(99)
-print(a)
-a = cuboid_routes(100)
-print(a)
+assert 1975 == cuboid_routes(99)
+assert 2060 == cuboid_routes(100)
+
+# a = cuboid_routes(1816)
+# print(a)
+# a = cuboid_routes(1817)
+# print(a)
+# # a = cuboid_routes(1818) #ANSWER
+# print(a)
+# a = cuboid_routes(1819)
+# print(a)
+# a = cuboid_routes(1820)
+# print(a)
+# # for mm in count(100):
+# #     ans = (cuboid_routes(mm))
+# #     print(ans, mm)
+# #     if ans > 1000000:
+# #         break
 #
-# 12492389 6000
-# 5320325 4000
-# 1229543 2000
-a = cuboid_routes(1825)
-print(a)
-
-a = cuboid_routes(1816)
-print(a)
-a = cuboid_routes(1817)
-print(a)
-# a = cuboid_routes(1818) #ANSWER
-print(a)
-a = cuboid_routes(1819)
-print(a)
-a = cuboid_routes(1820)
-print(a)
-# for mm in count(100):
-#     ans = (cuboid_routes(mm))
-#     print(ans, mm)
-#     if ans > 1000000:
-#         break
-
-
+#
 
 def p086():
     pass
