@@ -5,7 +5,7 @@ from Cython.Build import cythonize
 
 setup(name='pyEuler',
       packages=['bib', 'done/py', 'no_cigar'],
-      ext_modules=cythonize("bib/cybib/*.pyx"),
+      ext_modules=cythonize(("bib/cybib/*.pyx", "no_cigar/*.pyx")),
       author='jessekrubin',
       author_email='jessekrubin@gmail.com',
       description='project euler solutions')

@@ -13,25 +13,31 @@ There are 120 reversible numbers below one-thousand.
 
 How many reversible numbers are there below one-billion (10^9)?
 """
-from pyximport import install; install()
-from cypy145 import reverse, add_reverse, any_evens
-from tqdm import tqdm
 
-# def any_evens(n):
-#     return any(c in '02468' for c in str(n))
+cpdef long reverse(int n):
+    cdef int reversed = 0
+    while n > 0:
+        reversed *= 10
+        reversed += n % 10
+        n //= 10
+    return reversed
 
-def n_digit_reversibles(n_digits):
-    for i in range(10**(n_digits-1), 10**n_digits):
-        print(i)
+cpdef long add_reverse(int n):
+    return reverse(n)+n
 
-n_digit_reversibles(3)
+cpdef int any_evens(int n):
+    while n>0:
+        if n%2==0:
+            return 1 # false
+        n //= 10
+    return 0 # true
+
 
 # def reversable_numbers_below(n):
 #     r = set()
 #     for i in tqdm(range(1, n), ascii=True):
 #         if i%10!= 0 and i not in r: #and r not in seen:
-#             if not any_evens(add_reverse(i)):
-#             # if any_evens(i):
+#             if any_evens(i):
 #                 r.add(i)
 #                 r.add(reverse(i))
 #             # else:
@@ -40,6 +46,10 @@ n_digit_reversibles(3)
 # # 608720
 # # print(reversable_numbers_below(10))
 # # print(reversable_numbers_below(100))
-#
-# for i in range(3, 9+1):
-#     print(i, reversable_numbers_below(10**i))
+# print(reversable_numbers_below(1000))
+# # print(reversable_numbers_below(10000))
+# # print(reversable_numbers_below(100000))
+# # print(reversable_numbers_below(1000000))
+# # print(reversable_numbers_below(10000000))
+# # print(reversable_numbers_below(100000000))
+# print(reversable_numbers_below(10**9))
