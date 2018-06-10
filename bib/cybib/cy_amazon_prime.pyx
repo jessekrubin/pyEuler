@@ -32,7 +32,7 @@ def prime_gen(plim=0, kprimes=None):
 
     if kprimes == None: kprimes = [2, 3, 5, 7, 11]
 
-    def pdiv_dictionary():
+    def _pdiv_dictionary():
         """
         Recreates the prime divisors dictionary used by the generator
         """
@@ -59,7 +59,7 @@ def prime_gen(plim=0, kprimes=None):
     # [2]
     # Recreate the prime divisibility dictionary using kprimes;
     # Set start and yield first 4 primes
-    divz = pdiv_dictionary()
+    divz = _pdiv_dictionary()
     start = kprimes[-1] + 2  # max prime + 2 (make sure it is odd)
     if start == 13:
         yield 2

@@ -4,7 +4,7 @@
 """
 Digital root clocks
 http://projecteuler.net/problem=315
-Sam and Max are asked to transform two digital clocks into two "digital root" clocks.
+Sam and Max are asked to _transform two digital clocks into two "digital root" clocks.
 A digital root clock is a digital clock that calculates digital roots step by step.
 When a clock is fed a number, it will show it and then it will start the calculation, showing all the intermediate values until it gets to the result.
 For example, if the clock is fed the number 137, it will show: "137" → "11" → "2" and then it will go black, waiting for the next number.

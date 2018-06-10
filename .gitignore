@@ -34,3 +34,4 @@ pyEuler.egg-info/top_level.txt
 pyEuler.egg-info/dependency_links.txt
 *.so
 bib/cy_maths.c
+*.pyd

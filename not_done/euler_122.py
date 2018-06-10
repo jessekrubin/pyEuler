@@ -32,49 +32,57 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 """
 from itertools import chain
 
-from bib.amazon_prime import pfactors_gen
+from bib.amazon_prime import prime_factors_gen
 
+#
+# public void Backtrack(int power, int depth) {
+# if (power > limit || depth > cost[power]) return;
+# cost[power] = depth;
+# path[depth] = power;
+# for (int i = depth; i >= 0; i--)
+#     Backtrack(power + path[i], depth + 1);
+# }
+from collections import defaultdict
+d = defaultdict(int)
 
-def expo(d, n):
-    """
-    returns the number of times a divisor divides n (is the exponent)
+from copy import copy
+from bib.decorations import cash_it
 
-    :param d: divisor
-    :param n: number being divided
-    :return:
-    """
-    if n < d:  # flip
-        d, n = n, d
-    c = n
-    divs = 0
-    while c%d == 0:
-        c //= d
-        divs += 1
-    return divs
+def m(n):
 
+    c = {n}
+    d = {i:i*2for i in range(1, n+1)}
+    print(d)
 
-def pfactorization(n):
-    return (n for n in chain.from_iterable([p]*expo(p, n) for p in pfactors_gen(n)))
+    def _bin(chain = (1,)):
+        # if sum(chain)==200:
+        #     print(chain, sum(chain))
 
+        # if len(chain)-1 <= min(c):
+        #     # c.add(len(chain)-1)
+        #     d[len(chain)] = min(d[len(chain)], len(chain)-1)
+        if sum(chain)>n:
+            print(d)
+        else:
+            if sum(chain) in d and len(chain)-1 < d[sum(chain)]:
+                d[sum(chain)]=len(chain)
 
-def m(k):
-    print("+++")
-    print("K", k)
-    factorization = list(pfactorization(k))
-    print(factorization)
+            for el in reversed(chain):
+                tc = copy(chain) + (el+chain[-1], )
+                if tc[-1]<n+1 and len(tc)-1< min(c):
+                    _bin(tc)
+    _bin()
+    print(d)
+    print(c)
+    print(sum(v for v in d.values()))
 
+    return min(c)
 
-# result = m(16)
-# print(result)
-# result = m(15)
-# print(result)
-# result = m(18)
-# print(result)
-# result = m(15)
-# print(result)
-# for i in range(1, 10):
-#     print("___")
-#     print(i)
-#     print(m(i))
-print(m(15))
+# assert 5 == m(15)
+m(15)
+m(200)
+# a = m(200)
+# print(a)
+# for n in range(1, 200+1):
+#     print(m(n))
 

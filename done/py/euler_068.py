@@ -36,7 +36,7 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 
 from itertools import combinations, permutations
 
-from bib.listless import rotate_list
+from bib.listless import rotate
 
 # Looking for the max 16 digit string for the magic 5-gon ring means that
 # the 10 must be on the outside.
@@ -51,13 +51,13 @@ triplets = {k:v for k, v in triplets.items() if 13 < k < 20}
 
 def rotate_ring(ring):
     while ring[0][0] != min(r[0] for r in ring):
-        ring = rotate_list(ring)
+        ring = rotate(ring)
     return ring
 
 
 def rotate_ring(ring):
     while ring[0][0] != min(r[0] for r in ring):
-        ring = rotate_list(ring)
+        ring = rotate(ring)
     return ring
 
 

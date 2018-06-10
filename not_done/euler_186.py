@@ -53,41 +53,44 @@ def phone_records_gen():
     return ((lagged_fib_gen(2 * n - 1), lagged_fib_gen(2 * n))
             for n in count(1))
 
+n = phone_records_gen()
+for i in range(3):
+    print(next(n))
 
 pm, percentage = 555552, 10
 # 525542
 # pm = 524287 # prime minister's personal cell
 # percentage = 10
-records = phone_records_gen()
-gee = defaultdict(set)
-
-while pm not in gee:
-    caller, called = next(records)
-    if caller != called:
-        gee[caller].add(called)
-        gee[called].add(caller)
-
-def friends(phone=pm, ratio=percentage):
-    seen = {pm}
-
-    def _trevor(numb):
-        for friendnumb in gee[numb]:
-            if friendnumb not in seen:
-                seen.add(friendnumb)
-                _trevor(friendnumb)
-    _trevor(pm)
-    return len(seen)
-
-for called, caller in records:
-    caller, called = next(records)
-    gee[caller].add(called)
-    gee[called].add(caller)
-    # print(gee)
-    f = friends()
-    print(f, len(gee), f/len(gee))
-
-    if len(gee)>550000:
-        break
+# records = phone_records_gen()
+# gee = defaultdict(set)
+#
+# while pm not in gee:
+#     caller, called = next(records)
+#     if caller != called:
+#         gee[caller].add(called)
+#         gee[called].add(caller)
+#
+# def friends(phone=pm, ratio=percentage):
+#     seen = {pm}
+#
+#     def _trevor(numb):
+#         for friendnumb in gee[numb]:
+#             if friendnumb not in seen:
+#                 seen.add(friendnumb)
+#                 _trevor(friendnumb)
+#     _trevor(pm)
+#     return len(seen)
+#
+# for called, caller in records:
+#     caller, called = next(records)
+#     gee[caller].add(called)
+#     gee[called].add(caller)
+#     # print(gee)
+#     f = friends()
+#     print(f, len(gee), f/len(gee))
+#
+#     if len(gee)>550000:
+#         break
 
 
 # networks = defaultdict(set)

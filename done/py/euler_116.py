@@ -25,7 +25,7 @@ from collections import Counter
 from math import factorial
 
 from bib.maths import partitions_gen, repermutations
-from bib.listless import list_product
+from bib.listless import reduce_product
 
 
 

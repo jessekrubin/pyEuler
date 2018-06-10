@@ -11,13 +11,14 @@ def binary_string(number):
     return bin(number)[2:]
 
 
-def string_score(name):
-    """Sum of letter values
+def string_score(strang):
+    """Sum of letter values where a==1 and z == 26
 
     Args:
-        name:
+        strang (str): string to be scored
 
     Returns:
+        (int): score of the string
 
     Examples:
         >>> string_score('me')
@@ -27,11 +28,11 @@ def string_score(name):
         >>> string_score('gregory')
         95
     """
-    return sum((ord(character)-96 for character in name.lower()))
+    return sum((ord(character)-96 for character in strang.lower()))
 
 
-def is_palindrome(string):
-    """True a string is a palindrome.
+def is_palindrome(strang):
+    """True a string is a palindrome; False if string is not a palindrome.
 
     Examples:
         >>> is_palindrome("racecar")
@@ -39,7 +40,6 @@ def is_palindrome(string):
         >>> is_palindrome("greg")
         False
     """
-    for index, character in enumerate(string):
-        if character != string[-index-1]:
-            return False
+    for index, character in enumerate(strang):
+        if character != strang[-index-1]: return False
     return True

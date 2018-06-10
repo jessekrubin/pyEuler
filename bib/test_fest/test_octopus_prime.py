@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Jesse Rubin - Project Euler Tests
 
-from bib.amazon_prime import prime_gen, pfactors_gen, is_prime, OctopusPrime
+from bib.amazon_prime import prime_gen, prime_factors_gen, is_prime, OctopusPrime
 
 p_lt50 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 p_lt100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
@@ -23,19 +23,30 @@ def test_is_prime():
 
 
 def test_pfactors_gen():
-    assert [pf for pf in pfactors_gen(12)] == [2, 3]
+    assert [pf for pf in prime_factors_gen(12)] == [2, 3]
 
 
 class TestOctopusPrimeMethods(object):
 
     def test_lt100_no_save_load(self):
-        op = OctopusPrime(n=100, savings_n_loads=False)
+        op = OctopusPrime(plim=100)
         assert op == p_lt100
         assert op.primes_below(100) == p_lt100
 
     def test_primes_gt50_lt200(self):
-        op = OctopusPrime(n=100, savings_n_loads=False)
+        op = OctopusPrime(plim=100)
         assert p_gt50_lt200 == op.primes_between(50, 200)
+
+    def test_contains(self):
+        op = OctopusPrime(plim=100)
+        from bisect import bisect
+
+        print(op, len(op))
+        ib = (bisect(op, 41))
+        print(op[ib-1])
+        print(bisect(op, 97))
+
+
 
 
 class TestPrimeSieve(object):

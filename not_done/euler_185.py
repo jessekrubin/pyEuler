@@ -21,7 +21,7 @@ For instance, given the following guesses for a 5-digit secret sequence,
 51545 :2 ,
 12531 :1 ,
 
-The , sequence 39542 is unique.
+The sequence 39542 is unique.
 
 Based on the following guesses,
 

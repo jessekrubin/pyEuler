@@ -24,7 +24,7 @@ exactly 8 shuffles, and the sum of all values of n that satisfy s(n)=8 is 412.
 Find the sum of all values of n that satisfy s(n)=60.
 """
 
-from bib.amazon_prime import pfactors_gen
+from bib.amazon_prime import prime_factors_gen
 
 
 def s(n):
@@ -48,7 +48,7 @@ def s(n):
 
 print(2**8 - 1)
 
-print(pfactors_gen(2**8 - 1))
+print(prime_factors_gen(2**8-1))
 # count = {j}
 count = 0
 # for i in trange(2, 100000, 2, ascii=True):
@@ -60,7 +60,7 @@ for i in range(2, 1000, 2):
         count += i
         print("___")
         print(count, i)
-        # print(pfactors_gen(i), i)
-        # print(pfactors_gen(count[res]), count[res])
+        # print(prime_factors_gen(i), i)
+        # print(prime_factors_gen(count[res]), count[res])
 
 print(count)

@@ -54,10 +54,8 @@ class Jasm(object):
 
         def savings_n_loads(*args, **kwargs):
             """Jasm funk (w)rapper"""
-            if len(args)==0:
-                save_key = "None"
-            else:
-                save_key = str((args, kwargs.items()))
+            if len(args)==0: save_key = "None"
+            else: save_key = str((args, kwargs.items()))
             try:
                 with open(fp) as f:
                     dat_data = jasm.load(f)
@@ -101,25 +99,13 @@ class Jasm(object):
 
 
 def cprof(funk):
-    """
-    cProfiling decorator
-    src: https://zapier.com/engineering/profiling-python-boss/
+    """"cProfiling decorator
 
-    :param funk:
-    :return:
+    src: https://zapier.com/engineering/profiling-python-boss/
     """
 
     @wraps(funk)
     def profiled_funk(*args, **kwargs):
-        """
-
-        Args:
-            *args:
-            **kwargs:
-
-        Returns:
-
-        """
         profile = Profile()
         try:
             profile.enable()
@@ -177,13 +163,17 @@ class tictoc(object):
 
     @staticmethod
     def ftime(t1, t2=None):
-        """
+        """Formats time string
+
+        Formats t1 if t2 is None as a string; Calculates the time and formats
+        the time t2-t1 if t2 is not None.
 
         Args:
-            t1:
-            t2:
+            t1 (double): time 1
+            t2 (None or double): time 2
 
         Returns:
+            (str): formated time string
 
         """
         if t2 is not None: return tictoc.ftime((t2-t1))

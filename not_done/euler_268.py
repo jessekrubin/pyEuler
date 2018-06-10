@@ -14,7 +14,7 @@ distinct primes less than 100.
 from itertools import combinations
 from bib import xrange
 from bib.amazon_prime import prime_gen
-from bib.listless import list_product
+from bib.listless import reduce_product
 
 primes = [p for p in prime_gen(100)]
 print(primes)
@@ -49,7 +49,7 @@ for p in lt100:
 t = len(s)
 for rrr in range(2, 4):
     for c in combinations(s, r=rrr):
-        if (list_product(c)) < 1000: t += 1
+        if (reduce_product(c)) < 1000: t += 1
 print(t)
 
 # t = 1

@@ -7,6 +7,7 @@ from importlib import import_module
 from multiprocessing import Pool
 from tqdm import tqdm
 import json as jasm
+
 with open('../txt_files/solutions.txt') as f:
     SOLUTIONS = jasm.load(f)
 
@@ -38,7 +39,7 @@ def czech_answer(pn_str):
         return pn_str, 'SOL_IS_NONE'
     ts = time()
     my_ans = p_funk()
-    te = (time() - ts) * 1000
+    te = (time()-ts)*1000
     try:
         assert p_ans == my_ans
     except AssertionError:
@@ -91,19 +92,17 @@ if __name__ == '__main__':
     DONE = [
         f[6:9] for f in listdir('./py')  # find all files in the done dir
         if f.startswith('euler_')  # for which the file start with 'euler_'
-        and f.endswith('.py')
+           and f.endswith('.py')
     ]  # and ends with 'euler_111.py'
 
     p = Pool(processes=4)  # eight process pool
-    test_results = {
-        problem_n: test_result
-        for problem_n, test_result in tqdm(
-            p.imap_unordered(czech_answer, DONE),
-            total=len(DONE),
-            desc="CHECKING SOLUTIONS",
-            ascii=True if version_info[0] == 2 else False,
-            leave=True)
-    }
+    test_results = {problem_n:test_result
+                    for problem_n, test_result in
+                    tqdm(p.imap_unordered(czech_answer, DONE),
+                         total=len(DONE),
+                         desc="CHECKING SOLUTIONS",
+                         ascii=True if version_info[0] == 2 else False,
+                         leave=True)}
     p.close()  # close pool
     p.join()  # join pool
     parse_results(test_results)

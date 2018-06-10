@@ -19,7 +19,7 @@ terms, find the value of the denominator.
 """
 
 from fractions import Fraction
-from bib.listless import list_product
+from bib.listless import reduce_product
 
 
 def is_fishy_fraction(n, d):
@@ -41,7 +41,7 @@ def p033():
              for d in range(11, 100)
              for n in range(10, d)
              if is_fishy_fraction(n, d)}
-    return list_product(fracs).denominator
+    return reduce_product(fracs).denominator
 
 
 if __name__ == '__main__':

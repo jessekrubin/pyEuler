@@ -20,13 +20,13 @@ each. What is the first of these numbers?
 """
 
 from itertools import count
-from bib.amazon_prime import pfactors_gen
+from bib.amazon_prime import prime_factors_gen
 from bib.decorations import cash_it
 
 
 @cash_it
 def n_distict_pfactors(n):
-    return len([pf for pf in pfactors_gen(n)])
+    return len([pf for pf in prime_factors_gen(n)])
 
 
 def p047(n_facs=4):

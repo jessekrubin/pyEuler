@@ -3,21 +3,27 @@
 # JESSE RUBIN - Biblioteca
 from functools import reduce
 from operator import mul
-
 from collections import Counter, deque
-
 from bib import xrange
 
 
-def chunks(l, n):
-    """
+def chunks(list, chunk_size):
+    """Yields chunks of a list with length == chunk_size
 
     Args:
-        l:
-        n:
+        list (list or tuple): list to be broken up
+        chunk_size (int): size of the chunks
+
+    Yields:
+        (list): chunk with length == chunk_size from list
+
+    Examples:
+        >>> list(chunks([1, 2, 3, 4, 5, 6], 3))
+        [[1, 2, 3], [4, 5, 6]]
+        >>> list(chunks([1, 2, 3, 4, 5, 6], 2))
+        [[1, 2], [3, 4], [5, 6]]
     """
-    for i in xrange(0, len(l), n):
-        yield l[i:i+n]
+    for i in xrange(0, len(list), chunk_size): yield list[i:i+chunk_size]
 
 
 def is_permutation(a, b):
@@ -33,44 +39,59 @@ def is_permutation(a, b):
 
     """
 
-    if type(a) == int:
-        a = digits_list(a)
-    if type(b) == int:
-        b = digits_list(b)
+    if type(a) == int: a = digits_list(a)
+    if type(b) == int: b = digits_list(b)
     return len(a) == len(b) and Counter(a) == Counter(b)
 
 
-def rotate_list(l, n=1):
-    """
+def rotate(rlist, rn=1, left_rotate=True):
+    """Rotate a list (rlist) by rn indices to the left or right
 
     Args:
-        l:
-        n:
+        rlist (list or tuple): list/toople or slicable to be rotated
+        rn (int): steps bywhich to rotate
+        left_rotate (bool): True (default) left rotates; False right rotates.
 
     Returns:
+        (list): rotated list
+
+    Examples:
+        >>> rotate([1, 2, 3, 4], left_rotate=True)
+        [2, 3, 4, 1]
+        >>> rotate([1, 2, 3, 4], left_rotate=False)
+        [4, 1, 2, 3]
+        >>> rotate([1, 2, 3, 4], rn=4, left_rotate=False)
+        [1, 2, 3, 4]
 
     """
-    return l[-n:]+l[:-n]
+
+    def _left_rotate(l, n=1):
+        return l[n:]+l[:n]
+
+    def _right_rotate(l, n=1):
+        return l[-n:]+l[:-n]
+
+    return _left_rotate(rlist, rn) if left_rotate else _right_rotate(rlist, rn)
 
 
-def list_rotation_gen(l):
-    """Yields rotations of a list
+def rotations_gen(rlist):
+    """Yields all rotations of a list
 
     Args:
-        l:
+        rlist:
     """
-    for i in xrange(len(l)):
-        yield (l[-i:]+l[:-i])
+    for i in xrange(len(rlist)):
+        yield (rlist[-i:]+rlist[:-i])
 
 
-def digits_list(num):
+def digits_list(number):
     """Returns a list of the digits in num
 
     Args:
-        num (int): number w/ digits to be listsed
+        number (int): number w/ digits to be listsed
 
     Returns:
-        list of digits
+        (list): digits in a list
 
     Examples:
         >>> digits_list(1111)
@@ -84,26 +105,34 @@ def digits_list(num):
     """
 
     digits = deque()
-    for _ in xrange(len(str(num))):
-        num, r = divmod(num, 10)
+    for _ in xrange(len(str(number))):
+        number, r = divmod(number, 10)
         digits.appendleft(r)
     return list(digits)
 
 
-def digits_to_int(l):
+def int_from_digits(dlist):
+    """Convert digits list or tuple to integer
+
+    Args:
+        dlist (list or tuple): digits to be converted
+
+    Returns:
+        (int): number
+
+    Examples:
+        >>> int_from_digits([3, 2, 1])
+        321
+        >>> int_from_digits([1, 1, 1, 1, 2, 3])
+        111123
+        >>> int_from_digits([1, 2, 3])
+        123
     """
-    >>> digits_to_int([3, 2, 1])
-    321
-    >>> digits_to_int([1, 1, 1, 1, 2, 3])
-    111123
-    >>> digits_to_int([1, 2, 3])
-    123
-    """
-    return sum(l[len(l)-i-1]*10**i for i in xrange(0, len(l), 1))
+    return sum(dlist[len(dlist)-i-1]*10**i for i in xrange(0, len(dlist), 1))
 
 
-def list_product(l):
-    """Product of all the elements in a list
+def reduce_product(l):
+    """Product of all the elements in a list or tuple
 
     Args:
         l: list with integer elements
@@ -112,9 +141,11 @@ def list_product(l):
         int: product of all the elements in a list
 
     Examples:
-        >>> list_product([1, 2, 3, 4])
+        >>> reduce_product([1, 2, 3, 4])
         24
-        >>> list_product([-1, -2, -3, 4])
+        >>> reduce_product(tuple([1, 2, 3, 4]))
+        24
+        >>> reduce_product([-1, -2, -3, 4])
         -24
 
     """

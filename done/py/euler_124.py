@@ -16,7 +16,7 @@ Let E(k) be the kth element in the sorted n column; for example, E(4) = 8 and
 E(6) = 9. If rad(n) is sorted for 1 ≤ n ≤ 100000, find E(10000).
 """
 
-from bib.amazon_prime import pfactors_gen
+from bib.amazon_prime import prime_factors_gen
 from operator import mul, itemgetter
 
 try: reduce
@@ -24,7 +24,7 @@ except: from functools import reduce
 
 
 def prime_factors_set_list(n):
-    return list(set(pfactors_gen(n)))
+    return list(set(prime_factors_gen(n)))
 
 
 def rad(n):

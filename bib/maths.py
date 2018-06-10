@@ -8,7 +8,7 @@ from bisect import bisect
 
 from bib import xrange
 from bib.decorations import cash_it
-from bib.listless import list_product
+from bib.listless import reduce_product
 
 
 def partitions_gen(numero, min_p=1, max_p=None):
@@ -482,7 +482,7 @@ class SortedVuple(Vuple):
 def repermutations(toop):
     c = Counter(n for n in toop)
     a = list(factorial(nc) for nc in c.values())
-    ans = factorial(len(toop))//list_product(a)
+    ans = factorial(len(toop))//reduce_product(a)
     return ans
 
 
