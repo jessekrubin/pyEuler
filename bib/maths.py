@@ -320,20 +320,18 @@ class Trigon(object):
 
 
 class Vuple(tuple):
-    """
-    Vector-Tuple class
-    """
+    """VUPLE == Vector+Tuple"""
+    def __new__(cls, *args):
+        """
 
-    def __gt__(self, other):
-        """Greater than based on magnitude (proportional)
-
-        :param other:
+        :param args:
         :return:
         """
+        return super(Vuple, cls).__new__(cls, tuple(*args))
+
+    def __gt__(self, other):
         return Vuple.mag_sqrd(self) > Vuple.mag_sqrd(other)
 
-    def __eq__(self, other):
-        return Vuple.mag_sqrd(self) == Vuple.mag_sqrd(other)
 
     def __add__(self, other):
         return Vuple(map(add, self, other))
@@ -356,7 +354,6 @@ class Vuple(tuple):
     def __truediv__(self, k):
         if type(k) is int or type(k) is float:
             return self._truediv_scalar(k)
-        # return Vuple(map(sub, self, k))
 
     def __itruediv__(self, k):
         if type(k) is int or type(k) is float:
@@ -468,6 +465,9 @@ class Vuple(tuple):
 
     def is_disjoint(self, them):
         return len(set(self)&set(them))==0
+
+    def product(self):
+        return reduce_product(self)
 
 class SortedVuple(Vuple):
 
