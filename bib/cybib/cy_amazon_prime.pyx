@@ -30,7 +30,7 @@ def prime_gen(plim=0, kprimes=None):
     :return:
     """
 
-    if kprimes == None: kprimes = [2, 3, 5, 7, 11]
+    if kprimes is None: kprimes = [2, 3, 5, 7, 11]
 
     def _pdiv_dictionary():
         """

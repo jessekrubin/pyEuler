@@ -23,7 +23,7 @@ def p024():
     # enumerate the permutations
     for index, permutation in enumerate(permutations('0123456789')):
         # return the integer representation of the permutation
-        if index+1 == 1000000: return int(''.join(permutation))
+        if index + 1 == 1000000: return int(''.join(permutation))
 
 
 if __name__ == '__main__':

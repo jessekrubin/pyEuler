@@ -61,6 +61,7 @@ def rotate_ring(ring):
     return ring
 
 
+# noinspection PyComparisonWithNone
 def five_gon(ring, remaining_combos):
     if len(ring) == 5:
         # check if valid
@@ -96,7 +97,7 @@ def magic_5_gon(sum, combos):
         without.remove(combo)
         for p in not_tens:
             ring = five_gon([p], without)
-            if ring != None:
+            if ring is not None:
                 rings.extend(i for i in ring)
 
     ringo = []
@@ -106,7 +107,7 @@ def magic_5_gon(sum, combos):
                 for layer5 in layer3:
                     ringo.append(layer5)
 
-    rings = [rotate_ring(ring) for ring in ringo if ring != None]
+    rings = [rotate_ring(ring) for ring in ringo if ring is not None]
     return max(rings)
 
 

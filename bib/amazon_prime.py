@@ -35,16 +35,16 @@ def prime_gen(plim=0, kprimes=None):
         [2, 3, 5, 7]
     """
 
-    if kprimes == None: kprimes = [2, 3, 5, 7, 11]
+    if kprimes is None: kprimes = [2, 3, 5, 7, 11]
 
     def _dictionary():
         """Recreates the prime divisors dictionary used by the generator"""
         div_dict = {}
         for pdiv in kprimes:
-            multiple = kprimes[-1]//pdiv*pdiv
-            if multiple%2 == 0: multiple += pdiv
-            else: multiple += 2*pdiv
-            while multiple in div_dict: multiple += pdiv*2
+            multiple = kprimes[-1] // pdiv * pdiv
+            if multiple % 2 == 0: multiple += pdiv
+            else: multiple += 2 * pdiv
+            while multiple in div_dict: multiple += pdiv * 2
             div_dict[multiple] = pdiv
         return div_dict
 
@@ -60,18 +60,18 @@ def prime_gen(plim=0, kprimes=None):
     # Recreate the prime divisibility dictionary using kprimes;
     # Set start and yield first 4 primes
     divz = _dictionary()
-    start = kprimes[-1]+2  # max prime + 2 (make sure it is odd)
+    start = kprimes[-1] + 2  # max prime + 2 (make sure it is odd)
     if start == 13: yield 2; yield 3; yield 5; yield 7; yield 11
     # use count or range depending on if generator is infinite
     it = count(start, 2) if plim == 0 else xrange(start, plim, 2)
     for num in it:
         prime_div = divz.pop(num, None)
         if prime_div:
-            multiple = (2*prime_div)+num
-            while multiple in divz: multiple += (2*prime_div)
+            multiple = (2 * prime_div) + num
+            while multiple in divz: multiple += (2 * prime_div)
             divz[multiple] = prime_div
         else:
-            divz[num*num] = num
+            divz[num * num] = num
             yield num
 
 
@@ -93,7 +93,7 @@ def prime_factorization_gen(n):
     """
     for factor in prime_factors_gen(n):
         if n <= 1: break
-        while n%factor == 0:
+        while n % factor == 0:
             n //= factor
             yield factor
 
@@ -137,13 +137,13 @@ def is_prime(number):
         True
     """
     if number == 2 or number == 3: return True
-    if number < 2 or number%2 == 0: return False
+    if number < 2 or number % 2 == 0: return False
     if number < 9: return True
-    if number%3 == 0: return False
-    for step in xrange(5, int(sqrt(number))+1, 6):
+    if number % 3 == 0: return False
+    for step in xrange(5, int(sqrt(number)) + 1, 6):
         if step >= number: break
-        if number%step == 0: return False
-        if number%(step+2) == 0: return False
+        if number % step == 0: return False
+        if number % (step + 2) == 0: return False
     return True
 
 
@@ -177,11 +177,11 @@ class OctopusPrime(list):
 
     def _transform(self, n=None):
         """TRANSFORM / grow the list"""
-        n = n if n is not None else self[-1]*10
+        n = n if n is not None else self[-1] * 10
         self.extend(list(prime_gen(plim=n, kprimes=self)))
 
     def __contains__(self, item):
-        if self[bisect(self, item)-1] == item: return True
+        if self[bisect(self, item) - 1] == item: return True
         return False
 
     def primes_below(self, upper_bound):

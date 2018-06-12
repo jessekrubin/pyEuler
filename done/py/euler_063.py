@@ -18,7 +18,7 @@ def powerful_digits(n):
     n_powerful_digits = 0
     for i in count(1):
         current = i ** n
-        if current >= 10 ** (n - 1) and current < 10 ** n:
+        if 10 ** (n - 1) <= current < 10 ** n:
             n_powerful_digits += 1
         elif current > max_n_digit_num:
             return n_powerful_digits

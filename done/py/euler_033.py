@@ -23,10 +23,10 @@ from bib.listless import reduce_product
 
 
 def is_fishy_fraction(n, d):
-    if n%10 == 0 and d%10 == 0: return False
+    if n % 10 == 0 and d % 10 == 0: return False
     orig_f = Fraction(n, d)
-    n1, n2 = n//10, n%10
-    d1, d2 = d//10, d%10
+    n1, n2 = n // 10, n % 10
+    d1, d2 = d // 10, d % 10
     if n1 == n2 and d1 == d2:
         return False
     elif d2 > 0 and n2 == d1 and Fraction(n1, d2) == orig_f:
@@ -37,10 +37,7 @@ def is_fishy_fraction(n, d):
 
 
 def p033():
-    fracs = {Fraction(n, d)
-             for d in range(11, 100)
-             for n in range(10, d)
-             if is_fishy_fraction(n, d)}
+    fracs = {Fraction(n, d) for d in range(11, 100) for n in range(10, d) if is_fishy_fraction(n, d)}
     return reduce_product(fracs).denominator
 
 

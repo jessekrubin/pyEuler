@@ -1,5 +1,6 @@
 from __future__ import division, print_function
 import pyximport
+
 pyximport.install()
 # import bib.cy_maths
 from bib.amazon_prime import prime_gen as py_prime_gen
@@ -18,7 +19,7 @@ from bib.decorations import tictoc
 #
 #     pyreversed = _py_reverse()
 #     cyreversed = _cy_reverse()
-    # print(len(pyreversed))
+# print(len(pyreversed))
 
 
 def primegens():
@@ -87,11 +88,10 @@ def primegens():
         return list(cy_prime_gen(n))
 
     for exp in range(4, 7):
-        n = 10**exp
+        n = 10 ** exp
         py_primes = _py_prime_gen(n)
         cy_primes = _cy_prime_gen(n)
 
 
 if __name__ == '__main__':
-    primegens()
-    # test_n_time_reverse()
+    primegens()  # test_n_time_reverse()

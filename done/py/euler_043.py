@@ -32,7 +32,7 @@ def pandigital_substring_thing(pandigit_list):
     else:
         div_primes = [2, 3, 5, 7, 11, 13, 17]
         for i in range(1, 8):
-            if int_from_digits(pandigit_list[i:i+3]) % div_primes[i-1] != 0:
+            if int_from_digits(pandigit_list[i:i + 3]) % div_primes[i - 1] != 0:
                 return False
     return True
 

@@ -19,7 +19,7 @@ from bib.listless import digits_list, int_from_digits
 def cubic_perms(n_perms):
     cubed_dict = {}
     for i in count(100):
-        ccc = int_from_digits(sorted(digits_list(i**3), reverse=True))
+        ccc = int_from_digits(sorted(digits_list(i ** 3), reverse=True))
         if ccc in cubed_dict:
             cubed_dict[ccc].append(i)
             if len(cubed_dict[ccc]) > n_perms - 1:

@@ -26,6 +26,7 @@ from __future__ import division
 from bib.maths import divisors_gen
 from itertools import combinations
 
+
 def sum_divisors(n):
     return sum(divisor for divisor in divisors_gen(n) if divisor < n)
 

@@ -122,9 +122,6 @@ def sur_la_table():
 
 
 def write_README():
-    """
-
-    """
     with open('README.md', 'w') as f:
         f.write(README_TEXT)
 

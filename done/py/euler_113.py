@@ -41,7 +41,7 @@ def non_bouncy(tenexp):
     def _decreasing(remaining_digits, last, start=None):
         """Count decreasing numbers
         excluding numbers with all the same digits"""
-        if start == None: start = last
+        if start is None: start = last
         if remaining_digits == 0:
             if start != last: return 1
             else: return 0  # Double counted numbers

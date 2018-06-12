@@ -139,14 +139,6 @@ sss = [c.allinds() for c in firsthund]
 #     print(cube)
 
 
-def union_size(sets):
-    return sum((-1)**(i + 1) * len(set.intersection((*subset)))
-               for i in xrange(1,
-                               len(sets) + 1)
-               for subset in combinations(sets, i))
-
-
-print(union_size(sss))
 # print(firsthund)
 # lll = []
 # for i in range(0, len(firsthund), 2):

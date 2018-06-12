@@ -141,7 +141,7 @@ class PokerHand:
         flush = True if len(self.suits_counter) == 1 else False
 
         if 14 in self.vals_counter.keys() and 2 in self.vals_counter.keys():
-            straight = True if set(self.vals_counter.keys()) == set([2, 3, 4, 5, 14]) else False
+            straight = True if set(self.vals_counter.keys()) == {2, 3, 4, 5, 14} else False
         else:
             straight = True if len(self.vals_counter) == 5 and rank_counter[0]-(low_card-1) == 5 else False
 

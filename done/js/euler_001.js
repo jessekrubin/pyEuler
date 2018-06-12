@@ -7,6 +7,13 @@
 // get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 // Find the sum of all the multiples of 3 or 5 below 1000.
+// p001 = (upper_bound = 1000) => {
+//     return Array.from(Array(upper_bound).keys())
+//         .filter(value => value % 3 === 0 || value % 5 === 0)
+// .reduce(function(acc, val) {
+//         return acc + val;
+//     });
+// };
 p001 = (upper_bound = 1000) => {
   return Array.from(Array(upper_bound).keys())
     .filter(value => value % 3 === 0 || value % 5 === 0)

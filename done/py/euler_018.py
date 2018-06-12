@@ -80,8 +80,7 @@ def triangle_max_sum_path(l):
             if len(ls) > 1:
                 left.append(ls[:-1])
                 right.append(ls[1:])
-        return max((triangle_max_sum_path(left) + top,
-                    triangle_max_sum_path(right) + top))
+        return max((triangle_max_sum_path(left) + top, triangle_max_sum_path(right) + top))
 
 
 def p018():

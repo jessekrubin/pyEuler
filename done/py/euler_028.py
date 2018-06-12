@@ -29,10 +29,8 @@ class Grid(object):
         self.nw_diag = set([(i, i) for i in range(self.center_xy)])
         self.se_diag = set([(i, i) for i in range(self.center_xy + 1, self.size)])
         self.ne_diag_real = set([(i, self.size - i - 1) for i in range(self.center_xy)])
-        self.ne_diag = set([(i, self.size - i)
-                            for i in range(self.center_xy)])
-        self.sw_diag = set([(self.size - i - 1, i)
-                            for i in range(self.center_xy)])
+        self.ne_diag = set([(i, self.size - i) for i in range(self.center_xy)])
+        self.sw_diag = set([(self.size - i - 1, i) for i in range(self.center_xy)])
         if self.size > 3:
             self.ne_diag.remove((0, self.size))
         self.array = Grid.make_grid(size)

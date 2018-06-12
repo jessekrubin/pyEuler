@@ -17,9 +17,7 @@ from bib.werd import binary_string, is_palindrome
 
 
 def p036():
-    return sum(i for i in range(1000000)
-               if is_palindrome(str(i))
-               and is_palindrome(binary_string(i)))
+    return sum(i for i in range(1000000) if is_palindrome(str(i)) and is_palindrome(binary_string(i)))
 
 
 if __name__ == '__main__':

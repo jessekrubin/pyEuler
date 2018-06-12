@@ -22,7 +22,6 @@ def p041():
 
     pandigital_numbers = []
     for j in range(len(numslists)):
-
         for i in permutations(numslists[j], len(numslists[j])):
             # snum = int("".join([str(k) for k in i]))
             pandigital_numbers.append(int("".join([str(k) for k in i])))

@@ -24,7 +24,7 @@ def S_M(max_n):
     def M(n):
         # print("_")
         # print(n)
-        if n <= primes[-1] and primes[bisect_left(primes, n)] == n:
+        if primes[-1] >= n == primes[bisect_left(primes, n)]:
             return 1
         if squares[bisect_left(squares, n)] == n:
             return 1

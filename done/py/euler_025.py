@@ -26,10 +26,11 @@ contain 1000 digits?
 from bib.maths import fib_r
 from itertools import count
 
+
 def p025(no_digits=1000):
     for i in count(0):
         if len(str(fib_r(i))) >= no_digits:
-            return i+1
+            return i + 1
 
 
 if __name__ == '__main__':

@@ -36,5 +36,5 @@ def p172():
 
 
 if __name__ == '__main__':
-    ANSWER = p172(10)
+    ANSWER = p172()
     print("# 18-digit numbers: {}".format(ANSWER))

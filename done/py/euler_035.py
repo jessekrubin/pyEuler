@@ -22,12 +22,11 @@ from bib.decorations import cash_it
 @cash_it
 def is_circ_prime(n):
     digist = [int(j) for j in digits_list(n)]
-    return all(
-            (is_prime(int_from_digits(i)) for i in rotations_gen(digist)))
+    return all((is_prime(int_from_digits(i)) for i in rotations_gen(digist)))
 
 
 def p035():
-    return sum(1 for p in prime_gen(10**6) if is_circ_prime(p))
+    return sum(1 for p in prime_gen(10 ** 6) if is_circ_prime(p))
 
 
 if __name__ == '__main__':
