@@ -319,6 +319,21 @@ class Trigon(object):
         return abs(truediv(Vuple.cproduct(pt1-pt2, pt3-pt2), 2))
 
 
+
+def repermutations(toop):
+    c = Counter(n for n in toop)
+    a = list(factorial(nc) for nc in c.values())
+    ans = factorial(len(toop))//reduce_product(a)
+    return ans
+
+
+def disjoint(a, b):
+    return not any(ae in b for ae in a)
+
+
+def n_choose_r(n, r):
+    return factorial(n)/factorial(r)/factorial(n-r)
+
 class Vuple(tuple):
     """VUPLE == Vector+Tuple"""
     def __new__(cls, *args):
@@ -469,26 +484,11 @@ class Vuple(tuple):
     def product(self):
         return reduce_product(self)
 
-class SortedVuple(Vuple):
-
-    def __new__(self, toop, presorted=True):
-        if presorted: return tuple.__new__(SortedVuple, toop)
-        else: return tuple.__new__(SortedVuple, sorted(toop))
-
-
+# class SortedVuple(Vuple):
+#
+#     def __new__(self, toop, presorted=True):
+#         if presorted: return tuple.__new__(SortedVuple, toop)
+#         else: return tuple.__new__(SortedVuple, sorted(toop))
 
 
 
-def repermutations(toop):
-    c = Counter(n for n in toop)
-    a = list(factorial(nc) for nc in c.values())
-    ans = factorial(len(toop))//reduce_product(a)
-    return ans
-
-
-def disjoint(a, b):
-    return not any(ae in b for ae in a)
-
-
-def n_choose_r(n, r):
-    return factorial(n)/factorial(r)/factorial(n-r)

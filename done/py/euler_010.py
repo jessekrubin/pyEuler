@@ -15,6 +15,7 @@ def p010():
     return sum(p for p in prime_gen(2000000))
 
 
+# 1179908152
 if __name__ == '__main__':
     answer = p010()
     print("Sum: {}".format(answer))

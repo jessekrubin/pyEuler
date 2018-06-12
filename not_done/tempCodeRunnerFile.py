@@ -1,3 +1,2 @@
-if score == 0:
-        print(score, darts)
-     
+in combinations_with_replacement(vpts, 2):
+#     pri

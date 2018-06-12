@@ -39,6 +39,16 @@ There are exactly eleven distinct ways to checkout on a score of 6:
                             ║ D1 ║ S2 ║ D1 ║
                             ║ S2 ║ S2 ║ D1 ║
                             ╚════╩════╩════╝
+{((1, 2), (1, 2), (2, 1)),
+((1, 1), (1, 3), (2, 1)),
+((2, 1), (2, 1), (2, 1)),
+((1, 1), (1, 1), (2, 2)),
+((1, 2), (2, 1), (2, 1)),
+(2, 3),
+((1, 4), (2, 1)),
+((2, 1), (2, 2)),
+((1, 1), (3, 1), (2, 1)),
+((1, 2), (2, 2))} 10
 
 Note that D1 D2 is considered different to D2 D1 as they finish on different
 doubles. However, the combination S1 T1 D1 is considered the same as T1 S1 D1.
@@ -47,99 +57,54 @@ example, D3 is the same as 0 D3 and 0 0 D3. Incredibly there are 42336 distinct
 ways of checking out in total. How many distinct ways can a player checkout 
 with a score less than 100?
 """
+
 from itertools import *
-from bib.maths import Vuple
-from collections import Counter
-from collections import defaultdict, namedtuple
-points = [(1, 25),
-          (2, 25)] + [(m, n) for m in range(1, 4) for n in range(1, 21)]
+from operator import mul
+from functools import reduce
+from collections import defaultdict
 
-vals = Counter(a * b for a, b in points)
-
-vpts = [Vuple(toop) for toop in points]
-# 38182
-
-print(vals)
+# points = [(1, 25), (2, 25)] + [(m, n) for m in range(1, 4) for n in range(1, 21)]
+# print(points)
 
 
-def checkoutsf(score):
-    c = set()
-    # def checkout(score, l):
-    #     if score==0 and l[-1][0]==2:
-    #         c.add(tuple(l))
-    #     elif score>1 and len(l)==1:
-    #         for v in vpts:
-    #             # checkout(score-v.product(), sorted(l)+[v])
-    #             checkout(score-v.product(), l+[v])
-    #     elif score>1 and len(l)==2:
-    #         for v in vpts:
-    #             checkout(score-v.product(), sorted(l)+[v])
-    g = 0
-
-    def checkout(score, l):
-        global g
-        if score == 0 and l[-1][0] == 2:
-            return 1
-            c.add(tuple(l))
-        if score <= 0:
-            return 0
-        elif score > 1 and len(l) == 1:
-            for v in vpts:
-                checkout(score - v.product(), l + [v])
-        elif score > 1 and len(l) == 2:
-            for v in vpts:
-                checkout(score - v.product(), sorted(l) + [v])
-
-    for vpt in vpts:
-        checkout(score - vpt.product(), [vpt])
-    return len(c)
+SCORES = [(1, 25), (2, 25),  # bullseye and double bullseye
+          # singles
+          (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13),
+          (1, 14), (1, 15), (1, 16), (1, 17), (1, 18), (1, 19), (1, 20), #############
+          ###DOUBLES###
+          #############
+          (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (2, 12), (2, 13),
+          (2, 14), (2, 15), (2, 16), (2, 17), (2, 18), (2, 19), (2, 20), (3, 1), (3, 2), (3, 3), # triples
+          (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (3, 12), (3, 13), (3, 14), (3, 15), (3, 16),
+          (3, 17), (3, 18), (3, 19), (3, 20)]
 
 
-def sp(l):
-    return sum(p.product() for p in l)
+def darts_score(d_toop):
+    return sum(reduce(mul, d) for d in d_toop)
 
 
-from bib.maths import partitions_gen
+def p109(MAX_CHECKOUT=99):
+    CHECKOUTS = defaultdict(set)
 
-thing = [m * n for m in range(1, 21) for n in range(1, 4)] + [25, 50]
-cs = set()
-for combosize in range(1, 4):
-    for combo in combinations(thing, combosize):
-        if sum(combo) < 100:
-            cs.add(combo)
+    # ONE THROW
+    CHECKOUTS.update({darts_score((d,)): {(d,)} for d in SCORES if d[0] == 2})
 
-print(cs)
+    # TW0 THROWS
+    for combo in combinations_with_replacement(SCORES, 2):
+        for d1, d2 in permutations(combo, 2):
+            if d2[0] == 2:
+                CHECKOUTS[darts_score((d1, d2))].add((d1, d2))
 
-#
-# for i in range(2, 100):
-#     t = 0
-#     for part in cs:
-#         if sum(part)<=3:
-#             s = set()
-#             for perm in permutations(part):
-#                 if perm[-1]!= 1:
-#                     s.add(perm)
-#             t+=len(s)
-#     print((t))
-#
+    # THREE THROWS
+    for combo in combinations_with_replacement(SCORES, 3):
+        for d1, d2, d3 in permutations(combo, 3):
+            if d3[0] == 2 and d1 <= d2:
+                CHECKOUTS[darts_score((d1, d2, d3))].add((d1, d2, d3))
 
-# def p109(checkout_lim = 100):
-# ones = set(p for p in vpts if p[0]==2)
-#
-# twos = set()
-# for permutation in permutations(vpts, 2):
-#     if sp(permutation)<100:
-#         twos.add(permutation)
-#
-#
-# print(twos)
-# a = len(set.union(ones, twos))
+    # forget the ones gt the max val
+    return sum(len(v) for k, v in CHECKOUTS.items() if k < MAX_CHECKOUT + 1)
 
-# t = 0
-# for i in range(2, 100):
-#     t+=(checkoutsf(i))
-# return t
 
-# if __name__ == '__main__':
-#     ANSWER = p109()
-#     print("CHECKOUTS: {}".format(ANSWER))
+if __name__ == '__main__':
+    ANSWER = p109()
+    print("{} possible checkouts for scores lt 100 exist".format(ANSWER))
