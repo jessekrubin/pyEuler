@@ -6,6 +6,7 @@
 cppeuler/.vs/**
 /.idea/**
 /build/**
+/node_modules/**
 /.pytest_cache/**
 bib/test_fest/.pytest_cache/**
 not_done/.idea/**
@@ -35,3 +36,5 @@ pyEuler.egg-info/dependency_links.txt
 *.so
 bib/cy_maths.c
 *.pyd
+package-lock.json
+package-lock.json
