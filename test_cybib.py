@@ -1,89 +1,32 @@
+# coding=utf-8
 from __future__ import division, print_function
-import pyximport
-pyximport.install()
+import pyximport; pyximport.install()
 import bib.maths
-import bib.cy_maths
+# import bib.cy_maths
 from bib.cybib.cy_amazon_prime import prime_gen as cy_prime_gen
 from bib.decorations import tictoc
 
 
-def test_n_time_reverse():
-    @tictoc()
-    def _py_reverse():
-        return [bib.maths.reverse(i) for i in range(1000, 999999)]
+# def test_n_time_reverse():
+#     @tictoc()
+#     def _py_reverse():
+#         return [bib.maths.reverse(i) for i in range(1000, 999999)]
 
-    @tictoc()
-    def _cy_reverse():
-        return [bib.cy_maths.reverse(i) for i in range(1000, 999999)]
+#     @tictoc()
+#     def _cy_reverse():
+#         return [bib.cy_maths.reverse(i) for i in range(1000, 999999)]
 
-    pyreversed = _py_reverse()
-    cyreversed = _cy_reverse()
-    # print(len(pyreversed))
+#     pyreversed = _py_reverse()
+#     cyreversed = _cy_reverse()
+#     # print(len(pyreversed))
 
 
 def test_prime_gen():
-    """
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _py_prime_gen
-        args: (1000,)
-        time: 182.986 μs
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _cy_prime_gen
-        args: (1000,)
-        time: 137.520 μs
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _py_prime_gen
-        args: (10000,)
-        time: 2.062 ms
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _cy_prime_gen
-        args: (10000,)
-        time: 1.747 ms
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _py_prime_gen
-        args: (100000,)
-        time: 21.660 ms
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _cy_prime_gen
-        args: (100000,)
-        time: 17.253 ms
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _py_prime_gen
-        args: (1000000,)
-        time: 242.866 ms
-        runs: 10
-    __TICTOC__
-        file: /Users/jesserubin/git/pyEuler/test_cybib.py
-        funk: _cy_prime_gen
-        args: (1000000,)
-        time: 183.877 ms
-        runs: 10
-        @tictoc(runs=10)
-        def _py_prime_gen(n):
-            return list(py_prime_gen(n))
-
-        @tictoc(runs=10)
-    """
-
     def _cy_prime_gen(n):
         return list(cy_prime_gen(n))
 
     for exp in range(3, 7):
         n = 10**exp
-        py_primes = _py_prime_gen(n)
         cy_primes = _cy_prime_gen(n)
 
 

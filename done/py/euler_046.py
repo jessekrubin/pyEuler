@@ -35,7 +35,6 @@ def p046():
                     break  # break if it works with the conjecture
             else:
                 return n
-                answer = n
         n += 2
 
 

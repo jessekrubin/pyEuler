@@ -27,7 +27,7 @@ def cuboid_routes(m):
     maxhp = sqrt(1+(5*(m**2)))
     for p in pytriple_gen(maxhp):
         trip = Vuple(p)
-        while(trip[0]<=m):
+        while trip[0]<=m:
             cubs = set()
             for i in range(1, trip[0]):
                 c = tuple(sorted([i, trip[0]-i, trip[1]]))

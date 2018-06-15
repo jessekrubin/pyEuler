@@ -43,7 +43,7 @@ def find_anagrams(wlist):
         print(w)
         anagrams[tuple(sorted((c for c in w)))].add(w)
 
-    return(anagrams)
+    return anagrams
 
 
 

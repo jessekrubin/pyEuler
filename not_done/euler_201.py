@@ -80,11 +80,11 @@ def subsetsum(array,num):
             with_v = subsetsum(array[1:],(num - array[0]))
             if with_v:
                 print([array[0]] + with_v)
-                return([array[0]] + with_v)
+                return [array[0]] + with_v
                 # return None
             else:
                 print(subsetsum(array[1:],num))
-                return(subsetsum(array[1:],num))
+                return subsetsum(array[1:], num)
 
 
 b = tuple([1, 3, 6, 8, 10, 11])

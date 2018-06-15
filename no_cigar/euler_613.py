@@ -50,7 +50,7 @@ import numpy as np
 
 
 def integrand(y, x):
-    'y must be the first argument, and x the second.'
+    """y must be the first argument, and x the second."""
     return y*np.sin(x)+x*np.cos(y)
 
 

@@ -45,7 +45,7 @@ def is_perfect(n):
 def chaingang(start_n):
     the_chain = []
     cur = start_n
-    while (cur not in the_chain and cur > 1):
+    while cur not in the_chain and cur > 1:
         the_chain.append(cur)
         if cur in primes or cur > 1000000 or cur in mean_numbers: break
         cur = sum(proper_divisors_gen(cur))

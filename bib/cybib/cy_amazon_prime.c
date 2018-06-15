@@ -5,7 +5,7 @@
     "distutils": {
         "name": "bib.cybib.cy_amazon_prime",
         "sources": [
-            "bib/cybib\\cy_amazon_prime.pyx"
+            "bib/cybib/cy_amazon_prime.pyx"
         ]
     },
     "module_name": "bib.cybib.cy_amazon_prime"
@@ -777,7 +777,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "bib\\cybib\\cy_amazon_prime.pyx",
+  "bib/cybib/cy_amazon_prime.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1418,7 +1418,7 @@ static const char __pyx_k_OctopusPrime_primes_below[] = "OctopusPrime.primes_bel
 static const char __pyx_k_bib_cybib_cy_amazon_prime[] = "bib.cybib.cy_amazon_prime";
 static const char __pyx_k_OctopusPrime_primes_between[] = "OctopusPrime.primes_between";
 static const char __pyx_k_pfactors_gen_locals_genexpr[] = "pfactors_gen.<locals>.genexpr";
-static const char __pyx_k_bib_cybib_cy_amazon_prime_pyx[] = "bib\\cybib\\cy_amazon_prime.pyx";
+static const char __pyx_k_bib_cybib_cy_amazon_prime_pyx[] = "bib/cybib/cy_amazon_prime.pyx";
 static const char __pyx_k_OctopusPrime_the_8_leg_autobot[] = "\n    OctopusPrime, the 8-leg autobot, here to help you find PRIMES\n\n    ______OCTOPUS_PRIME ACTIVATE______\n    \342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\204\342\226\204\342\226\204\342\226\204\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\204\342\226\204\342\226\204\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\n    \342\226\210\342\226\210\342\226\210\342\226\210\342\226\204\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\204\342\226\210\342\226\210\342\226\210\342\226\210\n    \342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\204\342\226\204\342\226\221\342\226\221\342\226\221\342\226\221\342\226\204\342\226\204\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\n    \342\226\221\342\226\210\342\226\210\342\226\210\342\226\200\342\226\200\342\226\210\342\226\204\342\226\204\342\226\221\342\226\200\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\200\342\226\221\342\226\204\342\226\204\342\226\210\342\226\200\342\226\200\342\226\210\342\226\210\342\226\210\342\226\221\n    \342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\204\342\226\204\342\226\204\342\226\200\342\226\200\342\226\210\342\226\204\342\226\221\342\226\221\342\226\221\342\226\200\342\226\200\342\226\200\342\226\200""\342\226\221\342\226\221\342\226\221\342\226\204\342\226\210\342\226\200\342\226\200\342\226\204\342\226\204\342\226\204\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\n    \342\226\221\342\226\221\342\226\210\342\226\210\342\226\204\342\226\204\342\226\221\342\226\200\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\204\342\226\204\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\200\342\226\221\342\226\204\342\226\204\342\226\210\342\226\210\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\204\342\226\204\342\226\204\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\204\342\226\204\342\226\204\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\210\342\226\210\342\226\204\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\221\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\221\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\200\342\226\204\342\226\210\342\226\210\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\210\342\226\204\342\226\204\342\226\221\342\226\221\342\226\221\342\226\221\342\226\204""\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\204\342\226\221\342\226\221\342\226\221\342\226\221\342\226\204\342\226\204\342\226\210\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\221\342\226\200\342\226\200\342\226\200\342\226\200\342\226\221\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\221\342\226\200\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\221\342\226\204\342\226\204\342\226\204\342\226\204\342\226\221\342\226\210\342\226\210\342\226\210\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\200\342\226\221\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221""\342\226\221\342\226\200\342\226\200\342\226\221\342\226\210\342\226\210\342\226\200\342\226\204\342\226\210\342\226\210\342\226\210\342\226\210\342\226\204\342\226\221\342\226\210\342\226\210\342\226\221\342\226\200\342\226\200\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\n    \342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\200\342\226\221\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\210\342\226\221\342\226\200\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\342\226\221\n    ";
 static const char __pyx_k_Returns_True_if_number_is_prime[] = "\n    Returns True if number is prime\n\n    >>> is_prime(37)\n    True\n    >>> is_prime(100)\n    False\n    >>> is_prime(89)\n    True\n    ";
 static const char __pyx_k_pfactorization_gen_locals_genexp[] = "pfactorization_gen.<locals>.genexpr.<locals>.genexpr";
@@ -1671,7 +1671,7 @@ static PyObject *__pyx_pf_3bib_5cybib_15cy_amazon_prime_prime_gen(CYTHON_UNUSED 
 }
 
 /* "bib/cybib/cy_amazon_prime.pyx":35
- *     if kprimes == None: kprimes = [2, 3, 5, 7, 11]
+ *     if kprimes is None: kprimes = [2, 3, 5, 7, 11]
  * 
  *     def _pdiv_dictionary():             # <<<<<<<<<<<<<<
  *         """
@@ -1909,7 +1909,7 @@ static PyObject *__pyx_pf_3bib_5cybib_15cy_amazon_prime_9prime_gen__pdiv_diction
   goto __pyx_L0;
 
   /* "bib/cybib/cy_amazon_prime.pyx":35
- *     if kprimes == None: kprimes = [2, 3, 5, 7, 11]
+ *     if kprimes is None: kprimes = [2, 3, 5, 7, 11]
  * 
  *     def _pdiv_dictionary():             # <<<<<<<<<<<<<<
  *         """
@@ -1944,16 +1944,16 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
 {
   struct __pyx_obj_3bib_5cybib_15cy_amazon_prime___pyx_scope_struct__prime_gen *__pyx_cur_scope = ((struct __pyx_obj_3bib_5cybib_15cy_amazon_prime___pyx_scope_struct__prime_gen *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
-  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_1;
   int __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
-  Py_ssize_t __pyx_t_4;
-  PyObject *(*__pyx_t_5)(PyObject *);
-  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  Py_ssize_t __pyx_t_5;
+  PyObject *(*__pyx_t_6)(PyObject *);
   PyObject *__pyx_t_7 = NULL;
-  int __pyx_t_8;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
+  PyObject *__pyx_t_8 = NULL;
+  int __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("prime_gen", 0);
   switch (__pyx_generator->resume_label) {
@@ -1975,49 +1975,48 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
   /* "bib/cybib/cy_amazon_prime.pyx":33
  *     """
  * 
- *     if kprimes == None: kprimes = [2, 3, 5, 7, 11]             # <<<<<<<<<<<<<<
+ *     if kprimes is None: kprimes = [2, 3, 5, 7, 11]             # <<<<<<<<<<<<<<
  * 
  *     def _pdiv_dictionary():
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_kprimes, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = (__pyx_cur_scope->__pyx_v_kprimes == Py_None);
+  __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
-    __pyx_t_1 = PyList_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_3 = PyList_New(5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(__pyx_int_2);
     __Pyx_GIVEREF(__pyx_int_2);
-    PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_2);
+    PyList_SET_ITEM(__pyx_t_3, 0, __pyx_int_2);
     __Pyx_INCREF(__pyx_int_3);
     __Pyx_GIVEREF(__pyx_int_3);
-    PyList_SET_ITEM(__pyx_t_1, 1, __pyx_int_3);
+    PyList_SET_ITEM(__pyx_t_3, 1, __pyx_int_3);
     __Pyx_INCREF(__pyx_int_5);
     __Pyx_GIVEREF(__pyx_int_5);
-    PyList_SET_ITEM(__pyx_t_1, 2, __pyx_int_5);
+    PyList_SET_ITEM(__pyx_t_3, 2, __pyx_int_5);
     __Pyx_INCREF(__pyx_int_7);
     __Pyx_GIVEREF(__pyx_int_7);
-    PyList_SET_ITEM(__pyx_t_1, 3, __pyx_int_7);
+    PyList_SET_ITEM(__pyx_t_3, 3, __pyx_int_7);
     __Pyx_INCREF(__pyx_int_11);
     __Pyx_GIVEREF(__pyx_int_11);
-    PyList_SET_ITEM(__pyx_t_1, 4, __pyx_int_11);
+    PyList_SET_ITEM(__pyx_t_3, 4, __pyx_int_11);
     __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_kprimes);
-    __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_kprimes, __pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_1);
-    __pyx_t_1 = 0;
+    __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_kprimes, __pyx_t_3);
+    __Pyx_GIVEREF(__pyx_t_3);
+    __pyx_t_3 = 0;
   }
 
   /* "bib/cybib/cy_amazon_prime.pyx":35
- *     if kprimes == None: kprimes = [2, 3, 5, 7, 11]
+ *     if kprimes is None: kprimes = [2, 3, 5, 7, 11]
  * 
  *     def _pdiv_dictionary():             # <<<<<<<<<<<<<<
  *         """
  *         Recreates the prime divisors dictionary used by the generator
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3bib_5cybib_15cy_amazon_prime_9prime_gen_1_pdiv_dictionary, 0, __pyx_n_s_prime_gen_locals__pdiv_dictionar, ((PyObject*)__pyx_cur_scope), __pyx_n_s_bib_cybib_cy_amazon_prime, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_1);
-  __pyx_cur_scope->__pyx_v__pdiv_dictionary = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3bib_5cybib_15cy_amazon_prime_9prime_gen_1_pdiv_dictionary, 0, __pyx_n_s_prime_gen_locals__pdiv_dictionar, ((PyObject*)__pyx_cur_scope), __pyx_n_s_bib_cybib_cy_amazon_prime, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_3);
+  __pyx_cur_scope->__pyx_v__pdiv_dictionary = __pyx_t_3;
+  __pyx_t_3 = 0;
 
   /* "bib/cybib/cy_amazon_prime.pyx":53
  *     # [1]
@@ -2026,16 +2025,16 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *         for p in kprimes:
  *             if p <= plim:
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_int_0, __pyx_cur_scope->__pyx_v_plim, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  if (__Pyx_PyObject_IsTrue(__pyx_t_1)) {
-    __Pyx_DECREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_kprimes, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_plim, __pyx_t_3, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyObject_RichCompare(__pyx_int_0, __pyx_cur_scope->__pyx_v_plim, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+  if (__Pyx_PyObject_IsTrue(__pyx_t_3)) {
+    __Pyx_DECREF(__pyx_t_3);
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_kprimes, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 53, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_plim, __pyx_t_4, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_2) {
 
     /* "bib/cybib/cy_amazon_prime.pyx":54
@@ -2046,35 +2045,35 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *                 yield p
  */
     if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_kprimes)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_kprimes)) {
-      __pyx_t_1 = __pyx_cur_scope->__pyx_v_kprimes; __Pyx_INCREF(__pyx_t_1); __pyx_t_4 = 0;
-      __pyx_t_5 = NULL;
+      __pyx_t_3 = __pyx_cur_scope->__pyx_v_kprimes; __Pyx_INCREF(__pyx_t_3); __pyx_t_5 = 0;
+      __pyx_t_6 = NULL;
     } else {
-      __pyx_t_4 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_kprimes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
+      __pyx_t_5 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_kprimes); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_6 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 54, __pyx_L1_error)
     }
     for (;;) {
-      if (likely(!__pyx_t_5)) {
-        if (likely(PyList_CheckExact(__pyx_t_1))) {
-          if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_1)) break;
+      if (likely(!__pyx_t_6)) {
+        if (likely(PyList_CheckExact(__pyx_t_3))) {
+          if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_4); __Pyx_INCREF(__pyx_t_3); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
+          __pyx_t_4 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_4); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
           #else
-          __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_4 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_4);
           #endif
         } else {
-          if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+          if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_4); __Pyx_INCREF(__pyx_t_3); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
+          __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_4); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
           #else
-          __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_4 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_4);
           #endif
         }
       } else {
-        __pyx_t_3 = __pyx_t_5(__pyx_t_1);
-        if (unlikely(!__pyx_t_3)) {
+        __pyx_t_4 = __pyx_t_6(__pyx_t_3);
+        if (unlikely(!__pyx_t_4)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -2082,12 +2081,12 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
           }
           break;
         }
-        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_p);
-      __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_p, __pyx_t_3);
-      __Pyx_GIVEREF(__pyx_t_3);
-      __pyx_t_3 = 0;
+      __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_p, __pyx_t_4);
+      __Pyx_GIVEREF(__pyx_t_4);
+      __pyx_t_4 = 0;
 
       /* "bib/cybib/cy_amazon_prime.pyx":55
  *     if 0 < plim <= kprimes[-1]:
@@ -2096,9 +2095,9 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *                 yield p
  *         return  # return bc we are done
  */
-      __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_p, __pyx_cur_scope->__pyx_v_plim, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 55, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_4 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_p, __pyx_cur_scope->__pyx_v_plim, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 55, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_2) {
 
         /* "bib/cybib/cy_amazon_prime.pyx":56
@@ -2110,10 +2109,10 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  */
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_p);
         __pyx_r = __pyx_cur_scope->__pyx_v_p;
-        __Pyx_XGIVEREF(__pyx_t_1);
-        __pyx_cur_scope->__pyx_t_0 = __pyx_t_1;
-        __pyx_cur_scope->__pyx_t_1 = __pyx_t_4;
-        __pyx_cur_scope->__pyx_t_2 = __pyx_t_5;
+        __Pyx_XGIVEREF(__pyx_t_3);
+        __pyx_cur_scope->__pyx_t_0 = __pyx_t_3;
+        __pyx_cur_scope->__pyx_t_1 = __pyx_t_5;
+        __pyx_cur_scope->__pyx_t_2 = __pyx_t_6;
         __Pyx_XGIVEREF(__pyx_r);
         __Pyx_RefNannyFinishContext();
         __Pyx_Coroutine_ResetAndClearException(__pyx_generator);
@@ -2121,11 +2120,11 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
         __pyx_generator->resume_label = 1;
         return __pyx_r;
         __pyx_L9_resume_from_yield:;
-        __pyx_t_1 = __pyx_cur_scope->__pyx_t_0;
+        __pyx_t_3 = __pyx_cur_scope->__pyx_t_0;
         __pyx_cur_scope->__pyx_t_0 = 0;
-        __Pyx_XGOTREF(__pyx_t_1);
-        __pyx_t_4 = __pyx_cur_scope->__pyx_t_1;
-        __pyx_t_5 = __pyx_cur_scope->__pyx_t_2;
+        __Pyx_XGOTREF(__pyx_t_3);
+        __pyx_t_5 = __pyx_cur_scope->__pyx_t_1;
+        __pyx_t_6 = __pyx_cur_scope->__pyx_t_2;
         if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 56, __pyx_L1_error)
 
         /* "bib/cybib/cy_amazon_prime.pyx":55
@@ -2145,7 +2144,7 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *                 yield p
  */
     }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "bib/cybib/cy_amazon_prime.pyx":57
  *             if p <= plim:
@@ -2174,11 +2173,11 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *     start = kprimes[-1] + 2  # max prime + 2 (make sure it is odd)
  *     if start == 13:
  */
-  __pyx_t_1 = __pyx_pf_3bib_5cybib_15cy_amazon_prime_9prime_gen__pdiv_dictionary(__pyx_cur_scope->__pyx_v__pdiv_dictionary); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_1);
-  __pyx_cur_scope->__pyx_v_divz = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_t_3 = __pyx_pf_3bib_5cybib_15cy_amazon_prime_9prime_gen__pdiv_dictionary(__pyx_cur_scope->__pyx_v__pdiv_dictionary); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_3);
+  __pyx_cur_scope->__pyx_v_divz = __pyx_t_3;
+  __pyx_t_3 = 0;
 
   /* "bib/cybib/cy_amazon_prime.pyx":63
  *     # Set start and yield first 4 primes
@@ -2187,14 +2186,14 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *     if start == 13:
  *         yield 2
  */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_kprimes, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_kprimes, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_cur_scope->__pyx_v_start = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __pyx_t_4 = __Pyx_PyInt_AddObjC(__pyx_t_3, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_GIVEREF(__pyx_t_4);
+  __pyx_cur_scope->__pyx_v_start = __pyx_t_4;
+  __pyx_t_4 = 0;
 
   /* "bib/cybib/cy_amazon_prime.pyx":64
  *     divz = _pdiv_dictionary()
@@ -2203,10 +2202,10 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *         yield 2
  *         yield 3
  */
-  __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_cur_scope->__pyx_v_start, __pyx_int_13, 13, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_4 = __Pyx_PyInt_EqObjC(__pyx_cur_scope->__pyx_v_start, __pyx_int_13, 13, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_2) {
 
     /* "bib/cybib/cy_amazon_prime.pyx":65
@@ -2315,117 +2314,117 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  * 
  *     for num in it:
  */
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_cur_scope->__pyx_v_plim, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 71, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_cur_scope->__pyx_v_plim, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_2) {
-    __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 71, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = NULL;
-    __pyx_t_8 = 0;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
-      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
-      if (likely(__pyx_t_7)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-        __Pyx_INCREF(__pyx_t_7);
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_count); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 71, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_8 = NULL;
+    __pyx_t_9 = 0;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_7);
+      if (likely(__pyx_t_8)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+        __Pyx_INCREF(__pyx_t_8);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_6, function);
-        __pyx_t_8 = 1;
+        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __pyx_t_9 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_6)) {
-      PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_cur_scope->__pyx_v_start, __pyx_int_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+    if (PyFunction_Check(__pyx_t_7)) {
+      PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_start, __pyx_int_2};
+      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-      PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_cur_scope->__pyx_v_start, __pyx_int_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
+      PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_start, __pyx_int_2};
+      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else
     #endif
     {
-      __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      if (__pyx_t_7) {
-        __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
+      __pyx_t_10 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      if (__pyx_t_8) {
+        __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
       }
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_start);
       __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_start);
-      PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_8, __pyx_cur_scope->__pyx_v_start);
+      PyTuple_SET_ITEM(__pyx_t_10, 0+__pyx_t_9, __pyx_cur_scope->__pyx_v_start);
       __Pyx_INCREF(__pyx_int_2);
       __Pyx_GIVEREF(__pyx_int_2);
-      PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, __pyx_int_2);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+      PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_9, __pyx_int_2);
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_3 = __pyx_t_1;
-    __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_4 = __pyx_t_3;
+    __pyx_t_3 = 0;
   } else {
-    __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_xrange); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 71, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_9 = NULL;
-    __pyx_t_8 = 0;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
-      __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_6);
-      if (likely(__pyx_t_9)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-        __Pyx_INCREF(__pyx_t_9);
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_xrange); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 71, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_10 = NULL;
+    __pyx_t_9 = 0;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+      __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
+      if (likely(__pyx_t_10)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+        __Pyx_INCREF(__pyx_t_10);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_6, function);
-        __pyx_t_8 = 1;
+        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __pyx_t_9 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_6)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_cur_scope->__pyx_v_start, __pyx_cur_scope->__pyx_v_plim, __pyx_int_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 3+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+    if (PyFunction_Check(__pyx_t_7)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_10, __pyx_cur_scope->__pyx_v_start, __pyx_cur_scope->__pyx_v_plim, __pyx_int_2};
+      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 3+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_cur_scope->__pyx_v_start, __pyx_cur_scope->__pyx_v_plim, __pyx_int_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 3+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_10, __pyx_cur_scope->__pyx_v_start, __pyx_cur_scope->__pyx_v_plim, __pyx_int_2};
+      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 3+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      if (__pyx_t_9) {
-        __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_9); __pyx_t_9 = NULL;
+      __pyx_t_8 = PyTuple_New(3+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      if (__pyx_t_10) {
+        __Pyx_GIVEREF(__pyx_t_10); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_10); __pyx_t_10 = NULL;
       }
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_start);
       __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_start);
-      PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_8, __pyx_cur_scope->__pyx_v_start);
+      PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_9, __pyx_cur_scope->__pyx_v_start);
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_plim);
       __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_plim);
-      PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_8, __pyx_cur_scope->__pyx_v_plim);
+      PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_9, __pyx_cur_scope->__pyx_v_plim);
       __Pyx_INCREF(__pyx_int_2);
       __Pyx_GIVEREF(__pyx_int_2);
-      PyTuple_SET_ITEM(__pyx_t_7, 2+__pyx_t_8, __pyx_int_2);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      PyTuple_SET_ITEM(__pyx_t_8, 2+__pyx_t_9, __pyx_int_2);
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_8, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_3 = __pyx_t_1;
-    __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_4 = __pyx_t_3;
+    __pyx_t_3 = 0;
   }
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_cur_scope->__pyx_v_it = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __Pyx_GIVEREF(__pyx_t_4);
+  __pyx_cur_scope->__pyx_v_it = __pyx_t_4;
+  __pyx_t_4 = 0;
 
   /* "bib/cybib/cy_amazon_prime.pyx":73
  *     it = count(start, 2) if plim == 0 else xrange(start, plim, 2)
@@ -2435,35 +2434,35 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *         if prime_div:
  */
   if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_v_it)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_v_it)) {
-    __pyx_t_3 = __pyx_cur_scope->__pyx_v_it; __Pyx_INCREF(__pyx_t_3); __pyx_t_4 = 0;
-    __pyx_t_5 = NULL;
+    __pyx_t_4 = __pyx_cur_scope->__pyx_v_it; __Pyx_INCREF(__pyx_t_4); __pyx_t_5 = 0;
+    __pyx_t_6 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_it); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_5 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_it); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_6 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
   }
   for (;;) {
-    if (likely(!__pyx_t_5)) {
-      if (likely(PyList_CheckExact(__pyx_t_3))) {
-        if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_3)) break;
+    if (likely(!__pyx_t_6)) {
+      if (likely(PyList_CheckExact(__pyx_t_4))) {
+        if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_3); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
-        if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
+        if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_3); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
     } else {
-      __pyx_t_1 = __pyx_t_5(__pyx_t_3);
-      if (unlikely(!__pyx_t_1)) {
+      __pyx_t_3 = __pyx_t_6(__pyx_t_4);
+      if (unlikely(!__pyx_t_3)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -2471,12 +2470,12 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
         }
         break;
       }
-      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GOTREF(__pyx_t_3);
     }
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_num);
-    __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_num, __pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_1);
-    __pyx_t_1 = 0;
+    __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_num, __pyx_t_3);
+    __Pyx_GIVEREF(__pyx_t_3);
+    __pyx_t_3 = 0;
 
     /* "bib/cybib/cy_amazon_prime.pyx":74
  * 
@@ -2485,57 +2484,57 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *         if prime_div:
  *             multiple = (2 * prime_div) + num
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_divz, __pyx_n_s_pop); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 74, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = NULL;
-    __pyx_t_8 = 0;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
-      if (likely(__pyx_t_7)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-        __Pyx_INCREF(__pyx_t_7);
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_divz, __pyx_n_s_pop); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_8 = NULL;
+    __pyx_t_9 = 0;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_7);
+      if (likely(__pyx_t_8)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+        __Pyx_INCREF(__pyx_t_8);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_6, function);
-        __pyx_t_8 = 1;
+        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __pyx_t_9 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_6)) {
-      PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_cur_scope->__pyx_v_num, Py_None};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+    if (PyFunction_Check(__pyx_t_7)) {
+      PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_num, Py_None};
+      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-      PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_cur_scope->__pyx_v_num, Py_None};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
+      PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_num, Py_None};
+      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+      __Pyx_GOTREF(__pyx_t_3);
     } else
     #endif
     {
-      __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 74, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      if (__pyx_t_7) {
-        __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
+      __pyx_t_10 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      if (__pyx_t_8) {
+        __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
       }
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_num);
       __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_num);
-      PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_8, __pyx_cur_scope->__pyx_v_num);
+      PyTuple_SET_ITEM(__pyx_t_10, 0+__pyx_t_9, __pyx_cur_scope->__pyx_v_num);
       __Pyx_INCREF(Py_None);
       __Pyx_GIVEREF(Py_None);
-      PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, Py_None);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+      PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_9, Py_None);
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_prime_div);
-    __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_prime_div, __pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_1);
-    __pyx_t_1 = 0;
+    __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_prime_div, __pyx_t_3);
+    __Pyx_GIVEREF(__pyx_t_3);
+    __pyx_t_3 = 0;
 
     /* "bib/cybib/cy_amazon_prime.pyx":75
  *     for num in it:
@@ -2554,15 +2553,15 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *             while multiple in divz:
  *                 multiple += (2 * prime_div)
  */
-      __pyx_t_1 = PyNumber_Multiply(__pyx_int_2, __pyx_cur_scope->__pyx_v_prime_div); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = PyNumber_Add(__pyx_t_1, __pyx_cur_scope->__pyx_v_num); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 76, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_3 = PyNumber_Multiply(__pyx_int_2, __pyx_cur_scope->__pyx_v_prime_div); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_7 = PyNumber_Add(__pyx_t_3, __pyx_cur_scope->__pyx_v_num); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 76, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_multiple);
-      __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_multiple, __pyx_t_6);
-      __Pyx_GIVEREF(__pyx_t_6);
-      __pyx_t_6 = 0;
+      __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_multiple, __pyx_t_7);
+      __Pyx_GIVEREF(__pyx_t_7);
+      __pyx_t_7 = 0;
 
       /* "bib/cybib/cy_amazon_prime.pyx":77
  *         if prime_div:
@@ -2573,8 +2572,8 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  */
       while (1) {
         __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_cur_scope->__pyx_v_multiple, __pyx_cur_scope->__pyx_v_divz, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 77, __pyx_L1_error)
-        __pyx_t_10 = (__pyx_t_2 != 0);
-        if (!__pyx_t_10) break;
+        __pyx_t_1 = (__pyx_t_2 != 0);
+        if (!__pyx_t_1) break;
 
         /* "bib/cybib/cy_amazon_prime.pyx":78
  *             multiple = (2 * prime_div) + num
@@ -2583,15 +2582,15 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *             divz[multiple] = prime_div
  *         else:
  */
-        __pyx_t_6 = PyNumber_Multiply(__pyx_int_2, __pyx_cur_scope->__pyx_v_prime_div); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 78, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_cur_scope->__pyx_v_multiple, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_7 = PyNumber_Multiply(__pyx_int_2, __pyx_cur_scope->__pyx_v_prime_div); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 78, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_cur_scope->__pyx_v_multiple, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_multiple);
-        __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_multiple, __pyx_t_1);
-        __Pyx_GIVEREF(__pyx_t_1);
-        __pyx_t_1 = 0;
+        __Pyx_DECREF_SET(__pyx_cur_scope->__pyx_v_multiple, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
       }
 
       /* "bib/cybib/cy_amazon_prime.pyx":79
@@ -2621,10 +2620,10 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  * 
  */
     /*else*/ {
-      __pyx_t_1 = PyNumber_Multiply(__pyx_cur_scope->__pyx_v_num, __pyx_cur_scope->__pyx_v_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (unlikely(PyObject_SetItem(__pyx_cur_scope->__pyx_v_divz, __pyx_t_1, __pyx_cur_scope->__pyx_v_num) < 0)) __PYX_ERR(0, 81, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_3 = PyNumber_Multiply(__pyx_cur_scope->__pyx_v_num, __pyx_cur_scope->__pyx_v_num); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      if (unlikely(PyObject_SetItem(__pyx_cur_scope->__pyx_v_divz, __pyx_t_3, __pyx_cur_scope->__pyx_v_num) < 0)) __PYX_ERR(0, 81, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
       /* "bib/cybib/cy_amazon_prime.pyx":82
  *         else:
@@ -2635,10 +2634,10 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  */
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_num);
       __pyx_r = __pyx_cur_scope->__pyx_v_num;
-      __Pyx_XGIVEREF(__pyx_t_3);
-      __pyx_cur_scope->__pyx_t_0 = __pyx_t_3;
-      __pyx_cur_scope->__pyx_t_1 = __pyx_t_4;
-      __pyx_cur_scope->__pyx_t_2 = __pyx_t_5;
+      __Pyx_XGIVEREF(__pyx_t_4);
+      __pyx_cur_scope->__pyx_t_0 = __pyx_t_4;
+      __pyx_cur_scope->__pyx_t_1 = __pyx_t_5;
+      __pyx_cur_scope->__pyx_t_2 = __pyx_t_6;
       __Pyx_XGIVEREF(__pyx_r);
       __Pyx_RefNannyFinishContext();
       __Pyx_Coroutine_ResetAndClearException(__pyx_generator);
@@ -2646,11 +2645,11 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
       __pyx_generator->resume_label = 7;
       return __pyx_r;
       __pyx_L21_resume_from_yield:;
-      __pyx_t_3 = __pyx_cur_scope->__pyx_t_0;
+      __pyx_t_4 = __pyx_cur_scope->__pyx_t_0;
       __pyx_cur_scope->__pyx_t_0 = 0;
-      __Pyx_XGOTREF(__pyx_t_3);
-      __pyx_t_4 = __pyx_cur_scope->__pyx_t_1;
-      __pyx_t_5 = __pyx_cur_scope->__pyx_t_2;
+      __Pyx_XGOTREF(__pyx_t_4);
+      __pyx_t_5 = __pyx_cur_scope->__pyx_t_1;
+      __pyx_t_6 = __pyx_cur_scope->__pyx_t_2;
       if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 82, __pyx_L1_error)
     }
     __pyx_L18:;
@@ -2663,7 +2662,7 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
  *         if prime_div:
  */
   }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "bib/cybib/cy_amazon_prime.pyx":13
@@ -2678,11 +2677,11 @@ static PyObject *__pyx_gb_3bib_5cybib_15cy_amazon_prime_2generator(__pyx_Corouti
   PyErr_SetNone(PyExc_StopIteration);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_AddTraceback("prime_gen", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_r); __pyx_r = 0;
@@ -5743,7 +5742,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "bib/cybib/cy_amazon_prime.pyx":35
- *     if kprimes == None: kprimes = [2, 3, 5, 7, 11]
+ *     if kprimes is None: kprimes = [2, 3, 5, 7, 11]
  * 
  *     def _pdiv_dictionary():             # <<<<<<<<<<<<<<
  *         """

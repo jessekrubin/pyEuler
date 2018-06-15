@@ -15,6 +15,7 @@ Find subset_sums(1,000,000,000,000)
 """
 from tqdm import tqdm
 from math import log10
+from bib import xrange
 from bib.decorations import cash_it
 
 def mull(a, b):

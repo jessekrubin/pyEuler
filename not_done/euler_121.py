@@ -43,7 +43,7 @@ def dgame():
             thing.append(s)
             print(s, repermutations(s))
             print(s.count('r')>s.count('b'))
-            if (s.count('r')>s.count('b')): wins.append(s)
+            if s.count('r')>s.count('b'): wins.append(s)
 
         else:
             # ts1 = ''.join(d for d in s) + 'r'

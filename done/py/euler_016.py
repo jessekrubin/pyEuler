@@ -11,7 +11,7 @@ What is the sum of the digits of the number 2**1000?
 
 
 def p016(n=2**1000):
-    return sum(int(c) for c in str((n)))
+    return sum(int(c) for c in str(n))
 
 
 if __name__ == '__main__':

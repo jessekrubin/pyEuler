@@ -13,8 +13,8 @@ from bib.amazon_prime import prime_gen
 def is_connected(a, b):
     a = str(a)
     b = str(b)
-    asl = len((a))
-    bsl = len((b))
+    asl = len(a)
+    bsl = len(b)
     len_dif = abs(asl-bsl)
     if len_dif==0:
         difs = 0

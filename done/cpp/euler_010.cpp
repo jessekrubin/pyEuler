@@ -1,11 +1,8 @@
-// ~ JKR ~ cpPEuler ~
-// Summation of primes
-// Problem 10
-// The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-// Find the sum of all the primes below two million.
+// ~ JKR ~ cpPEuler ~ Problem 10
 #include <iostream>
 #include <vector>
 #include <string>
+#include <numeric>
 #include <sstream>
 using namespace std;
 
@@ -21,16 +18,37 @@ bool is_prime(int num)
     return true;
 }
 
+vector<int> prime_sieve(long max)
+{
+    vector<int> sieve;
+    vector<int> primes;
+    for (int i = 1; i < max + 1; ++i)
+        sieve.push_back(i);
+    sieve[0] = 0;
+    for (int i = 2; i < max + 1; ++i)
+        if (sieve[i - 1] != 0)
+        {
+            primes.push_back(sieve[i - 1]);
+            for (int j = 2 * sieve[i - 1]; j < max + 1; j += sieve[i - 1])
+                sieve[j - 1] = 0;
+        }
+    return primes;
+}
+
+long p010(int lim)
+{
+    long total = 0;
+    vector<int> primes = prime_sieve(lim);
+    for (int i = 0; i < primes.size(); i++)
+    {
+        total += primes[i];
+    }
+    return total;
+}
+
 int main()
 {
-    long total = 2; // WE SKIP TWOOOO
-    for (int i = 3; i < 2000000; i += 2)
-    {
-        if (is_prime(i))
-        {
-            total += i;
-        }
-    }
+    long total = p010(2000000);
     cout << total << endl;
     return 0;
 }

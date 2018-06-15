@@ -93,7 +93,7 @@ class Card(object):
         return self.strang
 
 
-class PokerHand:
+class PokerHand(object):
 
     def __init__(self, cards):
         self.cards = cards

@@ -86,7 +86,7 @@ class Cuboid(object):
         return self.max_xyz
 
     def in_zy(self, x_val):
-        return (self.min_xyz[0] < x_val < self.max_xyz[0])
+        return self.min_xyz[0] < x_val < self.max_xyz[0]
 
     def yz_planes(self):
         return (i for i in range(self.min_xyz[0], self.max_xyz[0]))

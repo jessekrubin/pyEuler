@@ -50,7 +50,7 @@ from itertools import count
 
 p3 = lambda n: ((n * n) + n) // 2
 p4 = lambda n: (n * n)
-p5 = lambda n: ((3 * n * n) - (n)) // 2
+p5 = lambda n: ((3 * n * n) - n) // 2
 p6 = lambda n: (2 * n * n) - n
 p7 = lambda n: ((5 * n * n) - (3 * n)) // 2
 p8 = lambda n: (3 * n * n) - (2 * n)
