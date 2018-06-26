@@ -9,9 +9,9 @@ def main():
     try:
         setup(
             name='pyEuler',
-            packages=['bib', 'done/py', 'no_cigar'],
+            packages=['pupy', 'done/py', 'no_cigar'],
             ext_modules=cythonize(
-                ("bib/*.pyx",
+                ("pupy/*.pyx",
                  "cbib/*.pyx",
                  "no_cigar/*.pyx")),
             author='jessekrubin',
@@ -22,7 +22,7 @@ def main():
     except:
         setup(
             name='pyEuler',
-            packages=['bib', 'done/py', 'no_cigar'],
+            packages=['pupy', 'done/py', 'no_cigar'],
             author='jessekrubin',
             author_email='jessekrubin@gmail.com',
             description='project euler solutions',

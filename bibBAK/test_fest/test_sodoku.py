@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Jesse Rubin - py_euler sodoku.py test_fest
+# Jesse Rubin - py_euler sodoku.pyx test_fest
 """
-testing my sodoku.py solver
+testing my sodoku.pyx solver
 
 ty sudopedia
 http://sudopedia.enjoysudoku.com/Invalid_Test_Cases.html
