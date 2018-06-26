@@ -9,7 +9,6 @@ from datetime import datetime
 from json import load, dump
 from codecs import getwriter
 from os import listdir
-from bib.listless import chunks
 
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
@@ -19,7 +18,7 @@ DONE = sorted([int(f[6:9]) for f in listdir(r'./done/py')
 NO_CIGAR = sorted([int(f[6:9]) for f in listdir(r'./no_cigar')
                    if f.startswith('euler_') and f.endswith('.py')])
 NOT_DONE = sorted([int((f[6:9])) for f in listdir(r'./not_done')
-                   if f.startswith("euler_") and f.endswith('.py')])
+                   if f.startswith("euler_")])
 N_EULER_PROBS = 615+1
 DONE_EMOJI = ":snake:"
 INPROG_EMOJI = ":scream:"
@@ -136,6 +135,7 @@ def write_README():
 if __name__ == '__main__':
     update_solutions_txt(DONE)
     write_README()
+
     print("______________________")
     print("# problems done: {}".format(len(DONE)+len(NO_CIGAR)))
     print("______________________")

@@ -209,34 +209,6 @@ def pytriple_gen(max_c):
                     yield (imag, real, sea) if real > imag else (real, imag, sea)
 
 
-def pytriple_gen_2():
-    diagonal_size = 3
-    cur_x = 1
-    cur_y = 2
-    while True:
-        if cur_y <= cur_x:
-            diagonal_size += 1
-            cur_x = 1
-            cur_y = diagonal_size - 1
-        imag_part = cur_y
-        real_part = cur_x
-        to_yield = get_pythag_triple(real_part, imag_part)
-        cur_x += 1
-        cur_y -= 1
-        if gcd_it(to_yield[0], to_yield[1]) > 1:
-            continue
-        yield to_yield
-
-
-def get_pythag_triple(real, imag):
-    comp = complex(real, imag)
-    sea = int((comp * comp.conjugate()).real)
-    sqrd = comp * comp
-    real = abs(int(sqrd.real))
-    imag = abs(int(sqrd.imag))
-    return min(imag, real), max(imag, real), sea
-
-
 class Trigon(object):
     """
     Trigon object composed of three points connected by lines.
@@ -358,7 +330,7 @@ def disjoint(a, b):
 
 
 def n_choose_r(n, r):
-    return factorial(n)//factorial(r)//factorial(n-r)
+    return factorial(n)/factorial(r)/factorial(n-r)
 
 class Vuple(tuple):
     """VUPLE == Vector+Tuple"""

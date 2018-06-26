@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # !/bin/bash
 # Multiples of 3 and 5
 # Problem 1
@@ -13,4 +14,4 @@ for ((i=1;i<1000;i++)); do
         ((sum += i))
     fi
 done
-echo "ANSWER:" $sum
+echo "ANSWER:" ${sum}

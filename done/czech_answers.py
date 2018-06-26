@@ -14,7 +14,8 @@ with open('../txt_files/solutions.txt') as f:
 
 PASSED, NO_SOL, NO_PFUNK, FAILED, SOL_IS_NONE = [], [], [], [], []
 
-VERBOSE = True
+# VERBOSE = True
+VERBOSE = False
 
 def czech_answer(pn_str):
     """Checks if the project euler solutions in this repo are correct
@@ -96,7 +97,7 @@ if __name__ == '__main__':
             if f.startswith('euler_')  # for which the file start with 'euler_'
             and f.endswith('.py')]  # and ends with '.py'
 
-    p = Pool(processes=4)  # eight process pool
+    p = Pool()  # eight process pool
     test_results = {problem_n: test_result for problem_n, test_result in
                     tqdm(p.imap_unordered(czech_answer, DONE), total=len(DONE), desc="CHECKING SOLUTIONS",
                          ascii=True if version_info[0] == 2 else False, leave=True)}

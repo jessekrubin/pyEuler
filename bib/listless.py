@@ -39,8 +39,10 @@ def is_permutation(a, b):
 
     """
 
-    if type(a) == int: a = digits_list(a)
-    if type(b) == int: b = digits_list(b)
+    if type(a) == int:
+        a = digits_list(a)
+    if type(b) == int:
+        b = digits_list(b)
     return len(a) == len(b) and Counter(a) == Counter(b)
 
 
@@ -131,7 +133,7 @@ def int_from_digits(dlist):
     return sum(dlist[len(dlist)-i-1]*10**i for i in xrange(0, len(dlist), 1))
 
 
-def reduce_product(l):
+def iter_product(l):
     """Product of all the elements in a list or tuple
 
     Args:
@@ -141,11 +143,11 @@ def reduce_product(l):
         int: product of all the elements in a list
 
     Examples:
-        >>> reduce_product([1, 2, 3, 4])
+        >>> iter_product([1, 2, 3, 4])
         24
-        >>> reduce_product(tuple([1, 2, 3, 4]))
+        >>> iter_product(tuple([1, 2, 3, 4]))
         24
-        >>> reduce_product([-1, -2, -3, 4])
+        >>> iter_product([-1, -2, -3, 4])
         -24
 
     """

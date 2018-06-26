@@ -24,7 +24,7 @@ from tqdm import tqdm
 
 
 def p134_cy(lim=1000000):
-    from bib.cybib.prime_pairs import prime_pair_cy
+    from bib.prime_pairs import prime_pair_cy
     primes = [p for p in prime_gen(lim+5) if p > 3]
     mod10e = 10
     multipliers = []
@@ -60,7 +60,7 @@ def p134_cy(lim=1000000):
 
 if __name__ == '__main__':
     # assert 53 == prime_pair_cy(19, 23, 100)
-    ANSWERcy = p134_cy(1000000)
+    ANSWERcy = p134_cy()
     print(ANSWERcy)
 
     # ANSWER = p134_py(1000000)

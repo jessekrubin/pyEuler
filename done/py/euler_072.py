@@ -39,6 +39,6 @@ def p072():
 
 
 if __name__ == '__main__':
-    assert 21 == countingfracs(8)
+    assert 21 == countingfracs()
     sol = p072()
     print("# elements in the set of reduced proper fracs: {}".format(sol))

@@ -22,7 +22,6 @@ Find the smallest member of the longest amicable chain with no element
 exceeding one million.
 """
 
-from tqdm import tqdm
 from bib.maths import divisors_gen
 from bib.amazon_prime import prime_gen
 

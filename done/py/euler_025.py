@@ -28,7 +28,7 @@ from itertools import count
 
 
 def p025(no_digits=1000):
-    for i in count(0):
+    for i in count():
         if len(str(fib_r(i))) >= no_digits:
             return i + 1
 

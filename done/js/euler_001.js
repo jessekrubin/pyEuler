@@ -14,12 +14,22 @@
 //         return acc + val;
 //     });
 // };
-p001 = (upper_bound = 1000) => {
+const p001 = (upper_bound = 1000) => {
+
   return Array.from(Array(upper_bound).keys())
     .filter(value => value % 3 === 0 || value % 5 === 0)
     .reduce(function(acc, val) {
       return acc + val;
     });
 };
+
+const p001_2 = (upper_bound = 1000) => [...Array(upper_bound).keys()].map(num =>
+        num % 5 === 0 || num % 3 === 0 ?
+            num :
+            null
+    ).filter(s => s)
+    .reduce((acc, num) => acc + num, 0);
+
+console.log(p001_2());
 
 console.log(p001());

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # JESSE RUBIN - Biblioteca
-from bisect import bisect_right, bisect_left, bisect
-from itertools import count, chain
-from math import log, sqrt
+from bisect import bisect_right, bisect
+from itertools import count
+from math import sqrt
 
 from bib import xrange
 from bib.maths import divisors_gen

@@ -14,7 +14,7 @@ Find the product abc.
 """
 
 from bib.maths import pytriple_gen
-from bib.listless import reduce_product
+from bib.listless import iter_product
 
 
 def p009():
@@ -25,7 +25,7 @@ def p009():
     """
     for tri in pytriple_gen(int(1000 // 2)):
         if 1000 % sum(tri) == 0:
-            return reduce_product(tri) * (1000 // sum(tri)) ** 3
+            return iter_product(tri) * (1000 // sum(tri)) ** 3
 
 
 if __name__ == '__main__':

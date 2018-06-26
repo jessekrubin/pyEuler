@@ -22,18 +22,18 @@ function fib(n, undefined) {
 fib.cache = [0, 1, 1];
 
 
-var p002 = () => {
-  var i = 1;
-  while (fib.cache[fib.cache.length - 1] < 4000000) {
-    fib(i);
-    i++;
-  }
-  return (fib.cache.filter((n) => {
-    return n % 2 === 0
-  }).reduce((acc, val) => {
-    return acc + val
-  }));
-}
+const p002 = () => {
+    var i = 1;
+    while (fib.cache[fib.cache.length - 1] < 4000000) {
+        fib(i);
+        i++;
+    }
+    return (fib.cache.filter((n) => {
+        return n % 2 === 0
+    }).reduce((acc, val) => {
+        return acc + val
+    }));
+};
 
 ANSWER = p002();
 console.log('ANSWER:', ANSWER);

@@ -22,8 +22,9 @@ How many Sundays fell on the first of the month during the twentieth century
 """
 
 from datetime import date
+from bib.decorations import tictoc
 
-
+@tictoc(runs=1000)
 def p019():
     return sum(1 for day in  # count 1 for each day...
                range(date(1901, 1, 1).toordinal(),  # from the start ord

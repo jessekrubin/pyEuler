@@ -26,7 +26,7 @@ def permuted_multiples(max_multiplier=6):
 
 
 def p052():
-    return permuted_multiples(6)
+    return permuted_multiples()
 
 
 if __name__ == '__main__':

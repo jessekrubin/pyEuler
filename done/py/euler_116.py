@@ -21,12 +21,8 @@ must be used?
 
 NOTE: This is related to Problem 117.
 """
-from collections import Counter
-from math import factorial
 
 from bib.maths import partitions_gen, repermutations
-from bib.listless import reduce_product
-
 
 
 def red_green_or_blue(row_size):

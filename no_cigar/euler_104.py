@@ -17,10 +17,8 @@ Given that Fk is the first Fibonacci number for which the first nine digits
 AND the last nine digits are 1-9 pandigital, find k.
 """
 from __future__ import division
-from math import pow, sqrt, log
-from itertools import permutations, count
-from bib.listless import int_from_digits
-
+from math import log
+from itertools import count
 
 # def approxonacci(n):
 #     """
@@ -77,7 +75,7 @@ def is_pandigital(n):
 
 def fib_last10():
     a, b = 0, 1
-    for n in count(0):
+    for n in count():
         yield a, n
         a, b = b%1000000000, a+b
 
