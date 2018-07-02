@@ -124,7 +124,7 @@ def update_solutions_txt(done):
 
 
 def table_problem(n):
-    return " ".join(EMOJI_DICTIONARY[p] for p in probs[int(n)])
+    return "".join(EMOJI_DICTIONARY[p] for p in probs[int(n)])
 
 
 def format_table_line(row):
@@ -134,10 +134,9 @@ def format_table_line(row):
     for n in row:
         status = NOT_STARTED_EMOJI
         if n in DONE:
-            status = (table_problem(n))
+            status = table_problem(n)
             # n_string = "[{}](done/py/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
         elif n in NO_CIGAR:
-            # n_string = str(n).zfill(3)
             status = NO_CIGAR_EMOJI
         linelist.append("|{} {}".format(str(n).zfill(3), status))
     linelist.append('|\n')
@@ -146,14 +145,12 @@ def format_table_line(row):
 
 def sur_la_table():
     """
-
-    Returns:
-
     """
 
     # probs = [i for i in range(1, N_EULER_PROBS)]
     all_probs = set.union(*[set(n for n in v)
                             for v in DONE_DICT.values()])
+    # probs = sorted(list(set(NO_CIGAR + DONE)))
     probs = sorted(list(set(NO_CIGAR + DONE)))
     rows = [probs[i:i + NUM_COLUMNS]
             for i in range(0, N_EULER_PROBS, NUM_COLUMNS)]
