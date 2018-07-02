@@ -15,8 +15,8 @@ if you were to give feedback, this is where it would be most helpful.
 Last I checked (2018-07-01) i have done 125.
 
 | Problem # | # | # | # | # | # | # | # | # | # |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|001|:ocean::snake::shell::poop::vertical_traffic_light:|002|:shell::poop::ocean::snake:|003|:ocean::snake:|004|:ocean::snake:|005|:snake:|
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+|001|:ocean::poop::vertical_traffic_light::snake::shell:|002|:poop::shell::ocean::snake:|003|:ocean::snake:|004|:ocean::snake:|005|:snake:|
 |006|:snake:|007|:snake:|008|:snake:|009|:snake:|010|:ocean::snake:|
 |011|:snake:|012|:snake:|013|:snake:|014|:snake:|015|:snake:|
 |016|:snake:|017|:snake:|018|:snake:|019|:snake:|020|:snake:|

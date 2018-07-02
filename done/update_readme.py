@@ -168,7 +168,7 @@ def write_README():
         # table_header = "| Problem # |" + " # |" * (NUM_COLUMNS - 1) + "\n"
         table_header = "| Problem # | # |" + " # | # |" * (NUM_COLUMNS - 1) + "\n"
         f.write(table_header)
-        header_sep = "|" + " ---: | ---: |" * NUM_COLUMNS*2 + "\n"
+        header_sep = "|" + " ---: | ---: |" * NUM_COLUMNS + "\n"
         f.write(header_sep)
         f.writelines(sur_la_table())
 
