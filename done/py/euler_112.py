@@ -24,10 +24,10 @@ Find the least number for which the proportion of bouncy numbers is exactly
 99%
 """
 from __future__ import division
-from bib.listless import digits_list
+from pupy.listless import digits_list
 
-try: xrange
-except NameError: xrange = range
+try: range
+except NameError: range = range
 
 
 def is_bouncy(n):

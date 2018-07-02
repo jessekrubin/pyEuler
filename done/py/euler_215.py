@@ -21,8 +21,8 @@ There are eight ways of forming a crack-free 9×3 wall, written W(9,3) = 8.
 Calculate W(32,10).
 """
 from __future__ import generators
-from bib.maths import disjoint
-from bib.decorations import cash_it
+from pupy.maths import disjoint
+from pupy.decorations import cash_it
 from itertools import combinations
 from collections import defaultdict
 

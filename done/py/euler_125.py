@@ -18,7 +18,7 @@ be written as the sum of consecutive squares.
 """
 from math import sqrt
 from itertools import count
-from bib.werd import is_palindrome
+from pupy.werd import is_palindrome
 
 
 def some_pals(upper_bound):

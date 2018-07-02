@@ -13,7 +13,7 @@ Give your answer with nine digits after the decimal point (a.bcdefghij).
 """
 from __future__ import division
 
-from bib.maths import n_choose_r
+from pupy.maths import n_choose_r
 
 
 def p493():

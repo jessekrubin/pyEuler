@@ -14,8 +14,8 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44,
 
 Evaluate the sum of all the amicable numbers under 10000.
 """
-from bib.maths import divisors_gen
-from bib.decorations import cash_it
+from pupy.maths import divisors_gen
+from pupy.decorations import cash_it
 
 
 @cash_it

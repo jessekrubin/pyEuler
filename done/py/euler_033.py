@@ -19,7 +19,7 @@ terms, find the value of the denominator.
 """
 
 from fractions import Fraction
-from bib.listless import iter_product
+from pupy.listless import iter_product
 
 
 def is_fishy_fraction(n, d):

@@ -13,7 +13,7 @@ base 10 and base 2.
 leading zeros.)
 """
 
-from bib.werd import binary_string, is_palindrome
+from pupy.werd import binary_string, is_palindrome
 
 
 def p036():

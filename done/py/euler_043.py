@@ -22,7 +22,7 @@ d8d9d10=289 is divisible by 17
 Find the sum of all 0 to 9 pandigital numbers with this property.
 """
 
-from bib.listless import int_from_digits
+from pupy.listless import int_from_digits
 from itertools import permutations
 
 

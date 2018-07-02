@@ -13,8 +13,8 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 """
 
-from bib.maths import pytriple_gen
-from bib.listless import iter_product
+from pupy.maths import pytriple_gen
+from pupy.listless import iter_product
 
 
 def p009():

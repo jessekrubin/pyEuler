@@ -22,7 +22,7 @@ How many Sundays fell on the first of the month during the twentieth century
 """
 
 from datetime import date
-from bib.decorations import tictoc
+from pupy.decorations import tictoc
 
 @tictoc(runs=1000)
 def p019():

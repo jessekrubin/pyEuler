@@ -12,7 +12,7 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the
 maximum digital sum?
 """
 
-from bib.listless import digits_list
+from pupy.listless import digits_list
 
 
 def p056():

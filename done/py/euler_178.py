@@ -11,7 +11,7 @@ A pandigital number contains every decimal digit from 0 to 9 at least once.
 How many pandigital step numbers less than 1040 are there?
 """
 from __future__ import division
-from bib.decorations import cash_it
+from pupy.decorations import cash_it
 
 
 @cash_it

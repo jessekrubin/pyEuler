@@ -22,7 +22,7 @@ How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are
 greater than one-million?
 """
 
-from bib.decorations import cash_it
+from pupy.decorations import cash_it
 
 
 @cash_it

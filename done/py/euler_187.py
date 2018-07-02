@@ -14,14 +14,14 @@ How many composite integers, n < 10**8, have precisely two, not necessarily
 distinct, prime factors?
 """
 
-from bib.amazon_prime import prime_gen
+from pupy.amazon_prime import prime_gen
 from math import sqrt
 from bisect import bisect_left
 from itertools import combinations_with_replacement
 from operator import truediv
 
-try: xrange
-except NameError: xrange = range
+try: range
+except NameError: range = range
 
 
 def p187a(upper_bound=10**8):
@@ -36,7 +36,7 @@ def p187(upper_bound=10**8):
     primes = list(n for n in prime_gen(1+upper_bound//2))
     lim_root = int(sqrt(upper_bound)+1)
     ans = 0
-    for i in xrange(len(primes)):
+    for i in range(len(primes)):
         if primes[i] > lim_root: break
         ans += bisect_left(primes, truediv(upper_bound, primes[i]))-i
     return ans

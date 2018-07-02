@@ -21,7 +21,7 @@ Find S(10,000,000).
 """
 
 from math import log
-from bib.amazon_prime import prime_gen
+from pupy.amazon_prime import prime_gen
 from bisect import bisect_right
 
 
@@ -54,12 +54,12 @@ def p347(n=10 ** 7):
 
 
 if __name__ == '__main__':
-    # m(pytriple_gen, q, N) test_fest
+    # m(pytriple_gen, q, N) test_pupy
     assert 96 == m(2, 3, 100)
     assert 75 == m(3, 5, 100)
     assert 0 == m(2, 73, 100)
 
-    # s(n) test_fest
+    # s(n) test_pupy
     assert 2262 == s(100)
 
     # answer

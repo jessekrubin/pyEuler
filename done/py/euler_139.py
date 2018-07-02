@@ -21,7 +21,7 @@ million, how many Pythagorean triangles would allow such a tiling to take
 place?
 """
 
-from bib.maths import pytriple_gen
+from pupy.maths import pytriple_gen
 
 
 def pytiles(max_perimeter):

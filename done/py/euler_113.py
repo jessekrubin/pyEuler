@@ -19,7 +19,7 @@ there are only 12951 numbers below one-million that are not bouncy and only
 
 How many numbers below a googol (10**100) are not bouncy?
 """
-from bib.decorations import cash_it
+from pupy.decorations import cash_it
 
 
 def non_bouncy(tenexp):

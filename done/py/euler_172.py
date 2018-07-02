@@ -9,7 +9,7 @@ How many 18-digit numbers n (without leading zeros) are there such that no
 digit occurs more than three times in n?
 """
 
-from bib.decorations import cash_it
+from pupy.decorations import cash_it
 from collections import Counter
 from bisect import insort
 

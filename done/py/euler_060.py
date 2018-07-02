@@ -16,8 +16,8 @@ concatenate to produce another prime.
 
 from itertools import combinations
 from collections import defaultdict
-from bib.amazon_prime import prime_gen, is_prime
-from bib.decorations import cash_it
+from pupy.amazon_prime import prime_gen, is_prime
+from pupy.decorations import cash_it
 
 
 @cash_it
@@ -73,10 +73,10 @@ def p060():
 
 
 if __name__ == '__main__':
-    # is prime pair set test_fest case
+    # is prime pair set test_pupy case
     test_set = (3, 7, 109, 673)
     assert True == is_prime_pair_set(test_set)
-    # prime pair sets small test_fest case
+    # prime pair sets small test_pupy case
     assert 792 == prime_pair_sets(4)
     ans = p060()
     print("Answer: {}".format(ans))

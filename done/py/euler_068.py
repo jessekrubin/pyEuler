@@ -36,7 +36,7 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 
 from itertools import combinations, permutations
 
-from bib.listless import rotate
+from pupy.listless import rotate
 
 # Looking for the max 16 digit string for the magic 5-gon ring means that
 # the 10 must be on the outside.

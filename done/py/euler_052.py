@@ -12,7 +12,7 @@ Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x,
 contain the same digits.
 """
 
-from bib.listless import is_permutation
+from pupy.listless import is_permutation
 from itertools import count
 
 

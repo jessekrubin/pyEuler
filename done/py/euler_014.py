@@ -21,9 +21,7 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 from operator import itemgetter
-from bib.decorations import cash_it
-from bib import xrange
-
+from pupy.decorations import cash_it
 
 @cash_it
 def collatz_len(n):
@@ -33,7 +31,7 @@ def collatz_len(n):
 
 
 def p014():
-    return max(((i, collatz_len(i)) for i in xrange(1, 1000000)), key=itemgetter(1))[0] + 1
+    return max(((i, collatz_len(i)) for i in range(1, 1000000)), key=itemgetter(1))[0] + 1
 
 
 if __name__ == '__main__':

@@ -21,15 +21,15 @@ for d ≤ 1,000,000?
 from sys import version_info
 
 if version_info.major > 2:
-    xrange = range
+    range = range
 
 
 def countingfracs(lim=8):
-    phi_dictionary = {i: i for i in xrange(1, lim + 1)}
+    phi_dictionary = {i: i for i in range(1, lim + 1)}
 
-    for n in xrange(2, lim + 1):
+    for n in range(2, lim + 1):
         if n == phi_dictionary[n]:
-            for nnn in xrange(n, lim + 1, n):
+            for nnn in range(n, lim + 1, n):
                 phi_dictionary[nnn] -= (phi_dictionary[nnn] / n)
     return sum(v for k, v in phi_dictionary.items()) - 1
 

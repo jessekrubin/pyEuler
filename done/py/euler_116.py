@@ -22,7 +22,7 @@ must be used?
 NOTE: This is related to Problem 117.
 """
 
-from bib.maths import partitions_gen, repermutations
+from pupy.maths import partitions_gen, repermutations
 
 
 def red_green_or_blue(row_size):

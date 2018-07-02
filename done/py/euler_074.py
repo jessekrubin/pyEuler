@@ -31,8 +31,8 @@ How many chains, with a starting number below one million, contain exactly
 sixty non-repeating terms?
 """
 
-from bib.listless import digits_list
-from bib.decorations import cash_it
+from pupy.listless import digits_list
+from pupy.decorations import cash_it
 from math import factorial
 
 digfact = {i:factorial(i) for i in range(10)}

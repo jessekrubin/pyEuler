@@ -13,12 +13,12 @@ once contain only prime elements?
 """
 from collections import Counter
 from itertools import combinations, product, permutations
-from bib.maths import partitions_gen
-from bib.amazon_prime import is_prime
-from bib.decorations import Jasm
+from pupy.maths import partitions_gen
+from pupy.amazon_prime import is_prime
+from pupy.decorations import Jasm
 
-try: xrange
-except NameError: xrange = range
+try: range
+except NameError: range = range
 
 pandaprimespath = '../txt_files/panda_primes_set.txt'
 

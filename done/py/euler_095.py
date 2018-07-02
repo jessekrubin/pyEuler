@@ -22,8 +22,8 @@ Find the smallest member of the longest amicable chain with no element
 exceeding one million.
 """
 
-from bib.maths import divisors_gen
-from bib.amazon_prime import prime_gen
+from pupy.maths import divisors_gen
+from pupy.amazon_prime import prime_gen
 
 upperlim = 1000000
 primes = {p for p in prime_gen(upperlim)}

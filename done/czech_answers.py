@@ -24,13 +24,14 @@ def czech_answer(pn_str):
         pn_str (str): problem number string (ex: '001')
 
     Returns:
-        run time (float): if the test_fest passes
-        failure message (str): if test_fest fails to pass
+        run time (float): if the test_pupy passes
+        failure message (str): if test_pupy fails to pass
             'NO_PFUNK': the problem file doesn have a pXXX() method
             'NO_SOL': the problem has no __sol__ variable
             'SOL_IS_NONE': the __sol__ variable for the problem is None
     """
-    p_file = import_module("py.euler_{}".format(pn_str))
+    # p_file = import_module("py.euler_{}".format(pn_str))
+    p_file = import_module('./done/py/euler_{}'.format(pn_str))
     # p_file = import_module(path(getcwd(), "euler_{}".format(pn_str)))
     try:
         p_funk = getattr(p_file, 'p{}'.format(pn_str))

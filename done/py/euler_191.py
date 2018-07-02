@@ -23,7 +23,7 @@ LAOO LAOA LAAO
 How many "prize" strings exist over a 30-day period?
 """
 
-from bib.decorations import cash_it
+from pupy.decorations import cash_it
 
 
 @cash_it

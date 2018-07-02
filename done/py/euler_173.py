@@ -17,7 +17,7 @@ it is possible to form forty-one different square laminae.
 Using up to one million tiles how many different square laminae can be formed?
 """
 
-from bib.maths import divisors_gen
+from pupy.maths import divisors_gen
 
 
 def square_lams(upperlimit):

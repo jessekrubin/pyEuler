@@ -9,7 +9,7 @@ How many 20 digit numbers n (without any leading zero) exist such that no three
 consecutive digits of n have a sum greater than 9?
 """
 
-from bib.decorations import cash_it
+from pupy.decorations import cash_it
 
 
 @cash_it
