@@ -135,13 +135,11 @@ def format_table_line(row):
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = (table_problem(n))
-            # status = DONE_EMOJI
-            # n_string = "[{}](done/py/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
             # n_string = "[{}](done/py/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
         elif n in NO_CIGAR:
             # n_string = str(n).zfill(3)
             status = NO_CIGAR_EMOJI
-        linelist.append("|{} ~ {}".format(str(n).zfill(3), status))
+        linelist.append("|{} | {}".format(str(n).zfill(3), status))
     linelist.append('|\n')
     return "".join(linelist)
 
