@@ -82,7 +82,7 @@ NO_CIGAR_EMOJI = ":no_smoking:"
 EMOJI_DICTIONARY = {
     "py" : PY_EMOJI,
     "cpp": CPP_EMOJI,
-    "js" : GO_EMOJI,
+    "js" : JS_EMOJI,
     "go" : GO_EMOJI,
     "sh" : SH_EMOJI
     }
@@ -122,7 +122,7 @@ def update_solutions_txt(done):
     with open(SOLUTIONS_PATH, 'wb') as f:
         dump(solutions, getwriter('utf-8')(f), indent=4, sort_keys=True)
 
-
+print(probs)
 def table_problem(n):
     return "".join(EMOJI_DICTIONARY[p] for p in probs[int(n)])
 
@@ -140,6 +140,7 @@ def format_table_line(row):
             status = NO_CIGAR_EMOJI
         linelist.append("|{} {}".format(str(n).zfill(3), status))
     linelist.append('|\n')
+    print(linelist)
     return "".join(linelist)
 
 
