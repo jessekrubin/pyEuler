@@ -73,10 +73,10 @@ Last I checked ({LAST_UPDATED}) i have done {(len(DONE)+len(NO_CIGAR))}.
 
 DONE_EMOJI = ":snake:"
 PY_EMOJI = ":snake:"
-CPP_EMOJI = "cpp"
-JS_EMOJI = "js"
-SH_EMOJI = "sh"
-GO_EMOJI = "go"
+CPP_EMOJI = ":ocean:"
+JS_EMOJI = ":poop:"
+SH_EMOJI = ":shell:"
+GO_EMOJI = ":vertical_traffic_light:"
 NO_CIGAR_EMOJI = ":no_smoking:"
 
 EMOJI_DICTIONARY = {
@@ -139,7 +139,7 @@ def format_table_line(row):
         elif n in NO_CIGAR:
             # n_string = str(n).zfill(3)
             status = NO_CIGAR_EMOJI
-        linelist.append("|{} | {}".format(str(n).zfill(3), status))
+        linelist.append("|{} {}".format(str(n).zfill(3), status))
     linelist.append('|\n')
     return "".join(linelist)
 
