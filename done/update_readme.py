@@ -138,7 +138,7 @@ def format_table_line(row):
             # n_string = "[{}](done/py/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
         elif n in NO_CIGAR:
             status = NO_CIGAR_EMOJI
-        linelist.append("|{} {}".format(str(n).zfill(3), status))
+        linelist.append("|{} | {}".format(str(n).zfill(3), status))
     linelist.append('|\n')
     print(linelist)
     return "".join(linelist)
@@ -165,10 +165,10 @@ def write_README():
     with open('../README.md', 'w') as f:
         f.write(README_TEXT)
 
-        table_header = "| Problem # |" + " # |" * (
-                NUM_COLUMNS - 1) + "\n"
+        # table_header = "| Problem # |" + " # |" * (NUM_COLUMNS - 1) + "\n"
+        table_header = "| Problem # |" + " # | # |" * (NUM_COLUMNS - 1) + "\n"
         f.write(table_header)
-        header_sep = "|" + " ---: |" * NUM_COLUMNS + "\n"
+        header_sep = "|" + " ---: | ---: |" * NUM_COLUMNS*2 + "\n"
         f.write(header_sep)
         f.writelines(sur_la_table())
 
