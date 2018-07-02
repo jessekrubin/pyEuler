@@ -101,6 +101,8 @@ TABLE_KEY = f"""## Problems table
 {GO_EMOJI} = go
 
 {NO_CIGAR_EMOJI} = close, but no cigar; takes more than 1 min
+
+
 """
 
 SOLUTIONS_PATH = "../txt_files/solutions.txt"
