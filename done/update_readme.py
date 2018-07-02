@@ -164,9 +164,7 @@ def sur_la_table():
 def write_README():
     with open('../README.md', 'w') as f:
         f.write(README_TEXT)
-
-        # table_header = "| Problem # |" + " # |" * (NUM_COLUMNS - 1) + "\n"
-        table_header = "| Problem # | # |" + " # | # |" * (NUM_COLUMNS - 1) + "\n"
+        table_header = "| Problem # | ~ |" + " # | ~ |" * (NUM_COLUMNS - 1) + "\n"
         f.write(table_header)
         header_sep = "|" + " ---: | ---: |" * NUM_COLUMNS + "\n"
         f.write(header_sep)
