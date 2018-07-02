@@ -140,18 +140,14 @@ def format_table_line(row):
             status = NO_CIGAR_EMOJI
         linelist.append("|{}|{}".format(str(n).zfill(3), status))
     linelist.append('|\n')
-    print(linelist)
     return "".join(linelist)
 
 
 def sur_la_table():
     """
     """
-
-    # probs = [i for i in range(1, N_EULER_PROBS)]
     all_probs = set.union(*[set(n for n in v)
                             for v in DONE_DICT.values()])
-    # probs = sorted(list(set(NO_CIGAR + DONE)))
     probs = sorted(list(set(NO_CIGAR + DONE)))
     rows = [probs[i:i + NUM_COLUMNS]
             for i in range(0, N_EULER_PROBS, NUM_COLUMNS)]
@@ -164,17 +160,13 @@ def sur_la_table():
 def write_README():
     with open('../README.md', 'w') as f:
         f.write(README_TEXT)
+        f.write(TABLE_KEY)
         table_header = "| Problem # | ~ |" + " # | ~ |" * (NUM_COLUMNS - 1) + "\n"
         f.write(table_header)
         header_sep = "|" + " ---: | ---: |" * NUM_COLUMNS + "\n"
         f.write(header_sep)
         f.writelines(sur_la_table())
 
-
-# import os
-# def done_dict():
-# for a, b, c in os.walk(os.getcwd()):
-#     print(a, b, c)
 
 if __name__ == '__main__':
     update_solutions_txt(DONE)

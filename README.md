@@ -14,9 +14,24 @@ if you were to give feedback, this is where it would be most helpful.
 
 Last I checked (2018-07-01) i have done 125.
 
+## Problems table
+
+###### KEY:
+ 
+:snake: = python
+
+:ocean: = cpp
+
+:shell: = bash/shell
+
+:poop: = bash
+
+:vertical_traffic_light: = go
+
+:no_smoking: = close, but no cigar; takes more than 1 min
 | Problem # | ~ | # | ~ | # | ~ | # | ~ | # | ~ |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|001|:snake::shell::vertical_traffic_light::ocean::poop:|002|:poop::snake::shell::ocean:|003|:snake::ocean:|004|:snake::ocean:|005|:snake:|
+|001|:shell::ocean::snake::vertical_traffic_light::poop:|002|:poop::snake::shell::ocean:|003|:snake::ocean:|004|:snake::ocean:|005|:snake:|
 |006|:snake:|007|:snake:|008|:snake:|009|:snake:|010|:snake::ocean:|
 |011|:snake:|012|:snake:|013|:snake:|014|:snake:|015|:snake:|
 |016|:snake:|017|:snake:|018|:snake:|019|:snake:|020|:snake:|
