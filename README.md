@@ -24,7 +24,7 @@ Last I checked (2018-07-01) i have done 125.
 
 :shell: = bash/shell
 
-:poop: = bash
+:poop: = javascript
 
 :vertical_traffic_light: = go
 
@@ -33,7 +33,7 @@ Last I checked (2018-07-01) i have done 125.
 
 | Problem # | ~ | # | ~ | # | ~ | # | ~ | # | ~ |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|001|:snake::vertical_traffic_light::poop::ocean::shell:|002|:snake::ocean::shell::poop:|003|:snake::ocean:|004|:snake::ocean:|005|:snake:|
+|001|:poop::snake::shell::vertical_traffic_light::ocean:|002|:snake::shell::poop::ocean:|003|:snake::ocean:|004|:snake::ocean:|005|:snake:|
 |006|:snake:|007|:snake:|008|:snake:|009|:snake:|010|:snake::ocean:|
 |011|:snake:|012|:snake:|013|:snake:|014|:snake:|015|:snake:|
 |016|:snake:|017|:snake:|018|:snake:|019|:snake:|020|:snake:|

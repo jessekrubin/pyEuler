@@ -96,7 +96,7 @@ TABLE_KEY = f"""## Problems table
 
 {SH_EMOJI} = bash/shell
 
-{JS_EMOJI} = bash
+{JS_EMOJI} = javascript
 
 {GO_EMOJI} = go
 
