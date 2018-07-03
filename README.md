@@ -12,7 +12,7 @@ if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-07-01) i have done 125.
+Last I checked (2018-07-02) i have done 125.
 
 ## Problems table
 
@@ -33,8 +33,8 @@ Last I checked (2018-07-01) i have done 125.
 
 | Problem # | ~ | # | ~ | # | ~ | # | ~ | # | ~ |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|001|:poop::snake::shell::vertical_traffic_light::ocean:|002|:snake::shell::poop::ocean:|003|:snake::ocean:|004|:snake::ocean:|005|:snake:|
-|006|:snake:|007|:snake:|008|:snake:|009|:snake:|010|:snake::ocean:|
+|001|:poop::shell::ocean::vertical_traffic_light::snake:|002|:poop::ocean::shell::snake:|003|:ocean::snake:|004|:ocean::snake:|005|:snake:|
+|006|:snake:|007|:snake:|008|:snake:|009|:snake:|010|:ocean::snake:|
 |011|:snake:|012|:snake:|013|:snake:|014|:snake:|015|:snake:|
 |016|:snake:|017|:snake:|018|:snake:|019|:snake:|020|:snake:|
 |021|:snake:|022|:snake:|023|:snake:|024|:snake:|025|:snake:|
