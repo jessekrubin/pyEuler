@@ -9,29 +9,30 @@ from datetime import datetime
 from json import load, dump
 from codecs import getwriter
 from os import listdir
+from os.path import join
 
 LAST_UPDATED = datetime.now().strftime("%Y-%m-%d")
 EULER_IMG_URL = r'https://projecteuler.net/profile/rubinj.png'
 
-DONE = sorted([int(f[6:9]) for f in listdir(r'./py')
+DONE = sorted([int(f[6:9]) for f in listdir(join('done', 'py'))
                if f.startswith('euler_')
                and f.endswith('.py')])
 
 DONE_DICT = {
     ### PYTHON
-    "py" : [int(f[6:9]) for f in listdir('./py')
+    "py" : [int(f[6:9]) for f in listdir(join('done', 'py'))
             if f.startswith('euler_') and f.endswith('.py')],
     ### CPP
-    "cpp": [int(f[6:9]) for f in listdir('./cpp')
+    "cpp": [int(f[6:9]) for f in listdir(join('done', 'cpp'))
             if f.startswith('euler_') and f.endswith('.cpp')],
     ### JAVASCRIPT
-    "js" : [int(f[6:9]) for f in listdir('./js')
+    "js" : [int(f[6:9]) for f in listdir(join('done', 'js'))
             if f.startswith('euler_') and f.endswith('.js')],
     ### GO
-    "go" : [int(f[6:9]) for f in listdir('./go')
+    "go" : [int(f[6:9]) for f in listdir(join('done', 'go'))
             if f.startswith('euler_') and f.endswith('.go')],
     ### BASH
-    "sh" : [int(f[6:9]) for f in listdir('./sh')
+    "sh" : [int(f[6:9]) for f in listdir(join('done', 'sh'))
             if f.startswith('euler_') and f.endswith('.sh')]
     }
 
@@ -44,7 +45,7 @@ for language, probslist in DONE_DICT.items():
     for problem in probslist:
         probs[problem].add(language)
 
-NO_CIGAR = sorted([int(f[6:9]) for f in listdir(r'../no_cigar')
+NO_CIGAR = sorted([int(f[6:9]) for f in listdir('no_cigar')
                    if f.startswith('euler_') and f.endswith('.py')])
 
 N_EULER_PROBS = 615 + 1
@@ -58,10 +59,10 @@ README_TEXT = f"""# p(y)Euler
 This is my primarily python project euler problems repository.
 Now with more languages and a very special someone (Ryan Saeta).
 I do these problems for fun, and because if I don't do them...then who will?
-Recently I have started to do some of the problems in bash. 
+Recently I have started to do some of the problems in bash.
 Check out my Pretty Useful Python package (pupy ~ `pip install pupy`);
-Feel free to leave either constructive or dispariging criticism 
-(no neutral criticism please). 
+Feel free to leave either constructive or dispariging criticism
+(no neutral criticism please).
 Solutions that are slow or brute-forcy are in the close, but "no_cigar" folder;
 if you were to give feedback, this is where it would be most helpful.
 
@@ -89,7 +90,7 @@ EMOJI_DICTIONARY = {
 TABLE_KEY = f"""## Problems table
 
 ###### KEY:
- 
+
 {PY_EMOJI} = python
 
 {CPP_EMOJI} = cpp
@@ -105,7 +106,7 @@ TABLE_KEY = f"""## Problems table
 
 """
 
-SOLUTIONS_PATH = "../txt_files/solutions.txt"
+SOLUTIONS_PATH = join('txt_files', 'solutions.txt')
 
 
 def update_solutions_txt(done):
