@@ -8,6 +8,7 @@ from operator import itemgetter
 from sys import version_info
 from time import time
 from tqdm import tqdm
+from pupy.decorations import tictoc
 
 with open('../txt_files/solutions.txt') as f:
     SOLUTIONS = jasm.load(f)
@@ -16,6 +17,7 @@ PASSED, NO_SOL, NO_PFUNK, FAILED, SOL_IS_NONE = [], [], [], [], []
 
 # VERBOSE = True
 VERBOSE = False
+
 
 def czech_answer(pn_str):
     """Checks if the project euler solutions in this repo are correct
@@ -31,7 +33,7 @@ def czech_answer(pn_str):
             'SOL_IS_NONE': the __sol__ variable for the problem is None
     """
     # p_file = import_module("py.euler_{}".format(pn_str))
-    p_file = import_module('./done/py/euler_{}'.format(pn_str))
+    p_file = import_module('done.py.euler_{}'.format(pn_str))
     # p_file = import_module(path(getcwd(), "euler_{}".format(pn_str)))
     try:
         p_funk = getattr(p_file, 'p{}'.format(pn_str))
@@ -51,7 +53,7 @@ def czech_answer(pn_str):
         return pn_str, 'SOL_IS_NONE'
     ts = time()
     my_ans = p_funk()
-    te = (time() - ts) * 1000
+    te = tictoc.ftime(time() - ts)
     try:
         assert p_ans == my_ans
     except AssertionError:
@@ -60,7 +62,7 @@ def czech_answer(pn_str):
         return pn_str, 'FAIL'
     if VERBOSE:
         print("PASS: {} ({} ms)".format(pn_str, round(te)))
-    return pn_str, round(te)
+    return pn_str, te
 
 
 def parse_results(results):
@@ -71,11 +73,13 @@ def parse_results(results):
         print("ALL R A O K!!")
     else:
         print("{} TESTS PASS".format(len(PASSED)))
-        FAILED = [problem_n for problem_n, res in results.items() if res == 'FAIL']
+        FAILED = [problem_n for problem_n in results
+                  if results[problem_n]== 'FAIL']
         if len(FAILED) > 0:
             print("__FAILS__")
             print(FAILED)
-        NO_SOL = [problem_n for problem_n, res in results.items() if res == 'NO_SOL']
+        NO_SOL = [problem_n for problem_n, res in results.items()
+                  if res == 'NO_SOL']
         if len(NO_SOL) > 0:
             print("__NO_SOL__")
             print(NO_SOL)
@@ -92,16 +96,27 @@ def parse_results(results):
     print("SOLUTIONS SLOWEST TO FASTEST")
     print(PASSED)
 
+from sys import stderr, stdout
 
 if __name__ == '__main__':
     DONE = [f[6:9] for f in listdir('./py')  # find all files in the done dir
             if f.startswith('euler_')  # for which the file start with 'euler_'
             and f.endswith('.py')]  # and ends with '.py'
+    if True:
+        test_results = {}
+        for problem_n, uh in map(czech_answer, DONE):
+            stdout.write("\r{} {}\n{}".format(problem_n, uh, len(test_results)/len(DONE)))
+            test_results[problem_n]=uh
+    else:
+        p = Pool(processes=4)
+        test_results = {problem_n: test_result
+                        for problem_n, test_result in
+                        tqdm(p.imap_unordered(czech_answer, DONE),
+                             total=len(DONE),
+                             desc="CHECKING SOLUTIONS",
+                             ascii=True,
+                             leave=True)}
+        p.close()  ## close pool
+        p.join()  ## join pool
+        parse_results(test_results)
 
-    p = Pool()  # eight process pool
-    test_results = {problem_n: test_result for problem_n, test_result in
-                    tqdm(p.imap_unordered(czech_answer, DONE), total=len(DONE), desc="CHECKING SOLUTIONS",
-                         ascii=True if version_info[0] == 2 else False, leave=True)}
-    p.close()  # close pool
-    p.join()  # join pool
-    parse_results(test_results)

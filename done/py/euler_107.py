@@ -9,14 +9,14 @@ with a total weight of 243.
 
 The same network can be represented by the matrix below.
 
-    A	B	C	D	E	F	G
+    A	B	C	D	E	F	G1
 A	-	16	12	21	-	-	-
 B	16	-	-	17	20	-	-
 C	12	-	-	28	-	31	-
 D	21	17	28	-	18	19	23
 E	-	20	-	18	-	-	11
 F	-	-	31	19	-	-	27
-G	-	-	-	23	11	27	-
+G1	-	-	-	23	11	27	-
 
 
 However, it is possible to optimise the network by removing some edges and
