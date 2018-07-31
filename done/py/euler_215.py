@@ -49,7 +49,7 @@ def brick_cracks(remaining, legos=(2, 3), cur_layer=None):
             for layer in brick_cracks(remaining-n, legos, tuple(list(cur_layer)+[n])):
                 yield layer
         if remaining == 0: yield tuple(sum(cur_layer[0:i]) for i in range(1, len(cur_layer)))
-        if remaining == 1: raise StopIteration
+        if remaining == 1: StopIteration
 
 
 def W(width, height):

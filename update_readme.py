@@ -20,21 +20,21 @@ DONE = sorted([int(f[6:9]) for f in listdir(join('done', 'py'))
 
 DONE_DICT = {
     ### PYTHON
-    "py" : [int(f[6:9]) for f in listdir(join('done', 'py'))
-            if f.startswith('euler_') and f.endswith('.py')],
+    "py": [int(f[6:9]) for f in listdir(join('done', 'py'))
+           if f.startswith('euler_') and f.endswith('.py')],
     ### CPP
     "cpp": [int(f[6:9]) for f in listdir(join('done', 'cpp'))
             if f.startswith('euler_') and f.endswith('.cpp')],
     ### JAVASCRIPT
-    "js" : [int(f[6:9]) for f in listdir(join('done', 'js'))
-            if f.startswith('euler_') and f.endswith('.js')],
+    "js": [int(f[6:9]) for f in listdir(join('done', 'js'))
+           if f.startswith('euler_') and f.endswith('.js')],
     ### GO
-    "go" : [int(f[6:9]) for f in listdir(join('done', 'go'))
-            if f.startswith('euler_') and f.endswith('.go')],
+    "go": [int(f[6:9]) for f in listdir(join('done', 'go'))
+           if f.startswith('euler_') and f.endswith('.go')],
     ### BASH
-    "sh" : [int(f[6:9]) for f in listdir(join('done', 'sh'))
-            if f.startswith('euler_') and f.endswith('.sh')]
-    }
+    "sh": [int(f[6:9]) for f in listdir(join('done', 'sh'))
+           if f.startswith('euler_') and f.endswith('.sh')]
+}
 
 probs = {prob: set()
          for prob in
@@ -81,12 +81,12 @@ GO_EMOJI = ":vertical_traffic_light:"
 NO_CIGAR_EMOJI = ":no_smoking:"
 
 EMOJI_DICTIONARY = {
-    "py" : PY_EMOJI,
+    "py": PY_EMOJI,
     "cpp": CPP_EMOJI,
-    "js" : JS_EMOJI,
-    "go" : GO_EMOJI,
-    "sh" : SH_EMOJI
-    }
+    "js": JS_EMOJI,
+    "go": GO_EMOJI,
+    "sh": SH_EMOJI
+}
 TABLE_KEY = f"""## Problems table
 
 ###### KEY:
@@ -125,7 +125,7 @@ def update_solutions_txt(done):
     with open(SOLUTIONS_PATH, 'wb') as f:
         dump(solutions, getwriter('utf-8')(f), indent=4, sort_keys=True)
 
-print(probs)
+
 def table_problem(n):
     return "".join(EMOJI_DICTIONARY[p] for p in probs[int(n)])
 
@@ -138,7 +138,6 @@ def format_table_line(row):
         status = NOT_STARTED_EMOJI
         if n in DONE:
             status = table_problem(n)
-            # n_string = "[{}](done/py/euler_{}.py)".format(str("p{}".format(n)), str(n).zfill(3))
         elif n in NO_CIGAR:
             status = NO_CIGAR_EMOJI
         linelist.append("|{}|{}".format(str(n).zfill(3), status))
