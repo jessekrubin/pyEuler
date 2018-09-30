@@ -73,7 +73,7 @@ def minimal_network(network_lists):
 
 
 def p107():
-    with open('../txt_files/p107_network.txt') as f: txt_lines = f.readlines()
+    with open('../../txt_files/p107_network.txt') as f: txt_lines = f.readlines()
     big_network = [line.strip('\n').split(',') for line in txt_lines]
     return minimal_network(big_network)
 

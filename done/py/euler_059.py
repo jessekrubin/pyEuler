@@ -43,7 +43,7 @@ def decrypt(arr, key):
 def p059():
     # well i just put in a few words and boom. super lucky.
     # only one decrypted message had the words and, the and was...
-    with open('../txt_files/p059_cipher.txt') as f:
+    with open(r'../../txt_files/p059_cipher.txt') as f:
         cipher = list(map(int, f.readline().split(',')))
     ascii_values = [ord(c) for c in ascii_lowercase]
     not_crypts = (decrypt(cipher, p) for p in permutations(ascii_values, 3))

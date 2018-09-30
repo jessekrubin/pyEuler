@@ -22,7 +22,7 @@ from pupy.werd import string_score
 
 
 def p022():
-    with open(r"../txt_files/p022_names.txt", 'r') as file:
+    with open(r"../../txt_files/p022_names.txt", 'r') as file:
         names = file.readline().strip('\"').split('\",\"')
     names.sort()
     return sum(i + 1 * string_score(names[i])

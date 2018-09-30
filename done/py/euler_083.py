@@ -65,7 +65,7 @@ def path_sum_four_ways(mat):
 
 
 def p083():
-    with open('../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
+    with open(r'../../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
         big_mat = list(list(map(int, row.strip('\n').split(',')))
                        for row in f.readlines())
     return path_sum_four_ways(big_mat)

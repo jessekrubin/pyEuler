@@ -179,7 +179,7 @@ class PokerHand(object):
         return None
 
 
-with open("../txt_files/p054_poker.txt") as f:
+with open("../../txt_files/p054_poker.txt") as f:
     games = [game.strip('\n').split(' ') for game in f.readlines()]
 
 

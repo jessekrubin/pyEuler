@@ -51,7 +51,7 @@ def saved_chars_better(roman):
 
 
 def p089():
-    with open('../txt_files/p089_roman_nums.txt') as f:  # load the roman numerals
+    with open('../../txt_files/p089_roman_nums.txt') as f:  # load the roman numerals
         numerals = [numeral.strip('\n') for numeral in f.readlines()]
 
     return sum(map(saved_chars_better, numerals))

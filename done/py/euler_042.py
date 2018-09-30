@@ -23,7 +23,7 @@ from pupy.werd import string_score
 
 
 def p042():
-    with open(r'../txt_files/p042_words.txt') as f:
+    with open(r'../../txt_files/p042_words.txt') as f:
         words = [s.strip("\"") for s in f.readlines()[0].split(',')]
 
     word_scores = map(string_score, words)

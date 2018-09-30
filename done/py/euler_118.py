@@ -20,7 +20,7 @@ from pupy.decorations import Jasm
 try: range
 except NameError: range = range
 
-pandaprimespath = '../txt_files/panda_primes_set.txt'
+pandaprimespath = '../../txt_files/panda_primes_set.txt'
 
 
 @Jasm(pandaprimespath)

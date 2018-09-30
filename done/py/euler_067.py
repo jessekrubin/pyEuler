@@ -53,7 +53,7 @@ lil_string_triangle = """3
 8 5 9 3"""
 little_tri = triangle_lists(lil_string_triangle)
 
-with open(r'../txt_files/p067_triangle.txt') as f:
+with open(r'../../txt_files/p067_triangle.txt') as f:
     big_tri = tuple([
         tuple(map(int, j.split(' ')))
         for j in [i.strip('\n') for i in f.readlines()]

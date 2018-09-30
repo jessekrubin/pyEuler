@@ -9,7 +9,7 @@ from time import time
 from tqdm import tqdm
 from pupy.decorations import tictoc
 
-with open('../txt_files/solutions.txt') as f:
+with open('../../txt_files/solutions.txt') as f:
     SOLUTIONS = jasm.load(f)
 
 PASSED, NO_SOL, NO_PFUNK, FAILED, SOL_IS_NONE = [], [], [], [], []
@@ -99,7 +99,7 @@ def parse_results(results):
 from sys import stderr, stdout
 
 if __name__ == '__main__':
-    DONE = [f[6:9] for f in listdir('./py')  # find all files in the done dir
+    DONE = [f[6:9] for f in listdir('.')  # find all files in the done dir
             if f.startswith('euler_')  # for which the file start with 'euler_'
             and f.endswith('.py')]  # and ends with '.py'
 
@@ -109,7 +109,7 @@ if __name__ == '__main__':
             stdout.write("\r{} {}\n{}".format(problem_n, uh, len(test_results) / len(DONE)))
             test_results[problem_n] = uh
     elif True:
-        p = Pool(processes=2)
+        p = Pool()
         results = {}
         for problem_n, test_result in p.imap_unordered(czech_answer, DONE):
             write_to = stdout

@@ -56,7 +56,7 @@ def p082():
                [537, 699, 497, 121, 956],
                [805, 732, 524, 37, 331]]
 
-    with open('../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
+    with open(r'../../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
         big_mat = list(list(map(int, row.strip('\n').split(','))) for row in f.readlines())
     assert 994 == min_path_three_ways(lil_mat)  # check the small test_pupy case
     return min_path_three_ways(big_mat)
