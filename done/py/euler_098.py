@@ -73,7 +73,6 @@ def isit(a, b):
             yield r
 
 things = list()
-
 for an in anagrams:
     for cb in combinations(an, 2):
         things.extend(isit(*cb))
