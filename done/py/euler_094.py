@@ -16,6 +16,7 @@ side lengths and area and whose perimeters do not exceed one billion
 (1,000,000,000).
 """
 from pupy.maths import pytriple_gen
+from pupy.decorations import cprof
 from time import time
 
 
@@ -32,17 +33,19 @@ def almost_equilateral(max_perimeter):
     the shortest leg in the triple +/-1 is equal to the hypotenuse (c). For an
     AET max perimeter of p, we look at pythagorean triples with c < p/3.
     """
-    for tri in pytriple_gen((max_perimeter+3)//3):
-        if abs(tri[-1]-(tri[0]*2)) == 1:
-            yield (tri[0]*2, tri[-1], tri[-1])
+    return ((tri[0]*2, tri[-1], tri[-1])
+            for tri in pytriple_gen((max_perimeter+3)//3)
+            if abs(tri[-1]-(tri[0]*2)) == 1)
 
-
+@cprof
 def p094(max_perimeter=(10**9)):
-    perimeter_sum = 0
-    for i in almost_equilateral(max_perimeter):
-        print(i)
-        perimeter_sum += sum(i)
-    return perimeter_sum
+#     perimeter_sum = 0
+    # for i in almost_equilateral(max_perimeter):
+#         perimeter_sum += sum(i)
+    return sum(sum(i) for i in almost_equilateral(max_perimeter))
+    # for i in almost_equilateral(max_perimeter):
+        # perimeter_sum += sum(i)
+    # return perimeter_sum
 
 
 if __name__ == '__main__':

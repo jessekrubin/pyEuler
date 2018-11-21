@@ -33,14 +33,19 @@ def sum_divisors(n):
 
 def p023():
     a_bun = set()
-    for i in range(1, 28124):
+    for i in range(1, 28123+1):
         sum_divs = sum_divisors(i)
         if sum_divs > i: a_bun.add(i)
 
     abun_sums = set(sum(combo) for combo in combinations(a_bun, 2))
-    return sum(set(i for i in range(28124) if i not in abun_sums))
+    ans = sum(set(i for i in range(15, 28123) if i not in abun_sums))
+    t = ans - 4179871
+    print(t)
+    print(t in a_bun)
+    return sum(set(i for i in range(15, 28123) if i not in abun_sums))
 
 
 if __name__ == '__main__':
     ans = p023()
+
     print("Sum: {}".format(ans))  # Sum: 4179871

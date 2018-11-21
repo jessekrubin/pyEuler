@@ -22,6 +22,8 @@ Find the smallest member of the longest amicable chain with no element
 exceeding one million.
 """
 
+from functools import lru_cache
+from pupy.decorations import cprof
 from pupy.maths import divisors_gen
 from pupy.amazon_prime import prime_gen
 
@@ -31,30 +33,31 @@ chainlengths = {}
 perfects = set()
 mean_numbers = set()
 
-
+@lru_cache(maxsize=None)
 def proper_divisors_gen(n):
-    return (number for number in divisors_gen(n)
-            if number < n)
+    return sum(number 
+                for number in divisors_gen(n)
+                if number < n)
 
-
+@lru_cache(maxsize=None)
 def is_perfect(n):
-    return n == sum(proper_divisors_gen(n))
+    return n == proper_divisors_gen(n)
 
-
+@lru_cache(maxsize=None)
 def chaingang(start_n):
     the_chain = []
     cur = start_n
     while cur not in the_chain and cur > 1:
         the_chain.append(cur)
         if cur in primes or cur > 1000000 or cur in mean_numbers: break
-        cur = sum(proper_divisors_gen(cur))
+        cur = proper_divisors_gen(cur)
 
-    if sum(proper_divisors_gen(the_chain[-1])) == start_n:
+    if proper_divisors_gen(the_chain[-1]) == start_n:
         clen = len(the_chain)
-        for n in the_chain: chainlengths[n] = clen
+        for n in the_chain: 
+            chainlengths[n] = clen
     else:
         mean_numbers.add(start_n)
-
 
 def p095():
     # for i in tqdm(range(2, 1000000), ascii=True, desc="p095"):

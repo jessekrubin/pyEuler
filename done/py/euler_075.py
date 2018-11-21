@@ -27,9 +27,8 @@ L ≤ 1,500,000 can exactly one integer sided right angle triangle
 be formed?
 """
 
-from math import sqrt
+from math import sqrt, gcd
 from itertools import count
-from fractions import gcd
 
 
 def pytriples_gen(perimeter_lim):
@@ -47,7 +46,7 @@ def pytriples_gen(perimeter_lim):
             hypotenuse = int(sqrt((real * real) + (imaginary * imaginary)))
             if (hypotenuse + imaginary + real) > perimeter_lim:
                 break
-            if gcd(real, imaginary) == 1:
+            if gcd(int(real), int(imaginary)) == 1:
                 yield (real, imaginary, hypotenuse)
 
 

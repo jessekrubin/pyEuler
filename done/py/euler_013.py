@@ -114,7 +114,7 @@ HUNDO_NUMBOS = [
 
 
 def p013():
-    return str(sum(HUNDO_NUMBOS))[:10]
+    return int(str(sum(HUNDO_NUMBOS))[:10])
 
 
 if __name__ == '__main__':

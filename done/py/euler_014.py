@@ -25,13 +25,16 @@ from pupy.decorations import cash_it
 
 @cash_it
 def collatz_len(n):
-    if n == 1: return 1
-    elif n % 2 == 0: return collatz_len(n // 2) + 1
-    else: return collatz_len(3 * n + 1) + 1
+    if n == 1:
+        return 1
+    elif n % 2 == 0: 
+        return collatz_len(n // 2) + 1
+    else:
+        return collatz_len(3 * n + 1) + 1
 
 
 def p014():
-    return max(((i, collatz_len(i)) for i in range(1, 1000000)), key=itemgetter(1))[0] + 1
+    return max(((i, collatz_len(i)) for i in range(1, 1000000)), key=itemgetter(1))[0]
 
 
 if __name__ == '__main__':

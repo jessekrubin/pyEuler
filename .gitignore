@@ -10,6 +10,8 @@ cppeuler/.vs/**
 /.pytest_cache/**
 bib/test_fest/.pytest_cache/**
 not_done/.idea/**
+.tox/
+.pyEuler*/
 
 # file types
 *.pyc
