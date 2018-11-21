@@ -24,12 +24,11 @@ NOTE: All anagrams formed must be contained in the given text file.
 from math import sqrt
 from itertools import combinations, count
 
-with open('../pyEuler/txt_files/p098_words.txt') as f: # load the matrix
+with open('../../txt_files/p098_words.txt') as f: # load the matrix
     words = [word.strip('"') for word in f.readline().split(',')]
 
 d = {}
 for w in words:
-    print(w)
     so = ''.join(c for c in sorted(w))
     if so in d:
         d[so].append(w)
@@ -66,29 +65,27 @@ def is2(a, b, n):
     return nb
     
 def isit(a, b):
-    print(a, b)
     l = len(a)
     for square in squares[l]:
         r = is2(a, b, square)
         if r is not None:
-            print(a, b, square, r)
             yield square
             yield r
 
 things = list()
 
 for an in anagrams:
-    print(an)
     for cb in combinations(an, 2):
         things.extend(isit(*cb))
 
 
 # isit('RACE', 'CARE')
 # is2('RACE', 'CARE', '9216')
-print(things)
-nums = map(int, things)
-maxn = max(nums)
-print(maxn)
+if __name__ == '__main__':
+
+    nums = map(int, things)
+    maxn = max(nums)
+    print("ANSWER", maxn)
 
 
 
