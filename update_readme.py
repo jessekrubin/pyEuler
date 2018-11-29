@@ -54,7 +54,7 @@ INPROG_EMOJI = ":scream:"
 NO_CIGAR_EMOJI = ":no_smoking:"
 NOT_STARTED_EMOJI = ":see_no_evil:"
 NUM_COLUMNS = 5
-README_TEXT = f"""# p(y)Euler
+README_TEXT = """# p(y)Euler
 
 This is my primarily python project euler problems repository.
 Now with more languages and a very special someone (Ryan Saeta).
@@ -66,11 +66,11 @@ Feel free to leave either constructive or dispariging criticism
 Solutions that are slow or brute-forcy are in the close, but "no_cigar" folder;
 if you were to give feedback, this is where it would be most helpful.
 
-![alt text]({EULER_IMG_URL})
+![alt text]({})
 
-Last I checked ({LAST_UPDATED}) i have done {(len(DONE)+len(NO_CIGAR))}.
+Last I checked ({}) i have done {}.
 
-"""
+""".format(EULER_IMG_URL, LAST_UPDATED, len(DONE)+len(NO_CIGAR))
 
 DONE_EMOJI = ":snake:"
 PY_EMOJI = ":snake:"
@@ -87,24 +87,25 @@ EMOJI_DICTIONARY = {
     "go": GO_EMOJI,
     "sh": SH_EMOJI
 }
-TABLE_KEY = f"""## Problems table
+
+TABLE_KEY = """## Problems table
 
 ###### KEY:
 
-{PY_EMOJI} = python
+{} = python
 
-{CPP_EMOJI} = cpp
+{} = cpp
 
-{SH_EMOJI} = bash/shell
+{} = bash/shell
 
-{JS_EMOJI} = javascript
+{} = javascript
 
-{GO_EMOJI} = go
+{} = go
 
-{NO_CIGAR_EMOJI} = close, but no cigar; takes more than 1 min
+{} = close, but no cigar; takes more than 1 min
 
 
-"""
+""".format(PY_EMOJI, CPP_EMOJI, SH_EMOJI, JS_EMOJI, GO_EMOJI, NO_CIGAR_EMOJI)
 
 SOLUTIONS_PATH = join('txt_files', 'solutions.txt')
 
