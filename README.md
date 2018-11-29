@@ -3,21 +3,21 @@
 This is my primarily python project euler problems repository.
 Now with more languages and a very special someone (Ryan Saeta).
 I do these problems for fun, and because if I don't do them...then who will?
-Recently I have started to do some of the problems in bash. 
+Recently I have started to do some of the problems in bash.
 Check out my Pretty Useful Python package (pupy ~ `pip install pupy`);
-Feel free to leave either constructive or dispariging criticism 
-(no neutral criticism please). 
+Feel free to leave either constructive or dispariging criticism
+(no neutral criticism please).
 Solutions that are slow or brute-forcy are in the close, but "no_cigar" folder;
 if you were to give feedback, this is where it would be most helpful.
 
 ![alt text](https://projecteuler.net/profile/rubinj.png)
 
-Last I checked (2018-07-02) i have done 125.
+Last I checked (2018-11-29) i have done 128.
 
 ## Problems table
 
 ###### KEY:
- 
+
 :snake: = python
 
 :ocean: = cpp
@@ -33,8 +33,8 @@ Last I checked (2018-07-02) i have done 125.
 
 | Problem # | ~ | # | ~ | # | ~ | # | ~ | # | ~ |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|001|:poop::shell::ocean::vertical_traffic_light::snake:|002|:poop::ocean::shell::snake:|003|:ocean::snake:|004|:ocean::snake:|005|:snake:|
-|006|:snake:|007|:snake:|008|:snake:|009|:snake:|010|:ocean::snake:|
+|001|:snake::ocean::vertical_traffic_light::poop::shell:|002|:snake::ocean::shell::poop:|003|:snake::ocean::poop:|004|:snake::ocean::poop:|005|:snake:|
+|006|:snake::shell:|007|:snake:|008|:snake:|009|:snake:|010|:snake::ocean:|
 |011|:snake:|012|:snake:|013|:snake:|014|:snake:|015|:snake:|
 |016|:snake:|017|:snake:|018|:snake:|019|:snake:|020|:snake:|
 |021|:snake:|022|:snake:|023|:snake:|024|:snake:|025|:snake:|
@@ -50,11 +50,12 @@ Last I checked (2018-07-02) i have done 125.
 |076|:snake:|077|:snake:|079|:snake:|080|:snake:|081|:snake:|
 |082|:snake:|083|:snake:|085|:snake:|086|:no_smoking:|087|:snake:|
 |089|:snake:|090|:snake:|092|:snake:|094|:snake:|095|:snake:|
-|096|:snake:|097|:snake:|099|:snake:|102|:snake:|104|:no_smoking:|
-|107|:snake:|109|:snake:|112|:snake:|113|:snake:|114|:snake:|
-|115|:snake:|116|:snake:|117|:snake:|118|:snake:|119|:snake:|
-|123|:snake:|124|:snake:|125|:snake:|134|:no_smoking:|139|:snake:|
-|145|:no_smoking:|162|:snake:|164|:snake:|172|:snake:|173|:snake:|
-|174|:snake:|178|:snake:|179|:snake:|187|:snake:|191|:snake:|
-|205|:snake:|206|:snake:|215|:snake:|218|:snake:|265|:snake:|
-|301|:no_smoking:|347|:snake:|348|:no_smoking:|493|:snake:|613|:no_smoking:|
+|096|:snake:|097|:snake:|098|:snake:|099|:snake:|102|:snake:|
+|104|:no_smoking:|105|:snake:|107|:snake:|109|:snake:|112|:snake:|
+|113|:snake:|114|:snake:|115|:snake:|116|:snake:|117|:snake:|
+|118|:snake:|119|:snake:|123|:snake:|124|:snake:|125|:snake:|
+|134|:no_smoking:|139|:snake:|145|:no_smoking:|162|:snake:|164|:snake:|
+|172|:snake:|173|:snake:|174|:snake:|178|:snake:|179|:snake:|
+|187|:snake:|191|:snake:|205|:snake:|206|:snake:|215|:snake:|
+|218|:snake:|265|:snake:|301|:no_smoking:|347|:snake:|348|:no_smoking:|
+|387|:snake:|493|:snake:|613|:no_smoking:|

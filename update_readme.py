@@ -161,7 +161,7 @@ def sur_la_table():
 
 
 def write_README():
-    with open('../README.md', 'w') as f:
+    with open('README.md', 'w') as f:
         f.write(README_TEXT)
         f.write(TABLE_KEY)
         table_header = "| Problem # | ~ |" + " # | ~ |" * (NUM_COLUMNS - 1) + "\n"
