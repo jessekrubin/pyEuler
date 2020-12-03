@@ -24,20 +24,22 @@ Find the least number for which the proportion of bouncy numbers is exactly
 99%
 """
 from __future__ import division
-from pupy.listless import digits_list
+from pupy.foreign import digits_list
 
-try: range
-except NameError: range = range
+try:
+    range
+except NameError:
+    range = range
 
 
 def is_bouncy(n):
     digits = digits_list(n)
     increasing = False
     decreasing = False
-    for i in range(0, len(digits)-1):
-        if digits[i+1] < digits[i]:
+    for i in range(0, len(digits) - 1):
+        if digits[i + 1] < digits[i]:
             increasing = True
-        elif digits[i+1] > digits[i]:
+        elif digits[i + 1] > digits[i]:
             decreasing = True
         if increasing and decreasing:
             return True
@@ -51,10 +53,8 @@ def find_proportion(percent):
         i += 1
         if is_bouncy(i):
             bouncy_count += 1
-        if (bouncy_count/i) == (percent/100):
+        if (bouncy_count / i) == (percent / 100):
             return i
-
-
 
 
 def p112(percentage=99):

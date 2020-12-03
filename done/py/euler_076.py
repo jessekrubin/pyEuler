@@ -34,4 +34,8 @@ def p076():
 
 if __name__ == '__main__':
     ANSWER = p076()
-    print("{} can be written as a sum of at least two positive integers {} ways.".format(100, ANSWER))
+    print(
+        "{} can be written as a sum of at least two positive integers {} ways.".format(
+            100, ANSWER
+        )
+    )

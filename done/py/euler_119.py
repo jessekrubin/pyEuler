@@ -34,7 +34,7 @@ def p119():
                 a.append(aaa)
 
     a.sort()
-    return a[30-1]
+    return a[30 - 1]
 
 
 if __name__ == '__main__':

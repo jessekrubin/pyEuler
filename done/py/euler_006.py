@@ -21,7 +21,9 @@ natural numbers and the square of the sum.
 
 
 def sq_sum_diff(lim):
-    return sum(i+1 for i in range(lim))**2-sum((i+1)*(i+1) for i in range(lim))
+    return sum(i + 1 for i in range(lim)) ** 2 - sum(
+        (i + 1) * (i + 1) for i in range(lim)
+    )
 
 
 def p006():

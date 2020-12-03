@@ -33,18 +33,21 @@ def almost_equilateral(max_perimeter):
     the shortest leg in the triple +/-1 is equal to the hypotenuse (c). For an
     AET max perimeter of p, we look at pythagorean triples with c < p/3.
     """
-    return ((tri[0]*2, tri[-1], tri[-1])
-            for tri in pytriple_gen((max_perimeter+3)//3)
-            if abs(tri[-1]-(tri[0]*2)) == 1)
+    return (
+        (tri[0] * 2, tri[-1], tri[-1])
+        for tri in pytriple_gen((max_perimeter + 3) // 3)
+        if abs(tri[-1] - (tri[0] * 2)) == 1
+    )
+
 
 @cprof
-def p094(max_perimeter=(10**9)):
-#     perimeter_sum = 0
+def p094(max_perimeter=(10 ** 9)):
+    #     perimeter_sum = 0
     # for i in almost_equilateral(max_perimeter):
-#         perimeter_sum += sum(i)
+    #         perimeter_sum += sum(i)
     return sum(sum(i) for i in almost_equilateral(max_perimeter))
     # for i in almost_equilateral(max_perimeter):
-        # perimeter_sum += sum(i)
+    # perimeter_sum += sum(i)
     # return perimeter_sum
 
 
@@ -55,4 +58,4 @@ if __name__ == '__main__':
     sol = p094()
     tf = time()
     print("Solution: {}".format(sol))
-    print("Time:     {} ms".format((tf-ti)*1000))
+    print("Time:     {} ms".format((tf - ti) * 1000))

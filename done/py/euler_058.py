@@ -25,7 +25,7 @@ side mag of the square spiral for which the ratio of primes along both
 diagonals first falls below 10%?
 """
 
-from pupy.amazon_prime import is_prime
+from pupy.amazon import is_prime
 from operator import truediv
 
 
@@ -37,15 +37,15 @@ def spiral_prime_iterator(ratio_bound):
     no_primes = 0
     total_nums = 0
     while ratio > ratio_bound:
-        if adds > 0 and adds%4 == 0:
+        if adds > 0 and adds % 4 == 0:
             addon += 2
         i += addon
         adds += 1
         total_nums += 1
-        if is_prime(i+1):
+        if is_prime(i + 1):
             no_primes += 1
         ratio = truediv(no_primes, total_nums)
-    return addon+1
+    return addon + 1
 
 
 def p058():

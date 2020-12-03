@@ -25,7 +25,7 @@ truncatable Harshad primes less than 10000 is 90619. Find the sum of the
 strong, right truncatable Harshad primes less than 1014.
 """
 
-from pupy.amazon_prime import is_prime
+from pupy.amazon import is_prime
 
 
 def p387(LIMIT=10 ** 14):
@@ -47,9 +47,9 @@ def p387(LIMIT=10 ** 14):
     rthp = set()
 
     def _harshad_primes(n):
-        return set(a for a in
-                   (n * 10 + i for i in range(1, 10))
-                   if is_prime(a) and a < LIMIT)
+        return set(
+            a for a in (n * 10 + i for i in range(1, 10)) if is_prime(a) and a < LIMIT
+        )
 
     def _strong_harshad_numbers(n, digits_sum):
         for i in range(10):
@@ -66,18 +66,20 @@ def p387(LIMIT=10 ** 14):
     return sum(rthp)
 
 
-io = {1000: 2449,
-      10000: 90619,
-      100000: 388207,
-      1000000: 1188721,
-      10000000: 10057005,
-      100000000: 130459097,
-      1000000000: 1652107364,
-      10000000000: 36498117748,
-      100000000000: 497168223439,
-      1000000000000: 2897368636255,
-      10000000000000: 47175350800711,
-      100000000000000: 696067597313468}
+io = {
+    1000: 2449,
+    10000: 90619,
+    100000: 388207,
+    1000000: 1188721,
+    10000000: 10057005,
+    100000000: 130459097,
+    1000000000: 1652107364,
+    10000000000: 36498117748,
+    100000000000: 497168223439,
+    1000000000000: 2897368636255,
+    10000000000000: 47175350800711,
+    100000000000000: 696067597313468,
+}
 
 from pprint import pprint
 

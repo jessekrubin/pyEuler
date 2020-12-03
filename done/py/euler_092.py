@@ -21,15 +21,17 @@ How many starting numbers below ten million will arrive at 89?
 from pupy.decorations import cash_it
 from itertools import combinations_with_replacement
 
-squares = {str(i):i*i for i in range(10)}
+squares = {str(i): i * i for i in range(10)}
 
 
 def next_num(n):
     return int(''.join(sorted(c for c in str(sum(squares[d] for d in str(n))))))
 
 
-nexts = {int(''.join(c)):next_num(''.join(c))
-         for c in combinations_with_replacement('0123456789', 8)}
+nexts = {
+    int(''.join(c)): next_num(''.join(c))
+    for c in combinations_with_replacement('0123456789', 8)
+}
 
 
 @cash_it
@@ -43,8 +45,7 @@ def goes_to_89(n):
 
 
 def p092():
-    return sum((1 for i in range(1, 10000000)
-                if goes_to_89(next_num(i))))
+    return sum((1 for i in range(1, 10000000) if goes_to_89(next_num(i))))
 
 
 if __name__ == '__main__':

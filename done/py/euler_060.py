@@ -16,7 +16,7 @@ concatenate to produce another prime.
 
 from itertools import combinations
 from collections import defaultdict
-from pupy.amazon_prime import prime_gen, is_prime
+from pupy.amazon import prime_gen, is_prime
 from pupy.decorations import cash_it
 
 
@@ -31,7 +31,7 @@ def num_digits(number):
 
 
 def concat_numbers(a, b):
-    return a*10**(num_digits(b))+b
+    return a * 10 ** (num_digits(b)) + b
 
 
 @cash_it
@@ -61,7 +61,7 @@ def prime_pair_sets(set_size):
                 pairs[p].add(p)
                 pairs[pp].add(pp)
 
-        for comb in combinations(pairs[p], set_size-1):
+        for comb in combinations(pairs[p], set_size - 1):
             sssss = look_up_is_prime_pair_set(comb)
             if len(sssss) == set_size:
                 return sum(sssss)

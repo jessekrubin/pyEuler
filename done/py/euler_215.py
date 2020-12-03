@@ -42,14 +42,18 @@ def brick_cracks(remaining, legos=(2, 3), cur_layer=None):
     """
     if cur_layer is None:
         for lego in legos:
-            for layer in brick_cracks(remaining-lego, legos, tuple([lego])):
+            for layer in brick_cracks(remaining - lego, legos, tuple([lego])):
                 yield layer
     else:
         for n in [l for l in legos if l <= remaining]:
-            for layer in brick_cracks(remaining-n, legos, tuple(list(cur_layer)+[n])):
+            for layer in brick_cracks(
+                remaining - n, legos, tuple(list(cur_layer) + [n])
+            ):
                 yield layer
-        if remaining == 0: yield tuple(sum(cur_layer[0:i]) for i in range(1, len(cur_layer)))
-        if remaining == 1: StopIteration
+        if remaining == 0:
+            yield tuple(sum(cur_layer[0:i]) for i in range(1, len(cur_layer)))
+        if remaining == 1:
+            StopIteration
 
 
 def W(width, height):
@@ -63,11 +67,12 @@ def W(width, height):
     @cash_it  # cache / memozation decorator for recurssive function
     def layer_combos(remaining, cur):
         """Count layer combos using the disjoint sets dictionary"""
-        if remaining == 0: return 1
-        return sum(layer_combos(remaining-1, d) for d in disjoints[cur])
+        if remaining == 0:
+            return 1
+        return sum(layer_combos(remaining - 1, d) for d in disjoints[cur])
 
     # return count of all layer combos for each starting layer
-    return sum(layer_combos(height-1, layer) for layer in disjoints)
+    return sum(layer_combos(height - 1, layer) for layer in disjoints)
 
 
 def p215():

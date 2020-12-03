@@ -77,7 +77,8 @@ pn = [p3_list, p4_list, p5_list, p6_list, p7_list, p8_list]
 
 
 def curses(has, cur):
-    if sum(has) == 6 and cur[0] // 100 == cur[-1] % 100: return cur
+    if sum(has) == 6 and cur[0] // 100 == cur[-1] % 100:
+        return cur
     for n in range(6):
         if has[n] == 0:
             for nexto in pn[n]:
@@ -87,7 +88,8 @@ def curses(has, cur):
                     thas = has[:]  # quick copy has
                     thas[n] = 1  # set the list to 1 with a possible next
                     recurse = curses(thas, tc)  # recurse and try next
-                    if recurse is not None: return recurse
+                    if recurse is not None:
+                        return recurse
     return
 
 
@@ -95,7 +97,8 @@ def p061():
     for n in p3_list:
         has = [1, 0, 0, 0, 0, 0]
         ans = curses(has, [n])
-        if ans is not None: return sum(ans)
+        if ans is not None:
+            return sum(ans)
 
 
 if __name__ == '__main__':

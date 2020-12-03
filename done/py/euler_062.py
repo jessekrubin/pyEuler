@@ -13,7 +13,7 @@ are cube.
 """
 
 from itertools import count
-from pupy.listless import digits_list, int_from_digits
+from pupy.foreign import digits_list, int_from_digits
 
 
 def cubic_perms(n_perms):

@@ -12,7 +12,7 @@ What is the largest n-digit pandigital prime that exists?
 """
 
 from itertools import permutations
-from pupy.amazon_prime import is_prime
+from pupy.amazon import is_prime
 
 
 def p041():

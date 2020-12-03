@@ -36,10 +36,10 @@ def f(m, n, last_one=True):
         return 1
     else:
         blockcount = 0
-        blockcount += f(m, n-1, True)
+        blockcount += f(m, n - 1, True)
         if last_one:
-            for i in range(m, n+1):
-                blockcount += f(m, n-i, False)
+            for i in range(m, n + 1):
+                blockcount += f(m, n - i, False)
         return blockcount
 
 

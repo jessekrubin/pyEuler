@@ -26,23 +26,25 @@ def update_has(has, n):
 
 @cash_it
 def rec(remaining, last, has):
-    if remaining == 0 and has == '0123456789': return 1
-    if remaining == 0 and has != '0123456789': return 0
+    if remaining == 0 and has == '0123456789':
+        return 1
+    if remaining == 0 and has != '0123456789':
+        return 0
     pancount = 0
     if last < 9:
-        up = last+1
-        pancount += rec(remaining-1, up, update_has(has, up))
+        up = last + 1
+        pancount += rec(remaining - 1, up, update_has(has, up))
     if last > 0:
-        down = last-1
-        pancount += rec(remaining-1, down, update_has(has, down))
+        down = last - 1
+        pancount += rec(remaining - 1, down, update_has(has, down))
     return pancount
 
 
 def pandigital_step_numbers(ndigs):
     total = 0
-    for nd in range(10, ndigs+1, 1):
+    for nd in range(10, ndigs + 1, 1):
         for i in range(1, 10):
-            total += rec(nd-1, i, str(i))
+            total += rec(nd - 1, i, str(i))
     return total
 
 

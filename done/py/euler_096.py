@@ -40,7 +40,7 @@ found in the top left corner of the solution grid above.
 """
 
 from pupy.sodoku import Sodoku
-from pupy.listless import chunks
+from pupy.foreign import chunks
 
 
 def sol3d(grid):
@@ -55,8 +55,9 @@ def p096():
     with open('../../txt_files/p096_sodoku.txt', 'r') as f:
         f_lines = [line.strip('\n') for line in f.readlines()]
     sodoku_boards = [chunk for chunk in chunks(f_lines, 10)]
-    return sum(Sodoku("".join(s[1:])).euler_096_three_digit_number()
-               for s in sodoku_boards)
+    return sum(
+        Sodoku("".join(s[1:])).euler_096_three_digit_number() for s in sodoku_boards
+    )
     # for s in sodokus:
     #     print(s)
 

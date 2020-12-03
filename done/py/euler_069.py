@@ -24,7 +24,7 @@ It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
 
 Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 """
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 
 
 def p069():
@@ -32,7 +32,7 @@ def p069():
     # prime numbers
     pprod = 1
     for p in prime_gen():
-        if pprod*p > 1000000:
+        if pprod * p > 1000000:
             return pprod
         pprod *= p
 

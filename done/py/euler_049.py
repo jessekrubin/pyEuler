@@ -16,8 +16,8 @@ What 12-digit number do you form by concatenating the three terms in this
 sequence?
 """
 
-from pupy.listless import digits_list
-from pupy.amazon_prime import is_prime
+from pupy.foreign import digits_list
+from pupy.amazon import is_prime
 from itertools import combinations
 from collections import defaultdict
 

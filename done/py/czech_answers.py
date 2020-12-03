@@ -65,28 +65,34 @@ def czech_answer(pn_str):
 
 
 def parse_results(results):
-    PASSED = [(problem_n, time) for problem_n, time in results.items() if type(time) is not str]
+    PASSED = [
+        (problem_n, time)
+        for problem_n, time in results.items()
+        if type(time) is not str
+    ]
     print("{} PASSED".format(len(PASSED)))
 
     if len(PASSED) == len(DONE):
         print("ALL R A O K!!")
     else:
         print("{} TESTS PASS".format(len(PASSED)))
-        FAILED = [problem_n for problem_n in results
-                  if results[problem_n] == 'FAIL']
+        FAILED = [problem_n for problem_n in results if results[problem_n] == 'FAIL']
         if len(FAILED) > 0:
             print("__FAILS__")
             print(FAILED)
-        NO_SOL = [problem_n for problem_n, res in results.items()
-                  if res == 'NO_SOL']
+        NO_SOL = [problem_n for problem_n, res in results.items() if res == 'NO_SOL']
         if len(NO_SOL) > 0:
             print("__NO_SOL__")
             print(NO_SOL)
-        SOL_IS_NONE = [problem_n for problem_n, res in results.items() if res == 'SOL_IS_NONE']
+        SOL_IS_NONE = [
+            problem_n for problem_n, res in results.items() if res == 'SOL_IS_NONE'
+        ]
         if len(SOL_IS_NONE) > 0:
             print("__SOL_IS_NONE__")
             print(SOL_IS_NONE)
-        NO_PFUNK = [problem_n for problem_n, res in results.items() if res == 'NO_PFUNK']
+        NO_PFUNK = [
+            problem_n for problem_n, res in results.items() if res == 'NO_PFUNK'
+        ]
         if len(NO_PFUNK) > 0:
             print("__NO_PFUNK__\n", NO_PFUNK)
             print(NO_PFUNK)
@@ -99,14 +105,19 @@ def parse_results(results):
 from sys import stderr, stdout
 
 if __name__ == '__main__':
-    DONE = [f[6:9] for f in listdir('.')  # find all files in the done dir
-            if f.startswith('euler_')  # for which the file start with 'euler_'
-            and f.endswith('.py')]  # and ends with '.py'
+    DONE = [
+        f[6:9]
+        for f in listdir('.')  # find all files in the done dir
+        if f.startswith('euler_')  # for which the file start with 'euler_'
+        and f.endswith('.py')
+    ]  # and ends with '.py'
 
     if False:
         test_results = {}
         for problem_n, uh in map(czech_answer, DONE):
-            stdout.write("\r{} {}\n{}".format(problem_n, uh, len(test_results) / len(DONE)))
+            stdout.write(
+                "\r{} {}\n{}".format(problem_n, uh, len(test_results) / len(DONE))
+            )
             test_results[problem_n] = uh
     elif True:
         p = Pool()
@@ -116,24 +127,29 @@ if __name__ == '__main__':
             if type(test_result) != float:
                 write_to = stderr
             else:
-                test_result = tictoc.ftime(test_result)
-            percent_checked = str(round((len(results)/len(DONE))*100))
-            write_to.write("\r{} {}\n [[{}%]]".format(problem_n, test_result, percent_checked))
+                print(test_result)
+                # test_result = tictoc.ftime(test_result)
+            percent_checked = str(round((len(results) / len(DONE)) * 100))
+            write_to.write(
+                "\r{} {}\n [[{}%]]".format(problem_n, test_result, percent_checked)
+            )
             results[problem_n] = test_result
-
 
         p.close()  ## close pool
         p.join()  ## join pool
         parse_results(results)
     else:
         p = Pool(processes=4)
-        test_results = {problem_n: test_result
-                        for problem_n, test_result in
-                        tqdm(p.imap_unordered(czech_answer, DONE),
-                             total=len(DONE),
-                             desc="CHECKING SOLUTIONS",
-                             ascii=True,
-                             leave=True)}
+        test_results = {
+            problem_n: test_result
+            for problem_n, test_result in tqdm(
+                p.imap_unordered(czech_answer, DONE),
+                total=len(DONE),
+                desc="CHECKING SOLUTIONS",
+                ascii=True,
+                leave=True,
+            )
+        }
         p.close()  ## close pool
         p.join()  ## join pool
         parse_results(test_results)

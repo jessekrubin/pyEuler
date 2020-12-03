@@ -33,12 +33,12 @@ def prize_strings(remaining_days, two_back=False, one_back=False, late=False):
     else:
         scount = 0
         if not late:
-            scount += prize_strings(remaining_days-1, one_back, False, True)
+            scount += prize_strings(remaining_days - 1, one_back, False, True)
         if two_back and one_back:
-            scount += prize_strings(remaining_days-1, one_back, False, late)
+            scount += prize_strings(remaining_days - 1, one_back, False, late)
         else:
-            scount += prize_strings(remaining_days-1, one_back, True, late)
-            scount += prize_strings(remaining_days-1, one_back, False, late)
+            scount += prize_strings(remaining_days - 1, one_back, True, late)
+            scount += prize_strings(remaining_days - 1, one_back, False, late)
         return scount
 
 

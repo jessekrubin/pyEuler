@@ -18,15 +18,15 @@ would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
 """
 
-from pupy.werd import string_score
+from pupy.cheese import string_score
 
 
 def p022():
     with open(r"../../txt_files/p022_names.txt", 'r') as file:
         names = file.readline().strip('\"').split('\",\"')
     names.sort()
-    return sum(i + 1 * string_score(names[i])
-               for i in range(len(names)))
+    return sum(i + 1 * string_score(names[i]) for i in range(len(names)))
+
 
 # txt_files/p022_names.txt
 if __name__ == '__main__':

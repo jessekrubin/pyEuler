@@ -17,14 +17,15 @@ from bisect import insort
 @cash_it
 def eighteens(count_toop):
     """recursive function for this problem"""
-    if len(count_toop) == 18: return 1 # end of the line [return 1]
+    if len(count_toop) == 18:
+        return 1  # end of the line [return 1]
     c = Counter(c for c in count_toop)
-    nexts = [i for i in range(10) if i not in c or c[i] < 3] # digits to try
-    n_count = 0 # total count that will be added to
+    nexts = [i for i in range(10) if i not in c or c[i] < 3]  # digits to try
+    n_count = 0  # total count that will be added to
     for n in nexts:
         c = list(count_toop)
-        insort(c, n) # insort number for caching
-        n_count += eighteens(tuple(c)) # recurse and add the total
+        insort(c, n)  # insort number for caching
+        n_count += eighteens(tuple(c))  # recurse and add the total
     return n_count
 
 

@@ -22,22 +22,23 @@ must be used?
 NOTE: This is related to Problem 117.
 """
 
-from pupy.maths import partitions_gen, repermutations
+from pupy.maths import partitions_gen, n_permutations_with_replacements
 
 
 def red_green_or_blue(row_size):
-    parts = list(p for p in partitions_gen(row_size, 1, 4)
-                 if (len(set(p)) == 2 and 1 in p)
-                 or (len((set(p))) == 1 and 1 not in p))
+    parts = list(
+        p
+        for p in partitions_gen(row_size, 1, 4)
+        if (len(set(p)) == 2 and 1 in p) or (len((set(p))) == 1 and 1 not in p)
+    )
     arrangements = 0
     for part in parts:
-        arrangements += repermutations(part)
+        arrangements += n_permutations_with_replacements(part)
     return arrangements
 
 
 def p116():
     return red_green_or_blue(50)
-
 
 
 if __name__ == '__main__':

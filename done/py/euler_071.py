@@ -28,8 +28,8 @@ def ordered_fractions(d):
     left_denom = 7
     left_numerator = 2
     for denom in range(d, 2, -1):
-        frac_multiplied = (right_numerator*denom-1)//right_denom
-        if frac_multiplied*left_denom > left_numerator*denom:
+        frac_multiplied = (right_numerator * denom - 1) // right_denom
+        if frac_multiplied * left_denom > left_numerator * denom:
             left_denom = denom
             left_numerator = frac_multiplied
     return left_numerator, left_denom

@@ -33,9 +33,10 @@ def sum_divisors(n):
 
 def p023():
     a_bun = set()
-    for i in range(1, 28123+1):
+    for i in range(1, 28123 + 1):
         sum_divs = sum_divisors(i)
-        if sum_divs > i: a_bun.add(i)
+        if sum_divs > i:
+            a_bun.add(i)
 
     abun_sums = set(sum(combo) for combo in combinations(a_bun, 2))
     ans = sum(set(i for i in range(15, 28123) if i not in abun_sums))

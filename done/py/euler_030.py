@@ -19,7 +19,7 @@ Find the sum of all the numbers that can be written as the sum of fifth powers
 of their digits.
 """
 
-from pupy.listless import digits_list
+from pupy.foreign import digits_list
 
 
 def digit_powers(number, power):

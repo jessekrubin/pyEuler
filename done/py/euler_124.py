@@ -16,11 +16,13 @@ Let E(k) be the kth element in the sorted n column; for example, E(4) = 8 and
 E(6) = 9. If rad(n) is sorted for 1 ≤ n ≤ 100000, find E(10000).
 """
 
-from pupy.amazon_prime import prime_factors_gen
+from pupy.amazon import prime_factors_gen
 from operator import mul, itemgetter
 
-try: reduce
-except: from functools import reduce
+try:
+    reduce
+except:
+    from functools import reduce
 
 
 def prime_factors_set_list(n):
@@ -32,14 +34,14 @@ def rad(n):
 
 
 def rad_list(upper_bound):
-    return [(rad(n), n) for n in range(1, upper_bound+1)]
+    return [(rad(n), n) for n in range(1, upper_bound + 1)]
 
 
 def eee(highest, k):
-    return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k-1][1]
+    return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k - 1][1]
 
 
-def p124(greatest=10**5, k=10**4):
+def p124(greatest=10 ** 5, k=10 ** 4):
     return eee(greatest, k)
 
 

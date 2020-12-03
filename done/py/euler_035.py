@@ -14,8 +14,8 @@ There are thirteen such primes below 100:
 How many circular primes are there below one million?
 """
 
-from pupy.listless import rotations_gen, digits_list, int_from_digits
-from pupy.amazon_prime import prime_gen, is_prime
+from pupy.foreign import rotations_gen, digits_list, int_from_digits
+from pupy.amazon import prime_gen, is_prime
 from pupy.decorations import cash_it
 
 

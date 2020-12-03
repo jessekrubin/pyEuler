@@ -17,7 +17,7 @@ How many numbers below fifty million can be expressed as the sum of a prime
 square, prime cube, and prime fourth power?
 """
 
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 from math import sqrt
 
 
@@ -26,15 +26,13 @@ def power_triple(triple):
 
 
 def prime_power_triples(below):
-    primes = [p for p in prime_gen(int(sqrt(below)+1))]
+    primes = [p for p in prime_gen(int(sqrt(below) + 1))]
     n_primes = len(primes)
     hermy = [0] * below
     for first in range(n_primes):
         for second in range(n_primes):
             for third in range(n_primes):
-                pt = power_triple([primes[third],
-                                   primes[second],
-                                   primes[first]])
+                pt = power_triple([primes[third], primes[second], primes[first]])
                 if pt > below:
                     break
                 hermy[pt] = 1

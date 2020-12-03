@@ -21,7 +21,6 @@ in the same way?
 
 
 class Grid(object):
-
     def __init__(self, size):
         self.sum_diags = 1
         self.size = size
@@ -95,7 +94,9 @@ class Grid(object):
         return x - 1, y
 
     def diag_sum(self):
-        for coords in set.union(self.ne_diag_real, self.nw_diag, self.se_diag, self.sw_diag):
+        for coords in set.union(
+            self.ne_diag_real, self.nw_diag, self.se_diag, self.sw_diag
+        ):
             self.sum_diags += self.array[coords[0]][coords[1]]
         return self.sum_diags
 

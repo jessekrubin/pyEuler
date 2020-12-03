@@ -18,10 +18,10 @@ from itertools import product
 
 
 def dice_combos(n_dice, faces):
-    rolls = {val:set() for val in range(n_dice, n_dice*faces+1)}
-    for roll in product(list((range(1, faces+1))), repeat=n_dice):
+    rolls = {val: set() for val in range(n_dice, n_dice * faces + 1)}
+    for roll in product(list((range(1, faces + 1))), repeat=n_dice):
         rolls[sum(roll)].add(roll)
-    roll_vals = {roll_sum:len(combos) for roll_sum, combos in rolls.items()}
+    roll_vals = {roll_sum: len(combos) for roll_sum, combos in rolls.items()}
     return roll_vals
 
 
@@ -34,13 +34,13 @@ def p205():
     for pete_roll_sum, pete_rolls in pete.items():
         for colin_roll_sum, colin_rolls in colin.items():
             if pete_roll_sum == colin_roll_sum:
-                ties += (pete_rolls*colin_rolls)
+                ties += pete_rolls * colin_rolls
             elif pete_roll_sum > colin_roll_sum:
-                p_wins += (pete_rolls*colin_rolls)
+                p_wins += pete_rolls * colin_rolls
             elif pete_roll_sum < colin_roll_sum:
-                c_wins += (pete_rolls*colin_rolls)
+                c_wins += pete_rolls * colin_rolls
 
-    return round(p_wins/(p_wins+c_wins+ties), ndigits=7)
+    return round(p_wins / (p_wins + c_wins + ties), ndigits=7)
 
 
 if __name__ == '__main__':

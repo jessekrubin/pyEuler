@@ -32,10 +32,7 @@ def log_thingy(pair):
 
 def p099():
     with open("../../txt_files/p099_base_exp.txt") as f:
-        pairs = [
-            tuple(map(int,
-                      line.strip('\n').split(','))) for line in f.readlines()
-            ]
+        pairs = [tuple(map(int, line.strip('\n').split(','))) for line in f.readlines()]
     logvals = [log_thingy(pair) for pair in pairs]
     index, log_val = max(enumerate(logvals), key=itemgetter(1))
     return index + 1

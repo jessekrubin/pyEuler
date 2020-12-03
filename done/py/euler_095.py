@@ -25,7 +25,7 @@ exceeding one million.
 from functools import lru_cache
 from pupy.decorations import cprof
 from pupy.maths import divisors_gen
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 
 upperlim = 1000000
 primes = {p for p in prime_gen(upperlim)}
@@ -33,15 +33,16 @@ chainlengths = {}
 perfects = set()
 mean_numbers = set()
 
+
 @lru_cache(maxsize=None)
 def proper_divisors_gen(n):
-    return sum(number 
-                for number in divisors_gen(n)
-                if number < n)
+    return sum(number for number in divisors_gen(n) if number < n)
+
 
 @lru_cache(maxsize=None)
 def is_perfect(n):
     return n == proper_divisors_gen(n)
+
 
 @lru_cache(maxsize=None)
 def chaingang(start_n):
@@ -49,15 +50,17 @@ def chaingang(start_n):
     cur = start_n
     while cur not in the_chain and cur > 1:
         the_chain.append(cur)
-        if cur in primes or cur > 1000000 or cur in mean_numbers: break
+        if cur in primes or cur > 1000000 or cur in mean_numbers:
+            break
         cur = proper_divisors_gen(cur)
 
     if proper_divisors_gen(the_chain[-1]) == start_n:
         clen = len(the_chain)
-        for n in the_chain: 
+        for n in the_chain:
             chainlengths[n] = clen
     else:
         mean_numbers.add(start_n)
+
 
 def p095():
     # for i in tqdm(range(2, 1000000), ascii=True, desc="p095"):

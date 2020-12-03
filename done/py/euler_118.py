@@ -14,19 +14,13 @@ once contain only prime elements?
 from collections import Counter
 from itertools import combinations, product, permutations
 from pupy.maths import partitions_gen
-from pupy.amazon_prime import is_prime
-from pupy.decorations import Jasm
+from pupy.amazon import is_prime
 
-try: range
-except NameError: range = range
-
-pandaprimespath = '../../txt_files/panda_primes_set.txt'
-
-
-@Jasm(pandaprimespath)
 def no_repeating_dijits_primes():
     panda_primes = {}
-    for i in range(1, 9):  # dont have to go all the way up bc there are no pan dig primes
+    for i in range(
+        1, 9
+    ):  # dont have to go all the way up bc there are no pan dig primes
         thing = []
         for perm in permutations('123456789', i):
             pn = int("".join(perm))
@@ -37,17 +31,22 @@ def no_repeating_dijits_primes():
 
 
 def is_pandigital_set(st):
-    return True if len(set(dijit for dijit in "".join(str(n) for n in st))) == 9 else False
+    return (
+        True if len(set(dijit for dijit in "".join(str(n) for n in st))) == 9 else False
+    )
 
 
 def p118():
-    norep_primes = {int(k):v for k, v in no_repeating_dijits_primes().items()}
-    okparts = [p for p in partitions_gen(9) if len(p) > 1 and sum(1 for n in p if n == 1) < 5]
+    norep_primes = {int(k): v for k, v in no_repeating_dijits_primes().items()}
+    okparts = [
+        p for p in partitions_gen(9) if len(p) > 1 and sum(1 for n in p if n == 1) < 5
+    ]
     pandigital_prime_sets = set()
     for party in okparts:
         c = Counter(p for p in party)
-        permutation_combinations = [[i for i in combinations(norep_primes[k], v)]
-                                    for k, v in c.items()]
+        permutation_combinations = [
+            [i for i in combinations(norep_primes[k], v)] for k, v in c.items()
+        ]
         for prod in product(*permutation_combinations):
             a = tuple(sorted([n for combo in prod for n in combo]))
             if is_pandigital_set(a):

@@ -60,7 +60,6 @@ from collections import Counter
 
 
 class Card(object):
-
     def __init__(self, val, suit, strang):
         self.val = val
         self.suit = suit
@@ -94,7 +93,6 @@ class Card(object):
 
 
 class PokerHand(object):
-
     def __init__(self, cards):
         self.cards = cards
         self.suits_counter = Counter(card.suit for card in cards)
@@ -141,9 +139,15 @@ class PokerHand(object):
         flush = True if len(self.suits_counter) == 1 else False
 
         if 14 in self.vals_counter.keys() and 2 in self.vals_counter.keys():
-            straight = True if set(self.vals_counter.keys()) == {2, 3, 4, 5, 14} else False
+            straight = (
+                True if set(self.vals_counter.keys()) == {2, 3, 4, 5, 14} else False
+            )
         else:
-            straight = True if len(self.vals_counter) == 5 and rank_counter[0]-(low_card-1) == 5 else False
+            straight = (
+                True
+                if len(self.vals_counter) == 5 and rank_counter[0] - (low_card - 1) == 5
+                else False
+            )
 
         if flush and straight:  # don't really need to deal with rank 9
             if rank_counter[0] == 14 and low_card == 10:
@@ -188,8 +192,12 @@ def p054():
     for g in games:
         for c in g:
             Card.string_to_card(c)
-        player_1 = PokerHand([Card.string_to_card(card_string) for card_string in g[:5]])
-        player_2 = PokerHand([Card.string_to_card(card_string) for card_string in g[5:]])
+        player_1 = PokerHand(
+            [Card.string_to_card(card_string) for card_string in g[:5]]
+        )
+        player_2 = PokerHand(
+            [Card.string_to_card(card_string) for card_string in g[5:]]
+        )
         if player_1 > player_2:
             p1_wins += 1
     return p1_wins

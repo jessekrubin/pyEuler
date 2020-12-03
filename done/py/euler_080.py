@@ -25,8 +25,9 @@ def sum_root_dig(n):
 
 
 def p080():
-    return sum(sum_root_dig(n) for n in range(1, 101)
-               if n not in {i * i for i in range(1, 11)})
+    return sum(
+        sum_root_dig(n) for n in range(1, 101) if n not in {i * i for i in range(1, 11)}
+    )
 
 
 if __name__ == '__main__':

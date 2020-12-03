@@ -35,7 +35,7 @@ def pytiles(max_perimeter):
     count = 0
     for tri in pytriple_gen(max_perimeter // 2):
         if tri[2] % (tri[1] - tri[0]) == 0:
-            count += (max_perimeter // sum(tri))
+            count += max_perimeter // sum(tri)
     return count
 
 

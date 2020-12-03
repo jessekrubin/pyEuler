@@ -42,24 +42,40 @@ def minimal_network(network_lists):
             del weights[(b, a)]
 
     def next_edges():
-        return [(con, k) if k > con else (k, con) for k in solution.keys() for con in
-                (connections[k]-set(solution.keys()))]
+        return [
+            (con, k) if k > con else (k, con)
+            for k in solution.keys()
+            for con in (connections[k] - set(solution.keys()))
+        ]
 
     def find_shortest_edge(next_edges=None):
         if next_edges is None:
-            ret = min({k:v for k, v in weights.items()}, key=weights.get)
+            ret = min({k: v for k, v in weights.items()}, key=weights.get)
             return ret
-        ret = min({k:v for k, v in weights.items() if k in next_edges}, key=weights.get)
+        ret = min(
+            {k: v for k, v in weights.items() if k in next_edges}, key=weights.get
+        )
         return ret
 
     solution = defaultdict(set)
     num_nodes = len(network_lists)
-    network = [[int(network_lists[i][j])
-                if network_lists[i][j] != '-' else 0
-                for j in range(num_nodes)]
-               for i in range(num_nodes)]
-    connections = {i:{j for j in range(num_nodes) if network_lists[i][j] != '-'} for i in range(num_nodes)}
-    weights = {(i, j):network[i][j] for j in range(num_nodes) for i in range(j) if network[i][j] > 0}
+    network = [
+        [
+            int(network_lists[i][j]) if network_lists[i][j] != '-' else 0
+            for j in range(num_nodes)
+        ]
+        for i in range(num_nodes)
+    ]
+    connections = {
+        i: {j for j in range(num_nodes) if network_lists[i][j] != '-'}
+        for i in range(num_nodes)
+    }
+    weights = {
+        (i, j): network[i][j]
+        for j in range(num_nodes)
+        for i in range(j)
+        if network[i][j] > 0
+    }
 
     # start with the shortest edge
     connect(*find_shortest_edge())
@@ -73,7 +89,8 @@ def minimal_network(network_lists):
 
 
 def p107():
-    with open('../../txt_files/p107_network.txt') as f: txt_lines = f.readlines()
+    with open('../../txt_files/p107_network.txt') as f:
+        txt_lines = f.readlines()
     big_network = [line.strip('\n').split(',') for line in txt_lines]
     return minimal_network(big_network)
 

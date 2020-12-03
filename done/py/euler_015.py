@@ -25,9 +25,12 @@ def calc_next_row(row):
 def p015():
     size = 20 + 1
     grid = []
-    first_row = [1, ] * size
+    first_row = [
+        1,
+    ] * size
     grid.append(first_row)
-    while len(grid) < 21: grid.append(calc_next_row(grid[-1]))
+    while len(grid) < 21:
+        grid.append(calc_next_row(grid[-1]))
     return grid[-1][-1]
 
 

@@ -23,11 +23,12 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 from operator import itemgetter
 from pupy.decorations import cash_it
 
+
 @cash_it
 def collatz_len(n):
     if n == 1:
         return 1
-    elif n % 2 == 0: 
+    elif n % 2 == 0:
         return collatz_len(n // 2) + 1
     else:
         return collatz_len(3 * n + 1) + 1

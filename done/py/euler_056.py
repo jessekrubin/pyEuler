@@ -12,11 +12,11 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the
 maximum digital sum?
 """
 
-from pupy.listless import digits_list
+from pupy.foreign import digits_list
 
 
 def p056():
-    return max((sum(digits_list(i**j)) for i in range(1, 100) for j in range(1, 100)))
+    return max((sum(digits_list(i ** j)) for i in range(1, 100) for j in range(1, 100)))
 
 
 if __name__ == '__main__':

@@ -23,7 +23,9 @@ the right column.
 
 
 def min_path_three_ways(mat):
-    mat = list(map(list, zip(*mat)))  # transpose lists so that we can just jump frum list to list
+    mat = list(
+        map(list, zip(*mat))
+    )  # transpose lists so that we can just jump frum list to list
     h = len(mat)
     w = len(mat[0])
     solution = [mat[0][:]]
@@ -41,7 +43,7 @@ def min_path_three_ways(mat):
                     paths.append((solution[i - 1][jj]) + sum(mat[i][jj:j]))
             if j < (w - 1):  # check horizontal paths going the other way
                 for jj in range(j + 1, w - 1):
-                    paths.append((solution[i - 1][jj]) + sum(mat[i][j + 1:jj + 1]))
+                    paths.append((solution[i - 1][jj]) + sum(mat[i][j + 1 : jj + 1]))
             sweeper2[j] = min(paths)
         for j in range(w):
             sweeper2[j] += mat[i][j]
@@ -50,14 +52,18 @@ def min_path_three_ways(mat):
 
 
 def p082():
-    lil_mat = [[131, 673, 234, 103, 18],
-               [201, 96, 342, 965, 150],
-               [630, 803, 746, 422, 111],
-               [537, 699, 497, 121, 956],
-               [805, 732, 524, 37, 331]]
+    lil_mat = [
+        [131, 673, 234, 103, 18],
+        [201, 96, 342, 965, 150],
+        [630, 803, 746, 422, 111],
+        [537, 699, 497, 121, 956],
+        [805, 732, 524, 37, 331],
+    ]
 
     with open(r'../../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
-        big_mat = list(list(map(int, row.strip('\n').split(','))) for row in f.readlines())
+        big_mat = list(
+            list(map(int, row.strip('\n').split(','))) for row in f.readlines()
+        )
     assert 994 == min_path_three_ways(lil_mat)  # check the small test_pupy case
     return min_path_three_ways(big_mat)
 

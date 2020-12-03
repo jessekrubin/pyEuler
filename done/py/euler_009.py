@@ -14,7 +14,7 @@ Find the product abc.
 """
 
 from pupy.maths import pytriple_gen
-from pupy.listless import iter_product
+from pupy.foreign import iter_product
 
 
 def p009():

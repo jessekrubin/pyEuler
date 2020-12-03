@@ -32,11 +32,11 @@ from fractions import Fraction
 def sqrt_2_recursion(n_expansions):
     if n_expansions == 1:
         return Fraction(4, 2)
-    return Fraction(2+Fraction(1, sqrt_2_recursion(n_expansions-1)))
+    return Fraction(2 + Fraction(1, sqrt_2_recursion(n_expansions - 1)))
 
 
 def sqrt_2_expansions(ex):
-    return sqrt_2_recursion(ex+1)-1
+    return sqrt_2_recursion(ex + 1) - 1
 
 
 def num_gt_denom(frac):
@@ -44,7 +44,9 @@ def num_gt_denom(frac):
 
 
 def p057():
-    return sum(1 for expansion in range(1, 1001) if num_gt_denom(sqrt_2_expansions(expansion)))
+    return sum(
+        1 for expansion in range(1, 1001) if num_gt_denom(sqrt_2_expansions(expansion))
+    )
 
 
 if __name__ == '__main__':

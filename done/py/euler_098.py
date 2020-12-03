@@ -24,7 +24,7 @@ NOTE: All anagrams formed must be contained in the given text file.
 from math import sqrt
 from itertools import combinations, count
 
-with open('../../txt_files/p098_words.txt') as f: # load the matrix
+with open('../../txt_files/p098_words.txt') as f:  # load the matrix
     words = [word.strip('"') for word in f.readline().split(',')]
 
 d = {}
@@ -39,15 +39,16 @@ anagrams = list(v for v in d.values() if len(v) > 1)
 longest_anna_gram = max(len(a[0]) for a in anagrams)
 shortest = min(len(a[0]) for a in anagrams)
 
-squares = {i:set() for i in range(longest_anna_gram+1)}
+squares = {i: set() for i in range(longest_anna_gram + 1)}
 s = []
 for i in count(1):
-    ii = i*i
-    if i*i >= 1000000000:
+    ii = i * i
+    if i * i >= 1000000000:
         break
     else:
         iis = str(ii)
         squares[len(iis)].add(iis)
+
 
 def is2(a, b, n):
     pass
@@ -63,7 +64,8 @@ def is2(a, b, n):
     if nb not in squares[len(a)]:
         return
     return nb
-    
+
+
 def isit(a, b):
     l = len(a)
     for square in squares[l]:
@@ -71,6 +73,7 @@ def isit(a, b):
         if r is not None:
             yield square
             yield r
+
 
 things = list()
 for an in anagrams:
@@ -85,6 +88,3 @@ if __name__ == '__main__':
     nums = map(int, things)
     maxn = max(nums)
     print("ANSWER", maxn)
-
-
-

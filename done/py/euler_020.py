@@ -14,7 +14,7 @@ Find the sum of the digits in the number 100!
 """
 
 from math import factorial
-from pupy.listless import digits_list
+from pupy.foreign import digits_list
 
 
 def p020():

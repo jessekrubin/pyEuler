@@ -33,24 +33,33 @@ def non_bouncy(tenexp):
     @cash_it
     def _increasing(remaining_digits, last):
         """Count increasing numbers recursively"""
-        if remaining_digits == 0: return 1
-        return sum(_increasing(remaining_digits-1, next)  # increasing count w/ params
-                   for next in range(last, 10))  # ge than the last number
+        if remaining_digits == 0:
+            return 1
+        return sum(
+            _increasing(remaining_digits - 1, next)  # increasing count w/ params
+            for next in range(last, 10)
+        )  # ge than the last number
 
     @cash_it
     def _decreasing(remaining_digits, last, start=None):
         """Count decreasing numbers
         excluding numbers with all the same digits"""
-        if start is None: start = last
+        if start is None:
+            start = last
         if remaining_digits == 0:
-            if start != last: return 1
-            else: return 0  # Double counted numbers
-        return sum(_decreasing(remaining_digits-1, i, start)
-                   for i in range(0, last+1))
+            if start != last:
+                return 1
+            else:
+                return 0  # Double counted numbers
+        return sum(
+            _decreasing(remaining_digits - 1, i, start) for i in range(0, last + 1)
+        )
 
-    return 9+sum(_decreasing(n_dij, start_dij)+_increasing(n_dij, start_dij)
-                 for start_dij in range(1, 10)
-                 for n_dij in range(1, tenexp))
+    return 9 + sum(
+        _decreasing(n_dij, start_dij) + _increasing(n_dij, start_dij)
+        for start_dij in range(1, 10)
+        for n_dij in range(1, tenexp)
+    )
 
 
 def p113():

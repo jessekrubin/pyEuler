@@ -34,7 +34,7 @@ NOTE: Wording was modified slightly on 24 April 2007 to emphasise the
 theoretical nature of Lychrel numbers.
 """
 
-from pupy.maths import reverse
+from pupy.maths import reverse_num
 
 
 def is_lychrel(n):
@@ -45,10 +45,10 @@ def is_lychrel(n):
     :return:
     """
     cur = n
-    cur_rev = reverse(n)
+    cur_rev = reverse_num(n)
     for i in range(49):
-        cur = cur+reverse(cur)
-        cur_rev = reverse(cur)
+        cur = cur + reverse_num(cur)
+        cur_rev = reverse_num(cur)
         if cur == cur_rev:
             return False
     return True

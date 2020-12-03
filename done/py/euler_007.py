@@ -11,7 +11,7 @@ the 6th prime is 13.
 What is the 10 001st prime number?
 """
 
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 
 
 def p007(nth_prime=10001):

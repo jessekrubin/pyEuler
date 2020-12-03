@@ -21,11 +21,12 @@ fractions for d ≤ 12,000?
 from __future__ import division
 
 from pupy.maths import gcd_it
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 
-try: range
-except NameError: range = range
-
+try:
+    range
+except NameError:
+    range = range
 
 
 def fractions_in_range(max_d=12000, gtd=3, ltd=2):
@@ -43,11 +44,11 @@ def fractions_in_range(max_d=12000, gtd=3, ltd=2):
     """
     primes = set(p for p in prime_gen(max_d))
     nfractions = 0
-    for denominator in range(4, max_d+1):
-        min_n = denominator//gtd+1
-        max_n = denominator//ltd+1
+    for denominator in range(4, max_d + 1):
+        min_n = denominator // gtd + 1
+        max_n = denominator // ltd + 1
         if denominator in primes:
-            nfractions += (max_n-min_n)
+            nfractions += max_n - min_n
         else:
             for numerator in range(min_n, max_n):
                 if gcd_it(numerator, denominator) == 1:

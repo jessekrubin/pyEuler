@@ -60,27 +60,26 @@ mat = [list(map(int, string.split(" "))) for string in mat.split('\n')]
 
 
 def horizontal(r, c):
-    return mat[r][c]*mat[r][c+1]*mat[r][c+2]*mat[r][c+3]
+    return mat[r][c] * mat[r][c + 1] * mat[r][c + 2] * mat[r][c + 3]
 
 
 def vertical(r, c):
-    return mat[r][c]*mat[r+1][c]*mat[r+2][c]*mat[r+3][c]
+    return mat[r][c] * mat[r + 1][c] * mat[r + 2][c] * mat[r + 3][c]
 
 
 def backslash(r, c):
-    return mat[r][c]*mat[r+1][c+1]*mat[r+2][c+2]*mat[r+3][c+3]
+    return mat[r][c] * mat[r + 1][c + 1] * mat[r + 2][c + 2] * mat[r + 3][c + 3]
 
 
 def forwardslash(r, c):
-    return mat[r][c]*mat[r-1][c+1]*mat[r-2][c+2]*mat[r-3][c+3]
+    return mat[r][c] * mat[r - 1][c + 1] * mat[r - 2][c + 2] * mat[r - 3][c + 3]
 
 
 def p011():
     horizontals = max(horizontal(r, c) for r in range(20) for c in range(17))
     verticals = max(vertical(r, c) for r in range(17) for c in range(20))
     backslash_diag = max(backslash(r, c) for r in range(17) for c in range(17))
-    forwardslash_diag = max(
-            forwardslash(r, c) for r in range(3, 20) for c in range(17))
+    forwardslash_diag = max(forwardslash(r, c) for r in range(3, 20) for c in range(17))
     return max((horizontals, verticals, forwardslash_diag, backslash_diag))
 
 

@@ -20,7 +20,7 @@ each. What is the first of these numbers?
 """
 
 from itertools import count
-from pupy.amazon_prime import prime_factors_gen
+from pupy.amazon import prime_factors_gen
 from pupy.decorations import cash_it
 
 
@@ -32,11 +32,12 @@ def n_distict_pfactors(n):
 def p047(n_facs=4):
     num_prime_factors = {}
     for i in count(10):
-        if i > 134050: break
+        if i > 134050:
+            break
         num_prime_factors[i] = n_distict_pfactors(i)
         if i > 10 and num_prime_factors[i] == n_facs:
-            if all(n_facs == num_prime_factors[i-j] for j in range(n_facs)):
-                return i+1-n_facs
+            if all(n_facs == num_prime_factors[i - j] for j in range(n_facs)):
+                return i + 1 - n_facs
 
 
 if __name__ == '__main__':

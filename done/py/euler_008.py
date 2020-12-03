@@ -61,9 +61,11 @@ DIJITS = list(map(int, DIJITS_STR.replace('\n', '')))
 
 
 def p008(n=13):
-    return max(reduce(mul, thirteen)
-               for thirteen in (DIJITS[i:i+n] for i in range(len(DIJITS)-n))
-               if 0 not in thirteen)
+    return max(
+        reduce(mul, thirteen)
+        for thirteen in (DIJITS[i : i + n] for i in range(len(DIJITS) - n))
+        if 0 not in thirteen
+    )
 
 
 if __name__ == '__main__':

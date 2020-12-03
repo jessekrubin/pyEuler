@@ -17,7 +17,7 @@ Which prime, below one-million, can be written as the sum of the most
 consecutive primes?
 """
 
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 
 
 def consecutive_prime_sum(upper_bound):
@@ -26,21 +26,25 @@ def consecutive_prime_sum(upper_bound):
     longest_seq = 1
     max_sum = 1
     for p in range(len(primes_list), 0, -1):
-        cur_sum = primes_list[p-1]
+        cur_sum = primes_list[p - 1]
         cur_seq_length = 1
-        for j in range(p-1, 0, -1):
-            cur_sum += primes_list[j-1]
+        for j in range(p - 1, 0, -1):
+            cur_sum += primes_list[j - 1]
             cur_seq_length += 1
             if cur_sum > upper_bound:
                 break
-            if cur_seq_length >= longest_seq and cur_sum < upper_bound and cur_sum in primes_set:
+            if (
+                cur_seq_length >= longest_seq
+                and cur_sum < upper_bound
+                and cur_sum in primes_set
+            ):
                 max_sum = cur_sum
                 longest_seq = cur_seq_length
     return longest_seq, max_sum
 
 
 def p050():
-    answer_sequence_length, prime_answer = consecutive_prime_sum(10**6)
+    answer_sequence_length, prime_answer = consecutive_prime_sum(10 ** 6)
     return prime_answer
 
 

@@ -29,7 +29,7 @@ def p174():
     divfours = [i for i in range(1000000 + 1) if i % 4 == 0 and i > 4]
     total = 0
     for num in divfours:
-        num_lams = len([d for d in divisors_gen(num // 4)])//2
+        num_lams = len([d for d in divisors_gen(num // 4)]) // 2
         if 0 < num_lams < 11:
             total += 1
 

@@ -24,12 +24,17 @@ How many Sundays fell on the first of the month during the twentieth century
 from datetime import date
 from pupy.decorations import tictoc
 
+
 def p019():
-    return sum(1 for day in  # count 1 for each day...
-               range(date(1901, 1, 1).toordinal(),  # from the start ord
-                     date(2000, 12, 31).toordinal())  # to the end ord
-               if date.fromordinal(day).weekday() == 6  # IF it is a sunday
-               and date.fromordinal(day).day == 1)  # AND the date is the 1st
+    return sum(
+        1
+        for day in range(  # count 1 for each day...
+            date(1901, 1, 1).toordinal(),  # from the start ord
+            date(2000, 12, 31).toordinal(),
+        )  # to the end ord
+        if date.fromordinal(day).weekday() == 6  # IF it is a sunday
+        and date.fromordinal(day).day == 1
+    )  # AND the date is the 1st
 
 
 if __name__ == '__main__':

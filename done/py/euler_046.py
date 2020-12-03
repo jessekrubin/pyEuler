@@ -18,7 +18,7 @@ It turns out that the conjecture was false.
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?.
 """
 
-from pupy.amazon_prime import is_prime
+from pupy.amazon import is_prime
 from math import sqrt
 
 
@@ -31,7 +31,7 @@ def p046():
             prime_numbers.add(n)
         else:
             for p in prime_numbers:
-                if sqrt(((n-p)/2)) == int(sqrt(((n-p)/2))):
+                if sqrt(((n - p) / 2)) == int(sqrt(((n - p) / 2))):
                     break  # break if it works with the conjecture
             else:
                 return n

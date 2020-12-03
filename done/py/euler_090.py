@@ -44,23 +44,27 @@ from itertools import combinations as cb, combinations_with_replacement as rcb
 
 
 def numbers(c1, c2):
-    return set((n1*10)+n2 for n1 in c1 for n2 in c2)
+    return set((n1 * 10) + n2 for n1 in c1 for n2 in c2)
 
 
 def is_cube_pair(c1, c2):
     c1, c2 = set(c1), set(c2)
-    if 6 in c1: c1.add(9)
-    if 9 in c1: c1.add(6)
-    if 6 in c2: c2.add(9)
-    if 9 in c2: c2.add(6)
+    if 6 in c1:
+        c1.add(9)
+    if 9 in c1:
+        c1.add(6)
+    if 6 in c2:
+        c2.add(9)
+    if 9 in c2:
+        c2.add(6)
     allposs = set.union(numbers(c1, c2), numbers(c2, c1))
-    return all(square in allposs
-               for square in [1, 4, 9, 16, 25, 36, 49, 64, 81])
+    return all(square in allposs for square in [1, 4, 9, 16, 25, 36, 49, 64, 81])
 
 
 def p090():
-    return sum(1 for a, b in rcb(cb([i for i in range(0, 10)], 6), 2)
-               if is_cube_pair(a, b))
+    return sum(
+        1 for a, b in rcb(cb([i for i in range(0, 10)], 6), 2) if is_cube_pair(a, b)
+    )
 
 
 if __name__ == '__main__':

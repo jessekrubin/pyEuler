@@ -21,7 +21,7 @@ Find S(10,000,000).
 """
 
 from math import log
-from pupy.amazon_prime import prime_gen
+from pupy.amazon import prime_gen
 from bisect import bisect_right
 
 
@@ -43,7 +43,7 @@ def s(n):
     prime_sieve_limit = int(n // 2) + 1  # plus two cause idk
     ret_sum = 0
     for p in prime_gen(prime_sieve_limit):
-        mul_list = primes[0:bisect_right(primes, n // p)]
+        mul_list = primes[0 : bisect_right(primes, n // p)]
         ret_sum += sum(m(ppp, p, n) for ppp in mul_list)
         primes.append(p)
     return ret_sum

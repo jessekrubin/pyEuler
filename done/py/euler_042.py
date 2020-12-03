@@ -19,7 +19,7 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
 containing nearly two-thousand common English words, how many are triangle words?
 """
 
-from pupy.werd import string_score
+from pupy.cheese import string_score
 
 
 def p042():
@@ -27,7 +27,7 @@ def p042():
         words = [s.strip("\"") for s in f.readlines()[0].split(',')]
 
     word_scores = map(string_score, words)
-    max_word_score = (max(map(string_score, words)))
+    max_word_score = max(map(string_score, words))
 
     i = 2
     cur_triangle_num = 1

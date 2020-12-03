@@ -32,10 +32,10 @@ def block_combinations(remaining, last_one=True):
         return 1
     else:
         blockcount = 0
-        blockcount += block_combinations(remaining-1, True)
+        blockcount += block_combinations(remaining - 1, True)
         if last_one:
-            for i in range(3, remaining+1):
-                blockcount += block_combinations(remaining-i, False)
+            for i in range(3, remaining + 1):
+                blockcount += block_combinations(remaining - i, False)
         return blockcount
 
 

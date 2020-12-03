@@ -17,7 +17,11 @@ def multiples_lt(lim, div):
 
 
 def multiples_o_3_n_5(upper_bound):
-    return multiples_lt(upper_bound, 3) + multiples_lt(upper_bound, 5) - multiples_lt(upper_bound, 15)
+    return (
+        multiples_lt(upper_bound, 3)
+        + multiples_lt(upper_bound, 5)
+        - multiples_lt(upper_bound, 15)
+    )
 
 
 def p001(upper_bound=1000):

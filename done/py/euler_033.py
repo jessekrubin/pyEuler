@@ -19,11 +19,12 @@ terms, find the value of the denominator.
 """
 
 from fractions import Fraction
-from pupy.listless import iter_product
+from pupy.foreign import iter_product
 
 
 def is_fishy_fraction(n, d):
-    if n % 10 == 0 and d % 10 == 0: return False
+    if n % 10 == 0 and d % 10 == 0:
+        return False
     orig_f = Fraction(n, d)
     n1, n2 = n // 10, n % 10
     d1, d2 = d // 10, d % 10
@@ -37,7 +38,12 @@ def is_fishy_fraction(n, d):
 
 
 def p033():
-    fracs = {Fraction(n, d) for d in range(11, 100) for n in range(10, d) if is_fishy_fraction(n, d)}
+    fracs = {
+        Fraction(n, d)
+        for d in range(11, 100)
+        for n in range(10, d)
+        if is_fishy_fraction(n, d)
+    }
     return iter_product(fracs).denominator
 
 

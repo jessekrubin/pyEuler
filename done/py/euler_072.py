@@ -30,7 +30,7 @@ def countingfracs(lim=8):
     for n in range(2, lim + 1):
         if n == phi_dictionary[n]:
             for nnn in range(n, lim + 1, n):
-                phi_dictionary[nnn] -= (phi_dictionary[nnn] / n)
+                phi_dictionary[nnn] -= phi_dictionary[nnn] / n
     return sum(v for k, v in phi_dictionary.items()) - 1
 
 

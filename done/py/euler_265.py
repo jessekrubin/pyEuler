@@ -37,22 +37,24 @@ def binaries(dijits):
 
 def min_binary_rotation(s):
     """Finds the minimum binary circle rotation"""
-    return min(int(''.join(s[i:]+s[:i]), 2) for i in range(len(s)))
+    return min(int(''.join(s[i:] + s[:i]), 2) for i in range(len(s)))
 
 
 def S(n):
     binary_strings = binaries(n)  # get the binary strings
     bin_d = defaultdict(set)  # dictionary to hold possible next strings
     for bn in binary_strings:  # for each binary number
-        bzero = (bn[1:]+'0')  # remove first char, add 0
-        if bzero != bn: bin_d[bn].add(bzero)  # add to bin_d if distinct from bn
-        bone = (bn[1:]+'1')  # remove first char, add 1
-        if bone != bn: bin_d[bn].add(bone)  # add to bin_d if disctinc from bn
+        bzero = bn[1:] + '0'  # remove first char, add 0
+        if bzero != bn:
+            bin_d[bn].add(bzero)  # add to bin_d if distinct from bn
+        bone = bn[1:] + '1'  # remove first char, add 1
+        if bone != bn:
+            bin_d[bn].add(bone)  # add to bin_d if disctinc from bn
 
     sols = set()
 
     def recircle(ring):
-        if len(ring) == 2**n:  # base case - if a ring is complete
+        if len(ring) == 2 ** n:  # base case - if a ring is complete
             if ring[0] in bin_d[ring[-1]]:  # if the ends of the ring are valid
                 sols.add(min_binary_rotation(list(el[0] for el in ring)))
             return

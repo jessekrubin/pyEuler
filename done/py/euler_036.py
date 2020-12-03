@@ -13,11 +13,16 @@ base 10 and base 2.
 leading zeros.)
 """
 
-from pupy.werd import binary_string, is_palindrome
+from pupy.cheese import is_palindrome
+from pupy.fmt import binary_string
 
 
 def p036():
-    return sum(i for i in range(1000000) if is_palindrome(str(i)) and is_palindrome(binary_string(i)))
+    return sum(
+        i
+        for i in range(1000000)
+        if is_palindrome(str(i)) and is_palindrome(binary_string(i))
+    )
 
 
 if __name__ == '__main__':

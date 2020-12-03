@@ -18,7 +18,7 @@ HINT: Some products can be obtained in more than one way so be sure to only
 include it once in your sum.
 """
 
-from pupy.listless import int_from_digits
+from pupy.foreign import int_from_digits
 from itertools import permutations
 
 
@@ -32,7 +32,9 @@ def pandigital_product(list):
             last = list[i:]
             furst = list[:j]
             second = list[j:i]
-            if int_from_digits(furst) * int_from_digits(second) == int_from_digits(last):
+            if int_from_digits(furst) * int_from_digits(second) == int_from_digits(
+                last
+            ):
                 return int_from_digits(last)
     return 0
 

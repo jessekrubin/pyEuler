@@ -14,14 +14,14 @@ How many ways can a row measuring fifty units in length be tiled?
 NOTE: This is related to Problem 116.
 """
 
-from pupy.maths import partitions_gen, repermutations
+from pupy.maths import partitions_gen, n_permutations_with_replacements
 
 
 def red_green_AND_blue(row_size):
     parts = list(p for p in partitions_gen(row_size, 1, 4))
     arrangements = 0
     for part in parts:
-        arrangements += repermutations(part)
+        arrangements += n_permutations_with_replacements(part)
     return arrangements
 
 

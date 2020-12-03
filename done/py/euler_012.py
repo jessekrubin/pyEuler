@@ -45,4 +45,3 @@ def p012():
 if __name__ == '__main__':
     answer = p012()
     print('triangle #: {}'.format(answer))  # cur #: 76576500
-

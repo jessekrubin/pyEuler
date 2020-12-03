@@ -24,7 +24,7 @@ def square_lams(upperlimit):
     divfours = [i for i in range(upperlimit + 1) if i % 4 == 0 and i > 4]
     total = 0
     for num in divfours:
-        total += len([d for d in divisors_gen(num // 4)])//2
+        total += len([d for d in divisors_gen(num // 4)]) // 2
 
     return total
 

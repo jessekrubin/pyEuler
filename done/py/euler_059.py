@@ -37,7 +37,7 @@ from itertools import cycle
 
 
 def decrypt(arr, key):
-    return "".join(chr(a^b) for a, b in zip(arr, cycle(key)))
+    return "".join(chr(a ^ b) for a, b in zip(arr, cycle(key)))
 
 
 def p059():
