@@ -30,6 +30,6 @@ def p041():
     return max(prime_pandigitals)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p041()
     print("Largest pandigital prime: {}".format(ans))

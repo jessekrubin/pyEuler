@@ -23,8 +23,10 @@ Give your answer rounded to 10 digits after the decimal point.
 from math import pi
 from bib.maths import Vuple
 
-try: xrange
-except NameError: xrange = range
+try:
+    xrange
+except NameError:
+    xrange = range
 
 c1 = 40
 c2 = 30
@@ -51,7 +53,7 @@ import numpy as np
 
 def integrand(y, x):
     """y must be the first argument, and x the second."""
-    return y*np.sin(x)+x*np.cos(y)
+    return y * np.sin(x) + x * np.cos(y)
 
 
 # c1 = 400
@@ -83,22 +85,22 @@ yz = 3
 
 
 def point_prob(x, y):
-    v1 = (xz-x, y)
-    v2 = (x, yz-y)
+    v1 = (xz - x, y)
+    v2 = (x, yz - y)
     return Vuple.angle(v2, v1, radians=False)
 
 
 # ans, err = dblquad(point_prob, 1, 4, lambda x: 1, lambda x: 3)
 def yyy(x):
-    return yz-x*0.75
+    return yz - x * 0.75
 
 
 # ans, err = dblquad(point_prob, 0, xz, lambda x: 0, lambda x: yz-(x*(yz/xz)))
-ans, err = dblquad(point_prob, 0, xz, lambda x:0, yyy)
+ans, err = dblquad(point_prob, 0, xz, lambda x: 0, yyy)
 print(ans)
-print(ans/180)
-print(ans/6)
-print(ans/(2*pi))
-print((ans-360)/360)
-print((360-ans)/360)
-print((360-ans)/720)
+print(ans / 180)
+print(ans / 6)
+print(ans / (2 * pi))
+print((ans - 360) / 360)
+print((360 - ans) / 360)
+print((360 - ans) / 720)

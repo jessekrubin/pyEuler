@@ -38,6 +38,6 @@ def p046():
         n += 2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p046()
     print("ANSWER: {}".format(answer))

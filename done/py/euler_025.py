@@ -33,7 +33,7 @@ def p025(no_digits=1000):
             return i + 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 12 == p025(3)
     ANSWER = p025()
     print("index of first fib_gen num w/ 1000 digits: {}".format(ANSWER))

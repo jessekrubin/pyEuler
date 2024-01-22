@@ -43,6 +43,6 @@ def p087():
     return prime_power_triples(50000000)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     MY_ANSWER = p087()
     print("ANSWER: {}".format(MY_ANSWER))

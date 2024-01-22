@@ -28,15 +28,15 @@ from pupy.maths import Trigon
 
 def p102():
     # open file and put into list
-    with open(r'../../txt_files/p102_triangles.txt') as f:
+    with open(r"../../txt_files/p102_triangles.txt") as f:
         triangles = [
-            tuple(map(int, j.split(',')))
-            for j in [i.strip('\n') for i in f.readlines()]
+            tuple(map(int, j.split(",")))
+            for j in [i.strip("\n") for i in f.readlines()]
         ]
     # check if (0, 0) in triangle for triangle in the list
     return sum(1 for tri in triangles if (0, 0) in Trigon.from_points(tri))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p102()
     print("# triangles: {}".format(ANSWER))

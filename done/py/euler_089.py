@@ -37,12 +37,12 @@ than four consecutive identical units.
 
 
 def further_shrink(roman_str):
-    roman_str = roman_str.replace('DCCCC', 'CM')
-    roman_str = roman_str.replace('LXXXX', 'XC')
-    roman_str = roman_str.replace('VIIII', 'IX')
-    roman_str = roman_str.replace('CCCC', 'CD')
-    roman_str = roman_str.replace('XXXX', 'XL')
-    roman_str = roman_str.replace('IIII', 'IV')
+    roman_str = roman_str.replace("DCCCC", "CM")
+    roman_str = roman_str.replace("LXXXX", "XC")
+    roman_str = roman_str.replace("VIIII", "IX")
+    roman_str = roman_str.replace("CCCC", "CD")
+    roman_str = roman_str.replace("XXXX", "XL")
+    roman_str = roman_str.replace("IIII", "IV")
     return roman_str
 
 
@@ -51,12 +51,12 @@ def saved_chars_better(roman):
 
 
 def p089():
-    with open('../../txt_files/p089_roman_nums.txt') as f:  # load the roman numerals
-        numerals = [numeral.strip('\n') for numeral in f.readlines()]
+    with open("../../txt_files/p089_roman_nums.txt") as f:  # load the roman numerals
+        numerals = [numeral.strip("\n") for numeral in f.readlines()]
 
     return sum(map(saved_chars_better, numerals))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p089()
     print("Characters saved {}".format(answer))

@@ -48,6 +48,6 @@ def p032():
     return sum(products)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p032()
     print("Sum of products: {}".format(ans))

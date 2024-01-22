@@ -28,10 +28,11 @@ until no stones remain; so the current player loses. To illustrate:
 For how many positive integers n ≤ 2**30 does X(n,2n,3n) = 0 ?
 """
 
-def p301(N=2**30):
-    return sum(1 for n in range(1, N+1)
-               if (n)^(2*n)^(3*n)==0)
 
-if __name__ == '__main__':
+def p301(N=2**30):
+    return sum(1 for n in range(1, N + 1) if (n) ^ (2 * n) ^ (3 * n) == 0)
+
+
+if __name__ == "__main__":
     ANSWER = p301()
     print(f"ANSWER: {ANSWER}")

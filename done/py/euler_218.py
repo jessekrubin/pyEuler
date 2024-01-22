@@ -38,6 +38,6 @@ def p218():
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p218()
     print("perfect but not super-perfect RA-triangles: {}".format(ANSWER))

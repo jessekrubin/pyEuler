@@ -48,6 +48,6 @@ def p045():
     return all_three[2]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p045()
     print("Next #: {}".format(answer))

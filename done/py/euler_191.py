@@ -46,6 +46,6 @@ def p191():
     return prize_strings(30)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert prize_strings(4) == 43
     ANSWER = p191()

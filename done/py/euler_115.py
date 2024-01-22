@@ -49,7 +49,7 @@ def p115():
             return i
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert f(3, 29) == 673135
     assert f(3, 30) == 1089155
     assert f(10, 56) == 880711

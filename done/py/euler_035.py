@@ -26,9 +26,9 @@ def is_circ_prime(n):
 
 
 def p035():
-    return sum(1 for p in prime_gen(10 ** 6) if is_circ_prime(p))
+    return sum(1 for p in prime_gen(10**6) if is_circ_prime(p))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p035()
     print("# of circlular primes: {}".format(ANSWER))

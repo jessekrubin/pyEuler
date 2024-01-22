@@ -29,7 +29,7 @@ def p119():
     a = []
     for num in range(2, 100):
         for exponent in range(1, 20):
-            aaa = num ** exponent
+            aaa = num**exponent
             if digits_sum(aaa) == num and aaa > 10:
                 a.append(aaa)
 
@@ -37,6 +37,6 @@ def p119():
     return a[30 - 1]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p119()
     print("Answer: {}".format(ANSWER))

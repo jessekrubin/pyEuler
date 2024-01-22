@@ -26,13 +26,13 @@ except NameError:
     range = range
 
 
-def p187a(upper_bound=10 ** 8):
+def p187a(upper_bound=10**8):
     primes = list(n for n in prime_gen(1 + upper_bound // 2))
     for c in combinations_with_replacement(primes, 2):
         print(c)
 
 
-def p187(upper_bound=10 ** 8):
+def p187(upper_bound=10**8):
     primes = list(n for n in prime_gen(1 + upper_bound // 2))
     lim_root = int(sqrt(upper_bound) + 1)
     ans = 0
@@ -43,7 +43,7 @@ def p187(upper_bound=10 ** 8):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 10 == p187(30)
     ANSWER = p187()
     print("# composite integers with two prime factors: {}".format(ANSWER))

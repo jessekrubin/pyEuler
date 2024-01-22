@@ -38,6 +38,6 @@ def p037():
     return sum(i for i in range(2, 1000000) if trunk_prime(i))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p037()
     print("Sum of truncatable primes: {}".format(ANSWER))

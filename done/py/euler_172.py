@@ -36,6 +36,6 @@ def p172():
     return total
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p172()
     print("# 18-digit numbers: {}".format(ANSWER))

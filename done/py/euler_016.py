@@ -10,11 +10,11 @@ What is the sum of the digits of the number 2**1000?
 """
 
 
-def p016(n=2 ** 1000):
+def p016(n=2**1000):
     return sum(int(c) for c in str(n))
 
 
-if __name__ == '__main__':
-    assert p016(2 ** 15) == 26
+if __name__ == "__main__":
+    assert p016(2**15) == 26
     answer = p016()
     print("Sum of digits of 2^1000: {}".format(answer))

@@ -22,6 +22,6 @@ def p007(nth_prime=10001):
             return p
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p007()
     print("10,001th prime is: {}".format(ANSWER))

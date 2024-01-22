@@ -43,6 +43,6 @@ def p205():
     return round(p_wins / (p_wins + c_wins + ties), ndigits=7)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p205()
     print("Probability that Pyramidal Pete Wins: {}".format(ANSWER))

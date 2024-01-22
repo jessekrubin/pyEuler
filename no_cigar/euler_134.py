@@ -15,9 +15,12 @@ by p1 and n is divisible by p2. Let S be the smallest of these values of n.
 Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 """
 
-from pyximport import install; install()
+from pyximport import install
+
+install()
 from bib.amazon_prime import prime_gen
 from tqdm import tqdm
+
 ################################
 # solution = 18613426663617118 #
 ################################
@@ -25,13 +28,16 @@ from tqdm import tqdm
 
 def p134_cy(lim=1000000):
     from bib.prime_pairs import prime_pair_cy
-    primes = [p for p in prime_gen(lim+5) if p > 3]
+
+    primes = [p for p in prime_gen(lim + 5) if p > 3]
     mod10e = 10
     multipliers = []
-    for i in tqdm(range(len(primes)-1), ascii=True):
-        if primes[i] > mod10e: mod10e *= 10
-        multipliers.append(prime_pair_cy(primes[i], primes[i+1], mod10e))
-    return sum(a*b for a, b in zip(primes[1:], multipliers))
+    for i in tqdm(range(len(primes) - 1), ascii=True):
+        if primes[i] > mod10e:
+            mod10e *= 10
+        multipliers.append(prime_pair_cy(primes[i], primes[i + 1], mod10e))
+    return sum(a * b for a, b in zip(primes[1:], multipliers))
+
 
 # OLD AND SLOW
 # 3:10 (min:sec) runtime with pypy
@@ -58,16 +64,13 @@ def p134_cy(lim=1000000):
 #     return total
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # assert 53 == prime_pair_cy(19, 23, 100)
     ANSWERcy = p134_cy()
     print(ANSWERcy)
 
     # ANSWER = p134_py(1000000)
     # print("ANSWER: {}".format(ANSWER))
-
-
-
 
     # ANSWER = p134_py()
     # print("ANSWER: {}".format(ANSWER))  # ANSWER: 18613426663617118

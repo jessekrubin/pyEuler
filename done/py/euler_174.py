@@ -36,6 +36,6 @@ def p174():
     return total
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p174()
     print("Answer: {}".format(ANSWER))

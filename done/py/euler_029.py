@@ -23,7 +23,7 @@ def powers_function(max_a, max_b):
     sequence = []
     for a in range(2, max_a + 1):
         for b in range(2, max_b + 1):
-            sequence.append(a ** b)
+            sequence.append(a**b)
     return set(sequence)
 
 
@@ -31,6 +31,6 @@ def p029():
     return len(powers_function(100, 100))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p029()
     print("SEQUENCE LENGTH: {}".format(ANSWER))

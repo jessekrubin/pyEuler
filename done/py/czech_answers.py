@@ -1,4 +1,5 @@
 # coding=utf-8
+from os import path
 import json as jasm
 from importlib import import_module
 from multiprocessing import Pool
@@ -9,7 +10,10 @@ from time import time
 from tqdm import tqdm
 from pupy.decorations import tictoc
 
-with open('../../txt_files/solutions.txt') as f:
+PWD = path.dirname(path.abspath(__file__))
+REPO_ROOT = path.dirname(path.dirname(PWD))
+SOLUTIONS_PATH = path.join(REPO_ROOT, "txt_files", "solutions.txt")
+with open(SOLUTIONS_PATH) as f:
     SOLUTIONS = jasm.load(f)
 
 PASSED, NO_SOL, NO_PFUNK, FAILED, SOL_IS_NONE = [], [], [], [], []
@@ -32,24 +36,24 @@ def czech_answer(pn_str):
             'SOL_IS_NONE': the __sol__ variable for the problem is None
     """
     # p_file = import_module("py.euler_{}".format(pn_str))
-    p_file = import_module('euler_{}'.format(pn_str))
+    p_file = import_module("euler_{}".format(pn_str))
     # p_file = import_module(path(getcwd(), "euler_{}".format(pn_str)))
     try:
-        p_funk = getattr(p_file, 'p{}'.format(pn_str))
+        p_funk = getattr(p_file, "p{}".format(pn_str))
     except AttributeError:
         if VERBOSE:
-            print(pn_str, 'NO_PFUNK')
-        return pn_str, 'NO_PFUNK'
+            print(pn_str, "NO_PFUNK")
+        return pn_str, "NO_PFUNK"
     try:
         p_ans = SOLUTIONS[pn_str]
     except KeyError:
         if VERBOSE:
-            print(pn_str, 'NO_SOL')
-        return pn_str, 'NO_SOL'
+            print(pn_str, "NO_SOL")
+        return pn_str, "NO_SOL"
     if p_ans is None:
         if VERBOSE:
-            print(pn_str, 'SOL_IS_NONE')
-        return pn_str, 'SOL_IS_NONE'
+            print(pn_str, "SOL_IS_NONE")
+        return pn_str, "SOL_IS_NONE"
     ts = time()
     my_ans = p_funk()
     te = time() - ts
@@ -57,8 +61,8 @@ def czech_answer(pn_str):
         assert p_ans == my_ans
     except AssertionError:
         if VERBOSE:
-            print(pn_str, 'FAIL')
-        return pn_str, 'FAIL'
+            print(pn_str, "FAIL")
+        return pn_str, "FAIL"
     if VERBOSE:
         print("PASS: {} ({} ms)".format(pn_str, round(te)))
     return pn_str, te
@@ -76,22 +80,22 @@ def parse_results(results):
         print("ALL R A O K!!")
     else:
         print("{} TESTS PASS".format(len(PASSED)))
-        FAILED = [problem_n for problem_n in results if results[problem_n] == 'FAIL']
+        FAILED = [problem_n for problem_n in results if results[problem_n] == "FAIL"]
         if len(FAILED) > 0:
             print("__FAILS__")
             print(FAILED)
-        NO_SOL = [problem_n for problem_n, res in results.items() if res == 'NO_SOL']
+        NO_SOL = [problem_n for problem_n, res in results.items() if res == "NO_SOL"]
         if len(NO_SOL) > 0:
             print("__NO_SOL__")
             print(NO_SOL)
         SOL_IS_NONE = [
-            problem_n for problem_n, res in results.items() if res == 'SOL_IS_NONE'
+            problem_n for problem_n, res in results.items() if res == "SOL_IS_NONE"
         ]
         if len(SOL_IS_NONE) > 0:
             print("__SOL_IS_NONE__")
             print(SOL_IS_NONE)
         NO_PFUNK = [
-            problem_n for problem_n, res in results.items() if res == 'NO_PFUNK'
+            problem_n for problem_n, res in results.items() if res == "NO_PFUNK"
         ]
         if len(NO_PFUNK) > 0:
             print("__NO_PFUNK__\n", NO_PFUNK)
@@ -104,12 +108,12 @@ def parse_results(results):
 
 from sys import stderr, stdout
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     DONE = [
         f[6:9]
-        for f in listdir('.')  # find all files in the done dir
-        if f.startswith('euler_')  # for which the file start with 'euler_'
-        and f.endswith('.py')
+        for f in listdir(PWD)  # find all files in the done dir
+        if f.startswith("euler_")  # for which the file start with 'euler_'
+        and f.endswith(".py")
     ]  # and ends with '.py'
 
     if False:

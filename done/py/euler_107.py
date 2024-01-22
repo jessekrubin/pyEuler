@@ -61,13 +61,13 @@ def minimal_network(network_lists):
     num_nodes = len(network_lists)
     network = [
         [
-            int(network_lists[i][j]) if network_lists[i][j] != '-' else 0
+            int(network_lists[i][j]) if network_lists[i][j] != "-" else 0
             for j in range(num_nodes)
         ]
         for i in range(num_nodes)
     ]
     connections = {
-        i: {j for j in range(num_nodes) if network_lists[i][j] != '-'}
+        i: {j for j in range(num_nodes) if network_lists[i][j] != "-"}
         for i in range(num_nodes)
     }
     weights = {
@@ -89,12 +89,12 @@ def minimal_network(network_lists):
 
 
 def p107():
-    with open('../../txt_files/p107_network.txt') as f:
+    with open("../../txt_files/p107_network.txt") as f:
         txt_lines = f.readlines()
-    big_network = [line.strip('\n').split(',') for line in txt_lines]
+    big_network = [line.strip("\n").split(",") for line in txt_lines]
     return minimal_network(big_network)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p107()
     print("MAX SAVING: {}".format(ANSWER))

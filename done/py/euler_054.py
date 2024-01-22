@@ -73,15 +73,15 @@ class Card(object):
         try:
             val = int(chars[0])
         except ValueError:
-            if chars[0] == 'T':
+            if chars[0] == "T":
                 val = 10
-            elif chars[0] == 'J':
+            elif chars[0] == "J":
                 val = 11
-            elif chars[0] == 'Q':
+            elif chars[0] == "Q":
                 val = 12
-            elif chars[0] == 'K':
+            elif chars[0] == "K":
                 val = 13
-            elif chars[0] == 'A':
+            elif chars[0] == "A":
                 val = 14
         return Card(val, suit, strang)
 
@@ -184,7 +184,7 @@ class PokerHand(object):
 
 
 with open("../../txt_files/p054_poker.txt") as f:
-    games = [game.strip('\n').split(' ') for game in f.readlines()]
+    games = [game.strip("\n").split(" ") for game in f.readlines()]
 
 
 def p054():
@@ -203,6 +203,6 @@ def p054():
     return p1_wins
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p054()
     print("Player 1 wins {} times".format(answer))

@@ -16,6 +16,6 @@ def p003():
     return max(prime_factors_gen(600851475143))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p003()
     print("Largest prime factor of 600851475143: {}".format(ANSWER))  # 6857

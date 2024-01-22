@@ -72,7 +72,7 @@ def p060():
     return prime_pair_sets(5)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # is prime pair set test_pupy case
     test_set = (3, 7, 109, 673)
     assert True == is_prime_pair_set(test_set)

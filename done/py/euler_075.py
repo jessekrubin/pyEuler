@@ -62,7 +62,7 @@ def p075(L=1500000):
     return sum(1 for k, v in triangles.items() if v == 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert p075(50) == 6
     assert p075(150) == 16
     answer = p075()

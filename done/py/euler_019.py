@@ -37,6 +37,6 @@ def p019():
     )  # AND the date is the 1st
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p019()
     print("Number of Sunday 1'st days is {}".format(answer))

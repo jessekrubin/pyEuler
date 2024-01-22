@@ -60,14 +60,14 @@ def p082():
         [805, 732, 524, 37, 331],
     ]
 
-    with open(r'../../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
+    with open(r"../../txt_files/p081_p082_p083_matrix.txt") as f:  # load the matrix
         big_mat = list(
-            list(map(int, row.strip('\n').split(','))) for row in f.readlines()
+            list(map(int, row.strip("\n").split(","))) for row in f.readlines()
         )
     assert 994 == min_path_three_ways(lil_mat)  # check the small test_pupy case
     return min_path_three_ways(big_mat)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p082()
     print("Minimum path three ways: {}".format(answer))

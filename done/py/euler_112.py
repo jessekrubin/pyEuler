@@ -61,7 +61,7 @@ def p112(percentage=99):
     return find_proportion(percentage)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 21780 == find_proportion(90)
     ANSWER = p112()
     print("Smallest n where proportion bouncy is 99%: {}".format(ANSWER))

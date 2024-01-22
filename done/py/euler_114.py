@@ -43,7 +43,7 @@ def p114():
     return block_combinations(50)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert block_combinations(7) == 17
     ANSWER = p114()
     print("# block combinations: {}".format(ANSWER))

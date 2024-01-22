@@ -35,7 +35,7 @@ def p004():
     return largest_palidrome_product(3)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 9009 == largest_palidrome_product(2)
     answer = p004()
     print("max paindrome: {}".format(answer))

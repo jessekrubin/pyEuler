@@ -34,6 +34,6 @@ def p015():
     return grid[-1][-1]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p015()
     print("There are {} routes on a a 20x20 grid".format(ANSWER))

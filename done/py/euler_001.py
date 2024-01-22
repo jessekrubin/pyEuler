@@ -28,6 +28,6 @@ def p001(upper_bound=1000):
     return multiples_o_3_n_5(upper_bound - 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p001()
     print("Sum: {}".format(answer))  # Sum: 233168

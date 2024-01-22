@@ -19,7 +19,7 @@ from pupy.foreign import digits_list, int_from_digits
 def cubic_perms(n_perms):
     cubed_dict = {}
     for i in count(100):
-        ccc = int_from_digits(sorted(digits_list(i ** 3), reverse=True))
+        ccc = int_from_digits(sorted(digits_list(i**3), reverse=True))
         if ccc in cubed_dict:
             cubed_dict[ccc].append(i)
             if len(cubed_dict[ccc]) > n_perms - 1:
@@ -33,7 +33,7 @@ def p062():
     return cubic_perms(5)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert cubic_perms(3) == 41063625
     ans = p062()
     print("Answer: {}".format(ans))  # 127035954683

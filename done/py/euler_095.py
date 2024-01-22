@@ -72,6 +72,6 @@ def p095():
     return min(k for k, v in chainlengths.items() if v == max_chainlength)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p095()
     print("smallest member of the longest amicable chain: {}".format(ANSWER))

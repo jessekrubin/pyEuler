@@ -25,6 +25,6 @@ def p036():
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p036()
     print("ANSWER: {}".format(ANSWER))

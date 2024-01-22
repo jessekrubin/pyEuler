@@ -42,6 +42,6 @@ def p012():
     return cur_tri
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p012()
-    print('triangle #: {}'.format(answer))  # cur #: 76576500
+    print("triangle #: {}".format(answer))  # cur #: 76576500

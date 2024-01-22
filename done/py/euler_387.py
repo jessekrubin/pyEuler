@@ -28,7 +28,7 @@ strong, right truncatable Harshad primes less than 1014.
 from pupy.amazon import is_prime
 
 
-def p387(LIMIT=10 ** 14):
+def p387(LIMIT=10**14):
     # -i(10, ) - o(0, )
     # -i(100, ) - o(0, )
     # -i(1000, ) - o(2449, )
@@ -83,6 +83,6 @@ io = {
 
 from pprint import pprint
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p387()
     print("ANSWER :", ANSWER)

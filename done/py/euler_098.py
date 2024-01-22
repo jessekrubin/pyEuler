@@ -24,12 +24,12 @@ NOTE: All anagrams formed must be contained in the given text file.
 from math import sqrt
 from itertools import combinations, count
 
-with open('../../txt_files/p098_words.txt') as f:  # load the matrix
-    words = [word.strip('"') for word in f.readline().split(',')]
+with open("../../txt_files/p098_words.txt") as f:  # load the matrix
+    words = [word.strip('"') for word in f.readline().split(",")]
 
 d = {}
 for w in words:
-    so = ''.join(c for c in sorted(w))
+    so = "".join(c for c in sorted(w))
     if so in d:
         d[so].append(w)
     else:
@@ -59,7 +59,7 @@ def is2(a, b, n):
             return
         nb = nb.replace(p, q)
         digitsused.add(q)
-    if nb[0] == '0':
+    if nb[0] == "0":
         return
     if nb not in squares[len(a)]:
         return
@@ -83,8 +83,7 @@ for an in anagrams:
 
 # isit('RACE', 'CARE')
 # is2('RACE', 'CARE', '9216')
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     nums = map(int, things)
     maxn = max(nums)
     print("ANSWER", maxn)

@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 from os import mkdir
 from os.path import exists, join
 
-our_modules = ['pupy']
+our_modules = ["pupy"]
 
 
 def create_markdown(problem_number: int):
@@ -20,7 +20,7 @@ def create_markdown(problem_number: int):
     :return: A String of markdown that would look good in GitHub.
     """
     # file_name = f'done/py/euler_{str(problem_number).zfill(3)}.py'
-    file_name = f'py/euler_{str(problem_number).zfill(3)}.py'
+    file_name = f"py/euler_{str(problem_number).zfill(3)}.py"
     solution_code = open(file_name).read()
     tree = ast.parse(solution_code)
     our_imports = list(get_our_imports(tree))
@@ -32,19 +32,21 @@ def create_markdown(problem_number: int):
             ldict = locals()
             module = __import__(i.module, globals(), locals(), fromlist=[name])
             func = module.__dict__[name]
-            func_dict[f'{i.module}.{name}'] = inspect.getsource(func)
+            func_dict[f"{i.module}.{name}"] = inspect.getsource(func)
     dependencies = func_dict_to_dependencies(func_dict)
     md_content = create_md_file(problem_number, solution_code, dependencies)
-    out_dir = 'ry_py'
-    out_file_name = f'euler_{str(problem_number).zfill(3)}.md'
-    if not exists(out_dir): mkdir(out_dir)
-    with open(join(out_dir, out_file_name), 'w') as f: f.write(md_content)
+    out_dir = "ry_py"
+    out_file_name = f"euler_{str(problem_number).zfill(3)}.md"
+    if not exists(out_dir):
+        mkdir(out_dir)
+    with open(join(out_dir, out_file_name), "w") as f:
+        f.write(md_content)
 
 
 def get_our_imports(tree: ast.AST):
     """Takes an ast tree and returns all imports we own"""
     imports = filter(lambda elem: isinstance(elem, ast.ImportFrom), tree.body)
-    return filter(lambda i: i.module.split('.')[0] in our_modules, imports)
+    return filter(lambda i: i.module.split(".")[0] in our_modules, imports)
 
 
 def func_dict_to_dependencies(func_dict: dict):
@@ -54,10 +56,7 @@ def func_dict_to_dependencies(func_dict: dict):
     """
     dependencies = []
     for func_name, func_code in func_dict.items():
-        dependencies.append({
-            'name': func_name,
-            'code': func_code
-            })
+        dependencies.append({"name": func_name, "code": func_code})
     return dependencies
 
 
@@ -71,17 +70,23 @@ def create_md_file(problem_number: int, solution_code: str, dependencies: list):
     """
     if dependencies is None:
         dependencies = []
-    file_env = Environment(loader=FileSystemLoader('../templates'))
-    template = file_env.get_template('ry_py.md.j2')
-    return template.render(problem_number=problem_number, solution_code=solution_code, dependencies=dependencies)
+    file_env = Environment(loader=FileSystemLoader("../templates"))
+    template = file_env.get_template("ry_py.md.j2")
+    return template.render(
+        problem_number=problem_number,
+        solution_code=solution_code,
+        dependencies=dependencies,
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     create_markdown(26)
     from os import listdir, path
-    probs = ([int(path.splitext(t)[0].replace('euler_', ''))
-           for t in listdir('./py/')
-           if t[0]=='e'])
+
+    probs = [
+        int(path.splitext(t)[0].replace("euler_", ""))
+        for t in listdir("./py/")
+        if t[0] == "e"
+    ]
     for p in probs:
         create_markdown(p)
-

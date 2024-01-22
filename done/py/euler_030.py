@@ -23,7 +23,7 @@ from pupy.foreign import digits_list
 
 
 def digit_powers(number, power):
-    return number == sum(map(lambda x: x ** power, digits_list(number)))
+    return number == sum(map(lambda x: x**power, digits_list(number)))
 
 
 def p030():
@@ -31,6 +31,6 @@ def p030():
     return sum(fifth_pows)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p030()
     print("Digit fifth powers sum: {}".format(ANSWER))

@@ -30,9 +30,9 @@ def m(p, q, N):
     max_p_exp = int(log(N // q) / log(p)) + 2
     q_log = log(q)
     for p_exp in range(1, max_p_exp):
-        max_q_exp = int(log(N // p ** p_exp) / q_log) + 2
+        max_q_exp = int(log(N // p**p_exp) / q_log) + 2
         for q_exp in range(1, max_q_exp):
-            num = (p ** p_exp) * (q ** q_exp)
+            num = (p**p_exp) * (q**q_exp)
             if N >= num > max_int_div:
                 max_int_div = num
     return max_int_div
@@ -49,11 +49,11 @@ def s(n):
     return ret_sum
 
 
-def p347(n=10 ** 7):
+def p347(n=10**7):
     return s(n)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # m(pytriple_gen, q, N) test_pupy
     assert 96 == m(2, 3, 100)
     assert 75 == m(3, 5, 100)

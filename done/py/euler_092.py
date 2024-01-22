@@ -25,12 +25,12 @@ squares = {str(i): i * i for i in range(10)}
 
 
 def next_num(n):
-    return int(''.join(sorted(c for c in str(sum(squares[d] for d in str(n))))))
+    return int("".join(sorted(c for c in str(sum(squares[d] for d in str(n))))))
 
 
 nexts = {
-    int(''.join(c)): next_num(''.join(c))
-    for c in combinations_with_replacement('0123456789', 8)
+    int("".join(c)): next_num("".join(c))
+    for c in combinations_with_replacement("0123456789", 8)
 }
 
 
@@ -48,6 +48,6 @@ def p092():
     return sum((1 for i in range(1, 10000000) if goes_to_89(next_num(i))))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p092()
     print("# of numbers that go to 89: {}".format(answer))

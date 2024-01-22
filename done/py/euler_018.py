@@ -89,7 +89,7 @@ def p018():
     return triangle_max_sum_path(triangle_lists(big_triangle))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 23 == triangle_max_sum_path(triangle_lists(lil_triangle))
     max_path_sum = p018()
     print("MAX PATH SUM: {}".format(max_path_sum))

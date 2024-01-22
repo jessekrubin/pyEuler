@@ -40,10 +40,10 @@ def pytiles(max_perimeter):
 
 
 def p139():
-    return pytiles(10 ** 8)
+    return pytiles(10**8)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 9 == pytiles(100)
     assert 99 == pytiles(1000)
     sol = p139()

@@ -53,9 +53,9 @@ lil_string_triangle = """3
 8 5 9 3"""
 little_tri = triangle_lists(lil_string_triangle)
 
-with open(r'../../txt_files/p067_triangle.txt') as f:
+with open(r"../../txt_files/p067_triangle.txt") as f:
     big_tri = tuple(
-        [tuple(map(int, j.split(' '))) for j in [i.strip('\n') for i in f.readlines()]]
+        [tuple(map(int, j.split(" "))) for j in [i.strip("\n") for i in f.readlines()]]
     )
 
 
@@ -63,7 +63,7 @@ def p067():
     return tri_max_fast(big_tri)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 23 == tri_max_fast(little_tri)  # lil_tri max sum should be 23
     answer = p067()
     print("Big Triangle MAX PATH: {}".format(answer))

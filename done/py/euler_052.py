@@ -18,7 +18,7 @@ from itertools import count
 
 def permuted_multiples(max_multiplier=6):
     for n_digits in count(2):
-        for number in range(10 ** (n_digits - 1), ((10 ** n_digits) // max_multiplier)):
+        for number in range(10 ** (n_digits - 1), ((10**n_digits) // max_multiplier)):
             if all(
                 is_permutation(number, number * multiplier)
                 for multiplier in range(2, max_multiplier + 1)
@@ -32,6 +32,6 @@ def p052():
     return permuted_multiples()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     result = p052()
     print("Smallest integer: {}".format(result))

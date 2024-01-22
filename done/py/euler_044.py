@@ -38,6 +38,6 @@ def p044():
         pentagonal_numbers.add(p_k)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p044()
     print("ANSWER/value of D: {}".format(ANSWER))

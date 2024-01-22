@@ -24,18 +24,18 @@ from itertools import permutations, count
 
 
 def make_number(l):
-    return int(''.join(l))
+    return int("".join(l))
 
 
 def p038():
     lists_of_multipliers = [[j for j in range(1, i)] for i in range(3, 11)]
-    one_to_nine = ['9', '8', '7', '6', '5', '4', '3', '2', '1']
+    one_to_nine = ["9", "8", "7", "6", "5", "4", "3", "2", "1"]
     list_of_perms = set(make_number(perm) for perm in permutations(one_to_nine))
     max_pan_digit = max(list_of_perms)
 
     def check_num(n):
         for multipliers in lists_of_multipliers:
-            num = int(''.join([str(i * n) for i in multipliers]))
+            num = int("".join([str(i * n) for i in multipliers]))
             if num in list_of_perms:
                 return True
             if num > max_pan_digit:
@@ -52,6 +52,6 @@ def p038():
             return int("".join([str(num) for num in products]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p038()
     print("ANSWER: {}".format(ANSWER))

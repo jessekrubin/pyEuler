@@ -38,6 +38,6 @@ def p014():
     return max(((i, collatz_len(i)) for i in range(1, 1000000)), key=itemgetter(1))[0]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LONGEST_CHAIN = p014()
     print("{} produces the longest collatz sequence".format(LONGEST_CHAIN))

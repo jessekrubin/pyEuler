@@ -101,6 +101,6 @@ def p061():
             return sum(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p061()
     print("SUM: {}".format(ANSWER))

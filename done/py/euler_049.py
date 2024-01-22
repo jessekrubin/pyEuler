@@ -44,6 +44,6 @@ def p049():
     return int("".join(str(n) for n in validsets[1]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p049()
     print("The set of primes is: {}".format(ANSWER))

@@ -10,7 +10,7 @@ number of positive divisors. For example, 14 has the positive divisors
 """
 
 
-def p179(limit=10 ** 7):
+def p179(limit=10**7):
     divs = [0] * (limit + 1)
     for i in range(1, (limit + 1) // 2):
         for j in range(i, limit + 1, i):
@@ -23,6 +23,6 @@ def p179(limit=10 ** 7):
     return consecutive_pdivs_count
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p179()
     print("ANSWER: {}".format(ANSWER))

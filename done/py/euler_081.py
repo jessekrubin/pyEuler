@@ -27,8 +27,8 @@ lil_mat = [
     [805, 732, 524, 37, 331],
 ]
 
-with open(r'../../txt_files/p081_p082_p083_matrix.txt') as f:  # load the matrix
-    big_mat = [list(map(int, row.strip('\n').split(','))) for row in f.readlines()]
+with open(r"../../txt_files/p081_p082_p083_matrix.txt") as f:  # load the matrix
+    big_mat = [list(map(int, row.strip("\n").split(","))) for row in f.readlines()]
 
 
 def min_path_two_ways(grid):
@@ -58,7 +58,7 @@ def p081():
     return min_path_two_ways(big_mat)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert min_path_two_ways(lil_mat) == 2427  # check the small test_pupy case
     answer = p081()
     print("Minimum path two ways: {}".format(answer))

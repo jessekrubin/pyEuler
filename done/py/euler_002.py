@@ -21,6 +21,6 @@ def p002(upper_bound=4000000):
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p002()
     print("Even fibonacci numbers less than 4,000,000: {}".format(ANSWER))

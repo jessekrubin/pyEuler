@@ -29,6 +29,6 @@ def p117():
     return red_green_AND_blue(50)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p117()
     print("# arrangements: {}".format(ANSWER))

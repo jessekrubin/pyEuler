@@ -20,9 +20,9 @@ Find the last ten digits of this prime number.
 
 
 def p097():
-    return pow(2, 7830457, 10 ** 10) * 28433 % (10 ** 10) + 1
+    return pow(2, 7830457, 10**10) * 28433 % (10**10) + 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p097()
-    print('Last ten digits: {}'.format(answer))
+    print("Last ten digits: {}".format(answer))

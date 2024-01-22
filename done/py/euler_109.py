@@ -108,6 +108,6 @@ def p109(MAX_CHECKOUT=99):
     return sum(len(v) for k, v in CHECKOUTS.items() if k < MAX_CHECKOUT + 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p109()
     print("{} possible checkouts for scores lt 100 exist".format(ANSWER))

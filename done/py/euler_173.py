@@ -33,7 +33,7 @@ def p173():
     return square_lams(1000000)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 41 == square_lams(100)
     ANSWER = p173()
     print("Answer: {}".format(ANSWER))

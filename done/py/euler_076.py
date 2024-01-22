@@ -32,7 +32,7 @@ def p076():
     return num_sums(100)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p076()
     print(
         "{} can be written as a sum of at least two positive integers {} ways.".format(

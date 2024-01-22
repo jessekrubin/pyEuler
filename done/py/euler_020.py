@@ -21,6 +21,6 @@ def p020():
     return sum(digits_list(factorial(100)))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p020()
     print("Sum of the digits of 100!: {}".format(answer))

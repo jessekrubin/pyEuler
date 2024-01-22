@@ -40,7 +40,8 @@ PHI = 1.61803398874989484820
 f = [0, 1, 1, 2, 3, 5]
 
 logroot5 = log(5) / 2
-logphi = log((1 + 5 ** 0.5) / 2)
+logphi = log((1 + 5**0.5) / 2)
+
 
 def nearest_fib(n):
     if n == 0:
@@ -50,6 +51,8 @@ def nearest_fib(n):
     lo = fast_fib(y)
     hi = fast_fib(y + 1)
     return lo if n - lo < hi - n else hi
+
+
 # Function to find nth
 # Fibonacci number
 def approxonacci(n):
@@ -63,7 +66,7 @@ def approxonacci(n):
     fn = 5
 
     while t < n:
-        fn = round(fn*PHI)
+        fn = round(fn * PHI)
         t += 1
 
     return fn
@@ -71,13 +74,15 @@ def approxonacci(n):
 
 def is_pandigital(n):
     print(n)
-    return set(c for c in str(n) if c!='L') == set(str(i) for i in range(1, 10))
+    return set(c for c in str(n) if c != "L") == set(str(i) for i in range(1, 10))
+
 
 def fib_last10():
     a, b = 0, 1
     for n in count():
         yield a, n
-        a, b = b%1000000000, a+b
+        a, b = b % 1000000000, a + b
+
 
 for i, n in fib_last10():
     print(i, n)
@@ -86,10 +91,9 @@ for i, n in fib_last10():
             break
 
 
-
 def p104():
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p104()

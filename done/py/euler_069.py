@@ -37,6 +37,6 @@ def p069():
         pprod *= p
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p069()
     print("ANSWER: {}".format(ANSWER))

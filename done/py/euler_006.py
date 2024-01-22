@@ -30,7 +30,7 @@ def p006():
     return sq_sum_diff(100)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 2640 == sq_sum_diff(10)
     ANSWER = p006()
     print("Difference ({}): {}".format(100, ANSWER))  # Difference(100): 25164150

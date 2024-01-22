@@ -32,7 +32,7 @@ def p031():
     return coin_sums(200)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 4 == coin_sums(5)
     assert 4563 == coin_sums(100)
     ans3 = p031()

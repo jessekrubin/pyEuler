@@ -16,6 +16,6 @@ def p010():
 
 
 # 1179908152
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p010()
     print("Sum: {}".format(answer))

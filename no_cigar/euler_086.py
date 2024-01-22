@@ -24,18 +24,18 @@ from math import sqrt
 
 def cuboid_routes(m):
     total = 0
-    maxhp = sqrt(1+(5*(m**2)))
+    maxhp = sqrt(1 + (5 * (m**2)))
     for p in pytriple_gen(maxhp):
         trip = Vuple(p)
         while trip[0] <= m:
             cubs = set()
             for i in range(1, trip[0]):
-                c = tuple(sorted([i, trip[0]-i, trip[1]]))
+                c = tuple(sorted([i, trip[0] - i, trip[1]]))
                 if max(c) <= m:
                     cubs.add(c)
-            if trip[1]-trip[0] <= trip[0]:
-                for i in range(trip[1]-trip[0], (trip[1]//2)+2):
-                    cubs.add(tuple(sorted([trip[0], trip[1]-i, i])))
+            if trip[1] - trip[0] <= trip[0]:
+                for i in range(trip[1] - trip[0], (trip[1] // 2) + 2):
+                    cubs.add(tuple(sorted([trip[0], trip[1] - i, i])))
             total += len(cubs)
             trip += Vuple(p)
     return total
@@ -62,9 +62,10 @@ assert 2060 == cuboid_routes(100)
 #
 #
 
+
 def p086():
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p086()

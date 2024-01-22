@@ -66,7 +66,7 @@ def p113():
     return non_bouncy(100)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 12951 == non_bouncy(6)
     ANSWER = p113()
     print("# bouncy numbers less than 10**100: {}".format(ANSWER))

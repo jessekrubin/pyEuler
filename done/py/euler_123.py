@@ -28,6 +28,6 @@ def p123():
     return psr(10000000000)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p123()
     print("Answer: {}".format(ANSWER))

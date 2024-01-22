@@ -127,6 +127,6 @@ def p079():
     return guess_passcode(passcode_nums)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p079()
     print("password guess: {}".format(ANSWER))

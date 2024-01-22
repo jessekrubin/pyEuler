@@ -15,11 +15,11 @@ from itertools import count
 
 def p005():
     good_divs = [20, 19, 18, 17, 16, 14, 13, 11]
-    for div_n in count(start=20 * (10 ** 7), step=20):
+    for div_n in count(start=20 * (10**7), step=20):
         if all(div_n % n == 0 for n in good_divs):
             return div_n
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p005()
     print("Answer: {}".format(answer))

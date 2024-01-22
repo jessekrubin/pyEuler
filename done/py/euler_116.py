@@ -41,6 +41,6 @@ def p116():
     return red_green_or_blue(50)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p116()
     print("# arrangements: {}".format(ANSWER))

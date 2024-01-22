@@ -34,10 +34,10 @@ def some_pals(upper_bound):
 
 
 def p125():
-    return sum(set(pal for pal in some_pals(10 ** 8)))
+    return sum(set(pal for pal in some_pals(10**8)))
 
 
-if __name__ == '__main__':
-    assert sum(set(pal for pal in some_pals(10 ** 3))) == 4164
+if __name__ == "__main__":
+    assert sum(set(pal for pal in some_pals(10**3))) == 4164
     answer = p125()
     print("Solution: {}".format(answer))

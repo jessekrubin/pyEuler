@@ -24,6 +24,6 @@ def p493():
     return ip * 7  # bc there are 7 possible colors
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p493()
     print("ANSWER: {:1.9f}".format(ANSWER))  # ANSWER: 6.818741802

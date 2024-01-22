@@ -33,6 +33,6 @@ def p021():
     return sum(amicable_numbers)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p021()
     print("Sum of amicable numbers below 10000: {}".format(ans))

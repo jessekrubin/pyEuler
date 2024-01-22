@@ -41,11 +41,11 @@ def eee(highest, k):
     return sorted(rad_list(upper_bound=highest), key=itemgetter(0))[k - 1][1]
 
 
-def p124(greatest=10 ** 5, k=10 ** 4):
+def p124(greatest=10**5, k=10**4):
     return eee(greatest, k)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 8 == eee(10, 4)
     ANSWER = p124()
     print("For 1 ≤ n ≤ 10**5, E(10**4) == {}.".format(ANSWER))

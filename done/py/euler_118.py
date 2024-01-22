@@ -16,13 +16,14 @@ from itertools import combinations, product, permutations
 from pupy.maths import partitions_gen
 from pupy.amazon import is_prime
 
+
 def no_repeating_dijits_primes():
     panda_primes = {}
     for i in range(
         1, 9
     ):  # dont have to go all the way up bc there are no pan dig primes
         thing = []
-        for perm in permutations('123456789', i):
+        for perm in permutations("123456789", i):
             pn = int("".join(perm))
             if is_prime(pn):
                 thing.append(pn)
@@ -54,6 +55,6 @@ def p118():
     return len(pandigital_prime_sets)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p118()
     print("# pandigital prime sets: {}".format(ANSWER))

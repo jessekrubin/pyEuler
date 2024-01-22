@@ -47,7 +47,7 @@ def p033():
     return iter_product(fracs).denominator
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert is_fishy_fraction(49, 98)
     ANSWER = p033()
     print("Denominator of reduced product: {}".format(ANSWER))

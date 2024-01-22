@@ -60,7 +60,7 @@ def p073():
     return fractions_in_range()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 3 == fractions_in_range(8)
     answer = p073()
     print("# fracs: {}".format(answer))

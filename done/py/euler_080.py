@@ -21,7 +21,7 @@ getcontext().prec = 102
 
 
 def sum_root_dig(n):
-    return sum(int(c) for c in str(Decimal(n).sqrt()).replace('.', '')[0:100])
+    return sum(int(c) for c in str(Decimal(n).sqrt()).replace(".", "")[0:100])
 
 
 def p080():
@@ -30,7 +30,7 @@ def p080():
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 475 == sum_root_dig(2)
     ANSWER = p080()
     print("ANSWER: {}".format(ANSWER))

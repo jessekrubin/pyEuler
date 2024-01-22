@@ -16,7 +16,7 @@ rectangles, find the area of the grid with the nearest solution.
 # this equation is simple enough to figure out, though it took me a while and
 # I tore some of my hari out
 def num_rectangles(height, width):
-    return ((height ** 2 + height) * (width ** 2 + width)) // 4
+    return ((height**2 + height) * (width**2 + width)) // 4
 
 
 def p085():
@@ -28,6 +28,6 @@ def p085():
     return numrectdict[min_key]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p085()
     print("AREA w/ nearest solution: {}".format(answer))

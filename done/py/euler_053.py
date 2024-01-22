@@ -50,6 +50,6 @@ def p053():
     return total_over_a_mil
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p053()
     print("ANSWER: {}".format(ANSWER))

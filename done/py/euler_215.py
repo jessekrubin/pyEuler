@@ -79,7 +79,7 @@ def p215():
     return W(32, 10)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 8 == W(9, 3)
     ANSWER = p215()
     print("CRACK FREE WALLS: {}".format(ANSWER))

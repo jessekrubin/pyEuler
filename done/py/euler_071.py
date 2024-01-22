@@ -40,7 +40,7 @@ def p071():
     return numerator
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert (2, 5) == ordered_fractions(8)
     sol = p071()
     print("Numerator: {}".format(sol))

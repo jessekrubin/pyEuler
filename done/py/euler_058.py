@@ -52,6 +52,6 @@ def p058():
     return spiral_prime_iterator(0.1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p058()
     print("ANSWER: {}".format(ANSWER))

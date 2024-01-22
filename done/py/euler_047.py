@@ -40,7 +40,7 @@ def p047(n_facs=4):
                 return i + 1 - n_facs
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 14 == p047(2)
     assert 644 == p047(3)
     ANSWER = p047()

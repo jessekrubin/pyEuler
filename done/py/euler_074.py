@@ -68,6 +68,6 @@ def p074():
     return sixties
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p074()
     print("ANSWER: {}".format(ANSWER))

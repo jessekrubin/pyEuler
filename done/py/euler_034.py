@@ -28,6 +28,6 @@ def p034():
     return digit_factorials(500000)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p034()
     print("Sum of all 'digit rfactorial' numbers: {}".format(ANSWER))

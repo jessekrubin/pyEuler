@@ -117,6 +117,6 @@ def p013():
     return int(str(sum(HUNDO_NUMBOS))[:10])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     first_10_digits = p013()
     print("1st 10 digits: {}".format(first_10_digits))

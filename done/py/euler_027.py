@@ -46,6 +46,6 @@ def p027():
     return c[0] * c[1]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p027()
     print("a*b: {}".format(ANSWER))

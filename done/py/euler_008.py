@@ -57,7 +57,7 @@ DIJITS_STR = """
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 """
-DIJITS = list(map(int, DIJITS_STR.replace('\n', '')))
+DIJITS = list(map(int, DIJITS_STR.replace("\n", "")))
 
 
 def p008(n=13):
@@ -68,6 +68,6 @@ def p008(n=13):
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 5832 == p008(4)  # ANSWER 4: 5832
     print("ANSWER 13: {}".format(p008()))  # ANSWER 13: 23514624000

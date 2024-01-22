@@ -70,7 +70,7 @@ class Grid(object):
 
     def spiral(self):
         cur_x, cur_y = self.center_xy, self.center_xy
-        for i in range(self.size ** 2):
+        for i in range(self.size**2):
             self.array[cur_x][cur_y] = i + 1
             cur_x, cur_y = self.spiral_step(cur_x, cur_y)
 
@@ -106,7 +106,7 @@ def p028():
     return grid1001.diag_sum()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     grid3 = Grid(3)
     assert 25 == grid3.diag_sum()
     grid5 = Grid(5)

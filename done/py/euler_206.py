@@ -29,14 +29,14 @@ def p206():
     range_min = int(sqrt(1929394959697989990))
     range_min -= range_min % 10
     for i in range(range_min, range_max, -10):
-        if is_1_2_3_4_5_6_7_8_9_0(i ** 2):
+        if is_1_2_3_4_5_6_7_8_9_0(i**2):
             return i
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert True == is_1_2_3_4_5_6_7_8_9_0(1122334455667788990)
     assert True == is_1_2_3_4_5_6_7_8_9_0(1121314151617181910)
     assert False == is_1_2_3_4_5_6_7_8_9_0(11122334455667788990)
     assert False == is_1_2_3_4_5_6_7_8_9_0(1112214455667788990)
     answer = p206()
-    print('{}^2 is {}'.format(answer, answer ** 2))
+    print("{}^2 is {}".format(answer, answer**2))

@@ -49,7 +49,7 @@ def p057():
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert Fraction(3, 2) == sqrt_2_expansions(1)
     assert Fraction(7, 5) == sqrt_2_expansions(2)
     assert Fraction(17, 12) == sqrt_2_expansions(3)

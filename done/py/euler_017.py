@@ -79,6 +79,6 @@ def p017():
     return sum(len(lte1000(i)) for i in range(1, 1000 + 1))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     characters = p017()
     print("Total number of chars in strings [1-1000]: {}".format(characters))

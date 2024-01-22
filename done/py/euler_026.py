@@ -33,7 +33,7 @@ def num_cycles(p):
     # if the the remainder of the 10 to the power of that number is one
     # that's the cycle mag
     for i in range(1, p):
-        hopefully_one_maybe = 10 ** i % p
+        hopefully_one_maybe = 10**i % p
         if hopefully_one_maybe == 1:
             return i
     return -1
@@ -45,6 +45,6 @@ def p026():
     return primes_lt1000[cycles.index(max(cycles))]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p026()
     print("D w/ longest cycles: {}".format(ANSWER))

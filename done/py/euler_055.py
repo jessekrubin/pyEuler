@@ -58,7 +58,7 @@ def p055():
     return sum(1 for i in range(10000) if is_lychrel(i))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert False == is_lychrel(47)
     assert False == is_lychrel(349)
     ANSWER = p055()

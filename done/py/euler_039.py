@@ -18,12 +18,12 @@ from operator import itemgetter
 def num_integer_right_triangles(perimeter):
     num_triangles = 0
     for b in range(1, perimeter // 2):
-        a = (2 * b * perimeter - perimeter ** 2) / (2 * (b - perimeter))
+        a = (2 * b * perimeter - perimeter**2) / (2 * (b - perimeter))
         if a % 1:
             continue
         a = int(a)
         if a < b:
-            if a ** 2 + b ** 2 == (perimeter - a - b) ** 2:
+            if a**2 + b**2 == (perimeter - a - b) ** 2:
                 num_triangles += 1
     return num_triangles
 
@@ -34,6 +34,6 @@ def p039():
     return best_perimeter + 1  # bc array storage
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p039()
     print("A perimeter = {} has 8 integer right triangles".format(ans))

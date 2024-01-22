@@ -45,6 +45,6 @@ def p077():
 # n1 = 10
 # ans1 = coin_partitions(n1)
 # print("{} ways to make {}".format(ans1, n1))
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p077()
     print("Answer: {}".format(answer))

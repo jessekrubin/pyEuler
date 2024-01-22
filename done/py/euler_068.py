@@ -122,6 +122,6 @@ def p068():
     return max(rings)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p068()
     print("MAX 5 GON: {}".format(ans))

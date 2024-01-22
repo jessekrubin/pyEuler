@@ -153,6 +153,6 @@ def p105():
     return sum(sum(a) for a in sets if is_special(set(a)))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p105()
     print("ANSWER", ans)

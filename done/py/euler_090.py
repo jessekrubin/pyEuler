@@ -67,6 +67,6 @@ def p090():
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ANSWER = p090()
     print(ANSWER)

@@ -41,7 +41,7 @@ def almost_equilateral(max_perimeter):
 
 
 @cprof
-def p094(max_perimeter=(10 ** 9)):
+def p094(max_perimeter=(10**9)):
     #     perimeter_sum = 0
     # for i in almost_equilateral(max_perimeter):
     #         perimeter_sum += sum(i)
@@ -51,7 +51,7 @@ def p094(max_perimeter=(10 ** 9)):
     # return perimeter_sum
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 66 == p094(100)
     assert 984 == p094(1000)
     ti = time()

@@ -52,6 +52,6 @@ def p043():
     return sum(pandigit_lists)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p043()
     print("Sum of products: {}".format(ans))

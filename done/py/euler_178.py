@@ -26,9 +26,9 @@ def update_has(has, n):
 
 @cash_it
 def rec(remaining, last, has):
-    if remaining == 0 and has == '0123456789':
+    if remaining == 0 and has == "0123456789":
         return 1
-    if remaining == 0 and has != '0123456789':
+    if remaining == 0 and has != "0123456789":
         return 0
     pancount = 0
     if last < 9:
@@ -52,7 +52,7 @@ def p178():
     return pandigital_step_numbers(40)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 55 == pandigital_step_numbers(13)
     ANSWER = p178()
     print("# PANDIGITAL STEP NUMBERS LESS THAN 10^40 {}".format(ANSWER))

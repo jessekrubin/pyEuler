@@ -52,8 +52,8 @@ def sol3d(grid):
 
 
 def p096():
-    with open('../../txt_files/p096_sodoku.txt', 'r') as f:
-        f_lines = [line.strip('\n') for line in f.readlines()]
+    with open("../../txt_files/p096_sodoku.txt", "r") as f:
+        f_lines = [line.strip("\n") for line in f.readlines()]
     sodoku_boards = [chunk for chunk in chunks(f_lines, 10)]
     return sum(
         Sodoku("".join(s[1:])).euler_096_three_digit_number() for s in sodoku_boards
@@ -62,9 +62,9 @@ def p096():
     #     print(s)
 
 
-if __name__ == '__main__':
-    unsolved = '003020600900305001001806400008102900700000008006708200002609500800203009005010300'
-    solved = '483921657967345821251876493548132976729564138136798245372689514814253769695417382'
+if __name__ == "__main__":
+    unsolved = "003020600900305001001806400008102900700000008006708200002609500800203009005010300"
+    solved = "483921657967345821251876493548132976729564138136798245372689514814253769695417382"
     test_sodoku = Sodoku(unsolved)
     test_sodoku.solve()
     assert test_sodoku.get_oneline_str() == solved

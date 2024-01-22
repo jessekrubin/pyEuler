@@ -23,8 +23,8 @@ from pupy.cheese import string_score
 
 
 def p042():
-    with open(r'../../txt_files/p042_words.txt') as f:
-        words = [s.strip("\"") for s in f.readlines()[0].split(',')]
+    with open(r"../../txt_files/p042_words.txt") as f:
+        words = [s.strip('"') for s in f.readlines()[0].split(",")]
 
     word_scores = map(string_score, words)
     max_word_score = max(map(string_score, words))
@@ -39,6 +39,6 @@ def p042():
     return sum([1 for i in word_scores if i in triangle_numbers_below_max])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     answer = p042()
     print("# coded triangle numbers: {}".format(answer))

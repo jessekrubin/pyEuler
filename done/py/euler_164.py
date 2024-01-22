@@ -32,6 +32,6 @@ def p164():
     return count
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     count = p164()
     print("ANSWER: {}".format(count))

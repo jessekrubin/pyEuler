@@ -46,7 +46,7 @@ def p023():
     return sum(set(i for i in range(15, 28123) if i not in abun_sums))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ans = p023()
 
     print("Sum: {}".format(ans))  # Sum: 4179871

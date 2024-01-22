@@ -44,12 +44,12 @@ def consecutive_prime_sum(upper_bound):
 
 
 def p050():
-    answer_sequence_length, prime_answer = consecutive_prime_sum(10 ** 6)
+    answer_sequence_length, prime_answer = consecutive_prime_sum(10**6)
     return prime_answer
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert 6, 41 == consecutive_prime_sum(100)
     assert 21, 953 == consecutive_prime_sum(1000)
     ANSWER = p050()
-    print('Prime answer: {}'.format(ANSWER))
+    print("Prime answer: {}".format(ANSWER))

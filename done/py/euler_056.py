@@ -16,9 +16,9 @@ from pupy.foreign import digits_list
 
 
 def p056():
-    return max((sum(digits_list(i ** j)) for i in range(1, 100) for j in range(1, 100)))
+    return max((sum(digits_list(i**j)) for i in range(1, 100) for j in range(1, 100)))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     max_dig_sum = p056()
     print("Max digit sum: {}".format(max_dig_sum))

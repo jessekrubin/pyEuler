@@ -28,7 +28,7 @@ def p009():
             return iter_product(tri) * (1000 // sum(tri)) ** 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     product = p009()
     print("Triplet product: {}".format(product))
 
